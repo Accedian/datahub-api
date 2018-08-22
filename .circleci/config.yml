@@ -20,6 +20,11 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+      - run: cd ~/project
+
+      - run: 
+          name: Downloading dependencies
+          comand: npm i
       - run: 
           name: Deploying on master branch
           command: |
