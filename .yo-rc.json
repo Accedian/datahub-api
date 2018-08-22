@@ -4,7 +4,7 @@
     "importedSpec": "/Users/jdelamarre/sb/datahub-swagger-spec/swagger.json",
     "name": "DataHub",
     "repo": "Accedian/datahub-api",
-    "splitSpec": true,
+    "splitSpec": false,
     "samples": true,
     "installSwaggerUI": true
   }
