@@ -24,6 +24,8 @@ jobs:
 
       - run: npm i 
 
+      - run: git remote rename origin sshorigin
+      - run: git remote add origin https://github.com/Accedian/datahub-api.git
       - run: 
           name: Deploying on master branch
           command: |
