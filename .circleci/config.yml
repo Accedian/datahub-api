@@ -25,6 +25,8 @@ jobs:
       - run: 
           name: Downloading dependencies
           comand: | npm i
+
+
       - run: 
           name: Deploying on master branch
           command: |
