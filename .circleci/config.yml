@@ -10,6 +10,8 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
 
+    
+    working_directory: ~/project
     steps:
       - checkout
 
@@ -20,10 +22,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: cd ~/project
-
       - run: npm i 
-
 
       - run: 
           name: Deploying on master branch
