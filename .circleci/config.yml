@@ -22,9 +22,7 @@ jobs:
 
       - run: cd ~/project
 
-      - run: 
-          name: Downloading dependencies
-          comand: | npm i
+      - run: npm i 
 
 
       - run: 
