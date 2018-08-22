@@ -1,11 +1,11 @@
 swagger: '2.0'
-host: jdelamarre.npav.accedian.net
+host: example.com
 info:
   title: Gather
   description: Gather API Documentation
   version: 1.0.0
   contact:
-    email: mpreston@accedian.com
+    email: info@accedian.net
 basePath: /api
 schemes:
   - https
