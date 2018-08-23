@@ -1,12 +1,20 @@
 swagger: '2.0'
 host: example.com
 info:
-  title: Gather
-  description: Gather API Documentation
+  title: DataHub API documentation
   version: 1.0.0
   contact:
-    email: info@accedian.net
+    email: info@accedian.net 
+  description: |
+    You will find below Datahub's API documentation.
+    # Introduction
+    This API is documented in **Open API format v2**. You can download the full API spec above, and use it with
+    compatible code generators to generate the client stubs.
+    (Almost) every endpoint require a valid user authentication, so this is probably where you should start.
+
+
 basePath: /api
+
 schemes:
   - https
 consumes:
@@ -16,6 +24,49 @@ produces:
   - application/json
   - application/vnd.api+json
 paths:
+  /v1/auth/login:
+    post:
+      summary: Login a Skylight User
+      operationId: Login
+      consumes:
+        - application/x-www-form-urlencoded
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: "Returns the Authenticated User. Note that the authorization header is returned with a valid token"
+          headers: 
+            Authorization:
+              schema:
+                type: string
+              Description: Contains the valid authenticated token for further API calls
+          schema:
+            $ref: '#/definitions/JsonApiAAAUser'
+        '401':
+          description: "Unauthorized access attempt"
+          schema:
+            type: string
+        '404':
+          description: "User not found"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters: 
+        - name: username
+          in: formData
+          description: Unique identifier of the User requesting access
+          required: true
+          type: string
+        - name: password
+          in: formData
+          description: Password for the username of the User requesting access
+          required: true
+          type: string
+      tags:
+        - AuthService
   /v1/tenants:
     post:
       summary: Create a Tenant.
@@ -6187,6 +6238,8 @@ definitions:
             type: string
           category:
             type: string
+          port:
+            type: string
           metadataFilters:
             type: array
             items:
@@ -7415,3 +7468,35 @@ definitions:
                                       type: object
                                       additionalProperties:
                                         type: string
+  JsonApiAAAUser:
+    type: object
+    properties:  
+      data:
+        type: object
+        properties:
+          attributes:
+            type: object
+            properties:
+              emailAddress:
+                type: string
+              isPasswordSet:
+                type: boolean
+              isRegisteredForEmail:
+                type: boolean
+              name:
+                type: string
+              roles:
+                type: array
+                items:
+                  type: string
+              tenants:
+                type: array
+                items:
+                  type: string
+              id:
+                type: string
+              _type:
+                type: string
+
+
+
