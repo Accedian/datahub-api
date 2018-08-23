@@ -6,7 +6,7 @@ info:
   contact:
     email: info@accedian.net 
   description: |
-    You will find below Datahub's API documentation.
+    Here is Datahub's API documentation.
     # Introduction
     This API is documented in **Open API format v2**. You can download the full API spec above, and use it with
     compatible code generators to generate the client stubs.
