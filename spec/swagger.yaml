@@ -10,7 +10,7 @@ info:
     # Introduction
     This API is documented in **Open API format v2**. You can download the full API spec above, and use it with
     compatible code generators to generate the client stubs.
-    (Almost) every endpoint require a [valid user authentication](https://api.npav.accedian.net/#tag/AuthService), so this is probably where you should start.
+    (Almost) every endpoint require a (valid user authentication)[https://api.npav.accedian.net/#tag/AuthService], so this is probably where you should start.
 
 
 basePath: /api
