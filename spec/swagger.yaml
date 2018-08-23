@@ -10,9 +10,67 @@ info:
     # Introduction
     This API is documented in **Open API format v2**. You can download the full API spec above, and use it with
     compatible code generators to generate the client stubs.
-    # Quick startup
-    (Almost) every endpoint require a (valid user authentication)[https://api.npav.accedian.net/#tag/AuthService], so this is probably where you should start.
+    # Quick setup
+    (Almost) every endpoint require a [valid user authentication](/#tag/AuthService), so this is probably where you should start.
+    Depending on the access rights associated with your account, some endpoints may not be authorized. When such restriction exists,
+    the API documentation will outline which acess rights are required to access or modify a given resource.
 
+    ## Authenticate to obtain an Authorized Token
+    You must optain an `Authorization Bearer` (for subsequent API calls) or a set-cookie, for browser related calls. Both 
+    of these can be obtained by the [auth/login](/#tag/AuthService) endpoint.
+
+    ```bash
+    curl -X POST \
+       https://tenant-url.npav.accedian.net/api/v1/auth/login \
+       -H 'Cache-Control: no-cache' \
+       -H 'Content-Type: application/x-www-form-urlencoded' \
+       -d 'username=tenantUsername&password=tenantUserPassword'
+    ```
+    > Pro-tip: Replace "tenant-url" by your tenant name
+
+    The response will contained an authorized header and a set-cookie header
+
+    ```bash
+    HTTP/2 200
+    content-type: application/vnd.api+json
+    content-length: 208
+    authorization: Bearer MTUzNTAyNDg[...]
+    set-cookie: skylight-aaa=MTUzNTAyNDg[...]
+    {
+      "data": {
+        "attributes":{
+          "emailAddress":"tenantUsername",
+          "isPasswordSet":true,
+          "isRegisteredForEmail":false,
+          "name":"tenantName",
+          "roles":["tenant-role"],
+          "tenants":["tenantName"]},
+          "id":"1",
+          "type":"users"
+          }
+    }
+    ```
+
+    ## Making an authorized API request - (RAW metrics API query)
+
+    Once you have optained an `Authorization bearer` token, you can make a query to retrieve [RAW metrics](/#operation/GetRawMetrics). 
+
+    ```bash
+    curl -X POST https://accedian-dh2.npav.accedian.net/api/v2/raw-metrics \
+      -d "\
+        {'tenantId':'tenant12345',\
+         'interval':'2018-08-08T11%3A12%3A53-04%3A00%2F2018-08-09T11%3A12%3A53-04%3A00',\
+         'granularity':'PT78.545S',\
+         'meta':{'colors':['orange']},\
+         'timeout':30000,\
+         'metrics':['jitterP95'],\
+         'directions':['0','1','2'],\
+         'objectType':'twamp-sf'\
+        }" -H 'Cache-Control: no-cache' -H 'Authorization:  MTUzNTAyNDg[...]'
+
+    ``` 
+
+    
 
 basePath: /api
 
