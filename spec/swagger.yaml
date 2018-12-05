@@ -433,33 +433,6 @@ paths:
           type: string
       tags:
         - MetricsService
-  /v2/raw-metrics:
-    post:
-      summary: Returns raw metrics from druid
-      operationId: GetFilteredRawMetrics
-      produces:
-        - application/vnd.api+json
-      responses:
-        '200':
-          description: ''
-          schema:
-            $ref: '#/definitions/gathergrpcJSONAPIObject'
-        '403':
-          description: "Requestor does not have authorization to perform this action"
-          schema:
-            type: string
-        '500':
-          description: "Unexpected error processing request"
-          schema:
-            type: string
-      parameters:
-        - name: body
-          in: body
-          required: true
-          schema:
-            $ref: '#/definitions/FilteredRawMetricsRequestObject'
-      tags:
-        - MetricsService
   /v1/threshold-crossing:
     post:
       summary: Retrieve threshold crossings
@@ -9467,9 +9440,7 @@ definitions:
         type: string
         example: 2018-04-08T14:00:00/2018-04-09T15:00:00
       meta:
-        description: An object that allows filtering on arbitrary metadata criteria and their values. Refer to the MetaFilter object for additional details
         $ref: '#/definitions/MetaFilter'
-        example: {"region":["montreal","ottawa"], "group":["radio"]}
       thresholdProfileId:
         description: ID of the threshold profile that is used to select metrics and events
         type: string
@@ -9584,9 +9555,7 @@ definitions:
         type: string
         example: 2018-04-08T14:00:00/2018-04-09T15:00:00
       meta:
-        description: An object that allows filtering on arbitrary metadata criteria and their values. Refer to the MetaFilter object for additional details
         $ref: '#/definitions/MetaFilter'
-        example: {"region":["montreal","ottawa"], "group":["radio"]}
       thresholdProfileId:
         description: ID of the threshold profile that is used to select metrics and events
         type: string
@@ -9738,9 +9707,7 @@ definitions:
         description: The tenant identifier
         example: 8501f157-b7f5-41c3-aaba-c75e0566c54c
       meta:
-        description: An object that allows filtering on arbitrary metadata criteria and their values. Refer to the MetaFilter object for additional details
         $ref: '#/definitions/MetaFilter'
-        example: {"region":["montreal","ottawa"], "group":["radio"]}
       interval:
         description: Time boundary for the metrics under consideration using the ISO-8601 standard
         type: string
@@ -9824,9 +9791,7 @@ definitions:
           - 7c3d3280-628c-c778-92ec-4e9b83fcbb4d
           - 41f1b537-b7f5-41c3-a1b2-a75e1536c54e
       meta:
-        description: An object that allows filtering on arbitrary metadata criteria and their values. This attribute cannot be used if the monitoredObjects attribute is also present in the request. Refer to the MetaFilter object for additional details
         $ref: '#/definitions/MetaFilter'
-        example: {"region":["montreal","ottawa"], "group":["radio"]}
       interval:
         description: Time boundary for the metrics under consideration using the ISO-8601 standard
         type: string
@@ -9912,9 +9877,7 @@ definitions:
     required: [interval, metrics]
     properties:
       meta:
-        description: An object that allows filtering on arbitrary metadata criteria and their values. Refer to the MetaFilter object for additional details
         $ref: '#/definitions/MetaFilter'
-        example: {"region":["montreal","ottawa"], "group":["radio"]}
       interval:
         description: Time boundary for the metrics under consideration using the ISO-8601 standard
         type: string
@@ -10041,9 +10004,7 @@ definitions:
     required: [interval, aggregator, metric]
     properties:
       meta:
-        description: An object that allows filtering on arbitrary metadata criteria and their values. Refer to the MetaFilter object for additional details
         $ref: '#/definitions/MetaFilter'
-        example: {"region":["montreal","ottawa"], "group":["radio"]}
       monitoredObjects:
         description: An optional array of monitored objects that we want to retrieve specific topn against. This attribute cannot be used if the meta attribute is also present in the request.
         x-omitempty: true
@@ -10174,9 +10135,7 @@ definitions:
     required: [interval, metrics]
     properties:
       meta:
-        description: An object that allows filtering on arbitrary metadata criteria and their values. Refer to the MetaFilter object for additional details
         $ref: '#/definitions/MetaFilter'
-        example: {"region":["montreal","ottawa"], "group":["radio"]}
       interval:
         description: Time boundary for the metrics under consideration using the ISO-8601 standard
         type: string
