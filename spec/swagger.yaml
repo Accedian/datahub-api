@@ -1,12 +1,12 @@
 swagger: '2.0'
 host: example.com
 info:
-  title: DataHub API documentation
-  version: 1.0.0
+  title: Skylight Performance Analytics API documentation
+  version: 2.0.0
   contact:
     email: info@accedian.net 
   description: |
-    Here is Datahub's API documentation.
+    Here is Skylight Performance Analytics's API documentation.
     # Introduction
     This API is documented in **Open API format v2**. You can download the full API spec above, and use it with
     compatible code generators to generate the client stubs.
@@ -440,7 +440,7 @@ paths:
             type: string
       parameters:
         - name: analyticsId
-          description: "Unique identifier of an Analytics request in Datahub"
+          description: "Unique identifier of an Analytics request in Skylight Performance Analytics"
           in: path
           required: true
           type: string
@@ -470,7 +470,7 @@ paths:
             type: string
       parameters:
         - name: analyticsId
-          description: "Unique identifier of an Analytics request in Datahub"
+          description: "Unique identifier of an Analytics request in Skylight Performance Analytics"
           in: path
           required: true
           type: string
@@ -2831,7 +2831,7 @@ paths:
           schema:
             type: string
         '404':
-          description: "The requested Report is not provisioned in Datahub"
+          description: "The requested Report is not provisioned in Skylight Performance Analytics"
           schema:
             type: string
         '500':
@@ -2861,7 +2861,7 @@ paths:
           schema:
             type: string
         '404':
-          description: "No Reports are provisioned in Datahub"
+          description: "No Reports are provisioned in Skylight Performance Analytics"
           schema:
             type: string
         '500':
@@ -4360,7 +4360,7 @@ definitions:
   TenantCreationRequest:
     type: "object"
     required: ["data"]
-    description: "The request used when creating a new Tenant in Datahub"
+    description: "The request used when creating a new Tenant in Skylight Performance Analytics"
     properties:
       data:
         $ref: '#/definitions/TenantCreationObject'
@@ -4368,7 +4368,7 @@ definitions:
   TenantUpdateRequest:
     type: "object"
     required: ["data"]
-    description: "The request used when updating an existing Tenant in Datahub"
+    description: "The request used when updating an existing Tenant in Skylight Performance Analytics"
     properties:
       data:
         $ref: '#/definitions/TenantUpdateObject'
@@ -4376,7 +4376,7 @@ definitions:
   TenantResponse:
     type: "object"
     required: ["data"]
-    description: "The response returned for a single Tenant from Datahub"
+    description: "The response returned for a single Tenant from Skylight Performance Analytics"
     properties:
       data:
         $ref: '#/definitions/Tenant'
@@ -4384,7 +4384,7 @@ definitions:
   TenantListResponse:
     type: "object"
     required: ["data"]
-    description: "The response returned for multiple Tenants from Datahub"
+    description: "The response returned for multiple Tenants from Skylight Performance Analytics"
     properties:
       data:
         type: "array"
@@ -4409,7 +4409,7 @@ definitions:
             description: "The name of the Tenant"
           urlSubdomain:
             type: "string"
-            description: "The subdomain used in the URL for accessing the Tenant's portal in Datahub"
+            description: "The subdomain used in the URL for accessing the Tenant's portal in Skylight Performance Analytics"
           state:
             type: "string"
             enum: [USER_UNKNOWN, INVITED, ACTIVE, SUSPENDED, PENDING_DELETE]
@@ -4436,7 +4436,7 @@ definitions:
             description: "The name of the Tenant"
           urlSubdomain:
             type: "string"
-            description: "The subdomain used in the URL for accessing the Tenant's portal in Datahub"
+            description: "The subdomain used in the URL for accessing the Tenant's portal in Skylight Performance Analytics"
           state:
             type: "string"
             enum: [USER_UNKNOWN, INVITED, ACTIVE, SUSPENDED, PENDING_DELETE]
@@ -4463,7 +4463,7 @@ definitions:
             description: "The name of the Tenant"
           urlSubdomain:
             type: "string"
-            description: "The subdomain used in the URL for accessing the Tenant's portal in Datahub"
+            description: "The subdomain used in the URL for accessing the Tenant's portal in Skylight Performance Analytics"
           state:
             type: "string"
             enum: [USER_UNKNOWN, INVITED, ACTIVE, SUSPENDED, PENDING_DELETE]
@@ -4471,15 +4471,15 @@ definitions:
           createdTimestamp:
             type: "integer"
             format: "int64"
-            description: "The timestamp at which this record was created in Datahub"
+            description: "The timestamp at which this record was created in Skylight Performance Analytics"
           lastModifiedTimestamp:
             type: "integer"
             format: "int64"
-            description: "The timestamp of the last update to this record in Datahub"
+            description: "The timestamp of the last update to this record in Skylight Performance Analytics"
 
   IngestionDictionaryListResponse:
     type: "object"
-    description: "Provides a listing of all metric values supported by Datahub"
+    description: "Provides a listing of all metric values supported by Skylight Performance Analytics"
     properties:
       data:
         type: "array"
@@ -4508,11 +4508,11 @@ definitions:
                         items:
                             type: "string"
                 metricList:
-                  description: "Provides an array of objects that describe the possible metric combinations that may be retained by Datahub"
+                  description: "Provides an array of objects that describe the possible metric combinations that may be retained by Skylight Performance Analytics"
                   type: "array"
                   items:
                     type: "object"
-                    description: "Describes a single Metric available in Datahub"
+                    description: "Describes a single Metric available in Skylight Performance Analytics"
                     properties:
                       vendor:
                         description: "The name of the Vendor from which this Metric originates"
@@ -4594,7 +4594,7 @@ definitions:
 
   ValidTypesListResponse:
     type: "object"
-    description: "Provides known values mappings for Datahub"
+    description: "Provides known values mappings for Skylight Performance Analytics"
     properties:
       data:
         type: "array"
@@ -4638,10 +4638,10 @@ definitions:
             properties:
               id: 
                 type: "string"
-                description: "The unique identifier of the Tenant in Datahub"
+                description: "The unique identifier of the Tenant in Skylight Performance Analytics"
               alias:
                 type: "string"
-                description: "A known alias for the Tenant in Datahub"
+                description: "A known alias for the Tenant in Skylight Performance Analytics"
       
   AnalyticsPatternMatch:
     type: "object"
@@ -4721,7 +4721,7 @@ definitions:
         properties:
           tenantId:
             type: "string"
-            description: "Unique identifier of the Tenant in Datahub"
+            description: "Unique identifier of the Tenant in Skylight Performance Analytics"
           _id:
             type: "string"
           _rev:
@@ -4729,9 +4729,9 @@ definitions:
             description: "Value used to ensure updates to this object are handled in order."
           datatype:
             type: "string"
-            description: "Name used to identify this type of record in Datahub"
+            description: "Name used to identify this type of record in Skylight Performance Analytics"
           request:
-            description: "The details of the original request for Analytical analysis from Datahub"
+            description: "The details of the original request for Analytical analysis from Skylight Performance Analytics"
             type: "object"
             properties:
               type:
@@ -4741,7 +4741,7 @@ definitions:
               patternMatch:
                 $ref: '#/definitions/AnalyticsPatternMatch'
           result:
-            description: "The details of the result of the Analytical analysis from Datahub"
+            description: "The details of the result of the Analytical analysis from Skylight Performance Analytics"
             type: "object"
             properties:
               computationExecTime:
@@ -4810,7 +4810,7 @@ definitions:
 
   AnalyticsResponse:
     type: "object"
-    description: "An Analytics response from Datahub"
+    description: "An Analytics response from Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -4971,7 +4971,7 @@ definitions:
           _rev:
             type: string
           tenantId:
-            description: "Unique identifier of a Tenant in Datahub"
+            description: "Unique identifier of a Tenant in Skylight Performance Analytics"
             type: "string"
           name:
             description: "Name of the composition"
@@ -5051,7 +5051,7 @@ definitions:
   CompositeMetricCreateRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to create a CompositeMetric metric in Datahub"
+    description: "Object used to create a CompositeMetric metric in Skylight Performance Analytics"
     properties:
       data:
         type: "object"
@@ -5099,7 +5099,7 @@ definitions:
   CompositeMetricUpdateRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to update a CompositeMetric metric in Datahub"
+    description: "Object used to update a CompositeMetric metric in Skylight Performance Analytics"
     properties:
       data:
         type: "object"
@@ -5147,7 +5147,7 @@ definitions:
   CompositeMetricResponse:
     type: "object"
     required: ["data"]
-    description: "A single object CompositeMetric metric response from Datahub"
+    description: "A single object CompositeMetric metric response from Skylight Performance Analytics"
     properties:
       data:
         $ref: '#/definitions/CompositeMetric'
@@ -5156,7 +5156,7 @@ definitions:
   CompositeMetricListResponse:
     type: "object"
     required: ["data"]
-    description: "Response for one or more CompositeMetricd metrics from Datahub"
+    description: "Response for one or more CompositeMetricd metrics from Skylight Performance Analytics"
     properties:
       data:
         type: "array"
@@ -5422,7 +5422,7 @@ definitions:
   DashboardCreateRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to create a Dashboard in Datahub"
+    description: "Object used to create a Dashboard in Skylight Performance Analytics"
     properties:
       data:
         type: "object"
@@ -5444,7 +5444,7 @@ definitions:
                 description: "User provided identifier for a Dashboard"
               category: 
                 type: "string"
-                description: "Name of the visual 'group' where this Dashboard will be displayed when looking at the list of all Dashboards in Datahub"
+                description: "Name of the visual 'group' where this Dashboard will be displayed when looking at the list of all Dashboards in Skylight Performance Analytics"
               metaExclude:
                 $ref: '#/definitions/MetaExclude'
                 description: "List of metadata keys to exclude from the search results"
@@ -5454,7 +5454,7 @@ definitions:
                   $ref: '#/definitions/MetadataFilter'
                 description: "List of filters used to obtain a list of Monitoreed Objects which will be useds to provide metric data to the Dashboard"
               cardPositions:
-                description: "Describes the locations of the Cards on the Dashboard in the Datahub UI"
+                description: "Describes the locations of the Cards on the Dashboard in the Skylight Performance Analytics UI"
                 $ref: '#/definitions/CardPositions'
               _permissions:
                 $ref: '#/definitions/RequestPermissions'
@@ -5465,7 +5465,7 @@ definitions:
   DashboardUpdateRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to update a Dashboard in Datahub"
+    description: "Object used to update a Dashboard in Skylight Performance Analytics"
     properties:
       data:
         type: "object"
@@ -5490,7 +5490,7 @@ definitions:
                 description: "User provided identifier for a Dashboard"
               category: 
                 type: "string"
-                description: "Name of the visual 'group' where this Dashboard will be displayed when looking at the list of all Dashboards in Datahub"
+                description: "Name of the visual 'group' where this Dashboard will be displayed when looking at the list of all Dashboards in Skylight Performance Analytics"
               metaExclude:
                 $ref: '#/definitions/MetaExclude'
                 description: "List of metadata keys to exclude from the search results"
@@ -5500,7 +5500,7 @@ definitions:
                   $ref: '#/definitions/MetadataFilter'
                 description: "List of filters used to obtain a list of Monitoreed Objects which will be useds to provide metric data to the Dashboard"
               cardPositions:
-                description: "Describes the locations of the Cards on the Dashboard in the Datahub UI"
+                description: "Describes the locations of the Cards on the Dashboard in the Skylight Performance Analytics UI"
                 $ref: '#/definitions/CardPositions'
               _permissions:
                 $ref: '#/definitions/RequestPermissions'
@@ -5511,14 +5511,14 @@ definitions:
   DashboardResponse:
     type: "object"
     required: ["data"]
-    description: "A single object Dashboard response from Datahub"
+    description: "A single object Dashboard response from Skylight Performance Analytics"
     properties:
       data:
         $ref: '#/definitions/Dashboard'
   DashboardListResponse:
     type: "object"
     required: ["data"]
-    description: "Response for one ore more Dashboards from Datahub"
+    description: "Response for one ore more Dashboards from Skylight Performance Analytics"
     properties:
       data:
         type: "array"
@@ -5528,7 +5528,7 @@ definitions:
   Dashboard:
     type: "object"
     required: ["type", "id", "attributes"]
-    description: "Represents a Dashboard used to display metric information on the Datahub UI"
+    description: "Represents a Dashboard used to display metric information on the Skylight Performance Analytics UI"
     properties:
       type: 
         type: "string"
@@ -5545,17 +5545,17 @@ definitions:
             type: "string"
             description: "Value used to ensure updates to this object are handled in order."
           datatype:
-            description: "Name used to identify this type of record in Datahub"
+            description: "Name used to identify this type of record in Skylight Performance Analytics"
             type: "string"
           tenantId:
-            description: "Unique identifier of a Tenant in Datahub"
+            description: "Unique identifier of a Tenant in Skylight Performance Analytics"
             type: "string"
           name:
             type: "string"
             description: "User provided identifier for a Dashboard"
           category: 
             type: "string"
-            description: "Name of the visual 'group' where this Dashboard will be displayed when looking at the list of all Dashboards in Datahub"
+            description: "Name of the visual 'group' where this Dashboard will be displayed when looking at the list of all Dashboards in Skylight Performance Analytics"
           metaExclude:
             $ref: '#/definitions/MetaExclude'
             description: "List of metadata keys to exclude from the search results"
@@ -5565,7 +5565,7 @@ definitions:
             items:
               $ref: '#/definitions/MetadataFilter'
           cardPositions:
-            description: "Describes the locations of the Cards on the Dashboard in the Datahub UI"
+            description: "Describes the locations of the Cards on the Dashboard in the Skylight Performance Analytics UI"
             $ref: '#/definitions/CardPositions'
           createdTimestamp:
             type: "integer"
@@ -5582,7 +5582,7 @@ definitions:
 
   CardPositions:
     type: "object"
-    description: "Describes the locations of the Cards on the Dashboard in the Datahub UI"
+    description: "Describes the locations of the Cards on the Dashboard in the Skylight Performance Analytics UI"
     additionalProperties:
       type: "object"
       required: ["position"]
@@ -5614,10 +5614,10 @@ definitions:
     type: "object"
     properties:
       cards:
-        description: "References the unique identifiers of the Cards that are used on this Dashboard in the Datahub UI"
+        description: "References the unique identifiers of the Cards that are used on this Dashboard in the Skylight Performance Analytics UI"
         $ref: '#/definitions/JsonApiRelationship'
       thresholdProfile:
-        description: "References the unique identifier of the Threshold Profile used to generate Threshold Crossing Events on this Dashboard in the Datahub UI"
+        description: "References the unique identifier of the Threshold Profile used to generate Threshold Crossing Events on this Dashboard in the Skylight Performance Analytics UI"
         $ref: '#/definitions/JsonApiSingleRelationship'
       editors:
         description: "References the unique identifiers of the usergroups that are allowed to edit this dashboard"
@@ -5639,7 +5639,7 @@ definitions:
 
   CardCreateRequest:
     type: "object"
-    description: "Object used to create a Card in Datahub"
+    description: "Object used to create a Card in Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -5678,7 +5678,7 @@ definitions:
               
   CardUpdateRequest:
     type: "object"
-    description: "Object used to update a Card in Datahub"
+    description: "Object used to update a Card in Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -5720,14 +5720,14 @@ definitions:
   
   CardResponse:
     type: "object"
-    description: "A single object Card response from Datahub"
+    description: "A single object Card response from Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
         $ref: '#/definitions/Card'
   CardListResponse:
     type: "object"
-    description: "Response for one ore more Cards from Datahub"
+    description: "Response for one ore more Cards from Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -5737,7 +5737,7 @@ definitions:
   
   Card:
     type: "object"
-    description: "Models a single Card used by Dashboards in the Datahub UI"
+    description: "Models a single Card used by Dashboards in the Skylight Performance Analytics UI"
     required: ["type", "id", "attributes"]
     properties:
       type: 
@@ -5754,10 +5754,10 @@ definitions:
             description: "Value used to ensure updates to this object are handled in order."
           datatype:
             type: "string"
-            description: "Name used to identify this type of record in Datahub"
+            description: "Name used to identify this type of record in Skylight Performance Analytics"
           tenantId:
             type: "string"
-            description: "Unique identifier of a Tenant in Datahub"
+            description: "Unique identifier of a Tenant in Skylight Performance Analytics"
           name:
             type: "string"
             description: "User provided identifier for a Card"
@@ -5913,7 +5913,7 @@ definitions:
             enum: ["none","sum"]
   DataCleaningProfileCreateRequest:
     type: "object"
-    description: "Object used to create a Data Cleaning Profile in Datahub"
+    description: "Object used to create a Data Cleaning Profile in Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -5938,7 +5938,7 @@ definitions:
 
   DataCleaningProfileUpdateRequest:
     type: "object"
-    description: "Object used to update a Data Cleaning Profile in Datahub"
+    description: "Object used to update a Data Cleaning Profile in Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -6004,7 +6004,7 @@ definitions:
 
   DataCleaningProfileResponse:
     type: "object"
-    description: "A single object Data Cleaning Profile response from Datahub"
+    description: "A single object Data Cleaning Profile response from Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -6012,7 +6012,7 @@ definitions:
   
   DataCleaningProfileListResponse:
     type: "object"
-    description: "Response for one ore more Data Cleaning Profiles from Datahub"
+    description: "Response for one ore more Data Cleaning Profiles from Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -6119,7 +6119,7 @@ definitions:
         type: string
   IngestionProfileCreateRequest:
     type: "object"
-    description: "Object used to create an Ingestion Profile in Datahub"
+    description: "Object used to create an Ingestion Profile in Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -6143,7 +6143,7 @@ definitions:
                     
   IngestionProfileUpdateRequest:
     type: "object"
-    description: "Object used to update an Ingestion Profile in Datahub"
+    description: "Object used to update an Ingestion Profile in Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -6166,7 +6166,7 @@ definitions:
                 description: "Metrics will be deprecated in the next API version. Please use the 'metricList' property instead"
                 $ref: '#/definitions/IngestionProfileMetrics'
               metricList:
-                description: "A list of objects that allow customization on which Metrics will be available to query from Datahub"
+                description: "A list of objects that allow customization on which Metrics will be available to query from Skylight Performance Analytics"
                 $ref: '#/definitions/IngestionProfileMetricList'
             
              
@@ -6182,7 +6182,7 @@ definitions:
 
   IngestionProfileResponse:
     type: "object"
-    description: "A single object Ingestion Profile response from Datahub"
+    description: "A single object Ingestion Profile response from Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -6203,20 +6203,20 @@ definitions:
         properties:
           tenantId:
             type: "string"
-            description: "Unique identifier of the Tenant in Datahub"
+            description: "Unique identifier of the Tenant in Skylight Performance Analytics"
           _id:
             type: "string"
           _rev:
             type: "string"
             description: "Value used to ensure updates to this object are handled in order."
           datatype:
-            description: "Name used to identify this type of record in Datahub"
+            description: "Name used to identify this type of record in Skylight Performance Analytics"
             type: "string"
           metrics:
             description: "Metrics will be deprecated in the next API version. Please use the 'metricList' property instead"
             $ref: '#/definitions/IngestionProfileMetrics'
           metricList:
-            description: "A collection of Metric descriptors that determine which metrics will be recorded by Datahub"
+            description: "A collection of Metric descriptors that determine which metrics will be recorded by Skylight Performance Analytics"
             $ref: '#/definitions/IngestionProfileMetricList'
           createdTimestamp:
             type: "integer"
@@ -6229,7 +6229,7 @@ definitions:
 
   IngestionProfileMetrics:
     type: "object"
-    description: "This object will be deprecated in a future version of the Datahub API"
+    description: "This object will be deprecated in a future version of the Skylight Performance Analytics API"
     properties:
       vendorMap:
         type: "object"
@@ -6247,7 +6247,7 @@ definitions:
                       type: "boolean"
 
   IngestionProfileMetricList:
-    description: "Provides an array of objects which outline the vendor/monitoredObjectType/metrics that are actively being stroed in Datahub"
+    description: "Provides an array of objects which outline the vendor/monitoredObjectType/metrics that are actively being stroed in Skylight Performance Analytics"
     type: "array"
     items:
       type: "object"
@@ -6262,7 +6262,7 @@ definitions:
           type: "string"
           description: "The name of the Metric"
         enabled:
-          description: "When true, this metric will be recorded by Datahub. When false, this metric is ommitted."
+          description: "When true, this metric will be recorded by Skylight Performance Analytics. When false, this metric is ommitted."
           type: "boolean"
         direction:
           type: "string"
@@ -6273,7 +6273,7 @@ definitions:
 
   MetadataConfigCreateRequest:
     type: "object"
-    description: "Object used to create a Metadata Configuration in Datahub"
+    description: "Object used to create a Metadata Configuration in Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -6305,7 +6305,7 @@ definitions:
                     
   MetadataConfigUpdateRequest:
     type: "object"
-    description: "Object used to update a Metadata Configuration in Datahub"
+    description: "Object used to update a Metadata Configuration in Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -6351,7 +6351,7 @@ definitions:
 
   MetadataConfigResponse:
     type: "object"
-    description: "A single object Metadata Configuration response from Datahub"
+    description: "A single object Metadata Configuration response from Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -6372,14 +6372,14 @@ definitions:
         properties:
           tenantId:
             type: "string"
-            description: "Unique identifier of the Tenant in Datahub"
+            description: "Unique identifier of the Tenant in Skylight Performance Analytics"
           _id:
             type: "string"
           _rev:
             type: "string"
             description: "Value used to ensure updates to this object are handled in order."
           datatype:
-            description: "Name used to identify this type of record in Datahub"
+            description: "Name used to identify this type of record in Skylight Performance Analytics"
             type: "string"
           startPoint:
             description: "The first point of a Logical Map"
@@ -6425,7 +6425,7 @@ definitions:
   MetricBaselineCreateRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to create a new Metric Baseline object in Datahub"
+    description: "Object used to create a new Metric Baseline object in Skylight Performance Analytics"
     properties:
       data:
         type: "object"
@@ -6449,7 +6449,7 @@ definitions:
                 minimum: 0
                 maximum: 167
               baselines:
-                description: "Contains the dynamically calculated baseline values for the metrics collected by Datahub"
+                description: "Contains the dynamically calculated baseline values for the metrics collected by Skylight Performance Analytics"
                 type: "array"
                 items:
                   $ref: '#/definitions/MetricBaselineData'
@@ -6457,7 +6457,7 @@ definitions:
   MetricBaselineUpdateRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to update an existing Metric Baseline object in Datahub"
+    description: "Object used to update an existing Metric Baseline object in Skylight Performance Analytics"
     properties:
       data:
         type: "object"
@@ -6485,7 +6485,7 @@ definitions:
                 minimum: 0
                 maximum: 167
               baselines:
-                description: "Contains the dynamically calculated baseline values for the metrics collected by Datahub"
+                description: "Contains the dynamically calculated baseline values for the metrics collected by Skylight Performance Analytics"
                 type: "array"
                 items:
                   $ref: '#/definitions/MetricBaselineData'
@@ -6527,7 +6527,7 @@ definitions:
         properties:
           tenantId:
             type: "string"
-            description: "Unique identifier of the Tenant in Datahub"
+            description: "Unique identifier of the Tenant in Skylight Performance Analytics"
           _id:
             type: "string"
           _rev:
@@ -6535,7 +6535,7 @@ definitions:
             description: "Value used to ensure updates to this object are handled in order."
           datatype:
             type: "string"
-            description: "Name used to identify this type of record in Datahub"
+            description: "Name used to identify this type of record in Skylight Performance Analytics"
           monitoredObjectId:
             type: "string"
             description: "Unique identifier of the Monitored Object for which these baselines are applicable"
@@ -6546,7 +6546,7 @@ definitions:
             minimum: 0
             maximum: 167
           baselines:
-            description: "Contains the dynamically calculated baseline values for the metrics collected by Datahub"
+            description: "Contains the dynamically calculated baseline values for the metrics collected by Skylight Performance Analytics"
             type: "array"
             items:
               $ref: '#/definitions/MetricBaselineData'
@@ -6565,7 +6565,7 @@ definitions:
       
   MetricBaselineResponse:
     type: "object"
-    description: "A Metric Baseline response from Datahub"
+    description: "A Metric Baseline response from Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -6584,7 +6584,7 @@ definitions:
   MetricBaselineUpdateHourRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to update a single Metric Baseline for a Monitored Object in Datahub"
+    description: "Object used to update a single Metric Baseline for a Monitored Object in Skylight Performance Analytics"
     properties:
       data:
         type: "object"
@@ -6599,7 +6599,7 @@ definitions:
             type: "object"
             properties:
               baselines:
-                description: "Contains the dynamically calculated baseline values for the metrics collected by Datahub"
+                description: "Contains the dynamically calculated baseline values for the metrics collected by Skylight Performance Analytics"
                 type: "array"
                 items:
                   $ref: '#/definitions/MetricBaselineData'
@@ -6607,7 +6607,7 @@ definitions:
   MetricBaselineBulkUpdateRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to update Metric Baselines for multiple Monitored Objects in Datahub"
+    description: "Object used to update Metric Baselines for multiple Monitored Objects in Skylight Performance Analytics"
     properties:
       data:
         type: "object"
@@ -6633,7 +6633,7 @@ definitions:
                   minimum: 0
                   maximum: 167
                 baselines: 
-                  description: "Contains the dynamically calculated baseline values for the metrics collected by Datahub"
+                  description: "Contains the dynamically calculated baseline values for the metrics collected by Skylight Performance Analytics"
                   type: "array"
                   items:
                     $ref: '#/definitions/MetricBaselineData'
@@ -7549,7 +7549,7 @@ definitions:
   MonitoredObjectCreateRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to create a new Monitored Object in Datahub"
+    description: "Object used to create a new Monitored Object in Skylight Performance Analytics"
     properties:
       data:
         $ref: '#/definitions/MonitoredObjectCreate'
@@ -7557,7 +7557,7 @@ definitions:
   MonitoredObjectUpdateRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to update an existing Monitored Object in Datahub"
+    description: "Object used to update an existing Monitored Object in Skylight Performance Analytics"
     properties:
       data:
         $ref: '#/definitions/MonitoredObjectUpdate'
@@ -7578,7 +7578,7 @@ definitions:
 
   MonitoredObjectResponse:
     type: "object"
-    description: "A single object Monitored Object response from Datahub"
+    description: "A single object Monitored Object response from Skylight Performance Analytics"
     required: ["data"]
     properties:
       links:
@@ -7606,13 +7606,13 @@ definitions:
             description: "Value used to ensure updates to this object are handled in order."
           datatype:
             type: "string"
-            description: "Name used to identify this type of record in Datahub"
+            description: "Name used to identify this type of record in Skylight Performance Analytics"
           tenantId:
             type: "string"
-            description: "Unique identifier of the Tenant in Datahub"
+            description: "Unique identifier of the Tenant in Skylight Performance Analytics"
           objectId:
             type: "string"
-            description: "Unique identifier of the Monitored Object in Datahub"
+            description: "Unique identifier of the Monitored Object in Skylight Performance Analytics"
           actuatorName: 
             type: "string"
             description: "Name of the origin of the Monitored Object"
@@ -7673,7 +7673,7 @@ definitions:
             id:
               type: "string"
             attributes:
-              description: "Provides the result of multiple operations that were issued in a single request to Datahub"
+              description: "Provides the result of multiple operations that were issued in a single request to Skylight Performance Analytics"
               type: "object"
               properties:
                 ok:
@@ -7690,7 +7690,7 @@ definitions:
   BulkMonitoredObjectCreateRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to create one or more Monitored Object in Datahub"
+    description: "Object used to create one or more Monitored Object in Skylight Performance Analytics"
     properties:
       data:
         type: "array"
@@ -7712,7 +7712,7 @@ definitions:
         properties:
           objectId:
             type: "string"
-            description: "Unique identifier of the Monitored Object in Datahub"
+            description: "Unique identifier of the Monitored Object in Skylight Performance Analytics"
           actuatorName: 
             type: "string"
             description: "Name of the origin of the Monitored Object"
@@ -7747,7 +7747,7 @@ definitions:
   BulkMonitoredObjectMetaCreateRequest: 
     type: "object"
     required: ["data"]
-    description: "Object used to update the meta information for one or more Monitored Objects in Datahub"
+    description: "Object used to update the meta information for one or more Monitored Objects in Skylight Performance Analytics"
     properties:
       data:
         type: "object"
@@ -7781,7 +7781,7 @@ definitions:
 
   BulkMonitoredObjectUpdateRequest:
     type: "object"
-    description: "Object used to update one or more Monitored Objects in Datahub"
+    description: "Object used to update one or more Monitored Objects in Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -7838,7 +7838,7 @@ definitions:
             description: "Value used to ensure updates to this object are handled in order."
           objectId:
             type: "string"
-            description: "Unique identifier of the Monitored Object in Datahub"
+            description: "Unique identifier of the Monitored Object in Skylight Performance Analytics"
           actuatorName: 
             type: "string"
             description: "Name of the origin of the Monitored Object"
@@ -7879,7 +7879,7 @@ definitions:
   ReportScheduleConfigCreateRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to create a new Report Generation Schedule in Datahub"
+    description: "Object used to create a new Report Generation Schedule in Skylight Performance Analytics"
     properties:
       data:
         type: "object"
@@ -7945,7 +7945,7 @@ definitions:
   ReportScheduleConfigUpdateRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to update an existing Report Genaration Schedule in Datahub"
+    description: "Object used to update an existing Report Genaration Schedule in Skylight Performance Analytics"
     properties:
       data:
         type: "object"
@@ -8011,7 +8011,7 @@ definitions:
 
   ReportScheduleConfigResponse:
     type: "object"
-    description: "A single object Report Schedule Configuration response from Datahub"
+    description: "A single object Report Schedule Configuration response from Skylight Performance Analytics"
     properties:
       data:
         $ref: '#/definitions/ReportScheduleConfig'
@@ -8045,10 +8045,10 @@ definitions:
             description: "Value used to ensure updates to this object are handled in order."
           datatype:
             type: "string"
-            description: "Name used to identify this type of record in Datahub"
+            description: "Name used to identify this type of record in Skylight Performance Analytics"
           tenantId:
             type: "string"
-            description: "Unique identifier of the Tenant in Datahub"
+            description: "Unique identifier of the Tenant in Skylight Performance Analytics"
           timeRangeDuration: 
             type: "string"
             description: "Period of time for which the report will be generated"
@@ -8111,7 +8111,7 @@ definitions:
   ThresholdProfileCreateRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to create a new Threshold Profile in Datahub"
+    description: "Object used to create a new Threshold Profile in Skylight Performance Analytics"
     properties:
       data:
         type: "object"
@@ -8133,12 +8133,12 @@ definitions:
                 $ref: '#/definitions/ThresholdsObject'
               thresholdList:
                 $ref: '#/definitions/ThresholdList'
-                description: "A collection of objects that describe Thresholds which when crossed will trigger events in Datahub"
+                description: "A collection of objects that describe Thresholds which when crossed will trigger events in Skylight Performance Analytics"
                     
   ThresholdProfileUpdateRequest:
     type: "object"
     required: ["data"]
-    description: "Object used to update an existing Threshold Profile in Datahub"
+    description: "Object used to update an existing Threshold Profile in Skylight Performance Analytics"
     properties:
       data:
         type: "object"
@@ -8163,7 +8163,7 @@ definitions:
                 $ref: '#/definitions/ThresholdsObject'
               thresholdList:
                 $ref: '#/definitions/ThresholdList'
-                description: "A collection of objects that describe Thresholds which when crossed will trigger events in Datahub"
+                description: "A collection of objects that describe Thresholds which when crossed will trigger events in Skylight Performance Analytics"
   
   ThresholdProfileListResponse:
     type: "object"
@@ -8177,7 +8177,7 @@ definitions:
 
   ThresholdProfileResponse:
     type: "object"
-    description: "A single object Threshold Profile response from Datahub"
+    description: "A single object Threshold Profile response from Skylight Performance Analytics"
     required: ["data"]
     properties:
       data:
@@ -8198,7 +8198,7 @@ definitions:
         properties:
           tenantId:
             type: "string"
-            description: "Unique identifier of the Tenant in Datahub"
+            description: "Unique identifier of the Tenant in Skylight Performance Analytics"
           _id:
             type: "string"
           _rev:
@@ -8206,7 +8206,7 @@ definitions:
             description: "Value used to ensure updates to this object are handled in order."
           datatype:
             type: "string"
-            description: "Name used to identify this type of record in Datahub"
+            description: "Name used to identify this type of record in Skylight Performance Analytics"
           name:
             type: "string"
             description: "Identifying name of a Threshold Profile"
