@@ -1,6 +1,6 @@
 {
-  "name": "DataHub-openapi-spec",
-  "version": "0.0.1",
+  "name": "Skylight-openapi-spec",
+  "version": "2.0.0",
   "dependencies": {
     "bower": "^1.7.7",
     "connect": "^3.4.1",
@@ -9,7 +9,9 @@
     "gulp": "^3.9.1",
     "gulp-connect": "^4.2.0",
     "gulp-util": "^3.0.7",
+    "mobx": "^4.13.0",
     "portfinder": "^1.0.3",
+    "redoc": "^2.0.0-rc.14",
     "shelljs": "^0.7.0",
     "swagger-repo": "^1.0.0",
     "swagger-ui": "^2.1.4"
@@ -22,5 +24,15 @@
     "test": "swagger-repo validate",
     "start": "gulp serve",
     "deploy-branch": "node ./scripts/deploy-branch.js"
+  },
+  "devDependencies": {
+    "install-peers": "^1.0.3"
+  },
+  "peerDependencies": {
+    "core-js": "^3.1.4",
+    "mobx": "^4.2.0 || ^5.0.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "styled-components": "^4.1.1"
   }
 }
