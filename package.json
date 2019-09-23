@@ -2,7 +2,7 @@
   "name": "Skylight-openapi-spec",
   "version": "2.0.0",
   "dependencies": {
-    "bower": "^1.7.7",
+    "bower": "^1.8.8",
     "connect": "^3.4.1",
     "cors": "^2.7.1",
     "deploy-to-gh-pages": "^1.1.0",
@@ -13,8 +13,8 @@
     "portfinder": "^1.0.3",
     "redoc": "^2.0.0-rc.14",
     "shelljs": "^0.7.0",
-    "swagger-repo": "^1.0.0",
-    "swagger-ui": "^2.1.4"
+    "swagger-repo": "^1.0.1",
+    "swagger-ui-dist": "^3.18.0"
   },
   "private": true,
   "scripts": {
@@ -26,7 +26,10 @@
     "deploy-branch": "node ./scripts/deploy-branch.js"
   },
   "devDependencies": {
-    "install-peers": "^1.0.3"
+    "install-peers": "^1.0.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.4.0"
   },
   "peerDependencies": {
     "core-js": "^3.1.4",
