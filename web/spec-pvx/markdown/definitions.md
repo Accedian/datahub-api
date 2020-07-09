@@ -1,7 +1,7 @@
 ---
-title: Sensors Defintions
+title: Sensors Definitions
 ---
-# Sensors Defintions
+# Sensors Definitions
 
 ### Sensor API Navigation
 * [Definitions](definitions)
