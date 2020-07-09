@@ -1,5 +1,4 @@
 ---
-layout: Dinky
 title: Sensors Defintions
 ---
 
