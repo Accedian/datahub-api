@@ -1,15 +1,6 @@
 ---
 title: The PVQL Language
 ---
-# The PVQL Language
-
-### Sensor API Navigation
-* [Definitions](definitions)
-* [PVQL Query](query)
-* [Changelog](changelog)
-
----
-
 # The PVQL Syntax
 
 The complete PVQL syntax is as follows:

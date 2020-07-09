@@ -1,16 +1,7 @@
 ---
 title: Sensors Definitions
 ---
-# Sensors Definitions
-
-### Sensor API Navigation
-* [Definitions](definitions)
-* [PVQL Query](query)
-* [Changelog](changelog)
-
----
-
-
+<!--
 # Table of contents
 <div class="Nav">
 <ol>
@@ -19,7 +10,7 @@ title: Sensors Definitions
   </li><li><a href="#items-list">Values</a>
 </li></ol>
 </div>
-
+-->
 <h2 id="fields-list">Fields</h2>
 <p class="Subtitle">
 List of fields (both <em>values</em> and <em>keys</em>) used in <a href="query">PVQL</a> to query data.
