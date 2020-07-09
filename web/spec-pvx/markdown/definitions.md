@@ -1,13 +1,15 @@
 ---
 title: Sensors Defintions
 ---
+# Sensors Defintions
 
-
-### Navigation
+### Sensor API Navigation
 * [Definitions](definitions)
 * [PVQL Query](query)
 * [Changelog](changelog)
+
 ---
+
 
 <h2>Table of contents</h2>
 <div class="Nav">
