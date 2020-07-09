@@ -1,4 +1,12 @@
-The PVQL Language
+---
+title: The PVQL Language
+---
+
+### Navigation
+* [Definitions](definitions)
+* [PVQL Query](query)
+* [Changelog](changelog)
+---
 
 # The PVQL Syntax
 

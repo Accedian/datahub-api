@@ -1,4 +1,13 @@
-Changelog
+---
+title: Change Log
+---
+# Change Log
+
+### Navigation
+* [Definitions](definitions)
+* [PVQL Query](query)
+* [Changelog](changelog)
+---
 
 ## [0.5] - In development
 

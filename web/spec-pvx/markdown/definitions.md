@@ -2,6 +2,13 @@
 title: Sensors Defintions
 ---
 
+
+### Navigation
+* [Definitions](definitions)
+* [PVQL Query](query)
+* [Changelog](changelog)
+---
+
 <h2>Table of contents</h2>
 <div class="Nav">
 <ol>
