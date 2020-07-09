@@ -1,27 +1,20 @@
----
-title: 'PVX API :: Documentation\> Definitions'
----
+# Definitions
 
-PVX API
-=======
+<h2>Table of contents</h2>
+<div class="Nav">
+<ol>
+  <li><a href="#fields-list">Fields</a>
+  </li><li><a href="#types-list">Types</a>
+  </li><li><a href="#items-list">Values</a>
+</li></ol>
+</div>
 
-Version 0.4
-
--   [Functions](3D%22https://pvdev2.pvdev2.npav.accedian.net/pvbackd/api/0.4/doc/=)
--   [Definitions](3D%22https://pvdev2.pvdev2.npav.accedian.net/pv=)
--   [PVQL](3D%22https://pvdev2.pvdev2.npav.accedian.net/pvbackd/api/0.4/doc/=)
--   [Changelog](3D%22https://pvdev2.pvdev2.npav.accedian.net/pvbackd/api/0.4/doc/=)
-
-::: {role="main"}
-Table of contents
------------------
-
-::: {.3D\"Nav\"}
-1.  [Fields](3D%22https://pvdev2.pvdev2.npav.accedian.net/pvbackd/api/0.4/do=)
-2.  [Types](3D%22https://pvdev2.pvdev2.npav.accedian.net/pvbackd/api/0=)
-3.  [Values](3D%22https://pvdev2.pvdev2.npav.accedian.net/pvbackd/api/0=)
-:::
-
+<h2 id="fields-list">Fields</h2>
+<p class="Subtitle">
+List of fields (both <em>values</em> and <em>keys</em>) used in <a href="#query">PVQL</a> to query data.
+</p>
+<div id="filter-by-layer"></div>
+<section>
 <table id="fields-list-table" class="List">
 <thead>
 <tr><th>Field Name</th><th>Type</th><th>Layers</th><th>Description</th></tr>
@@ -4929,5 +4922,28314 @@ voip</pre></td>
 
 </tbody>
 </table>
+</section>
 
-### Extra info
+<h2 id="types-list">Types</h2>
+<section>
+<table class="List">
+<thead>
+<tr><th>Type Name</th><th>JSON Type</th><th>Available Values</th><th>Custom Values Allowed</th></tr>
+</thead>
+<tbody>
+
+  
+  
+  <tr>
+    <th id="type-alerttypes"><pre>alerttypes</pre></th>
+    <td><pre>array<str></str></pre></td>
+    <td>
+      
+      <a href="#alerttypes-items">items</a>
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-application"><pre>application</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-application_id"><pre>application_id</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-bool"><pre>bool</pre></th>
+    <td><pre>bool</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-calldirection"><pre>calldirection</pre></th>
+    <td><pre>int|null</pre></td>
+    <td>
+      
+      <a href="#calldirection-items">items</a>
+      
+    </td>
+    <td>No</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-callstate"><pre>callstate</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#callstate-items">items</a>
+      
+    </td>
+    <td>No</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-channel"><pre>channel</pre></th>
+    <td><pre>int|null</pre></td>
+    <td>
+      
+      <a href="#channel-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-ciphersuite"><pre>ciphersuite</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#ciphersuite-items">items</a>
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-databasecommand"><pre>databasecommand</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#databasecommand-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-databasequery"><pre>databasequery</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-databasesystem"><pre>databasesystem</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      <a href="#databasesystem-items">items</a>
+      
+    </td>
+    <td>No</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-dcerpc"><pre>dcerpc</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      <a href="#dcerpc-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-descriptor"><pre>descriptor</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-diffserv"><pre>diffserv</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-dnsclass"><pre>dnsclass</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#dnsclass-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-dnscode"><pre>dnscode</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#dnscode-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-dnstype"><pre>dnstype</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#dnstype-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-encryption"><pre>encryption</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#encryption-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-ethernetprotocol"><pre>ethernetprotocol</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#ethernetprotocol-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-httpquerymethod"><pre>httpquerymethod</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#httpquerymethod-items">items</a>
+      
+    </td>
+    <td>No</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-httpstatus"><pre>httpstatus</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#httpstatus-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-httpstatuscategory"><pre>httpstatuscategory</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#httpstatuscategory-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-icmpmessage"><pre>icmpmessage</pre></th>
+    <td><pre>tuple<int, int=""></int,></pre></td>
+    <td>
+      
+      <a href="#icmpmessage-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-icmptype"><pre>icmptype</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#icmptype-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-ip"><pre>ip</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-ipfamily"><pre>ipfamily</pre></th>
+    <td><pre>int|null</pre></td>
+    <td>
+      
+      <a href="#ipfamily-items">items</a>
+      
+    </td>
+    <td>No</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-ipprotocol"><pre>ipprotocol</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#ipprotocol-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-keytype"><pre>keytype</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#keytype-items">items</a>
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-layer"><pre>layer</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      <a href="#layer-items">items</a>
+      
+    </td>
+    <td>No</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-mac"><pre>mac</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-mimetype"><pre>mimetype</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-number"><pre>number</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-os"><pre>os</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#os-items">items</a>
+      
+    </td>
+    <td>No</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-path"><pre>path</pre></th>
+    <td><pre>str|null</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-pktsourcekind"><pre>pktsourcekind</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#pktsourcekind-items">items</a>
+      
+    </td>
+    <td>No</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-pktsourcename"><pre>pktsourcename</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-pktsourcepair"><pre>pktsourcepair</pre></th>
+    <td><pre>tuple<int, str=""></int,></pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-poller"><pre>poller</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-poller_id"><pre>poller_id</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-port"><pre>port</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-protostack"><pre>protostack</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-smb_version"><pre>smb_version</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-smbcommand"><pre>smbcommand</pre></th>
+    <td><pre>tuple<int, int=""></int,></pre></td>
+    <td>
+      
+      <a href="#smbcommand-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-smbstatus"><pre>smbstatus</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#smbstatus-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-smbsubcommand"><pre>smbsubcommand</pre></th>
+    <td><pre>tuple<int, int,="" int=""></int,></pre></td>
+    <td>
+      
+      <a href="#smbsubcommand-items">items</a>
+      
+    </td>
+    <td>Yes</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-storage"><pre>storage</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-string"><pre>string</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-time"><pre>time</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-tls_fingerprint"><pre>tls_fingerprint</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-tls_version"><pre>tls_version</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      <a href="#tls_version-items">items</a>
+      
+    </td>
+    <td>No</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-url"><pre>url</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-useragent"><pre>useragent</pre></th>
+    <td><pre>str|null</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-uuid"><pre>uuid</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-vlan"><pre>vlan</pre></th>
+    <td><pre>int|null</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-zone"><pre>zone</pre></th>
+    <td><pre>str</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+  
+  
+  <tr>
+    <th id="type-zone_id"><pre>zone_id</pre></th>
+    <td><pre>int</pre></td>
+    <td>
+      
+      -
+      
+    </td>
+    <td>-</td>
+  </tr>
+
+</tbody>
+</table>
+</section>
+
+<h2 id="items-list">Values</h2>
+<section>
+
+  
+  
+  
+  
+  
+  
+  <h3 id="alerttypes-items">
+    Type <a href="#type-alerttypes">alerttypes</a>
+  </h3>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+        <th>Description</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">Close Notify</pre></td>
+          
+          <td><pre>0</pre></td>
+          
+          <td>This message notifies the recipient that the sender will not send any more messages on this connection.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Unexpected Message</pre></td>
+          
+          <td><pre>1</pre></td>
+          
+          <td>An inappropriate message was received.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Bad MAC Record</pre></td>
+          
+          <td><pre>2</pre></td>
+          
+          <td>This alert is returned if a record is received with an incorrect MAC.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Decryption Failed</pre></td>
+          
+          <td><pre>3</pre></td>
+          
+          <td>This alert was used in some earlier versions of TLS, and may have permitted certain attacks against the CBC mode.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Record Overflow</pre></td>
+          
+          <td><pre>4</pre></td>
+          
+          <td>A TLSCiphertext record was received that had a length more than 2^14+2048 bytes, or a record decrypted to a TLSCompressed record with more than 2^14+1024 bytes.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Decompression Failure</pre></td>
+          
+          <td><pre>5</pre></td>
+          
+          <td>The decompression function received improper input (e.g., data that would expand to excessive length).</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Handshake Failure</pre></td>
+          
+          <td><pre>6</pre></td>
+          
+          <td>Reception of a handshake failure alert message indicates that the sender was unable to negotiate an acceptable set of security parameters given the options available.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">No Certificate</pre></td>
+          
+          <td><pre>7</pre></td>
+          
+          <td>This alert was used in SSLv3 but not any version of TLS.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Bad Certificate</pre></td>
+          
+          <td><pre>8</pre></td>
+          
+          <td>A certificate was corrupt, contained signatures that did not verify correctly, etc.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Unsupported Certificate</pre></td>
+          
+          <td><pre>9</pre></td>
+          
+          <td>A certificate was of an unsupported type.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Certificate Revoked</pre></td>
+          
+          <td><pre>10</pre></td>
+          
+          <td>A certificate was revoked by its signer.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Certificate Expired</pre></td>
+          
+          <td><pre>11</pre></td>
+          
+          <td>A certificate has expired or is not currently valid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Certificate Unknown</pre></td>
+          
+          <td><pre>12</pre></td>
+          
+          <td>Some other (unspecified) issue arose in processing the certificate, rendering it unacceptable.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Illegal Parameter</pre></td>
+          
+          <td><pre>13</pre></td>
+          
+          <td>A field in the handshake was out of range or inconsistent with other fields.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Unknown CA</pre></td>
+          
+          <td><pre>14</pre></td>
+          
+          <td>A valid certificate chain or partial chain was received, but the certificate was not accepted because the CA certificate could not be located or couldn't be matched with a known, trusted CA.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Access Denied</pre></td>
+          
+          <td><pre>15</pre></td>
+          
+          <td>A valid certificate was received, but when access control was applied, the sender decided not to proceed with negotiation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Decode Error</pre></td>
+          
+          <td><pre>16</pre></td>
+          
+          <td>A message could not be decoded because some field was out of the specified range or the length of the message was incorrect.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Decrypt Error</pre></td>
+          
+          <td><pre>17</pre></td>
+          
+          <td>A handshake cryptographic operation failed, including being unable to correctly verify a signature or validate a Finished message.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Export Restriction</pre></td>
+          
+          <td><pre>18</pre></td>
+          
+          <td>This alert was used in some earlier versions of TLS.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Protocol Version</pre></td>
+          
+          <td><pre>19</pre></td>
+          
+          <td>The protocol version the client has attempted to negotiate is recognized but not supported.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Insufficient Security</pre></td>
+          
+          <td><pre>20</pre></td>
+          
+          <td>Returned instead of a handshake failure when a negotiation has failed specifically because the server requires ciphers more secure than those supported by the client.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Internal Error</pre></td>
+          
+          <td><pre>21</pre></td>
+          
+          <td>An internal error unrelated to the peer or the correctness of the protocol (such as a memory allocation failure) makes it impossible to continue.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">User Cancelled</pre></td>
+          
+          <td><pre>22</pre></td>
+          
+          <td>This handshake is being canceled for some reason unrelated to a protocol failure.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">No Renegotiation</pre></td>
+          
+          <td><pre>23</pre></td>
+          
+          <td>Sent by the client in response to a hello request or by the server in response to a client hello after initial handshaking.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Unsupported Extension</pre></td>
+          
+          <td><pre>24</pre></td>
+          
+          <td>Sent by clients that receive an extended server hello containing an extension that they did not put in the corresponding client hello.</td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="calldirection-items">
+    Type <a href="#type-calldirection">calldirection</a>
+  </h3>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">Unknown</pre></td>
+          
+          <td><pre>None</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Inbound</pre></td>
+          
+          <td><pre>0&nbsp;-&nbsp;0x0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Outbound</pre></td>
+          
+          <td><pre>1&nbsp;-&nbsp;0x1</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="callstate-items">
+    Type <a href="#type-callstate">callstate</a>
+  </h3>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">In ring</pre></td>
+          
+          <td><pre>0&nbsp;-&nbsp;0x0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Hang down</pre></td>
+          
+          <td><pre>1&nbsp;-&nbsp;0x1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Dial</pre></td>
+          
+          <td><pre>2&nbsp;-&nbsp;0x2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Out ring</pre></td>
+          
+          <td><pre>3&nbsp;-&nbsp;0x3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Voice</pre></td>
+          
+          <td><pre>4&nbsp;-&nbsp;0x4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Hang up</pre></td>
+          
+          <td><pre>5&nbsp;-&nbsp;0x5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Closed</pre></td>
+          
+          <td><pre>6&nbsp;-&nbsp;0x6</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="channel-items">
+    Type <a href="#type-channel">channel</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+        <th>Category</th>
+      
+      <th>Value</th>
+      
+        <th>Description</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXSCRN</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>0&nbsp;-&nbsp;0x0</pre></td>
+          
+          <td>CTXSCRN</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXLPT1</pre></td>
+          
+          <td>Printer and scanner management</td>
+          
+          <td><pre>1&nbsp;-&nbsp;0x1</pre></td>
+          
+          <td>CTXLPT1: Printer mapping for non-spooling client (Thin client devices) - vdcpm30N.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXLPT2</pre></td>
+          
+          <td>Printer and scanner management</td>
+          
+          <td><pre>2&nbsp;-&nbsp;0x2</pre></td>
+          
+          <td>CTXLPT2: Printer mapping for non-spooling client (Thin client devices) - vdcpm30N.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXSBR</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>3&nbsp;-&nbsp;0x3</pre></td>
+          
+          <td>CTXSBR: Browser acceleration - vdtw30n.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXCPM</pre></td>
+          
+          <td>Printer and scanner management</td>
+          
+          <td><pre>4&nbsp;-&nbsp;0x4</pre></td>
+          
+          <td>CTXCPM: Printer mapping for client spooler - vdcpm30N.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXCOM1</pre></td>
+          
+          <td>Printer and scanner management</td>
+          
+          <td><pre>5&nbsp;-&nbsp;0x5</pre></td>
+          
+          <td>CTXCOM1: Printer mapping for non-spooling client (Thin client devices) - vdcom30N.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXCOM2</pre></td>
+          
+          <td>Printer and scanner management</td>
+          
+          <td><pre>6&nbsp;-&nbsp;0x6</pre></td>
+          
+          <td>CTXCOM2: Printer mapping for non-spooling client (Thin client devices) - vdcom30N.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXCCM</pre></td>
+          
+          <td>Peripherals forwarding (like USB)</td>
+          
+          <td><pre>7&nbsp;-&nbsp;0x7</pre></td>
+          
+          <td>CTXCCM: Client COM port mapping - vdcom30N.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXTW</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>8&nbsp;-&nbsp;0x8</pre></td>
+          
+          <td>CTXTW: Remote Windows screen update (ThinWire) - vdtw30n.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXCDM</pre></td>
+          
+          <td>Peripherals forwarding (like USB)</td>
+          
+          <td><pre>9&nbsp;-&nbsp;0x9</pre></td>
+          
+          <td>CTXCDM: Client drive mapping - vdcdm30n.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SHADOW</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>10&nbsp;-&nbsp;0xA</pre></td>
+          
+          <td>SHADOW</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXOEM</pre></td>
+          
+          <td>Implementation and usage defined by O.E.M.</td>
+          
+          <td><pre>11&nbsp;-&nbsp;0xB</pre></td>
+          
+          <td>CTXOEM: Used by Original Equipment Manufacturers</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXOEM2</pre></td>
+          
+          <td>Implementation and usage defined by O.E.M.</td>
+          
+          <td><pre>12&nbsp;-&nbsp;0xC</pre></td>
+          
+          <td>CTXOEM2: Used by Original Equipment Manufacturers</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXCLIP</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>13&nbsp;-&nbsp;0xD</pre></td>
+          
+          <td>CTXCLIP: Client clipboard - vdclipn.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXCAM</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>14&nbsp;-&nbsp;0xE</pre></td>
+          
+          <td>CTXCAM: Client audio mapping - vdcamN.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXDRTP</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>15&nbsp;-&nbsp;0xF</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXTWI</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>16&nbsp;-&nbsp;0x10</pre></td>
+          
+          <td>CTXTWI: Seamless Windows screen update data (ThinWire)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXZLFK</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>17&nbsp;-&nbsp;0x11</pre></td>
+          
+          <td>CTXZLFK: Local Text Echo and Keyboard Feedback / Screen latency reduction (fonts) - vdzlcn.dll, vdfon30n.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXTUI</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>18&nbsp;-&nbsp;0x12</pre></td>
+          
+          <td>Transparent User Interface</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXCTL</pre></td>
+          
+          <td>Core Citrix channels (updates, licensing, configuration, ...)</td>
+          
+          <td><pre>19&nbsp;-&nbsp;0x13</pre></td>
+          
+          <td>CTXCTL: Citrix control virtual channel - vdctln.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXSCRD</pre></td>
+          
+          <td>Authentication related</td>
+          
+          <td><pre>20&nbsp;-&nbsp;0x14</pre></td>
+          
+          <td>CTXSCRD: Smartcard - vdscardn.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXEUEM</pre></td>
+          
+          <td>Core Citrix channels (updates, licensing, configuration, ...)</td>
+          
+          <td><pre>21&nbsp;-&nbsp;0x15</pre></td>
+          
+          <td>CTXEUEM: End user experience monitoring - vdeuemn.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXLIC</pre></td>
+          
+          <td>Core Citrix channels (updates, licensing, configuration, ...)</td>
+          
+          <td><pre>22&nbsp;-&nbsp;0x16</pre></td>
+          
+          <td>CTXLIC: License management - wfica32.exe</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXMM</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>23&nbsp;-&nbsp;0x17</pre></td>
+          
+          <td>CTXMM: Windows Multimedia redirection - vdmmn.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXSSPI</pre></td>
+          
+          <td>Authentication related</td>
+          
+          <td><pre>24&nbsp;-&nbsp;0x18</pre></td>
+          
+          <td>CTXSSPI: Kerberos</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXTWN</pre></td>
+          
+          <td>Printer and scanner management</td>
+          
+          <td><pre>25&nbsp;-&nbsp;0x19</pre></td>
+          
+          <td>CTXTWN: TWAIN redirection - vdtwn.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CITRIXD</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>26&nbsp;-&nbsp;0x1A</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PNPREDI</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>27&nbsp;-&nbsp;0x1B</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXSENS</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>28&nbsp;-&nbsp;0x1C</pre></td>
+          
+          <td>Location and sensor</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXMTCH</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>29&nbsp;-&nbsp;0x1D</pre></td>
+          
+          <td>CTXMTCH: Multitouch</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXLFP</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>30&nbsp;-&nbsp;0x1E</pre></td>
+          
+          <td>CTXLFP: Framehawk Display channel over UDP-like transport</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXGUSB</pre></td>
+          
+          <td>Peripherals forwarding (like USB)</td>
+          
+          <td><pre>31&nbsp;-&nbsp;0x1F</pre></td>
+          
+          <td>CTXGUSB: USB redirection - vdgusbn.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXFLSH</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>32&nbsp;-&nbsp;0x20</pre></td>
+          
+          <td>CTXFLSH: Flash redirection - vdflash.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXFLS2</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>33&nbsp;-&nbsp;0x21</pre></td>
+          
+          <td>CTXFLS2</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXD3D</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>34&nbsp;-&nbsp;0x22</pre></td>
+          
+          <td>CTXD3D: Direct3D virtual channel adapter - vd3dn.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXPN</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>35&nbsp;-&nbsp;0x23</pre></td>
+          
+          <td>CTXPN: Program Neighborhood - vdpnn.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXZLC</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>36&nbsp;-&nbsp;0x24</pre></td>
+          
+          <td>CTXZLC: Screen latency reduction (screen) - vdzlcn.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXSPMK</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>37&nbsp;-&nbsp;0x25</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CARANOC</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>38&nbsp;-&nbsp;0x26</pre></td>
+          
+          <td>CARANOC</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">AURTCX</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>39&nbsp;-&nbsp;0x27</pre></td>
+          
+          <td>AURTCX</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IMP1166</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>40&nbsp;-&nbsp;0x28</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SPECIAL_THINWIRE</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>41&nbsp;-&nbsp;0x29</pre></td>
+          
+          <td>SPECIAL_THINWIRE</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ESCAPE</pre></td>
+          
+          <td>Core Citrix channels (updates, licensing, configuration, ...)</td>
+          
+          <td><pre>42&nbsp;-&nbsp;0x2A</pre></td>
+          
+          <td>ESCAPE</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">BASE</pre></td>
+          
+          <td>Core Citrix channels (updates, licensing, configuration, ...)</td>
+          
+          <td><pre>43&nbsp;-&nbsp;0x2B</pre></td>
+          
+          <td>BASE</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXVFM</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>44&nbsp;-&nbsp;0x2C</pre></td>
+          
+          <td>CTXVFM: Video server (not ThinWire, deprecated)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXCM</pre></td>
+          
+          <td>Core Citrix channels (updates, licensing, configuration, ...)</td>
+          
+          <td><pre>45&nbsp;-&nbsp;0x2D</pre></td>
+          
+          <td>CTXCM: Client management (auto client update) - vdcmN.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXPASS</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>46&nbsp;-&nbsp;0x2E</pre></td>
+          
+          <td>CTXPASS: Transparent key pass-through - vdkbhook.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXTW1</pre></td>
+          
+          <td>Audio and video management</td>
+          
+          <td><pre>47&nbsp;-&nbsp;0x2F</pre></td>
+          
+          <td>CTXTW1: Seamless Windows screen update (ThinWire) - vdtwin.dll</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSPXSBE</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>48&nbsp;-&nbsp;0x30</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">MHA_VC</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>49&nbsp;-&nbsp;0x31</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">EVDSSO</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>50&nbsp;-&nbsp;0x32</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CTXMOB</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>51&nbsp;-&nbsp;0x33</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSPCTRL</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>52&nbsp;-&nbsp;0x34</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSPMIX</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>53&nbsp;-&nbsp;0x35</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSPSBEX</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>54&nbsp;-&nbsp;0x36</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSPXMIX</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>55&nbsp;-&nbsp;0x37</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="ciphersuite-items">
+    Type <a href="#type-ciphersuite">ciphersuite</a>
+  </h3>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">null with null null</pre></td>
+          
+          <td><pre>0&nbsp;-&nbsp;0x0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with null MD5</pre></td>
+          
+          <td><pre>1&nbsp;-&nbsp;0x1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with null SHA</pre></td>
+          
+          <td><pre>2&nbsp;-&nbsp;0x2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA export with RC4 40 MD5</pre></td>
+          
+          <td><pre>3&nbsp;-&nbsp;0x3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with RC4 128 MD5</pre></td>
+          
+          <td><pre>4&nbsp;-&nbsp;0x4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with RC4 128 SHA</pre></td>
+          
+          <td><pre>5&nbsp;-&nbsp;0x5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA export with RC2 CBC 40 MD5</pre></td>
+          
+          <td><pre>6&nbsp;-&nbsp;0x6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with IDEA CBC SHA</pre></td>
+          
+          <td><pre>7&nbsp;-&nbsp;0x7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA export with DES40 CBC SHA</pre></td>
+          
+          <td><pre>8&nbsp;-&nbsp;0x8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with DES CBC SHA</pre></td>
+          
+          <td><pre>9&nbsp;-&nbsp;0x9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>10&nbsp;-&nbsp;0xA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS export with DES40 CBC SHA</pre></td>
+          
+          <td><pre>11&nbsp;-&nbsp;0xB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with DES CBC SHA</pre></td>
+          
+          <td><pre>12&nbsp;-&nbsp;0xC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>13&nbsp;-&nbsp;0xD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA export with DES40 CBC SHA</pre></td>
+          
+          <td><pre>14&nbsp;-&nbsp;0xE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with DES CBC SHA</pre></td>
+          
+          <td><pre>15&nbsp;-&nbsp;0xF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>16&nbsp;-&nbsp;0x10</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS export with DES40 CBC SHA</pre></td>
+          
+          <td><pre>17&nbsp;-&nbsp;0x11</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with DES CBC SHA</pre></td>
+          
+          <td><pre>18&nbsp;-&nbsp;0x12</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>19&nbsp;-&nbsp;0x13</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA export with DES40 CBC SHA</pre></td>
+          
+          <td><pre>20&nbsp;-&nbsp;0x14</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with DES CBC SHA</pre></td>
+          
+          <td><pre>21&nbsp;-&nbsp;0x15</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>22&nbsp;-&nbsp;0x16</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon export with RC4 40 MD5</pre></td>
+          
+          <td><pre>23&nbsp;-&nbsp;0x17</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with RC4 128 MD5</pre></td>
+          
+          <td><pre>24&nbsp;-&nbsp;0x18</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon export with DES40 CBC SHA</pre></td>
+          
+          <td><pre>25&nbsp;-&nbsp;0x19</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with DES CBC SHA</pre></td>
+          
+          <td><pre>26&nbsp;-&nbsp;0x1A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>27&nbsp;-&nbsp;0x1B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KRB5 with DES CBC SHA</pre></td>
+          
+          <td><pre>30&nbsp;-&nbsp;0x1E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KRB5 with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>31&nbsp;-&nbsp;0x1F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KRB5 with RC4 128 SHA</pre></td>
+          
+          <td><pre>32&nbsp;-&nbsp;0x20</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KRB5 with IDEA CBC SHA</pre></td>
+          
+          <td><pre>33&nbsp;-&nbsp;0x21</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KRB5 with DES CBC MD5</pre></td>
+          
+          <td><pre>34&nbsp;-&nbsp;0x22</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KRB5 with 3DES EDE CBC MD5</pre></td>
+          
+          <td><pre>35&nbsp;-&nbsp;0x23</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KRB5 with RC4 128 MD5</pre></td>
+          
+          <td><pre>36&nbsp;-&nbsp;0x24</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KRB5 with IDEA CBC MD5</pre></td>
+          
+          <td><pre>37&nbsp;-&nbsp;0x25</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KRB5 export with DES CBC 40 SHA</pre></td>
+          
+          <td><pre>38&nbsp;-&nbsp;0x26</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KRB5 export with RC2 CBC 40 SHA</pre></td>
+          
+          <td><pre>39&nbsp;-&nbsp;0x27</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KRB5 export with RC4 40 SHA</pre></td>
+          
+          <td><pre>40&nbsp;-&nbsp;0x28</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KRB5 export with DES CBC 40 MD5</pre></td>
+          
+          <td><pre>41&nbsp;-&nbsp;0x29</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KRB5 export with RC2 CBC 40 MD5</pre></td>
+          
+          <td><pre>42&nbsp;-&nbsp;0x2A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KRB5 export with RC4 40 MD5</pre></td>
+          
+          <td><pre>43&nbsp;-&nbsp;0x2B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with null SHA</pre></td>
+          
+          <td><pre>44&nbsp;-&nbsp;0x2C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with null SHA</pre></td>
+          
+          <td><pre>45&nbsp;-&nbsp;0x2D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with null SHA</pre></td>
+          
+          <td><pre>46&nbsp;-&nbsp;0x2E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>47&nbsp;-&nbsp;0x2F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>48&nbsp;-&nbsp;0x30</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>49&nbsp;-&nbsp;0x31</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>50&nbsp;-&nbsp;0x32</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>51&nbsp;-&nbsp;0x33</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>52&nbsp;-&nbsp;0x34</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>53&nbsp;-&nbsp;0x35</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>54&nbsp;-&nbsp;0x36</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>55&nbsp;-&nbsp;0x37</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>56&nbsp;-&nbsp;0x38</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>57&nbsp;-&nbsp;0x39</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>58&nbsp;-&nbsp;0x3A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with null SHA256</pre></td>
+          
+          <td><pre>59&nbsp;-&nbsp;0x3B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with AES 128 CBC SHA256</pre></td>
+          
+          <td><pre>60&nbsp;-&nbsp;0x3C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with AES 256 CBC SHA256</pre></td>
+          
+          <td><pre>61&nbsp;-&nbsp;0x3D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with AES 128 CBC SHA256</pre></td>
+          
+          <td><pre>62&nbsp;-&nbsp;0x3E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with AES 128 CBC SHA256</pre></td>
+          
+          <td><pre>63&nbsp;-&nbsp;0x3F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with AES 128 CBC SHA256</pre></td>
+          
+          <td><pre>64&nbsp;-&nbsp;0x40</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with CAMELLIA 128 CBC SHA</pre></td>
+          
+          <td><pre>65&nbsp;-&nbsp;0x41</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with CAMELLIA 128 CBC SHA</pre></td>
+          
+          <td><pre>66&nbsp;-&nbsp;0x42</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with CAMELLIA 128 CBC SHA</pre></td>
+          
+          <td><pre>67&nbsp;-&nbsp;0x43</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with CAMELLIA 128 CBC SHA</pre></td>
+          
+          <td><pre>68&nbsp;-&nbsp;0x44</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with CAMELLIA 128 CBC SHA</pre></td>
+          
+          <td><pre>69&nbsp;-&nbsp;0x45</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with CAMELLIA 128 CBC SHA</pre></td>
+          
+          <td><pre>70&nbsp;-&nbsp;0x46</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with DES CBC SHA</pre></td>
+          
+          <td><pre>73&nbsp;-&nbsp;0x49</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA export1024 with RC4 56 MD5</pre></td>
+          
+          <td><pre>96&nbsp;-&nbsp;0x60</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA export1024 with RC2 CBC 56 MD5</pre></td>
+          
+          <td><pre>97&nbsp;-&nbsp;0x61</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA export1024 with DES CBC SHA</pre></td>
+          
+          <td><pre>98&nbsp;-&nbsp;0x62</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS export1024 with DES CBC SHA</pre></td>
+          
+          <td><pre>99&nbsp;-&nbsp;0x63</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA export1024 with RC4 56 SHA</pre></td>
+          
+          <td><pre>100&nbsp;-&nbsp;0x64</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS export1024 with RC4 56 SHA</pre></td>
+          
+          <td><pre>101&nbsp;-&nbsp;0x65</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with RC4 128 SHA</pre></td>
+          
+          <td><pre>102&nbsp;-&nbsp;0x66</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with AES 128 CBC SHA256</pre></td>
+          
+          <td><pre>103&nbsp;-&nbsp;0x67</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with AES 256 CBC SHA256</pre></td>
+          
+          <td><pre>104&nbsp;-&nbsp;0x68</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with AES 256 CBC SHA256</pre></td>
+          
+          <td><pre>105&nbsp;-&nbsp;0x69</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with AES 256 CBC SHA256</pre></td>
+          
+          <td><pre>106&nbsp;-&nbsp;0x6A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with AES 256 CBC SHA256</pre></td>
+          
+          <td><pre>107&nbsp;-&nbsp;0x6B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with AES 128 CBC SHA256</pre></td>
+          
+          <td><pre>108&nbsp;-&nbsp;0x6C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with AES 256 CBC SHA256</pre></td>
+          
+          <td><pre>109&nbsp;-&nbsp;0x6D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">GOSTR341094 with 28147 CNT IMIT</pre></td>
+          
+          <td><pre>128&nbsp;-&nbsp;0x80</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">GOSTR341001 with 28147 CNT IMIT</pre></td>
+          
+          <td><pre>129&nbsp;-&nbsp;0x81</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">GOSTR341094 with null GOSTR3411</pre></td>
+          
+          <td><pre>130&nbsp;-&nbsp;0x82</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">GOSTR341001 with null GOSTR3411</pre></td>
+          
+          <td><pre>131&nbsp;-&nbsp;0x83</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with CAMELLIA 256 CBC SHA</pre></td>
+          
+          <td><pre>132&nbsp;-&nbsp;0x84</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with CAMELLIA 256 CBC SHA</pre></td>
+          
+          <td><pre>133&nbsp;-&nbsp;0x85</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with CAMELLIA 256 CBC SHA</pre></td>
+          
+          <td><pre>134&nbsp;-&nbsp;0x86</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with CAMELLIA 256 CBC SHA</pre></td>
+          
+          <td><pre>135&nbsp;-&nbsp;0x87</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with CAMELLIA 256 CBC SHA</pre></td>
+          
+          <td><pre>136&nbsp;-&nbsp;0x88</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with CAMELLIA 256 CBC SHA</pre></td>
+          
+          <td><pre>137&nbsp;-&nbsp;0x89</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with RC4 128 SHA</pre></td>
+          
+          <td><pre>138&nbsp;-&nbsp;0x8A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>139&nbsp;-&nbsp;0x8B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>140&nbsp;-&nbsp;0x8C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>141&nbsp;-&nbsp;0x8D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with RC4 128 SHA</pre></td>
+          
+          <td><pre>142&nbsp;-&nbsp;0x8E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>143&nbsp;-&nbsp;0x8F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>144&nbsp;-&nbsp;0x90</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>145&nbsp;-&nbsp;0x91</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with RC4 128 SHA</pre></td>
+          
+          <td><pre>146&nbsp;-&nbsp;0x92</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>147&nbsp;-&nbsp;0x93</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>148&nbsp;-&nbsp;0x94</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>149&nbsp;-&nbsp;0x95</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with seed CBC SHA</pre></td>
+          
+          <td><pre>150&nbsp;-&nbsp;0x96</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with seed CBC SHA</pre></td>
+          
+          <td><pre>151&nbsp;-&nbsp;0x97</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with seed CBC SHA</pre></td>
+          
+          <td><pre>152&nbsp;-&nbsp;0x98</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with seed CBC SHA</pre></td>
+          
+          <td><pre>153&nbsp;-&nbsp;0x99</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with seed CBC SHA</pre></td>
+          
+          <td><pre>154&nbsp;-&nbsp;0x9A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with seed CBC SHA</pre></td>
+          
+          <td><pre>155&nbsp;-&nbsp;0x9B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>156&nbsp;-&nbsp;0x9C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>157&nbsp;-&nbsp;0x9D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>158&nbsp;-&nbsp;0x9E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>159&nbsp;-&nbsp;0x9F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>160&nbsp;-&nbsp;0xA0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>161&nbsp;-&nbsp;0xA1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>162&nbsp;-&nbsp;0xA2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>163&nbsp;-&nbsp;0xA3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>164&nbsp;-&nbsp;0xA4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>165&nbsp;-&nbsp;0xA5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>166&nbsp;-&nbsp;0xA6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>167&nbsp;-&nbsp;0xA7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>168&nbsp;-&nbsp;0xA8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>169&nbsp;-&nbsp;0xA9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>170&nbsp;-&nbsp;0xAA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>171&nbsp;-&nbsp;0xAB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>172&nbsp;-&nbsp;0xAC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>173&nbsp;-&nbsp;0xAD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with AES 128 CBC SHA256</pre></td>
+          
+          <td><pre>174&nbsp;-&nbsp;0xAE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with AES 256 CBC SHA384</pre></td>
+          
+          <td><pre>175&nbsp;-&nbsp;0xAF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with null SHA256</pre></td>
+          
+          <td><pre>176&nbsp;-&nbsp;0xB0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with null SHA384</pre></td>
+          
+          <td><pre>177&nbsp;-&nbsp;0xB1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with AES 128 CBC SHA256</pre></td>
+          
+          <td><pre>178&nbsp;-&nbsp;0xB2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with AES 256 CBC SHA384</pre></td>
+          
+          <td><pre>179&nbsp;-&nbsp;0xB3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with null SHA256</pre></td>
+          
+          <td><pre>180&nbsp;-&nbsp;0xB4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with null SHA384</pre></td>
+          
+          <td><pre>181&nbsp;-&nbsp;0xB5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with AES 128 CBC SHA256</pre></td>
+          
+          <td><pre>182&nbsp;-&nbsp;0xB6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with AES 256 CBC SHA384</pre></td>
+          
+          <td><pre>183&nbsp;-&nbsp;0xB7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with null SHA256</pre></td>
+          
+          <td><pre>184&nbsp;-&nbsp;0xB8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with null SHA384</pre></td>
+          
+          <td><pre>185&nbsp;-&nbsp;0xB9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with CAMELLIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>186&nbsp;-&nbsp;0xBA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with CAMELLIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>187&nbsp;-&nbsp;0xBB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with CAMELLIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>188&nbsp;-&nbsp;0xBC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with CAMELLIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>189&nbsp;-&nbsp;0xBD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with CAMELLIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>190&nbsp;-&nbsp;0xBE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with CAMELLIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>191&nbsp;-&nbsp;0xBF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with CAMELLIA 256 CBC SHA256</pre></td>
+          
+          <td><pre>192&nbsp;-&nbsp;0xC0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with CAMELLIA 256 CBC SHA256</pre></td>
+          
+          <td><pre>193&nbsp;-&nbsp;0xC1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with CAMELLIA 256 CBC SHA256</pre></td>
+          
+          <td><pre>194&nbsp;-&nbsp;0xC2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with CAMELLIA 256 CBC SHA256</pre></td>
+          
+          <td><pre>195&nbsp;-&nbsp;0xC3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with CAMELLIA 256 CBC SHA256</pre></td>
+          
+          <td><pre>196&nbsp;-&nbsp;0xC4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with CAMELLIA 256 CBC SHA256</pre></td>
+          
+          <td><pre>197&nbsp;-&nbsp;0xC5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">empty renegotiation info SCSV</pre></td>
+          
+          <td><pre>255&nbsp;-&nbsp;0xFF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>4865&nbsp;-&nbsp;0x1301</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>4866&nbsp;-&nbsp;0x1302</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CHACHA20 POLY1305 SHA256</pre></td>
+          
+          <td><pre>4867&nbsp;-&nbsp;0x1303</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">AES 128 CCM SHA256</pre></td>
+          
+          <td><pre>4868&nbsp;-&nbsp;0x1304</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">AES 128 CCM 8 SHA256</pre></td>
+          
+          <td><pre>4869&nbsp;-&nbsp;0x1305</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">fallback SCSV</pre></td>
+          
+          <td><pre>22016&nbsp;-&nbsp;0x5600</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with null SHA</pre></td>
+          
+          <td><pre>49153&nbsp;-&nbsp;0xC001</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with RC4 128 SHA</pre></td>
+          
+          <td><pre>49154&nbsp;-&nbsp;0xC002</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>49155&nbsp;-&nbsp;0xC003</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>49156&nbsp;-&nbsp;0xC004</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>49157&nbsp;-&nbsp;0xC005</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with null SHA</pre></td>
+          
+          <td><pre>49158&nbsp;-&nbsp;0xC006</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with RC4 128 SHA</pre></td>
+          
+          <td><pre>49159&nbsp;-&nbsp;0xC007</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>49160&nbsp;-&nbsp;0xC008</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>49161&nbsp;-&nbsp;0xC009</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>49162&nbsp;-&nbsp;0xC00A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with null SHA</pre></td>
+          
+          <td><pre>49163&nbsp;-&nbsp;0xC00B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with RC4 128 SHA</pre></td>
+          
+          <td><pre>49164&nbsp;-&nbsp;0xC00C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>49165&nbsp;-&nbsp;0xC00D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>49166&nbsp;-&nbsp;0xC00E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>49167&nbsp;-&nbsp;0xC00F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with null SHA</pre></td>
+          
+          <td><pre>49168&nbsp;-&nbsp;0xC010</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with RC4 128 SHA</pre></td>
+          
+          <td><pre>49169&nbsp;-&nbsp;0xC011</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>49170&nbsp;-&nbsp;0xC012</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>49171&nbsp;-&nbsp;0xC013</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>49172&nbsp;-&nbsp;0xC014</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH anon with null SHA</pre></td>
+          
+          <td><pre>49173&nbsp;-&nbsp;0xC015</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH anon with RC4 128 SHA</pre></td>
+          
+          <td><pre>49174&nbsp;-&nbsp;0xC016</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH anon with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>49175&nbsp;-&nbsp;0xC017</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH anon with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>49176&nbsp;-&nbsp;0xC018</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH anon with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>49177&nbsp;-&nbsp;0xC019</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SRP SHA with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>49178&nbsp;-&nbsp;0xC01A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SRP SHA RSA with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>49179&nbsp;-&nbsp;0xC01B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SRP SHA DSS with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>49180&nbsp;-&nbsp;0xC01C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SRP SHA with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>49181&nbsp;-&nbsp;0xC01D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SRP SHA RSA with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>49182&nbsp;-&nbsp;0xC01E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SRP SHA DSS with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>49183&nbsp;-&nbsp;0xC01F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SRP SHA with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>49184&nbsp;-&nbsp;0xC020</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SRP SHA RSA with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>49185&nbsp;-&nbsp;0xC021</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SRP SHA DSS with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>49186&nbsp;-&nbsp;0xC022</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with AES 128 CBC SHA256</pre></td>
+          
+          <td><pre>49187&nbsp;-&nbsp;0xC023</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with AES 256 CBC SHA384</pre></td>
+          
+          <td><pre>49188&nbsp;-&nbsp;0xC024</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with AES 128 CBC SHA256</pre></td>
+          
+          <td><pre>49189&nbsp;-&nbsp;0xC025</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with AES 256 CBC SHA384</pre></td>
+          
+          <td><pre>49190&nbsp;-&nbsp;0xC026</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with AES 128 CBC SHA256</pre></td>
+          
+          <td><pre>49191&nbsp;-&nbsp;0xC027</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with AES 256 CBC SHA384</pre></td>
+          
+          <td><pre>49192&nbsp;-&nbsp;0xC028</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with AES 128 CBC SHA256</pre></td>
+          
+          <td><pre>49193&nbsp;-&nbsp;0xC029</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with AES 256 CBC SHA384</pre></td>
+          
+          <td><pre>49194&nbsp;-&nbsp;0xC02A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>49195&nbsp;-&nbsp;0xC02B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>49196&nbsp;-&nbsp;0xC02C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>49197&nbsp;-&nbsp;0xC02D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>49198&nbsp;-&nbsp;0xC02E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>49199&nbsp;-&nbsp;0xC02F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>49200&nbsp;-&nbsp;0xC030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>49201&nbsp;-&nbsp;0xC031</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>49202&nbsp;-&nbsp;0xC032</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with RC4 128 SHA</pre></td>
+          
+          <td><pre>49203&nbsp;-&nbsp;0xC033</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with 3DES EDE CBC SHA</pre></td>
+          
+          <td><pre>49204&nbsp;-&nbsp;0xC034</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with AES 128 CBC SHA</pre></td>
+          
+          <td><pre>49205&nbsp;-&nbsp;0xC035</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with AES 256 CBC SHA</pre></td>
+          
+          <td><pre>49206&nbsp;-&nbsp;0xC036</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with AES 128 CBC SHA256</pre></td>
+          
+          <td><pre>49207&nbsp;-&nbsp;0xC037</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with AES 256 CBC SHA384</pre></td>
+          
+          <td><pre>49208&nbsp;-&nbsp;0xC038</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with null SHA</pre></td>
+          
+          <td><pre>49209&nbsp;-&nbsp;0xC039</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with null SHA256</pre></td>
+          
+          <td><pre>49210&nbsp;-&nbsp;0xC03A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with null SHA384</pre></td>
+          
+          <td><pre>49211&nbsp;-&nbsp;0xC03B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with ARIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49212&nbsp;-&nbsp;0xC03C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with ARIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49213&nbsp;-&nbsp;0xC03D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with ARIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49214&nbsp;-&nbsp;0xC03E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with ARIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49215&nbsp;-&nbsp;0xC03F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with ARIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49216&nbsp;-&nbsp;0xC040</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with ARIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49217&nbsp;-&nbsp;0xC041</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with ARIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49218&nbsp;-&nbsp;0xC042</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with ARIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49219&nbsp;-&nbsp;0xC043</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with ARIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49220&nbsp;-&nbsp;0xC044</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with ARIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49221&nbsp;-&nbsp;0xC045</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with ARIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49222&nbsp;-&nbsp;0xC046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with ARIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49223&nbsp;-&nbsp;0xC047</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with ARIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49224&nbsp;-&nbsp;0xC048</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with ARIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49225&nbsp;-&nbsp;0xC049</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with ARIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49226&nbsp;-&nbsp;0xC04A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with ARIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49227&nbsp;-&nbsp;0xC04B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with ARIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49228&nbsp;-&nbsp;0xC04C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with ARIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49229&nbsp;-&nbsp;0xC04D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with ARIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49230&nbsp;-&nbsp;0xC04E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with ARIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49231&nbsp;-&nbsp;0xC04F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with ARIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49232&nbsp;-&nbsp;0xC050</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with ARIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49233&nbsp;-&nbsp;0xC051</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with ARIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49234&nbsp;-&nbsp;0xC052</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with ARIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49235&nbsp;-&nbsp;0xC053</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with ARIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49236&nbsp;-&nbsp;0xC054</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with ARIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49237&nbsp;-&nbsp;0xC055</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with ARIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49238&nbsp;-&nbsp;0xC056</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with ARIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49239&nbsp;-&nbsp;0xC057</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with ARIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49240&nbsp;-&nbsp;0xC058</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with ARIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49241&nbsp;-&nbsp;0xC059</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with ARIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49242&nbsp;-&nbsp;0xC05A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with ARIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49243&nbsp;-&nbsp;0xC05B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with ARIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49244&nbsp;-&nbsp;0xC05C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with ARIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49245&nbsp;-&nbsp;0xC05D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with ARIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49246&nbsp;-&nbsp;0xC05E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with ARIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49247&nbsp;-&nbsp;0xC05F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with ARIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49248&nbsp;-&nbsp;0xC060</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with ARIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49249&nbsp;-&nbsp;0xC061</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with ARIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49250&nbsp;-&nbsp;0xC062</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with ARIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49251&nbsp;-&nbsp;0xC063</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with ARIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49252&nbsp;-&nbsp;0xC064</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with ARIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49253&nbsp;-&nbsp;0xC065</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with ARIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49254&nbsp;-&nbsp;0xC066</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with ARIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49255&nbsp;-&nbsp;0xC067</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with ARIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49256&nbsp;-&nbsp;0xC068</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with ARIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49257&nbsp;-&nbsp;0xC069</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with ARIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49258&nbsp;-&nbsp;0xC06A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with ARIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49259&nbsp;-&nbsp;0xC06B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with ARIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49260&nbsp;-&nbsp;0xC06C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with ARIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49261&nbsp;-&nbsp;0xC06D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with ARIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49262&nbsp;-&nbsp;0xC06E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with ARIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49263&nbsp;-&nbsp;0xC06F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with ARIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49264&nbsp;-&nbsp;0xC070</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with ARIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49265&nbsp;-&nbsp;0xC071</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with CAMELLIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49266&nbsp;-&nbsp;0xC072</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with CAMELLIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49267&nbsp;-&nbsp;0xC073</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with CAMELLIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49268&nbsp;-&nbsp;0xC074</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with CAMELLIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49269&nbsp;-&nbsp;0xC075</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with CAMELLIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49270&nbsp;-&nbsp;0xC076</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with CAMELLIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49271&nbsp;-&nbsp;0xC077</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with CAMELLIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49272&nbsp;-&nbsp;0xC078</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with CAMELLIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49273&nbsp;-&nbsp;0xC079</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with CAMELLIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49274&nbsp;-&nbsp;0xC07A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with CAMELLIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49275&nbsp;-&nbsp;0xC07B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with CAMELLIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49276&nbsp;-&nbsp;0xC07C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with CAMELLIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49277&nbsp;-&nbsp;0xC07D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with CAMELLIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49278&nbsp;-&nbsp;0xC07E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH RSA with CAMELLIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49279&nbsp;-&nbsp;0xC07F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with CAMELLIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49280&nbsp;-&nbsp;0xC080</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE DSS with CAMELLIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49281&nbsp;-&nbsp;0xC081</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with CAMELLIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49282&nbsp;-&nbsp;0xC082</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH DSS with CAMELLIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49283&nbsp;-&nbsp;0xC083</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with CAMELLIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49284&nbsp;-&nbsp;0xC084</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DH anon with CAMELLIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49285&nbsp;-&nbsp;0xC085</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with CAMELLIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49286&nbsp;-&nbsp;0xC086</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with CAMELLIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49287&nbsp;-&nbsp;0xC087</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with CAMELLIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49288&nbsp;-&nbsp;0xC088</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH ECDSA with CAMELLIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49289&nbsp;-&nbsp;0xC089</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with CAMELLIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49290&nbsp;-&nbsp;0xC08A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with CAMELLIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49291&nbsp;-&nbsp;0xC08B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with CAMELLIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49292&nbsp;-&nbsp;0xC08C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDH RSA with CAMELLIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49293&nbsp;-&nbsp;0xC08D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with CAMELLIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49294&nbsp;-&nbsp;0xC08E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with CAMELLIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49295&nbsp;-&nbsp;0xC08F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with CAMELLIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49296&nbsp;-&nbsp;0xC090</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with CAMELLIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49297&nbsp;-&nbsp;0xC091</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with CAMELLIA 128 GCM SHA256</pre></td>
+          
+          <td><pre>49298&nbsp;-&nbsp;0xC092</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with CAMELLIA 256 GCM SHA384</pre></td>
+          
+          <td><pre>49299&nbsp;-&nbsp;0xC093</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with CAMELLIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49300&nbsp;-&nbsp;0xC094</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with CAMELLIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49301&nbsp;-&nbsp;0xC095</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with CAMELLIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49302&nbsp;-&nbsp;0xC096</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with CAMELLIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49303&nbsp;-&nbsp;0xC097</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with CAMELLIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49304&nbsp;-&nbsp;0xC098</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with CAMELLIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49305&nbsp;-&nbsp;0xC099</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with CAMELLIA 128 CBC SHA256</pre></td>
+          
+          <td><pre>49306&nbsp;-&nbsp;0xC09A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with CAMELLIA 256 CBC SHA384</pre></td>
+          
+          <td><pre>49307&nbsp;-&nbsp;0xC09B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with AES 128 CCM</pre></td>
+          
+          <td><pre>49308&nbsp;-&nbsp;0xC09C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with AES 256 CCM</pre></td>
+          
+          <td><pre>49309&nbsp;-&nbsp;0xC09D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with AES 128 CCM</pre></td>
+          
+          <td><pre>49310&nbsp;-&nbsp;0xC09E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with AES 256 CCM</pre></td>
+          
+          <td><pre>49311&nbsp;-&nbsp;0xC09F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with AES 128 CCM 8</pre></td>
+          
+          <td><pre>49312&nbsp;-&nbsp;0xC0A0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with AES 256 CCM 8</pre></td>
+          
+          <td><pre>49313&nbsp;-&nbsp;0xC0A1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with AES 128 CCM 8</pre></td>
+          
+          <td><pre>49314&nbsp;-&nbsp;0xC0A2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with AES 256 CCM 8</pre></td>
+          
+          <td><pre>49315&nbsp;-&nbsp;0xC0A3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with AES 128 CCM</pre></td>
+          
+          <td><pre>49316&nbsp;-&nbsp;0xC0A4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with AES 256 CCM</pre></td>
+          
+          <td><pre>49317&nbsp;-&nbsp;0xC0A5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with AES 128 CCM</pre></td>
+          
+          <td><pre>49318&nbsp;-&nbsp;0xC0A6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with AES 256 CCM</pre></td>
+          
+          <td><pre>49319&nbsp;-&nbsp;0xC0A7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with AES 128 CCM 8</pre></td>
+          
+          <td><pre>49320&nbsp;-&nbsp;0xC0A8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with AES 256 CCM 8</pre></td>
+          
+          <td><pre>49321&nbsp;-&nbsp;0xC0A9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK DHE with AES 128 CCM 8</pre></td>
+          
+          <td><pre>49322&nbsp;-&nbsp;0xC0AA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK DHE with AES 256 CCM 8</pre></td>
+          
+          <td><pre>49323&nbsp;-&nbsp;0xC0AB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with AES 128 CCM</pre></td>
+          
+          <td><pre>49324&nbsp;-&nbsp;0xC0AC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with AES 256 CCM</pre></td>
+          
+          <td><pre>49325&nbsp;-&nbsp;0xC0AD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with AES 128 CCM 8</pre></td>
+          
+          <td><pre>49326&nbsp;-&nbsp;0xC0AE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with AES 256 CCM 8</pre></td>
+          
+          <td><pre>49327&nbsp;-&nbsp;0xC0AF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECJPAKE with AES 128 CCM 8</pre></td>
+          
+          <td><pre>49407&nbsp;-&nbsp;0xC0FF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with CHACHA20 POLY1305 SHA256</pre></td>
+          
+          <td><pre>52392&nbsp;-&nbsp;0xCCA8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with CHACHA20 POLY1305 SHA256</pre></td>
+          
+          <td><pre>52393&nbsp;-&nbsp;0xCCA9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with CHACHA20 POLY1305 SHA256</pre></td>
+          
+          <td><pre>52394&nbsp;-&nbsp;0xCCAA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with CHACHA20 POLY1305 SHA256</pre></td>
+          
+          <td><pre>52395&nbsp;-&nbsp;0xCCAB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with CHACHA20 POLY1305 SHA256</pre></td>
+          
+          <td><pre>52396&nbsp;-&nbsp;0xCCAC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with CHACHA20 POLY1305 SHA256</pre></td>
+          
+          <td><pre>52397&nbsp;-&nbsp;0xCCAD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with CHACHA20 POLY1305 SHA256</pre></td>
+          
+          <td><pre>52398&nbsp;-&nbsp;0xCCAE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with AES 128 GCM SHA256</pre></td>
+          
+          <td><pre>53249&nbsp;-&nbsp;0xD001</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with AES 256 GCM SHA384</pre></td>
+          
+          <td><pre>53250&nbsp;-&nbsp;0xD002</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with AES 128 CCM 8 SHA256</pre></td>
+          
+          <td><pre>53251&nbsp;-&nbsp;0xD003</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with AES 128 CCM SHA256</pre></td>
+          
+          <td><pre>53253&nbsp;-&nbsp;0xD005</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with ESTREAM SALSA20 SHA1</pre></td>
+          
+          <td><pre>58384&nbsp;-&nbsp;0xE410</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA with SALSA20 SHA1</pre></td>
+          
+          <td><pre>58385&nbsp;-&nbsp;0xE411</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with ESTREAM SALSA20 SHA1</pre></td>
+          
+          <td><pre>58386&nbsp;-&nbsp;0xE412</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE RSA with SALSA20 SHA1</pre></td>
+          
+          <td><pre>58387&nbsp;-&nbsp;0xE413</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with ESTREAM SALSA20 SHA1</pre></td>
+          
+          <td><pre>58388&nbsp;-&nbsp;0xE414</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE ECDSA with SALSA20 SHA1</pre></td>
+          
+          <td><pre>58389&nbsp;-&nbsp;0xE415</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with ESTREAM SALSA20 SHA1</pre></td>
+          
+          <td><pre>58390&nbsp;-&nbsp;0xE416</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PSK with SALSA20 SHA1</pre></td>
+          
+          <td><pre>58391&nbsp;-&nbsp;0xE417</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with ESTREAM SALSA20 SHA1</pre></td>
+          
+          <td><pre>58392&nbsp;-&nbsp;0xE418</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECDHE PSK with SALSA20 SHA1</pre></td>
+          
+          <td><pre>58393&nbsp;-&nbsp;0xE419</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with ESTREAM SALSA20 SHA1</pre></td>
+          
+          <td><pre>58394&nbsp;-&nbsp;0xE41A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA PSK with SALSA20 SHA1</pre></td>
+          
+          <td><pre>58395&nbsp;-&nbsp;0xE41B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with ESTREAM SALSA20 SHA1</pre></td>
+          
+          <td><pre>58396&nbsp;-&nbsp;0xE41C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE PSK with SALSA20 SHA1</pre></td>
+          
+          <td><pre>58397&nbsp;-&nbsp;0xE41D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with ESTREAM SALSA20 SHA1</pre></td>
+          
+          <td><pre>58398&nbsp;-&nbsp;0xE41E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHE RSA with SALSA20 SHA1</pre></td>
+          
+          <td><pre>58399&nbsp;-&nbsp;0xE41F</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="databasecommand-items">
+    Type <a href="#type-databasecommand">databasecommand</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">SELECT</pre></td>
+          
+          <td><pre>256&nbsp;-&nbsp;0x100</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">INSERT</pre></td>
+          
+          <td><pre>512&nbsp;-&nbsp;0x200</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">UPDATE</pre></td>
+          
+          <td><pre>768&nbsp;-&nbsp;0x300</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DELETE</pre></td>
+          
+          <td><pre>1024&nbsp;-&nbsp;0x400</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CREATE</pre></td>
+          
+          <td><pre>1280&nbsp;-&nbsp;0x500</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CREATE TABLE</pre></td>
+          
+          <td><pre>1281&nbsp;-&nbsp;0x501</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CREATE INDEX</pre></td>
+          
+          <td><pre>1282&nbsp;-&nbsp;0x502</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CREATE VIEW</pre></td>
+          
+          <td><pre>1283&nbsp;-&nbsp;0x503</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DROP</pre></td>
+          
+          <td><pre>1536&nbsp;-&nbsp;0x600</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DROP TABLE</pre></td>
+          
+          <td><pre>1537&nbsp;-&nbsp;0x601</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DROP INDEX</pre></td>
+          
+          <td><pre>1538&nbsp;-&nbsp;0x602</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DROP VIEW</pre></td>
+          
+          <td><pre>1539&nbsp;-&nbsp;0x603</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ALTER</pre></td>
+          
+          <td><pre>1792&nbsp;-&nbsp;0x700</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ALTER TABLE</pre></td>
+          
+          <td><pre>1793&nbsp;-&nbsp;0x701</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PREPARE</pre></td>
+          
+          <td><pre>2048&nbsp;-&nbsp;0x800</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">EXECUTE</pre></td>
+          
+          <td><pre>2304&nbsp;-&nbsp;0x900</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">BEGIN</pre></td>
+          
+          <td><pre>61440&nbsp;-&nbsp;0xF000</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">COMMIT</pre></td>
+          
+          <td><pre>61696&nbsp;-&nbsp;0xF100</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ROLLBACK</pre></td>
+          
+          <td><pre>61952&nbsp;-&nbsp;0xF200</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">FETCH</pre></td>
+          
+          <td><pre>62208&nbsp;-&nbsp;0xF300</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CLOSE</pre></td>
+          
+          <td><pre>62464&nbsp;-&nbsp;0xF400</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">EMPTY</pre></td>
+          
+          <td><pre>62720&nbsp;-&nbsp;0xF500</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="databasesystem-items">
+    Type <a href="#type-databasesystem">databasesystem</a>
+  </h3>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">DB2 (DRDA)</pre></td>
+          
+          <td><pre>DRDA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">MongoDB</pre></td>
+          
+          <td><pre>MongoDB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">MySQL / MariaDB</pre></td>
+          
+          <td><pre>MySQL</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PostgreSQL</pre></td>
+          
+          <td><pre>PostgreSQL</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft SQL Server / Sybase</pre></td>
+          
+          <td><pre>TDS(msg)</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Oracle</pre></td>
+          
+          <td><pre>TNS</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="dcerpc-items">
+    Type <a href="#type-dcerpc">dcerpc</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+        <th>Category</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IUnknown Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>00000000-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IClassFactory Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>00000001-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IBindCtx Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>0000000e-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IEnumUnknown Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>00000100-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IPersist Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>0000010c-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IDataObject Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>0000010e-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IID_IRemUnknown Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>00000131-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - ILocalSystemActivator Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>00000132-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IRunDown Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>00000134-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IInterfaceFromWindowProp Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>00000135-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - ISCMActivator Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>00000136-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IDLLHost Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>00000141-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IID_IRemUnknown2 Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>00000143-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - ISystemActivator Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>000001a0-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft OLE Automation Protocol - IDispatch Interface</pre></td>
+          
+          <td>MS OLE Automation</td>
+          
+          <td><pre>00020400-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft OLE Automation Protocol - ITypeInfo Interface</pre></td>
+          
+          <td>MS OLE Automation</td>
+          
+          <td><pre>00020401-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft OLE Automation Protocol - ITypeLib Interface</pre></td>
+          
+          <td>MS OLE Automation</td>
+          
+          <td><pre>00020402-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft OLE Automation Protocol - ITypeComp Interface</pre></td>
+          
+          <td>MS OLE Automation</td>
+          
+          <td><pre>00020403-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft OLE Automation Protocol - IEnumVARIANT Interface</pre></td>
+          
+          <td>MS OLE Automation</td>
+          
+          <td><pre>00020404-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft OLE Automation Protocol - ITypeLib2 Interface</pre></td>
+          
+          <td>MS OLE Automation</td>
+          
+          <td><pre>00020411-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft OLE Automation Protocol - ITypeInfo2 Interface</pre></td>
+          
+          <td>MS OLE Automation</td>
+          
+          <td><pre>00020412-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Explorer - Browser - IShellView Interface</pre></td>
+          
+          <td>MS Explorer Browser</td>
+          
+          <td><pre>000214e3-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IShellFolder Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>000214e6-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Explorer - Browser - ICommDlgBrowser Interface</pre></td>
+          
+          <td>MS Explorer Browser</td>
+          
+          <td><pre>000214f1-0000-0000-c000-000000000046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IWindowsDriverUpdate4 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>004c6a2b-0c19-4c69-9f5c-a269b2560db9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IWTDiskMgr CLSID</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>0144084b-e09e-4f45-a56b-dcdc9f379f5e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IHostMgr3 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>01454b97-c6a5-4685-bea8-9779c88ab990</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQOutgoingQueueManagement</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>0188401c-247a-4fed-99c6-bf14119d7055</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQCollection Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>0188ac2f-ecb3-4173-9779-635ca2039c72</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostPropertyCollection Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>0191775e-bcff-445a-b4f4-3bdda54e2816</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Shadow Copy Management Protocol - IVssEnumMgmtObject interface</pre></td>
+          
+          <td>MS Volume Shadow Copy</td>
+          
+          <td><pre>01954e6b-9254-4e6e-808c-c9e05d007696</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IEnumWbemClassObject Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>027947e1-d731-11ce-a357-000000000001</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsRemovable Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>0316560b-5db4-4ed9-bbb5-213436ddc0d9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostElementSchemaCollection Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>0344cdda-151e-4cbf-82da-66ae61e97754</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Telnet Server Remote Administration Protocol (MS-TSRAP) - IID_IManageTelnetSessions Interface</pre></td>
+          
+          <td>MS Telnet Server</td>
+          
+          <td><pre>034634fd-ba3f-11d1-856a-00a0c944138c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - IDataCollector Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>038374ff-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - IDataCollectorCollection Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>03837502-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - IPerformanceCounterDataCollector Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>03837506-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - ITraceDataCollector Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>0383750b-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - ITraceDataProviderCollection Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>03837510-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - ITraceDataProvider Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>03837512-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - IConfigurationDataCollector Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>03837514-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - IAlertDataCollector Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>03837516-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - IApiTracingDataCollector Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>0383751a-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - IDataCollectorSet Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>03837520-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - IDataCollectorSetCollection Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>03837524-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - IValueMapItem Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>03837533-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - IValueMap Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>03837534-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - Ischedule Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>0383753a-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - IScheduleCollection Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>0383753d-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - IDataManager Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>03837541-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - IFolderAction Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>03837543-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Logs and Alerts Protocol - IFolderActionCollection Interface</pre></td>
+          
+          <td>MS Perf Logs &amp; Alerts</td>
+          
+          <td><pre>03837544-098b-11d8-9414-505054503030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Universal Plug and Play (UPNP) - IUPnPHttpHeaderControl Interface</pre></td>
+          
+          <td>MS UPNP</td>
+          
+          <td><pre>0405af4f-8b5c-447c-80f2-b75984a31f3c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - ISearchRoot Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>04c18ccf-1f57-4cbd-88cc-3900f5195ce3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateSearcher3 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>04c6895d-eaf2-4034-97f3-311de9be413a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - ClusterSetup Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>04d55210-b6ac-4248-9e69-2a569d1d2ab6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Server - Gopher Publishing Service</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>04fcb220-fcfd-11cd-bec8-00aa0047ae4e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Security Center</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>06bba54a-be05-49f9-b0a0-30f790261023</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IWMPContentProviderFactory Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>06e333e4-667e-466d-9e34-4a8d5e36e012</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - System Attendant Service - Version 1.0</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>06ed1d30-d3d3-11cd-b80e-00aa004b9c30</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Data Services (RDS) Transport Protocol (superseded by SOAP and DCOM) - IDataFactory2 Interface</pre></td>
+          
+          <td>MS Remote Data Services</td>
+          
+          <td><pre>070669eb-b52f-11d1-9270-00c04fbbbfb3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostConstantValue Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>0716caf8-7d05-4a46-8099-77594be91394</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Program Compatibility Assistant Service - PcaSvc Interface</pre></td>
+          
+          <td>MS Misc Services</td>
+          
+          <td><pre>0767a036-0d22-48aa-ba69-b619480f38cb</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmFileManagementJob Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>0770687e-9f36-4d6f-8778-599d188461c9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsDisk Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>07e5c822-f00c-47a1-8fce-b244da56fd06</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateCollection Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>07f7438c-7709-4ca5-b518-91279288134e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsService Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>0818a8ef-9ba9-40d8-a6f9-e22833cc771e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Removable Storage Manager (RSM) Remote Protocol - IMessenger Interface</pre></td>
+          
+          <td>MS Removable Storage</td>
+          
+          <td><pre>081e7188-c080-4ff3-9238-29f66d6cabfd</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostChildElementCollection Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>08a90f5f-0702-48d6-b45f-02a9885a9768</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostChangeHandler Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>09829352-87c2-418d-8d79-4133969a489d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Scheduler Service - idletask operations</pre></td>
+          
+          <td>MS Scheduler</td>
+          
+          <td><pre>0a74ef1c-41a4-4e06-83ae-dc74fb1cdd53</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsServiceHba Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>0ac13689-3134-47c6-a17c-4669216801be</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Portmapper Service - localepmp Interface</pre></td>
+          
+          <td>MS Portmapper</td>
+          
+          <td><pre>0b0a6584-9e0f-11cf-a3cf-00805f68cb1b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Authorization API Protocol (MS-RAA) - authzr Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Print System Asynchronous Notification Protocol (MS-PAN) - IRPCAsyncNotify Interface</pre></td>
+          
+          <td>MS Print</td>
+          
+          <td><pre>0b6edbfa-4a24-4fc6-8a23-942b1eca65d1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateServiceManager2 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>0bb8531d-7e8d-424f-986c-a0b8f60a3e7b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IWindowsDriverUpdateEntryCollection Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>0d521700-a372-4bef-828b-3d00c10adebd</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Cryptographic Services - ICertProtect</pre></td>
+          
+          <td>MS Crypto</td>
+          
+          <td><pre>0d72a7d4-6148-11d1-b4aa-00c04fb66ea0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostSectionGroup Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>0dd8a158-ebe6-4008-a1d9-b7ecc8f1104b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - ICatalogTableRead Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>0e3d6630-b46b-11d1-9d2d-006008b0e5ca</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - ICatalogTableWrite Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>0e3d6631-b46b-11d1-9d2d-006008b0e5ca</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Information Store - exchange_store_information Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>0e4a0156-dd5d-11d2-8c2f-00c04fb6bcde</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Data Services (RDS) Transport Protocol (superseded by SOAP and DCOM) - IDataFactory Interface</pre></td>
+          
+          <td>MS Remote Data Services</td>
+          
+          <td><pre>0eac4842-8763-11cf-a743-00aa00a3f00d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Transaction Coordinator (DTC) - ITransaction Interface</pre></td>
+          
+          <td>MS DTC</td>
+          
+          <td><pre>0fb15084-af41-11ce-bd2b-204c4f4f5020</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumLMMountPoint Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>100da538-3f4a-45ab-b852-709148152789</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Explorer - Browser - ICommDlgBrowser2 Interface</pre></td>
+          
+          <td>MS Explorer Browser</td>
+          
+          <td><pre>10339516-2894-11d2-9039-00c04f8eeb3e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - Queue Manager to Queue Manager Protocol - qm2qm Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>1088a980-eae5-11d0-8d9b-00a02453c337</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsProviderInterface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>10c5e575-7984-4e81-a56b-431f5f92ae42</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SoftICE DriverStudio Remote Control - winice.dat</pre></td>
+          
+          <td>SI DriverStudio RC</td>
+          
+          <td><pre>10d1800c-af75-4249-b7a2-484dec69ed3a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Information Store - Function I</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>10f24e8e-0fa6-11d2-a910-00c04f990f3b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Protected Storage Service</pre></td>
+          
+          <td>MS Storage</td>
+          
+          <td><pre>11220835-5b26-4d94-ae86-c3e475a809de</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Trusted Platform Module Virtual Smart Card Management Protocol - ITpmVirtualSmartCardManager Interface</pre></td>
+          
+          <td>MS TPM Smart Card Mgt</td>
+          
+          <td><pre>112b1dff-d9dc-41f7-869f-d67fee7cb591</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdate3 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>112eda6b-95b3-476f-9d90-aee82c6b8181</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IEnumVdsObject Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>118610b7-8d94-4030-b5b8-500889788e4e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Terminal Server Services - Runtime Interface - LSM Notification Interface</pre></td>
+          
+          <td>MS Terminal Server</td>
+          
+          <td><pre>11899a43-2b68-4a76-92e3-a3d6ad8c26ce</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - IClusterStorage3 Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>11942d87-a1de-4e7f-83fb-a840d9c5928d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Terminal Server Services - LSMAPI - TermSrvPrivate Interface</pre></td>
+          
+          <td>MS Terminal Server</td>
+          
+          <td><pre>11f25515-c879-400a-989e-b074d5f092fe</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - IClusterStorage2 Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>12108a88-6858-4467-b92f-e6cf4568dfb6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Print System Remote Protocol (MS-RPRN) - Winspool Interface or IPSec Policy Agent Endpoint</pre></td>
+          
+          <td>MS Indeterminate</td>
+          
+          <td><pre>12345678-1234-abcd-ef00-0123456789ab</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Netlogon Remote Protocol (MS-NRPC) - Netlogon Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>12345678-1234-abcd-ef00-01234567cffb</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Local Security Authority Remote Protocol - lsarpc Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>12345778-1234-abcd-ef00-0123456789ab</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Security Account Manager (SAMR) - samr Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>12345778-1234-abcd-ef00-0123456789ac</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Terminal Server Services - SessEnvPublicRpc Interface</pre></td>
+          
+          <td>MS Terminal Server</td>
+          
+          <td><pre>1257b580-ce2f-4109-82d6-a9459d0bf6bc</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmActionCommand Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>12937789-e247-4917-9c20-f3ee9c7ee783</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft PSFactoryBuffer Interface</pre></td>
+          
+          <td>MS Svchost</td>
+          
+          <td><pre>1299cf18-c4f5-4b6a-bb0f-2299f0398e27</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQApplication2 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>12a30900-7300-11d2-b0e6-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Secondary Logon Service</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>12b81e99-f207-4a4c-85d3-77b42f76fd14</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Secure Desktop LRPC interface</pre></td>
+          
+          <td>MS Secure Desktop</td>
+          
+          <td><pre>12e65dd8-887f-41ef-91bf-8d816c42c2e7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Intersite Messaging Service - ismserv_ip</pre></td>
+          
+          <td>MS Intersite Messaging</td>
+          
+          <td><pre>130ceefb-e466-11d1-b78b-00c04fa32883</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Disk Management Remote Protocol - IVolumeClient3 Interface</pre></td>
+          
+          <td>MS Disk Management</td>
+          
+          <td><pre>135698d2-3a37-4d26-99df-e2bb6ae3ac61</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumWTDiskLunMapping Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>1396de6f-a794-4b11-b93f-6b69a5b47bae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsPack2 Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>13b50bff-290a-47dd-8558-b7c58db1a71a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdate2 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>144fe9b0-d23d-4a8b-8634-fb4457533b7a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Information Store - Function II</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>1453c42c-0fa6-11d2-a910-00c04f990f3b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft ExtendedError Remote Data Structure (MS-EERR) - ExtendedError Interface</pre></td>
+          
+          <td>MS EERR</td>
+          
+          <td><pre>14a8831c-bc82-11d2-8a64-0008c7457e5d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsServiceIscsi Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>14fbe036-3ed7-4e10-90e9-a5ff991aff01</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateService2 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>1518b460-6518-4172-940f-c75883b24ceb</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange Directory Referral (Request For Response - RFR) - exchange_ds_rfr Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>1544f5e0-613c-11d1-93df-00c04fd7bd09</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmQuotaBase Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>1568a795-3924-4118-b74b-68d8f0fa5daf</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmStorageModuleDefinition Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>15a81350-497d-4aba-80e9-d4dbcc5521fe</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsServiceSw Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>15fc031c-0652-4306-b2c3-f558b8f837e2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Active Directory Backup and Restore Services - JetRest Interface</pre></td>
+          
+          <td>MS Active Directory</td>
+          
+          <td><pre>16e0cf3a-a604-11d0-96b1-00a0c91ece30</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Messenger Service Remote Protocol - msgsvc operations for name management methods</pre></td>
+          
+          <td>MS Messenger</td>
+          
+          <td><pre>17fdd703-1827-4e34-79d4-24a55c53bb37</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IWTDisk3 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>1822a95e-1c2b-4d02-ab25-cc116dd9dbde</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - ICatalogSession Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>182c40fa-32e4-11d0-818b-00a0c9231c29</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>18f70770-8e64-11cf-9af1-0020af6e72f4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumPortal Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>1995785d-2a1e-492f-8923-e621eaca39d9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Database Service</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>1a190310-bb9c-11cd-90f8-00aa00466520</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Trusted Platform Module Virtual Smart Card Management Protocol - ITpmVirtualSmartCardManagerStatusCallback Interface</pre></td>
+          
+          <td>MS TPM Smart Card Mgt</td>
+          
+          <td><pre>1a1bb35f-abb8-451c-a1ae-33d98f1bef4a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Security and Acceleration (ISA) - Management Console</pre></td>
+          
+          <td>MS ISA</td>
+          
+          <td><pre>1a77dcb2-97b3-4ffb-9ee7-8f42529841ab</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - Queue Manager Remote Read Protocol - RemoteRead Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>1a9134dd-7b39-45ba-ad88-44d01ca47f28</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Deployment Services Control Protocol (MS-WDSC) - WdsRpcInterface Interface</pre></td>
+          
+          <td>MS Deployment Services</td>
+          
+          <td><pre>1a927394-352e-4553-ae3f-7cf4aafca620</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Routing and Remote Access Service</pre></td>
+          
+          <td>MS Remote Access</td>
+          
+          <td><pre>1aa7f844-c7f5-11d0-a376-00c04fc9da04</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Explorer - Browser - IFolderView2 Interface</pre></td>
+          
+          <td>MS Explorer Browser</td>
+          
+          <td><pre>1af3a467-214f-4298-908e-06b03e0b39f9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - ISnsMgr Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>1b1c4d1c-abc4-4d3a-8c22-547fba3aa8a0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmMutableCollection Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>1bb617b8-3886-49dc-af82-a6c90fa35dda</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsVolumeOnline Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>1be2275a-b315-4f70-9e44-879b3a2a53f2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - WBEM providers - IWbemProviderInitSink Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>1be41571-91dd-11d1-aeb2-00c04fb68820</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - WBEM providers - IWbemProviderInit Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>1be41572-91dd-11d1-aeb2-00c04fb68820</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - POP3 - Service</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>1be617c0-31a5-11cf-a7d8-00805f48a135</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemFetchSmartEnum Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>1c1c45ee-4395-11d2-b60b-00104b703efd</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Active Directory DSROLE Service</pre></td>
+          
+          <td>MS Active Directory</td>
+          
+          <td><pre>1cbcad78-df0b-4934-b558-87839ea501c9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - ICatalog64BitSupport Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>1d118904-94b3-4a64-9fa6-ed432666a7b9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Debugging Helper Service</pre></td>
+          
+          <td>MS Debugging</td>
+          
+          <td><pre>1d55b526-c137-46c5-ab79-638f2a68e869</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsVDisk Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>1e062b84-e5e6-4b4b-8a25-67b81e8f13e8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Terminal Server Services - LSMAPI - TermSrvAdmin Interface</pre></td>
+          
+          <td>MS Terminal Server</td>
+          
+          <td><pre>1e665584-40fe-4450-8f6e-802362399694</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - IImport2 Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>1f7b1697-ecb2-4cbb-8a0e-75c427f4a6f0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Task Scheduler Service Remote Protocol - ATSvc</pre></td>
+          
+          <td>MS Scheduler</td>
+          
+          <td><pre>1ff70682-0a51-30e8-076d-740be8cee98b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - AppInfo Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>201ef99a-7fa0-444c-9399-19ba84f12a1a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmFileScreenTemplate Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>205bebf8-dd93-452a-95a6-32b566b35828</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Routing and Remote Access Service (RRAS) Management Protocol - rasrpc Interface</pre></td>
+          
+          <td>MS Remote Access</td>
+          
+          <td><pre>20610036-fa22-11cf-9823-00a0c911e5df</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft DFS Replication Helper Protocol - IServerHealthReport2 Interface</pre></td>
+          
+          <td>MS DFS Replication</td>
+          
+          <td><pre>20d15747-6c48-4254-a358-65039fd8c63c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Shadow Copy Management Protocol - IVssDifferentialSoftwareSnapshotMgmt Interface</pre></td>
+          
+          <td>MS Volume Shadow Copy</td>
+          
+          <td><pre>214a0f28-b737-4026-b847-4f9e37d79529</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows System Resource Manager (WSRM) Protocol - IWRMConfig Interface</pre></td>
+          
+          <td>MS System Resource</td>
+          
+          <td><pre>21546ae8-4da5-445e-987f-627fea39c5e8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Unified Background Process Manager - ubpmtaskhostchannel Interface</pre></td>
+          
+          <td>MS UBPM</td>
+          
+          <td><pre>22716894-fd8e-4462-9783-09e6d9531f16</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - AppHostAdminManager</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>228fb8f7-fb53-4fd5-8c7b-ff59de606c5b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmObject Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>22bcef93-4a3f-4183-89f9-2f8b8a628aee</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Network Profile Service - INotifyNetworkEvents Interface</pre></td>
+          
+          <td>MS Network Profile</td>
+          
+          <td><pre>22d2e146-1a68-40b8-949c-8fd848b415e6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateServiceManager Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>23857e3c-02ba-44a3-9423-b1c900805f37</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Tracker Service Protocol - IProcessDump Interface</pre></td>
+          
+          <td>MS COM+ Tracker</td>
+          
+          <td><pre>23c9dd26-2355-4fe2-84de-f779a238adbd</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - IMAP4 Service</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>2465e9e0-a873-11d0-930b-00a0c90ab17c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - ISnsMgr CLSID</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>24f9c1a9-b22e-4e24-bec9-4af0a4d96736</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Trend Micro ServerProtect</pre></td>
+          
+          <td>TM SRVPROTECT</td>
+          
+          <td><pre>25288888-bd5b-11d1-9d53-0080c83a5c2c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Network Profile Service - IEnumNetwork Interface</pre></td>
+          
+          <td>MS Network Profile</td>
+          
+          <td><pre>26656eaa-54eb-4e6f-8f85-4f0ef901a406</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmReportManager Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>27b899fe-6ffa-4481-a184-d3daade8a02b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdate4 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>27e94b0d-5139-49a2-9a61-93522dc54652</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IDirectoryEnum Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>28bc8d5e-ca4b-4f54-973c-ed9622d2b3ac</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - IClusterNetwork2 Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>2931c32c-f731-4c56-9feb-3d5f1c5e72bf</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - IMSAdminBaseW - IWamAdmin Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>29822ab7-f302-11d0-9953-00c04fd919c1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - IMSAdminBaseW - IWamAdmin2 Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>29822ab8-f302-11d0-9953-00c04fd919c1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Network Profile Service - INetworkInterface Interface</pre></td>
+          
+          <td>MS Network Profile</td>
+          
+          <td><pre>2a1c9eb2-df62-4154-b800-63278fcb8037</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows System Resource Manager (WSRM) Protocol - IResourceManager2 Interface</pre></td>
+          
+          <td>MS System Resource</td>
+          
+          <td><pre>2a3eb639-d134-422d-90d8-aaa1b5216202</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Network Profile Service - INotifyNetworkInterfaceEvents Interface</pre></td>
+          
+          <td>MS Network Profile</td>
+          
+          <td><pre>2abc0864-9677-42e5-882a-d415c556c284</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsHbaPort Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>2abd757f-2851-4997-9a13-47d2a885d6ca</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - AppHostWritableAdminManager</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>2b72133b-3f5b-4602-8952-803546ce3344</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Transaction Coordinator (DTC) - WinRM Interface</pre></td>
+          
+          <td>MS DTC</td>
+          
+          <td><pre>2b7ee790-e8c8-4820-97db-cdff70129887</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemRefreshingServices Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>2c9273e0-1dc3-11d3-b364-00105a1f8177</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQTransaction2 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>2ce0c5b0-6e67-11d2-b0e6-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostMethodSchema Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>2d9915fb-9d42-4328-b782-1b46819fab9e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmActionReport Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>2dbe63c4-b340-48a0-a5b0-158e07fc567e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Group Policy Client Service - IGroupPolicyUtilities Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>2eb08e3e-639f-4fba-97b1-14f878961076</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IAutomaticUpdatesSettings Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>2ee48f22-af3c-405f-8970-f71be12ee9a2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Terminal Server Services - Licensing - LCRPC Operations</pre></td>
+          
+          <td>MS Terminal Server</td>
+          
+          <td><pre>2f59a331-bf7d-48cb-9ec5-7c090d76e8b8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Network Dynamic Data Exchange Service - nddeapi</pre></td>
+          
+          <td>MS Network DDE</td>
+          
+          <td><pre>2f5f3220-c126-1076-b549-074d078619da</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Telephony Remote Protocol - tapsrv Interface</pre></td>
+          
+          <td>MS Telephony</td>
+          
+          <td><pre>2f5f6520-ca46-1067-b319-00dd010662da</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Telephony Remote Protocol - remotesp Interface</pre></td>
+          
+          <td>MS Telephony</td>
+          
+          <td><pre>2f5f6521-ca47-1068-b319-00dd010662db</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Unimodem LRPC Endpoint</pre></td>
+          
+          <td>MS Telephony</td>
+          
+          <td><pre>2f5f6521-cb55-1059-b446-00df0bce31db</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Firewall - FwRpc Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>2fb92682-6599-42dc-ae13-bd2ca89bd11c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Link Tracking - Workstation Protocol</pre></td>
+          
+          <td>MS DLT</td>
+          
+          <td><pre>300f3532-38cc-11d0-a3f0-0020af6b0add</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Name Resolution Proxy (NRP) RPC interface - NRP Server Endpoint - NameResolutionProxy Interface</pre></td>
+          
+          <td>MS Name Resolution Proxy</td>
+          
+          <td><pre>30adc50c-5cbc-46ce-9a0e-91914789e23c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IStatusNotify Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>312cc019-d5cd-4ca7-8c10-9e0a661f147e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostMappingExtension Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>31a83ea0-c0e4-4a2c-8a01-353cc2a4c60a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft WinLogon - Profile Mapper</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>326731e3-c1c0-4a69-ae20-7d9044a4ea5c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmPropertyCondition Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>326af66f-2ac0-4f68-bf8c-4759f054fa29</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SoftICE DriverStudio Remote Control</pre></td>
+          
+          <td>SI DriverStudio RC</td>
+          
+          <td><pre>32d90706-b698-4029-b236-e18ebff582b1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Unified Background Process Manager - ubpmrpc Interface</pre></td>
+          
+          <td>MS UBPM</td>
+          
+          <td><pre>33511f95-5b84-4dcc-b6cc-3f4b21da53e1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Registry Protocol / Microsoft Remote Shutdown Protocol - WinReg Interface</pre></td>
+          
+          <td>MS Remote Services</td>
+          
+          <td><pre>338cd001-2244-31f1-aaaa-900038001003</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQQueueManagement</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>33b6d07e-f27d-42fa-b2d7-bf82e11e9374</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Offline Files Provider - IOfflineFilesEventsFilter Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>33fc4e1b-0716-40fa-ba65-6e62a84a846f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Licensing Logging Service - llsrpc Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>342cfd40-3c6c-11ce-a893-08002b2e9c6d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumIDMethod Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>345b026b-5802-4e38-ac75-795e08b0b83f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft WinHttp Auto-Proxy Service</pre></td>
+          
+          <td>MS WinHttp Auto-Proxy</td>
+          
+          <td><pre>3473dd4d-2e88-4006-9cba-22570909dd10</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IWTDisk2 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>348a0821-69bb-4889-a101-6a9bde6fa720</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Explorer - Browser - IExplorerBrowserEvents Interface</pre></td>
+          
+          <td>MS Explorer Browser</td>
+          
+          <td><pre>361bbdc7-e6ee-4e13-be58-58e2240c810f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Service Control Manager Remote Protocol (MS-SCMR) - svcctl Interface</pre></td>
+          
+          <td>MS SCM</td>
+          
+          <td><pre>367abb81-9844-35f1-ad32-98f038001003</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft WinLogin - Profile Mapper</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>369ce4f0-0fdc-11d3-bde8-00c04f8eee78</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostConfigLocation Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>370af178-7758-4dad-8146-7391f6e18585</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmQuota Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>377f739d-9647-4b8e-97d2-5ffce6d759cd</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Task Scheduler Service Remote Protocol - SASec</pre></td>
+          
+          <td>MS Scheduler</td>
+          
+          <td><pre>378e52b0-c0a9-11cf-822d-00aa0051e40f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Undocumented Interface 2</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>37fc1b02-da36-4b27-a745-bf2f58a98ff6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsAdvancedDisk3 Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>3858c0d5-0f35-4bf5-9714-69874963bc36</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsIscsiInitiatorPortal</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>38a0a9ab-7cc8-4693-ac07-1f28bd03c3da</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Message Transfer Agent (MTA) Service - exchange_mta_qadmin Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>38a94e72-a9bc-11d2-8faf-00c04fa378ff</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmReportJob Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>38e87280-715c-4c7d-a280-ea1651a19fef</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Directory Services Setup Remote Protocol (MS-DSSP)</pre></td>
+          
+          <td>MS Active Directory</td>
+          
+          <td><pre>3919286a-b10c-11d0-9ba8-00c04fd92ef5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmDerivedObjectsResult Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>39322a2d-38ee-4d0d-8095-421a80849a82</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQManagement</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>39ce96fe-f4c5-4484-a143-4c2d5d324229</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Disk Management Remote Protocol - IDMRemoteServer Interface</pre></td>
+          
+          <td>MS Disk Management</td>
+          
+          <td><pre>3a410f21-553f-11d1-8e5e-00a0c92c9d5d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - ICategoryCollection Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>3a56bfb8-576c-43f7-9335-fe4838fd7e37</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsPack Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>3b69d7f5-9d94-4648-91ca-79939ba263bf</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Removable Storage Manager (RSM) Remote Protocol - INtmsObjectManagement3 Interface</pre></td>
+          
+          <td>MS Removable Storage</td>
+          
+          <td><pre>3bbed8d9-2c9a-4b21-8936-acb2f995be6c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft DHCP Client Service</pre></td>
+          
+          <td>MS DHCP</td>
+          
+          <td><pre>3c4728c5-f0ab-448b-bda1-6ce01eb0a6d5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft DHCPv6 Client Service</pre></td>
+          
+          <td>MS DHCP</td>
+          
+          <td><pre>3c4728c5-f0ab-448b-bda1-6ce01eb0a6d6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IWTGeneral2 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>3c73848a-a679-40c5-b101-c963e67f9949</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Trusted Platform Module Virtual Smart Card Management Protocol - ITpmVirtualSmartCardManager3 Interface</pre></td>
+          
+          <td>MS TPM Smart Card Mgt</td>
+          
+          <td><pre>3c745a97-f375-4150-be17-5950f694c699</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Recipient Update Service Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>3cb4be69-9ba1-448c-9a44-a1f759a1878a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - ClusterFirewall Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>3cfee98c-fb4b-44c6-bd98-a1db14abca3f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Terminal Server Services - Licensing</pre></td>
+          
+          <td>MS Terminal Server</td>
+          
+          <td><pre>3d267954-eeb7-11d1-b94e-00c04fa3080d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Computer Associates - Antivirus / e-Trust Antivirus / Threat Manager</pre></td>
+          
+          <td>CA AntiVir</td>
+          
+          <td><pre>3d742890-397c-11cf-9bf1-00805f88cb72</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft OLE Container - IAsyncOperation / IDataObjectAsyncCapability Interface</pre></td>
+          
+          <td>MS OLE Container</td>
+          
+          <td><pre>3d8b0590-f691-11d2-8ea9-006097df5bd4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Protected Storage Service - BackupKey Remote Protocol - BackupKey Interface</pre></td>
+          
+          <td>MS Storage</td>
+          
+          <td><pre>3dde7c30-165d-11d1-ab8f-00805f14db40</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - IContainerControl Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>3f3b1b86-dbbe-11d1-9da6-00805f85cfe3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft SQL Server RPC</pre></td>
+          
+          <td>MS SQL Server</td>
+          
+          <td><pre>3f99b900-4d87-101b-99b7-aa0004007f07</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Audio Service - Audio Server</pre></td>
+          
+          <td>MS Audio</td>
+          
+          <td><pre>3faf4738-3a21-4307-b46c-fdda9bb8c0d5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumSession Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>40cc8569-6d23-4005-9958-e37f08ae192b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsDisk2 Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>40f73c8b-687d-4a13-8d96-3d7f2e683936</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - Queue Manager Management Protocol - qmmgmt Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>41208ee0-e970-11d1-9b9e-00e02c064c39</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Service Control Manager - ISCM</pre></td>
+          
+          <td>MS SCM</td>
+          
+          <td><pre>412f241e-c12a-11ce-abff-0020af6e7a17</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - ClusterUpdate Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>4142dd5d-3472-4370-8641-de7856431fb0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmQuotaTemplateManager Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>4173ac41-172d-4d52-963c-fdc7e415f717</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Server</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>41f5fae1-e0ac-414c-a721-0d287466cb23</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemWCOSmartEnum Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>423ec01e-2e35-11d2-b604-00104b703efd</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmFileGroupManager Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>426677d5-018c-485c-8a51-20b86d00bdc4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmQuotaObject Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>42dc3511-61d5-48ae-b6dc-59fc00c0a8d6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumSession2 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>442931d5-e522-4e64-a181-74e98a4e1748</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemContext Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>44aca674-e8fc-11d0-a07c-00c04fb68820</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemCallResult Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>44aca675-e8fc-11d0-a07c-00c04fb68820</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Terminal Server Services - Gateway Server Protocol - TsProxyRpcInterface Interface</pre></td>
+          
+          <td>MS Terminal Server</td>
+          
+          <td><pre>44e265dd-7daf-42cd-8560-3cdb6e7a2729</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostPropertySchema</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>450386db-7409-4667-935e-384dbbee2a9e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - ICatalogUtils Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>456129e2-1078-11d2-b0f9-00805fc73204</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft DNS Client Service - Windows XP and above - DnsResolver</pre></td>
+          
+          <td>MS DNS</td>
+          
+          <td><pre>45776b01-5956-4485-9f80-f428f7d60129</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Administrative Interface: WINS protocol - winsif Interface</pre></td>
+          
+          <td>MS WINS</td>
+          
+          <td><pre>45f52c28-7f9f-101a-b52b-08002b2efabe</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateIdentity Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>46297823-9940-4c09-aed9-cd3ea6d05968</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Data Services (RDS) Transport Protocol (superseded by SOAP and DCOM) - IDataFactory3 Interface</pre></td>
+          
+          <td>MS Remote Data Services</td>
+          
+          <td><pre>4639db2a-bfc5-11d2-9318-00c04fbbbfb3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - System Attendant Service - Version 16.0</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>469d6ec0-0d87-11ce-b13f-00aa003bac6c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmPropertyDefinition2 Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>47782152-d16c-4229-b4e1-0ddfe308b9f6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - ICapabilitySupport Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>47cde9a1-0bf6-11d2-8016-00c04fb9988e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows System Resource Manager (WSRM) Protocol - IWRMCalendar Interface</pre></td>
+          
+          <td>MS System Resource</td>
+          
+          <td><pre>481e06cf-ab04-4498-8ffe-124a0a34296d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Winlogon - IProfileDialog</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>4825ea41-51e3-4c2a-8406-8f2d2698395f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmQuotaManagerEx Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>4846cb01-d430-494f-abb4-b1054999fb09</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Terminal Server Services - Runtime Interface - LSM Session Interface</pre></td>
+          
+          <td>MS Terminal Server</td>
+          
+          <td><pre>484809d6-4239-471b-b5bc-61df8c23ac48</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - IClusterSetup Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>491260b5-05c9-40d9-b7f2-1f7bdae0927f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Terminal Server Services - Runtime Interface - TermSrv Listener Interface</pre></td>
+          
+          <td>MS Terminal Server</td>
+          
+          <td><pre>497d95a6-2d27-4bf5-9bbd-a6046957133c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IWindowsDriverUpdate3 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>49ebd502-4a96-41bd-9e3e-4c5057f4250c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IAutomaticUpdates2 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>4a2f5c31-cfd9-410e-b7fb-29a653973a0f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Event System Protocol - IEventSubscription Interface</pre></td>
+          
+          <td>MS COM+ Event System</td>
+          
+          <td><pre>4a6b0e15-2e38-11d1-9965-00c04fbbb345</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Event System Protocol - IEventSubscription2 Interface</pre></td>
+          
+          <td>MS COM+ Event System</td>
+          
+          <td><pre>4a6b0e16-2e38-11d1-9965-00c04fbbb345</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmProperty Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>4a73fee4-4102-4fcc-9ffb-38614f9ee768</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsServiceInitialization Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>4afc3636-db01-4052-80c3-03bbcb8d3c69</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Simple Service Discovery Protocol (SSDP) Service - ssdpsrv Interface</pre></td>
+          
+          <td>MS SSDP</td>
+          
+          <td><pre>4b112204-0e19-11d3-b42b-0000f81feb9f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Server Service Remote Protocol (MS-SRVS) - srvsvc Interface</pre></td>
+          
+          <td>MS Sharing</td>
+          
+          <td><pre>4b324fc8-1670-01d3-1278-5a47bf6ee188</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft DFS Replication Helper Protocol - IADProxy Interface</pre></td>
+          
+          <td>MS DFS Replication</td>
+          
+          <td><pre>4bb8ab1d-9ef9-4100-8eb6-dd4b4e418b72</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Disk Management Remote Protocol - IVolumeClient2 Interface</pre></td>
+          
+          <td>MS Disk Management</td>
+          
+          <td><pre>4bdafc52-fe6a-11d2-93f8-00105a11164a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmActionEventLog Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>4c8f96c3-5d94-4f37-a4f4-f56ab463546f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateSearcher2 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>4cbdcb2d-1589-4beb-bd1c-3e582ff0add0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - Remote Activation</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>4d9f4ab8-7d1c-11cf-861e-0020af6e7c57</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Link Tracking - Central Manager Protocol</pre></td>
+          
+          <td>MS DLT</td>
+          
+          <td><pre>4da1c422-943d-11d1-acae-00c04fc2aa3f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsVolumePlex Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>4daa0135-e1d1-40f1-aaa5-3cc1e53221c3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsVolumeMF2 Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>4dbcee9a-6343-4651-b85f-5e75d74d983c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostConfigException Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>4dfa1df3-8900-4bc7-bbb5-d1a458c52410</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Event System Protocol - IEventSystem Interface</pre></td>
+          
+          <td>MS COM+ Event System</td>
+          
+          <td><pre>4e14fb9f-2e22-11d1-9964-00c04fbbb345</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - ISnapshotMgr Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>4e65a71e-4ede-4886-be67-3c90a08d1f29</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Tracker Service Protocol - IComTrackingInfoEvents Interface</pre></td>
+          
+          <td>MS COM+ Tracker</td>
+          
+          <td><pre>4e6cdcc9-fb25-4fd5-9cc5-c9f4b6559cec</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - ISnapshotMgr CLSID</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>4e7645fa-1a95-416c-b38f-ad574a3c3e57</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Removable Storage Manager (RSM) Remote Protocol - INtmsLibraryControl1 Interface</pre></td>
+          
+          <td>MS Removable Storage</td>
+          
+          <td><pre>4e934f30-341a-11d1-8fb1-00a024cb6019</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows System Resource Manager (WSRM) Protocol - IWRMAccounting Interface</pre></td>
+          
+          <td>MS System Resource</td>
+          
+          <td><pre>4f7ca01c-a9e5-45b6-b142-2332a1339c1d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - NNTP Service</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>4f82f460-0e21-11cf-909e-00805f48a135</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed File System (DFS) - netdfs Interface</pre></td>
+          
+          <td>MS DFS</td>
+          
+          <td><pre>4fc742e0-4a10-11cf-8273-00aa004ae673</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateExceptionCollection : IDispatch Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>503626a3-8e14-4729-9355-0fe664bd2321</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Computer Associates BrightStor - Message Engine [Vulnerability 1]</pre></td>
+          
+          <td>CA BrightStor</td>
+          
+          <td><pre>506b1890-14c8-11d1-bbc3-00805fa6962e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows DNS Server</pre></td>
+          
+          <td>MS DNS</td>
+          
+          <td><pre>50abc2a4-574d-40b3-9d66-ee4fd5fba076</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmPipelineModuleDefinition Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>515c1277-2c81-440e-8fcf-367921ed4f59</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Key Management Server (KMS) - RequestActivation Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>51c82175-844e-4750-b0d8-ec255555bc06</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Store Service AsyncEMSMDB Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>5261574a-4572-206e-b268-6b199213b4e4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IWTDiskMgr Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>52ba97e7-9364-4134-b9cb-f8415213bdd8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Server Cluster - Configuration Protocol (MC-CCFG) - IClusCfgAsyncEvictCleanup Interface</pre></td>
+          
+          <td>MS Server Cluster</td>
+          
+          <td><pre>52c80b95-c1ad-4240-8d89-72e9fa84025e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Undocumented Interface 4</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>52d3f3f5-248c-4d74-a01f-a06e41d5cd59</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsDiskPartitionMF Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>538684e0-ba3d-4bc0-aca9-164aff85c2a9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Terminal Server Services - Runtime Interface - TSVIPPublic Interface</pre></td>
+          
+          <td>MS Terminal Server</td>
+          
+          <td><pre>53b46b02-c73b-4a3e-8dee-b16b80672fc0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - WWW Publishing Service</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>53e75790-d96b-11cd-ba18-08002b2dfead</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemLoginHelper Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>541679ab-2e5f-11d3-b34e-00104bcc4b4a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Client Certificate Enrollment Protocol (MS-WCCE) - ICertRequestD2 - Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>5422fd3a-d4b8-4cef-a12e-e87d4ca22e90</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateDownloadContent</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>54a2cb2d-9a0c-48b6-8a50-9abb69ee2d02</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumWTDisk Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>56e65ea5-cdff-4391-ba76-006e42c2d746</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Licensing Logging Service - lls_license Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>57674cd0-5200-11ce-a897-08002b2e9c6d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IWTDiskMgr2 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>592381e5-8d3c-42e9-b7de-4e77a1f75ae4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows System Resource Manager (WSRM) Protocol - IWRMMachineGroup Interface</pre></td>
+          
+          <td>MS System Resource</td>
+          
+          <td><pre>59602eb6-57b0-4fd8-aa4b-ebf06971fe15</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Messenger Service Remote Protocol - msgsvcsend operations for the NetrSendMessage method</pre></td>
+          
+          <td>MS Messenger</td>
+          
+          <td><pre>5a7b91f8-ff00-11d0-a9b2-00c04fb6e6fc</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostConstantValueCollection Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>5b5a68e6-8b9f-45e1-8199-a95ffccdffff</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - Management Service - qmrepl Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>5b5b3580-b0e0-11d1-b92d-0060081e87f0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft DHCP Server - dhcpsrv2 Interface</pre></td>
+          
+          <td>MS DHCP</td>
+          
+          <td><pre>5b821720-f63b-11d0-aad2-00c04fc324db</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - FTP Publishing Service</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>5c89f409-09cc-101a-89f3-02608c4d2361</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Terminal Server Services - Runtime Interface - Legacy - WinStation_RPC Operations</pre></td>
+          
+          <td>MS Terminal Server</td>
+          
+          <td><pre>5ca4a760-ebb1-11cf-8611-00a0245420ed</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Protected Storage Service - Password Recovery</pre></td>
+          
+          <td>MS Storage</td>
+          
+          <td><pre>5cbe92cb-f4be-45c9-9fc9-33e73e557b20</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmFileScreen Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>5f6325d3-ce88-4733-84c1-2d6aefc5ea07</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Routing and Remote Access Service - IRemoteSstpCertCheck</pre></td>
+          
+          <td>MS Remote Access</td>
+          
+          <td><pre>5ff9bdf6-bd91-4d8b-a614-d6317acc8dd8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Fax Client Interface</pre></td>
+          
+          <td>MS Fax</td>
+          
+          <td><pre>6099fc12-3eff-11d0-abd0-00c04fd91a4e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Routing and Remote Access Service - IRemoteIPV6Config</pre></td>
+          
+          <td>MS Remote Access</td>
+          
+          <td><pre>6139d8a4-e508-4ebb-bac7-d7f275145897</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IWindowsDriverUpdate2 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>615c4269-7a48-43bd-96b7-bf6ca27d6c3e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Explorer - Browser - DShellFolderViewEvents Interface</pre></td>
+          
+          <td>MS Explorer Browser</td>
+          
+          <td><pre>62112aa2-ebe4-11cf-a5fb-0020afe7292d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Wireless Configuration Service</pre></td>
+          
+          <td>MS Remote Services</td>
+          
+          <td><pre>621dff68-3c39-4c6c-aae3-e68e2c6503ad</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft System Event Notification Service - SensNotify</pre></td>
+          
+          <td>MS Event</td>
+          
+          <td><pre>629b9f66-556c-11d1-8dd2-00aa004abd5e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Computer Associates BrightStor ARCserve Backup Tape Engine</pre></td>
+          
+          <td>CA BrightStor</td>
+          
+          <td><pre>62b93df0-8b02-11ce-876c-00805f842837</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft System Event Notification Service - SensApi</pre></td>
+          
+          <td>MS Event</td>
+          
+          <td><pre>63fbe424-2029-11d1-8db8-00aa004abd5e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumResourceGroup Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>640038f1-d626-40d8-b52b-09660601d045</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQOutgoingQueueManagement Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>64c478fb-f9b0-4695-8a7f-439ac94326d3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Portmapper Service - FwIdl</pre></td>
+          
+          <td>MS Portmapper</td>
+          
+          <td><pre>64fe0b7f-9ef5-4553-a7db-9a1975777554</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostElement Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>64ff8ccc-b287-4dae-b08a-a72cbf45f453</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft DNS Client Service - Windows 2000 and before</pre></td>
+          
+          <td>MS DNS</td>
+          
+          <td><pre>65a93890-fab9-43a3-b2a5-1e330ac28f11</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft IManagedObject Interface Protocol - IRemoteDispatch: IDispatch Interface</pre></td>
+          
+          <td>MS IManagedObject</td>
+          
+          <td><pre>6619a740-8154-43be-a186-0319578e02db</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Routing and Remote Access Service - IRemoteNetworkConfig</pre></td>
+          
+          <td>MS Remote Access</td>
+          
+          <td><pre>66a2db1b-d706-11d0-a37b-00c04fc9da04</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Routing and Remote Access Service - IRemoteRouterRestart</pre></td>
+          
+          <td>MS Remote Access</td>
+          
+          <td><pre>66a2db20-d706-11d0-a37b-00c04fc9da04</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Routing and Remote Access Service - IRemoteSetDNSConfig</pre></td>
+          
+          <td>MS Remote Access</td>
+          
+          <td><pre>66a2db21-d706-11d0-a37b-00c04fc9da04</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Routing and Remote Access Service - IRemoteICFICSConfig</pre></td>
+          
+          <td>MS Remote Access</td>
+          
+          <td><pre>66a2db22-d706-11d0-a37b-00c04fc9da04</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumSnapshot Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>66c9b082-7794-4948-839a-d8a5a616378f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IAutomaticUpdates Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>673425bf-c082-4c7c-bdfd-569464b8e0ce</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemContext - Unmarshaler Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>674b6698-ee92-11d0-ad71-00c04fd8fdff</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsVolumeMF3 Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>6788faf9-214e-4b85-ba59-266953616e09</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - System Attendant Service - Version 3.0</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>67df7c70-0f04-11ce-b13f-00aa003bac6c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Routing and Remote Access Service - IRemoteStringIdConfig</pre></td>
+          
+          <td>MS Remote Access</td>
+          
+          <td><pre>67e08fc2-2984-4b62-b92e-fc1aae64bbbb</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Explorer - Browser - IInputObject Interface</pre></td>
+          
+          <td>MS Explorer Browser</td>
+          
+          <td><pre>68284faa-6a48-11d0-8c78-00c04fd918b4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmReportScheduler Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>6879caf9-6617-4484-8719-71c3d8645f94</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Cryptographic Services - IKeySvc2</pre></td>
+          
+          <td>MS Crypto</td>
+          
+          <td><pre>68b58241-c259-4f03-a2e5-a2651dcbc930</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Intersite Messaging Service - ismapi Interface</pre></td>
+          
+          <td>MS Intersite Messaging</td>
+          
+          <td><pre>68dcd486-669e-11d1-ab0c-00c04fc2dcd2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Removable Storage Manager (RSM) Remote Protocol - INtmsObjectInfo1 Interface</pre></td>
+          
+          <td>MS Removable Storage</td>
+          
+          <td><pre>69ab7050-3059-11d1-8faf-00a024cb6019</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdate Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>6a92b07a-d821-4682-b423-5c805022cc4d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IAutomaticUpdatesSettings2 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>6abc136a-c3ca-4384-8171-cb2b1e59b8dc</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumConnection Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>6aea6b26-0680-411d-8877-a148df3087d5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Firewall and Advanced Security Protocol (MS-FASP) - RemoteFW Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>6b5bdd1e-528c-422c-af8c-a4079be4fe48</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Common Internet File System (CIFS) - Browser Auxiliary Protocol - Browser Interface</pre></td>
+          
+          <td>MS CIFS Browser</td>
+          
+          <td><pre>6bffd098-a112-3610-9833-012892020162</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft DHCP Server - dhcpsrv Interface</pre></td>
+          
+          <td>MS DHCP</td>
+          
+          <td><pre>6bffd098-a112-3610-9833-46c3f874532d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Workstation Service Remote Protocol - wkssvc Interface</pre></td>
+          
+          <td>MS Remote Services</td>
+          
+          <td><pre>6bffd098-a112-3610-9833-46c3f87e345a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - IContainerControl2 Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>6c935649-30a6-4211-8687-c4c83e5fe1c7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmAction Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>6cd6408a-ae60-463b-9ef1-e117534d69dc</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Explorer - Browser - IServiceProvider Interface</pre></td>
+          
+          <td>MS Explorer Browser</td>
+          
+          <td><pre>6d5140c1-7436-11ce-8034-00aa006009fa</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsAdvancedDisk Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>6e6f6b40-977c-4069-bddd-ac710059f8c0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmPathMapper Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>6f4dbfff-6920-4821-a6c3-b7e94c1fd60c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IWTDiskMgr4 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>703e6b03-7ad1-4ded-ba0d-e90496ebc5de</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - Directory Service Protocol - dscomm2 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>708cca10-9569-11d1-b2a5-0060977d8118</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - IMSAdminBaseW - IMSAdminBaseW Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>70b51430-b6ca-11d0-b9b9-00a0c922e750</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IWindowsDriverUpdate5 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>70cf5c82-8642-42bb-9dbc-0cfd263c6c4f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsVolume2 Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>72ae6713-dcbb-4a03-b36b-371f6ac6b53d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - ISearchJob Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>7366ea16-7a1a-4ea2-b042-973d3e9cd99b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Transaction Coordinator (DTC) - DTCPing Interface</pre></td>
+          
+          <td>MS DTC</td>
+          
+          <td><pre>75687379-aaaa-44f6-9512-080ac70f8ad9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsOpenDisk Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>75c8f324-f715-4fe3-a28e-f9011b61a4a1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateService Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>76b3b17e-aed6-4da5-85f0-83587f81abe3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Undocumented Interface 1</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>76c0d124-a18e-49d4-adf1-d8c6ba868ea6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - Queue Manager Client Protocol - qmcomm2 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>76d12b80-3467-11d3-91ff-0090272f9ea3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Print System Asynchronous Remote Protocol (MS-PAR) - IRemoteWinspool Interface</pre></td>
+          
+          <td>MS Print</td>
+          
+          <td><pre>76f03f96-cdfd-44fc-a22c-64950a001209</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - Directory Service Protocol - dscomm Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>77df7a80-f298-11d0-8358-00a024c480a8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft OCSP Administration Protocol (MS-OCSPA) - IOCSPAdminD Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>784b693d-95f3-420b-8126-365c098659f2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostMethod Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>7883ca1c-1112-4447-84c3-52fbeb38069d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Directory Replication Service (DRS) Remote Protocol - DSAOP Methods</pre></td>
+          
+          <td>MS Active Directory</td>
+          
+          <td><pre>7c44d7d4-31d5-424c-bd5e-2b3e1f323d22</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - IMSAdminBaseW - IIISApplicationAdmin Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>7c4e1804-e342-483d-a43e-a850cfcc8d18</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemObjectSink Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>7c857801-7381-11cf-884d-00aa004b2e24</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IImageInformation Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>7c907864-346c-4aeb-8f3f-57da289f969f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Removable Storage Manager (RSM) Remote Protocol - IRobustNtmsMediaServices1 Interface</pre></td>
+          
+          <td>MS Removable Storage</td>
+          
+          <td><pre>7d07f313-a53f-459a-bb12-012c15b1846e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing Service</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>7e048d38-ac08-4ff1-8e6b-f35dbab88d4a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - IAlternateLaunch Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>7f43b400-1a0e-4d57-bbc9-6b0c65f7a889</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Firewall - Fw_Resource_Indication Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>7f9d11bf-7fb9-436b-a812-b2d50c5d4c03</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Event System Protocol - IEventClass3 Interface</pre></td>
+          
+          <td>MS COM+ Event System</td>
+          
+          <td><pre>7fb7ea43-2d76-4ea8-8cd9-3decc270295e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQueueManagement Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>7fbe7759-5760-444d-b8a5-5e7ab9a84cce</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Certificate Services Remote Administration Protocol - ICertAdminD2 Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>7fe0d935-dda6-443f-85d0-1cfb58fe41dd</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Administrative Interface: WINS protocol - winsi2 Interface</pre></td>
+          
+          <td>MS WINS</td>
+          
+          <td><pre>811109bf-a4e1-11d1-ab54-00a0c91e9b45</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft IManagedObject Interface Protocol - IServicedComponentInfo Interface</pre></td>
+          
+          <td>MS IManagedObject</td>
+          
+          <td><pre>8165b19e-8d3a-4d0b-80c8-97de310db583</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateSession Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>816858a4-260d-4260-933a-2585f1abc76b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - ICategory Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>81ddc1b8-9d35-47a6-b471-5b80f519223b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumVolume Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>81fe3594-2495-4c91-95bb-eb5785614ec7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft EventLog Remoting Service - eventlog Interface</pre></td>
+          
+          <td>MS Event</td>
+          
+          <td><pre>82273fdc-e32a-18c3-3f78-827929dc23ea</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmActionEmail2 Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>8276702f-2532-4839-89bf-4872609a2ea4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - IMSAdminBaseW - IMSAdminBase2W Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>8298d101-f992-43b7-8eca-5052d885b995</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Inetinfo - IISAdmin Service</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>82ad4280-036b-11cf-972c-00aa006887b0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsAdviseSink Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>8326cd1d-cf59-4936-b786-5efc08798e25</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostConfigLocationCollection Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>832a32f7-b3ea-4b8c-b260-9a2923001184</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Assistance Initiation Protocol - IPCHCollection Interface</pre></td>
+          
+          <td>MS Remote Assistance</td>
+          
+          <td><pre>833e4100-aff7-4ac3-aac2-9f24c1457bce</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Assistance Initiation Protocol - ISAFSession Interface</pre></td>
+          
+          <td>MS Remote Assistance</td>
+          
+          <td><pre>833e41aa-aff7-4ac3-aac2-9f24c1457bce</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Assistance Initiation Protocol - IPCHService Interface</pre></td>
+          
+          <td>MS Remote Assistance</td>
+          
+          <td><pre>833e4200-aff7-4ac3-aac2-9f24c1457bce</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Function I</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>8384fc47-956a-4d1e-ab2a-1205014f96ec</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsSubSystemImportTarget Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>83bfb87f-43fb-4903-baa6-127f01029eec</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - System Attendant Service - Version 6.0</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>83d72bf0-0d89-11ce-b13f-00aa003bac6c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows File Protection Service</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>83da7c00-e84f-11d2-9807-00c04f8ec850</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Administrative Interface - Network Policy Server (NPS) Protocol - IIASDataStoreComServer Interface</pre></td>
+          
+          <td>MS Remote Services</td>
+          
+          <td><pre>83e05bd5-aec1-4e58-ae50-e819c7296f67</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IWindowsUpdateAgentInfo Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>85713fa1-7796-4fa2-be3b-e2d6124dd373</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - IClusterLog Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>85923ca7-1b6b-4e83-a2e4-f5ba3bfbb8a3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IWTDisk Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>866a78bc-a2fb-4ac4-94d5-db3041b4ed75</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Task Scheduler Service Remote Protocol - ITaskSchedulerService</pre></td>
+          
+          <td>MS Scheduler</td>
+          
+          <td><pre>86d35949-83c9-4044-b424-db363231fd0c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Removable Storage Manager (RSM) Remote Protocol - IClientSink Interface</pre></td>
+          
+          <td>MS Removable Storage</td>
+          
+          <td><pre>879c8bbe-41b0-11d1-be11-00c04fb6bf70</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Terminal Server Services - Runtime Interface - LSM Enumeration Interface</pre></td>
+          
+          <td>MS Terminal Server</td>
+          
+          <td><pre>88143fd0-c28d-4b2b-8fef-8d882f6a9390</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsVolume Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>88306bb2-e71f-478c-86a2-79da200a0f11</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - ISnapshot Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>883343f1-ceed-4e3a-8c1b-f0dadfce281e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Computer Associates BrightStor - Backup Agent RPC Server</pre></td>
+          
+          <td>CA BrightStor</td>
+          
+          <td><pre>88435ee0-861a-11ce-b86b-00001b27f656</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - ClusterLog Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>88e7ac6d-c561-4f03-9a60-39dd768f867d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Shutdown Protocol - InitShutdown Interface</pre></td>
+          
+          <td>MS Remote Shutdown</td>
+          
+          <td><pre>894de0c0-0d55-11d3-a322-00c04fa321a1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Removable Storage Manager (RSM) Remote Protocol - INtmsObjectManagement2 Interface</pre></td>
+          
+          <td>MS Removable Storage</td>
+          
+          <td><pre>895a2c86-270d-489d-a6c0-dc2a9b35280e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Store Service - exchange_store_admin2 Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>89742ace-a9ed-11cf-9c0c-08002be7ae86</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed File System Replication Protocol (DFS-R) - FrsTransport Interface</pre></td>
+          
+          <td>MS File Replication</td>
+          
+          <td><pre>897e2e5f-93f3-4376-9c9c-fd2277495c27</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - ILocalDeviceMgr Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>8ad608a4-6c16-4405-8879-b27910a68995</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmQuotaManager Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>8bb68c7d-19d8-4ffb-809e-be4fc1734014</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - CLSID_WbemLevel1Login</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>8bc3f05e-d86b-11d0-a075-00c04fb68820</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Explorer - Browser - IKnownFolderManager Interface</pre></td>
+          
+          <td>MS Explorer Browser</td>
+          
+          <td><pre>8be2d872-86aa-4d47-b776-32cca40c7018</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostPropertySchemaCollection Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>8bed2c68-a5fb-4b28-8581-a0dc5267419f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumVolume2 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>8c58f6b3-4736-432a-891d-389de3505c7c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Application Management Service</pre></td>
+          
+          <td>MS AMS</td>
+          
+          <td><pre>8c7daf44-b6dc-11d1-9a4c-0020af6e7c57</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - SMTP Service</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>8cfb5d70-31a4-11cf-a7d8-00805f48a135</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Cryptographic Service</pre></td>
+          
+          <td>MS Crypto</td>
+          
+          <td><pre>8d0ffe72-d252-11d0-bf8f-00c04fd9126b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - ISessionManager Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>8d7ae740-b9c5-49fc-a11e-89171907cb86</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Plug and Play Service - pnp Interface</pre></td>
+          
+          <td>MS Plug and Play</td>
+          
+          <td><pre>8d9f4e40-a03d-11ce-8f69-08003e30051b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Removable Storage Manager (RSM) Remote Protocol - INtmsSession1 Interface</pre></td>
+          
+          <td>MS Removable Storage</td>
+          
+          <td><pre>8da03f40-3419-11d1-8fb1-00a024cb6019</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - IRegister Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>8db2180e-bd29-11d1-8b7e-00c04fd7a924</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmFileGroup Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>8dd04909-0e34-4d55-afaa-89e1f1a1bbb9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Routing and Remote Access Service (RRAS) Management Protocol - dimsvc Interface</pre></td>
+          
+          <td>MS Remote Access</td>
+          
+          <td><pre>8f09f000-b7ed-11ce-bbd2-00001a181cad</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateSearcher Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>8f45abf1-f9ae-4b95-a933-f0f66e5056ea</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsDisk3 Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>8f4b2f5d-ec15-4357-992f-473ef10975b9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostConfigManager</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>8f6d760f-f0cb-4d69-b5f6-848b33e9bdc6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft W32Time Remote Protocol (MS-W32T) / Network Time Protocol Authentication Extensions (MS-SNTP) - W32Time Interface</pre></td>
+          
+          <td>MS W32Time</td>
+          
+          <td><pre>8fb6d884-2388-11d0-8c35-00c04fda2795</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsDiskOnline Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>90681b1d-6a7f-48e8-9061-31b7aa125322</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Transaction Coordinator (DTC) - Connection Manager: OleTx Transports Protocol - IXnRemote Operations</pre></td>
+          
+          <td>MS DTC</td>
+          
+          <td><pre>906b0ce0-c70b-1067-b317-00dd010662da</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateSession3 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>918efd1e-b5d8-4c90-8540-aeb9bdc56f9d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Certificate Services - ICertPassage Remote Protocol - ICertPassage Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>91ae6020-9e3c-11cf-8d7c-00aa00c091be</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateSession2 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>91caf7b0-eb23-49ed-9937-c52d817f46f7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Security Configuration Editor Service</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>93149ca2-973b-11d1-8c39-00c04fb984f9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Veritas Backup Exec Service</pre></td>
+          
+          <td>VR BKPSVC</td>
+          
+          <td><pre>93841fd0-16ce-11ce-850d-02608c44967b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Store Service EMSMDBPOOL Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>938fe036-ede6-4f6c-966e-a3d7300279c8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows System Resource Manager (WSRM) Protocol - IWRMPolicy Interface</pre></td>
+          
+          <td>MS System Resource</td>
+          
+          <td><pre>943991a5-b3fe-41fa-9696-7f7b656ee34b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemServices Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>9556dc99-828c-11cf-a37e-00aa003240c7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft WinLogon - IRPCSCLogon</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>95958c94-a424-4055-b62b-b7f4d5c47770</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmCommittableCollection Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>96deb3b5-8b91-4a2a-9d93-80a35d8aa847</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - IRegister2 Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>971668dc-c3fe-4ea1-9643-0c7230f494a1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Protocol - ITransactionStream Interface</pre></td>
+          
+          <td>MS COM+</td>
+          
+          <td><pre>97199110-db2e-11d1-a251-0000f805ca53</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsAdvancedDisk2 Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>9723f420-9355-42de-ab66-e31bb15beeac</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Portmapper Service</pre></td>
+          
+          <td>MS Portmapper</td>
+          
+          <td><pre>975201b0-59ca-11d0-a8d5-00a0c90d8051</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - InetInfo Service - Version 2.0</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>97f83d5c-1994-11d1-a90d-00c04fb960f8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - IReplicationUtil Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>98315903-7be5-11d2-adc1-00a02463d6e7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsCreatePartitionEx Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>9882f547-cfc3-420b-9750-00dfbec50662</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Event System Protocol - IEventSystem2 Interface</pre></td>
+          
+          <td>MS COM+ Event System</td>
+          
+          <td><pre>99cc098f-a48a-4e9c-8e58-965c0afc19d5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Store Service - exchange_store_admin3 Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>99e64010-b032-11d0-97a4-00c04fd6551d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IOXIDResolver/IObjectExporter Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>99fcfec4-5260-101b-bbcb-00aa0021347a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmQuotaTemplateImported Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>9a2bf113-a329-44cc-809a-5c00fce8da40</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemClassObject Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>9a653086-174f-11d2-b5f9-00104b703efd</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsSwProvider Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>9aa58360-ce33-4f92-b658-ed24b14425b8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateServiceCollection Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>9b0353aa-0e52-44ff-b8b0-1f7fa0437f88</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - Process Launcher</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>9b8699ae-0e44-47b1-8e7f-86a461d7ecdc</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostAdminManager Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>9be77978-73ed-4a9a-87fd-13f09fec1b13</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsDiskPartitionMF2 Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>9cbe50ca-f2d2-4bf4-ace1-96896b729625</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Message Transfer Agent (MTA) Service</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>9e8ee830-4459-11ce-979b-00aa005ffebe</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Mail Transfer Agent (MTA) exchange_mta Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>9e8ee830-4559-11ce-979b-00aa005ffebe</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft WinLogon - GetUserToken Service</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>a002b3a0-c9b7-11d1-ae88-0080c75e4ec1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Replication Service (FRS) - PerfFrs Interface</pre></td>
+          
+          <td>MS File Replication</td>
+          
+          <td><pre>a00c021c-2be2-11d2-b678-0000f87a8f8e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Event System Protocol - IEventSystemInitialize Interface</pre></td>
+          
+          <td>MS COM+ Event System</td>
+          
+          <td><pre>a0e8f27a-888c-11d1-b763-00c04fb926af</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmQuotaTemplate Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>a2efab31-295e-46bb-b976-e86d58b52e8b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemBackupRestoreEx : IWbemBackupRestore Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>a359dec5-e813-4834-8a2a-ba7f1d777d76</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Desktop Protocol: Smart Card Virtual Channel Extension (MS-RDPESC) - type_scard_pack Interface</pre></td>
+          
+          <td>MS Remote</td>
+          
+          <td><pre>a35af600-9cf4-11cd-a076-08002b2bd711</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateException Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>a376dd5e-09d4-427f-af7c-fed5b6e1c1d6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateExceptionCollection Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>a37d00f5-7bb0-4953-b414-f9e98326f2e8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Store Service - exchange_store_admin1 Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>a4f1db00-ca47-1067-b31e-00dd010662da</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Store Service EMSMDB Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>a4f1db00-ca47-1067-b31f-00dd010662da</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - InetInfo Service - Version 3.0</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>a520d06e-11de-11d2-ab59-00c04fa3590c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumDisk2 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>a5ecfc73-0013-4a9e-951c-59bf9735fdda</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - ClusterCleanup Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>a6d3e32b-9814-4409-8de3-cfa673e6d3de</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateHistoryEntryCollection Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>a7f04f3c-a290-435b-aadf-a116c3357a5c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - ICatalogTableInfo Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>a8927a41-d3ce-11d1-8472-006008b0e5ca</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Remote VSS Protocol (MS-FSRVP) - FileServerVssAgent Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>a8e0653c-2744-4389-a61d-7373df8b2292</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Security and Acceleration (ISA) - AD-LDS - ISASTGCTRL</pre></td>
+          
+          <td>MS ISA</td>
+          
+          <td><pre>a9b96d49-2c75-4917-a178-06b6f08261cc</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Information Store - Undocumented Interface 1</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>a9e05b20-6f57-4e24-a540-52412017e6ff</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - COM GUID/UUID Service - IADMCOMSINK Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>a9e69612-b80d-11d0-b9b9-00a0c922e750</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Domain Name System (DNS) Server</pre></td>
+          
+          <td>MS DNS</td>
+          
+          <td><pre>aae9ac90-ce13-11cf-919e-08002be23c64</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - ISessionManager CLSID</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>ad069971-edc5-4357-a132-430dad479d2b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmFileGroupImported Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>ad55f10b-5f11-4be7-94ef-d9ee2e470ded</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostConfigFile Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>ada4e6fb-e025-401e-a5d0-c3134a281f07</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Shadow Copy Management Protocol - IVssEnumObject Interface</pre></td>
+          
+          <td>MS Volume Shadow Copy</td>
+          
+          <td><pre>ae1c7110-2f60-11d3-8a39-00c04f72d8e3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Print System Asynchronous Notification Protocol (MS-PAN) - IRPCRemoteObject Interface</pre></td>
+          
+          <td>MS Print</td>
+          
+          <td><pre>ae33069b-a2a8-46ee-a235-ddfd339be281</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Transaction Coordinator (DTC) - Remote Management Interface</pre></td>
+          
+          <td>MS DTC</td>
+          
+          <td><pre>afa8bd80-7d8a-11c9-bef4-08002b102989</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmClassificationRule Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>afc052c2-5315-45ab-841b-c6db0e120148</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Central Access Policy Identifier (ID) - Retrieval Protocol (MS-CAPR) - lsacap Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>afc07e2e-311c-4435-808c-c483ffeec7c9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IHost Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>b0076fec-a921-4034-a8ba-090bc6d03bde</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Removable Storage Manager (RSM) Remote Protocol - INtmsObjectManagement1 Interface</pre></td>
+          
+          <td>MS Removable Storage</td>
+          
+          <td><pre>b057dc50-3059-11d1-8faf-00a024cb6019</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IHostMgr Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>b06a64e3-814e-4ff9-afac-597ad32517c7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsIscsiInitiatorAdapter Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>b07fedd4-1682-4440-9189-a39b55194dc5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - ILocalDeviceMgr2 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>b0d1ac4b-f87a-49b2-938f-d439248575b2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IConnectionPointContainer Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>b196b284-bab4-101a-b69c-00aa00341d07</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IEnumConnectionPoints Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>b196b285-bab4-101a-b69c-00aa00341d07</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IConnectionPoint Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>b196b286-bab4-101a-b69c-00aa00341d07</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - IEnumConnections Interface (obsolete)</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>b196b287-bab4-101a-b69c-00aa00341d07</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Security and Acceleration (ISA) - Management Console (MMC)</pre></td>
+          
+          <td>MS ISA</td>
+          
+          <td><pre>b347203c-14bb-4878-8b7a-0a12f9b8076a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IWindowsDriverUpdate Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>b383cd1a-5ce9-4504-9f63-764b1236f191</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Commerce Server Staging (CSS) - Replication Service</pre></td>
+          
+          <td>MS CSS</td>
+          
+          <td><pre>b3df47c0-a95a-11cf-aa26-00aa00c148b9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Function II</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>b4757e80-a0e4-46b4-876a-3ae4a548ee07</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsVdProvider</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>b481498c-8354-45f9-84a0-0bdd2832a91f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IHost2 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>b4fa8e86-2517-4a88-bd67-75447219eee4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IAutomaticUpdatesSettings3 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>b587f5c3-f57e-485f-bbf5-0d181c5cd0dc</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Tracker Service Protocol - IGetTrackingData Interface</pre></td>
+          
+          <td>MS COM+ Tracker</td>
+          
+          <td><pre>b60040e0-bcf3-11d1-861d-0080c729264d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsServiceUninstallDisk Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>b6b22da8-f903-4be7-b492-c09d875ac9da</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostSectionDefinitionCollection Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>b7d381ee-8860-47a1-8af4-1f33b2b1f325</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostMethodInstance Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>b80f3c42-60e0-4ae0-9007-f52852d3dbed</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Group Key Distribution Protocol (MS-GKDI) - ISDKey Interface</pre></td>
+          
+          <td>MS Active Directory</td>
+          
+          <td><pre>b9785960-524f-11df-8b6d-83dcded72085</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Management API - ClusAPI Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>b97db8b2-4c63-11cf-bff6-08002be23f2f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Portmapper Service - IROT Interface</pre></td>
+          
+          <td>MS Portmapper</td>
+          
+          <td><pre>b9e79e60-3d52-11ce-aaa1-00006901293f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Topology Information Server Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>b9fadb8d-53a1-41d7-b763-88d884b6b829</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IWTGeneral CLSID</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>baa4a577-202d-49c7-a6bb-10ee914ee199</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmClassifierModuleDefinition Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>bb36ea26-6318-4b8c-8592-f72dd602e7a5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Removable Storage Manager (RSM) Remote Protocol - INtmsNotifySink Interface</pre></td>
+          
+          <td>MS Removable Storage</td>
+          
+          <td><pre>bb39332c-bfee-4380-ad8a-badc8aff5bb6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumDisk Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>bb39e296-ad26-42c5-9890-5325333bb11e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Active Directory Technical Specification - Claims Interface</pre></td>
+          
+          <td>MS Active Directory</td>
+          
+          <td><pre>bba9cb76-eb0c-462c-aa1b-5d8c34415701</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateDownloadContentCollection  Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>bc5513c8-b3b8-4bf7-a4d4-361c0d8c88ba</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows System Resource Manager (WSRM) Protocol - IWRMResourceGroup Interface</pre></td>
+          
+          <td>MS System Resource</td>
+          
+          <td><pre>bc681469-9dd9-4bf4-9b3d-709f69efe431</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - IMSAdminBaseW - IIISCertObj Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>bd0c73bc-805b-4043-9c30-9a28d64dd7d2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Function III</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>bd5790c9-d855-42b0-990f-3dfed8c184b3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Terminal Server Services - Runtime Interface - TermSrv Interface</pre></td>
+          
+          <td>MS Terminal Server</td>
+          
+          <td><pre>bde95fdf-eee0-45de-9e12-e5a61cd0d4fe</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateHistoryEntry Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>be56a644-af0e-4e0e-a311-c1d8e695cbff</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQManagement Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>be5f0241-e489-4957-8cc4-a452fcf3e23e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmFileScreenException Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>bee7ce02-df77-4515-9389-78f01c5afc1a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Information Store - Undocumented Interface 2</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>bf6dd426-77b4-44b3-984e-d413fc075562</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Admin Service</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>bfa951d1-2f0e-11d3-bfd1-00c04fa3490a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - ISessionManager2 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>c10a76d8-1fe4-4c2f-b70d-665265215259</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdate5 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>c1c2f21a-d2f4-4902-b5c6-8a081c19a890</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - IImport Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>c2be6970-df9e-11d1-8b87-00c04fd7a924</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateHistoryEntry2 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>c2bfb780-4539-4132-ab8c-0a8772013ab6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Administrative Interface - Network Policy Server (NPS) Protocol - IIASDataStoreComServer2 Interface</pre></td>
+          
+          <td>MS Remote Services</td>
+          
+          <td><pre>c323be28-e546-4c23-a81b-d6ad8d8fac7b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Audio Service - Audio Remote Procedure Call (RPC)</pre></td>
+          
+          <td>MS Audio</td>
+          
+          <td><pre>c386ca3e-9061-4a72-821e-498d83be188f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft IManagedObject Interface Protocol - IManagedObject : IUnknown Interface</pre></td>
+          
+          <td>MS IManagedObject</td>
+          
+          <td><pre>c3fcc19e-a970-11d2-8b5a-00a0c9b7c9c4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - CLSID_WbemBackupRestore</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>c49e32c6-bc8b-11d2-85d4-00105a1f8304</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemBackupRestoreEx Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>c49e32c7-bc8b-11d2-85d4-00105a1f8304</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft DFS Replication Helper Protocol - IADProxy2 Interface</pre></td>
+          
+          <td>MS DFS Replication</td>
+          
+          <td><pre>c4b0c7d9-abe0-4733-a1e1-9fdedf260c7a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostSectionDefinition Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>c5c04795-321c-4014-8fd6-d44658799393</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows System Resource Manager (WSRM) Protocol - IResourceManager Interface</pre></td>
+          
+          <td>MS System Resource</td>
+          
+          <td><pre>c5cebee2-9df5-4cdd-a08c-c2471bc144b4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Encrypting File System Remote (EFSR) Protocol - lsarpc Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>c681d488-d850-11d0-8c52-00c04fd90f7e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Portmapper Service - IMachineActivatorControl Interface</pre></td>
+          
+          <td>MS Portmapper</td>
+          
+          <td><pre>c6f3ee72-ce7e-11d1-b71e-00c04fc3111a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - ICatalogUtils2 interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>c726744e-5735-4f08-8286-c510ee638fb6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - ClusterStorage2 Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>c72b09db-4d53-4f41-8dcc-2d752ab56f7c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - exchange_unknown Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>c840a7dc-42c0-1a10-b4b9-08002b2fe182</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostElementCollection</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>c8550bff-5281-4b1e-ac34-99b6fa38464d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Explorer - Browser - ICommDlgBrowser3 Interface</pre></td>
+          
+          <td>MS Explorer Browser</td>
+          
+          <td><pre>c8ad25a1-3294-41ee-8165-71174bd01c57</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Web Distributed Authoring and Versioning (WebDAV) Client Service - davclntrpc Interface</pre></td>
+          
+          <td>MS WDAV</td>
+          
+          <td><pre>c8cb7687-e6d3-11d2-a958-00c04f682e16</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Protected Storage Service - IPStoreProv</pre></td>
+          
+          <td>MS Storage</td>
+          
+          <td><pre>c9378ff1-16f7-11d0-a0b2-00aa0061426a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateDownloadContent2 Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>c97ad11b-f257-420b-9d9f-377f733f6f68</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmRule Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>cb0df960-16f5-4495-9079-3f9360d831df</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Service Witness Protocol - Witness Interface</pre></td>
+          
+          <td>MS Witness</td>
+          
+          <td><pre>ccd8c074-d0e5-4a40-92b4-d074faa6ba28</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Explorer - Browser - IFolderView Interface</pre></td>
+          
+          <td>MS Explorer Browser</td>
+          
+          <td><pre>cde725b0-ccc9-4519-917e-325d72fab4ce</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - IExport Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>cfadac84-e12c-11d1-b34c-00c04f990d54</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmFileScreenTemplateManager Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>cfe36cba-1949-4e74-a14f-f1d580ceaf13</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Removable Storage Manager (RSM) Remote Protocol - INtmsMediaServices1 Interface</pre></td>
+          
+          <td>MS Removable Storage</td>
+          
+          <td><pre>d02e4be0-3419-11d1-8fb1-00a024cb6019</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Replication Service (FRS) - NtFrsApi Interface</pre></td>
+          
+          <td>MS File Replication</td>
+          
+          <td><pre>d049b186-814f-11d1-9a3c-00c04fc9b232</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Disk Management Remote Protocol - IVolumeClient Interface</pre></td>
+          
+          <td>MS Disk Management</td>
+          
+          <td><pre>d2d79df5-3400-11d0-b40b-00aa005ff586</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Disk Management Remote Protocol - IDMNotify Interface</pre></td>
+          
+          <td>MS Disk Management</td>
+          
+          <td><pre>d2d79df7-3400-11d0-b40b-00aa005ff586</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmClassificationManager Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>d2dc89da-ee91-48a0-85d8-cc72a56f7d04</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft IPSEC Policy Agent</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>d335b8f6-cb31-11d0-b0f9-006097ba4e54</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Procedure Call (RPC) Locator Service - NsiC</pre></td>
+          
+          <td>MS Locator</td>
+          
+          <td><pre>d3fbb514-0e3b-11cb-8fad-08002b1d29c3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - ISearchResult</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>d40cff62-e08c-4498-941a-01e25f0fd33c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemLoginClientID Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>d4781cd6-e5d3-44df-ad94-930efe48a887</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsAsync Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>d5d23b6d-5a55-4492-9889-397a3c2d2dbc</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - IClusterCleanup Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>d6105110-8917-41a5-aa32-8e0aa2933dc9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Removable Storage Manager (RSM) Remote Protocol - Removable Storage Manager Class</pre></td>
+          
+          <td>MS Removable Storage</td>
+          
+          <td><pre>d61a27c6-8f53-11d0-bfa0-00a024151983</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmActionEmail Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>d646567d-26ae-4caa-9f84-4e0aad207fca</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Connection Firewall</pre></td>
+          
+          <td>MS ICFW</td>
+          
+          <td><pre>d674a233-5829-49dd-90f0-60cf9ceb7129</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsVolumeShrink Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>d68168c9-82a2-4f85-b6e9-74707c49a58f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IWTDiskMgr3 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>d6bd6d63-e8cb-4905-ab34-8a278c93197a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostMethodCollection Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>d6c7cd8f-bb8d-4f96-b591-d3a5f1320269</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Procedure Call (RPC) Locator Service - NsiS</pre></td>
+          
+          <td>MS Locator</td>
+          
+          <td><pre>d6d70ef0-0e3b-11cb-acc3-08002b1d29c3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Procedure Call (RPC) Locator Service - NsiM</pre></td>
+          
+          <td>MS Locator</td>
+          
+          <td><pre>d6d70ef0-0e3b-11cb-acc3-08002b1d29c4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IWTGeneral Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>d71b2cae-33e8-4567-ae96-3ccf31620be2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQPrivateEvent Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7ab3341-c9d3-11d1-bb47-0080c7c5a2c0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQuery Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e072-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQQuery</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e073-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQMessage Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e074-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQMessage</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e075-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQueue Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e076-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQEvent Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e077-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - DMSMQEventEvents Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e078-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQQueue</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e079-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQEvent</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e07a-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQueueInfo Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e07b-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQQueueInfo</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e07c-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQueueInfos Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e07d-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQQueueInfos</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e07e-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQTransaction Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e07f-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQTransaction Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e080-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQCoordinatedTransactionDispenser Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e081-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQCoordinatedTransactionDispenser</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e082-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQTransactionDispenser Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e083-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQTransactionDispenser</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e084-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQApplication Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e085-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQApplication</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d7d6e086-dccd-11d0-aa4b-0060970debae</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Domain Name System (DNS) Server - Interface version 5.0</pre></td>
+          
+          <td>MS DNS</td>
+          
+          <td><pre>d7f9e1c0-2247-11d1-ba89-00c04fd91268</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmReport Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>d8cc81d9-46b8-4fa4-bfa5-4aa9dec9b638</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Shutdown Protocol - WindowsShutdown Interface</pre></td>
+          
+          <td>MS Remote Shutdown</td>
+          
+          <td><pre>d95afe70-a6d5-4259-822e-2c84da1ddb0d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQMessage2 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>d9933be0-a567-11d2-b0f3-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsHwProvider Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>d99bdaae-b13a-4178-9fdb-e27f16b4603e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Client Certificate Enrollment Protocol (MS-WCCE) - ICertRequestD - Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>d99e6e70-fc88-11d0-b498-00a0c90312f3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Certificate Services Remote Administration Protocol - ICertAdminD Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>d99e6e71-fc88-11d0-b498-00a0c90312f3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IInstallationBehavior Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>d9a59339-e245-4dbd-9686-4d5763e39624</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Store Service - Admin Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>da107c01-2b50-44d7-9d5f-bfd4fd8e95ed</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Performance Counter Query Protocol (MS-PCQ) - PerflibV2 Interface</pre></td>
+          
+          <td>MS Performance</td>
+          
+          <td><pre>da5a86c5-12c2-4943-ab30-7f74a813d853</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Removable Storage Manager (RSM) Remote Protocol - INtmsLibraryControl2 Interface</pre></td>
+          
+          <td>MS Removable Storage</td>
+          
+          <td><pre>db90832f-6910-4d46-9f5e-9fd6bfa73903</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemClassObject : Iunknown Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>dc12a681-737f-11cf-884d-00aa004b2e24</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Computer Associates BrightStor - Message Engine [Vulnerability 2]</pre></td>
+          
+          <td>CA BrightStor</td>
+          
+          <td><pre>dc246bf0-7a7a-11ce-9f88-00805fe43838</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IHostMgr2 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>dd6f0a28-248f-4dd3-afe9-71aed8f685c4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IUpdateServiceRegistration Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>dde02280-12b3-4e0b-937b-6747f6acb286</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostCollectionSchema Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>de095db1-5368-4d11-81f6-efef619b7bcf</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Disk Management Remote Protocol - IVolumeClient4 Interface</pre></td>
+          
+          <td>MS Disk Management</td>
+          
+          <td><pre>deb01010-3a37-4d26-99df-e2bb6ae3ac61</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Encrypting File System Remote (EFSR) Protocol - efsrpc Interface</pre></td>
+          
+          <td>MS Security</td>
+          
+          <td><pre>df1941c5-fe89-4e79-bf10-463657acf44d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Explorer - Browser - IExplorerBrowser Interface</pre></td>
+          
+          <td>MS Explorer Browser</td>
+          
+          <td><pre>dfd3b6b5-c10c-4be9-85f6-a66969f402f6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsServiceLoader Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>e0393303-90d4-4a97-ab71-e9b671ee2729</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Explorer - Browser - IExplorerPaneVisibility Interface</pre></td>
+          
+          <td>MS Explorer Browser</td>
+          
+          <td><pre>e07010ec-bc17-44c0-97b0-46c7c95b9edc</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmFileScreenTemplateImported Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>e1010359-3e5d-4ecd-9fe4-ef48622fdf30</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumHost Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>e141fd54-b79e-4938-a6bb-d523c3d49ff1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IHostMgr CLSID</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>e14efe0b-fd3b-41ea-8e3b-88930445b944</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - ClusterNetwork2 Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>e1568352-586d-43e4-933f-8e6dc4de317a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - Endpoint Mapper Service (EPM)</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>e1af8308-5d1f-11c9-91a4-08002b14a0fa</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumSnsServer Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>e2842c88-07c3-4eb0-b1a9-d3d95e76fef2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Procedure Call Location Services Extensions (MS-RPCL) - Deprecated - LocToLoc Interface</pre></td>
+          
+          <td>MS Locator</td>
+          
+          <td><pre>e33c0cc4-0482-101a-bc0c-02608c6ba218</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Directory Replication Service (DRS) Remote Protocol - DRSUAPI Methods</pre></td>
+          
+          <td>MS Active Directory</td>
+          
+          <td><pre>e3514235-4b06-11d1-ab04-00c04fc2dcd2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - IClusterUpdate Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>e3c9b851-c442-432b-8fc6-a7faafc09d3b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Background Intelligent Transfer Service (BITS) - Peer Authentication Protocol - BitsPeerAuth Interface</pre></td>
+          
+          <td>MS BITS</td>
+          
+          <td><pre>e3d0d746-d2af-40fd-8a7a-0d7078bb7092</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Distributed Component Object Model (DCOM) - ILocalObjectExporter Interface</pre></td>
+          
+          <td>MS DCOM Services</td>
+          
+          <td><pre>e60c73e6-88f9-11cf-9af1-0020af6e72f4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - ILocalDeviceMgr3 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>e645744b-cae5-4712-acaf-13057f7195af</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft DFS Replication Helper Protocol - IServerHealthReport Interface</pre></td>
+          
+          <td>MS DFS Replication</td>
+          
+          <td><pre>e65e8028-83e8-491b-9af7-aaf6bd51a0ce</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Client Service for NetWare - NWWKS</pre></td>
+          
+          <td>MS Network</td>
+          
+          <td><pre>e67ab081-9844-3521-9d32-834f038001c0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostPathMapper Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>e7927575-5cc3-403b-822e-328a6b904bee</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IAutomaticUpdatesResults Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>e7a4d634-7942-4dd9-a111-82228ba33901</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows System Resource Manager (WSRM) Protocol - ResourceManager Class</pre></td>
+          
+          <td>MS System Resource</td>
+          
+          <td><pre>e8bcffac-b864-4574-b2e8-f1fb21dfdc18</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - ServiceControl</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>e8fb8620-588f-11d2-9d61-00c04f79c5fe</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmPropertyDefinitionValue Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>e946d148-bd67-4178-8e22-1c44925ed710</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft SHAREDFAX Fax Server and FaxObs Server Interfaces</pre></td>
+          
+          <td>MS Fax</td>
+          
+          <td><pre>ea0a3165-4834-11d2-a6f8-00c04fa346cc</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostPropertyException Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>eafe4895-a929-41ea-b14d-613e23f62b71</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQuery2 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b0e-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQueueInfos2 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b0f-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQCoordinatedTransactionDispenser2 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b10-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQTransactionDispenser2 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b11-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQEvent2 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b12-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQTransaction3 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b13-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQCoordinatedTransactionDispenser3 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b14-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQTransactionDispenser3 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b15-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQDestination Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b16-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQPrivateDestination Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b17-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQDestination</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b18-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQuery3 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b19-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQMessage3 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b1a-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQueue3 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b1b-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQEvent3 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b1c-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQueueInfo3 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b1d-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQueueInfos3 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b1e-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQApplication3 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b1f-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQueue4 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b20-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQueueInfo4 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b21-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQueueInfos4 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b22-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQMessage4 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b23-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQuery4 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>eba96b24-2168-11d3-898c-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Active Directory Backup and Restore Services - JetBack Interface</pre></td>
+          
+          <td>MS Active Directory</td>
+          
+          <td><pre>ecec0d70-a603-11d0-96b1-00a0c91ece30</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostProperty Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>ed35f7a1-5024-4e7b-a44d-07ddaf4b524d</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IWindowsDriverUpdateEntry Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>ed8bfe40-a60b-42ea-9652-817dfcfa23ec</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmPropertyDefinition Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>ede0150f-e9a3-419c-877c-01fe5d24c5d3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsVolumeMF Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>ee2d5ded-6236-4169-931d-b9778ce03dc6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmFileManagementJobManager Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>ee321ecb-d95e-48e9-907c-c7685a013235</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQueue2 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>ef0574e0-06d8-11d3-b100-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostElementSchema Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>ef13d885-642c-4709-99ec-b89561c6bc69</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Update Agent Management Protocol - IStringCollection Interface</pre></td>
+          
+          <td>MS Update Agent</td>
+          
+          <td><pre>eff90582-2ddc-480f-a06d-60f3fbc362c3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IEnumCachedInitiator Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>f093fe3d-8131-4b73-a742-ef54c20b337b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Remote Assistance Initiation Protocol - IRASrv Interface</pre></td>
+          
+          <td>MS Remote Assistance</td>
+          
+          <td><pre>f120a684-b926-447f-9df4-c966cb785648</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Remote Administration Protocol Protocol - IExport2 Interface</pre></td>
+          
+          <td>MS COM+ Remote Admin</td>
+          
+          <td><pre>f131ea3e-b7be-480e-a60d-51cb2785779e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - ILocalDeviceMgr CLSID</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>f1d3a46c-2e1b-4d84-97da-b3742ad67871</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Failover Cluster: Setup and Validation Protocol - IClusterFirewall Interface</pre></td>
+          
+          <td>MS Failover Cluster</td>
+          
+          <td><pre>f1d6c29c-8fbe-4691-8724-f6d8deaeafc8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemRemoteRefresher Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>f1e9c5b2-f59b-11d2-b362-00105a1f8177</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Undocumented Interface 5</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>f1f21151-7185-4170-ac8d-9bb077c29bd3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Undocumented Interface 3</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>f224209f-9076-40f7-98ad-5416dbfa178e</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows Management Instrumentation (WMI) - Remote Protocol - IWbemLevel1Login Interface</pre></td>
+          
+          <td>MS WMI</td>
+          
+          <td><pre>f309ad18-d86a-11d0-a075-00c04fb68820</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows System Resource Manager (WSRM) Protocol - IWRMProtocol Interface</pre></td>
+          
+          <td>MS System Resource</td>
+          
+          <td><pre>f31931a9-832d-481c-9503-887a0e6a79f0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmFileScreenBase Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>f3637e80-5b22-4a2b-a637-bbb642b41cfc</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmSetting Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>f411d4fd-14be-4260-8c40-03b7c95e608a</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Event System Protocol - IEnumEventObject Interface Interface</pre></td>
+          
+          <td>MS COM+ Event System</td>
+          
+          <td><pre>f4a07d63-2e25-11d1-9964-00c04fbbb345</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Cryptographic Services - ICatDBSvc</pre></td>
+          
+          <td>MS Crypto</td>
+          
+          <td><pre>f50aac00-c7f3-428e-a022-a6b71bfb9d43</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Replication Service (FRS) - exchange_drs - frsrpc Interface</pre></td>
+          
+          <td>MS File Replication</td>
+          
+          <td><pre>f5cc59b4-4264-101a-8c59-08002b2f8426</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange Name Service Provider Interface (NSPI) Proxy - exchange_nsp Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>f5cc5a18-4264-101a-8c59-08002b2f8426</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Active Directory Extended Directory Service (XDS) - exchange_xds Interface</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>f5cc5a7c-4264-101a-8c59-08002b2f8426</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - IMSAdminBaseW - IMSAdminBase3W Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>f612954d-3b0b-4c56-9563-227b7be624b4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft EventLog Remoting Protocol Version 6.0 - IEventService Interface</pre></td>
+          
+          <td>MS Event</td>
+          
+          <td><pre>f6beaff7-1e19-4fbb-9f8f-b89e2018337c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - MSMQCollection</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>f72b9031-2f0c-43e8-924e-e6052cdc493f</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmCollection Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>f76fbf3b-8ddd-4b42-b05a-cb1c3ff1fee8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmAutoApplyQuota Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>f82e5729-6aba-4740-bfc7-c7f58f75fb7b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Event System Protocol - IEventObjectCollection Interface</pre></td>
+          
+          <td>MS COM+ Event System</td>
+          
+          <td><pre>f89ac270-d4eb-11d1-b682-00805fc79216</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Exchange - Exchange System Attendant Cluster Interface (exchange_sysatt_cluster)</pre></td>
+          
+          <td>MS Exchange</td>
+          
+          <td><pre>f930c514-1215-11d3-99a5-00a0c9b61b04</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Internet Information Services (IIS) - Application Host COM - IAppHostWritableAdminManager Interface</pre></td>
+          
+          <td>MS IIS</td>
+          
+          <td><pre>fa7660f6-7b3f-4237-a8bf-ed0ad0dcbbd9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Shadow Copy Management Protocol - IVssSnapshotMgmt Interface</pre></td>
+          
+          <td>MS Volume Shadow Copy</td>
+          
+          <td><pre>fa7df749-66e7-4986-a27f-e2f04ae53772</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Event System Protocol - IEventClass Interface</pre></td>
+          
+          <td>MS COM+ Event System</td>
+          
+          <td><pre>fb2b72a0-7a68-11d1-88f9-0080c7d771bf</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Event System Protocol - IEventClass2 Interface</pre></td>
+          
+          <td>MS COM+ Event System</td>
+          
+          <td><pre>fb2b72a1-7a68-11d1-88f9-0080c7d771bf</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Component Object Model Plus (COM+) Event System Protocol - IEventSubscription3 Interface</pre></td>
+          
+          <td>MS COM+ Event System</td>
+          
+          <td><pre>fbc1d17d-c498-43a0-81af-423ddd530af6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - Management Service</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>fc13257d-5567-4dea-898d-c6f9c48415a0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Virtual Disk Service (VDS) Protocol - IVdsServiceSAN Interface</pre></td>
+          
+          <td>MS Virtual Disk</td>
+          
+          <td><pre>fc5d23e8-a88b-41a5-8de0-2d2f73c5a630</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Windows System Resource Manager (WSRM) Protocol - IWRMRemoteSessionMgmt Interface</pre></td>
+          
+          <td>MS System Resource</td>
+          
+          <td><pre>fc910418-55ca-45ef-b264-83d4ce7d30e0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - ActiveX Client - IMSMQQueueInfo2 Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>fd174a80-89cf-11d2-b0f2-00e02c074f6b</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Message Queuing - Queue Manager Client Protocol - qmcomm Interface</pre></td>
+          
+          <td>MS Message Queuing</td>
+          
+          <td><pre>fdb3a030-065f-11d1-bb9b-00a024ea5525</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Trusted Platform Module Virtual Smart Card Management Protocol - ITpmVirtualSmartCardManager2 Interface</pre></td>
+          
+          <td>MS TPM Smart Card Mgt</td>
+          
+          <td><pre>fdf8a2b9-02de-47f4-bc26-aa85ab5e5267</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft iSCSI Software Target Management Protocol - IHost3 Interface</pre></td>
+          
+          <td>MS ISTM iSCSI</td>
+          
+          <td><pre>fe7f99f9-1dfb-4afb-9d00-6a8dd0aabf2c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Telnet Server Remote Administration Protocol (MS-TSRAP) - CLSID_EnumTelnetClientsSvr Interface</pre></td>
+          
+          <td>MS Telnet Server</td>
+          
+          <td><pre>fe9e48a4-a014-11d1-855c-00a0c944138c</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft File Server Resource Manager Protocol - IFsrmFileScreenManager Interface</pre></td>
+          
+          <td>MS File Server</td>
+          
+          <td><pre>ff4fa04e-5a94-4bda-a3a0-d5b4d3c52eba</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="dnsclass-items">
+    Type <a href="#type-dnsclass">dnsclass</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+        <th>Description</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">IN</pre></td>
+          
+          <td><pre>1&nbsp;-&nbsp;0x1</pre></td>
+          
+          <td>Internet</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CS</pre></td>
+          
+          <td><pre>2&nbsp;-&nbsp;0x2</pre></td>
+          
+          <td>CSNET class (Obsolete - used only for examples)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CH</pre></td>
+          
+          <td><pre>3&nbsp;-&nbsp;0x3</pre></td>
+          
+          <td>CHAOS class</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">HS</pre></td>
+          
+          <td><pre>4&nbsp;-&nbsp;0x4</pre></td>
+          
+          <td>Hesiod</td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="dnscode-items">
+    Type <a href="#type-dnscode">dnscode</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+        <th>Description</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">No DNS Response</pre></td>
+          
+          <td><pre>-1&nbsp;-&nbsp;0x-1</pre></td>
+          
+          <td>No DNS Response</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NoError</pre></td>
+          
+          <td><pre>0&nbsp;-&nbsp;0x0</pre></td>
+          
+          <td>No Error</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">FormErr</pre></td>
+          
+          <td><pre>1&nbsp;-&nbsp;0x1</pre></td>
+          
+          <td>Format Error</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ServFail</pre></td>
+          
+          <td><pre>2&nbsp;-&nbsp;0x2</pre></td>
+          
+          <td>Server Failure</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NXDomain</pre></td>
+          
+          <td><pre>3&nbsp;-&nbsp;0x3</pre></td>
+          
+          <td>Non-Existent Domain</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NotImp</pre></td>
+          
+          <td><pre>4&nbsp;-&nbsp;0x4</pre></td>
+          
+          <td>Not Implemented</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Refused</pre></td>
+          
+          <td><pre>5&nbsp;-&nbsp;0x5</pre></td>
+          
+          <td>Query Refused</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">YXDomain</pre></td>
+          
+          <td><pre>6&nbsp;-&nbsp;0x6</pre></td>
+          
+          <td>Name Exists when it should not</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">YXRRSet</pre></td>
+          
+          <td><pre>7&nbsp;-&nbsp;0x7</pre></td>
+          
+          <td>RR Set Exists when it should not</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NXRRSet</pre></td>
+          
+          <td><pre>8&nbsp;-&nbsp;0x8</pre></td>
+          
+          <td>RR Set that should exist does not</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NotAuth</pre></td>
+          
+          <td><pre>9&nbsp;-&nbsp;0x9</pre></td>
+          
+          <td>Server Not Authoritative for zone</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NotZone</pre></td>
+          
+          <td><pre>10&nbsp;-&nbsp;0xA</pre></td>
+          
+          <td>Name not contained in zone</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">BadSig/BadVers</pre></td>
+          
+          <td><pre>16&nbsp;-&nbsp;0x10</pre></td>
+          
+          <td>TSIG Signature Failure OR Bad OPT version</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">BadKey</pre></td>
+          
+          <td><pre>17&nbsp;-&nbsp;0x11</pre></td>
+          
+          <td>Key not recognized</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">BadTime</pre></td>
+          
+          <td><pre>18&nbsp;-&nbsp;0x12</pre></td>
+          
+          <td>Signature out of time window</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">BadMode</pre></td>
+          
+          <td><pre>19&nbsp;-&nbsp;0x13</pre></td>
+          
+          <td>Bad TKEY Mode</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">BadName</pre></td>
+          
+          <td><pre>20&nbsp;-&nbsp;0x14</pre></td>
+          
+          <td>Duplicate key name</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">BadAlg</pre></td>
+          
+          <td><pre>21&nbsp;-&nbsp;0x15</pre></td>
+          
+          <td>Algorithm not supported</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">BadTrunc</pre></td>
+          
+          <td><pre>22&nbsp;-&nbsp;0x16</pre></td>
+          
+          <td>Bad Truncation</td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="dnstype-items">
+    Type <a href="#type-dnstype">dnstype</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+        <th>Description</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">RESERVED</pre></td>
+          
+          <td><pre>0&nbsp;-&nbsp;0x0</pre></td>
+          
+          <td>reserved type, sometimes mistakenly used by Microsoft protocols</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">A</pre></td>
+          
+          <td><pre>1&nbsp;-&nbsp;0x1</pre></td>
+          
+          <td>a host address</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NS</pre></td>
+          
+          <td><pre>2&nbsp;-&nbsp;0x2</pre></td>
+          
+          <td>an authoritative name server</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">MD</pre></td>
+          
+          <td><pre>3&nbsp;-&nbsp;0x3</pre></td>
+          
+          <td>a mail destination (Obsolete - use MX)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">MF</pre></td>
+          
+          <td><pre>4&nbsp;-&nbsp;0x4</pre></td>
+          
+          <td>a mail forwarder (Obsolete - use MX)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CNAME</pre></td>
+          
+          <td><pre>5&nbsp;-&nbsp;0x5</pre></td>
+          
+          <td>the canonical name for an alias</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SOA</pre></td>
+          
+          <td><pre>6&nbsp;-&nbsp;0x6</pre></td>
+          
+          <td>marks the start of a zone of authority</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">MB</pre></td>
+          
+          <td><pre>7&nbsp;-&nbsp;0x7</pre></td>
+          
+          <td>a mailbox domain name (EXPERIMENTAL)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">MG</pre></td>
+          
+          <td><pre>8&nbsp;-&nbsp;0x8</pre></td>
+          
+          <td>a mail group member (EXPERIMENTAL)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">MR</pre></td>
+          
+          <td><pre>9&nbsp;-&nbsp;0x9</pre></td>
+          
+          <td>a mail rename domain name (EXPERIMENTAL)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NULL</pre></td>
+          
+          <td><pre>10&nbsp;-&nbsp;0xA</pre></td>
+          
+          <td>a null RR (EXPERIMENTAL)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">WKS</pre></td>
+          
+          <td><pre>11&nbsp;-&nbsp;0xB</pre></td>
+          
+          <td>a well known service description</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PTR</pre></td>
+          
+          <td><pre>12&nbsp;-&nbsp;0xC</pre></td>
+          
+          <td>a domain name pointer</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">HINFO</pre></td>
+          
+          <td><pre>13&nbsp;-&nbsp;0xD</pre></td>
+          
+          <td>host information</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">MINFO</pre></td>
+          
+          <td><pre>14&nbsp;-&nbsp;0xE</pre></td>
+          
+          <td>mailbox or mail list information</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">MX</pre></td>
+          
+          <td><pre>15&nbsp;-&nbsp;0xF</pre></td>
+          
+          <td>mail exchange</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TXT</pre></td>
+          
+          <td><pre>16&nbsp;-&nbsp;0x10</pre></td>
+          
+          <td>text strings</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RP</pre></td>
+          
+          <td><pre>17&nbsp;-&nbsp;0x11</pre></td>
+          
+          <td>for Responsible Person</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">AFSDB</pre></td>
+          
+          <td><pre>18&nbsp;-&nbsp;0x12</pre></td>
+          
+          <td>for AFS Data Base location</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">X25</pre></td>
+          
+          <td><pre>19&nbsp;-&nbsp;0x13</pre></td>
+          
+          <td>for X.25 PSDN address</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISDN</pre></td>
+          
+          <td><pre>20&nbsp;-&nbsp;0x14</pre></td>
+          
+          <td>for ISDN address</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RT</pre></td>
+          
+          <td><pre>21&nbsp;-&nbsp;0x15</pre></td>
+          
+          <td>for Route Through</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NSAP</pre></td>
+          
+          <td><pre>22&nbsp;-&nbsp;0x16</pre></td>
+          
+          <td>for NSAP address, NSAP style A record</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NSAP-PTR</pre></td>
+          
+          <td><pre>23&nbsp;-&nbsp;0x17</pre></td>
+          
+          <td>for domain name pointer, NSAP style</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SIG</pre></td>
+          
+          <td><pre>24&nbsp;-&nbsp;0x18</pre></td>
+          
+          <td>for security signature</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KEY</pre></td>
+          
+          <td><pre>25&nbsp;-&nbsp;0x19</pre></td>
+          
+          <td>for security key</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PX</pre></td>
+          
+          <td><pre>26&nbsp;-&nbsp;0x1A</pre></td>
+          
+          <td>X.400 mail mapping information</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">GPOS</pre></td>
+          
+          <td><pre>27&nbsp;-&nbsp;0x1B</pre></td>
+          
+          <td>Geographical Position</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">AAAA</pre></td>
+          
+          <td><pre>28&nbsp;-&nbsp;0x1C</pre></td>
+          
+          <td>a IP6 host address</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">LOC</pre></td>
+          
+          <td><pre>29&nbsp;-&nbsp;0x1D</pre></td>
+          
+          <td>Location Information</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NXT</pre></td>
+          
+          <td><pre>30&nbsp;-&nbsp;0x1E</pre></td>
+          
+          <td>Next Domain - OBSOLETE</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">EID</pre></td>
+          
+          <td><pre>31&nbsp;-&nbsp;0x1F</pre></td>
+          
+          <td>Endpoint Identifier</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NIMLOC/NB</pre></td>
+          
+          <td><pre>32&nbsp;-&nbsp;0x20</pre></td>
+          
+          <td>Nimrod Locator OR Netbios</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SRV/NBSTAT</pre></td>
+          
+          <td><pre>33&nbsp;-&nbsp;0x21</pre></td>
+          
+          <td>Server Selection OR Netbios Stats</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ATMA</pre></td>
+          
+          <td><pre>34&nbsp;-&nbsp;0x22</pre></td>
+          
+          <td>ATM Address</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NAPTR</pre></td>
+          
+          <td><pre>35&nbsp;-&nbsp;0x23</pre></td>
+          
+          <td>Naming Authority Pointer</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KX</pre></td>
+          
+          <td><pre>36&nbsp;-&nbsp;0x24</pre></td>
+          
+          <td>Key Exchanger</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CERT</pre></td>
+          
+          <td><pre>37&nbsp;-&nbsp;0x25</pre></td>
+          
+          <td>CERT</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">A6</pre></td>
+          
+          <td><pre>38&nbsp;-&nbsp;0x26</pre></td>
+          
+          <td>A6 (Experimental)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DNAME</pre></td>
+          
+          <td><pre>39&nbsp;-&nbsp;0x27</pre></td>
+          
+          <td>DNAME</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SINK</pre></td>
+          
+          <td><pre>40&nbsp;-&nbsp;0x28</pre></td>
+          
+          <td>SINK</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">OPT</pre></td>
+          
+          <td><pre>41&nbsp;-&nbsp;0x29</pre></td>
+          
+          <td>OPT</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">APL</pre></td>
+          
+          <td><pre>42&nbsp;-&nbsp;0x2A</pre></td>
+          
+          <td>APL</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DS</pre></td>
+          
+          <td><pre>43&nbsp;-&nbsp;0x2B</pre></td>
+          
+          <td>Delegation Signer</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SSHFP</pre></td>
+          
+          <td><pre>44&nbsp;-&nbsp;0x2C</pre></td>
+          
+          <td>SSH Key Fingerprint</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPSECKEY</pre></td>
+          
+          <td><pre>45&nbsp;-&nbsp;0x2D</pre></td>
+          
+          <td>IPSECKEY</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RRSIG</pre></td>
+          
+          <td><pre>46&nbsp;-&nbsp;0x2E</pre></td>
+          
+          <td>RRSIG</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NSEC</pre></td>
+          
+          <td><pre>47&nbsp;-&nbsp;0x2F</pre></td>
+          
+          <td>NSEC</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DNSKEY</pre></td>
+          
+          <td><pre>48&nbsp;-&nbsp;0x30</pre></td>
+          
+          <td>DNSKEY</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DHCID</pre></td>
+          
+          <td><pre>49&nbsp;-&nbsp;0x31</pre></td>
+          
+          <td>DHCID</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NSEC3</pre></td>
+          
+          <td><pre>50&nbsp;-&nbsp;0x32</pre></td>
+          
+          <td>NSEC3</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NSEC3PARAM</pre></td>
+          
+          <td><pre>51&nbsp;-&nbsp;0x33</pre></td>
+          
+          <td>NSEC3PARAM</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">HIP</pre></td>
+          
+          <td><pre>55&nbsp;-&nbsp;0x37</pre></td>
+          
+          <td>Host Identity Protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NINFO</pre></td>
+          
+          <td><pre>56&nbsp;-&nbsp;0x38</pre></td>
+          
+          <td>NINFO</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RKEY</pre></td>
+          
+          <td><pre>57&nbsp;-&nbsp;0x39</pre></td>
+          
+          <td>RKEY</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TALINK</pre></td>
+          
+          <td><pre>58&nbsp;-&nbsp;0x3A</pre></td>
+          
+          <td>Trust Anchor LINK</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CDS</pre></td>
+          
+          <td><pre>59&nbsp;-&nbsp;0x3B</pre></td>
+          
+          <td>Child DS</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SPF</pre></td>
+          
+          <td><pre>99&nbsp;-&nbsp;0x63</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">UINFO</pre></td>
+          
+          <td><pre>100&nbsp;-&nbsp;0x64</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">UID</pre></td>
+          
+          <td><pre>101&nbsp;-&nbsp;0x65</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">GID</pre></td>
+          
+          <td><pre>102&nbsp;-&nbsp;0x66</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">UNSPEC</pre></td>
+          
+          <td><pre>103&nbsp;-&nbsp;0x67</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TKEY</pre></td>
+          
+          <td><pre>249&nbsp;-&nbsp;0xF9</pre></td>
+          
+          <td>Transaction Key</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TSIG</pre></td>
+          
+          <td><pre>250&nbsp;-&nbsp;0xFA</pre></td>
+          
+          <td>Transaction Signature</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IXFR</pre></td>
+          
+          <td><pre>251&nbsp;-&nbsp;0xFB</pre></td>
+          
+          <td>incremental transfer</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">AXFR</pre></td>
+          
+          <td><pre>252&nbsp;-&nbsp;0xFC</pre></td>
+          
+          <td>transfer of an entire zone</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">MAILB</pre></td>
+          
+          <td><pre>253&nbsp;-&nbsp;0xFD</pre></td>
+          
+          <td>mailbox-related RRs (MB, MG or MR)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">MAILA</pre></td>
+          
+          <td><pre>254&nbsp;-&nbsp;0xFE</pre></td>
+          
+          <td>mail agent RRs (Obsolete - see MX)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">*</pre></td>
+          
+          <td><pre>255&nbsp;-&nbsp;0xFF</pre></td>
+          
+          <td>A request for all records</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">URI</pre></td>
+          
+          <td><pre>256&nbsp;-&nbsp;0x100</pre></td>
+          
+          <td>URI</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CAA</pre></td>
+          
+          <td><pre>257&nbsp;-&nbsp;0x101</pre></td>
+          
+          <td>Certification Authority Authorization</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TA</pre></td>
+          
+          <td><pre>32768&nbsp;-&nbsp;0x8000</pre></td>
+          
+          <td>DNSSEC Trust Authorities</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DLV</pre></td>
+          
+          <td><pre>32769&nbsp;-&nbsp;0x8001</pre></td>
+          
+          <td>DNSSEC Lookaside Validation</td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="encryption-items">
+    Type <a href="#type-encryption">encryption</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">Off</pre></td>
+          
+          <td><pre>0&nbsp;-&nbsp;0x0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Off stream</pre></td>
+          
+          <td><pre>1&nbsp;-&nbsp;0x1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Basic</pre></td>
+          
+          <td><pre>2&nbsp;-&nbsp;0x2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Basic stream</pre></td>
+          
+          <td><pre>3&nbsp;-&nbsp;0x3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Rc5</pre></td>
+          
+          <td><pre>4&nbsp;-&nbsp;0x4</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="ethernetprotocol-items">
+    Type <a href="#type-ethernetprotocol">ethernetprotocol</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">XEROX PUP</pre></td>
+          
+          <td><pre>512&nbsp;-&nbsp;0x200</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PUP Addr Trans</pre></td>
+          
+          <td><pre>513&nbsp;-&nbsp;0x201</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Nixdorf (conflicts with 802.3 Length Field)</pre></td>
+          
+          <td><pre>1024&nbsp;-&nbsp;0x400</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ethernet II</pre></td>
+          
+          <td><pre>1528&nbsp;-&nbsp;0x5F8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">XEROX NS IDP</pre></td>
+          
+          <td><pre>1536&nbsp;-&nbsp;0x600</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">XNS Address Translation</pre></td>
+          
+          <td><pre>1537&nbsp;-&nbsp;0x601</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DLog</pre></td>
+          
+          <td><pre>1632&nbsp;-&nbsp;0x660</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DLog</pre></td>
+          
+          <td><pre>1633&nbsp;-&nbsp;0x661</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv4</pre></td>
+          
+          <td><pre>2048&nbsp;-&nbsp;0x800</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Valid Systems</pre></td>
+          
+          <td><pre>2049&nbsp;-&nbsp;0x801</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NBS Internet</pre></td>
+          
+          <td><pre>2050&nbsp;-&nbsp;0x802</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ECMA Internet</pre></td>
+          
+          <td><pre>2051&nbsp;-&nbsp;0x803</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Chaosnet</pre></td>
+          
+          <td><pre>2052&nbsp;-&nbsp;0x804</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">X.25 Level 3</pre></td>
+          
+          <td><pre>2053&nbsp;-&nbsp;0x805</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ARP</pre></td>
+          
+          <td><pre>2054&nbsp;-&nbsp;0x806</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">XNS Compatability</pre></td>
+          
+          <td><pre>2055&nbsp;-&nbsp;0x807</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Frame Relay ARP</pre></td>
+          
+          <td><pre>2056&nbsp;-&nbsp;0x808</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Symbolics Private</pre></td>
+          
+          <td><pre>2076&nbsp;-&nbsp;0x81C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Wake-on-LAN (WOL)</pre></td>
+          
+          <td><pre>2114&nbsp;-&nbsp;0x842</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Xyplex</pre></td>
+          
+          <td><pre>2184&nbsp;-&nbsp;0x888</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Xyplex</pre></td>
+          
+          <td><pre>2185&nbsp;-&nbsp;0x889</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Xyplex</pre></td>
+          
+          <td><pre>2186&nbsp;-&nbsp;0x88A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">WiMax Mac to Mac Packet</pre></td>
+          
+          <td><pre>2288&nbsp;-&nbsp;0x8F0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">G8BPQ AX.25 over Ethernet</pre></td>
+          
+          <td><pre>2303&nbsp;-&nbsp;0x8FF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ungermann-Bass net debugr</pre></td>
+          
+          <td><pre>2304&nbsp;-&nbsp;0x900</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Xerox IEEE802.3 PUP</pre></td>
+          
+          <td><pre>2560&nbsp;-&nbsp;0xA00</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PUP Addr Trans</pre></td>
+          
+          <td><pre>2561&nbsp;-&nbsp;0xA01</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Banyan VINES</pre></td>
+          
+          <td><pre>2989&nbsp;-&nbsp;0xBAD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">VINES Loopback</pre></td>
+          
+          <td><pre>2990&nbsp;-&nbsp;0xBAE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">VINES Echo</pre></td>
+          
+          <td><pre>2991&nbsp;-&nbsp;0xBAF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Berkeley Trailer nego</pre></td>
+          
+          <td><pre>4096&nbsp;-&nbsp;0x1000</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Berkeley Trailer encap/IP</pre></td>
+          
+          <td><pre>4097&nbsp;-&nbsp;0x1001</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DCA - Multicast</pre></td>
+          
+          <td><pre>4660&nbsp;-&nbsp;0x1234</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Valid Systems</pre></td>
+          
+          <td><pre>5632&nbsp;-&nbsp;0x1600</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TRAIL - MS Network Monitor Summary Packet</pre></td>
+          
+          <td><pre>6532&nbsp;-&nbsp;0x1984</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Artificial Horizons</pre></td>
+          
+          <td><pre>6537&nbsp;-&nbsp;0x1989</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datapoint Corporation</pre></td>
+          
+          <td><pre>6549&nbsp;-&nbsp;0x1995</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Cisco Group Multicast Protocol (CGMP)</pre></td>
+          
+          <td><pre>8193&nbsp;-&nbsp;0x2001</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">GigaSMART Headers</pre></td>
+          
+          <td><pre>8933&nbsp;-&nbsp;0x22E5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Multiple Stream Reservation Protocol (MSRP)</pre></td>
+          
+          <td><pre>8938&nbsp;-&nbsp;0x22EA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Audio Video Bridging Transport Protocol (AVBTP)</pre></td>
+          
+          <td><pre>8944&nbsp;-&nbsp;0x22F0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Robust Header Compression (ROHC)</pre></td>
+          
+          <td><pre>8945&nbsp;-&nbsp;0x22F1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Transparent Interconnection of Lots of Links (TRILL)</pre></td>
+          
+          <td><pre>8947&nbsp;-&nbsp;0x22F3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Intermediate System to Intermediate System</pre></td>
+          
+          <td><pre>8948&nbsp;-&nbsp;0x22F4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Intel Centrino Promiscuous Packets</pre></td>
+          
+          <td><pre>9298&nbsp;-&nbsp;0x2452</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com NBP Virtual Circuit Datagram</pre></td>
+          
+          <td><pre>15360&nbsp;-&nbsp;0x3C00</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com NBP System Control Datagram</pre></td>
+          
+          <td><pre>15361&nbsp;-&nbsp;0x3C01</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com NBP Connect Request (Virtual CCT)</pre></td>
+          
+          <td><pre>15362&nbsp;-&nbsp;0x3C02</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com NBP Connect Response</pre></td>
+          
+          <td><pre>15363&nbsp;-&nbsp;0x3C03</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com NBP Connect Complete</pre></td>
+          
+          <td><pre>15364&nbsp;-&nbsp;0x3C04</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com NBP Close Request (Virtual CCT)</pre></td>
+          
+          <td><pre>15365&nbsp;-&nbsp;0x3C05</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com NBP Close Response</pre></td>
+          
+          <td><pre>15366&nbsp;-&nbsp;0x3C06</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com NBP Datagram</pre></td>
+          
+          <td><pre>15367&nbsp;-&nbsp;0x3C07</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com NBP Datagram Broadcast</pre></td>
+          
+          <td><pre>15368&nbsp;-&nbsp;0x3C08</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com NBP Claim NetBIOS Name</pre></td>
+          
+          <td><pre>15369&nbsp;-&nbsp;0x3C09</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com NBP Delete Netbios Name</pre></td>
+          
+          <td><pre>15370&nbsp;-&nbsp;0x3C0A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com NBP Remote Adaptor Status Request</pre></td>
+          
+          <td><pre>15371&nbsp;-&nbsp;0x3C0B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com NBP Remote Adaptor Response</pre></td>
+          
+          <td><pre>15372&nbsp;-&nbsp;0x3C0C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com NBP Reset</pre></td>
+          
+          <td><pre>15373&nbsp;-&nbsp;0x3C0D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ethernet Powerlink (EPL v1)</pre></td>
+          
+          <td><pre>15935&nbsp;-&nbsp;0x3E3F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PCS Basic Block Protocol</pre></td>
+          
+          <td><pre>16962&nbsp;-&nbsp;0x4242</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Information Modes Little Big LAN Diagnostic</pre></td>
+          
+          <td><pre>16972&nbsp;-&nbsp;0x424C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">THD - Diddle</pre></td>
+          
+          <td><pre>17185&nbsp;-&nbsp;0x4321</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Information Modes Little Big LAN</pre></td>
+          
+          <td><pre>19522&nbsp;-&nbsp;0x4C42</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">BBN Simnet</pre></td>
+          
+          <td><pre>21000&nbsp;-&nbsp;0x5208</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC Unassigned</pre></td>
+          
+          <td><pre>24576&nbsp;-&nbsp;0x6000</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC Maintenance Operation Protocol (MOP)</pre></td>
+          
+          <td><pre>24577&nbsp;-&nbsp;0x6001</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC Maintenance Operation Protocol (MOP)</pre></td>
+          
+          <td><pre>24578&nbsp;-&nbsp;0x6002</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DECNET Phase IV</pre></td>
+          
+          <td><pre>24579&nbsp;-&nbsp;0x6003</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC Local Area Transport (LAT)</pre></td>
+          
+          <td><pre>24580&nbsp;-&nbsp;0x6004</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC Diagnostic Protocol</pre></td>
+          
+          <td><pre>24581&nbsp;-&nbsp;0x6005</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC Customer Protocol</pre></td>
+          
+          <td><pre>24582&nbsp;-&nbsp;0x6006</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC Local Area VAX Cluster (LAVC)</pre></td>
+          
+          <td><pre>24583&nbsp;-&nbsp;0x6007</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC AMBER</pre></td>
+          
+          <td><pre>24584&nbsp;-&nbsp;0x6008</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC MUMPS</pre></td>
+          
+          <td><pre>24585&nbsp;-&nbsp;0x6009</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com Corporation</pre></td>
+          
+          <td><pre>24592&nbsp;-&nbsp;0x6010</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com Corporation</pre></td>
+          
+          <td><pre>24593&nbsp;-&nbsp;0x6011</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com Corporation</pre></td>
+          
+          <td><pre>24594&nbsp;-&nbsp;0x6012</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com Corporation</pre></td>
+          
+          <td><pre>24595&nbsp;-&nbsp;0x6013</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com Corporation</pre></td>
+          
+          <td><pre>24596&nbsp;-&nbsp;0x6014</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Trans Ether Bridging</pre></td>
+          
+          <td><pre>25944&nbsp;-&nbsp;0x6558</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Raw Frame Relay</pre></td>
+          
+          <td><pre>25945&nbsp;-&nbsp;0x6559</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ungermann-Bass download</pre></td>
+          
+          <td><pre>28672&nbsp;-&nbsp;0x7000</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ungermann-Bass NIUs</pre></td>
+          
+          <td><pre>28673&nbsp;-&nbsp;0x7001</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ungermann-Bass dia/loop</pre></td>
+          
+          <td><pre>28674&nbsp;-&nbsp;0x7002</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ungermann-Bass (NMC to/from UB Bridge)</pre></td>
+          
+          <td><pre>28675&nbsp;-&nbsp;0x7003</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ungermann-Bass Bridge Spanning Tree</pre></td>
+          
+          <td><pre>28676&nbsp;-&nbsp;0x7004</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">OS/9 Microware</pre></td>
+          
+          <td><pre>28679&nbsp;-&nbsp;0x7007</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">OS/9 Net</pre></td>
+          
+          <td><pre>28681&nbsp;-&nbsp;0x7009</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Sintrom (was LRT - England)</pre></td>
+          
+          <td><pre>28704&nbsp;-&nbsp;0x7020</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Sintrom (was LRT - England)</pre></td>
+          
+          <td><pre>28705&nbsp;-&nbsp;0x7021</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Sintrom (was LRT - England)</pre></td>
+          
+          <td><pre>28706&nbsp;-&nbsp;0x7022</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Sintrom (was LRT - England)</pre></td>
+          
+          <td><pre>28707&nbsp;-&nbsp;0x7023</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Sintrom (was LRT - England)</pre></td>
+          
+          <td><pre>28708&nbsp;-&nbsp;0x7024</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Sintrom (was LRT - England)</pre></td>
+          
+          <td><pre>28709&nbsp;-&nbsp;0x7025</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Sintrom (was LRT - England)</pre></td>
+          
+          <td><pre>28710&nbsp;-&nbsp;0x7026</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Sintrom (was LRT - England)</pre></td>
+          
+          <td><pre>28711&nbsp;-&nbsp;0x7027</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Sintrom (was LRT - England)</pre></td>
+          
+          <td><pre>28712&nbsp;-&nbsp;0x7028</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Sintrom (was LRT - England)</pre></td>
+          
+          <td><pre>28713&nbsp;-&nbsp;0x7029</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Proteon</pre></td>
+          
+          <td><pre>28720&nbsp;-&nbsp;0x7030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Prime NTS (Network Terminal Service)</pre></td>
+          
+          <td><pre>28721&nbsp;-&nbsp;0x7031</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Cabletron</pre></td>
+          
+          <td><pre>28724&nbsp;-&nbsp;0x7034</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Cronus VLN</pre></td>
+          
+          <td><pre>32771&nbsp;-&nbsp;0x8003</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Cronus Direct</pre></td>
+          
+          <td><pre>32772&nbsp;-&nbsp;0x8004</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">HP Probe</pre></td>
+          
+          <td><pre>32773&nbsp;-&nbsp;0x8005</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Nestar</pre></td>
+          
+          <td><pre>32774&nbsp;-&nbsp;0x8006</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">AT&amp;T</pre></td>
+          
+          <td><pre>32776&nbsp;-&nbsp;0x8008</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Excelan</pre></td>
+          
+          <td><pre>32784&nbsp;-&nbsp;0x8010</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SGI diagnostics</pre></td>
+          
+          <td><pre>32787&nbsp;-&nbsp;0x8013</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SGI network games</pre></td>
+          
+          <td><pre>32788&nbsp;-&nbsp;0x8014</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SGI reserved</pre></td>
+          
+          <td><pre>32789&nbsp;-&nbsp;0x8015</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SGI bounce server</pre></td>
+          
+          <td><pre>32790&nbsp;-&nbsp;0x8016</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Apollo Domain</pre></td>
+          
+          <td><pre>32793&nbsp;-&nbsp;0x8019</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Tymshare</pre></td>
+          
+          <td><pre>32815&nbsp;-&nbsp;0x802F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Tigan, Inc.</pre></td>
+          
+          <td><pre>32816&nbsp;-&nbsp;0x8030</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reverse ARP</pre></td>
+          
+          <td><pre>32821&nbsp;-&nbsp;0x8035</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Aeonic Systems</pre></td>
+          
+          <td><pre>32822&nbsp;-&nbsp;0x8036</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPX (Novell Netware)</pre></td>
+          
+          <td><pre>32823&nbsp;-&nbsp;0x8037</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC LANBridge Management</pre></td>
+          
+          <td><pre>32824&nbsp;-&nbsp;0x8038</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC DSM/DDP</pre></td>
+          
+          <td><pre>32825&nbsp;-&nbsp;0x8039</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC Argonaut Console</pre></td>
+          
+          <td><pre>32826&nbsp;-&nbsp;0x803A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC VAXELN</pre></td>
+          
+          <td><pre>32827&nbsp;-&nbsp;0x803B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC DNS Naming Service</pre></td>
+          
+          <td><pre>32828&nbsp;-&nbsp;0x803C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC Ethernet CSMA/CD Encryption Protocol</pre></td>
+          
+          <td><pre>32829&nbsp;-&nbsp;0x803D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC Distributed Time Service</pre></td>
+          
+          <td><pre>32830&nbsp;-&nbsp;0x803E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC LAN Traffic Monitor Protocol</pre></td>
+          
+          <td><pre>32831&nbsp;-&nbsp;0x803F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC PATHWORKS DECnet NETBIOS Emulation</pre></td>
+          
+          <td><pre>32832&nbsp;-&nbsp;0x8040</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC Local Area System Transport</pre></td>
+          
+          <td><pre>32833&nbsp;-&nbsp;0x8041</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC unassigned</pre></td>
+          
+          <td><pre>32834&nbsp;-&nbsp;0x8042</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Planning Research Corp.</pre></td>
+          
+          <td><pre>32836&nbsp;-&nbsp;0x8044</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">AT&amp;T</pre></td>
+          
+          <td><pre>32838&nbsp;-&nbsp;0x8046</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">AT&amp;T</pre></td>
+          
+          <td><pre>32839&nbsp;-&nbsp;0x8047</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DEC Availability Manager</pre></td>
+          
+          <td><pre>32840&nbsp;-&nbsp;0x8048</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ExperData</pre></td>
+          
+          <td><pre>32841&nbsp;-&nbsp;0x8049</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">VMTP (Versatile Message Transaction Protocol)</pre></td>
+          
+          <td><pre>32859&nbsp;-&nbsp;0x805B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Stanford V Kernel prod.</pre></td>
+          
+          <td><pre>32860&nbsp;-&nbsp;0x805C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Evans &amp; Sutherland</pre></td>
+          
+          <td><pre>32861&nbsp;-&nbsp;0x805D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Little Machines</pre></td>
+          
+          <td><pre>32864&nbsp;-&nbsp;0x8060</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Counterpoint Computers</pre></td>
+          
+          <td><pre>32866&nbsp;-&nbsp;0x8062</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Univ. of Mass. @ Amherst</pre></td>
+          
+          <td><pre>32869&nbsp;-&nbsp;0x8065</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Univ. of Mass. @ Amherst</pre></td>
+          
+          <td><pre>32870&nbsp;-&nbsp;0x8066</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Veeco Integrated Auto.</pre></td>
+          
+          <td><pre>32871&nbsp;-&nbsp;0x8067</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">General Dynamics</pre></td>
+          
+          <td><pre>32872&nbsp;-&nbsp;0x8068</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">AT&amp;T</pre></td>
+          
+          <td><pre>32873&nbsp;-&nbsp;0x8069</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Autophon</pre></td>
+          
+          <td><pre>32874&nbsp;-&nbsp;0x806A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ComDesign</pre></td>
+          
+          <td><pre>32876&nbsp;-&nbsp;0x806C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Computgraphic Corp.</pre></td>
+          
+          <td><pre>32877&nbsp;-&nbsp;0x806D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Landmark Graphics Corporation</pre></td>
+          
+          <td><pre>32878&nbsp;-&nbsp;0x806E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Landmark Graphics Corporation</pre></td>
+          
+          <td><pre>32879&nbsp;-&nbsp;0x806F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Landmark Graphics Corporation</pre></td>
+          
+          <td><pre>32880&nbsp;-&nbsp;0x8070</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Landmark Graphics Corporation</pre></td>
+          
+          <td><pre>32881&nbsp;-&nbsp;0x8071</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Landmark Graphics Corporation</pre></td>
+          
+          <td><pre>32882&nbsp;-&nbsp;0x8072</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Landmark Graphics Corporation</pre></td>
+          
+          <td><pre>32883&nbsp;-&nbsp;0x8073</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Landmark Graphics Corporation</pre></td>
+          
+          <td><pre>32884&nbsp;-&nbsp;0x8074</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Landmark Graphics Corporation</pre></td>
+          
+          <td><pre>32885&nbsp;-&nbsp;0x8075</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Landmark Graphics Corporation</pre></td>
+          
+          <td><pre>32886&nbsp;-&nbsp;0x8076</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Landmark Graphics Corporation</pre></td>
+          
+          <td><pre>32887&nbsp;-&nbsp;0x8077</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Matra</pre></td>
+          
+          <td><pre>32890&nbsp;-&nbsp;0x807A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Dansk Data Elektronik</pre></td>
+          
+          <td><pre>32891&nbsp;-&nbsp;0x807B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Merit Internodal</pre></td>
+          
+          <td><pre>32892&nbsp;-&nbsp;0x807C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Vitalink Communications</pre></td>
+          
+          <td><pre>32893&nbsp;-&nbsp;0x807D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Vitalink Communications</pre></td>
+          
+          <td><pre>32894&nbsp;-&nbsp;0x807E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Vitalink Communications</pre></td>
+          
+          <td><pre>32895&nbsp;-&nbsp;0x807F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Vitalink TransLAN III</pre></td>
+          
+          <td><pre>32896&nbsp;-&nbsp;0x8080</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Counterpoint Computers</pre></td>
+          
+          <td><pre>32897&nbsp;-&nbsp;0x8081</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Counterpoint Computers</pre></td>
+          
+          <td><pre>32898&nbsp;-&nbsp;0x8082</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Counterpoint Computers</pre></td>
+          
+          <td><pre>32899&nbsp;-&nbsp;0x8083</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Xyplex</pre></td>
+          
+          <td><pre>32904&nbsp;-&nbsp;0x8088</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Xyplex</pre></td>
+          
+          <td><pre>32906&nbsp;-&nbsp;0x808A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ethertalk (AppleTalk over Ethernet)</pre></td>
+          
+          <td><pre>32923&nbsp;-&nbsp;0x809B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>32924&nbsp;-&nbsp;0x809C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>32925&nbsp;-&nbsp;0x809D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>32926&nbsp;-&nbsp;0x809E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Spider Systems Ltd.</pre></td>
+          
+          <td><pre>32927&nbsp;-&nbsp;0x809F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Nixdorf Computers</pre></td>
+          
+          <td><pre>32931&nbsp;-&nbsp;0x80A3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32932&nbsp;-&nbsp;0x80A4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32933&nbsp;-&nbsp;0x80A5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32934&nbsp;-&nbsp;0x80A6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32935&nbsp;-&nbsp;0x80A7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32936&nbsp;-&nbsp;0x80A8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32937&nbsp;-&nbsp;0x80A9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32938&nbsp;-&nbsp;0x80AA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32939&nbsp;-&nbsp;0x80AB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32940&nbsp;-&nbsp;0x80AC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32941&nbsp;-&nbsp;0x80AD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32942&nbsp;-&nbsp;0x80AE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32943&nbsp;-&nbsp;0x80AF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32944&nbsp;-&nbsp;0x80B0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32945&nbsp;-&nbsp;0x80B1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32946&nbsp;-&nbsp;0x80B2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Siemens Gammasonics Inc.</pre></td>
+          
+          <td><pre>32947&nbsp;-&nbsp;0x80B3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DCA Data Exchange Cluster</pre></td>
+          
+          <td><pre>32960&nbsp;-&nbsp;0x80C0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DCA Data Exchange Cluster</pre></td>
+          
+          <td><pre>32961&nbsp;-&nbsp;0x80C1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DCA Data Exchange Cluster</pre></td>
+          
+          <td><pre>32962&nbsp;-&nbsp;0x80C2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DCA Data Exchange Cluster</pre></td>
+          
+          <td><pre>32963&nbsp;-&nbsp;0x80C3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Banyan Systems</pre></td>
+          
+          <td><pre>32964&nbsp;-&nbsp;0x80C4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Banyan Systems</pre></td>
+          
+          <td><pre>32965&nbsp;-&nbsp;0x80C5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Pacer Software</pre></td>
+          
+          <td><pre>32966&nbsp;-&nbsp;0x80C6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Applitek Corporation</pre></td>
+          
+          <td><pre>32967&nbsp;-&nbsp;0x80C7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Intergraph Corporation</pre></td>
+          
+          <td><pre>32968&nbsp;-&nbsp;0x80C8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Intergraph Corporation</pre></td>
+          
+          <td><pre>32969&nbsp;-&nbsp;0x80C9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Intergraph Corporation</pre></td>
+          
+          <td><pre>32970&nbsp;-&nbsp;0x80CA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Intergraph Corporation</pre></td>
+          
+          <td><pre>32971&nbsp;-&nbsp;0x80CB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Intergraph Corporation</pre></td>
+          
+          <td><pre>32972&nbsp;-&nbsp;0x80CC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Harris Corporation</pre></td>
+          
+          <td><pre>32973&nbsp;-&nbsp;0x80CD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Harris Corporation</pre></td>
+          
+          <td><pre>32974&nbsp;-&nbsp;0x80CE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taylor Instrument</pre></td>
+          
+          <td><pre>32975&nbsp;-&nbsp;0x80CF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taylor Instrument</pre></td>
+          
+          <td><pre>32976&nbsp;-&nbsp;0x80D0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taylor Instrument</pre></td>
+          
+          <td><pre>32977&nbsp;-&nbsp;0x80D1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taylor Instrument</pre></td>
+          
+          <td><pre>32978&nbsp;-&nbsp;0x80D2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Rosemount Corporation</pre></td>
+          
+          <td><pre>32979&nbsp;-&nbsp;0x80D3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Rosemount Corporation</pre></td>
+          
+          <td><pre>32980&nbsp;-&nbsp;0x80D4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IBM SNA Service on Ether</pre></td>
+          
+          <td><pre>32981&nbsp;-&nbsp;0x80D5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Varian Associates</pre></td>
+          
+          <td><pre>32989&nbsp;-&nbsp;0x80DD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Transparent Remote File System (TRFS)</pre></td>
+          
+          <td><pre>32990&nbsp;-&nbsp;0x80DE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Transparent Remote File System (TRFS)</pre></td>
+          
+          <td><pre>32991&nbsp;-&nbsp;0x80DF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Allen-Bradley</pre></td>
+          
+          <td><pre>32992&nbsp;-&nbsp;0x80E0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Allen-Bradley</pre></td>
+          
+          <td><pre>32993&nbsp;-&nbsp;0x80E1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Allen-Bradley</pre></td>
+          
+          <td><pre>32994&nbsp;-&nbsp;0x80E2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Allen-Bradley</pre></td>
+          
+          <td><pre>32995&nbsp;-&nbsp;0x80E3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>32996&nbsp;-&nbsp;0x80E4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>32997&nbsp;-&nbsp;0x80E5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>32998&nbsp;-&nbsp;0x80E6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>32999&nbsp;-&nbsp;0x80E7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>33000&nbsp;-&nbsp;0x80E8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>33001&nbsp;-&nbsp;0x80E9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>33002&nbsp;-&nbsp;0x80EA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>33003&nbsp;-&nbsp;0x80EB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>33004&nbsp;-&nbsp;0x80EC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>33005&nbsp;-&nbsp;0x80ED</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>33006&nbsp;-&nbsp;0x80EE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>33007&nbsp;-&nbsp;0x80EF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datability</pre></td>
+          
+          <td><pre>33008&nbsp;-&nbsp;0x80F0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Retix</pre></td>
+          
+          <td><pre>33010&nbsp;-&nbsp;0x80F2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">AppleTalk AARP (Kinetics)</pre></td>
+          
+          <td><pre>33011&nbsp;-&nbsp;0x80F3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Kinetics</pre></td>
+          
+          <td><pre>33012&nbsp;-&nbsp;0x80F4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Kinetics</pre></td>
+          
+          <td><pre>33013&nbsp;-&nbsp;0x80F5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Apollo Computer</pre></td>
+          
+          <td><pre>33015&nbsp;-&nbsp;0x80F7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Wellfleet Communications</pre></td>
+          
+          <td><pre>33023&nbsp;-&nbsp;0x80FF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IEEE 802.1Q VLAN-tagged</pre></td>
+          
+          <td><pre>33024&nbsp;-&nbsp;0x8100</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Wellfleet Communications</pre></td>
+          
+          <td><pre>33025&nbsp;-&nbsp;0x8101</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Wellfleet - BOFL (Breath Of Life)</pre></td>
+          
+          <td><pre>33026&nbsp;-&nbsp;0x8102</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Wellfleet Communications</pre></td>
+          
+          <td><pre>33027&nbsp;-&nbsp;0x8103</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Symbolics Private</pre></td>
+          
+          <td><pre>33031&nbsp;-&nbsp;0x8107</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Symbolics Private</pre></td>
+          
+          <td><pre>33032&nbsp;-&nbsp;0x8108</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Symbolics Private</pre></td>
+          
+          <td><pre>33033&nbsp;-&nbsp;0x8109</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Talaris</pre></td>
+          
+          <td><pre>33067&nbsp;-&nbsp;0x812B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Hayes Microcomputers</pre></td>
+          
+          <td><pre>33072&nbsp;-&nbsp;0x8130</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">VG Laboratory Systems</pre></td>
+          
+          <td><pre>33073&nbsp;-&nbsp;0x8131</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Bridge Communications</pre></td>
+          
+          <td><pre>33074&nbsp;-&nbsp;0x8132</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Juniper NetScreen Redundancy Protocol (NSRP v2)</pre></td>
+          
+          <td><pre>33075&nbsp;-&nbsp;0x8133</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Bridge Communications</pre></td>
+          
+          <td><pre>33076&nbsp;-&nbsp;0x8134</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Bridge Communications</pre></td>
+          
+          <td><pre>33077&nbsp;-&nbsp;0x8135</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Bridge Communications</pre></td>
+          
+          <td><pre>33078&nbsp;-&nbsp;0x8136</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPX - NetWare</pre></td>
+          
+          <td><pre>33079&nbsp;-&nbsp;0x8137</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPX - Novell</pre></td>
+          
+          <td><pre>33080&nbsp;-&nbsp;0x8138</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KTI</pre></td>
+          
+          <td><pre>33081&nbsp;-&nbsp;0x8139</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KTI</pre></td>
+          
+          <td><pre>33082&nbsp;-&nbsp;0x813A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KTI</pre></td>
+          
+          <td><pre>33083&nbsp;-&nbsp;0x813B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KTI</pre></td>
+          
+          <td><pre>33084&nbsp;-&nbsp;0x813C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">KTI</pre></td>
+          
+          <td><pre>33085&nbsp;-&nbsp;0x813D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">M/MUMPS Data Sharing</pre></td>
+          
+          <td><pre>33087&nbsp;-&nbsp;0x813F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Amoeba 4 RPC - Vrije Universiteit (NL)</pre></td>
+          
+          <td><pre>33093&nbsp;-&nbsp;0x8145</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Fast Local Internet Protocol (FLIP)</pre></td>
+          
+          <td><pre>33094&nbsp;-&nbsp;0x8146</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Vrije Universiteit (NL)</pre></td>
+          
+          <td><pre>33095&nbsp;-&nbsp;0x8147</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Logicraft</pre></td>
+          
+          <td><pre>33096&nbsp;-&nbsp;0x8148</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Network Computing Devices</pre></td>
+          
+          <td><pre>33097&nbsp;-&nbsp;0x8149</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Alpha Micro</pre></td>
+          
+          <td><pre>33098&nbsp;-&nbsp;0x814A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SNMP over Eth.</pre></td>
+          
+          <td><pre>33100&nbsp;-&nbsp;0x814C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">BIIN</pre></td>
+          
+          <td><pre>33101&nbsp;-&nbsp;0x814D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">BIIN 814F Technically Elite Concepts</pre></td>
+          
+          <td><pre>33102&nbsp;-&nbsp;0x814E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Technically Elite Concepts</pre></td>
+          
+          <td><pre>33103&nbsp;-&nbsp;0x814F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Rational Corp</pre></td>
+          
+          <td><pre>33104&nbsp;-&nbsp;0x8150</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Qualcomm</pre></td>
+          
+          <td><pre>33105&nbsp;-&nbsp;0x8151</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Qualcomm</pre></td>
+          
+          <td><pre>33106&nbsp;-&nbsp;0x8152</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Qualcomm</pre></td>
+          
+          <td><pre>33107&nbsp;-&nbsp;0x8153</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Computer Protocol Pty Ltd</pre></td>
+          
+          <td><pre>33116&nbsp;-&nbsp;0x815C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Computer Protocol Pty Ltd</pre></td>
+          
+          <td><pre>33117&nbsp;-&nbsp;0x815D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Computer Protocol Pty Ltd</pre></td>
+          
+          <td><pre>33118&nbsp;-&nbsp;0x815E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Charles River Data System</pre></td>
+          
+          <td><pre>33124&nbsp;-&nbsp;0x8164</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Charles River Data System</pre></td>
+          
+          <td><pre>33125&nbsp;-&nbsp;0x8165</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Charles River Data System</pre></td>
+          
+          <td><pre>33126&nbsp;-&nbsp;0x8166</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">XTP</pre></td>
+          
+          <td><pre>33149&nbsp;-&nbsp;0x817D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SGI/Time Warner Proprietary</pre></td>
+          
+          <td><pre>33150&nbsp;-&nbsp;0x817E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">High-Performance Parallel Interface-Framing (HIPPI-FP)</pre></td>
+          
+          <td><pre>33152&nbsp;-&nbsp;0x8180</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">High-Performance Parallel Interface-Scheduled Transfer (HIPPI-STP)</pre></td>
+          
+          <td><pre>33153&nbsp;-&nbsp;0x8181</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved for HIPPI-6400</pre></td>
+          
+          <td><pre>33154&nbsp;-&nbsp;0x8182</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved for HIPPI-6400</pre></td>
+          
+          <td><pre>33155&nbsp;-&nbsp;0x8183</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Silicon Graphics Proprietary</pre></td>
+          
+          <td><pre>33156&nbsp;-&nbsp;0x8184</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Silicon Graphics Proprietary</pre></td>
+          
+          <td><pre>33157&nbsp;-&nbsp;0x8185</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Silicon Graphics Proprietary</pre></td>
+          
+          <td><pre>33158&nbsp;-&nbsp;0x8186</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Silicon Graphics Proprietary</pre></td>
+          
+          <td><pre>33159&nbsp;-&nbsp;0x8187</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Silicon Graphics Proprietary</pre></td>
+          
+          <td><pre>33160&nbsp;-&nbsp;0x8188</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Silicon Graphics Proprietary</pre></td>
+          
+          <td><pre>33161&nbsp;-&nbsp;0x8189</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Silicon Graphics Proprietary</pre></td>
+          
+          <td><pre>33162&nbsp;-&nbsp;0x818A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Silicon Graphics Proprietary</pre></td>
+          
+          <td><pre>33163&nbsp;-&nbsp;0x818B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Silicon Graphics Proprietary</pre></td>
+          
+          <td><pre>33164&nbsp;-&nbsp;0x818C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Motorola Computer</pre></td>
+          
+          <td><pre>33165&nbsp;-&nbsp;0x818D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PowerLAN / NetBIOS/NetBEUI (PC)</pre></td>
+          
+          <td><pre>33169&nbsp;-&nbsp;0x8191</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Qualcomm</pre></td>
+          
+          <td><pre>33178&nbsp;-&nbsp;0x819A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Qualcomm</pre></td>
+          
+          <td><pre>33179&nbsp;-&nbsp;0x819B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Qualcomm</pre></td>
+          
+          <td><pre>33180&nbsp;-&nbsp;0x819C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Qualcomm</pre></td>
+          
+          <td><pre>33181&nbsp;-&nbsp;0x819D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Qualcomm</pre></td>
+          
+          <td><pre>33182&nbsp;-&nbsp;0x819E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Qualcomm</pre></td>
+          
+          <td><pre>33183&nbsp;-&nbsp;0x819F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Qualcomm</pre></td>
+          
+          <td><pre>33184&nbsp;-&nbsp;0x81A0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Qualcomm</pre></td>
+          
+          <td><pre>33185&nbsp;-&nbsp;0x81A1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Qualcomm</pre></td>
+          
+          <td><pre>33186&nbsp;-&nbsp;0x81A2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Qualcomm</pre></td>
+          
+          <td><pre>33187&nbsp;-&nbsp;0x81A3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ARAI Bunkichi</pre></td>
+          
+          <td><pre>33188&nbsp;-&nbsp;0x81A4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RAD Network Devices</pre></td>
+          
+          <td><pre>33189&nbsp;-&nbsp;0x81A5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RAD Network Devices</pre></td>
+          
+          <td><pre>33198&nbsp;-&nbsp;0x81AE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Xyplex</pre></td>
+          
+          <td><pre>33207&nbsp;-&nbsp;0x81B7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Xyplex</pre></td>
+          
+          <td><pre>33208&nbsp;-&nbsp;0x81B8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Xyplex</pre></td>
+          
+          <td><pre>33209&nbsp;-&nbsp;0x81B9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Apricot Computers</pre></td>
+          
+          <td><pre>33228&nbsp;-&nbsp;0x81CC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Apricot Computers</pre></td>
+          
+          <td><pre>33229&nbsp;-&nbsp;0x81CD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Apricot Computers</pre></td>
+          
+          <td><pre>33230&nbsp;-&nbsp;0x81CE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Apricot Computers</pre></td>
+          
+          <td><pre>33231&nbsp;-&nbsp;0x81CF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Apricot Computers</pre></td>
+          
+          <td><pre>33232&nbsp;-&nbsp;0x81D0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Apricot Computers</pre></td>
+          
+          <td><pre>33233&nbsp;-&nbsp;0x81D1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Apricot Computers</pre></td>
+          
+          <td><pre>33234&nbsp;-&nbsp;0x81D2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Apricot Computers</pre></td>
+          
+          <td><pre>33235&nbsp;-&nbsp;0x81D3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Apricot Computers</pre></td>
+          
+          <td><pre>33236&nbsp;-&nbsp;0x81D4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Apricot Computers</pre></td>
+          
+          <td><pre>33237&nbsp;-&nbsp;0x81D5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Artisoft Lantastic</pre></td>
+          
+          <td><pre>33238&nbsp;-&nbsp;0x81D6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Artisoft Lantastic</pre></td>
+          
+          <td><pre>33239&nbsp;-&nbsp;0x81D7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Artisoft Lantastic</pre></td>
+          
+          <td><pre>33240&nbsp;-&nbsp;0x81D8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Artisoft Lantastic</pre></td>
+          
+          <td><pre>33241&nbsp;-&nbsp;0x81D9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Artisoft Lantastic</pre></td>
+          
+          <td><pre>33242&nbsp;-&nbsp;0x81DA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Artisoft Lantastic</pre></td>
+          
+          <td><pre>33243&nbsp;-&nbsp;0x81DB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Artisoft Lantastic</pre></td>
+          
+          <td><pre>33244&nbsp;-&nbsp;0x81DC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Artisoft Lantastic</pre></td>
+          
+          <td><pre>33245&nbsp;-&nbsp;0x81DD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Polygon</pre></td>
+          
+          <td><pre>33254&nbsp;-&nbsp;0x81E6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Polygon</pre></td>
+          
+          <td><pre>33255&nbsp;-&nbsp;0x81E7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Polygon</pre></td>
+          
+          <td><pre>33256&nbsp;-&nbsp;0x81E8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Polygon</pre></td>
+          
+          <td><pre>33257&nbsp;-&nbsp;0x81E9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Polygon</pre></td>
+          
+          <td><pre>33258&nbsp;-&nbsp;0x81EA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Polygon</pre></td>
+          
+          <td><pre>33259&nbsp;-&nbsp;0x81EB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Polygon</pre></td>
+          
+          <td><pre>33260&nbsp;-&nbsp;0x81EC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Polygon</pre></td>
+          
+          <td><pre>33261&nbsp;-&nbsp;0x81ED</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Polygon</pre></td>
+          
+          <td><pre>33262&nbsp;-&nbsp;0x81EE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Polygon</pre></td>
+          
+          <td><pre>33263&nbsp;-&nbsp;0x81EF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Comsat Labs</pre></td>
+          
+          <td><pre>33264&nbsp;-&nbsp;0x81F0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Comsat Labs</pre></td>
+          
+          <td><pre>33265&nbsp;-&nbsp;0x81F1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Comsat Labs</pre></td>
+          
+          <td><pre>33266&nbsp;-&nbsp;0x81F2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SAIC</pre></td>
+          
+          <td><pre>33267&nbsp;-&nbsp;0x81F3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SAIC</pre></td>
+          
+          <td><pre>33268&nbsp;-&nbsp;0x81F4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SAIC</pre></td>
+          
+          <td><pre>33269&nbsp;-&nbsp;0x81F5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">VG Analytical</pre></td>
+          
+          <td><pre>33270&nbsp;-&nbsp;0x81F6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">VG Analytical</pre></td>
+          
+          <td><pre>33271&nbsp;-&nbsp;0x81F7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">VG Analytical</pre></td>
+          
+          <td><pre>33272&nbsp;-&nbsp;0x81F8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Cabletron InterSwitch Message Protocol</pre></td>
+          
+          <td><pre>33277&nbsp;-&nbsp;0x81FD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Cabletron InterSwitch Message Protocol</pre></td>
+          
+          <td><pre>33279&nbsp;-&nbsp;0x81FF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">QNX QNet Software Systems Ltd.</pre></td>
+          
+          <td><pre>33283&nbsp;-&nbsp;0x8203</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">QNX QNet Software Systems Ltd.</pre></td>
+          
+          <td><pre>33284&nbsp;-&nbsp;0x8204</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">QNX QNet Software Systems Ltd.</pre></td>
+          
+          <td><pre>33285&nbsp;-&nbsp;0x8205</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ascom Banking Systems</pre></td>
+          
+          <td><pre>33313&nbsp;-&nbsp;0x8221</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ascom Banking Systems</pre></td>
+          
+          <td><pre>33314&nbsp;-&nbsp;0x8222</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Advanced Encryption System</pre></td>
+          
+          <td><pre>33342&nbsp;-&nbsp;0x823E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Advanced Encryption System</pre></td>
+          
+          <td><pre>33343&nbsp;-&nbsp;0x823F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Advanced Encryption System</pre></td>
+          
+          <td><pre>33344&nbsp;-&nbsp;0x8240</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Charles River Data System</pre></td>
+          
+          <td><pre>33379&nbsp;-&nbsp;0x8263</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Charles River Data System</pre></td>
+          
+          <td><pre>33380&nbsp;-&nbsp;0x8264</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Charles River Data System</pre></td>
+          
+          <td><pre>33381&nbsp;-&nbsp;0x8265</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Charles River Data System</pre></td>
+          
+          <td><pre>33382&nbsp;-&nbsp;0x8266</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Charles River Data System</pre></td>
+          
+          <td><pre>33383&nbsp;-&nbsp;0x8267</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Charles River Data System</pre></td>
+          
+          <td><pre>33384&nbsp;-&nbsp;0x8268</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Charles River Data System</pre></td>
+          
+          <td><pre>33385&nbsp;-&nbsp;0x8269</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Charles River Data System</pre></td>
+          
+          <td><pre>33386&nbsp;-&nbsp;0x826A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Athena Programming</pre></td>
+          
+          <td><pre>33407&nbsp;-&nbsp;0x827F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Athena Programming</pre></td>
+          
+          <td><pre>33408&nbsp;-&nbsp;0x8280</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Athena Programming</pre></td>
+          
+          <td><pre>33409&nbsp;-&nbsp;0x8281</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Athena Programming</pre></td>
+          
+          <td><pre>33410&nbsp;-&nbsp;0x8282</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Institute for Industrial Information Tech. Ltd</pre></td>
+          
+          <td><pre>33434&nbsp;-&nbsp;0x829A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Institute for Industrial Information Tech. Ltd</pre></td>
+          
+          <td><pre>33435&nbsp;-&nbsp;0x829B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33436&nbsp;-&nbsp;0x829C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33437&nbsp;-&nbsp;0x829D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33438&nbsp;-&nbsp;0x829E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33439&nbsp;-&nbsp;0x829F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33440&nbsp;-&nbsp;0x82A0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33441&nbsp;-&nbsp;0x82A1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33442&nbsp;-&nbsp;0x82A2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33443&nbsp;-&nbsp;0x82A3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33444&nbsp;-&nbsp;0x82A4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33445&nbsp;-&nbsp;0x82A5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33446&nbsp;-&nbsp;0x82A6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33447&nbsp;-&nbsp;0x82A7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33448&nbsp;-&nbsp;0x82A8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33449&nbsp;-&nbsp;0x82A9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33450&nbsp;-&nbsp;0x82AA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Taurus Controls</pre></td>
+          
+          <td><pre>33451&nbsp;-&nbsp;0x82AB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Accton Technologies</pre></td>
+          
+          <td><pre>33680&nbsp;-&nbsp;0x8390</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Talaris Multicast</pre></td>
+          
+          <td><pre>34091&nbsp;-&nbsp;0x852B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Kalpana</pre></td>
+          
+          <td><pre>34178&nbsp;-&nbsp;0x8582</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Idea Courier</pre></td>
+          
+          <td><pre>34452&nbsp;-&nbsp;0x8694</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Idea Courier</pre></td>
+          
+          <td><pre>34453&nbsp;-&nbsp;0x8695</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Idea Courier</pre></td>
+          
+          <td><pre>34454&nbsp;-&nbsp;0x8696</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Idea Courier</pre></td>
+          
+          <td><pre>34455&nbsp;-&nbsp;0x8697</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Idea Courier</pre></td>
+          
+          <td><pre>34456&nbsp;-&nbsp;0x8698</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Idea Courier</pre></td>
+          
+          <td><pre>34457&nbsp;-&nbsp;0x8699</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Idea Courier</pre></td>
+          
+          <td><pre>34458&nbsp;-&nbsp;0x869A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Idea Courier</pre></td>
+          
+          <td><pre>34459&nbsp;-&nbsp;0x869B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Idea Courier</pre></td>
+          
+          <td><pre>34460&nbsp;-&nbsp;0x869C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Idea Courier</pre></td>
+          
+          <td><pre>34461&nbsp;-&nbsp;0x869D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Computer Network Tech</pre></td>
+          
+          <td><pre>34462&nbsp;-&nbsp;0x869E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Computer Network Tech</pre></td>
+          
+          <td><pre>34463&nbsp;-&nbsp;0x869F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Computer Network Tech</pre></td>
+          
+          <td><pre>34464&nbsp;-&nbsp;0x86A0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Computer Network Tech</pre></td>
+          
+          <td><pre>34465&nbsp;-&nbsp;0x86A1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Gateway Communications</pre></td>
+          
+          <td><pre>34467&nbsp;-&nbsp;0x86A3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Gateway Communications</pre></td>
+          
+          <td><pre>34468&nbsp;-&nbsp;0x86A4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Gateway Communications</pre></td>
+          
+          <td><pre>34469&nbsp;-&nbsp;0x86A5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Gateway Communications</pre></td>
+          
+          <td><pre>34470&nbsp;-&nbsp;0x86A6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Gateway Communications</pre></td>
+          
+          <td><pre>34471&nbsp;-&nbsp;0x86A7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Gateway Communications</pre></td>
+          
+          <td><pre>34472&nbsp;-&nbsp;0x86A8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Gateway Communications</pre></td>
+          
+          <td><pre>34473&nbsp;-&nbsp;0x86A9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Gateway Communications</pre></td>
+          
+          <td><pre>34474&nbsp;-&nbsp;0x86AA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Gateway Communications</pre></td>
+          
+          <td><pre>34475&nbsp;-&nbsp;0x86AB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Gateway Communications</pre></td>
+          
+          <td><pre>34476&nbsp;-&nbsp;0x86AC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SECTRA</pre></td>
+          
+          <td><pre>34523&nbsp;-&nbsp;0x86DB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6</pre></td>
+          
+          <td><pre>34525&nbsp;-&nbsp;0x86DD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Delta Controls</pre></td>
+          
+          <td><pre>34526&nbsp;-&nbsp;0x86DE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ATOMIC</pre></td>
+          
+          <td><pre>34527&nbsp;-&nbsp;0x86DF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Landis &amp; Gyr Powers</pre></td>
+          
+          <td><pre>34528&nbsp;-&nbsp;0x86E0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Landis &amp; Gyr Powers</pre></td>
+          
+          <td><pre>34543&nbsp;-&nbsp;0x86EF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Motorola</pre></td>
+          
+          <td><pre>34560&nbsp;-&nbsp;0x8700</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Motorola</pre></td>
+          
+          <td><pre>34576&nbsp;-&nbsp;0x8710</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Cisco Wireless Lan Context Control Protocol (WLCCP)</pre></td>
+          
+          <td><pre>34605&nbsp;-&nbsp;0x872D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Control Technology Inc. - RDP Without IP</pre></td>
+          
+          <td><pre>34617&nbsp;-&nbsp;0x8739</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Control Technology Inc. - Multicast </pre></td>
+          
+          <td><pre>34618&nbsp;-&nbsp;0x873A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Control Technology Inc. - Proprietary</pre></td>
+          
+          <td><pre>34619&nbsp;-&nbsp;0x873B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Control Technology Inc. - Proprietary</pre></td>
+          
+          <td><pre>34620&nbsp;-&nbsp;0x873C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TCP/IP Compression</pre></td>
+          
+          <td><pre>34667&nbsp;-&nbsp;0x876B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IP Autonomous Systems</pre></td>
+          
+          <td><pre>34668&nbsp;-&nbsp;0x876C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Secure Data</pre></td>
+          
+          <td><pre>34669&nbsp;-&nbsp;0x876D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Symbol Technologies</pre></td>
+          
+          <td><pre>34688&nbsp;-&nbsp;0x8780</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Motorola Protocol, Roaming  Updates between Access Points </pre></td>
+          
+          <td><pre>34689&nbsp;-&nbsp;0x8781</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Motorola Protocol, Access Point Adoption, extended VLANs and Clustering</pre></td>
+          
+          <td><pre>34691&nbsp;-&nbsp;0x8783</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ethernet Flow Control / Ethernet Passive Optical Network (EPON)</pre></td>
+          
+          <td><pre>34824&nbsp;-&nbsp;0x8808</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ethernet OAM Protocol IEEE 802.3ah (a.k.a.: Slow Protocols)</pre></td>
+          
+          <td><pre>34825&nbsp;-&nbsp;0x8809</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Point-to-Point Protocol (PPP)</pre></td>
+          
+          <td><pre>34827&nbsp;-&nbsp;0x880B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">General Switch Management Protocol (GSMP)</pre></td>
+          
+          <td><pre>34828&nbsp;-&nbsp;0x880C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Cirrus CobraNet</pre></td>
+          
+          <td><pre>34841&nbsp;-&nbsp;0x8819</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Hitachi Cable (Optoelectronic Systems Laboratory)</pre></td>
+          
+          <td><pre>34848&nbsp;-&nbsp;0x8820</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Web-cache Coordination Protocol</pre></td>
+          
+          <td><pre>34878&nbsp;-&nbsp;0x883E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Multi-Protocol Label Switching (MPLS) Unicast </pre></td>
+          
+          <td><pre>34887&nbsp;-&nbsp;0x8847</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Multi-Protocol Label Switching (MPLS) Multicast</pre></td>
+          
+          <td><pre>34888&nbsp;-&nbsp;0x8848</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Axis Communications AB - Proprietary</pre></td>
+          
+          <td><pre>34902&nbsp;-&nbsp;0x8856</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Foundry Proprietary Protocol</pre></td>
+          
+          <td><pre>34906&nbsp;-&nbsp;0x885A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Multicast Channel Allocation Protocol (MCAP)</pre></td>
+          
+          <td><pre>34913&nbsp;-&nbsp;0x8861</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PPP Over Ethernet (PPPoE) Discovery Stage</pre></td>
+          
+          <td><pre>34915&nbsp;-&nbsp;0x8863</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PPP Over Ethernet (PPPoE) Session Stage</pre></td>
+          
+          <td><pre>34916&nbsp;-&nbsp;0x8864</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Intel ANS (NIC Teaming)</pre></td>
+          
+          <td><pre>34925&nbsp;-&nbsp;0x886D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Microsoft Network Load Balancing Hearbeat</pre></td>
+          
+          <td><pre>34927&nbsp;-&nbsp;0x886F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Jumbo Frames</pre></td>
+          
+          <td><pre>34928&nbsp;-&nbsp;0x8870</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">HomePlug 1.0 MME</pre></td>
+          
+          <td><pre>34939&nbsp;-&nbsp;0x887B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Byte Stream Protocol for IP based micro-mobility bearer interfaces (A10)</pre></td>
+          
+          <td><pre>34945&nbsp;-&nbsp;0x8881</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Frame-based ATM Transport over Ethernet</pre></td>
+          
+          <td><pre>34948&nbsp;-&nbsp;0x8884</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">HP LanProbe Test</pre></td>
+          
+          <td><pre>34952&nbsp;-&nbsp;0x8888</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">EAP over LAN - Authentication (IEEE 802.1X)</pre></td>
+          
+          <td><pre>34958&nbsp;-&nbsp;0x888E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PROFIBUS PROFINET Protocol</pre></td>
+          
+          <td><pre>34962&nbsp;-&nbsp;0x8892</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Realtek Remote Control Protocol (RRCP)</pre></td>
+          
+          <td><pre>34969&nbsp;-&nbsp;0x8899</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">HyperSCSI (SCSI over Ethernet)</pre></td>
+          
+          <td><pre>34970&nbsp;-&nbsp;0x889A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CSM_ENCAPS Protocol - Mindspeed Technologies</pre></td>
+          
+          <td><pre>34971&nbsp;-&nbsp;0x889B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Telkonet Powerline Ethernet</pre></td>
+          
+          <td><pre>34977&nbsp;-&nbsp;0x88A1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ATA over Ethernet (AoE)</pre></td>
+          
+          <td><pre>34978&nbsp;-&nbsp;0x88A2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">EtherCAT Protocol</pre></td>
+          
+          <td><pre>34980&nbsp;-&nbsp;0x88A4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Huawei Technologies / Cluster</pre></td>
+          
+          <td><pre>34983&nbsp;-&nbsp;0x88A7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Provider Bridging (IEEE 802.1ad) &amp; Shortest Path Bridging IEEE 802.1aq</pre></td>
+          
+          <td><pre>34984&nbsp;-&nbsp;0x88A8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ethernet Powerlink, Communication Profile for Real-Time Ethernet (RTE)</pre></td>
+          
+          <td><pre>34987&nbsp;-&nbsp;0x88AB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">XiMeta Technology Americas Inc. Proprietary </pre></td>
+          
+          <td><pre>34989&nbsp;-&nbsp;0x88AD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Boardwalk</pre></td>
+          
+          <td><pre>34990&nbsp;-&nbsp;0x88AE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">WLAN Authentication Infrastructure (WAI) Authentication Protocol</pre></td>
+          
+          <td><pre>34996&nbsp;-&nbsp;0x88B4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IEEE 802a OUI Extended Ethertype</pre></td>
+          
+          <td><pre>34999&nbsp;-&nbsp;0x88B7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Generic substation Events - International Electrotechnical Commission - Electrical Substation Automation (IEC-61850)</pre></td>
+          
+          <td><pre>35000&nbsp;-&nbsp;0x88B8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Sampled Value Services - International Electrotechnical Commission</pre></td>
+          
+          <td><pre>35002&nbsp;-&nbsp;0x88BA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Light Weight Access Point Protocol (LWAPP)</pre></td>
+          
+          <td><pre>35003&nbsp;-&nbsp;0x88BB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Robust Security Network (RSN) Pre-Authentication - 802.11i </pre></td>
+          
+          <td><pre>35015&nbsp;-&nbsp;0x88C7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Transparent Inter Process Communication Protocol (TIPC)</pre></td>
+          
+          <td><pre>35018&nbsp;-&nbsp;0x88CA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Link Layer Discovery Protocol (LLDP)</pre></td>
+          
+          <td><pre>35020&nbsp;-&nbsp;0x88CC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SERCOS III Real-time Protocol for Motion Control</pre></td>
+          
+          <td><pre>35021&nbsp;-&nbsp;0x88CD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3rd Generation Partnership Project 2 (3GPP2) for CDMA2000 Access Network Interfaces</pre></td>
+          
+          <td><pre>35026&nbsp;-&nbsp;0x88D2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Circuit Emulation Services over Ethernet (MEF 8)</pre></td>
+          
+          <td><pre>35032&nbsp;-&nbsp;0x88D8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Link Layer Topology Discovery (LLTD)</pre></td>
+          
+          <td><pre>35033&nbsp;-&nbsp;0x88D9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Wireless Access in a Vehicle Environment - WAVE Short Message Protocol (WSMP)</pre></td>
+          
+          <td><pre>35036&nbsp;-&nbsp;0x88DC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">VMware LabManager</pre></td>
+          
+          <td><pre>35038&nbsp;-&nbsp;0x88DE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">HomePlug AV</pre></td>
+          
+          <td><pre>35041&nbsp;-&nbsp;0x88E1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Media Redundancy Protocol (IEC62439-2)</pre></td>
+          
+          <td><pre>35043&nbsp;-&nbsp;0x88E3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">MAC security (IEEE 802.1AE)</pre></td>
+          
+          <td><pre>35045&nbsp;-&nbsp;0x88E5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Provider Backbone Bridge Mac-in-Mac - IEEE 802.1ah</pre></td>
+          
+          <td><pre>35047&nbsp;-&nbsp;0x88E7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ethernet Local Management Interface (E-LMI)</pre></td>
+          
+          <td><pre>35054&nbsp;-&nbsp;0x88EE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Multiple VLAN Registration Protocol (MVRP) - IEEE 802.1ak</pre></td>
+          
+          <td><pre>35061&nbsp;-&nbsp;0x88F5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Multiple MAC Registration Protocol (MMRP) - IEEE 802.1ak</pre></td>
+          
+          <td><pre>35062&nbsp;-&nbsp;0x88F6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Precision Time Protocol over Eth. (PTP v2) - IEEE-1588</pre></td>
+          
+          <td><pre>35063&nbsp;-&nbsp;0x88F7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Network Controller Sideband Interface (NCSI)</pre></td>
+          
+          <td><pre>35064&nbsp;-&nbsp;0x88F8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Parallel Redundancy Protocol (IEC62439 Part 3)</pre></td>
+          
+          <td><pre>35067&nbsp;-&nbsp;0x88FB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Nokia Siemens Networks Flow Layer Internal Protocol (FLIP)</pre></td>
+          
+          <td><pre>35073&nbsp;-&nbsp;0x8901</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IEEE 802.1ag Connectivity Fault Management (CFM) Protocol / ITU-T Recommendation Y.1731 (OAM)</pre></td>
+          
+          <td><pre>35074&nbsp;-&nbsp;0x8902</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Cisco FabricPath Switching - Frame Encapsulation - DCE</pre></td>
+          
+          <td><pre>35075&nbsp;-&nbsp;0x8903</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Fiber Channel over Ethernet (FCoE)</pre></td>
+          
+          <td><pre>35078&nbsp;-&nbsp;0x8906</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Wireless LAN - Data Encapsulation (IEEE-802.11)</pre></td>
+          
+          <td><pre>35085&nbsp;-&nbsp;0x890D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ENEA LINX (Inter Process Communication) IPC Protocol over Ethernet</pre></td>
+          
+          <td><pre>35089&nbsp;-&nbsp;0x8911</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Fiber Channel over Ethernet (FCoE)- Initialization Protocol</pre></td>
+          
+          <td><pre>35092&nbsp;-&nbsp;0x8914</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Infiniband Remote Direct Memory Access (RDMA) over Converged Ethernet (RoCE)</pre></td>
+          
+          <td><pre>35093&nbsp;-&nbsp;0x8915</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Media Independent Handover Protocol</pre></td>
+          
+          <td><pre>35095&nbsp;-&nbsp;0x8917</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TTEthernet Protocol Control Frame</pre></td>
+          
+          <td><pre>35101&nbsp;-&nbsp;0x891D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">High-availability Seamless Redundancy (IEC-62439)</pre></td>
+          
+          <td><pre>35119&nbsp;-&nbsp;0x892F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Invisible Software</pre></td>
+          
+          <td><pre>35478&nbsp;-&nbsp;0x8A96</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Invisible Software</pre></td>
+          
+          <td><pre>35479&nbsp;-&nbsp;0x8A97</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Loopback (Configuration Layer 2 Test Protocol)</pre></td>
+          
+          <td><pre>36864&nbsp;-&nbsp;0x9000</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com (Formerly Bridge Communications), XNS Systems Management</pre></td>
+          
+          <td><pre>36865&nbsp;-&nbsp;0x9001</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com (Formerly Bridge Communications), TCP/IP Systems Management</pre></td>
+          
+          <td><pre>36866&nbsp;-&nbsp;0x9002</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3Com (Formerly Bridge Communications), Loopback Detection</pre></td>
+          
+          <td><pre>36867&nbsp;-&nbsp;0x9003</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RTnet: Real-Time Media Access Control (RTMAC)</pre></td>
+          
+          <td><pre>36897&nbsp;-&nbsp;0x9021</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RTnet: Real-Time Configuration Protocol (RTCFG)</pre></td>
+          
+          <td><pre>36898&nbsp;-&nbsp;0x9022</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Q-in-Q / VLAN-tagged frame</pre></td>
+          
+          <td><pre>37120&nbsp;-&nbsp;0x9100</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Q-in-Q / VLAN-tagged frame</pre></td>
+          
+          <td><pre>37376&nbsp;-&nbsp;0x9200</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DECNET - Used by VAX 6220 DEBNI</pre></td>
+          
+          <td><pre>43690&nbsp;-&nbsp;0xAAAA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Veritas Low Latency Transport (LLT)</pre></td>
+          
+          <td><pre>51966&nbsp;-&nbsp;0xCAFE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Digium Time Division Multiplexing (TDM) over Ethernet (TDMoE)</pre></td>
+          
+          <td><pre>53261&nbsp;-&nbsp;0xD00D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ethertype Distributed Switch Architecture (DSA)</pre></td>
+          
+          <td><pre>56026&nbsp;-&nbsp;0xDADA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Sonix Arpeggio</pre></td>
+          
+          <td><pre>64245&nbsp;-&nbsp;0xFAF5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Cisco Multilayer Director Switches (MDS)</pre></td>
+          
+          <td><pre>64764&nbsp;-&nbsp;0xFCFC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">BBN VITAL-LanBridge cache wakeups</pre></td>
+          
+          <td><pre>65280&nbsp;-&nbsp;0xFF00</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISC Bunker Ramo</pre></td>
+          
+          <td><pre>65281&nbsp;-&nbsp;0xFF01</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISC Bunker Ramo</pre></td>
+          
+          <td><pre>65282&nbsp;-&nbsp;0xFF02</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISC Bunker Ramo</pre></td>
+          
+          <td><pre>65283&nbsp;-&nbsp;0xFF03</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISC Bunker Ramo</pre></td>
+          
+          <td><pre>65284&nbsp;-&nbsp;0xFF04</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISC Bunker Ramo</pre></td>
+          
+          <td><pre>65285&nbsp;-&nbsp;0xFF05</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISC Bunker Ramo</pre></td>
+          
+          <td><pre>65286&nbsp;-&nbsp;0xFF06</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISC Bunker Ramo</pre></td>
+          
+          <td><pre>65287&nbsp;-&nbsp;0xFF07</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISC Bunker Ramo</pre></td>
+          
+          <td><pre>65288&nbsp;-&nbsp;0xFF08</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISC Bunker Ramo</pre></td>
+          
+          <td><pre>65289&nbsp;-&nbsp;0xFF09</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISC Bunker Ramo</pre></td>
+          
+          <td><pre>65290&nbsp;-&nbsp;0xFF0A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISC Bunker Ramo</pre></td>
+          
+          <td><pre>65291&nbsp;-&nbsp;0xFF0B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISC Bunker Ramo</pre></td>
+          
+          <td><pre>65292&nbsp;-&nbsp;0xFF0C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISC Bunker Ramo</pre></td>
+          
+          <td><pre>65293&nbsp;-&nbsp;0xFF0D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ISC Bunker Ramo</pre></td>
+          
+          <td><pre>65294&nbsp;-&nbsp;0xFF0E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved</pre></td>
+          
+          <td><pre>65535&nbsp;-&nbsp;0xFFFF</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="httpquerymethod-items">
+    Type <a href="#type-httpquerymethod">httpquerymethod</a>
+  </h3>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">GET</pre></td>
+          
+          <td><pre>0&nbsp;-&nbsp;0x0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">HEAD</pre></td>
+          
+          <td><pre>1&nbsp;-&nbsp;0x1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">POST</pre></td>
+          
+          <td><pre>2&nbsp;-&nbsp;0x2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CONNECT</pre></td>
+          
+          <td><pre>3&nbsp;-&nbsp;0x3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PUT</pre></td>
+          
+          <td><pre>4&nbsp;-&nbsp;0x4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">OPTIONS</pre></td>
+          
+          <td><pre>5&nbsp;-&nbsp;0x5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TRACE</pre></td>
+          
+          <td><pre>6&nbsp;-&nbsp;0x6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DELETE</pre></td>
+          
+          <td><pre>7&nbsp;-&nbsp;0x7</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="httpstatus-items">
+    Type <a href="#type-httpstatus">httpstatus</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">No response</pre></td>
+          
+          <td><pre>None</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Continue</pre></td>
+          
+          <td><pre>100&nbsp;-&nbsp;0x64</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Switching Protocols</pre></td>
+          
+          <td><pre>101&nbsp;-&nbsp;0x65</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Processing</pre></td>
+          
+          <td><pre>102&nbsp;-&nbsp;0x66</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Early Hints</pre></td>
+          
+          <td><pre>103&nbsp;-&nbsp;0x67</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">OK</pre></td>
+          
+          <td><pre>200&nbsp;-&nbsp;0xC8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Created</pre></td>
+          
+          <td><pre>201&nbsp;-&nbsp;0xC9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Accepted</pre></td>
+          
+          <td><pre>202&nbsp;-&nbsp;0xCA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Non-Authoritative Information</pre></td>
+          
+          <td><pre>203&nbsp;-&nbsp;0xCB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">No Content</pre></td>
+          
+          <td><pre>204&nbsp;-&nbsp;0xCC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reset Content</pre></td>
+          
+          <td><pre>205&nbsp;-&nbsp;0xCD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Partial Content</pre></td>
+          
+          <td><pre>206&nbsp;-&nbsp;0xCE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Multi-Status</pre></td>
+          
+          <td><pre>207&nbsp;-&nbsp;0xCF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Already Reported</pre></td>
+          
+          <td><pre>208&nbsp;-&nbsp;0xD0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IM Used</pre></td>
+          
+          <td><pre>226&nbsp;-&nbsp;0xE2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Multiple Choices</pre></td>
+          
+          <td><pre>300&nbsp;-&nbsp;0x12C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Moved Permanently</pre></td>
+          
+          <td><pre>301&nbsp;-&nbsp;0x12D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Found</pre></td>
+          
+          <td><pre>302&nbsp;-&nbsp;0x12E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">See Other</pre></td>
+          
+          <td><pre>303&nbsp;-&nbsp;0x12F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Not Modified</pre></td>
+          
+          <td><pre>304&nbsp;-&nbsp;0x130</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Use Proxy</pre></td>
+          
+          <td><pre>305&nbsp;-&nbsp;0x131</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Switch Proxy</pre></td>
+          
+          <td><pre>306&nbsp;-&nbsp;0x132</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Temporary Redirect</pre></td>
+          
+          <td><pre>307&nbsp;-&nbsp;0x133</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Permanent Redirect</pre></td>
+          
+          <td><pre>308&nbsp;-&nbsp;0x134</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Bad Request</pre></td>
+          
+          <td><pre>400&nbsp;-&nbsp;0x190</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Unauthorized</pre></td>
+          
+          <td><pre>401&nbsp;-&nbsp;0x191</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Payment Required</pre></td>
+          
+          <td><pre>402&nbsp;-&nbsp;0x192</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Forbidden</pre></td>
+          
+          <td><pre>403&nbsp;-&nbsp;0x193</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Not Found</pre></td>
+          
+          <td><pre>404&nbsp;-&nbsp;0x194</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Method Not Allowed</pre></td>
+          
+          <td><pre>405&nbsp;-&nbsp;0x195</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Not Acceptable</pre></td>
+          
+          <td><pre>406&nbsp;-&nbsp;0x196</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Proxy Authentication Required</pre></td>
+          
+          <td><pre>407&nbsp;-&nbsp;0x197</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Request Timeout</pre></td>
+          
+          <td><pre>408&nbsp;-&nbsp;0x198</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Conflict</pre></td>
+          
+          <td><pre>409&nbsp;-&nbsp;0x199</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Gone</pre></td>
+          
+          <td><pre>410&nbsp;-&nbsp;0x19A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Length Required</pre></td>
+          
+          <td><pre>411&nbsp;-&nbsp;0x19B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Precondition Failed</pre></td>
+          
+          <td><pre>412&nbsp;-&nbsp;0x19C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Request Entity Too Large</pre></td>
+          
+          <td><pre>413&nbsp;-&nbsp;0x19D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Request-URI Too Long</pre></td>
+          
+          <td><pre>414&nbsp;-&nbsp;0x19E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Unsupported Media Type</pre></td>
+          
+          <td><pre>415&nbsp;-&nbsp;0x19F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Requested Range Not Satisfiable</pre></td>
+          
+          <td><pre>416&nbsp;-&nbsp;0x1A0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Expectation Failed</pre></td>
+          
+          <td><pre>417&nbsp;-&nbsp;0x1A1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">I'm a teapot</pre></td>
+          
+          <td><pre>418&nbsp;-&nbsp;0x1A2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Misdirected Request</pre></td>
+          
+          <td><pre>421&nbsp;-&nbsp;0x1A5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Unprocessable Entity</pre></td>
+          
+          <td><pre>422&nbsp;-&nbsp;0x1A6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Locked</pre></td>
+          
+          <td><pre>423&nbsp;-&nbsp;0x1A7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Failed Dependency</pre></td>
+          
+          <td><pre>424&nbsp;-&nbsp;0x1A8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Upgrade Required</pre></td>
+          
+          <td><pre>426&nbsp;-&nbsp;0x1AA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Precondition Required</pre></td>
+          
+          <td><pre>428&nbsp;-&nbsp;0x1AC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Too Many Requests</pre></td>
+          
+          <td><pre>429&nbsp;-&nbsp;0x1AD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Request Header Fields Too Large</pre></td>
+          
+          <td><pre>431&nbsp;-&nbsp;0x1AF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Unavailable For Legal Reasons</pre></td>
+          
+          <td><pre>451&nbsp;-&nbsp;0x1C3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Internal Server Error</pre></td>
+          
+          <td><pre>500&nbsp;-&nbsp;0x1F4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Not Implemented</pre></td>
+          
+          <td><pre>501&nbsp;-&nbsp;0x1F5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Bad Gateway</pre></td>
+          
+          <td><pre>502&nbsp;-&nbsp;0x1F6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Service Unavailable</pre></td>
+          
+          <td><pre>503&nbsp;-&nbsp;0x1F7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Gateway Timeout</pre></td>
+          
+          <td><pre>504&nbsp;-&nbsp;0x1F8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">HTTP Version Not Supported</pre></td>
+          
+          <td><pre>505&nbsp;-&nbsp;0x1F9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Variant Also Negotiates</pre></td>
+          
+          <td><pre>506&nbsp;-&nbsp;0x1FA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Insufficient Storage</pre></td>
+          
+          <td><pre>507&nbsp;-&nbsp;0x1FB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Loop Detected</pre></td>
+          
+          <td><pre>508&nbsp;-&nbsp;0x1FC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Not Extended</pre></td>
+          
+          <td><pre>510&nbsp;-&nbsp;0x1FE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Network Authentication Required</pre></td>
+          
+          <td><pre>511&nbsp;-&nbsp;0x1FF</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="httpstatuscategory-items">
+    Type <a href="#type-httpstatuscategory">httpstatuscategory</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">No response</pre></td>
+          
+          <td><pre>None</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Informational (1xx)</pre></td>
+          
+          <td><pre>1&nbsp;-&nbsp;0x1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">OK (2xx)</pre></td>
+          
+          <td><pre>2&nbsp;-&nbsp;0x2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Multiple Choices (3xx)</pre></td>
+          
+          <td><pre>3&nbsp;-&nbsp;0x3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Bad Request (4xx)</pre></td>
+          
+          <td><pre>4&nbsp;-&nbsp;0x4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Internal Server Error (5xx)</pre></td>
+          
+          <td><pre>5&nbsp;-&nbsp;0x5</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="icmpmessage-items">
+    Type <a href="#type-icmpmessage">icmpmessage</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">Echo Reply</pre></td>
+          
+          <td><pre>0:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Network Unreachable</pre></td>
+          
+          <td><pre>3:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Host Unreachable</pre></td>
+          
+          <td><pre>3:1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Protocol Unreachable</pre></td>
+          
+          <td><pre>3:2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Port Unreachable</pre></td>
+          
+          <td><pre>3:3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Fragmentation Needed and Don't Fragment was Set</pre></td>
+          
+          <td><pre>3:4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Source Route Failed</pre></td>
+          
+          <td><pre>3:5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Destination Network Unknown</pre></td>
+          
+          <td><pre>3:6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Destination Host Unknown</pre></td>
+          
+          <td><pre>3:7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Source Host Isolated</pre></td>
+          
+          <td><pre>3:8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Communication with Destination Network is Administratively Prohibited</pre></td>
+          
+          <td><pre>3:9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Communication with Destination Host is Administratively Prohibited</pre></td>
+          
+          <td><pre>3:10</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Destination Network Unreachable for Type of Service</pre></td>
+          
+          <td><pre>3:11</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Destination Host Unreachable for Type of Service</pre></td>
+          
+          <td><pre>3:12</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Communication Administratively Prohibited</pre></td>
+          
+          <td><pre>3:13</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Host Precedence Violation</pre></td>
+          
+          <td><pre>3:14</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Precedence cutoff in effect</pre></td>
+          
+          <td><pre>3:15</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Source Quench</pre></td>
+          
+          <td><pre>4:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Redirect Datagram for the Network (or subnet)</pre></td>
+          
+          <td><pre>5:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Redirect Datagram for the Host</pre></td>
+          
+          <td><pre>5:1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Redirect Datagram for the Type of Service and Network</pre></td>
+          
+          <td><pre>5:2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Redirect Datagram for the Type of Service and Host</pre></td>
+          
+          <td><pre>5:3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Alternate Address for Host</pre></td>
+          
+          <td><pre>6:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Echo</pre></td>
+          
+          <td><pre>8:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Normal router advertisement</pre></td>
+          
+          <td><pre>9:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Does not route common traffic</pre></td>
+          
+          <td><pre>9:16</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Router Selection</pre></td>
+          
+          <td><pre>10:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Time to Live exceeded in Transit</pre></td>
+          
+          <td><pre>11:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Fragment Reassembly Time Exceeded</pre></td>
+          
+          <td><pre>11:1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Pointer indicates the error</pre></td>
+          
+          <td><pre>12:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Missing a Required Option</pre></td>
+          
+          <td><pre>12:1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Bad Length</pre></td>
+          
+          <td><pre>12:2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Timestamp</pre></td>
+          
+          <td><pre>13:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Timestamp Reply</pre></td>
+          
+          <td><pre>14:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Information Request</pre></td>
+          
+          <td><pre>15:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Information Reply</pre></td>
+          
+          <td><pre>16:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Address Mask Request</pre></td>
+          
+          <td><pre>17:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Address Mask Reply</pre></td>
+          
+          <td><pre>18:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Security)</pre></td>
+          
+          <td><pre>19:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td><pre>20:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td><pre>21:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td><pre>22:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td><pre>23:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td><pre>24:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td><pre>25:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td><pre>26:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td><pre>27:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td><pre>28:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td><pre>29:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Traceroute</pre></td>
+          
+          <td><pre>30:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datagram Conversion Error</pre></td>
+          
+          <td><pre>31:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Mobile Host Redirect</pre></td>
+          
+          <td><pre>32:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Where-Are-You</pre></td>
+          
+          <td><pre>33:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 I-Am-Here</pre></td>
+          
+          <td><pre>34:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Mobile Registration Request</pre></td>
+          
+          <td><pre>35:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Mobile Registration Reply</pre></td>
+          
+          <td><pre>36:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SKIP</pre></td>
+          
+          <td><pre>39:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Bad SPI</pre></td>
+          
+          <td><pre>40:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Authentication Failed</pre></td>
+          
+          <td><pre>40:1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Decompression Failed</pre></td>
+          
+          <td><pre>40:2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Decryption Failed</pre></td>
+          
+          <td><pre>40:3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Need Authentication</pre></td>
+          
+          <td><pre>40:4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Need Authorization</pre></td>
+          
+          <td><pre>40:5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Echo Request</pre></td>
+          
+          <td><pre>128:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Echo Reply</pre></td>
+          
+          <td><pre>129:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Multicast Listener Query</pre></td>
+          
+          <td><pre>130:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Multicast Listener Report</pre></td>
+          
+          <td><pre>131:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Multicast Listener Done</pre></td>
+          
+          <td><pre>132:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Router Solicitation</pre></td>
+          
+          <td><pre>133:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Router Advertisement</pre></td>
+          
+          <td><pre>134:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Neighbor Solicitation</pre></td>
+          
+          <td><pre>135:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Neighbor Advertisement</pre></td>
+          
+          <td><pre>136:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Redirect Message</pre></td>
+          
+          <td><pre>137:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Command</pre></td>
+          
+          <td><pre>138:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Result</pre></td>
+          
+          <td><pre>138:1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reset</pre></td>
+          
+          <td><pre>138:255</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Subject</pre></td>
+          
+          <td><pre>139:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Subject or Empty</pre></td>
+          
+          <td><pre>139:1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Ipv4 Subject</pre></td>
+          
+          <td><pre>139:2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Successful</pre></td>
+          
+          <td><pre>140:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Refused</pre></td>
+          
+          <td><pre>140:1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Unknown</pre></td>
+          
+          <td><pre>140:2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Inverse Neighbor Discovery Solicitation Message</pre></td>
+          
+          <td><pre>141:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Inverse Neighbor Discovery Advertisement Message</pre></td>
+          
+          <td><pre>142:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Home Agent Address Discovery Request Message</pre></td>
+          
+          <td><pre>144:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Home Agent Address Discovery Reply Message</pre></td>
+          
+          <td><pre>145:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Mobile Prefix Solicitation</pre></td>
+          
+          <td><pre>146:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Mobile Prefix Advertisement</pre></td>
+          
+          <td><pre>147:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Certification Path Solicitation Message</pre></td>
+          
+          <td><pre>148:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Certification Path Advertisement Message</pre></td>
+          
+          <td><pre>149:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Multicast Router Advertisement</pre></td>
+          
+          <td><pre>151:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Multicast Router Solicitation</pre></td>
+          
+          <td><pre>152:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Multicast Router Termination</pre></td>
+          
+          <td><pre>153:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">FMIPv6 Messages</pre></td>
+          
+          <td><pre>154:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RFC3692-style Experiment 1</pre></td>
+          
+          <td><pre>253:0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RFC3692-style Experiment 2</pre></td>
+          
+          <td><pre>254:0</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="icmptype-items">
+    Type <a href="#type-icmptype">icmptype</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+        <th>Category</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">Echo Reply</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>0&nbsp;-&nbsp;0x0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Destination Unreachable</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3&nbsp;-&nbsp;0x3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Source Quench</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>4&nbsp;-&nbsp;0x4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Redirect</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>5&nbsp;-&nbsp;0x5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Alternate Host Address</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>6&nbsp;-&nbsp;0x6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Echo</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>8&nbsp;-&nbsp;0x8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Router Advertisement</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>9&nbsp;-&nbsp;0x9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Router Selection</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>10&nbsp;-&nbsp;0xA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Time Exceeded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>11&nbsp;-&nbsp;0xB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Parameter Problem</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>12&nbsp;-&nbsp;0xC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Timestamp</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>13&nbsp;-&nbsp;0xD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Timestamp Reply</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>14&nbsp;-&nbsp;0xE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Information Request</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>15&nbsp;-&nbsp;0xF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Information Reply</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>16&nbsp;-&nbsp;0x10</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Address Mask Request</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>17&nbsp;-&nbsp;0x11</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Address Mask Reply</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>18&nbsp;-&nbsp;0x12</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Security)</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>19&nbsp;-&nbsp;0x13</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>20&nbsp;-&nbsp;0x14</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>21&nbsp;-&nbsp;0x15</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>22&nbsp;-&nbsp;0x16</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>23&nbsp;-&nbsp;0x17</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>24&nbsp;-&nbsp;0x18</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>25&nbsp;-&nbsp;0x19</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>26&nbsp;-&nbsp;0x1A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>27&nbsp;-&nbsp;0x1B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>28&nbsp;-&nbsp;0x1C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Reserved (for Robustness Experiment)</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>29&nbsp;-&nbsp;0x1D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Traceroute</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>30&nbsp;-&nbsp;0x1E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Datagram Conversion Error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>31&nbsp;-&nbsp;0x1F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Mobile Host Redirect</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>32&nbsp;-&nbsp;0x20</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Where-Are-You</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>33&nbsp;-&nbsp;0x21</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 I-Am-Here</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>34&nbsp;-&nbsp;0x22</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Mobile Registration Request</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>35&nbsp;-&nbsp;0x23</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Mobile Registration Reply</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>36&nbsp;-&nbsp;0x24</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Skip</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>39&nbsp;-&nbsp;0x27</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Photuris</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>40&nbsp;-&nbsp;0x28</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Echo Request</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>128&nbsp;-&nbsp;0x80</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Echo Reply</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>129&nbsp;-&nbsp;0x81</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Multicast Listener Query</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>130&nbsp;-&nbsp;0x82</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Multicast Listener Report</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>131&nbsp;-&nbsp;0x83</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Multicast Listener Done</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>132&nbsp;-&nbsp;0x84</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Router Solicitation</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>133&nbsp;-&nbsp;0x85</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Router Advertisement</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>134&nbsp;-&nbsp;0x86</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Neighbor Solicitation</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>135&nbsp;-&nbsp;0x87</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Neighbor Advertisement</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>136&nbsp;-&nbsp;0x88</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Redirect Message</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>137&nbsp;-&nbsp;0x89</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Router Renumbering</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>138&nbsp;-&nbsp;0x8A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ICMPv6 Node Information Query</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>139&nbsp;-&nbsp;0x8B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ICMPv6 Node Information Response</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>140&nbsp;-&nbsp;0x8C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Inverse Neighbor Discovery Solicitation Message</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>141&nbsp;-&nbsp;0x8D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Inverse Neighbor Discovery Advertisement Message</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>142&nbsp;-&nbsp;0x8E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Home Agent Address Discovery Request Message</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>144&nbsp;-&nbsp;0x90</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Home Agent Address Discovery Reply Message</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>145&nbsp;-&nbsp;0x91</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Mobile Prefix Solicitation</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>146&nbsp;-&nbsp;0x92</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Mobile Prefix Advertisement</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>147&nbsp;-&nbsp;0x93</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Certification Path Solicitation Message</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>148&nbsp;-&nbsp;0x94</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Certification Path Advertisement Message</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>149&nbsp;-&nbsp;0x95</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Multicast Router Advertisement</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>151&nbsp;-&nbsp;0x97</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Multicast Router Solicitation</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>152&nbsp;-&nbsp;0x98</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6 Multicast Router Termination</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>153&nbsp;-&nbsp;0x99</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">FMIPv6 Messages</pre></td>
+          
+          <td>Message</td>
+          
+          <td><pre>154&nbsp;-&nbsp;0x9A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RFC3692-style Experiment 1</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>253&nbsp;-&nbsp;0xFD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RFC3692-style Experiment 2</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>254&nbsp;-&nbsp;0xFE</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="ipfamily-items">
+    Type <a href="#type-ipfamily">ipfamily</a>
+  </h3>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">No IP Address</pre></td>
+          
+          <td><pre>None</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv4</pre></td>
+          
+          <td><pre>4&nbsp;-&nbsp;0x4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">IPv6</pre></td>
+          
+          <td><pre>6&nbsp;-&nbsp;0x6</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="ipprotocol-items">
+    Type <a href="#type-ipprotocol">ipprotocol</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+        <th>Description</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">icmp</pre></td>
+          
+          <td><pre>1&nbsp;-&nbsp;0x1</pre></td>
+          
+          <td>Internet control message protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">igmp</pre></td>
+          
+          <td><pre>2&nbsp;-&nbsp;0x2</pre></td>
+          
+          <td>Internet group management</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ggp</pre></td>
+          
+          <td><pre>3&nbsp;-&nbsp;0x3</pre></td>
+          
+          <td>Gateway-gateway protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ipencap</pre></td>
+          
+          <td><pre>4&nbsp;-&nbsp;0x4</pre></td>
+          
+          <td>Ip encapsulated in ip</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">st</pre></td>
+          
+          <td><pre>5&nbsp;-&nbsp;0x5</pre></td>
+          
+          <td>St datagram mode</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">tcp</pre></td>
+          
+          <td><pre>6&nbsp;-&nbsp;0x6</pre></td>
+          
+          <td>Transmission control protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">cbt</pre></td>
+          
+          <td><pre>7&nbsp;-&nbsp;0x7</pre></td>
+          
+          <td>Cbt</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">egp</pre></td>
+          
+          <td><pre>8&nbsp;-&nbsp;0x8</pre></td>
+          
+          <td>Exterior gateway protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">igp</pre></td>
+          
+          <td><pre>9&nbsp;-&nbsp;0x9</pre></td>
+          
+          <td>Any private interior gateway (used by cisco for igrp)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">bbn-rcc-mon</pre></td>
+          
+          <td><pre>10&nbsp;-&nbsp;0xA</pre></td>
+          
+          <td>Bbn rcc monitoring</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">nvp-ii</pre></td>
+          
+          <td><pre>11&nbsp;-&nbsp;0xB</pre></td>
+          
+          <td>Network voice protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">pup</pre></td>
+          
+          <td><pre>12&nbsp;-&nbsp;0xC</pre></td>
+          
+          <td>Parc universal packet protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">argus</pre></td>
+          
+          <td><pre>13&nbsp;-&nbsp;0xD</pre></td>
+          
+          <td>Argus</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">emcom</pre></td>
+          
+          <td><pre>14&nbsp;-&nbsp;0xE</pre></td>
+          
+          <td>Emcon</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">xnet</pre></td>
+          
+          <td><pre>15&nbsp;-&nbsp;0xF</pre></td>
+          
+          <td>Cross net debugger</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">chaos</pre></td>
+          
+          <td><pre>16&nbsp;-&nbsp;0x10</pre></td>
+          
+          <td>Chaos</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">udp</pre></td>
+          
+          <td><pre>17&nbsp;-&nbsp;0x11</pre></td>
+          
+          <td>User datagram protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">mux</pre></td>
+          
+          <td><pre>18&nbsp;-&nbsp;0x12</pre></td>
+          
+          <td>Multiplexing</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">dcn-meas</pre></td>
+          
+          <td><pre>19&nbsp;-&nbsp;0x13</pre></td>
+          
+          <td>Dcn measurement subsystems</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">hmp</pre></td>
+          
+          <td><pre>20&nbsp;-&nbsp;0x14</pre></td>
+          
+          <td>Host monitoring protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">prm</pre></td>
+          
+          <td><pre>21&nbsp;-&nbsp;0x15</pre></td>
+          
+          <td>Packet radio measurement</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">xns-idp</pre></td>
+          
+          <td><pre>22&nbsp;-&nbsp;0x16</pre></td>
+          
+          <td>Xerox ns idp</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">trunk-1</pre></td>
+          
+          <td><pre>23&nbsp;-&nbsp;0x17</pre></td>
+          
+          <td>Trunk-1</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">trunk-2</pre></td>
+          
+          <td><pre>24&nbsp;-&nbsp;0x18</pre></td>
+          
+          <td>Trunk-2</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">leaf-1</pre></td>
+          
+          <td><pre>25&nbsp;-&nbsp;0x19</pre></td>
+          
+          <td>Leaf-1</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">leaf-2</pre></td>
+          
+          <td><pre>26&nbsp;-&nbsp;0x1A</pre></td>
+          
+          <td>Leaf-2</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">rdp</pre></td>
+          
+          <td><pre>27&nbsp;-&nbsp;0x1B</pre></td>
+          
+          <td>Reliable data protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">irtp</pre></td>
+          
+          <td><pre>28&nbsp;-&nbsp;0x1C</pre></td>
+          
+          <td>Internet reliable transaction</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">iso-tp4</pre></td>
+          
+          <td><pre>29&nbsp;-&nbsp;0x1D</pre></td>
+          
+          <td>Iso transport protocol class 4</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">netblt</pre></td>
+          
+          <td><pre>30&nbsp;-&nbsp;0x1E</pre></td>
+          
+          <td>Bulk data transfer protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">mfe-nsp</pre></td>
+          
+          <td><pre>31&nbsp;-&nbsp;0x1F</pre></td>
+          
+          <td>Mfe network services protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">merit-inp</pre></td>
+          
+          <td><pre>32&nbsp;-&nbsp;0x20</pre></td>
+          
+          <td>Merit internodal protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">dccp</pre></td>
+          
+          <td><pre>33&nbsp;-&nbsp;0x21</pre></td>
+          
+          <td>Datagram congestion control protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">3pc</pre></td>
+          
+          <td><pre>34&nbsp;-&nbsp;0x22</pre></td>
+          
+          <td>Third party connect protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">idpr</pre></td>
+          
+          <td><pre>35&nbsp;-&nbsp;0x23</pre></td>
+          
+          <td>Inter-domain policy routing protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">xtp</pre></td>
+          
+          <td><pre>36&nbsp;-&nbsp;0x24</pre></td>
+          
+          <td>Xpress transfer protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ddp</pre></td>
+          
+          <td><pre>37&nbsp;-&nbsp;0x25</pre></td>
+          
+          <td>Datagram delivery protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">idpr-cmtp</pre></td>
+          
+          <td><pre>38&nbsp;-&nbsp;0x26</pre></td>
+          
+          <td>Idpr control message transport</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">tp++</pre></td>
+          
+          <td><pre>39&nbsp;-&nbsp;0x27</pre></td>
+          
+          <td>Tp++ transport protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">il</pre></td>
+          
+          <td><pre>40&nbsp;-&nbsp;0x28</pre></td>
+          
+          <td>Il transport protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ipv6</pre></td>
+          
+          <td><pre>41&nbsp;-&nbsp;0x29</pre></td>
+          
+          <td>Ipv6</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">sdrp</pre></td>
+          
+          <td><pre>42&nbsp;-&nbsp;0x2A</pre></td>
+          
+          <td>Source demand routing protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ipv6-route</pre></td>
+          
+          <td><pre>43&nbsp;-&nbsp;0x2B</pre></td>
+          
+          <td>Routing header for ipv6</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ipv6-frag</pre></td>
+          
+          <td><pre>44&nbsp;-&nbsp;0x2C</pre></td>
+          
+          <td>Fragment header for ipv6</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">idrp</pre></td>
+          
+          <td><pre>45&nbsp;-&nbsp;0x2D</pre></td>
+          
+          <td>Inter-domain routing protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">rsvp</pre></td>
+          
+          <td><pre>46&nbsp;-&nbsp;0x2E</pre></td>
+          
+          <td>Reservation protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">gre</pre></td>
+          
+          <td><pre>47&nbsp;-&nbsp;0x2F</pre></td>
+          
+          <td>General routing encapsulation</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">dsr</pre></td>
+          
+          <td><pre>48&nbsp;-&nbsp;0x30</pre></td>
+          
+          <td>Dynamic source routing protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">bna</pre></td>
+          
+          <td><pre>49&nbsp;-&nbsp;0x31</pre></td>
+          
+          <td>Bna</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">esp</pre></td>
+          
+          <td><pre>50&nbsp;-&nbsp;0x32</pre></td>
+          
+          <td>Encap security payload</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ah</pre></td>
+          
+          <td><pre>51&nbsp;-&nbsp;0x33</pre></td>
+          
+          <td>Authentication header</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">i-nlsp</pre></td>
+          
+          <td><pre>52&nbsp;-&nbsp;0x34</pre></td>
+          
+          <td>Integrated net layer security tuba</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">swipe</pre></td>
+          
+          <td><pre>53&nbsp;-&nbsp;0x35</pre></td>
+          
+          <td>Ip with encryption</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">narp</pre></td>
+          
+          <td><pre>54&nbsp;-&nbsp;0x36</pre></td>
+          
+          <td>Nbma address resolution protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">mobile</pre></td>
+          
+          <td><pre>55&nbsp;-&nbsp;0x37</pre></td>
+          
+          <td>Ip mobility</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">tlsp</pre></td>
+          
+          <td><pre>56&nbsp;-&nbsp;0x38</pre></td>
+          
+          <td>Transport layer security protocol using kryptonet key management</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">skip</pre></td>
+          
+          <td><pre>57&nbsp;-&nbsp;0x39</pre></td>
+          
+          <td>Skip</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ipv6-icmp</pre></td>
+          
+          <td><pre>58&nbsp;-&nbsp;0x3A</pre></td>
+          
+          <td>Icmp for ipv6</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ipv6-nonxt</pre></td>
+          
+          <td><pre>59&nbsp;-&nbsp;0x3B</pre></td>
+          
+          <td>No next header for ipv6</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ipv6-opts</pre></td>
+          
+          <td><pre>60&nbsp;-&nbsp;0x3C</pre></td>
+          
+          <td>Destination options for ipv6</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">anyhost</pre></td>
+          
+          <td><pre>61&nbsp;-&nbsp;0x3D</pre></td>
+          
+          <td>Any host internal protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">cftp</pre></td>
+          
+          <td><pre>62&nbsp;-&nbsp;0x3E</pre></td>
+          
+          <td>Cftp</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">anylan</pre></td>
+          
+          <td><pre>63&nbsp;-&nbsp;0x3F</pre></td>
+          
+          <td>Any local network</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">sat-expak</pre></td>
+          
+          <td><pre>64&nbsp;-&nbsp;0x40</pre></td>
+          
+          <td>Satnet and backroom expak</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">kryptolan</pre></td>
+          
+          <td><pre>65&nbsp;-&nbsp;0x41</pre></td>
+          
+          <td>Kryptolan</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">rvd</pre></td>
+          
+          <td><pre>66&nbsp;-&nbsp;0x42</pre></td>
+          
+          <td>Mit remote virtual disk protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ippc internet</pre></td>
+          
+          <td><pre>67&nbsp;-&nbsp;0x43</pre></td>
+          
+          <td>Internet pluribus packet core</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">anydfs</pre></td>
+          
+          <td><pre>68&nbsp;-&nbsp;0x44</pre></td>
+          
+          <td>Any distributed file system</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">sat-mon</pre></td>
+          
+          <td><pre>69&nbsp;-&nbsp;0x45</pre></td>
+          
+          <td>Satnet monitoring</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">visa</pre></td>
+          
+          <td><pre>70&nbsp;-&nbsp;0x46</pre></td>
+          
+          <td>Visa protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ipcv</pre></td>
+          
+          <td><pre>71&nbsp;-&nbsp;0x47</pre></td>
+          
+          <td>Internet packet core utility</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">cpnx</pre></td>
+          
+          <td><pre>72&nbsp;-&nbsp;0x48</pre></td>
+          
+          <td>Computer protocol network executive</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">rspf</pre></td>
+          
+          <td><pre>73&nbsp;-&nbsp;0x49</pre></td>
+          
+          <td>Radio shortest path first (officially cphb, computer protocol heart beat</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">br-sat-mon</pre></td>
+          
+          <td><pre>76&nbsp;-&nbsp;0x4C</pre></td>
+          
+          <td>Backroom satnet monitoring</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">sun-nd</pre></td>
+          
+          <td><pre>77&nbsp;-&nbsp;0x4D</pre></td>
+          
+          <td>Sun nd protocol-temporary</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">wb-mon</pre></td>
+          
+          <td><pre>78&nbsp;-&nbsp;0x4E</pre></td>
+          
+          <td>Wideband monitoring</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">wb-expak</pre></td>
+          
+          <td><pre>79&nbsp;-&nbsp;0x4F</pre></td>
+          
+          <td>Wideband expak</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">iso-ip</pre></td>
+          
+          <td><pre>80&nbsp;-&nbsp;0x50</pre></td>
+          
+          <td>Iso internet protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">vmtp</pre></td>
+          
+          <td><pre>81&nbsp;-&nbsp;0x51</pre></td>
+          
+          <td>Versatile message transport</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">secure-vmtp</pre></td>
+          
+          <td><pre>82&nbsp;-&nbsp;0x52</pre></td>
+          
+          <td>Versatile message transport</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">vines</pre></td>
+          
+          <td><pre>83&nbsp;-&nbsp;0x53</pre></td>
+          
+          <td>Vines</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ttp</pre></td>
+          
+          <td><pre>84&nbsp;-&nbsp;0x54</pre></td>
+          
+          <td>Ttp</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">msfnet-igp</pre></td>
+          
+          <td><pre>85&nbsp;-&nbsp;0x55</pre></td>
+          
+          <td>Msfnet-igp</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">dgp</pre></td>
+          
+          <td><pre>86&nbsp;-&nbsp;0x56</pre></td>
+          
+          <td>Dissimilar gateway protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">tcf</pre></td>
+          
+          <td><pre>87&nbsp;-&nbsp;0x57</pre></td>
+          
+          <td>Tcf</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">eigrp</pre></td>
+          
+          <td><pre>88&nbsp;-&nbsp;0x58</pre></td>
+          
+          <td>Enhanced interior routing protocol (cisco)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ospf</pre></td>
+          
+          <td><pre>89&nbsp;-&nbsp;0x59</pre></td>
+          
+          <td>Open shortest path first igp</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">sprite-rpc</pre></td>
+          
+          <td><pre>90&nbsp;-&nbsp;0x5A</pre></td>
+          
+          <td>Sprite rpc protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">larp</pre></td>
+          
+          <td><pre>91&nbsp;-&nbsp;0x5B</pre></td>
+          
+          <td>Locus address resolution protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">mtp</pre></td>
+          
+          <td><pre>92&nbsp;-&nbsp;0x5C</pre></td>
+          
+          <td>Multicast transport protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ax.25</pre></td>
+          
+          <td><pre>93&nbsp;-&nbsp;0x5D</pre></td>
+          
+          <td>Ax.25 frames</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ipip</pre></td>
+          
+          <td><pre>94&nbsp;-&nbsp;0x5E</pre></td>
+          
+          <td>Ip-within-ip encapsulation protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">micp</pre></td>
+          
+          <td><pre>95&nbsp;-&nbsp;0x5F</pre></td>
+          
+          <td>Mobile internetworking control pro.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">scc-sp</pre></td>
+          
+          <td><pre>96&nbsp;-&nbsp;0x60</pre></td>
+          
+          <td>Semaphore communications sec. pro.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">etherip</pre></td>
+          
+          <td><pre>97&nbsp;-&nbsp;0x61</pre></td>
+          
+          <td>Ethernet-within-ip encapsulation</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">anyprivenc</pre></td>
+          
+          <td><pre>98&nbsp;-&nbsp;0x62</pre></td>
+          
+          <td>Any private encryption scheme</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">gmtp</pre></td>
+          
+          <td><pre>100&nbsp;-&nbsp;0x64</pre></td>
+          
+          <td>Gmtp</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ifmp</pre></td>
+          
+          <td><pre>101&nbsp;-&nbsp;0x65</pre></td>
+          
+          <td>Ipsilon flow management protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">pnni</pre></td>
+          
+          <td><pre>102&nbsp;-&nbsp;0x66</pre></td>
+          
+          <td>Pnni over ip</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">pim</pre></td>
+          
+          <td><pre>103&nbsp;-&nbsp;0x67</pre></td>
+          
+          <td>Protocol independent multicast</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">aris</pre></td>
+          
+          <td><pre>104&nbsp;-&nbsp;0x68</pre></td>
+          
+          <td>Aris</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">scps</pre></td>
+          
+          <td><pre>105&nbsp;-&nbsp;0x69</pre></td>
+          
+          <td>Scps</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">qnx</pre></td>
+          
+          <td><pre>106&nbsp;-&nbsp;0x6A</pre></td>
+          
+          <td>Qnx</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">a/n</pre></td>
+          
+          <td><pre>107&nbsp;-&nbsp;0x6B</pre></td>
+          
+          <td>Active networks</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ipcomp</pre></td>
+          
+          <td><pre>108&nbsp;-&nbsp;0x6C</pre></td>
+          
+          <td>Ip payload compression protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">snp</pre></td>
+          
+          <td><pre>109&nbsp;-&nbsp;0x6D</pre></td>
+          
+          <td>Sitara networks protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">compaq-peer</pre></td>
+          
+          <td><pre>110&nbsp;-&nbsp;0x6E</pre></td>
+          
+          <td>Compaq peer protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ipx-in-ip</pre></td>
+          
+          <td><pre>111&nbsp;-&nbsp;0x6F</pre></td>
+          
+          <td>Ipx in ip</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">vrrp</pre></td>
+          
+          <td><pre>112&nbsp;-&nbsp;0x70</pre></td>
+          
+          <td>Virtual router redundancy protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">pgm</pre></td>
+          
+          <td><pre>113&nbsp;-&nbsp;0x71</pre></td>
+          
+          <td>Pgm reliable transport protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">any0hop</pre></td>
+          
+          <td><pre>114&nbsp;-&nbsp;0x72</pre></td>
+          
+          <td>Any 0-hop protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">l2tp</pre></td>
+          
+          <td><pre>115&nbsp;-&nbsp;0x73</pre></td>
+          
+          <td>Layer two tunneling protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ddx</pre></td>
+          
+          <td><pre>116&nbsp;-&nbsp;0x74</pre></td>
+          
+          <td>D-ii data exchange (ddx)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">iatp</pre></td>
+          
+          <td><pre>117&nbsp;-&nbsp;0x75</pre></td>
+          
+          <td>Interactive agent transfer protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">stp</pre></td>
+          
+          <td><pre>118&nbsp;-&nbsp;0x76</pre></td>
+          
+          <td>Schedule transfer protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">srp</pre></td>
+          
+          <td><pre>119&nbsp;-&nbsp;0x77</pre></td>
+          
+          <td>Spectralink radio protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">uti</pre></td>
+          
+          <td><pre>120&nbsp;-&nbsp;0x78</pre></td>
+          
+          <td>Uti</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">smp</pre></td>
+          
+          <td><pre>121&nbsp;-&nbsp;0x79</pre></td>
+          
+          <td>Simple message protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">sm</pre></td>
+          
+          <td><pre>122&nbsp;-&nbsp;0x7A</pre></td>
+          
+          <td>Sm</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ptp</pre></td>
+          
+          <td><pre>123&nbsp;-&nbsp;0x7B</pre></td>
+          
+          <td>Performance transparency protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">isis</pre></td>
+          
+          <td><pre>124&nbsp;-&nbsp;0x7C</pre></td>
+          
+          <td>Isis over ipv4</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">fire</pre></td>
+          
+          <td><pre>125&nbsp;-&nbsp;0x7D</pre></td>
+          
+          <td>Fire</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">crtp</pre></td>
+          
+          <td><pre>126&nbsp;-&nbsp;0x7E</pre></td>
+          
+          <td>Combat radio transport protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">crudp</pre></td>
+          
+          <td><pre>127&nbsp;-&nbsp;0x7F</pre></td>
+          
+          <td>Combat radio user datagram</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">sscopmce</pre></td>
+          
+          <td><pre>128&nbsp;-&nbsp;0x80</pre></td>
+          
+          <td>Sscopmce</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">iplt</pre></td>
+          
+          <td><pre>129&nbsp;-&nbsp;0x81</pre></td>
+          
+          <td>Iplt</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">sps</pre></td>
+          
+          <td><pre>130&nbsp;-&nbsp;0x82</pre></td>
+          
+          <td>Secure packet shield</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">pipe</pre></td>
+          
+          <td><pre>131&nbsp;-&nbsp;0x83</pre></td>
+          
+          <td>Private ip encapsulation within ip</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">sctp</pre></td>
+          
+          <td><pre>132&nbsp;-&nbsp;0x84</pre></td>
+          
+          <td>Stream control transmission protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">fc</pre></td>
+          
+          <td><pre>133&nbsp;-&nbsp;0x85</pre></td>
+          
+          <td>Fibre channel</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">rsvp-e2e-ignore</pre></td>
+          
+          <td><pre>134&nbsp;-&nbsp;0x86</pre></td>
+          
+          <td>Rsvp-e2e-ignore</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">mobilityheader</pre></td>
+          
+          <td><pre>135&nbsp;-&nbsp;0x87</pre></td>
+          
+          <td>Mobility header</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">udplite</pre></td>
+          
+          <td><pre>136&nbsp;-&nbsp;0x88</pre></td>
+          
+          <td>Udp-lite</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">mpls-in-ip</pre></td>
+          
+          <td><pre>137&nbsp;-&nbsp;0x89</pre></td>
+          
+          <td>Mpls-in-ip</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">manet</pre></td>
+          
+          <td><pre>138&nbsp;-&nbsp;0x8A</pre></td>
+          
+          <td>Manet protocols</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">hip</pre></td>
+          
+          <td><pre>139&nbsp;-&nbsp;0x8B</pre></td>
+          
+          <td>Host identity protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">shim6</pre></td>
+          
+          <td><pre>140&nbsp;-&nbsp;0x8C</pre></td>
+          
+          <td>Shim6 protocol</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">testing1</pre></td>
+          
+          <td><pre>253&nbsp;-&nbsp;0xFD</pre></td>
+          
+          <td>Use for experimentation and testing</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">testing2</pre></td>
+          
+          <td><pre>254&nbsp;-&nbsp;0xFE</pre></td>
+          
+          <td>Use for experimentation and testing</td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="keytype-items">
+    Type <a href="#type-keytype">keytype</a>
+  </h3>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">RSA</pre></td>
+          
+          <td><pre>0&nbsp;-&nbsp;0x0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">EC</pre></td>
+          
+          <td><pre>1&nbsp;-&nbsp;0x1</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="layer-items">
+    Type <a href="#type-layer">layer</a>
+  </h3>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">Citrix</pre></td>
+          
+          <td><pre>citrix</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Citrix Channels</pre></td>
+          
+          <td><pre>citrix_channels</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">DNS</pre></td>
+          
+          <td><pre>dns</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">HTTP</pre></td>
+          
+          <td><pre>http</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">ICMP</pre></td>
+          
+          <td><pre>icmp</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Non IP</pre></td>
+          
+          <td><pre>non_ip</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Other IP</pre></td>
+          
+          <td><pre>other_ip</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">CIFS</pre></td>
+          
+          <td><pre>smb</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Databases</pre></td>
+          
+          <td><pre>databases</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TCP</pre></td>
+          
+          <td><pre>tcp</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">UDP</pre></td>
+          
+          <td><pre>udp</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">VoIP</pre></td>
+          
+          <td><pre>voip</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TLS</pre></td>
+          
+          <td><pre>tls</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="os-items">
+    Type <a href="#type-os">os</a>
+  </h3>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+        <th>Category</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">Unknown</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>0&nbsp;-&nbsp;0x0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:3.x</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>1&nbsp;-&nbsp;0x1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.6.x</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>2&nbsp;-&nbsp;0x2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.4.x</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>3&nbsp;-&nbsp;0x3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.2.x</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>4&nbsp;-&nbsp;0x4</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.0</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>5&nbsp;-&nbsp;0x5</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:3.x (loopback)</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>6&nbsp;-&nbsp;0x6</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.6.x (loopback)</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>7&nbsp;-&nbsp;0x7</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.4.x (loopback)</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>8&nbsp;-&nbsp;0x8</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.2.x (loopback)</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>9&nbsp;-&nbsp;0x9</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.6.x (google crawler)</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>10&nbsp;-&nbsp;0xA</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:Android</pre></td>
+          
+          <td>mobile</td>
+          
+          <td><pre>11&nbsp;-&nbsp;0xB</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:3.x (generic)</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>12&nbsp;-&nbsp;0xC</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.4.x-2.6.x (generic)</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>13&nbsp;-&nbsp;0xD</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.2.x-3.x (generic)</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>14&nbsp;-&nbsp;0xE</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.2.x-3.x (generic, no ts)</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>15&nbsp;-&nbsp;0xF</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.2.x-3.x (generic, barebone)</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>16&nbsp;-&nbsp;0x10</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Windows:XP</pre></td>
+          
+          <td>windows</td>
+          
+          <td><pre>17&nbsp;-&nbsp;0x11</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Windows:7 or 8</pre></td>
+          
+          <td>windows</td>
+          
+          <td><pre>18&nbsp;-&nbsp;0x12</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Windows:7 (Websense crawler)</pre></td>
+          
+          <td>windows</td>
+          
+          <td><pre>19&nbsp;-&nbsp;0x13</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Windows:NT kernel 5.x (generic)</pre></td>
+          
+          <td>windows</td>
+          
+          <td><pre>20&nbsp;-&nbsp;0x14</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Windows:NT kernel 6.x (generic)</pre></td>
+          
+          <td>windows</td>
+          
+          <td><pre>21&nbsp;-&nbsp;0x15</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Windows:NT kernel (generic)</pre></td>
+          
+          <td>windows</td>
+          
+          <td><pre>22&nbsp;-&nbsp;0x16</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Mac OS X:10.x</pre></td>
+          
+          <td>macos</td>
+          
+          <td><pre>23&nbsp;-&nbsp;0x17</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">iOS:iPhone or iPad</pre></td>
+          
+          <td>mobile</td>
+          
+          <td><pre>24&nbsp;-&nbsp;0x18</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Mac OS X (generic)</pre></td>
+          
+          <td>macos</td>
+          
+          <td><pre>25&nbsp;-&nbsp;0x19</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">FreeBSD:9.x</pre></td>
+          
+          <td>bsd</td>
+          
+          <td><pre>26&nbsp;-&nbsp;0x1A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">FreeBSD:8.x</pre></td>
+          
+          <td>bsd</td>
+          
+          <td><pre>27&nbsp;-&nbsp;0x1B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">FreeBSD (generic)</pre></td>
+          
+          <td>bsd</td>
+          
+          <td><pre>28&nbsp;-&nbsp;0x1C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">OpenBSD:3.x</pre></td>
+          
+          <td>bsd</td>
+          
+          <td><pre>29&nbsp;-&nbsp;0x1D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">OpenBSD:4.x-5.x</pre></td>
+          
+          <td>bsd</td>
+          
+          <td><pre>30&nbsp;-&nbsp;0x1E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Solaris:8</pre></td>
+          
+          <td>solaris</td>
+          
+          <td><pre>31&nbsp;-&nbsp;0x1F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Solaris:10</pre></td>
+          
+          <td>solaris</td>
+          
+          <td><pre>32&nbsp;-&nbsp;0x20</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">OpenVMS:8.x</pre></td>
+          
+          <td>other</td>
+          
+          <td><pre>33&nbsp;-&nbsp;0x21</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">OpenVMS:7.x</pre></td>
+          
+          <td>other</td>
+          
+          <td><pre>34&nbsp;-&nbsp;0x22</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NeXTSTEP</pre></td>
+          
+          <td>other</td>
+          
+          <td><pre>35&nbsp;-&nbsp;0x23</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Tru64:4.x</pre></td>
+          
+          <td>other</td>
+          
+          <td><pre>36&nbsp;-&nbsp;0x24</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NMap:SYN scan</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>37&nbsp;-&nbsp;0x25</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NMap:OS detection</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>38&nbsp;-&nbsp;0x26</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">p0f:sendsyn utility</pre></td>
+          
+          <td>Unknown</td>
+          
+          <td><pre>39&nbsp;-&nbsp;0x27</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Blackberry</pre></td>
+          
+          <td>mobile</td>
+          
+          <td><pre>40&nbsp;-&nbsp;0x28</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Nintendo:3DS</pre></td>
+          
+          <td>other</td>
+          
+          <td><pre>41&nbsp;-&nbsp;0x29</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Nintendo:Wii</pre></td>
+          
+          <td>other</td>
+          
+          <td><pre>42&nbsp;-&nbsp;0x2A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">BaiduSpider</pre></td>
+          
+          <td>other</td>
+          
+          <td><pre>43&nbsp;-&nbsp;0x2B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:3.x (syn+ack)</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>44&nbsp;-&nbsp;0x2C</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.4-2.6 (syn+ack)</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>45&nbsp;-&nbsp;0x2D</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.4.x (syn+ack)</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>46&nbsp;-&nbsp;0x2E</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Linux:2.6.x (syn+ack)</pre></td>
+          
+          <td>linux</td>
+          
+          <td><pre>47&nbsp;-&nbsp;0x2F</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Windows:XP (syn+ack)</pre></td>
+          
+          <td>windows</td>
+          
+          <td><pre>48&nbsp;-&nbsp;0x30</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Windows:7 or 8 (syn+ack)</pre></td>
+          
+          <td>windows</td>
+          
+          <td><pre>49&nbsp;-&nbsp;0x31</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">FreeBSD:9.x (syn+ack)</pre></td>
+          
+          <td>bsd</td>
+          
+          <td><pre>50&nbsp;-&nbsp;0x32</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">FreeBSD:8.x (syn+ack)</pre></td>
+          
+          <td>bsd</td>
+          
+          <td><pre>51&nbsp;-&nbsp;0x33</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">FreeBSD:8.x-9.x (syn+ack)</pre></td>
+          
+          <td>bsd</td>
+          
+          <td><pre>52&nbsp;-&nbsp;0x34</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">OpenBSD:5.x (syn+ack)</pre></td>
+          
+          <td>bsd</td>
+          
+          <td><pre>53&nbsp;-&nbsp;0x35</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Mac OS X:10.x (syn+ack)</pre></td>
+          
+          <td>macos</td>
+          
+          <td><pre>54&nbsp;-&nbsp;0x36</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Solaris:6 (syn+ack)</pre></td>
+          
+          <td>solaris</td>
+          
+          <td><pre>55&nbsp;-&nbsp;0x37</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Solaris:8 (syn+ack)</pre></td>
+          
+          <td>solaris</td>
+          
+          <td><pre>56&nbsp;-&nbsp;0x38</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Solaris:10 (syn+ack)</pre></td>
+          
+          <td>solaris</td>
+          
+          <td><pre>57&nbsp;-&nbsp;0x39</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">HP-UX:11.x (syn+ack)</pre></td>
+          
+          <td>other</td>
+          
+          <td><pre>58&nbsp;-&nbsp;0x3A</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">OpenVMS:7.x (syn+ack)</pre></td>
+          
+          <td>other</td>
+          
+          <td><pre>59&nbsp;-&nbsp;0x3B</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Tru64:4.x (syn+ack)</pre></td>
+          
+          <td>other</td>
+          
+          <td><pre>60&nbsp;-&nbsp;0x3C</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="pktsourcekind-items">
+    Type <a href="#type-pktsourcekind">pktsourcekind</a>
+  </h3>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">Missing</pre></td>
+          
+          <td><pre>0&nbsp;-&nbsp;0x0</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">Network Interface</pre></td>
+          
+          <td><pre>1&nbsp;-&nbsp;0x1</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPCAPD Remote Capture</pre></td>
+          
+          <td><pre>2&nbsp;-&nbsp;0x2</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">PCAP File</pre></td>
+          
+          <td><pre>3&nbsp;-&nbsp;0x3</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NetFlow</pre></td>
+          
+          <td><pre>4&nbsp;-&nbsp;0x4</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="smbcommand-items">
+    Type <a href="#type-smbcommand">smbcommand</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+        <th>Description</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_create_directory</pre></td>
+          
+          <td><pre>1:0</pre></td>
+          
+          <td>Create a new directory on the server, relative to a connected share.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_delete_directory</pre></td>
+          
+          <td><pre>1:1</pre></td>
+          
+          <td>Delete an empty directory.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_open</pre></td>
+          
+          <td><pre>1:2</pre></td>
+          
+          <td>Open an existing regular file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_create</pre></td>
+          
+          <td><pre>1:3</pre></td>
+          
+          <td>Create and open a new file or open and truncate an existing file to zero length.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_close</pre></td>
+          
+          <td><pre>1:4</pre></td>
+          
+          <td>Close an instance of an object associated with a valid FID.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_flush</pre></td>
+          
+          <td><pre>1:5</pre></td>
+          
+          <td>Request that the server flush data and allocation information for a specified file or for all open files under the session.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_delete</pre></td>
+          
+          <td><pre>1:6</pre></td>
+          
+          <td>Delete one or more regular files.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_rename</pre></td>
+          
+          <td><pre>1:7</pre></td>
+          
+          <td>Change the name of one or more files or directories</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_query_information</pre></td>
+          
+          <td><pre>1:8</pre></td>
+          
+          <td>Obtain attribute information about a file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_set_information</pre></td>
+          
+          <td><pre>1:9</pre></td>
+          
+          <td>Change the attribute information of a regular file or directory.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_read</pre></td>
+          
+          <td><pre>1:10</pre></td>
+          
+          <td>Read bytes from a regular file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_write</pre></td>
+          
+          <td><pre>1:11</pre></td>
+          
+          <td>Write bytes to a regular file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_lock_byte_range</pre></td>
+          
+          <td><pre>1:12</pre></td>
+          
+          <td>Explicitly lock a contiguous range of bytes in an open regular file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_unlock_byte_range</pre></td>
+          
+          <td><pre>1:13</pre></td>
+          
+          <td>Explicitly unlock a contiguous range of bytes in an open regular file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_create_temporary</pre></td>
+          
+          <td><pre>1:14</pre></td>
+          
+          <td>Create a file for temporary use by the client.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_create_new</pre></td>
+          
+          <td><pre>1:15</pre></td>
+          
+          <td>Create a new file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_check_directory</pre></td>
+          
+          <td><pre>1:16</pre></td>
+          
+          <td>Verify that a specified path resolves to a valid directory on the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_process_exit</pre></td>
+          
+          <td><pre>1:17</pre></td>
+          
+          <td>Sent by the client to indicate the catastrophic failure of a client process.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_seek</pre></td>
+          
+          <td><pre>1:18</pre></td>
+          
+          <td>Position a file pointer within a regular file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_lock_and_read</pre></td>
+          
+          <td><pre>1:19</pre></td>
+          
+          <td>Explicitly lock and read bytes from a regular file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_write_and_unlock</pre></td>
+          
+          <td><pre>1:20</pre></td>
+          
+          <td>Write to a range of bytes and then unlock them.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_read_raw</pre></td>
+          
+          <td><pre>1:26</pre></td>
+          
+          <td>Request raw data from the file or named pipe.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_read_mpx</pre></td>
+          
+          <td><pre>1:27</pre></td>
+          
+          <td>This is a specialized read command intended to maximize the performance of reading large blocks of data from a regular file while allowing for other operations to take place between the client and the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_read_mpx_secondary</pre></td>
+          
+          <td><pre>1:28</pre></td>
+          
+          <td>This command is no longer used in conjunction with the SMB_COM_READ_MPX command.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_write_raw</pre></td>
+          
+          <td><pre>1:29</pre></td>
+          
+          <td>This is a specialized write command intended to maximize performance when writing large blocks of data to an open regular file, a named pipe, a device, or spooled output.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_write_mpx</pre></td>
+          
+          <td><pre>1:30</pre></td>
+          
+          <td>SMB_COM_WRITE_MPX is used to maximize performance when writing a large block of data from the client to the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_write_mpx_secondary</pre></td>
+          
+          <td><pre>1:31</pre></td>
+          
+          <td>This command is no longer used in conjunction with the SMB_COM_WRITE_MPX command.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_write_complete</pre></td>
+          
+          <td><pre>1:32</pre></td>
+          
+          <td>This command is sent by the server as the final response of an SMB_COM_WRITE_RAW command sequence.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_query_server</pre></td>
+          
+          <td><pre>1:33</pre></td>
+          
+          <td>This command was introduced in the NT LAN Manager dialect, and was reserved but not implemented.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_set_information2</pre></td>
+          
+          <td><pre>1:34</pre></td>
+          
+          <td>Set attribute information about an open file. This command allows the client to set more attribute information for the file than the SMB_COM_SET_INFORMATION command.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_query_information2</pre></td>
+          
+          <td><pre>1:35</pre></td>
+          
+          <td>Obtain attribute information about an open file. This command provides more information about the file than the SMB_COM_QUERY_INFORMATION command.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_locking_andx</pre></td>
+          
+          <td><pre>1:36</pre></td>
+          
+          <td>Explicitly lock and/or unlock a contiguous range of bytes in a regular file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_transaction</pre></td>
+          
+          <td><pre>1:37</pre></td>
+          
+          <td>This command serves as the transport for the Transaction Subprotocol Commands. These commands operate on mailslots and named pipes, which are interprocess communication endpoints within the CIFS file system.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_transaction_secondary</pre></td>
+          
+          <td><pre>1:38</pre></td>
+          
+          <td>The SMB_COM_TRANSACTION_SECONDARY command is used to complete a data transfer initiated by an SMB_COM_TRANSACTION Request.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_ioctl</pre></td>
+          
+          <td><pre>1:39</pre></td>
+          
+          <td>This command delivers a device- or file-specific IOCTL request to a server, and a device- or file-specific IOCTL response to the requester.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_ioctl_secondary</pre></td>
+          
+          <td><pre>1:40</pre></td>
+          
+          <td>This command is a companion to SMB_COM_IOCTL.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_copy</pre></td>
+          
+          <td><pre>1:41</pre></td>
+          
+          <td>Perform server-side file copies</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_move</pre></td>
+          
+          <td><pre>1:42</pre></td>
+          
+          <td>Move files on the server</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_echo</pre></td>
+          
+          <td><pre>1:43</pre></td>
+          
+          <td>Sent by the client to test the transport layer connection with the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_write_and_close</pre></td>
+          
+          <td><pre>1:44</pre></td>
+          
+          <td>Write to a range of bytes and then close the file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_open_andx</pre></td>
+          
+          <td><pre>1:45</pre></td>
+          
+          <td>Open a new file or open an existing regular file and chain additional messages along with the request.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_read_andx</pre></td>
+          
+          <td><pre>1:46</pre></td>
+          
+          <td>Read bytes from a regular file, a named pipe, or a directly accessible device such as a serial port (COM) or printer port (LPT).</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_write_andx</pre></td>
+          
+          <td><pre>1:47</pre></td>
+          
+          <td>Write bytes to a regular file, a named pipe, or a directly accessible I/O device such as a serial port (COM) or printer port (LPT).</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_new_file_size</pre></td>
+          
+          <td><pre>1:48</pre></td>
+          
+          <td>This command was reserved but not implemented.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_close_and_tree_disc</pre></td>
+          
+          <td><pre>1:49</pre></td>
+          
+          <td>This command was reserved but not implemented.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_transaction2</pre></td>
+          
+          <td><pre>1:50</pre></td>
+          
+          <td>Provide support for a richer set of server-side file system semantics. The "Trans2 subcommands", as they are called, allow clients to set and retrieve Extended Attribute key/value pairs, make use of long file names, and perform directory searches, among other tasks.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_transaction2_secondary</pre></td>
+          
+          <td><pre>1:51</pre></td>
+          
+          <td>The SMB_COM_TRANSACTION2_SECONDARY command is used to complete a data transfer initiated by an SMB_COM_TRANSACTION2 request.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_find_close2</pre></td>
+          
+          <td><pre>1:52</pre></td>
+          
+          <td>Close a search handle that was created by a TRANS2_FIND_FIRST2 subcommand.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_find_notify_close</pre></td>
+          
+          <td><pre>1:53</pre></td>
+          
+          <td>Close a directory search handle that was created by a TRANS2_FIND_NOTIFY_FIRST subcommand request to the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_tree_connect</pre></td>
+          
+          <td><pre>1:112</pre></td>
+          
+          <td>Establish a client connection to a server share.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_tree_disconnect</pre></td>
+          
+          <td><pre>1:113</pre></td>
+          
+          <td>Disconnect client access to a server resource.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_negociate</pre></td>
+          
+          <td><pre>1:114</pre></td>
+          
+          <td>Initiate an SMB connection between the client and the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_session_setup_andx</pre></td>
+          
+          <td><pre>1:115</pre></td>
+          
+          <td>Configure an SMB session.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_logoff_andx</pre></td>
+          
+          <td><pre>1:116</pre></td>
+          
+          <td>Log off the user connection.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_tree_connect_andx</pre></td>
+          
+          <td><pre>1:117</pre></td>
+          
+          <td>Establish a client connection to a server share.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_security_package_andx</pre></td>
+          
+          <td><pre>1:126</pre></td>
+          
+          <td>Negotiate security packages and related information.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_query_information_disk</pre></td>
+          
+          <td><pre>1:128</pre></td>
+          
+          <td>Obtain the capacity and remaining free space on the volume hosting the subtree indicated by the tree_id.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_search</pre></td>
+          
+          <td><pre>1:129</pre></td>
+          
+          <td>Search a directory for files or other objects that have names matching a given wildcard template.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_find</pre></td>
+          
+          <td><pre>1:130</pre></td>
+          
+          <td>This command is identical in structure and purpose to SMB_COM_SEARCH. The only difference is that SMB_COM_FIND is paired with the SMB_COM_FIND_CLOSE command, which allows the client to explicitly close a search operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_find_unique</pre></td>
+          
+          <td><pre>1:131</pre></td>
+          
+          <td>The use of this command, as opposed to SMB_COM_SEARCH or SMB_COM_FIND, indicates to the server that it need not maintain a search context or any other state. The SMB_COM_FIND_UNIQUE command is single-use. No follow-up commands are permitted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_find_close</pre></td>
+          
+          <td><pre>1:132</pre></td>
+          
+          <td>This command is used to close a directory search opened by SMB_COM_FIND.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_nt_transact</pre></td>
+          
+          <td><pre>1:160</pre></td>
+          
+          <td>SMB_COM_NT_TRANSACT subcommands extend the file system feature access offered by SMB_COM_TRANSACTION2, and also allow for the transfer of very large parameter and data blocks.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_nt_transact_secondary</pre></td>
+          
+          <td><pre>1:161</pre></td>
+          
+          <td>The SMB_COM_NT_TRANSACT_SECONDARY command is used to complete a data transfer initiated by an SMB_COM_NT_TRANSACT request.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_nt_create_andx</pre></td>
+          
+          <td><pre>1:162</pre></td>
+          
+          <td>This command is used to create and open a new file, or to open an existing file, or to open and truncate an existing file to zero length, or to create a directory, or to create a connection to a named pipe.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_nt_cancel</pre></td>
+          
+          <td><pre>1:164</pre></td>
+          
+          <td>Request that a currently pending request be canceled.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_nt_rename</pre></td>
+          
+          <td><pre>1:165</pre></td>
+          
+          <td>Create hard links on the remote server, to perform an in-place file rename, and to move a file within its existing path hierarchy.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_open_print_file</pre></td>
+          
+          <td><pre>1:192</pre></td>
+          
+          <td>Create a print queue spool file. The file will be queued to the printer when closed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_write_print_file</pre></td>
+          
+          <td><pre>1:193</pre></td>
+          
+          <td>Write data to an open print queue spool file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_close_print_file</pre></td>
+          
+          <td><pre>1:194</pre></td>
+          
+          <td>Closes the specified print queue spool file, causing the server to queue the file for printing.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_get_print_file</pre></td>
+          
+          <td><pre>1:195</pre></td>
+          
+          <td>Generate a list of items currently in a print queue associated with the specified tree_id.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_read_bulk</pre></td>
+          
+          <td><pre>1:216</pre></td>
+          
+          <td>This command was reserved but not implemented.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_write_bulk</pre></td>
+          
+          <td><pre>1:217</pre></td>
+          
+          <td>This command was reserved but not implemented.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_write_bulk_data</pre></td>
+          
+          <td><pre>1:218</pre></td>
+          
+          <td>This command was reserved but not implemented.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_invalid</pre></td>
+          
+          <td><pre>1:254</pre></td>
+          
+          <td>Reserved value that specifically indicates an invalid command.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_com_no_andx_command</pre></td>
+          
+          <td><pre>1:255</pre></td>
+          
+          <td>In the earliest SMB Protocol specifications (see [IBM-SMB]), this command code was reserved for proprietary protocol extensions.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_negotiate</pre></td>
+          
+          <td><pre>2:0</pre></td>
+          
+          <td>Notify the server what dialects of the SMB 2 Protocol the client understands.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_session_setup</pre></td>
+          
+          <td><pre>2:1</pre></td>
+          
+          <td>Request a new authenticated session within a new or existing SMB 2 Protocol transport connection to the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_logoff</pre></td>
+          
+          <td><pre>2:2</pre></td>
+          
+          <td>Request termination of a particular session.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_tree_connect</pre></td>
+          
+          <td><pre>2:3</pre></td>
+          
+          <td>Request access to a particular share on the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_tree_disconnect</pre></td>
+          
+          <td><pre>2:4</pre></td>
+          
+          <td>Request that the tree connect that is specified be disconnected.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_create</pre></td>
+          
+          <td><pre>2:5</pre></td>
+          
+          <td>Request either creation of or access to a file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_close</pre></td>
+          
+          <td><pre>2:6</pre></td>
+          
+          <td>Close an instance of a file that was opened previously with a successful SMB2 CREATE Request.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_flush</pre></td>
+          
+          <td><pre>2:7</pre></td>
+          
+          <td>Request that a server flush all cached file information for a specified open of a file to the persistent store that backs the file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_read</pre></td>
+          
+          <td><pre>2:8</pre></td>
+          
+          <td>Request a read operation on the file that is specified by the FileId.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_write</pre></td>
+          
+          <td><pre>2:9</pre></td>
+          
+          <td>Write data to the file or named pipe on the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_lock</pre></td>
+          
+          <td><pre>2:10</pre></td>
+          
+          <td>Either lock or unlock portions of a file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_ioctl</pre></td>
+          
+          <td><pre>2:11</pre></td>
+          
+          <td>Issue an implementation-specific file system control or device control (FSCTL/IOCTL) command across the network.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_cancel</pre></td>
+          
+          <td><pre>2:12</pre></td>
+          
+          <td>Cancel a previously sent message on the same SMB2 transport connection.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_echo</pre></td>
+          
+          <td><pre>2:13</pre></td>
+          
+          <td>Determine whether a server is processing requests.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_query_directory</pre></td>
+          
+          <td><pre>2:14</pre></td>
+          
+          <td>Obtain a directory enumeration on a directory open.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_change_notify</pre></td>
+          
+          <td><pre>2:15</pre></td>
+          
+          <td>request change notifications on a directory.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_query_info</pre></td>
+          
+          <td><pre>2:16</pre></td>
+          
+          <td>Request information on a file, named pipe, or underlying volume.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_set_info</pre></td>
+          
+          <td><pre>2:17</pre></td>
+          
+          <td>Set information on a file or underlying object store.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB2_com_oplock_break</pre></td>
+          
+          <td><pre>2:18</pre></td>
+          
+          <td>Sent by the server when the underlying object store indicates that an opportunistic lock (oplock) is being broken, representing a change in the oplock level.</td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="smbstatus-items">
+    Type <a href="#type-smbstatus">smbstatus</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+        <th>Category</th>
+      
+      <th>Value</th>
+      
+        <th>Description</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_ok</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>0&nbsp;-&nbsp;0x0</pre></td>
+          
+          <td>The operation completed successfully.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_abandoned</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>128&nbsp;-&nbsp;0x80</pre></td>
+          
+          <td>The caller attempted to wait for a mutex that has been abandoned.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_user_apc</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>192&nbsp;-&nbsp;0xC0</pre></td>
+          
+          <td>A user-mode APC was delivered before the given Interval expired.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_kernel_apc</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>256&nbsp;-&nbsp;0x100</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_alerted</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>257&nbsp;-&nbsp;0x101</pre></td>
+          
+          <td>The delay completed because the thread was alerted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_timeout</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>258&nbsp;-&nbsp;0x102</pre></td>
+          
+          <td>The given Timeout interval expired.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pending</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>259&nbsp;-&nbsp;0x103</pre></td>
+          
+          <td>The operation that was requested is pending completion.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_reparse</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>260&nbsp;-&nbsp;0x104</pre></td>
+          
+          <td>A reparse should be performed by the Object Manager because the name of the file resulted in a symbolic link.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_more_entries</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>261&nbsp;-&nbsp;0x105</pre></td>
+          
+          <td>Returned by enumeration APIs to indicate more information is available to successive calls.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_all_assigned</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>262&nbsp;-&nbsp;0x106</pre></td>
+          
+          <td>Indicates not all privileges or groups that are referenced are assigned to the caller. This allows, for example, all privileges to be disabled without having to know exactly which privileges are assigned.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_some_not_mapped</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>263&nbsp;-&nbsp;0x107</pre></td>
+          
+          <td>Some of the information to be translated has not been translated.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_oplock_break_in_progress</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>264&nbsp;-&nbsp;0x108</pre></td>
+          
+          <td>An open/create operation completed while an opportunistic lock (oplock) break is underway.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_volume_mounted</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>265&nbsp;-&nbsp;0x109</pre></td>
+          
+          <td>A new volume has been mounted by a file system.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_rxact_committed</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>266&nbsp;-&nbsp;0x10A</pre></td>
+          
+          <td>This success level status indicates that the transaction state already exists for the registry subtree but that a transaction commit was previously aborted. The commit has now been completed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_notify_cleanup</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>267&nbsp;-&nbsp;0x10B</pre></td>
+          
+          <td>Indicates that a notify change request has been completed due to closing the handle that made the notify change request.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_notify_enum_dir</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>268&nbsp;-&nbsp;0x10C</pre></td>
+          
+          <td>Indicates that a notify change request is being completed and that the information is not being returned in the caller's buffer. The caller now needs to enumerate the files to find the changes.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_quotas_for_account</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>269&nbsp;-&nbsp;0x10D</pre></td>
+          
+          <td>{No Quotas} No system quota limits are specifically set for this account.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_primary_transport_connect_failed</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>270&nbsp;-&nbsp;0x10E</pre></td>
+          
+          <td>{Connect Failure on Primary Transport} An attempt was made to connect to the remote server on the primary transport, but the connection failed. The computer WAS able to connect on a secondary transport.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_page_fault_transition</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>272&nbsp;-&nbsp;0x110</pre></td>
+          
+          <td>The page fault was a transition fault.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_page_fault_demand_zero</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>273&nbsp;-&nbsp;0x111</pre></td>
+          
+          <td>The page fault was a demand zero fault.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_page_fault_copy_on_write</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>274&nbsp;-&nbsp;0x112</pre></td>
+          
+          <td>The page fault was a demand zero fault.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_page_fault_guard_page</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>275&nbsp;-&nbsp;0x113</pre></td>
+          
+          <td>The page fault was a demand zero fault.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_page_fault_paging_file</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>276&nbsp;-&nbsp;0x114</pre></td>
+          
+          <td>The page fault was satisfied by reading from a secondary storage device.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_cache_page_locked</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>277&nbsp;-&nbsp;0x115</pre></td>
+          
+          <td>The cached page was locked during operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_crash_dump</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>278&nbsp;-&nbsp;0x116</pre></td>
+          
+          <td>The crash dump exists in a paging file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_buffer_all_zeros</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>279&nbsp;-&nbsp;0x117</pre></td>
+          
+          <td>The specified buffer contains all zeros.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_reparse_object</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>280&nbsp;-&nbsp;0x118</pre></td>
+          
+          <td>A reparse should be performed by the Object Manager because the name of the file resulted in a symbolic link.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_resource_requirements_changed</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>281&nbsp;-&nbsp;0x119</pre></td>
+          
+          <td>The device has succeeded a query-stop and its resource requirements have changed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_translation_complete</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>288&nbsp;-&nbsp;0x120</pre></td>
+          
+          <td>The translator has translated these resources into the global space and no additional translations should be performed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_membership_evaluated_locally</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>289&nbsp;-&nbsp;0x121</pre></td>
+          
+          <td>The directory service evaluated group memberships locally, because it was unable to contact a global catalog server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_nothing_to_terminate</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>290&nbsp;-&nbsp;0x122</pre></td>
+          
+          <td>A process being terminated has no threads to terminate.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_process_not_in_job</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>291&nbsp;-&nbsp;0x123</pre></td>
+          
+          <td>The specified process is not part of a job.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_process_in_job</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>292&nbsp;-&nbsp;0x124</pre></td>
+          
+          <td>The specified process is part of a job.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wait_for_oplock</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>871&nbsp;-&nbsp;0x367</pre></td>
+          
+          <td>An operation is blocked and waiting for an oplock.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_invalid_smb</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>65538&nbsp;-&nbsp;0x10002</pre></td>
+          
+          <td>The debugger continued.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_smb_bad_tid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>327682&nbsp;-&nbsp;0x50002</pre></td>
+          
+          <td>The TID is no longer valid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_smb_bad_fid</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>393217&nbsp;-&nbsp;0x60001</pre></td>
+          
+          <td>Invalid FID.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_os2_invalid_access</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>786433&nbsp;-&nbsp;0xC0001</pre></td>
+          
+          <td>Invalid open mode.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_smb_bad_command</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>1441794&nbsp;-&nbsp;0x160002</pre></td>
+          
+          <td>An unknown SMB command code was received by the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_smb_bad_uid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>5963778&nbsp;-&nbsp;0x5B0002</pre></td>
+          
+          <td>The UID specified is not known as a valid ID on this server session.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_os2_no_more_sids</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>7405569&nbsp;-&nbsp;0x710001</pre></td>
+          
+          <td>Maximum number of searches has been exhausted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_os2_invalid_level</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>8126465&nbsp;-&nbsp;0x7C0001</pre></td>
+          
+          <td>The InformationLevel supplied is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_os2_negative_seek</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>8585217&nbsp;-&nbsp;0x830001</pre></td>
+          
+          <td>An attempt was made to seek to a negative absolute offset within a file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_os2_cancel_violation</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>11337729&nbsp;-&nbsp;0xAD0001</pre></td>
+          
+          <td>No lock request was outstanding for the supplied cancel region.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_os2_atomic_locks_not_supported</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>11403265&nbsp;-&nbsp;0xAE0001</pre></td>
+          
+          <td>The file system does not support atomic changes to the lock type.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_smb_use_mpx</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>16384002&nbsp;-&nbsp;0xFA0002</pre></td>
+          
+          <td>Temporarily unable to support RAW mode transfers. Use MPX mode.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_smb_use_standard</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>16449538&nbsp;-&nbsp;0xFB0002</pre></td>
+          
+          <td>Temporarily unable to support RAW or MPX mode transfers. Use standard read/write.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_smb_continue_mpx</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>16515074&nbsp;-&nbsp;0xFC0002</pre></td>
+          
+          <td>Continue in MPX mode. This error code is reserved for future use.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_os2_cannot_copy</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>17432577&nbsp;-&nbsp;0x10A0001</pre></td>
+          
+          <td>The copy functions cannot be used.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_os2_eas_didnt_fit</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>18022401&nbsp;-&nbsp;0x1130001</pre></td>
+          
+          <td>Either there are no extended attributes, or the available extended attributes did not fit into the response.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_os2_ea_access_denied</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>65142785&nbsp;-&nbsp;0x3E20001</pre></td>
+          
+          <td>Access to the extended attribute was denied.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_object_name_exists</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741824&nbsp;-&nbsp;0x40000000</pre></td>
+          
+          <td>{Object Exists} An attempt was made to create an object but the object name already exists.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_thread_was_suspended</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741825&nbsp;-&nbsp;0x40000001</pre></td>
+          
+          <td>{Thread Suspended} A thread termination occurred while the thread was suspended. The thread resumed, and termination proceeded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_working_set_limit_range</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741826&nbsp;-&nbsp;0x40000002</pre></td>
+          
+          <td>{Working Set Range Error} An attempt was made to set the working set minimum or maximum to values that are outside the allowable range.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_image_not_at_base</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741827&nbsp;-&nbsp;0x40000003</pre></td>
+          
+          <td>{Image Relocated} An image file could not be mapped at the address that is specified in the image file. Local fixes must be performed on this image.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_rxact_state_created</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741828&nbsp;-&nbsp;0x40000004</pre></td>
+          
+          <td>This informational level status indicates that a specified registry subtree transaction state did not yet exist and had to be created.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_segment_notification</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741829&nbsp;-&nbsp;0x40000005</pre></td>
+          
+          <td>{Segment Load} A virtual DOS machine (VDM) is loading, unloading, or moving an MS-DOS or Win16 program segment image. An exception is raised so that a debugger can load, unload, or track symbols and breakpoints within these 16-bit segments.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_local_user_session_key</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741830&nbsp;-&nbsp;0x40000006</pre></td>
+          
+          <td>{Local Session Key} A user session key was requested for a local remote procedure call (RPC) connection. The session key that is returned is a constant value and not unique to this connection.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_current_directory</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741831&nbsp;-&nbsp;0x40000007</pre></td>
+          
+          <td>{Invalid Current Directory} The process cannot switch to the startup current directory. Select OK to set the current directory, or select CANCEL to exit.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_serial_more_writes</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741832&nbsp;-&nbsp;0x40000008</pre></td>
+          
+          <td>{Serial IOCTL Complete} A serial I/O operation was completed by another write to a serial port. (The IOCTL_SERIAL_XOFF_COUNTER reached zero.)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_registry_recovered</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741833&nbsp;-&nbsp;0x40000009</pre></td>
+          
+          <td>{Registry Recovery} One of the files that contains the system registry data had to be recovered by using a log or alternate copy. The recovery was successful.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ft_read_recovery_from_backup</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741834&nbsp;-&nbsp;0x4000000A</pre></td>
+          
+          <td>{Redundant Read} To satisfy a read request, the Windows&nbsp;NT fault-tolerant file system successfully read the requested data from a redundant copy. This was done because the file system encountered a failure on a member of the fault-tolerant volume but was unable to reassign the failing area of the device.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ft_write_recovery</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741835&nbsp;-&nbsp;0x4000000B</pre></td>
+          
+          <td>{Redundant Write} To satisfy a write request, the Windows&nbsp;NT fault-tolerant file system successfully wrote a redundant copy of the information. This was done because the file system encountered a failure on a member of the fault-tolerant volume but was unable to reassign the failing area of the device.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_serial_counter_timeout</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741836&nbsp;-&nbsp;0x4000000C</pre></td>
+          
+          <td>{Serial IOCTL Timeout} A serial I/O operation completed because the time-out period expired. (The IOCTL_SERIAL_XOFF_COUNTER had not reached zero.)</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_null_lm_password</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741837&nbsp;-&nbsp;0x4000000D</pre></td>
+          
+          <td>{Password Too Complex} The Windows password is too complex to be converted to a LAN Manager password. The LAN Manager password that returned is a NULL string.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_image_machine_type_mismatch</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741838&nbsp;-&nbsp;0x4000000E</pre></td>
+          
+          <td>{Machine Type Mismatch} The image file is valid but is for a machine type other than the current machine. Select OK to continue, or CANCEL to fail the DLL load.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_receive_partial</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741839&nbsp;-&nbsp;0x4000000F</pre></td>
+          
+          <td>{Partial Data Received} The network transport returned partial data to its client. The remaining data will be sent later.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_receive_expedited</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741840&nbsp;-&nbsp;0x40000010</pre></td>
+          
+          <td>{Expedited Data Received} The network transport returned data to its client that was marked as expedited by the remote system.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_receive_partial_expedited</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741841&nbsp;-&nbsp;0x40000011</pre></td>
+          
+          <td>{Partial Expedited Data Received} The network transport returned partial data to its client and this data was marked as expedited by the remote system. The remaining data will be sent later.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_event_done</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741842&nbsp;-&nbsp;0x40000012</pre></td>
+          
+          <td>{TDI Event Done} The TDI indication has completed successfully.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_event_pending</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741843&nbsp;-&nbsp;0x40000013</pre></td>
+          
+          <td>{TDI Event Pending} The TDI indication has entered the pending state.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_checking_file_system</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741844&nbsp;-&nbsp;0x40000014</pre></td>
+          
+          <td>Checking file system.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_fatal_app_exit</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741845&nbsp;-&nbsp;0x40000015</pre></td>
+          
+          <td>{Fatal Application Exit}</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_predefined_handle</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741846&nbsp;-&nbsp;0x40000016</pre></td>
+          
+          <td>The specified registry key is referenced by a predefined handle.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_was_unlocked</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741847&nbsp;-&nbsp;0x40000017</pre></td>
+          
+          <td>{Page Unlocked} The page protection of a locked page was changed to 'No Access' and the page was unlocked from memory and from the process.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_service_notification</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741848&nbsp;-&nbsp;0x40000018</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_was_locked</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741849&nbsp;-&nbsp;0x40000019</pre></td>
+          
+          <td>{Page Locked} One of the pages to lock was already locked.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_log_hard_error</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741850&nbsp;-&nbsp;0x4000001A</pre></td>
+          
+          <td>Application popup</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_already_win32</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741851&nbsp;-&nbsp;0x4000001B</pre></td>
+          
+          <td>A Win32 process already exists.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wx86_unsimulate</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741852&nbsp;-&nbsp;0x4000001C</pre></td>
+          
+          <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wx86_continue</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741853&nbsp;-&nbsp;0x4000001D</pre></td>
+          
+          <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wx86_single_step</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741854&nbsp;-&nbsp;0x4000001E</pre></td>
+          
+          <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wx86_breakpoint</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741855&nbsp;-&nbsp;0x4000001F</pre></td>
+          
+          <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wx86_exception_continue</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741856&nbsp;-&nbsp;0x40000020</pre></td>
+          
+          <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wx86_exception_lastchance</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741857&nbsp;-&nbsp;0x40000021</pre></td>
+          
+          <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wx86_exception_chain</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741858&nbsp;-&nbsp;0x40000022</pre></td>
+          
+          <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_image_machine_type_mismatch_exe</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741859&nbsp;-&nbsp;0x40000023</pre></td>
+          
+          <td>{Machine Type Mismatch} The image file is valid but is for a machine type other than the current machine.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_yield_performed</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741860&nbsp;-&nbsp;0x40000024</pre></td>
+          
+          <td>A yield execution was performed and no thread was available to run.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_timer_resume_ignored</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741861&nbsp;-&nbsp;0x40000025</pre></td>
+          
+          <td>The resume flag to a timer API was ignored.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_arbitration_unhandled</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741862&nbsp;-&nbsp;0x40000026</pre></td>
+          
+          <td>The arbiter has deferred arbitration of these resources to its parent.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_cardbus_not_supported</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741863&nbsp;-&nbsp;0x40000027</pre></td>
+          
+          <td>The device has detected a CardBus card in its slot.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wx86_createwx86tib</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741864&nbsp;-&nbsp;0x40000028</pre></td>
+          
+          <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_mp_processor_mismatch</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741865&nbsp;-&nbsp;0x40000029</pre></td>
+          
+          <td>The CPUs in this multiprocessor system are not all the same revision level. To use all processors, the operating system restricts itself to the features of the least capable processor in the system. If problems occur with this system, contact the CPU manufacturer to see if this mix of processors is supported.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_hibernated</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741866&nbsp;-&nbsp;0x4000002A</pre></td>
+          
+          <td>The system was put into hibernation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_resume_hibernation</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073741867&nbsp;-&nbsp;0x4000002B</pre></td>
+          
+          <td>The system was resumed from hibernation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wake_system</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073742484&nbsp;-&nbsp;0x40000294</pre></td>
+          
+          <td>The system has awoken.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_shutting_down</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073742704&nbsp;-&nbsp;0x40000370</pre></td>
+          
+          <td>The directory service is shutting down.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_uuid_local_only</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073872982&nbsp;-&nbsp;0x40020056</pre></td>
+          
+          <td>A UUID that is valid only on this computer has been allocated.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_send_incomplete</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>1073873071&nbsp;-&nbsp;0x400200AF</pre></td>
+          
+          <td>Some data remains to be sent in the request buffer.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_guard_page_violation</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483649&nbsp;-&nbsp;0x80000001</pre></td>
+          
+          <td>{EXCEPTION} Guard Page Exception A page of memory that marks the end of a data structure, such as a stack or an array, has been accessed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_datatype_misalignment</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483650&nbsp;-&nbsp;0x80000002</pre></td>
+          
+          <td>{EXCEPTION} Alignment Fault A data type misalignment was detected in a load or store instruction.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_breakpoint</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483651&nbsp;-&nbsp;0x80000003</pre></td>
+          
+          <td>{EXCEPTION} Breakpoint A breakpoint has been reached.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_single_step</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483652&nbsp;-&nbsp;0x80000004</pre></td>
+          
+          <td>{EXCEPTION} Single Step A single step or trace operation has just been completed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_buffer_overflow</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483653&nbsp;-&nbsp;0x80000005</pre></td>
+          
+          <td>{Buffer Overflow} The data was too large to fit into the specified buffer.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_no_more_files</pre></td>
+          
+          <td>Success</td>
+          
+          <td><pre>2147483654&nbsp;-&nbsp;0x80000006</pre></td>
+          
+          <td>{No More Files} No more files were found which match the file specification. This is a warning status in specification but since it is used to end a query directory request, we consider it as an ok status.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wake_system_debugger</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483655&nbsp;-&nbsp;0x80000007</pre></td>
+          
+          <td>{Kernel Debugger Awakened} The system debugger was awakened by an interrupt.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_handles_closed</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483658&nbsp;-&nbsp;0x8000000A</pre></td>
+          
+          <td>{Handles Closed} Handles to objects have been automatically closed because of the requested operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_inheritance</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483659&nbsp;-&nbsp;0x8000000B</pre></td>
+          
+          <td>{Non-Inheritable ACL} An access control list (ACL) contains no components that can be inherited.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_guid_substitution_made</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483660&nbsp;-&nbsp;0x8000000C</pre></td>
+          
+          <td>{GUID Substitution} During the translation of a globally unique identifier (GUID) to a Windows security ID (SID), no administratively defined GUID prefix was found. A substitute prefix was used, which will not compromise system security. However, this may provide a more restrictive access than intended.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_partial_copy</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483661&nbsp;-&nbsp;0x8000000D</pre></td>
+          
+          <td>Because of protection conflicts, not all the requested bytes could be copied.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_device_paper_empty</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>2147483662&nbsp;-&nbsp;0x8000000E</pre></td>
+          
+          <td>{Out of Paper} The printer is out of paper.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_powered_off</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483663&nbsp;-&nbsp;0x8000000F</pre></td>
+          
+          <td>{Device Power Is Off} The printer power has been turned off.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_off_line</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483664&nbsp;-&nbsp;0x80000010</pre></td>
+          
+          <td>{Device Offline} The printer has been taken offline.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_busy</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483665&nbsp;-&nbsp;0x80000011</pre></td>
+          
+          <td>{Device Busy} The device is currently busy.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_more_eas</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483666&nbsp;-&nbsp;0x80000012</pre></td>
+          
+          <td>{No More EAs} No more extended attributes (EAs) were found for the file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_ea_name</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483667&nbsp;-&nbsp;0x80000013</pre></td>
+          
+          <td>{Illegal EA} The specified extended attribute (EA) name contains at least one illegal character.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ea_list_inconsistent</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483668&nbsp;-&nbsp;0x80000014</pre></td>
+          
+          <td>{Inconsistent EA List} The extended attribute (EA) list is inconsistent.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_ea_flag</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483669&nbsp;-&nbsp;0x80000015</pre></td>
+          
+          <td>{Invalid EA Flag} An invalid extended attribute (EA) flag was set.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_verify_required</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483670&nbsp;-&nbsp;0x80000016</pre></td>
+          
+          <td>{Verifying Disk} The media has changed and a verify operation is in progress; therefore, no reads or writes may be performed to the device, except those that are used in the verify operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_extraneous_information</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483671&nbsp;-&nbsp;0x80000017</pre></td>
+          
+          <td>{Too Much Information} The specified access control list (ACL) contained more information than was expected.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_rxact_commit_necessary</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483672&nbsp;-&nbsp;0x80000018</pre></td>
+          
+          <td>This warning level status indicates that the transaction state already exists for the registry subtree, but that a transaction commit was previously aborted. The commit has NOT been completed but has not been rolled back either; therefore, it may still be committed, if needed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_more_entries</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483674&nbsp;-&nbsp;0x8000001A</pre></td>
+          
+          <td>{No More Entries} No more entries are available from an enumeration operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_filemark_detected</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483675&nbsp;-&nbsp;0x8000001B</pre></td>
+          
+          <td>{Filemark Found} A filemark was detected.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_media_changed</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483676&nbsp;-&nbsp;0x8000001C</pre></td>
+          
+          <td>{Media Changed} The media may have changed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bus_reset</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483677&nbsp;-&nbsp;0x8000001D</pre></td>
+          
+          <td>{I/O Bus Reset} An I/O bus reset was detected.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_end_of_media</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483678&nbsp;-&nbsp;0x8000001E</pre></td>
+          
+          <td>{End of Media} The end of the media was encountered.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_beginning_of_media</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483679&nbsp;-&nbsp;0x8000001F</pre></td>
+          
+          <td>The beginning of a tape or partition has been detected.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_media_check</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483680&nbsp;-&nbsp;0x80000020</pre></td>
+          
+          <td>{Media Changed} The media may have changed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_setmark_detected</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483681&nbsp;-&nbsp;0x80000021</pre></td>
+          
+          <td>A tape access reached a set mark.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_data_detected</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483682&nbsp;-&nbsp;0x80000022</pre></td>
+          
+          <td>During a tape access, the end of the data written is reached.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_redirector_has_open_handles</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483683&nbsp;-&nbsp;0x80000023</pre></td>
+          
+          <td>The redirector is in use and cannot be unloaded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_server_has_open_handles</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483684&nbsp;-&nbsp;0x80000024</pre></td>
+          
+          <td>The server is in use and cannot be unloaded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_already_disconnected</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483685&nbsp;-&nbsp;0x80000025</pre></td>
+          
+          <td>The specified connection has already been disconnected.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_longjump</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483686&nbsp;-&nbsp;0x80000026</pre></td>
+          
+          <td>A long jump has been executed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_cleaner_cartridge_installed</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483687&nbsp;-&nbsp;0x80000027</pre></td>
+          
+          <td>A cleaner cartridge is present in the tape library.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_plugplay_query_vetoed</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483688&nbsp;-&nbsp;0x80000028</pre></td>
+          
+          <td>The Plug and Play query operation was not successful.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unwind_consolidate</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147483689&nbsp;-&nbsp;0x80000029</pre></td>
+          
+          <td>A frame consolidation has been executed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_requires_cleaning</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147484296&nbsp;-&nbsp;0x80000288</pre></td>
+          
+          <td>The device has indicated that cleaning is necessary.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_door_open</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>2147484297&nbsp;-&nbsp;0x80000289</pre></td>
+          
+          <td>The device has indicated that its door is open. Further operations require it closed and secured.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_unsuccessful</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225473&nbsp;-&nbsp;0xC0000001</pre></td>
+          
+          <td>{Operation Failed} The requested operation was unsuccessful.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_not_implemented</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225474&nbsp;-&nbsp;0xC0000002</pre></td>
+          
+          <td>{Not Implemented} The requested operation is not implemented.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_invalid_info_class</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225475&nbsp;-&nbsp;0xC0000003</pre></td>
+          
+          <td>{Invalid Parameter} The specified information class is not a valid information class for the specified object.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_info_length_mismatch</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225476&nbsp;-&nbsp;0xC0000004</pre></td>
+          
+          <td>The specified information record length does not match the length that is required for the specified information class.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_access_violation</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225477&nbsp;-&nbsp;0xC0000005</pre></td>
+          
+          <td>The instruction caused a memory access violation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_in_page_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225478&nbsp;-&nbsp;0xC0000006</pre></td>
+          
+          <td>The required data was not placed into memory because of an I/O error.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pagefile_quota</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225479&nbsp;-&nbsp;0xC0000007</pre></td>
+          
+          <td>The page file quota for the process has been exhausted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_invalid_handle</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225480&nbsp;-&nbsp;0xC0000008</pre></td>
+          
+          <td>An invalid HANDLE was specified.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_initial_stack</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225481&nbsp;-&nbsp;0xC0000009</pre></td>
+          
+          <td>An invalid initial stack was specified in a call to NtCreateThread.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_initial_pc</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225482&nbsp;-&nbsp;0xC000000A</pre></td>
+          
+          <td>An invalid initial start address was specified in a call to NtCreateThread.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_cid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225483&nbsp;-&nbsp;0xC000000B</pre></td>
+          
+          <td>An invalid client ID was specified.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_timer_not_canceled</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225484&nbsp;-&nbsp;0xC000000C</pre></td>
+          
+          <td>An attempt was made to cancel or set a timer that has an associated APC and the specified thread is not the thread that originally set the timer with an associated APC routine.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_invalid_parameter</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225485&nbsp;-&nbsp;0xC000000D</pre></td>
+          
+          <td>An invalid parameter was passed to a service or function.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_no_such_device</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225486&nbsp;-&nbsp;0xC000000E</pre></td>
+          
+          <td>A device that does not exist was specified.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_no_such_file</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225487&nbsp;-&nbsp;0xC000000F</pre></td>
+          
+          <td>{File Not Found} The file does not exist.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_invalid_device_request</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225488&nbsp;-&nbsp;0xC0000010</pre></td>
+          
+          <td>The specified request is not a valid operation for the target device.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_end_of_file</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225489&nbsp;-&nbsp;0xC0000011</pre></td>
+          
+          <td>The end-of-file marker has been reached. There is no valid data in the file beyond this marker.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_wrong_volume</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225490&nbsp;-&nbsp;0xC0000012</pre></td>
+          
+          <td>{Wrong Volume} The wrong volume is in the drive. Insert volume into drive.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_no_media_in_device</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225491&nbsp;-&nbsp;0xC0000013</pre></td>
+          
+          <td>{No Disk} There is no disk in the drive. Insert a disk into drive.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unrecognized_media</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225492&nbsp;-&nbsp;0xC0000014</pre></td>
+          
+          <td>{Unknown Disk Format} The disk in drive is not formatted properly. Check the disk, and reformat it, if needed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_nonexistent_sector</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225493&nbsp;-&nbsp;0xC0000015</pre></td>
+          
+          <td>{Sector Not Found} The specified sector does not exist.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_more_processing_required</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225494&nbsp;-&nbsp;0xC0000016</pre></td>
+          
+          <td>{Still Busy} The specified I/O request packet (IRP) cannot be disposed of because the I/O operation is not complete.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_memory</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225495&nbsp;-&nbsp;0xC0000017</pre></td>
+          
+          <td>{Not Enough Quota} Not enough virtual memory or paging file quota is available to complete the specified operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_conflicting_addresses</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225496&nbsp;-&nbsp;0xC0000018</pre></td>
+          
+          <td>{Conflicting Address Range} The specified address range conflicts with the address space.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_mapped_view</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225497&nbsp;-&nbsp;0xC0000019</pre></td>
+          
+          <td>The address range to unmap is not a mapped view.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unable_to_free_vm</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225498&nbsp;-&nbsp;0xC000001A</pre></td>
+          
+          <td>The virtual memory cannot be freed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unable_to_delete_section</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225499&nbsp;-&nbsp;0xC000001B</pre></td>
+          
+          <td>The specified section cannot be deleted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_system_service</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225500&nbsp;-&nbsp;0xC000001C</pre></td>
+          
+          <td>An invalid system service was specified in a system service call.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_illegal_instruction</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225501&nbsp;-&nbsp;0xC000001D</pre></td>
+          
+          <td>{EXCEPTION} Illegal Instruction An attempt was made to execute an illegal instruction.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_invalid_lock_sequence</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225502&nbsp;-&nbsp;0xC000001E</pre></td>
+          
+          <td>{Invalid Lock Sequence} An attempt was made to execute an invalid lock sequence.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_invalid_view_size</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225503&nbsp;-&nbsp;0xC000001F</pre></td>
+          
+          <td>{Invalid Mapping} An attempt was made to create a view for a section that is bigger than the section.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_file_for_section</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225504&nbsp;-&nbsp;0xC0000020</pre></td>
+          
+          <td>{Bad File} The attributes of the specified mapping file for a section of memory cannot be read.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_already_committed</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225505&nbsp;-&nbsp;0xC0000021</pre></td>
+          
+          <td>{Already Committed} The specified address range is already committed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_access_denied</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225506&nbsp;-&nbsp;0xC0000022</pre></td>
+          
+          <td>{Access Denied} A process has requested access to an object but has not been granted those access rights.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_buffer_too_small</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225507&nbsp;-&nbsp;0xC0000023</pre></td>
+          
+          <td>{Buffer Too Small} The buffer is too small to contain the entry. No information has been written to the buffer.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_object_type_mismatch</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225508&nbsp;-&nbsp;0xC0000024</pre></td>
+          
+          <td>{Wrong Type} There is a mismatch between the type of object that is required by the requested operation and the type of object that is specified in the request.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_noncontinuable_exception</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225509&nbsp;-&nbsp;0xC0000025</pre></td>
+          
+          <td>{EXCEPTION} Cannot Continue Windows cannot continue from this exception.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_disposition</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225510&nbsp;-&nbsp;0xC0000026</pre></td>
+          
+          <td>An invalid exception disposition was returned by an exception handler.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unwind</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225511&nbsp;-&nbsp;0xC0000027</pre></td>
+          
+          <td>Unwind exception code.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_stack</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225512&nbsp;-&nbsp;0xC0000028</pre></td>
+          
+          <td>An invalid or unaligned stack was encountered during an unwind operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_unwind_target</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225513&nbsp;-&nbsp;0xC0000029</pre></td>
+          
+          <td>An invalid unwind target was encountered during an unwind operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_locked</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225514&nbsp;-&nbsp;0xC000002A</pre></td>
+          
+          <td>An attempt was made to unlock a page of memory that was not locked.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_parity_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225515&nbsp;-&nbsp;0xC000002B</pre></td>
+          
+          <td>A device parity error on an I/O operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unable_to_decommit_vm</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225516&nbsp;-&nbsp;0xC000002C</pre></td>
+          
+          <td>An attempt was made to decommit uncommitted virtual memory.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_committed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225517&nbsp;-&nbsp;0xC000002D</pre></td>
+          
+          <td>An attempt was made to change the attributes on memory that has not been committed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_port_attributes</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225518&nbsp;-&nbsp;0xC000002E</pre></td>
+          
+          <td>Invalid object attributes specified to NtCreatePort or invalid port attributes specified to NtConnectPort.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_port_message_too_long</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225519&nbsp;-&nbsp;0xC000002F</pre></td>
+          
+          <td>The length of the message that was passed to NtRequestPort or NtRequestWaitReplyPort is longer than the maximum message that is allowed by the port.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_parameter_mix</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225520&nbsp;-&nbsp;0xC0000030</pre></td>
+          
+          <td>An invalid combination of parameters was specified.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_quota_lower</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225521&nbsp;-&nbsp;0xC0000031</pre></td>
+          
+          <td>An attempt was made to lower a quota limit below the current usage.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_disk_corrupt_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225522&nbsp;-&nbsp;0xC0000032</pre></td>
+          
+          <td>{Corrupt Disk} The file system structure on the disk is corrupt and unusable. Run the Chkdsk utility on the volume.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_object_name_invalid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225523&nbsp;-&nbsp;0xC0000033</pre></td>
+          
+          <td>The object name is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_object_name_not_found</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225524&nbsp;-&nbsp;0xC0000034</pre></td>
+          
+          <td>The object name is not found.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_object_name_collision</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225525&nbsp;-&nbsp;0xC0000035</pre></td>
+          
+          <td>The object name already exists.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_port_disconnected</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225527&nbsp;-&nbsp;0xC0000037</pre></td>
+          
+          <td>An attempt was made to send a message to a disconnected communication port.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_already_attached</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225528&nbsp;-&nbsp;0xC0000038</pre></td>
+          
+          <td>An attempt was made to attach to a device that was already attached to another device.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_object_path_invalid</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225529&nbsp;-&nbsp;0xC0000039</pre></td>
+          
+          <td>The object path component was not a directory object.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_object_path_not_found</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225530&nbsp;-&nbsp;0xC000003A</pre></td>
+          
+          <td>{Path Not Found} The path does not exist.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_object_path_syntax_bad</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225531&nbsp;-&nbsp;0xC000003B</pre></td>
+          
+          <td>The object path component was not a directory object.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_data_overrun</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225532&nbsp;-&nbsp;0xC000003C</pre></td>
+          
+          <td>{Data Overrun} A data overrun error occurred.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_data_late_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225533&nbsp;-&nbsp;0xC000003D</pre></td>
+          
+          <td>{Data Late} A data late error occurred.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_data_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225534&nbsp;-&nbsp;0xC000003E</pre></td>
+          
+          <td>{Data Error} An error occurred in reading or writing data.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_crc_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225535&nbsp;-&nbsp;0xC000003F</pre></td>
+          
+          <td>{Bad CRC} A cyclic redundancy check (CRC) checksum error occurred.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_section_too_big</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225536&nbsp;-&nbsp;0xC0000040</pre></td>
+          
+          <td>{Section Too Large} The specified section is too big to map the file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_port_connection_refused</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225537&nbsp;-&nbsp;0xC0000041</pre></td>
+          
+          <td>The NtConnectPort request is refused.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_invalid_port_handle</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225538&nbsp;-&nbsp;0xC0000042</pre></td>
+          
+          <td>The type of port handle is invalid for the operation that is requested.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_sharing_violation</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225539&nbsp;-&nbsp;0xC0000043</pre></td>
+          
+          <td>A file cannot be opened because the share access flags are incompatible.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_quota_exceeded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225540&nbsp;-&nbsp;0xC0000044</pre></td>
+          
+          <td>Insufficient quota exists to complete the operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_page_protection</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225541&nbsp;-&nbsp;0xC0000045</pre></td>
+          
+          <td>The specified page protection was not valid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_mutant_not_owned</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225542&nbsp;-&nbsp;0xC0000046</pre></td>
+          
+          <td>An attempt to release a mutant object was made by a thread that was not the owner of the mutant object.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_semaphore_limit_exceeded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225543&nbsp;-&nbsp;0xC0000047</pre></td>
+          
+          <td>An attempt was made to release a semaphore such that its maximum count would have been exceeded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_port_already_set</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225544&nbsp;-&nbsp;0xC0000048</pre></td>
+          
+          <td>An attempt was made to set the DebugPort or ExceptionPort of a process, but a port already exists in the process, or an attempt was made to set the CompletionPort of a file but a port was already set in the file, or an attempt was made to set the associated completion port of an ALPC port but it is already set.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_section_not_image</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225545&nbsp;-&nbsp;0xC0000049</pre></td>
+          
+          <td>An attempt was made to query image information on a section that does not map an image.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_suspend_count_exceeded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225546&nbsp;-&nbsp;0xC000004A</pre></td>
+          
+          <td>An attempt was made to suspend a thread whose suspend count was at its maximum.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_thread_is_terminating</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225547&nbsp;-&nbsp;0xC000004B</pre></td>
+          
+          <td>An attempt was made to suspend a thread that has begun termination.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_working_set_limit</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225548&nbsp;-&nbsp;0xC000004C</pre></td>
+          
+          <td>An attempt was made to set the working set limit to an invalid value (for example, the minimum greater than maximum).</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_incompatible_file_map</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225549&nbsp;-&nbsp;0xC000004D</pre></td>
+          
+          <td>A section was created to map a file that is not compatible with an already existing section that maps the same file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_section_protection</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225550&nbsp;-&nbsp;0xC000004E</pre></td>
+          
+          <td>A view to a section specifies a protection that is incompatible with the protection of the initial view.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_eas_not_supported</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225551&nbsp;-&nbsp;0xC000004F</pre></td>
+          
+          <td>An operation involving EAs failed because the file system does not support EAs.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_ea_too_large</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225552&nbsp;-&nbsp;0xC0000050</pre></td>
+          
+          <td>An EA operation failed because the EA set is too large.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_nonexistent_ea_entry</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225553&nbsp;-&nbsp;0xC0000051</pre></td>
+          
+          <td>An EA operation failed because the name or EA index is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_eas_on_file</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225554&nbsp;-&nbsp;0xC0000052</pre></td>
+          
+          <td>The file for which EAs were requested has no EAs.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ea_corrupt_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225555&nbsp;-&nbsp;0xC0000053</pre></td>
+          
+          <td>The EA is corrupt and cannot be read.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_file_lock_conflict</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225556&nbsp;-&nbsp;0xC0000054</pre></td>
+          
+          <td>A requested read/write cannot be granted due to a conflicting file lock.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_lock_not_granted</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225557&nbsp;-&nbsp;0xC0000055</pre></td>
+          
+          <td>A requested file lock cannot be granted due to other existing locks.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_delete_pending</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225558&nbsp;-&nbsp;0xC0000056</pre></td>
+          
+          <td>A non-close operation has been requested of a file object that has a delete pending.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ctl_file_not_supported</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225559&nbsp;-&nbsp;0xC0000057</pre></td>
+          
+          <td>An attempt was made to set the control attribute on a file. This attribute is not supported in the destination file system.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unknown_revision</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225560&nbsp;-&nbsp;0xC0000058</pre></td>
+          
+          <td>Indicates a revision number that was encountered or specified is not one that is known by the service. It may be a more recent revision than the service is aware of.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_revision_mismatch</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225561&nbsp;-&nbsp;0xC0000059</pre></td>
+          
+          <td>Indicates that two revision levels are incompatible.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_owner</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225562&nbsp;-&nbsp;0xC000005A</pre></td>
+          
+          <td>Indicates a particular security ID may not be assigned as the owner of an object.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_primary_group</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225563&nbsp;-&nbsp;0xC000005B</pre></td>
+          
+          <td>Indicates a particular security ID may not be assigned as the primary group of an object.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_impersonation_token</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225564&nbsp;-&nbsp;0xC000005C</pre></td>
+          
+          <td>An attempt has been made to operate on an impersonation token by a thread that is not currently impersonating a client.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_cant_disable_mandatory</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225565&nbsp;-&nbsp;0xC000005D</pre></td>
+          
+          <td>A mandatory group may not be disabled.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_logon_servers</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225566&nbsp;-&nbsp;0xC000005E</pre></td>
+          
+          <td>No logon servers are currently available to service the logon request.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_such_logon_session</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225567&nbsp;-&nbsp;0xC000005F</pre></td>
+          
+          <td>A specified logon session does not exist. It may already have been terminated.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_such_privilege</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225568&nbsp;-&nbsp;0xC0000060</pre></td>
+          
+          <td>A specified privilege does not exist.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_privilege_not_held</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225569&nbsp;-&nbsp;0xC0000061</pre></td>
+          
+          <td>A required privilege is not held by the client.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_account_name</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225570&nbsp;-&nbsp;0xC0000062</pre></td>
+          
+          <td>The name provided is not a properly formed account name.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_user_exists</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225571&nbsp;-&nbsp;0xC0000063</pre></td>
+          
+          <td>The specified account already exists.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_such_user</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225572&nbsp;-&nbsp;0xC0000064</pre></td>
+          
+          <td>The specified account does not exist.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_group_exists</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225573&nbsp;-&nbsp;0xC0000065</pre></td>
+          
+          <td>The specified group already exists.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_such_group</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225574&nbsp;-&nbsp;0xC0000066</pre></td>
+          
+          <td>The specified group does not exist.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_member_in_group</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225575&nbsp;-&nbsp;0xC0000067</pre></td>
+          
+          <td>The specified user account is already in the specified group account. Also used to indicate a group cannot be deleted because it contains a member.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_member_not_in_group</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225576&nbsp;-&nbsp;0xC0000068</pre></td>
+          
+          <td>The specified user account is not a member of the specified group account.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_last_admin</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225577&nbsp;-&nbsp;0xC0000069</pre></td>
+          
+          <td>Indicates the requested operation would disable or delete the last remaining administration account. This is not allowed to prevent creating a situation in which the system cannot be administrated.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_wrong_password</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225578&nbsp;-&nbsp;0xC000006A</pre></td>
+          
+          <td>When trying to update a password, this return status indicates that the value provided as the current password is not correct.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ill_formed_password</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225579&nbsp;-&nbsp;0xC000006B</pre></td>
+          
+          <td>When trying to update a password, this return status indicates that the value provided for the new password contains values that are not allowed in passwords.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_password_restriction</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225580&nbsp;-&nbsp;0xC000006C</pre></td>
+          
+          <td>When trying to update a password, this status indicates that some password update rule has been violated. For example, the password may not meet length criteria.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_logon_failure</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225581&nbsp;-&nbsp;0xC000006D</pre></td>
+          
+          <td>The attempted logon is invalid. This is either due to a bad username or authentication information.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_account_restriction</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225582&nbsp;-&nbsp;0xC000006E</pre></td>
+          
+          <td>Indicates a referenced user name and authentication information are valid, but some user account restriction has prevented successful authentication (such as time-of-day restrictions).</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_invalid_logon_hours</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225583&nbsp;-&nbsp;0xC000006F</pre></td>
+          
+          <td>The user account has time restrictions and may not be logged onto at this time.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_invalid_workstation</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225584&nbsp;-&nbsp;0xC0000070</pre></td>
+          
+          <td>The user account is restricted so that it may not be used to log on from the source workstation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_password_expired</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225585&nbsp;-&nbsp;0xC0000071</pre></td>
+          
+          <td>The user account password has expired.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_account_disabled</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225586&nbsp;-&nbsp;0xC0000072</pre></td>
+          
+          <td>The referenced account is currently disabled and may not be logged on to.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_too_many_luids_requested</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225588&nbsp;-&nbsp;0xC0000074</pre></td>
+          
+          <td>The number of LUIDs requested may not be allocated with a single allocation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_luids_exhausted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225589&nbsp;-&nbsp;0xC0000075</pre></td>
+          
+          <td>Indicates there are no more LUIDs to allocate.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_sub_authority</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225590&nbsp;-&nbsp;0xC0000076</pre></td>
+          
+          <td>Indicates the sub-authority value is invalid for the particular use.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_acl</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225591&nbsp;-&nbsp;0xC0000077</pre></td>
+          
+          <td>Indicates the ACL structure is not valid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_sid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225592&nbsp;-&nbsp;0xC0000078</pre></td>
+          
+          <td>Indicates the SID structure is not valid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_security_descr</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225593&nbsp;-&nbsp;0xC0000079</pre></td>
+          
+          <td>Indicates the SECURITY_DESCRIPTOR structure is not valid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_procedure_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225594&nbsp;-&nbsp;0xC000007A</pre></td>
+          
+          <td>Indicates the specified procedure address cannot be found in the DLL.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_image_format</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225595&nbsp;-&nbsp;0xC000007B</pre></td>
+          
+          <td>{Bad Image} The image is either not designed to run on Windows or it contains an error. Try installing the program again using the original installation media or contact your system administrator or the software vendor for support.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_token</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225596&nbsp;-&nbsp;0xC000007C</pre></td>
+          
+          <td>An attempt was made to reference a token that does not exist. This is typically done by referencing the token that is associated with a thread when the thread is not impersonating a client.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_inheritance_acl</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225597&nbsp;-&nbsp;0xC000007D</pre></td>
+          
+          <td>Indicates that an attempt to build either an inherited ACL or ACE was not successful. This can be caused by a number of things. One of the more probable causes is the replacement of a CreatorId with a SID that did not fit into the ACE or ACL.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_range_not_locked</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225598&nbsp;-&nbsp;0xC000007E</pre></td>
+          
+          <td>The range specified in NtUnlockFile was not locked.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_disk_full</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225599&nbsp;-&nbsp;0xC000007F</pre></td>
+          
+          <td>An operation failed because the disk was full.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_server_disabled</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225600&nbsp;-&nbsp;0xC0000080</pre></td>
+          
+          <td>The GUID allocation server is disabled at the moment.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_server_not_disabled</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225601&nbsp;-&nbsp;0xC0000081</pre></td>
+          
+          <td>The GUID allocation server is enabled at the moment.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_too_many_guids_requested</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225602&nbsp;-&nbsp;0xC0000082</pre></td>
+          
+          <td>Too many GUIDs were requested from the allocation server at once.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_guids_exhausted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225603&nbsp;-&nbsp;0xC0000083</pre></td>
+          
+          <td>The GUIDs could not be allocated because the Authority Agent was exhausted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_id_authority</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225604&nbsp;-&nbsp;0xC0000084</pre></td>
+          
+          <td>The value provided was an invalid value for an identifier authority.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_agents_exhausted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225605&nbsp;-&nbsp;0xC0000085</pre></td>
+          
+          <td>No more authority agent values are available for the particular identifier authority value.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_volume_label</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225606&nbsp;-&nbsp;0xC0000086</pre></td>
+          
+          <td>An invalid volume label has been specified.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_section_not_extended</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225607&nbsp;-&nbsp;0xC0000087</pre></td>
+          
+          <td>A mapped section could not be extended.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_mapped_data</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225608&nbsp;-&nbsp;0xC0000088</pre></td>
+          
+          <td>Specified section to flush does not map a data file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_resource_data_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225609&nbsp;-&nbsp;0xC0000089</pre></td>
+          
+          <td>Indicates the specified image file did not contain a resource section.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_resource_type_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225610&nbsp;-&nbsp;0xC000008A</pre></td>
+          
+          <td>Indicates the specified resource type cannot be found in the image file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_resource_name_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225611&nbsp;-&nbsp;0xC000008B</pre></td>
+          
+          <td>Indicates the specified resource name cannot be found in the image file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_array_bounds_exceeded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225612&nbsp;-&nbsp;0xC000008C</pre></td>
+          
+          <td>{EXCEPTION} Array bounds exceeded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_float_denormal_operand</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225613&nbsp;-&nbsp;0xC000008D</pre></td>
+          
+          <td>{EXCEPTION} Floating-point denormal operand.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_float_divide_by_zero</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225614&nbsp;-&nbsp;0xC000008E</pre></td>
+          
+          <td>{EXCEPTION} Floating-point division by zero.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_float_inexact_result</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225615&nbsp;-&nbsp;0xC000008F</pre></td>
+          
+          <td>{EXCEPTION} Floating-point inexact result.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_float_invalid_operation</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225616&nbsp;-&nbsp;0xC0000090</pre></td>
+          
+          <td>{EXCEPTION} Floating-point invalid operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_float_overflow</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225617&nbsp;-&nbsp;0xC0000091</pre></td>
+          
+          <td>{EXCEPTION} Floating-point overflow.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_float_stack_check</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225618&nbsp;-&nbsp;0xC0000092</pre></td>
+          
+          <td>{EXCEPTION} Floating-point stack check.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_float_underflow</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225619&nbsp;-&nbsp;0xC0000093</pre></td>
+          
+          <td>{EXCEPTION} Floating-point underflow.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_integer_divide_by_zero</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225620&nbsp;-&nbsp;0xC0000094</pre></td>
+          
+          <td>{EXCEPTION} Integer division by zero.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_integer_overflow</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225621&nbsp;-&nbsp;0xC0000095</pre></td>
+          
+          <td>{EXCEPTION} Integer overflow.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_privileged_instruction</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225622&nbsp;-&nbsp;0xC0000096</pre></td>
+          
+          <td>{EXCEPTION} Privileged instruction.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_too_many_paging_files</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225623&nbsp;-&nbsp;0xC0000097</pre></td>
+          
+          <td>An attempt was made to install more paging files than the system supports.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_file_invalid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225624&nbsp;-&nbsp;0xC0000098</pre></td>
+          
+          <td>The volume for a file has been externally altered such that the opened file is no longer valid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_allotted_space_exceeded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225625&nbsp;-&nbsp;0xC0000099</pre></td>
+          
+          <td>When a block of memory is allotted for future updates, such as the memory allocated to hold discretionary access control and primary group information, successive updates may exceed the amount of memory originally allotted. Because a quota may already have been charged to several processes that have handles to the object, it is not reasonable to alter the size of the allocated memory. Instead, a request that requires more memory than has been allotted must fail and the STATUS_ALLOTTED_SPACE_EXCEEDED error returned.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_insufficient_resources</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225626&nbsp;-&nbsp;0xC000009A</pre></td>
+          
+          <td>Insufficient system resources exist to complete the API.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_dfs_exit_path_found</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225627&nbsp;-&nbsp;0xC000009B</pre></td>
+          
+          <td>An attempt has been made to open a DFS exit path control file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_data_error_unused</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225628&nbsp;-&nbsp;0xC000009C</pre></td>
+          
+          <td>There are bad blocks (sectors) on the hard disk.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_not_connected</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225629&nbsp;-&nbsp;0xC000009D</pre></td>
+          
+          <td>There is bad cabling, non-termination, or the controller is not able to obtain access to the hard disk.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_power_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225630&nbsp;-&nbsp;0xC000009E</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_free_vm_not_at_base</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225631&nbsp;-&nbsp;0xC000009F</pre></td>
+          
+          <td>Virtual memory cannot be freed because the base address is not the base of the region and a region size of zero was specified.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_memory_not_allocated</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225632&nbsp;-&nbsp;0xC00000A0</pre></td>
+          
+          <td>An attempt was made to free virtual memory that is not allocated.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_working_set_quota</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225633&nbsp;-&nbsp;0xC00000A1</pre></td>
+          
+          <td>The working set is not big enough to allow the requested pages to be locked.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_media_write_protected</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225634&nbsp;-&nbsp;0xC00000A2</pre></td>
+          
+          <td>{Write Protect Error} The disk cannot be written to because it is write-protected. Remove the write protection from the volume in drive.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_not_ready</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225635&nbsp;-&nbsp;0xC00000A3</pre></td>
+          
+          <td>{Drive Not Ready} The drive is not ready for use; its door may be open. Check drive and make sure that a disk is inserted and that the drive door is closed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_group_attributes</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225636&nbsp;-&nbsp;0xC00000A4</pre></td>
+          
+          <td>The specified attributes are invalid or are incompatible with the attributes for the group as a whole.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_impersonation_level</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225637&nbsp;-&nbsp;0xC00000A5</pre></td>
+          
+          <td>A specified impersonation level is invalid. Also used to indicate that a required impersonation level was not provided.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_cant_open_anonymous</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225638&nbsp;-&nbsp;0xC00000A6</pre></td>
+          
+          <td>An attempt was made to open an anonymous-level token. Anonymous tokens may not be opened.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_validation_class</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225639&nbsp;-&nbsp;0xC00000A7</pre></td>
+          
+          <td>The validation information class requested was invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_token_type</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225640&nbsp;-&nbsp;0xC00000A8</pre></td>
+          
+          <td>The type of a token object is inappropriate for its attempted use.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_master_boot_record</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225641&nbsp;-&nbsp;0xC00000A9</pre></td>
+          
+          <td>The type of a token object is inappropriate for its attempted use.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_instruction_misalignment</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225642&nbsp;-&nbsp;0xC00000AA</pre></td>
+          
+          <td>An attempt was made to execute an instruction at an unaligned address and the host system does not support unaligned instruction references.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_instance_not_available</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225643&nbsp;-&nbsp;0xC00000AB</pre></td>
+          
+          <td>The maximum named pipe instance count has been reached.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_pipe_not_available</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225644&nbsp;-&nbsp;0xC00000AC</pre></td>
+          
+          <td>An instance of a named pipe cannot be found in the listening state.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_invalid_pipe_state</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225645&nbsp;-&nbsp;0xC00000AD</pre></td>
+          
+          <td>The named pipe is not in the connected or closing state.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_pipe_busy</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225646&nbsp;-&nbsp;0xC00000AE</pre></td>
+          
+          <td>The specified pipe is set to complete operations and there are current I/O operations queued so that it cannot be changed to queue operations.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_illegal_function</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225647&nbsp;-&nbsp;0xC00000AF</pre></td>
+          
+          <td>The specified handle is not open to the server end of the named pipe.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_pipe_disconnected</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225648&nbsp;-&nbsp;0xC00000B0</pre></td>
+          
+          <td>The specified named pipe is in the disconnected state.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_pipe_closing</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225649&nbsp;-&nbsp;0xC00000B1</pre></td>
+          
+          <td>The specified named pipe is in the closing state.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pipe_connected</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225650&nbsp;-&nbsp;0xC00000B2</pre></td>
+          
+          <td>The specified named pipe is in the connected state.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pipe_listening</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225651&nbsp;-&nbsp;0xC00000B3</pre></td>
+          
+          <td>The specified named pipe is in the listening state.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_invalid_read_mode</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225652&nbsp;-&nbsp;0xC00000B4</pre></td>
+          
+          <td>The specified named pipe is not in message mode.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_io_timeout</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225653&nbsp;-&nbsp;0xC00000B5</pre></td>
+          
+          <td>{Device Timeout} The specified I/O operation was not completed before the time-out period expired.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_file_forced_closed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225654&nbsp;-&nbsp;0xC00000B6</pre></td>
+          
+          <td>The specified file has been closed by another process.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_profiling_not_started</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225655&nbsp;-&nbsp;0xC00000B7</pre></td>
+          
+          <td>Profiling is not started.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_profiling_not_stopped</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225656&nbsp;-&nbsp;0xC00000B8</pre></td>
+          
+          <td>Profiling is not stopped.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_could_not_interpret</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225657&nbsp;-&nbsp;0xC00000B9</pre></td>
+          
+          <td>The passed ACL did not contain the minimum required information.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_file_is_a_directory</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225658&nbsp;-&nbsp;0xC00000BA</pre></td>
+          
+          <td>The file that was specified as a target is a directory, and the caller specified that it could be anything but a directory.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_remote_not_listening</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225660&nbsp;-&nbsp;0xC00000BC</pre></td>
+          
+          <td>This remote computer is not listening.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_duplicate_name</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225661&nbsp;-&nbsp;0xC00000BD</pre></td>
+          
+          <td>A duplicate name exists on the network.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_network_path</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225662&nbsp;-&nbsp;0xC00000BE</pre></td>
+          
+          <td>The network path cannot be located.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_network_busy</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225663&nbsp;-&nbsp;0xC00000BF</pre></td>
+          
+          <td>The network is busy.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_does_not_exist</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225664&nbsp;-&nbsp;0xC00000C0</pre></td>
+          
+          <td>This device does not exist.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_too_many_commands</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225665&nbsp;-&nbsp;0xC00000C1</pre></td>
+          
+          <td>The network BIOS command limit has been reached.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_adapter_hardware_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225666&nbsp;-&nbsp;0xC00000C2</pre></td>
+          
+          <td>An I/O adapter hardware error has occurred.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_network_response</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225667&nbsp;-&nbsp;0xC00000C3</pre></td>
+          
+          <td>The network responded incorrectly.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_unexpected_network_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225668&nbsp;-&nbsp;0xC00000C4</pre></td>
+          
+          <td>An unexpected network error occurred.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_remote_adapter</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225669&nbsp;-&nbsp;0xC00000C5</pre></td>
+          
+          <td>The remote adapter is not compatible.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_print_queue_full</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225670&nbsp;-&nbsp;0xC00000C6</pre></td>
+          
+          <td>The print queue is full.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_no_spool_space</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225671&nbsp;-&nbsp;0xC00000C7</pre></td>
+          
+          <td>Space to store the file that is waiting to be printed is not available on the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_print_cancelled</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225672&nbsp;-&nbsp;0xC00000C8</pre></td>
+          
+          <td>The requested print file has been canceled.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_network_name_deleted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225673&nbsp;-&nbsp;0xC00000C9</pre></td>
+          
+          <td>The network name was deleted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_network_access_denied</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225674&nbsp;-&nbsp;0xC00000CA</pre></td>
+          
+          <td>Network access is denied.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_bad_device_type</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225675&nbsp;-&nbsp;0xC00000CB</pre></td>
+          
+          <td>{Incorrect Network Resource Type} The specified device type (LPT, for example) conflicts with the actual device type on the remote resource.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_bad_network_name</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225676&nbsp;-&nbsp;0xC00000CC</pre></td>
+          
+          <td>{Network Name Not Found} The specified share name cannot be found on the remote server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_too_many_names</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225677&nbsp;-&nbsp;0xC00000CD</pre></td>
+          
+          <td>The name limit for the network adapter card of the local computer was exceeded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_too_many_sessions</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225678&nbsp;-&nbsp;0xC00000CE</pre></td>
+          
+          <td>The network BIOS session limit was exceeded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_sharing_paused</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225679&nbsp;-&nbsp;0xC00000CF</pre></td>
+          
+          <td>File sharing has been temporarily paused.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_request_not_accepted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225680&nbsp;-&nbsp;0xC00000D0</pre></td>
+          
+          <td>No more connections can be made to this remote computer at this time because the computer has already accepted the maximum number of connections.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_redirector_paused</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225681&nbsp;-&nbsp;0xC00000D1</pre></td>
+          
+          <td>Print or disk redirection is temporarily paused.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_net_write_fault</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225682&nbsp;-&nbsp;0xC00000D2</pre></td>
+          
+          <td>A network data fault occurred.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_profiling_at_limit</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225683&nbsp;-&nbsp;0xC00000D3</pre></td>
+          
+          <td>The number of active profiling objects is at the maximum and no more may be started.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_not_same_device</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225684&nbsp;-&nbsp;0xC00000D4</pre></td>
+          
+          <td>{Incorrect Volume} The destination file of a rename request is located on a different device than the source of the rename request.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_file_renamed</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225685&nbsp;-&nbsp;0xC00000D5</pre></td>
+          
+          <td>The specified file has been renamed and thus cannot be modified.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_virtual_circuit_closed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225686&nbsp;-&nbsp;0xC00000D6</pre></td>
+          
+          <td>{Network Request Timeout} The session with a remote server has been disconnected because the time-out interval for a request has expired.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_security_on_object</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225687&nbsp;-&nbsp;0xC00000D7</pre></td>
+          
+          <td>Indicates an attempt was made to operate on the security of an object that does not have security associated with it.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_cant_wait</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225688&nbsp;-&nbsp;0xC00000D8</pre></td>
+          
+          <td>Used to indicate that an operation cannot continue without blocking for I/O.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_pipe_empty</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225689&nbsp;-&nbsp;0xC00000D9</pre></td>
+          
+          <td>Used to indicate that a read operation was done on an empty pipe.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_cant_access_domain_info</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225690&nbsp;-&nbsp;0xC00000DA</pre></td>
+          
+          <td>Configuration information could not be read from the domain controller, either because the machine is unavailable or access has been denied.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_cant_terminate_self</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225691&nbsp;-&nbsp;0xC00000DB</pre></td>
+          
+          <td>Indicates that a thread attempted to terminate itself by default (called NtTerminateThread with NULL) and it was the last thread in the current process.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_server_state</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225692&nbsp;-&nbsp;0xC00000DC</pre></td>
+          
+          <td>Indicates the Sam Server was in the wrong state to perform the desired operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_domain_state</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225693&nbsp;-&nbsp;0xC00000DD</pre></td>
+          
+          <td>Indicates the domain was in the wrong state to perform the desired operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_domain_role</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225694&nbsp;-&nbsp;0xC00000DE</pre></td>
+          
+          <td>This operation is only allowed for the primary domain controller of the domain.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_such_domain</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225695&nbsp;-&nbsp;0xC00000DF</pre></td>
+          
+          <td>The specified domain did not exist.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_domain_exists</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225696&nbsp;-&nbsp;0xC00000E0</pre></td>
+          
+          <td>The specified domain already exists.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_domain_limit_exceeded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225697&nbsp;-&nbsp;0xC00000E1</pre></td>
+          
+          <td>An attempt was made to exceed the limit on the number of domains per server for this release.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_oplock_not_granted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225698&nbsp;-&nbsp;0xC00000E2</pre></td>
+          
+          <td>An error status returned when the opportunistic lock (oplock) request is denied.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_oplock_protocol</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225699&nbsp;-&nbsp;0xC00000E3</pre></td>
+          
+          <td>An error status returned when an invalid opportunistic lock (oplock) acknowledgment is received by a file system.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_internal_db_corruption</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225700&nbsp;-&nbsp;0xC00000E4</pre></td>
+          
+          <td>This error indicates that the requested operation cannot be completed due to a catastrophic media failure or an on-disk data structure corruption.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_internal_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225701&nbsp;-&nbsp;0xC00000E5</pre></td>
+          
+          <td>An internal error occurred.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_generic_not_mapped</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225702&nbsp;-&nbsp;0xC00000E6</pre></td>
+          
+          <td>Indicates generic access types were contained in an access mask which should already be mapped to non-generic access types.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_descriptor_format</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225703&nbsp;-&nbsp;0xC00000E7</pre></td>
+          
+          <td>Indicates a security descriptor is not in the necessary format (absolute or self-relative).</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_user_buffer</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225704&nbsp;-&nbsp;0xC00000E8</pre></td>
+          
+          <td>An access to a user buffer failed at an expected point in time. This code is defined because the caller does not want to accept STATUS_ACCESS_VIOLATION in its filter.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unexpected_io_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225705&nbsp;-&nbsp;0xC00000E9</pre></td>
+          
+          <td>If an I/O error that is not defined in the standard FsRtl filter is returned, it is converted to the following error, which is guaranteed to be in the filter. In this case, information is lost; however, the filter correctly handles the exception.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unexpected_mm_create_err</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225706&nbsp;-&nbsp;0xC00000EA</pre></td>
+          
+          <td>If an MM error that is not defined in the standard FsRtl filter is returned, it is converted to one of the following errors, which are guaranteed to be in the filter. In this case, information is lost; however, the filter correctly handles the exception.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unexpected_mm_map_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225707&nbsp;-&nbsp;0xC00000EB</pre></td>
+          
+          <td>If an MM error that is not defined in the standard FsRtl filter is returned, it is converted to one of the following errors, which are guaranteed to be in the filter. In this case, information is lost; however, the filter correctly handles the exception.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unexpected_mm_extend_err</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225708&nbsp;-&nbsp;0xC00000EC</pre></td>
+          
+          <td>If an MM error that is not defined in the standard FsRtl filter is returned, it is converted to one of the following errors, which are guaranteed to be in the filter. In this case, information is lost; however, the filter correctly handles the exception.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_logon_process</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225709&nbsp;-&nbsp;0xC00000ED</pre></td>
+          
+          <td>The requested action is restricted for use by logon processes only. The calling process has not registered as a logon process.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_logon_session_exists</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225710&nbsp;-&nbsp;0xC00000EE</pre></td>
+          
+          <td>An attempt has been made to start a new session manager or LSA logon session by using an ID that is already in use.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_parameter_1</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225711&nbsp;-&nbsp;0xC00000EF</pre></td>
+          
+          <td>An invalid parameter was passed to a service or function as the first argument.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_parameter_2</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225712&nbsp;-&nbsp;0xC00000F0</pre></td>
+          
+          <td>An invalid parameter was passed to a service or function as the second argument.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_parameter_3</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225713&nbsp;-&nbsp;0xC00000F1</pre></td>
+          
+          <td>An invalid parameter was passed to a service or function as the third argument.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_parameter_4</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225714&nbsp;-&nbsp;0xC00000F2</pre></td>
+          
+          <td>An invalid parameter was passed to a service or function as the fourth argument.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_parameter_5</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225715&nbsp;-&nbsp;0xC00000F3</pre></td>
+          
+          <td>An invalid parameter was passed to a service or function as the fifth argument.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_parameter_6</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225716&nbsp;-&nbsp;0xC00000F4</pre></td>
+          
+          <td>An invalid parameter was passed to a service or function as the sixth argument.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_parameter_7</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225717&nbsp;-&nbsp;0xC00000F5</pre></td>
+          
+          <td>An invalid parameter was passed to a service or function as the seventh argument.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_parameter_8</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225718&nbsp;-&nbsp;0xC00000F6</pre></td>
+          
+          <td>An invalid parameter was passed to a service or function as the eighth argument.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_parameter_9</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225719&nbsp;-&nbsp;0xC00000F7</pre></td>
+          
+          <td>An invalid parameter was passed to a service or function as the ninth argument.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_parameter_10</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225720&nbsp;-&nbsp;0xC00000F8</pre></td>
+          
+          <td>An invalid parameter was passed to a service or function as the tenth argument.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_parameter_11</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225721&nbsp;-&nbsp;0xC00000F9</pre></td>
+          
+          <td>An invalid parameter was passed to a service or function as the eleventh argument.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_parameter_12</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225722&nbsp;-&nbsp;0xC00000FA</pre></td>
+          
+          <td>An invalid parameter was passed to a service or function as the twelfth argument.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_redirector_not_started</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225723&nbsp;-&nbsp;0xC00000FB</pre></td>
+          
+          <td>An attempt was made to access a network file, but the network software was not yet started.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_redirector_started</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225724&nbsp;-&nbsp;0xC00000FC</pre></td>
+          
+          <td>An attempt was made to start the redirector, but the redirector has already been started.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_stack_overflow</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225725&nbsp;-&nbsp;0xC00000FD</pre></td>
+          
+          <td>A new guard page for the stack cannot be created.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_such_package</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225726&nbsp;-&nbsp;0xC00000FE</pre></td>
+          
+          <td>A specified authentication package is unknown.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_function_table</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225727&nbsp;-&nbsp;0xC00000FF</pre></td>
+          
+          <td>A malformed function table was encountered during an unwind operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_variable_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225728&nbsp;-&nbsp;0xC0000100</pre></td>
+          
+          <td>Indicates the specified environment variable name was not found in the specified environment block.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_directory_not_empty</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225729&nbsp;-&nbsp;0xC0000101</pre></td>
+          
+          <td>Indicates that the directory trying to be deleted is not empty.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_file_corrupt_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225730&nbsp;-&nbsp;0xC0000102</pre></td>
+          
+          <td>{Corrupt File} The file or directory is corrupt and unreadable. Run the Chkdsk utility.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_a_directory</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225731&nbsp;-&nbsp;0xC0000103</pre></td>
+          
+          <td>A requested opened file is not a directory.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_logon_session_state</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225732&nbsp;-&nbsp;0xC0000104</pre></td>
+          
+          <td>The logon session is not in a state that is consistent with the requested operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_logon_session_collision</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225733&nbsp;-&nbsp;0xC0000105</pre></td>
+          
+          <td>An internal LSA error has occurred. An authentication package has requested the creation of a logon session but the ID of an already existing logon session has been specified.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_name_too_long</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225734&nbsp;-&nbsp;0xC0000106</pre></td>
+          
+          <td>A specified name string is too long for its intended use.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_files_open</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225735&nbsp;-&nbsp;0xC0000107</pre></td>
+          
+          <td>The user attempted to force close the files on a redirected drive, but there were opened files on the drive, and the user did not specify a sufficient level of force.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_connection_in_use</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225736&nbsp;-&nbsp;0xC0000108</pre></td>
+          
+          <td>The user attempted to force close the files on a redirected drive, but there were opened directories on the drive, and the user did not specify a sufficient level of force.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_message_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225737&nbsp;-&nbsp;0xC0000109</pre></td>
+          
+          <td>RtlFindMessage could not locate the requested message ID in the message table resource.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_process_is_terminating</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225738&nbsp;-&nbsp;0xC000010A</pre></td>
+          
+          <td>An attempt was made to duplicate an object handle into or out of an exiting process.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_logon_type</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225739&nbsp;-&nbsp;0xC000010B</pre></td>
+          
+          <td>Indicates an invalid value has been provided for the LogonType requested.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_guid_translation</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225740&nbsp;-&nbsp;0xC000010C</pre></td>
+          
+          <td>Indicates that an attempt was made to assign protection to a file system file or directory and one of the SIDs in the security descriptor could not be translated into a GUID that could be stored by the file system. This causes the protection attempt to fail, which may cause a file creation attempt to fail.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_cannot_impersonate</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225741&nbsp;-&nbsp;0xC000010D</pre></td>
+          
+          <td>Indicates that an attempt has been made to impersonate via a named pipe that has not yet been read from.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_image_already_loaded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225742&nbsp;-&nbsp;0xC000010E</pre></td>
+          
+          <td>Indicates that the specified image is already loaded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_abios_not_present</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225743&nbsp;-&nbsp;0xC000010F</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_abios_lid_not_exist</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225744&nbsp;-&nbsp;0xC0000110</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_abios_lid_already_owned</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225745&nbsp;-&nbsp;0xC0000111</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_abios_not_lid_owner</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225746&nbsp;-&nbsp;0xC0000112</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_abios_invalid_command</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225747&nbsp;-&nbsp;0xC0000113</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_abios_invalid_lid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225748&nbsp;-&nbsp;0xC0000114</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_abios_selector_not_available</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225749&nbsp;-&nbsp;0xC0000115</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_abios_invalid_selector</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225750&nbsp;-&nbsp;0xC0000116</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_ldt</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225751&nbsp;-&nbsp;0xC0000117</pre></td>
+          
+          <td>Indicates that an attempt was made to change the size of the LDT for a process that has no LDT.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_ldt_size</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225752&nbsp;-&nbsp;0xC0000118</pre></td>
+          
+          <td>Indicates that an attempt was made to grow an LDT by setting its size, or that the size was not an even number of selectors.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_ldt_offset</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225753&nbsp;-&nbsp;0xC0000119</pre></td>
+          
+          <td>Indicates that the starting value for the LDT information was not an integral multiple of the selector size.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_ldt_descriptor</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225754&nbsp;-&nbsp;0xC000011A</pre></td>
+          
+          <td>Indicates that the user supplied an invalid descriptor when trying to set up LDT descriptors.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_image_ne_format</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225755&nbsp;-&nbsp;0xC000011B</pre></td>
+          
+          <td>The specified image file did not have the correct format. It appears to be NE format.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_rxact_invalid_state</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225756&nbsp;-&nbsp;0xC000011C</pre></td>
+          
+          <td>Indicates that the transaction state of a registry subtree is incompatible with the requested operation. For example, a request has been made to start a new transaction with one already in progress, or a request has been made to apply a transaction when one is not currently in progress.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_rxact_commit_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225757&nbsp;-&nbsp;0xC000011D</pre></td>
+          
+          <td>Indicates an error has occurred during a registry transaction commit. The database has been left in an unknown, but probably inconsistent, state. The state of the registry transaction is left as COMMITTING.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_mapped_file_size_zero</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225758&nbsp;-&nbsp;0xC000011E</pre></td>
+          
+          <td>An attempt was made to map a file of size zero with the maximum size specified as zero.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_too_many_opened_files</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225759&nbsp;-&nbsp;0xC000011F</pre></td>
+          
+          <td>Too many files are opened on a remote server. This error should only be returned by the Windows redirector on a remote drive.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_cancelled</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225760&nbsp;-&nbsp;0xC0000120</pre></td>
+          
+          <td>The I/O request was canceled.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_cannot_delete</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225761&nbsp;-&nbsp;0xC0000121</pre></td>
+          
+          <td>An attempt has been made to remove a file or directory that cannot be deleted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_computer_name</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225762&nbsp;-&nbsp;0xC0000122</pre></td>
+          
+          <td>Indicates a name that was specified as a remote computer name is syntactically invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_file_deleted</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225763&nbsp;-&nbsp;0xC0000123</pre></td>
+          
+          <td>An I/O request other than close was performed on a file after it was deleted, which can only happen to a request that did not complete before the last handle was closed via NtClose.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_special_account</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225764&nbsp;-&nbsp;0xC0000124</pre></td>
+          
+          <td>Indicates an operation that is incompatible with built-in accounts has been attempted on a built-in (special) SAM account. For example, built-in accounts cannot be deleted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_special_group</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225765&nbsp;-&nbsp;0xC0000125</pre></td>
+          
+          <td>The operation requested may not be performed on the specified group because it is a built-in special group.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_special_user</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225766&nbsp;-&nbsp;0xC0000126</pre></td>
+          
+          <td>The operation requested may not be performed on the specified user because it is a built-in special user.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_members_primary_group</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225767&nbsp;-&nbsp;0xC0000127</pre></td>
+          
+          <td>Indicates a member cannot be removed from a group because the group is currently the member's primary group.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_file_closed</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225768&nbsp;-&nbsp;0xC0000128</pre></td>
+          
+          <td>An I/O request other than close and several other special case operations was attempted using a file object that had already been closed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_too_many_threads</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225769&nbsp;-&nbsp;0xC0000129</pre></td>
+          
+          <td>Indicates a process has too many threads to perform the requested action. For example, assignment of a primary token may only be performed when a process has zero or one threads.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_thread_not_in_process</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225770&nbsp;-&nbsp;0xC000012A</pre></td>
+          
+          <td>An attempt was made to operate on a thread within a specific process, but the specified thread is not in the specified process.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_token_already_in_use</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225771&nbsp;-&nbsp;0xC000012B</pre></td>
+          
+          <td>An attempt was made to establish a token for use as a primary token but the token is already in use. A token can only be the primary token of one process at a time.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pagefile_quota_exceeded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225772&nbsp;-&nbsp;0xC000012C</pre></td>
+          
+          <td>The page file quota was exceeded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_commitment_limit</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225773&nbsp;-&nbsp;0xC000012D</pre></td>
+          
+          <td>{Out of Virtual Memory} Your system is low on virtual memory. To ensure that Windows runs correctly, increase the size of your virtual memory paging file. For more information, see Help.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_image_le_format</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225774&nbsp;-&nbsp;0xC000012E</pre></td>
+          
+          <td>The specified image file did not have the correct format: it appears to be LE format.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_image_not_mz</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225775&nbsp;-&nbsp;0xC000012F</pre></td>
+          
+          <td>The specified image file did not have the correct format: it did not have an initial MZ.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_image_protect</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225776&nbsp;-&nbsp;0xC0000130</pre></td>
+          
+          <td>The specified image file did not have the correct format: it did not have a proper e_lfarlc in the MZ header.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_image_win_16</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225777&nbsp;-&nbsp;0xC0000131</pre></td>
+          
+          <td>The specified image file did not have the correct format: it appears to be a 16-bit Windows image.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_logon_server_conflict</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225778&nbsp;-&nbsp;0xC0000132</pre></td>
+          
+          <td>The Netlogon service cannot start because another Netlogon service running in the domain conflicts with the specified role.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_time_difference_at_dc</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225779&nbsp;-&nbsp;0xC0000133</pre></td>
+          
+          <td>The time at the primary domain controller is different from the time at the backup domain controller or member server by too large an amount.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_synchronization_required</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225780&nbsp;-&nbsp;0xC0000134</pre></td>
+          
+          <td>The SAM database on a Windows&nbsp;Server is significantly out of synchronization with the copy on the domain controller. A complete synchronization is required.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_dll_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225781&nbsp;-&nbsp;0xC0000135</pre></td>
+          
+          <td>{Unable To Locate Component} This application has failed to start because the component was not found. Reinstalling the application may fix this problem.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_open_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225782&nbsp;-&nbsp;0xC0000136</pre></td>
+          
+          <td>The NtCreateFile API failed. This error should never be returned to an application; it is a place holder for the Windows LAN Manager Redirector to use in its internal error-mapping routines.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_io_privilege_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225783&nbsp;-&nbsp;0xC0000137</pre></td>
+          
+          <td>{Privilege Failed} The I/O permissions for the process could not be changed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ordinal_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225784&nbsp;-&nbsp;0xC0000138</pre></td>
+          
+          <td>{Ordinal Not Found} The ordinal could not be located in the dynamic link library.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_entrypoint_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225785&nbsp;-&nbsp;0xC0000139</pre></td>
+          
+          <td>{Entry Point Not Found} The procedure entry point could not be located in the dynamic link library.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_control_c_exit</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225786&nbsp;-&nbsp;0xC000013A</pre></td>
+          
+          <td>{Application Exit by CTRL+C} The application terminated as a result of a CTRL+C.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_local_disconnect</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225787&nbsp;-&nbsp;0xC000013B</pre></td>
+          
+          <td>{Virtual Circuit Closed} The network transport on your computer has closed a network connection. There may or may not be I/O requests outstanding.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_remote_disconnect</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225788&nbsp;-&nbsp;0xC000013C</pre></td>
+          
+          <td>{Virtual Circuit Closed} The network transport on a remote computer has closed a network connection. There may or may not be I/O requests outstanding.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_remote_resources</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225789&nbsp;-&nbsp;0xC000013D</pre></td>
+          
+          <td>{Insufficient Resources on Remote Computer} The remote computer has insufficient resources to complete the network request. For example, the remote computer may not have enough available memory to carry out the request at this time.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_link_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225790&nbsp;-&nbsp;0xC000013E</pre></td>
+          
+          <td>{Virtual Circuit Closed} An existing connection (virtual circuit) has been broken at the remote computer. There is probably something wrong with the network software protocol or the network hardware on the remote computer.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_link_timeout</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225791&nbsp;-&nbsp;0xC000013F</pre></td>
+          
+          <td>{Virtual Circuit Closed} The network transport on your computer has closed a network connection because it had to wait too long for a response from the remote computer.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_connection</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225792&nbsp;-&nbsp;0xC0000140</pre></td>
+          
+          <td>The connection handle that was given to the transport was invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_address</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225793&nbsp;-&nbsp;0xC0000141</pre></td>
+          
+          <td>The address handle that was given to the transport was invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_dll_init_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225794&nbsp;-&nbsp;0xC0000142</pre></td>
+          
+          <td>{DLL Initialization Failed} Initialization of the dynamic link library failed. The process is terminating abnormally.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_missing_systemfile</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225795&nbsp;-&nbsp;0xC0000143</pre></td>
+          
+          <td>{Missing System File} The required system file is bad or missing.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unhandled_exception</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225796&nbsp;-&nbsp;0xC0000144</pre></td>
+          
+          <td>{Application Error} An exception occurred in the application.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_app_init_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225797&nbsp;-&nbsp;0xC0000145</pre></td>
+          
+          <td>{Application Error} The application failed to initialize properly. Click OK to terminate the application.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pagefile_create_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225798&nbsp;-&nbsp;0xC0000146</pre></td>
+          
+          <td>{Unable to Create Paging File} The creation of the paging file failed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_pagefile</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225799&nbsp;-&nbsp;0xC0000147</pre></td>
+          
+          <td>{No Paging File Specified} No paging file was specified in the system configuration.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_level</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225800&nbsp;-&nbsp;0xC0000148</pre></td>
+          
+          <td>{Incorrect System Call Level} An invalid level was passed into the specified system call.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wrong_password_core</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225801&nbsp;-&nbsp;0xC0000149</pre></td>
+          
+          <td>{Incorrect Password to LAN Manager Server} You specified an incorrect password to a LAN Manager 2.x or MS-NET server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_illegal_float_context</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225802&nbsp;-&nbsp;0xC000014A</pre></td>
+          
+          <td>{EXCEPTION} A real-mode application issued a floating-point instruction and floating-point hardware is not present.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pipe_broken</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225803&nbsp;-&nbsp;0xC000014B</pre></td>
+          
+          <td>The pipe operation has failed because the other end of the pipe has been closed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_registry_corrupt</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225804&nbsp;-&nbsp;0xC000014C</pre></td>
+          
+          <td>{The Registry Is Corrupt} The structure of one of the files that contains registry data is corrupt; the image of the file in memory is corrupt; or the file could not be recovered because the alternate copy or log was absent or corrupt.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_registry_io_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225805&nbsp;-&nbsp;0xC000014D</pre></td>
+          
+          <td>An I/O operation initiated by the Registry failed and cannot be recovered. The registry could not read in, write out, or flush one of the files that contain the system's image of the registry.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_event_pair</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225806&nbsp;-&nbsp;0xC000014E</pre></td>
+          
+          <td>An event pair synchronization operation was performed using the thread-specific client/server event pair object, but no event pair object was associated with the thread.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unrecognized_volume</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225807&nbsp;-&nbsp;0xC000014F</pre></td>
+          
+          <td>The volume does not contain a recognized file system. Be sure that all required file system drivers are loaded and that the volume is not corrupt.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_serial_no_device_inited</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225808&nbsp;-&nbsp;0xC0000150</pre></td>
+          
+          <td>No serial device was successfully initialized. The serial driver will unload.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_such_alias</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225809&nbsp;-&nbsp;0xC0000151</pre></td>
+          
+          <td>The specified local group does not exist.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_member_not_in_alias</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225810&nbsp;-&nbsp;0xC0000152</pre></td>
+          
+          <td>The specified account name is not a member of the group.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_member_in_alias</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225811&nbsp;-&nbsp;0xC0000153</pre></td>
+          
+          <td>The specified account name is already a member of the group.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_alias_exists</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225812&nbsp;-&nbsp;0xC0000154</pre></td>
+          
+          <td>The specified local group already exists.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_logon_not_granted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225813&nbsp;-&nbsp;0xC0000155</pre></td>
+          
+          <td>A requested type of logon (for example, interactive, network, and service) is not granted by the local security policy of the target system. Ask the system administrator to grant the necessary form of logon.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_too_many_secrets</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225814&nbsp;-&nbsp;0xC0000156</pre></td>
+          
+          <td>The maximum number of secrets that may be stored in a single system was exceeded. The length and number of secrets is limited to satisfy U.S. State Department export restrictions.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_secret_too_long</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225815&nbsp;-&nbsp;0xC0000157</pre></td>
+          
+          <td>The length of a secret exceeds the maximum allowable length. The length and number of secrets is limited to satisfy U.S. State Department export restrictions.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_internal_db_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225816&nbsp;-&nbsp;0xC0000158</pre></td>
+          
+          <td>The local security authority (LSA) database contains an internal inconsistency.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_fullscreen_mode</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225817&nbsp;-&nbsp;0xC0000159</pre></td>
+          
+          <td>The requested operation cannot be performed in full-screen mode.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_too_many_context_ids</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225818&nbsp;-&nbsp;0xC000015A</pre></td>
+          
+          <td>During a logon attempt, the user's security context accumulated too many security IDs. This is a very unusual situation. Remove the user from some global or local groups to reduce the number of security IDs to incorporate into the security context.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_logon_type_not_granted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225819&nbsp;-&nbsp;0xC000015B</pre></td>
+          
+          <td>A user has requested a type of logon (for example, interactive or network) that has not been granted. An administrator has control over who may logon interactively and through the network.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_registry_file</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225820&nbsp;-&nbsp;0xC000015C</pre></td>
+          
+          <td>The system has attempted to load or restore a file into the registry, and the specified file is not in the format of a registry file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_nt_cross_encryption_required</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225821&nbsp;-&nbsp;0xC000015D</pre></td>
+          
+          <td>An attempt was made to change a user password in the security account manager without providing the necessary Windows cross-encrypted password.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_domain_ctrlr_config_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225822&nbsp;-&nbsp;0xC000015E</pre></td>
+          
+          <td>A Windows&nbsp;Server has an incorrect configuration.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ft_missing_member</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225823&nbsp;-&nbsp;0xC000015F</pre></td>
+          
+          <td>An attempt was made to explicitly access the secondary copy of information via a device control to the fault tolerance driver and the secondary copy is not present in the system.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ill_formed_service_entry</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225824&nbsp;-&nbsp;0xC0000160</pre></td>
+          
+          <td>A configuration registry node that represents a driver service entry was ill-formed and did not contain the required value entries.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_illegal_character</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225825&nbsp;-&nbsp;0xC0000161</pre></td>
+          
+          <td>An illegal character was encountered. For a multibyte character set, this includes a lead byte without a succeeding trail byte. For the Unicode character set this includes the characters 0xFFFF and 0xFFFE.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unmappable_character</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225826&nbsp;-&nbsp;0xC0000162</pre></td>
+          
+          <td>No mapping for the Unicode character exists in the target multibyte code page.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_undefined_character</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225827&nbsp;-&nbsp;0xC0000163</pre></td>
+          
+          <td>The Unicode character is not defined in the Unicode character set that is installed on the system.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_floppy_volume</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225828&nbsp;-&nbsp;0xC0000164</pre></td>
+          
+          <td>The paging file cannot be created on a floppy disk.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_floppy_id_mark_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225829&nbsp;-&nbsp;0xC0000165</pre></td>
+          
+          <td>{Floppy Disk Error} While accessing a floppy disk, an ID address mark was not found.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_floppy_wrong_cylinder</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225830&nbsp;-&nbsp;0xC0000166</pre></td>
+          
+          <td>{Floppy Disk Error} While accessing a floppy disk, the track address from the sector ID field was found to be different from the track address that is maintained by the controller.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_floppy_unknown_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225831&nbsp;-&nbsp;0xC0000167</pre></td>
+          
+          <td>{Floppy Disk Error} The floppy disk controller reported an error that is not recognized by the floppy disk driver.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_floppy_bad_registers</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225832&nbsp;-&nbsp;0xC0000168</pre></td>
+          
+          <td>{Floppy Disk Error} While accessing a floppy-disk, the controller returned inconsistent results via its registers.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_disk_recalibrate_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225833&nbsp;-&nbsp;0xC0000169</pre></td>
+          
+          <td>{Hard Disk Error} While accessing the hard disk, a recalibrate operation failed, even after retries.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_disk_operation_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225834&nbsp;-&nbsp;0xC000016A</pre></td>
+          
+          <td>{Hard Disk Error} While accessing the hard disk, a disk operation failed even after retries.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_disk_reset_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225835&nbsp;-&nbsp;0xC000016B</pre></td>
+          
+          <td>{Hard Disk Error} While accessing the hard disk, a disk controller reset was needed, but even that failed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_shared_irq_busy</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225836&nbsp;-&nbsp;0xC000016C</pre></td>
+          
+          <td>An attempt was made to open a device that was sharing an interrupt request (IRQ) with other devices. At least one other device that uses that IRQ was already opened. Two concurrent opens of devices that share an IRQ and only work via interrupts is not supported for the particular bus type that the devices use.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ft_orphaning</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225837&nbsp;-&nbsp;0xC000016D</pre></td>
+          
+          <td>{FT Orphaning} A disk that is part of a fault-tolerant volume can no longer be accessed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bios_failed_to_connect_interrupt</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225838&nbsp;-&nbsp;0xC000016E</pre></td>
+          
+          <td>The basic input/output system (BIOS) failed to connect a system interrupt to the device or bus for which the device is connected.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_partition_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225842&nbsp;-&nbsp;0xC0000172</pre></td>
+          
+          <td>The tape could not be partitioned.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_block_length</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225843&nbsp;-&nbsp;0xC0000173</pre></td>
+          
+          <td>When accessing a new tape of a multi-volume partition, the current blocksize is incorrect.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_not_partitioned</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225844&nbsp;-&nbsp;0xC0000174</pre></td>
+          
+          <td>The tape partition information could not be found when loading a tape.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unable_to_lock_media</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225845&nbsp;-&nbsp;0xC0000175</pre></td>
+          
+          <td>An attempt to lock the eject media mechanism failed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unable_to_unload_media</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225846&nbsp;-&nbsp;0xC0000176</pre></td>
+          
+          <td>An attempt to unload media failed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_eom_overflow</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225847&nbsp;-&nbsp;0xC0000177</pre></td>
+          
+          <td>The physical end of tape was detected.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_media</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225848&nbsp;-&nbsp;0xC0000178</pre></td>
+          
+          <td>{No Media} There is no media in the drive.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_such_member</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225850&nbsp;-&nbsp;0xC000017A</pre></td>
+          
+          <td>A member could not be added to or removed from the local group because the member does not exist.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_member</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225851&nbsp;-&nbsp;0xC000017B</pre></td>
+          
+          <td>A new member could not be added to a local group because the member has the wrong account type.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_key_deleted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225852&nbsp;-&nbsp;0xC000017C</pre></td>
+          
+          <td>An illegal operation was attempted on a registry key that has been marked for deletion.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_log_space</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225853&nbsp;-&nbsp;0xC000017D</pre></td>
+          
+          <td>The system could not allocate the required space in a registry log.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_too_many_sids</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225854&nbsp;-&nbsp;0xC000017E</pre></td>
+          
+          <td>Too many SIDs have been specified.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_lm_cross_encryption_required</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225855&nbsp;-&nbsp;0xC000017F</pre></td>
+          
+          <td>An attempt was made to change a user password in the security account manager without providing the necessary LM cross-encrypted password.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_key_has_children</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225856&nbsp;-&nbsp;0xC0000180</pre></td>
+          
+          <td>An attempt was made to create a symbolic link in a registry key that already has subkeys or values.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_child_must_be_volatile</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225857&nbsp;-&nbsp;0xC0000181</pre></td>
+          
+          <td>An attempt was made to create a stable subkey under a volatile parent key.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_configuration_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225858&nbsp;-&nbsp;0xC0000182</pre></td>
+          
+          <td>The I/O device is configured incorrectly or the configuration parameters to the driver are incorrect.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_driver_internal_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225859&nbsp;-&nbsp;0xC0000183</pre></td>
+          
+          <td>An error was detected between two drivers or within an I/O driver.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_invalid_device_state</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225860&nbsp;-&nbsp;0xC0000184</pre></td>
+          
+          <td>The device is not in a valid state to perform this request.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_io_device_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225861&nbsp;-&nbsp;0xC0000185</pre></td>
+          
+          <td>The I/O device reported an I/O error.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_protocol_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225862&nbsp;-&nbsp;0xC0000186</pre></td>
+          
+          <td>A protocol error was detected between the driver and the device.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_backup_controller</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225863&nbsp;-&nbsp;0xC0000187</pre></td>
+          
+          <td>This operation is only allowed for the primary domain controller of the domain.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_log_file_full</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225864&nbsp;-&nbsp;0xC0000188</pre></td>
+          
+          <td>The log file space is insufficient to support this operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_too_late</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225865&nbsp;-&nbsp;0xC0000189</pre></td>
+          
+          <td>A write operation was attempted to a volume after it was dismounted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_trust_lsa_secret</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225866&nbsp;-&nbsp;0xC000018A</pre></td>
+          
+          <td>The workstation does not have a trust secret for the primary domain in the local LSA database.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_trust_sam_account</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225867&nbsp;-&nbsp;0xC000018B</pre></td>
+          
+          <td>The SAM database on the Windows&nbsp;Server does not have a computer account for this workstation trust relationship.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_trusted_domain_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225868&nbsp;-&nbsp;0xC000018C</pre></td>
+          
+          <td>The logon request failed because the trust relationship between the primary domain and the trusted domain failed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_trusted_relationship_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225869&nbsp;-&nbsp;0xC000018D</pre></td>
+          
+          <td>The logon request failed because the trust relationship between this workstation and the primary domain failed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_eventlog_file_corrupt</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225870&nbsp;-&nbsp;0xC000018E</pre></td>
+          
+          <td>The Eventlog log file is corrupt.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_eventlog_cant_start</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225871&nbsp;-&nbsp;0xC000018F</pre></td>
+          
+          <td>No Eventlog log file could be opened. The Eventlog service did not start.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_trust_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225872&nbsp;-&nbsp;0xC0000190</pre></td>
+          
+          <td>The network logon failed. This may be because the validation authority cannot be reached.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_mutant_limit_exceeded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225873&nbsp;-&nbsp;0xC0000191</pre></td>
+          
+          <td>An attempt was made to acquire a mutant such that its maximum count would have been exceeded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_netlogon_not_started</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225874&nbsp;-&nbsp;0xC0000192</pre></td>
+          
+          <td>An attempt was made to logon, but the NetLogon service was not started.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_account_expired</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225875&nbsp;-&nbsp;0xC0000193</pre></td>
+          
+          <td>The user account has expired.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_possible_deadlock</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225876&nbsp;-&nbsp;0xC0000194</pre></td>
+          
+          <td>{EXCEPTION} Possible deadlock condition.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_network_credential_conflict</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225877&nbsp;-&nbsp;0xC0000195</pre></td>
+          
+          <td>Multiple connections to a server or shared resource by the same user, using more than one user name, are not allowed. Disconnect all previous connections to the server or shared resource and try again.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_remote_session_limit</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225878&nbsp;-&nbsp;0xC0000196</pre></td>
+          
+          <td>An attempt was made to establish a session to a network server, but there are already too many sessions established to that server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_eventlog_file_changed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225879&nbsp;-&nbsp;0xC0000197</pre></td>
+          
+          <td>The log file has changed between reads.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_nologon_interdomain_trust_account</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225880&nbsp;-&nbsp;0xC0000198</pre></td>
+          
+          <td>The account used is an interdomain trust account. Use your global user account or local user account to access this server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_nologon_workstation_trust_account</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225881&nbsp;-&nbsp;0xC0000199</pre></td>
+          
+          <td>The account used is a computer account. Use your global user account or local user account to access this server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_nologon_server_trust_account</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225882&nbsp;-&nbsp;0xC000019A</pre></td>
+          
+          <td>The account used is a server trust account. Use your global user account or local user account to access this server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_domain_trust_inconsistent</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225883&nbsp;-&nbsp;0xC000019B</pre></td>
+          
+          <td>The name or SID of the specified domain is inconsistent with the trust information for that domain.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_fs_driver_required</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225884&nbsp;-&nbsp;0xC000019C</pre></td>
+          
+          <td>A volume has been accessed for which a file system driver is required that has not yet been loaded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_user_session_key</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225986&nbsp;-&nbsp;0xC0000202</pre></td>
+          
+          <td>There is no user session key for the specified logon session.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_user_session_deleted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225987&nbsp;-&nbsp;0xC0000203</pre></td>
+          
+          <td>The remote user session has been deleted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_resource_lang_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225988&nbsp;-&nbsp;0xC0000204</pre></td>
+          
+          <td>Indicates the specified resource language ID cannot be found in the image file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_insuff_server_resources</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221225989&nbsp;-&nbsp;0xC0000205</pre></td>
+          
+          <td>Insufficient server resources exist to complete the request.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_buffer_size</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225990&nbsp;-&nbsp;0xC0000206</pre></td>
+          
+          <td>The size of the buffer is invalid for the specified operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_address_component</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225991&nbsp;-&nbsp;0xC0000207</pre></td>
+          
+          <td>The transport rejected the specified network address as invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_address_wildcard</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225992&nbsp;-&nbsp;0xC0000208</pre></td>
+          
+          <td>The transport rejected the specified network address due to invalid use of a wildcard.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_too_many_addresses</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225993&nbsp;-&nbsp;0xC0000209</pre></td>
+          
+          <td>The transport address could not be opened because all the available addresses are in use.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_address_already_exists</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225994&nbsp;-&nbsp;0xC000020A</pre></td>
+          
+          <td>The transport address could not be opened because it already exists.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_address_closed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225995&nbsp;-&nbsp;0xC000020B</pre></td>
+          
+          <td>The transport address is now closed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_connection_disconnected</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225996&nbsp;-&nbsp;0xC000020C</pre></td>
+          
+          <td>The transport connection is now disconnected.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_connection_reset</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225997&nbsp;-&nbsp;0xC000020D</pre></td>
+          
+          <td>The transport connection has been reset.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_too_many_nodes</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225998&nbsp;-&nbsp;0xC000020E</pre></td>
+          
+          <td>The transport cannot dynamically acquire any more nodes.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_transaction_aborted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221225999&nbsp;-&nbsp;0xC000020F</pre></td>
+          
+          <td>The transport aborted a pending transaction.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_transaction_timed_out</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226000&nbsp;-&nbsp;0xC0000210</pre></td>
+          
+          <td>The transport timed out a request that is waiting for a response.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_transaction_no_release</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226001&nbsp;-&nbsp;0xC0000211</pre></td>
+          
+          <td>The transport did not receive a release for a pending response.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_transaction_no_match</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226002&nbsp;-&nbsp;0xC0000212</pre></td>
+          
+          <td>The transport did not find a transaction that matches the specific token.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_transaction_responded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226003&nbsp;-&nbsp;0xC0000213</pre></td>
+          
+          <td>The transport had previously responded to a transaction request.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_transaction_invalid_id</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226004&nbsp;-&nbsp;0xC0000214</pre></td>
+          
+          <td>The transport does not recognize the specified transaction request ID.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_transaction_invalid_type</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226005&nbsp;-&nbsp;0xC0000215</pre></td>
+          
+          <td>The transport does not recognize the specified transaction request type.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_server_session</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226006&nbsp;-&nbsp;0xC0000216</pre></td>
+          
+          <td>The transport can only process the specified request on the server side of a session.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_client_session</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226007&nbsp;-&nbsp;0xC0000217</pre></td>
+          
+          <td>The transport can only process the specified request on the client side of a session.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_cannot_load_registry_file</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226008&nbsp;-&nbsp;0xC0000218</pre></td>
+          
+          <td>{Registry File Failure} The registry cannot load the hive (file). It is corrupt, absent, or not writable.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_debug_attach_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226009&nbsp;-&nbsp;0xC0000219</pre></td>
+          
+          <td>{Unexpected Failure in DebugActiveProcess} An unexpected failure occurred while processing a DebugActiveProcess API request. You may choose OK to terminate the process, or Cancel to ignore the error.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_system_process_terminated</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226010&nbsp;-&nbsp;0xC000021A</pre></td>
+          
+          <td>{Fatal System Error} The system process terminated unexpectedly. The system has been shut down.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_data_not_accepted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226011&nbsp;-&nbsp;0xC000021B</pre></td>
+          
+          <td>{Data Not Accepted} The TDI client could not handle the data received during an indication.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_browser_servers_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226012&nbsp;-&nbsp;0xC000021C</pre></td>
+          
+          <td>{Unable to Retrieve Browser Server List} The list of servers for this workgroup is not currently available.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_vdm_hard_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226013&nbsp;-&nbsp;0xC000021D</pre></td>
+          
+          <td>NTVDM encountered a hard error.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_driver_cancel_timeout</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226014&nbsp;-&nbsp;0xC000021E</pre></td>
+          
+          <td>{Cancel Timeout} The driver failed to complete a canceled I/O request in the allotted time.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_reply_message_mismatch</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226015&nbsp;-&nbsp;0xC000021F</pre></td>
+          
+          <td>{Reply Message Mismatch} An attempt was made to reply to an LPC message, but the thread specified by the client ID in the message was not waiting on that message.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_mapped_alignment</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226016&nbsp;-&nbsp;0xC0000220</pre></td>
+          
+          <td>{Mapped View Alignment Incorrect} An attempt was made to map a view of a file, but either the specified base address or the offset into the file were not aligned on the proper allocation granularity.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_image_checksum_mismatch</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226017&nbsp;-&nbsp;0xC0000221</pre></td>
+          
+          <td>{Bad Image Checksum} The image is possibly corrupt. The header checksum does not match the computed checksum.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_lost_writebehind_data</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226018&nbsp;-&nbsp;0xC0000222</pre></td>
+          
+          <td>{Delayed Write Failed} Windows was unable to save all the data for the file. The data has been lost. This error may be caused by a failure of your computer hardware or network connection. Try to save this file elsewhere.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_client_server_parameters_invalid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226019&nbsp;-&nbsp;0xC0000223</pre></td>
+          
+          <td>The parameters passed to the server in the client/server shared memory window were invalid. Too much data may have been put in the shared memory window.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_password_must_change</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226020&nbsp;-&nbsp;0xC0000224</pre></td>
+          
+          <td>The user password must be changed before logging on the first time.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226021&nbsp;-&nbsp;0xC0000225</pre></td>
+          
+          <td>The object was not found.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_tiny_stream</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226022&nbsp;-&nbsp;0xC0000226</pre></td>
+          
+          <td>The stream is not a tiny stream.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_recovery_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226023&nbsp;-&nbsp;0xC0000227</pre></td>
+          
+          <td>A transaction recovery failed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_stack_overflow_read</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226024&nbsp;-&nbsp;0xC0000228</pre></td>
+          
+          <td>The request must be handled by the stack overflow code.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_fail_check</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226025&nbsp;-&nbsp;0xC0000229</pre></td>
+          
+          <td>A consistency check failed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_duplicate_objectid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226026&nbsp;-&nbsp;0xC000022A</pre></td>
+          
+          <td>The attempt to insert the ID in the index failed because the ID is already in the index.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_objectid_exists</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226027&nbsp;-&nbsp;0xC000022B</pre></td>
+          
+          <td>The attempt to set the object ID failed because the object already has an ID.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_convert_to_large</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226028&nbsp;-&nbsp;0xC000022C</pre></td>
+          
+          <td>Internal OFS status codes indicating how an allocation operation is handled. Either it is retried after the containing oNode is moved or the extent stream is converted to a large stream.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_retry</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226029&nbsp;-&nbsp;0xC000022D</pre></td>
+          
+          <td>The request needs to be retried.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_found_out_of_scope</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226030&nbsp;-&nbsp;0xC000022E</pre></td>
+          
+          <td>The attempt to find the object found an object on the volume that matches by ID; however, it is out of the scope of the handle that is used for the operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_allocate_bucket</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226031&nbsp;-&nbsp;0xC000022F</pre></td>
+          
+          <td>The bucket array must be grown. Retry the transaction after doing so.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_propset_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226032&nbsp;-&nbsp;0xC0000230</pre></td>
+          
+          <td>The specified property set does not exist on the object.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_marshall_overflow</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226033&nbsp;-&nbsp;0xC0000231</pre></td>
+          
+          <td>The user/kernel marshaling buffer has overflowed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_variant</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226034&nbsp;-&nbsp;0xC0000232</pre></td>
+          
+          <td>The supplied variant structure contains invalid data.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_domain_controller_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226035&nbsp;-&nbsp;0xC0000233</pre></td>
+          
+          <td>A domain controller for this domain was not found.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_account_locked_out</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226036&nbsp;-&nbsp;0xC0000234</pre></td>
+          
+          <td>The user account has been automatically locked because too many invalid logon attempts or password change attempts have been requested.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_handle_not_closable</pre></td>
+          
+          <td>Warning</td>
+          
+          <td><pre>3221226037&nbsp;-&nbsp;0xC0000235</pre></td>
+          
+          <td>NtClose was called on a handle that was protected from close via NtSetInformationObject.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_connection_refused</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226038&nbsp;-&nbsp;0xC0000236</pre></td>
+          
+          <td>The transport-connection attempt was refused by the remote system.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_graceful_disconnect</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226039&nbsp;-&nbsp;0xC0000237</pre></td>
+          
+          <td>The transport connection was gracefully closed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_address_already_associated</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226040&nbsp;-&nbsp;0xC0000238</pre></td>
+          
+          <td>The transport endpoint already has an address associated with it.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_address_not_associated</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226041&nbsp;-&nbsp;0xC0000239</pre></td>
+          
+          <td>An address has not yet been associated with the transport endpoint.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_connection_invalid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226042&nbsp;-&nbsp;0xC000023A</pre></td>
+          
+          <td>An operation was attempted on a nonexistent transport connection.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_connection_active</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226043&nbsp;-&nbsp;0xC000023B</pre></td>
+          
+          <td>An invalid operation was attempted on an active transport connection.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_network_unreachable</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226044&nbsp;-&nbsp;0xC000023C</pre></td>
+          
+          <td>The remote network is not reachable by the transport.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_host_unreachable</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226045&nbsp;-&nbsp;0xC000023D</pre></td>
+          
+          <td>The remote system is not reachable by the transport.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_protocol_unreachable</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226046&nbsp;-&nbsp;0xC000023E</pre></td>
+          
+          <td>The remote system does not support the transport protocol.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_port_unreachable</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226047&nbsp;-&nbsp;0xC000023F</pre></td>
+          
+          <td>No service is operating at the destination port of the transport on the remote system.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_request_aborted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226048&nbsp;-&nbsp;0xC0000240</pre></td>
+          
+          <td>The request was aborted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_connection_aborted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226049&nbsp;-&nbsp;0xC0000241</pre></td>
+          
+          <td>The transport connection was aborted by the local system.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_compression_buffer</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226050&nbsp;-&nbsp;0xC0000242</pre></td>
+          
+          <td>The specified buffer contains ill-formed data.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_user_mapped_file</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226051&nbsp;-&nbsp;0xC0000243</pre></td>
+          
+          <td>The requested operation cannot be performed on a file with a user mapped section open.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_audit_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226052&nbsp;-&nbsp;0xC0000244</pre></td>
+          
+          <td>{Audit Failed} An attempt to generate a security audit failed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_timer_resolution_not_set</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226053&nbsp;-&nbsp;0xC0000245</pre></td>
+          
+          <td>The timer resolution was not previously set by the current process.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_connection_count_limit</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226054&nbsp;-&nbsp;0xC0000246</pre></td>
+          
+          <td>A connection to the server could not be made because the limit on the number of concurrent connections for this account has been reached.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_login_time_restriction</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226055&nbsp;-&nbsp;0xC0000247</pre></td>
+          
+          <td>Attempting to log on during an unauthorized time of day for this account.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_login_wksta_restriction</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226056&nbsp;-&nbsp;0xC0000248</pre></td>
+          
+          <td>The account is not authorized to log on from this station.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_image_mp_up_mismatch</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226057&nbsp;-&nbsp;0xC0000249</pre></td>
+          
+          <td>{UP/MP Image Mismatch} The image has been modified for use on a uniprocessor system, but you are running it on a multiprocessor machine. Reinstall the image file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_insufficient_logon_info</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226064&nbsp;-&nbsp;0xC0000250</pre></td>
+          
+          <td>There is insufficient account information to log you on.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_dll_entrypoint</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226065&nbsp;-&nbsp;0xC0000251</pre></td>
+          
+          <td>{Invalid DLL Entrypoint} The dynamic link library is not written correctly. The stack pointer has been left in an inconsistent state. The entry point should be declared as WINAPI or STDCALL. Select YES to fail the DLL load. Select NO to continue execution. Selecting NO may cause the application to operate incorrectly.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_service_entrypoint</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226066&nbsp;-&nbsp;0xC0000252</pre></td>
+          
+          <td>{Invalid Service Callback Entrypoint} The service is not written correctly. The stack pointer has been left in an inconsistent state. The callback entry point should be declared as WINAPI or STDCALL. Selecting OK will cause the service to continue operation. However, the service process may operate incorrectly.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_lpc_reply_lost</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226067&nbsp;-&nbsp;0xC0000253</pre></td>
+          
+          <td>The server received the messages but did not send a reply.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ip_address_conflict1</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226068&nbsp;-&nbsp;0xC0000254</pre></td>
+          
+          <td>There is an IP address conflict with another system on the network.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ip_address_conflict2</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226069&nbsp;-&nbsp;0xC0000255</pre></td>
+          
+          <td>There is an IP address conflict with another system on the network.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_registry_quota_limit</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226070&nbsp;-&nbsp;0xC0000256</pre></td>
+          
+          <td>{Low On Registry Space} The system has reached the maximum size that is allowed for the system part of the registry. Additional storage requests will be ignored.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_status_path_not_covered</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226071&nbsp;-&nbsp;0xC0000257</pre></td>
+          
+          <td>The contacted server does not support the indicated part of the DFS namespace.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_callback_active</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226072&nbsp;-&nbsp;0xC0000258</pre></td>
+          
+          <td>A callback return system service cannot be executed when no callback is active.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_license_quota_exceeded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226073&nbsp;-&nbsp;0xC0000259</pre></td>
+          
+          <td>The service being accessed is licensed for a particular number of connections. No more connections can be made to the service at this time because the service has already accepted the maximum number of connections.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pwd_too_short</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226074&nbsp;-&nbsp;0xC000025A</pre></td>
+          
+          <td>The password provided is too short to meet the policy of your user account. Choose a longer password.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pwd_too_recent</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226075&nbsp;-&nbsp;0xC000025B</pre></td>
+          
+          <td>The policy of your user account does not allow you to change passwords too frequently. This is done to prevent users from changing back to a familiar, but potentially discovered, password. If you feel your password has been compromised, contact your administrator immediately to have a new one assigned.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pwd_history_conflict</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226076&nbsp;-&nbsp;0xC000025C</pre></td>
+          
+          <td>You have attempted to change your password to one that you have used in the past. The policy of your user account does not allow this. Select a password that you have not previously used.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_plugplay_no_device</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226078&nbsp;-&nbsp;0xC000025E</pre></td>
+          
+          <td>You have attempted to load a legacy device driver while its device instance had been disabled.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unsupported_compression</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226079&nbsp;-&nbsp;0xC000025F</pre></td>
+          
+          <td>The specified compression format is unsupported.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_hw_profile</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226080&nbsp;-&nbsp;0xC0000260</pre></td>
+          
+          <td>The specified hardware profile configuration is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_plugplay_device_path</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226081&nbsp;-&nbsp;0xC0000261</pre></td>
+          
+          <td>The specified Plug and Play registry device path is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_driver_ordinal_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226082&nbsp;-&nbsp;0xC0000262</pre></td>
+          
+          <td>{Driver Entry Point Not Found} The device driver could not locate the ordinal in driver.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_driver_entrypoint_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226083&nbsp;-&nbsp;0xC0000263</pre></td>
+          
+          <td>{Driver Entry Point Not Found} The device driver could not locate the entry point in driver.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_resource_not_owned</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226084&nbsp;-&nbsp;0xC0000264</pre></td>
+          
+          <td>{Application Error} The application attempted to release a resource it did not own. Click OK to terminate the application.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_too_many_links</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226085&nbsp;-&nbsp;0xC0000265</pre></td>
+          
+          <td>An attempt was made to create more links on a file than the file system supports.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_quota_list_inconsistent</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226086&nbsp;-&nbsp;0xC0000266</pre></td>
+          
+          <td>The specified quota list is internally inconsistent with its descriptor.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_file_is_offline</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226087&nbsp;-&nbsp;0xC0000267</pre></td>
+          
+          <td>The specified file has been relocated to offline storage.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_evaluation_expiration</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226088&nbsp;-&nbsp;0xC0000268</pre></td>
+          
+          <td>{Windows Evaluation Notification} The evaluation period for this installation of Windows has expired. This system will shutdown in 1 hour. To restore access to this installation of Windows, upgrade this installation by using a licensed distribution of this product.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_illegal_dll_relocation</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226089&nbsp;-&nbsp;0xC0000269</pre></td>
+          
+          <td>{Illegal System DLL Relocation} The system DLL was relocated in memory. The application will not run properly. The relocation occurred because the DLL occupied an address range that is reserved for Windows system DLLs. The vendor supplying the DLL should be contacted for a new DLL.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_license_violation</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226090&nbsp;-&nbsp;0xC000026A</pre></td>
+          
+          <td>{License Violation} The system has detected tampering with your registered product type. This is a violation of your software license. Tampering with the product type is not permitted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_dll_init_failed_logoff</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226091&nbsp;-&nbsp;0xC000026B</pre></td>
+          
+          <td>{DLL Initialization Failed} The application failed to initialize because the window station is shutting down.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_driver_unable_to_load</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226092&nbsp;-&nbsp;0xC000026C</pre></td>
+          
+          <td>{Unable to Load Device Driver} The device driver could not be loaded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_dfs_unavailable</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226093&nbsp;-&nbsp;0xC000026D</pre></td>
+          
+          <td>DFS is unavailable on the contacted server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_volume_dismounted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226094&nbsp;-&nbsp;0xC000026E</pre></td>
+          
+          <td>An operation was attempted to a volume after it was dismounted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wx86_internal_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226095&nbsp;-&nbsp;0xC000026F</pre></td>
+          
+          <td>An internal error occurred in the Win32 x86 emulation subsystem.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wx86_float_stack_check</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226096&nbsp;-&nbsp;0xC0000270</pre></td>
+          
+          <td>Win32 x86 emulation subsystem floating-point stack check.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_validate_continue</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226097&nbsp;-&nbsp;0xC0000271</pre></td>
+          
+          <td>The validation process needs to continue on to the next step.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_match</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226098&nbsp;-&nbsp;0xC0000272</pre></td>
+          
+          <td>There was no match for the specified key in the index.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_more_matches</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226099&nbsp;-&nbsp;0xC0000273</pre></td>
+          
+          <td>There are no more matches for the current index enumeration.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_a_reparse_point</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226101&nbsp;-&nbsp;0xC0000275</pre></td>
+          
+          <td>The NTFS file or directory is not a reparse point.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_io_reparse_tag_invalid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226102&nbsp;-&nbsp;0xC0000276</pre></td>
+          
+          <td>The Windows I/O reparse tag passed for the NTFS reparse point is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_io_reparse_tag_mismatch</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226103&nbsp;-&nbsp;0xC0000277</pre></td>
+          
+          <td>The Windows I/O reparse tag does not match the one that is in the NTFS reparse point.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_io_reparse_data_invalid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226104&nbsp;-&nbsp;0xC0000278</pre></td>
+          
+          <td>The user data passed for the NTFS reparse point is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_io_reparse_tag_not_handled</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226105&nbsp;-&nbsp;0xC0000279</pre></td>
+          
+          <td>The layered file system driver for this I/O tag did not handle it when needed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_reparse_point_not_resolved</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226112&nbsp;-&nbsp;0xC0000280</pre></td>
+          
+          <td>The NTFS symbolic link could not be resolved even though the initial file name is valid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_directory_is_a_reparse_point</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226113&nbsp;-&nbsp;0xC0000281</pre></td>
+          
+          <td>The NTFS directory is a reparse point.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_range_list_conflict</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226114&nbsp;-&nbsp;0xC0000282</pre></td>
+          
+          <td>The range could not be added to the range list because of a conflict.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_source_element_empty</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226115&nbsp;-&nbsp;0xC0000283</pre></td>
+          
+          <td>The specified medium changer source element contains no media.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_destination_element_full</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226116&nbsp;-&nbsp;0xC0000284</pre></td>
+          
+          <td>The specified medium changer destination element already contains media.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_illegal_element_address</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226117&nbsp;-&nbsp;0xC0000285</pre></td>
+          
+          <td>The specified medium changer element does not exist.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_magazine_not_present</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226118&nbsp;-&nbsp;0xC0000286</pre></td>
+          
+          <td>The specified element is contained in a magazine that is no longer present.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_reinitialization_needed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226119&nbsp;-&nbsp;0xC0000287</pre></td>
+          
+          <td>The device requires re-initialization due to hardware errors.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_encryption_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226122&nbsp;-&nbsp;0xC000028A</pre></td>
+          
+          <td>The file encryption attempt failed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_decryption_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226123&nbsp;-&nbsp;0xC000028B</pre></td>
+          
+          <td>The file decryption attempt failed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_range_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226124&nbsp;-&nbsp;0xC000028C</pre></td>
+          
+          <td>The specified range could not be found in the range list.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_recovery_policy</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226125&nbsp;-&nbsp;0xC000028D</pre></td>
+          
+          <td>There is no encryption recovery policy configured for this system.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_efs</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226126&nbsp;-&nbsp;0xC000028E</pre></td>
+          
+          <td>The required encryption driver is not loaded for this system.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wrong_efs</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226127&nbsp;-&nbsp;0xC000028F</pre></td>
+          
+          <td>The file was encrypted with a different encryption driver than is currently loaded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_user_keys</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226128&nbsp;-&nbsp;0xC0000290</pre></td>
+          
+          <td>There are no EFS keys defined for the user.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_file_not_encrypted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226129&nbsp;-&nbsp;0xC0000291</pre></td>
+          
+          <td>The specified file is not encrypted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_export_format</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226130&nbsp;-&nbsp;0xC0000292</pre></td>
+          
+          <td>The specified file is not in the defined EFS export format.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_file_encrypted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226131&nbsp;-&nbsp;0xC0000293</pre></td>
+          
+          <td>The specified file is encrypted and the user does not have the ability to decrypt it.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wmi_guid_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226133&nbsp;-&nbsp;0xC0000295</pre></td>
+          
+          <td>The GUID passed was not recognized as valid by a WMI data provider.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wmi_instance_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226134&nbsp;-&nbsp;0xC0000296</pre></td>
+          
+          <td>The instance name passed was not recognized as valid by a WMI data provider.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wmi_itemid_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226135&nbsp;-&nbsp;0xC0000297</pre></td>
+          
+          <td>The data item ID passed was not recognized as valid by a WMI data provider.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wmi_try_again</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226136&nbsp;-&nbsp;0xC0000298</pre></td>
+          
+          <td>The WMI request could not be completed and should be retried.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_shared_policy</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226137&nbsp;-&nbsp;0xC0000299</pre></td>
+          
+          <td>The policy object is shared and can only be modified at the root.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_policy_object_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226138&nbsp;-&nbsp;0xC000029A</pre></td>
+          
+          <td>The policy object does not exist when it should.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_policy_only_in_ds</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226139&nbsp;-&nbsp;0xC000029B</pre></td>
+          
+          <td>The requested policy information only lives in the Ds.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_volume_not_upgraded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226140&nbsp;-&nbsp;0xC000029C</pre></td>
+          
+          <td>The volume must be upgraded to enable this feature.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_remote_storage_not_active</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226141&nbsp;-&nbsp;0xC000029D</pre></td>
+          
+          <td>The remote storage service is not operational at this time.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_remote_storage_media_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226142&nbsp;-&nbsp;0xC000029E</pre></td>
+          
+          <td>The remote storage service encountered a media error.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_tracking_service</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226143&nbsp;-&nbsp;0xC000029F</pre></td>
+          
+          <td>The tracking (workstation) service is not running.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_server_sid_mismatch</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226144&nbsp;-&nbsp;0xC00002A0</pre></td>
+          
+          <td>The server process is running under a SID that is different from the SID that is required by client.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_no_attribute_or_value</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226145&nbsp;-&nbsp;0xC00002A1</pre></td>
+          
+          <td>The specified directory service attribute or value does not exist.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_invalid_attribute_syntax</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226146&nbsp;-&nbsp;0xC00002A2</pre></td>
+          
+          <td>The attribute syntax specified to the directory service is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_attribute_type_undefined</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226147&nbsp;-&nbsp;0xC00002A3</pre></td>
+          
+          <td>The attribute type specified to the directory service is not defined.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_attribute_or_value_exists</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226148&nbsp;-&nbsp;0xC00002A4</pre></td>
+          
+          <td>The specified directory service attribute or value already exists.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_busy</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226149&nbsp;-&nbsp;0xC00002A5</pre></td>
+          
+          <td>The directory service is busy.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_unavailable</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226150&nbsp;-&nbsp;0xC00002A6</pre></td>
+          
+          <td>The directory service is unavailable.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_no_rids_allocated</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226151&nbsp;-&nbsp;0xC00002A7</pre></td>
+          
+          <td>The directory service was unable to allocate a relative identifier.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_no_more_rids</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226152&nbsp;-&nbsp;0xC00002A8</pre></td>
+          
+          <td>The directory service has exhausted the pool of relative identifiers.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_incorrect_role_owner</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226153&nbsp;-&nbsp;0xC00002A9</pre></td>
+          
+          <td>The requested operation could not be performed because the directory service is not the master for that type of operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_ridmgr_init_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226154&nbsp;-&nbsp;0xC00002AA</pre></td>
+          
+          <td>The directory service was unable to initialize the subsystem that allocates relative identifiers.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_obj_class_violation</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226155&nbsp;-&nbsp;0xC00002AB</pre></td>
+          
+          <td>The requested operation did not satisfy one or more constraints that are associated with the class of the object.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_cant_on_non_leaf</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226156&nbsp;-&nbsp;0xC00002AC</pre></td>
+          
+          <td>The directory service can perform the requested operation only on a leaf object.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_cant_on_rdn</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226157&nbsp;-&nbsp;0xC00002AD</pre></td>
+          
+          <td>The directory service cannot perform the requested operation on the Relatively Defined Name (RDN) attribute of an object.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_cant_mod_obj_class</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226158&nbsp;-&nbsp;0xC00002AE</pre></td>
+          
+          <td>The directory service detected an attempt to modify the object class of an object.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_cross_dom_move_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226159&nbsp;-&nbsp;0xC00002AF</pre></td>
+          
+          <td>An error occurred while performing a cross domain move operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_gc_not_available</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226160&nbsp;-&nbsp;0xC00002B0</pre></td>
+          
+          <td>Unable to contact the global catalog server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_directory_service_required</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226161&nbsp;-&nbsp;0xC00002B1</pre></td>
+          
+          <td>The requested operation requires a directory service, and none was available.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_reparse_attribute_conflict</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226162&nbsp;-&nbsp;0xC00002B2</pre></td>
+          
+          <td>The reparse attribute cannot be set because it is incompatible with an existing attribute.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_cant_enable_deny_only</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226163&nbsp;-&nbsp;0xC00002B3</pre></td>
+          
+          <td>A group marked 'use for deny only' cannot be enabled.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_float_multiple_faults</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226164&nbsp;-&nbsp;0xC00002B4</pre></td>
+          
+          <td>{EXCEPTION} Multiple floating-point faults.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_float_multiple_traps</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226165&nbsp;-&nbsp;0xC00002B5</pre></td>
+          
+          <td>{EXCEPTION} Multiple floating-point traps.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_removed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226166&nbsp;-&nbsp;0xC00002B6</pre></td>
+          
+          <td>The device has been removed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_journal_delete_in_progress</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226167&nbsp;-&nbsp;0xC00002B7</pre></td>
+          
+          <td>The volume change journal is being deleted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_journal_not_active</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226168&nbsp;-&nbsp;0xC00002B8</pre></td>
+          
+          <td>The volume change journal is not active.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_nointerface</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226169&nbsp;-&nbsp;0xC00002B9</pre></td>
+          
+          <td>The requested interface is not supported.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_admin_limit_exceeded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226177&nbsp;-&nbsp;0xC00002C1</pre></td>
+          
+          <td>A directory service resource limit has been exceeded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_driver_failed_sleep</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226178&nbsp;-&nbsp;0xC00002C2</pre></td>
+          
+          <td>{System Standby Failed} The driver does not support standby mode. Updating this driver may allow the system to go to standby mode.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_mutual_authentication_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226179&nbsp;-&nbsp;0xC00002C3</pre></td>
+          
+          <td>Mutual Authentication failed. The server password is out of date at the domain controller.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_corrupt_system_file</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226180&nbsp;-&nbsp;0xC00002C4</pre></td>
+          
+          <td>The system file has become corrupt and has been replaced.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_datatype_misalignment_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226181&nbsp;-&nbsp;0xC00002C5</pre></td>
+          
+          <td>{EXCEPTION} Alignment Error A data type misalignment error was detected in a load or store instruction.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wmi_read_only</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226182&nbsp;-&nbsp;0xC00002C6</pre></td>
+          
+          <td>The WMI data item or data block is read-only.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wmi_set_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226183&nbsp;-&nbsp;0xC00002C7</pre></td>
+          
+          <td>The WMI data item or data block could not be changed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_commitment_minimum</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226184&nbsp;-&nbsp;0xC00002C8</pre></td>
+          
+          <td>{Virtual Memory Minimum Too Low} Your system is low on virtual memory. Windows is increasing the size of your virtual memory paging file. During this process, memory requests for some applications may be denied. For more information, see Help.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_reg_nat_consumption</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226185&nbsp;-&nbsp;0xC00002C9</pre></td>
+          
+          <td>{EXCEPTION} Register NaT consumption faults. A NaT value is consumed on a non-speculative instruction.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_transport_full</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226186&nbsp;-&nbsp;0xC00002CA</pre></td>
+          
+          <td>The transport element of the medium changer contains media, which is causing the operation to fail.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_sam_init_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226187&nbsp;-&nbsp;0xC00002CB</pre></td>
+          
+          <td>Security Accounts Manager initialization failed. Click OK to shut down this system and restart in Directory Services Restore Mode. Check the event log for more detailed information.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_only_if_connected</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226188&nbsp;-&nbsp;0xC00002CC</pre></td>
+          
+          <td>This operation is supported only when you are connected to the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_sensitive_group_violation</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226189&nbsp;-&nbsp;0xC00002CD</pre></td>
+          
+          <td>Only an administrator can modify the membership list of an administrative group.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pnp_restart_enumeration</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226190&nbsp;-&nbsp;0xC00002CE</pre></td>
+          
+          <td>A device was removed so enumeration must be restarted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_journal_entry_deleted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226191&nbsp;-&nbsp;0xC00002CF</pre></td>
+          
+          <td>The journal entry has been deleted from the journal.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_cant_mod_primarygroupid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226192&nbsp;-&nbsp;0xC00002D0</pre></td>
+          
+          <td>Cannot change the primary group ID of a domain controller account.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_system_image_bad_signature</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226193&nbsp;-&nbsp;0xC00002D1</pre></td>
+          
+          <td>{Fatal System Error} The system image is not properly signed. The file has been replaced with the signed file. The system has been shut down.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pnp_reboot_required</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226194&nbsp;-&nbsp;0xC00002D2</pre></td>
+          
+          <td>The device will not start without a reboot.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_power_state_invalid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226195&nbsp;-&nbsp;0xC00002D3</pre></td>
+          
+          <td>The power state of the current device cannot support this request.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_invalid_group_type</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226196&nbsp;-&nbsp;0xC00002D4</pre></td>
+          
+          <td>The specified group type is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_no_nest_globalgroup_in_mixeddomain</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226197&nbsp;-&nbsp;0xC00002D5</pre></td>
+          
+          <td>In a mixed domain, no nesting of a global group if the group is security enabled.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_no_nest_localgroup_in_mixeddomain</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226198&nbsp;-&nbsp;0xC00002D6</pre></td>
+          
+          <td>In a mixed domain, cannot nest local groups with other local groups, if the group is security enabled.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_global_cant_have_local_member</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226199&nbsp;-&nbsp;0xC00002D7</pre></td>
+          
+          <td>A global group cannot have a local group as a member.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_global_cant_have_universal_member</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226200&nbsp;-&nbsp;0xC00002D8</pre></td>
+          
+          <td>A global group cannot have a universal group as a member.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_universal_cant_have_local_member</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226201&nbsp;-&nbsp;0xC00002D9</pre></td>
+          
+          <td>A universal group cannot have a local group as a member.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_global_cant_have_crossdomain_member</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226202&nbsp;-&nbsp;0xC00002DA</pre></td>
+          
+          <td>A global group cannot have a cross-domain member.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_local_cant_have_crossdomain_local_member</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226203&nbsp;-&nbsp;0xC00002DB</pre></td>
+          
+          <td>A local group cannot have another cross-domain local group as a member.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_have_primary_members</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226204&nbsp;-&nbsp;0xC00002DC</pre></td>
+          
+          <td>Cannot change to a security-disabled group because primary members are in this group.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wmi_not_supported</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226205&nbsp;-&nbsp;0xC00002DD</pre></td>
+          
+          <td>The WMI operation is not supported by the data block or method.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_insufficient_power</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226206&nbsp;-&nbsp;0xC00002DE</pre></td>
+          
+          <td>There is not enough power to complete the requested operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_sam_need_bootkey_password</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226207&nbsp;-&nbsp;0xC00002DF</pre></td>
+          
+          <td>The Security Accounts Manager needs to get the boot password.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_sam_need_bootkey_floppy</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226208&nbsp;-&nbsp;0xC00002E0</pre></td>
+          
+          <td>The Security Accounts Manager needs to get the boot key from the floppy disk.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_cant_start</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226209&nbsp;-&nbsp;0xC00002E1</pre></td>
+          
+          <td>The directory service cannot start.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_init_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226210&nbsp;-&nbsp;0xC00002E2</pre></td>
+          
+          <td>The directory service could not start. Click OK to shut down this system and restart in Directory Services Restore Mode. Check the event log for more detailed information.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_sam_init_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226211&nbsp;-&nbsp;0xC00002E3</pre></td>
+          
+          <td>The Security Accounts Manager initialization failed. Click OK to shut down this system and restart in Safe Mode. Check the event log for more detailed information.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_gc_required</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226212&nbsp;-&nbsp;0xC00002E4</pre></td>
+          
+          <td>The requested operation can be performed only on a global catalog server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_local_member_of_local_only</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226213&nbsp;-&nbsp;0xC00002E5</pre></td>
+          
+          <td>A local group can only be a member of other local groups in the same domain.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_no_fpo_in_universal_groups</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226214&nbsp;-&nbsp;0xC00002E6</pre></td>
+          
+          <td>Foreign security principals cannot be members of universal groups.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_machine_account_quota_exceeded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226215&nbsp;-&nbsp;0xC00002E7</pre></td>
+          
+          <td>Your computer could not be joined to the domain. You have exceeded the maximum number of computer accounts you are allowed to create in this domain. Contact your system administrator to have this limit reset or increased.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_multiple_fault_violation</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226216&nbsp;-&nbsp;0xC00002E8</pre></td>
+          
+          <td></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_current_domain_not_allowed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226217&nbsp;-&nbsp;0xC00002E9</pre></td>
+          
+          <td>This operation cannot be performed on the current domain.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_cannot_make</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226218&nbsp;-&nbsp;0xC00002EA</pre></td>
+          
+          <td>The directory or file cannot be created.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_system_shutdown</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226219&nbsp;-&nbsp;0xC00002EB</pre></td>
+          
+          <td>The system is in the process of shutting down.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_init_failure_console</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226220&nbsp;-&nbsp;0xC00002EC</pre></td>
+          
+          <td>Directory Services could not start. Click OK to shut down the system. You can use the recovery console to diagnose the system further.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_sam_init_failure_console</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226221&nbsp;-&nbsp;0xC00002ED</pre></td>
+          
+          <td>Security Accounts Manager initialization failed. Click OK to shut down the system. You can use the recovery console to diagnose the system further.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unfinished_context_deleted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226222&nbsp;-&nbsp;0xC00002EE</pre></td>
+          
+          <td>A security context was deleted before the context was completed. This is considered a logon failure.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_tgt_reply</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226223&nbsp;-&nbsp;0xC00002EF</pre></td>
+          
+          <td>The client is trying to negotiate a context and the server requires user-to-user but did not send a TGT reply.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_objectid_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226224&nbsp;-&nbsp;0xC00002F0</pre></td>
+          
+          <td>An object ID was not found in the file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_ip_addresses</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226225&nbsp;-&nbsp;0xC00002F1</pre></td>
+          
+          <td>Unable to accomplish the requested task because the local machine does not have any IP addresses.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wrong_credential_handle</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226226&nbsp;-&nbsp;0xC00002F2</pre></td>
+          
+          <td>The supplied credential handle does not match the credential that is associated with the security context.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_crypto_system_invalid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226227&nbsp;-&nbsp;0xC00002F3</pre></td>
+          
+          <td>The crypto system or checksum function is invalid because a required function is unavailable.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_max_referrals_exceeded</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226228&nbsp;-&nbsp;0xC00002F4</pre></td>
+          
+          <td>The number of maximum ticket referrals has been exceeded.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_must_be_kdc</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226229&nbsp;-&nbsp;0xC00002F5</pre></td>
+          
+          <td>The local machine must be a Kerberos KDC (domain controller) and it is not.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_strong_crypto_not_supported</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226230&nbsp;-&nbsp;0xC00002F6</pre></td>
+          
+          <td>The other end of the security negotiation requires strong crypto but it is not supported on the local machine.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_too_many_principals</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226231&nbsp;-&nbsp;0xC00002F7</pre></td>
+          
+          <td>The KDC reply contained more than one principal name.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_pa_data</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226232&nbsp;-&nbsp;0xC00002F8</pre></td>
+          
+          <td>Expected to find PA data for a hint of what etype to use, but it was not found.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pkinit_name_mismatch</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226233&nbsp;-&nbsp;0xC00002F9</pre></td>
+          
+          <td>The client certificate does not contain a valid UPN, or does not match the client name in the logon request. Contact your administrator.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_smartcard_logon_required</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226234&nbsp;-&nbsp;0xC00002FA</pre></td>
+          
+          <td>Smart card logon is required and was not used.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_kdc_invalid_request</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226235&nbsp;-&nbsp;0xC00002FB</pre></td>
+          
+          <td>An invalid request was sent to the KDC.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_kdc_unable_to_refer</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226236&nbsp;-&nbsp;0xC00002FC</pre></td>
+          
+          <td>The KDC was unable to generate a referral for the service requested.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_kdc_unknown_etype</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226237&nbsp;-&nbsp;0xC00002FD</pre></td>
+          
+          <td>The encryption type requested is not supported by the KDC.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_shutdown_in_progress</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226238&nbsp;-&nbsp;0xC00002FE</pre></td>
+          
+          <td>A system shutdown is in progress.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_server_shutdown_in_progress</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226239&nbsp;-&nbsp;0xC00002FF</pre></td>
+          
+          <td>The server machine is shutting down.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_supported_on_sbs</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226240&nbsp;-&nbsp;0xC0000300</pre></td>
+          
+          <td>This operation is not supported on a computer running Windows Server&nbsp;2003 for Small Business Server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wmi_guid_disconnected</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226241&nbsp;-&nbsp;0xC0000301</pre></td>
+          
+          <td>The WMI GUID is no longer available.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wmi_already_disabled</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226242&nbsp;-&nbsp;0xC0000302</pre></td>
+          
+          <td>Collection or events for the WMI GUID is already disabled.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wmi_already_enabled</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226243&nbsp;-&nbsp;0xC0000303</pre></td>
+          
+          <td>Collection or events for the WMI GUID is already enabled.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_mft_too_fragmented</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226244&nbsp;-&nbsp;0xC0000304</pre></td>
+          
+          <td>The master file table on the volume is too fragmented to complete this operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_copy_protection_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226245&nbsp;-&nbsp;0xC0000305</pre></td>
+          
+          <td>Copy protection failure.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_css_authentication_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226246&nbsp;-&nbsp;0xC0000306</pre></td>
+          
+          <td>Copy protection error—DVD CSS Authentication failed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_css_key_not_present</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226247&nbsp;-&nbsp;0xC0000307</pre></td>
+          
+          <td>Copy protection error—The specified sector does not contain a valid key.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_css_key_not_established</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226248&nbsp;-&nbsp;0xC0000308</pre></td>
+          
+          <td>Copy protection error—DVD session key not established.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_css_scrambled_sector</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226249&nbsp;-&nbsp;0xC0000309</pre></td>
+          
+          <td>Copy protection error—The read failed because the sector is encrypted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_css_region_mismatch</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226250&nbsp;-&nbsp;0xC000030A</pre></td>
+          
+          <td>Copy protection error—The region of the specified DVD does not correspond to the region setting of the drive.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_css_resets_exhausted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226251&nbsp;-&nbsp;0xC000030B</pre></td>
+          
+          <td>Copy protection error—The region setting of the drive may be permanent.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pkinit_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226272&nbsp;-&nbsp;0xC0000320</pre></td>
+          
+          <td>The Kerberos protocol encountered an error while validating the KDC certificate during smart card logon. There is more information in the system event log.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_smartcard_subsystem_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226273&nbsp;-&nbsp;0xC0000321</pre></td>
+          
+          <td>The Kerberos protocol encountered an error while attempting to use the smart card subsystem.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_no_kerb_key</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226274&nbsp;-&nbsp;0xC0000322</pre></td>
+          
+          <td>The target server does not have acceptable Kerberos credentials.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_host_down</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226320&nbsp;-&nbsp;0xC0000350</pre></td>
+          
+          <td>The transport determined that the remote system is down.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_unsupported_preauth</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226321&nbsp;-&nbsp;0xC0000351</pre></td>
+          
+          <td>An unsupported pre-authentication mechanism was presented to the Kerberos package.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_efs_alg_blob_too_big</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226322&nbsp;-&nbsp;0xC0000352</pre></td>
+          
+          <td>The encryption algorithm that is used on the source file needs a bigger key buffer than the one that is used on the destination file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_port_not_set</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226323&nbsp;-&nbsp;0xC0000353</pre></td>
+          
+          <td>An attempt to remove a processes DebugPort was made, but a port was not already associated with the process.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_debugger_inactive</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226324&nbsp;-&nbsp;0xC0000354</pre></td>
+          
+          <td>An attempt to do an operation on a debug port failed because the port is in the process of being deleted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_version_check_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226325&nbsp;-&nbsp;0xC0000355</pre></td>
+          
+          <td>This version of Windows is not compatible with the behavior version of the directory forest, domain, or domain controller.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_auditing_disabled</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226326&nbsp;-&nbsp;0xC0000356</pre></td>
+          
+          <td>The specified event is currently not being audited.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_prent4_machine_account</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226327&nbsp;-&nbsp;0xC0000357</pre></td>
+          
+          <td>The machine account was created prior to Windows&nbsp;NT 4.0. The account needs to be recreated.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_ds_ag_cant_have_universal_member</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226328&nbsp;-&nbsp;0xC0000358</pre></td>
+          
+          <td>An account group cannot have a universal group as a member.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_image_win_32</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226329&nbsp;-&nbsp;0xC0000359</pre></td>
+          
+          <td>The specified image file did not have the correct format; it appears to be a 32-bit Windows image.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_image_win_64</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226330&nbsp;-&nbsp;0xC000035A</pre></td>
+          
+          <td>The specified image file did not have the correct format; it appears to be a 64-bit Windows image.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_bad_bindings</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226331&nbsp;-&nbsp;0xC000035B</pre></td>
+          
+          <td>The client's supplied SSPI channel bindings were incorrect.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_network_session_expired</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226332&nbsp;-&nbsp;0xC000035C</pre></td>
+          
+          <td>The client session has expired; so the client must re-authenticate to continue accessing the remote resources.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_apphelp_block</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226333&nbsp;-&nbsp;0xC000035D</pre></td>
+          
+          <td>The AppHelp dialog box canceled; thus preventing the application from starting.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_all_sids_filtered</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226334&nbsp;-&nbsp;0xC000035E</pre></td>
+          
+          <td>The SID filtering operation removed all SIDs.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_not_safe_mode_driver</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226335&nbsp;-&nbsp;0xC000035F</pre></td>
+          
+          <td>The driver was not loaded because the system is starting in safe mode.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_access_disabled_by_policy_default</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226337&nbsp;-&nbsp;0xC0000361</pre></td>
+          
+          <td>Access has been restricted by your Administrator by the default software restriction policy level.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_access_disabled_by_policy_path</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226338&nbsp;-&nbsp;0xC0000362</pre></td>
+          
+          <td>Access has been restricted by your Administrator by location with policy rule.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_access_disabled_by_policy_publisher</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226339&nbsp;-&nbsp;0xC0000363</pre></td>
+          
+          <td>Access has been restricted by your Administrator by software publisher policy.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_access_disabled_by_policy_other</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226340&nbsp;-&nbsp;0xC0000364</pre></td>
+          
+          <td>Access to has been restricted by your Administrator by policy rule.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_failed_driver_entry</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226341&nbsp;-&nbsp;0xC0000365</pre></td>
+          
+          <td>The driver was not loaded because it failed its initialization call.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_device_enumeration_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226342&nbsp;-&nbsp;0xC0000366</pre></td>
+          
+          <td>The device encountered an error while applying power or reading the device configuration. This may be caused by a failure of your hardware or by a poor connection.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_mount_point_not_resolved</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226344&nbsp;-&nbsp;0xC0000368</pre></td>
+          
+          <td>The create operation failed because the name contained at least one mount point that resolves to a volume to which the specified device object is not attached.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_device_object_parameter</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226345&nbsp;-&nbsp;0xC0000369</pre></td>
+          
+          <td>The device object parameter is either not a valid device object or is not attached to the volume that is specified by the file name.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_mca_occured</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226346&nbsp;-&nbsp;0xC000036A</pre></td>
+          
+          <td>A machine check error has occurred. Check the system event log for additional information.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_driver_blocked_critical</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226347&nbsp;-&nbsp;0xC000036B</pre></td>
+          
+          <td>Driver has been blocked from loading.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_driver_blocked</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226348&nbsp;-&nbsp;0xC000036C</pre></td>
+          
+          <td>Driver has been blocked from loading.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_driver_database_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226349&nbsp;-&nbsp;0xC000036D</pre></td>
+          
+          <td>There was error processing the driver database.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_system_hive_too_large</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226350&nbsp;-&nbsp;0xC000036E</pre></td>
+          
+          <td>System hive size has exceeded its limit.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_invalid_import_of_non_dll</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226351&nbsp;-&nbsp;0xC000036F</pre></td>
+          
+          <td>A dynamic link library (DLL) referenced a module that was neither a DLL nor the process's executable image.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_smartcard_wrong_pin</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226368&nbsp;-&nbsp;0xC0000380</pre></td>
+          
+          <td>An incorrect PIN was presented to the smart card.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_smartcard_card_blocked</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226369&nbsp;-&nbsp;0xC0000381</pre></td>
+          
+          <td>The smart card is blocked.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_smartcard_card_not_authenticated</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226370&nbsp;-&nbsp;0xC0000382</pre></td>
+          
+          <td>No PIN was presented to the smart card.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_smartcard_no_card</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226371&nbsp;-&nbsp;0xC0000383</pre></td>
+          
+          <td>No smart card is available.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_smartcard_no_key_container</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226372&nbsp;-&nbsp;0xC0000384</pre></td>
+          
+          <td>The requested key container does not exist on the smart card.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_smartcard_no_certificate</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226373&nbsp;-&nbsp;0xC0000385</pre></td>
+          
+          <td>The requested certificate does not exist on the smart card.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_smartcard_no_keyset</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226374&nbsp;-&nbsp;0xC0000386</pre></td>
+          
+          <td>The requested keyset does not exist.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_smartcard_io_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226375&nbsp;-&nbsp;0xC0000387</pre></td>
+          
+          <td>A communication error with the smart card has been detected.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_downgrade_detected</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226376&nbsp;-&nbsp;0xC0000388</pre></td>
+          
+          <td>The system detected a possible attempt to compromise security. Ensure that you can contact the server that authenticated you.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_smartcard_cert_revoked</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226377&nbsp;-&nbsp;0xC0000389</pre></td>
+          
+          <td>The smart card certificate used for authentication has been revoked. Contact your system administrator. There may be additional information in the event log.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_issuing_ca_untrusted</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226378&nbsp;-&nbsp;0xC000038A</pre></td>
+          
+          <td>An untrusted certificate authority was detected while processing the smart card certificate that is used for authentication. Contact your system administrator.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_revocation_offline_c</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226379&nbsp;-&nbsp;0xC000038B</pre></td>
+          
+          <td>The revocation status of the smart card certificate that is used for authentication could not be determined. Contact your system administrator.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_pkinit_client_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226380&nbsp;-&nbsp;0xC000038C</pre></td>
+          
+          <td>The smart card certificate used for authentication was not trusted. Contact your system administrator.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_smartcard_cert_expired</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226381&nbsp;-&nbsp;0xC000038D</pre></td>
+          
+          <td>The smart card certificate used for authentication has expired. Contact your system administrator.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_driver_failed_prior_unload</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221226382&nbsp;-&nbsp;0xC000038E</pre></td>
+          
+          <td>The driver could not be loaded because a previous version of the driver is still in memory.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">NT_status_wow_assertion</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221264536&nbsp;-&nbsp;0xC0009898</pre></td>
+          
+          <td>WOW Assertion Error.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_string_binding</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356545&nbsp;-&nbsp;0xC0020001</pre></td>
+          
+          <td>The string binding is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_wrong_kind_of_binding</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356546&nbsp;-&nbsp;0xC0020002</pre></td>
+          
+          <td>The binding handle is not the correct type.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_binding</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356547&nbsp;-&nbsp;0xC0020003</pre></td>
+          
+          <td>The binding handle is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_protseq_not_supported</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356548&nbsp;-&nbsp;0xC0020004</pre></td>
+          
+          <td>The RPC protocol sequence is not supported.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_rpc_protseq</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356549&nbsp;-&nbsp;0xC0020005</pre></td>
+          
+          <td>The RPC protocol sequence is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_string_uuid</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356550&nbsp;-&nbsp;0xC0020006</pre></td>
+          
+          <td>The string UUID is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_endpoint_format</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356551&nbsp;-&nbsp;0xC0020007</pre></td>
+          
+          <td>The endpoint format is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_net_addr</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356552&nbsp;-&nbsp;0xC0020008</pre></td>
+          
+          <td>The network address is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_no_endpoint_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356553&nbsp;-&nbsp;0xC0020009</pre></td>
+          
+          <td>No endpoint was found.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_timeout</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356554&nbsp;-&nbsp;0xC002000A</pre></td>
+          
+          <td>The time-out value is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_object_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356555&nbsp;-&nbsp;0xC002000B</pre></td>
+          
+          <td>The object UUID was not found.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_already_registered</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356556&nbsp;-&nbsp;0xC002000C</pre></td>
+          
+          <td>The object UUID has already been registered.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_type_already_registered</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356557&nbsp;-&nbsp;0xC002000D</pre></td>
+          
+          <td>The type UUID has already been registered.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_already_listening</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356558&nbsp;-&nbsp;0xC002000E</pre></td>
+          
+          <td>The RPC server is already listening.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_no_protseqs_registered</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356559&nbsp;-&nbsp;0xC002000F</pre></td>
+          
+          <td>No protocol sequences have been registered.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_not_listening</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356560&nbsp;-&nbsp;0xC0020010</pre></td>
+          
+          <td>The RPC server is not listening.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_unknown_mgr_type</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356561&nbsp;-&nbsp;0xC0020011</pre></td>
+          
+          <td>The manager type is unknown.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_unknown_if</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356562&nbsp;-&nbsp;0xC0020012</pre></td>
+          
+          <td>The interface is unknown.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_no_bindings</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356563&nbsp;-&nbsp;0xC0020013</pre></td>
+          
+          <td>There are no bindings.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_no_protseqs</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356564&nbsp;-&nbsp;0xC0020014</pre></td>
+          
+          <td>There are no protocol sequences.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_cant_create_endpoint</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356565&nbsp;-&nbsp;0xC0020015</pre></td>
+          
+          <td>The endpoint cannot be created.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_out_of_resources</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356566&nbsp;-&nbsp;0xC0020016</pre></td>
+          
+          <td>Insufficient resources are available to complete this operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_server_unavailable</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356567&nbsp;-&nbsp;0xC0020017</pre></td>
+          
+          <td>The RPC server is unavailable.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_server_too_busy</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356568&nbsp;-&nbsp;0xC0020018</pre></td>
+          
+          <td>The RPC server is too busy to complete this operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_network_options</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356569&nbsp;-&nbsp;0xC0020019</pre></td>
+          
+          <td>The network options are invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_no_call_active</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356570&nbsp;-&nbsp;0xC002001A</pre></td>
+          
+          <td>No RPCs are active on this thread.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_call_failed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356571&nbsp;-&nbsp;0xC002001B</pre></td>
+          
+          <td>The RPC failed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_call_failed_dne</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356572&nbsp;-&nbsp;0xC002001C</pre></td>
+          
+          <td>The RPC failed and did not execute.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_protocol_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356573&nbsp;-&nbsp;0xC002001D</pre></td>
+          
+          <td>An RPC protocol error occurred.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_unsupported_trans_syn</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356575&nbsp;-&nbsp;0xC002001F</pre></td>
+          
+          <td>The RPC server does not support the transfer syntax.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_unsupported_type</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356577&nbsp;-&nbsp;0xC0020021</pre></td>
+          
+          <td>The type UUID is not supported.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_tag</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356578&nbsp;-&nbsp;0xC0020022</pre></td>
+          
+          <td>The tag is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_bound</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356579&nbsp;-&nbsp;0xC0020023</pre></td>
+          
+          <td>The array bounds are invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_no_entry_name</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356580&nbsp;-&nbsp;0xC0020024</pre></td>
+          
+          <td>The binding does not contain an entry name.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_name_syntax</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356581&nbsp;-&nbsp;0xC0020025</pre></td>
+          
+          <td>The name syntax is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_unsupported_name_syntax</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356582&nbsp;-&nbsp;0xC0020026</pre></td>
+          
+          <td>The name syntax is not supported.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_uuid_no_address</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356584&nbsp;-&nbsp;0xC0020028</pre></td>
+          
+          <td>No network address is available to construct a UUID.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_duplicate_endpoint</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356585&nbsp;-&nbsp;0xC0020029</pre></td>
+          
+          <td>The endpoint is a duplicate.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_unknown_authn_type</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356586&nbsp;-&nbsp;0xC002002A</pre></td>
+          
+          <td>The authentication type is unknown.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_max_calls_too_small</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356587&nbsp;-&nbsp;0xC002002B</pre></td>
+          
+          <td>The maximum number of calls is too small.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_string_too_long</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356588&nbsp;-&nbsp;0xC002002C</pre></td>
+          
+          <td>The string is too long.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_protseq_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356589&nbsp;-&nbsp;0xC002002D</pre></td>
+          
+          <td>The RPC protocol sequence was not found.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_procnum_out_of_range</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356590&nbsp;-&nbsp;0xC002002E</pre></td>
+          
+          <td>The procedure number is out of range.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_binding_has_no_auth</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356591&nbsp;-&nbsp;0xC002002F</pre></td>
+          
+          <td>The binding does not contain any authentication information.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_unknown_authn_service</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356592&nbsp;-&nbsp;0xC0020030</pre></td>
+          
+          <td>The authentication service is unknown.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_unknown_authn_level</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356593&nbsp;-&nbsp;0xC0020031</pre></td>
+          
+          <td>The authentication level is unknown.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_auth_identity</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356594&nbsp;-&nbsp;0xC0020032</pre></td>
+          
+          <td>The security context is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_unknown_authz_service</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356595&nbsp;-&nbsp;0xC0020033</pre></td>
+          
+          <td>The authorization service is unknown.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">EPT_NT_invalid_entry</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356596&nbsp;-&nbsp;0xC0020034</pre></td>
+          
+          <td>The entry is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">EPT_NT_cant_perform_op</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356597&nbsp;-&nbsp;0xC0020035</pre></td>
+          
+          <td>The operation cannot be performed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">EPT_NT_not_registered</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356598&nbsp;-&nbsp;0xC0020036</pre></td>
+          
+          <td>No more endpoints are available from the endpoint mapper.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_nothing_to_export</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356599&nbsp;-&nbsp;0xC0020037</pre></td>
+          
+          <td>No interfaces have been exported.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_incomplete_name</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356600&nbsp;-&nbsp;0xC0020038</pre></td>
+          
+          <td>The entry name is incomplete.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_vers_option</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356601&nbsp;-&nbsp;0xC0020039</pre></td>
+          
+          <td>The version option is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_no_more_members</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356602&nbsp;-&nbsp;0xC002003A</pre></td>
+          
+          <td>There are no more members.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_not_all_objs_unexported</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356603&nbsp;-&nbsp;0xC002003B</pre></td>
+          
+          <td>There is nothing to unexport.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_interface_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356604&nbsp;-&nbsp;0xC002003C</pre></td>
+          
+          <td>The interface was not found.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_entry_already_exists</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356605&nbsp;-&nbsp;0xC002003D</pre></td>
+          
+          <td>The entry already exists.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_entry_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356606&nbsp;-&nbsp;0xC002003E</pre></td>
+          
+          <td>The entry was not found.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_name_service_unavailable</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356607&nbsp;-&nbsp;0xC002003F</pre></td>
+          
+          <td>The name service is unavailable.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_naf_id</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356608&nbsp;-&nbsp;0xC0020040</pre></td>
+          
+          <td>The network address family is invalid.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_cannot_support</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356609&nbsp;-&nbsp;0xC0020041</pre></td>
+          
+          <td>The requested operation is not supported.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_no_context_available</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356610&nbsp;-&nbsp;0xC0020042</pre></td>
+          
+          <td>No security context is available to allow impersonation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_internal_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356611&nbsp;-&nbsp;0xC0020043</pre></td>
+          
+          <td>An internal error occurred in the RPC.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_zero_divide</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356612&nbsp;-&nbsp;0xC0020044</pre></td>
+          
+          <td>The RPC server attempted to divide an integer by zero.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_address_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356613&nbsp;-&nbsp;0xC0020045</pre></td>
+          
+          <td>An addressing error occurred in the RPC server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_fp_div_zero</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356614&nbsp;-&nbsp;0xC0020046</pre></td>
+          
+          <td>A floating point operation at the RPC server caused a divide by zero.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_fp_underflow</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356615&nbsp;-&nbsp;0xC0020047</pre></td>
+          
+          <td>A floating point underflow occurred at the RPC server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_fp_overflow</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356616&nbsp;-&nbsp;0xC0020048</pre></td>
+          
+          <td>A floating point overflow occurred at the RPC server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_call_in_progress</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356617&nbsp;-&nbsp;0xC0020049</pre></td>
+          
+          <td>An RPC is already in progress for this thread.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_no_more_bindings</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356618&nbsp;-&nbsp;0xC002004A</pre></td>
+          
+          <td>There are no more bindings.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_group_member_not_found</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356619&nbsp;-&nbsp;0xC002004B</pre></td>
+          
+          <td>The group member was not found.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">EPT_NT_cant_create</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356620&nbsp;-&nbsp;0xC002004C</pre></td>
+          
+          <td>The endpoint mapper database entry could not be created.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_object</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356621&nbsp;-&nbsp;0xC002004D</pre></td>
+          
+          <td>The object UUID is the nil UUID.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_no_interfaces</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356623&nbsp;-&nbsp;0xC002004F</pre></td>
+          
+          <td>No interfaces have been registered.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_call_cancelled</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356624&nbsp;-&nbsp;0xC0020050</pre></td>
+          
+          <td>The RPC was canceled.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_binding_incomplete</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356625&nbsp;-&nbsp;0xC0020051</pre></td>
+          
+          <td>The binding handle does not contain all the required information.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_comm_failure</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356626&nbsp;-&nbsp;0xC0020052</pre></td>
+          
+          <td>A communications failure occurred during an RPC.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_unsupported_authn_level</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356627&nbsp;-&nbsp;0xC0020053</pre></td>
+          
+          <td>The requested authentication level is not supported.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_no_princ_name</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356628&nbsp;-&nbsp;0xC0020054</pre></td>
+          
+          <td>No principal name was registered.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_not_rpc_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356629&nbsp;-&nbsp;0xC0020055</pre></td>
+          
+          <td>The error specified is not a valid Windows RPC error code.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_sec_pkg_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356631&nbsp;-&nbsp;0xC0020057</pre></td>
+          
+          <td>A security package-specific error occurred.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_not_cancelled</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356632&nbsp;-&nbsp;0xC0020058</pre></td>
+          
+          <td>The thread was not canceled.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_async_handle</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356642&nbsp;-&nbsp;0xC0020062</pre></td>
+          
+          <td>Invalid asynchronous RPC handle.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_async_call</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356643&nbsp;-&nbsp;0xC0020063</pre></td>
+          
+          <td>Invalid asynchronous RPC call handle for this operation.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_proxy_access_denied</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221356644&nbsp;-&nbsp;0xC0020064</pre></td>
+          
+          <td>Access to the HTTP proxy is denied.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_no_more_entries</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422081&nbsp;-&nbsp;0xC0030001</pre></td>
+          
+          <td>The list of RPC servers available for auto-handle binding has been exhausted.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_ss_char_trans_open_fail</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422082&nbsp;-&nbsp;0xC0030002</pre></td>
+          
+          <td>The file designated by DCERPCCHARTRANS cannot be opened.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_ss_char_trans_short_file</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422083&nbsp;-&nbsp;0xC0030003</pre></td>
+          
+          <td>The file containing the character translation table has fewer than 512 bytes.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_ss_in_null_context</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422084&nbsp;-&nbsp;0xC0030004</pre></td>
+          
+          <td>A null context handle is passed as an [in] parameter.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_ss_context_mismatch</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422085&nbsp;-&nbsp;0xC0030005</pre></td>
+          
+          <td>The context handle does not match any known context handles.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_ss_context_damaged</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422086&nbsp;-&nbsp;0xC0030006</pre></td>
+          
+          <td>The context handle changed during a call.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_ss_handles_mismatch</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422087&nbsp;-&nbsp;0xC0030007</pre></td>
+          
+          <td>The binding handles passed to an RPC do not match.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_ss_cannot_get_call_handle</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422088&nbsp;-&nbsp;0xC0030008</pre></td>
+          
+          <td>The stub is unable to get the call handle.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_null_ref_pointer</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422089&nbsp;-&nbsp;0xC0030009</pre></td>
+          
+          <td>A null reference pointer was passed to the stub.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_enum_value_out_of_range</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422090&nbsp;-&nbsp;0xC003000A</pre></td>
+          
+          <td>The enumeration value is out of range.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_byte_count_too_small</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422091&nbsp;-&nbsp;0xC003000B</pre></td>
+          
+          <td>The byte count is too small.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_bad_stub_data</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422092&nbsp;-&nbsp;0xC003000C</pre></td>
+          
+          <td>The stub received bad data.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_es_action</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422169&nbsp;-&nbsp;0xC0030059</pre></td>
+          
+          <td>Invalid operation on the encoding/decoding handle.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_wrong_es_version</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422170&nbsp;-&nbsp;0xC003005A</pre></td>
+          
+          <td>Incompatible version of the serializing package.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_wrong_stub_version</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422171&nbsp;-&nbsp;0xC003005B</pre></td>
+          
+          <td>Incompatible version of the RPC stub.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_pipe_object</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422172&nbsp;-&nbsp;0xC003005C</pre></td>
+          
+          <td>The RPC pipe object is invalid or corrupt.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_invalid_pipe_operation</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422173&nbsp;-&nbsp;0xC003005D</pre></td>
+          
+          <td>An invalid operation was attempted on an RPC pipe object.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_wrong_pipe_version</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422174&nbsp;-&nbsp;0xC003005E</pre></td>
+          
+          <td>Unsupported RPC pipe version.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_pipe_closed</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422175&nbsp;-&nbsp;0xC003005F</pre></td>
+          
+          <td>The RPC pipe object has already been closed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_pipe_discipline_error</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422176&nbsp;-&nbsp;0xC0030060</pre></td>
+          
+          <td>The RPC call completed before all pipes were processed.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">RPC_NT_pipe_empty</pre></td>
+          
+          <td>Error</td>
+          
+          <td><pre>3221422177&nbsp;-&nbsp;0xC0030061</pre></td>
+          
+          <td>No more data is available from the RPC pipe.</td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="smbsubcommand-items">
+    Type <a href="#type-smbsubcommand">smbsubcommand</a>
+  </h3>
+  
+  <p class="Subtitle">This field does not allow any custom items.</p>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+        <th>Description</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS_set_nmpipe_state</pre></td>
+          
+          <td><pre>1:37:1</pre></td>
+          
+          <td>The TRANS_SET_NMPIPE_STATE subcommand allows a client to set the read mode and the non-blocking mode of a specified named pipe.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS_raw_read_nmpipe</pre></td>
+          
+          <td><pre>1:37:17</pre></td>
+          
+          <td>The TRANS_RAW_READ_NMPIPE subcommand allows for a raw read of data from a name pipe.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS_query_nmpipe_state</pre></td>
+          
+          <td><pre>1:37:33</pre></td>
+          
+          <td>The TRANS_QUERY_NMPIPE_STATE subcommand allows a client to retrieve information about a specified named pipe.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS_query_nmpipe_info</pre></td>
+          
+          <td><pre>1:37:34</pre></td>
+          
+          <td>The TRANS_QUERY_NMPIPE_INFO subcommand allows for a client to retrieve information about a specified named pipe.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS_peek_nmpipe</pre></td>
+          
+          <td><pre>1:37:35</pre></td>
+          
+          <td>The TRANS_PEEK_NMPIPE subcommand is used to copy data out of a named pipe without removing it and to retrieve information about data in a named pipe.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS_transact_nmpipe</pre></td>
+          
+          <td><pre>1:37:38</pre></td>
+          
+          <td>The TRANS_TRANSACT_NMPIPE subcommand is used to execute a transacted exchange against a named pipe.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS_raw_write_nmpipe</pre></td>
+          
+          <td><pre>1:37:49</pre></td>
+          
+          <td>The TRANS_RAW_WRITE_NMPIPE subcommand allows for a raw write of data to a named pipe. Raw writes to named pipes put bytes directly into a pipe in byte mode, regardless of whether it is a message mode pipe or byte mode pipe.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS_read_nmpipe</pre></td>
+          
+          <td><pre>1:37:54</pre></td>
+          
+          <td>The TRANS_READ_NMPIPE subcommand allows a client to read data from a named pipe.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS_write_nmpipe</pre></td>
+          
+          <td><pre>1:37:55</pre></td>
+          
+          <td>The TRANS_WRITE_NMPIPE subcommand allows a client to write data to a named pipe.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS_wait_nmpipe</pre></td>
+          
+          <td><pre>1:37:83</pre></td>
+          
+          <td>The TRANS_WAIT_NMPIPE subcommand allows a client to be notified when the specified named pipe is available to be connected to.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS_call_nmpipe</pre></td>
+          
+          <td><pre>1:37:84</pre></td>
+          
+          <td>The TRANS_CALL_NMPIPE subcommand allows a client to open a named pipe, issue a write to the named pipe, issue a read from the named pipe, and close the named pipe.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_open2</pre></td>
+          
+          <td><pre>1:50:0</pre></td>
+          
+          <td>Open or create a file and set extended attributes on the file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_find_first2</pre></td>
+          
+          <td><pre>1:50:1</pre></td>
+          
+          <td> Begin a search for file(s) within a directory or for a directory.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_find_next2</pre></td>
+          
+          <td><pre>1:50:2</pre></td>
+          
+          <td>Continue a search for file(s) within a directory or for a directory. The search MUST have been initiated using TRANS2_FIND_FIRST2.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_query_fs_info</pre></td>
+          
+          <td><pre>1:50:3</pre></td>
+          
+          <td>Request information about the object store underlying a share on the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_set_fs_information</pre></td>
+          
+          <td><pre>1:50:4</pre></td>
+          
+          <td>This subcommand is reserved but not implemented.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_query_path_information</pre></td>
+          
+          <td><pre>1:50:5</pre></td>
+          
+          <td>Get information about a specific file or directory. There are several information levels that can be queried.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_set_path_information</pre></td>
+          
+          <td><pre>1:50:6</pre></td>
+          
+          <td>Set the standard and extended attribute information of a specific file or directory on the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_query_file_information</pre></td>
+          
+          <td><pre>1:50:7</pre></td>
+          
+          <td>This transaction is an alternative to TRANS2_QUERY_PATH_INFORMATION.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_set_file_information</pre></td>
+          
+          <td><pre>1:50:8</pre></td>
+          
+          <td>This transaction is an alternative to TRANS2_SET_PATH_INFORMATION.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_fsctl</pre></td>
+          
+          <td><pre>1:50:9</pre></td>
+          
+          <td>This subcommand is reserved but not implemented.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_ioctl2</pre></td>
+          
+          <td><pre>1:50:10</pre></td>
+          
+          <td>This subcommand is reserved but not implemented.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_find_notify_first</pre></td>
+          
+          <td><pre>1:50:11</pre></td>
+          
+          <td>This command was rendered obsolete.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_find_notify_next</pre></td>
+          
+          <td><pre>1:50:12</pre></td>
+          
+          <td>This command was rendered obsolete.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_create_directory</pre></td>
+          
+          <td><pre>1:50:13</pre></td>
+          
+          <td>This transaction is used to create a new directory and can be used to set extended attribute information.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_session_setup</pre></td>
+          
+          <td><pre>1:50:14</pre></td>
+          
+          <td>This subcommand is reserved but not implemented.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_get_dfs_referral</pre></td>
+          
+          <td><pre>1:50:16</pre></td>
+          
+          <td>Request a referral for a disk object in DFS.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_TRANS2_report_dfs_inconsistency</pre></td>
+          
+          <td><pre>1:50:17</pre></td>
+          
+          <td>This subcommand is reserved but not implemented.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_NT_TRANSACT_create</pre></td>
+          
+          <td><pre>1:160:1</pre></td>
+          
+          <td>This transaction subcommand is used to create or open a file or directory when extended attributes (EAs) or a security descriptor (SD) need to be applied.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_NT_TRANSACT_ioctl</pre></td>
+          
+          <td><pre>1:160:2</pre></td>
+          
+          <td>This transaction subcommand allows IOCTL and FSCTL functions to be transferred transparently from client to server. This command is useful for sending platform-specific or implementation-specific information to the server.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_NT_TRANSACT_set_security_desc</pre></td>
+          
+          <td><pre>1:160:3</pre></td>
+          
+          <td>This transaction subcommand allows a client to set the security descriptors for a file.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_NT_TRANSACT_notify_change</pre></td>
+          
+          <td><pre>1:160:4</pre></td>
+          
+          <td>This command notifies the client when the directory, specified by FID, is modified. It also returns the names of all file system objects that changed, and the ways in which they were modified. The command is a "single shot" and therefore needs to be reissued to watch for more directory changes.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_NT_TRANSACT_rename</pre></td>
+          
+          <td><pre>1:160:5</pre></td>
+          
+          <td>This subcommand was reserved but not implemented.</td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">SMB_NT_TRANSACT_query_security_desc</pre></td>
+          
+          <td><pre>1:160:6</pre></td>
+          
+          <td>This transaction subcommand allows a client to retrieve the security descriptor for a file.</td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  <h3 id="tls_version-items">
+    Type <a href="#type-tls_version">tls_version</a>
+  </h3>
+  
+  <table class="List">
+    <thead>
+    <tr><th>Name</th>
+      
+      <th>Value</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+      <tr><td><pre style="white-space: pre-wrap">SSL 3.0</pre></td>
+          
+          <td><pre>48&nbsp;-&nbsp;0x30</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TLS 1.0</pre></td>
+          
+          <td><pre>49&nbsp;-&nbsp;0x31</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TLS 1.1</pre></td>
+          
+          <td><pre>50&nbsp;-&nbsp;0x32</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TLS 1.2</pre></td>
+          
+          <td><pre>51&nbsp;-&nbsp;0x33</pre></td>
+          
+      </tr>
+    
+      <tr><td><pre style="white-space: pre-wrap">TLS 1.3</pre></td>
+          
+          <td><pre>52&nbsp;-&nbsp;0x34</pre></td>
+          
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+  
+  
