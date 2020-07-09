@@ -11,7 +11,7 @@ title: Sensors Defintions
 ---
 
 
-<h2>Table of contents</h2>
+# Table of contents
 <div class="Nav">
 <ol>
   <li><a href="#fields-list">Fields</a>
