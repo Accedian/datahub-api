@@ -2,44 +2,52 @@
 title: Functions
 ---
 
-# Entry Points (DEBUG: show all functions)
-### Query
-* `list-fields`		List all available fields and type descriptions.
-`query`		Request PVX data with the PVQL language.
-### Test
-`echo`		Echo back the passed arguments.
-### Other
-`cancel`		Cancel an API call.
-`get-api-version`		Return the API version.
+# Entry Points 
+## Query
+* list-fields		List all available fields and type descriptions.
+* query		Request PVX data with the PVQL language.
+## Test
+* echo		Echo back the passed arguments.
+## Other
+* cancel		Cancel an API call.
+* get-api-version		Return the API version.
 
-# Arguments
+# cancel
+
+Cancel an API call.
+
+## Arguments
 
 - `id`: The ID of the call to cancel.
 
-# Returns
+## Returns
 
 A boolean indicating if the cancellation succeeded.
 
-# Example
+## Example 
 
     => cancel id="Query-DXGWL"
     true
-echo
+
+# echo
+
 Echo back the passed arguments.
 
 This is a test function, perfect to get a feel of the API.
 
-# Example
+## Example 
 
     => echo name="Neptune" radius=24622
     {"name": "Neptune", "radius": 24622}
-get-api-version
+
+# get-api-version
 Return the API version.
-list-fields
+
+# list-fields
 , "layers": [], "category": , "type": {...}, "description": { "default": , "layer1" : , ... }, "title": { "default": , "layer2" : , ... }, "short_title": { "default": , "layer1" : , "layer2" : , ... }, "kind": "regular" }, ...], "types": { : { "value_type": , "strict": , "items": [{ "value": , "name" : , ... }, ...], "default_format": }, ... } } ``` ">
 List all available fields and type descriptions.
 
-# Returns
+## Returns
 
 An object of the form:
 
@@ -77,21 +85,17 @@ An object of the form:
                 "name" : ,
                 ...
             }, ...],
-            "default_format": 
+            "default_format":
         },
         ...
     }
 }
 ```
-## Missing function name
-` {"query": {"value": "10.0.0.0"}, "traffic": {"value": 89930326910}}, {"": {"value": "172.0.0.0"}, "traffic": {"value": 31681460665}}, {"": {"value": "192.0.0.0"}, "traffic": {"value": 7825192006}}, {"": {"value": "\u00f8"}, "traffic": {"status": "empty"}}, {"": {"value": "55.0.0.0"}, "traffic": {"value": 62848673}} ] } `
-
-
-
- The `meta` entry This entry is directly linked to the `data`, i.e. there will be no `meta` entry unless there is a `data` one. It contains the following information: - `sorted`: whether the rows in `data` are sorted or not. - `elapsed`: the duration for building this chunk. - `accumulatedTime`: the total duration since the start of the query. - `emptyData`: whether there was actual data for the requested period of time. If `true`, when using `compact` mode, a `null` value should be interpreted as the absence of data. - `totalRowsToRead`: total number of rows read by ClickHouse. Here is an example. ```json { "meta": { "accumulatedTime": 0.02259683609008789, "elapsed": 0.017426252365112305, "sorted": true, "totalRowsToRead": 554457 } } ``` ">
+# query
+": {"value": "10.0.0.0"}, "traffic": {"value": 89930326910}}, {"": {"value": "172.0.0.0"}, "traffic": {"value": 31681460665}}, {"": {"value": "192.0.0.0"}, "traffic": {"value": 7825192006}}, {"": {"value": "\u00f8"}, "traffic": {"status": "empty"}}, {"": {"value": "55.0.0.0"}, "traffic": {"value": 62848673}} ] } ``` ## The `meta` entry This entry is directly linked to the `data`, i.e. there will be no `meta` entry unless there is a `data` one. It contains the following information: - `sorted`: whether the rows in `data` are sorted or not. - `elapsed`: the duration for building this chunk. - `accumulatedTime`: the total duration since the start of the query. - `emptyData`: whether there was actual data for the requested period of time. If `true`, when using `compact` mode, a `null` value should be interpreted as the absence of data. - `totalRowsToRead`: total number of rows read by ClickHouse. Here is an example. ```json { "meta": { "accumulatedTime": 0.02259683609008789, "elapsed": 0.017426252365112305, "sorted": true, "totalRowsToRead": 554457 } } ``` ">
 Request PVX data with the PVQL language.
 
-# Arguments
+## Arguments
 
 - `expr`: The PVQL expression to execute.
 - `variables`: An optional object to map variables values used in the PVQL expression.
@@ -105,7 +109,7 @@ Request PVX data with the PVQL language.
 
 See the [PVQL](./pvql) topic for a detailed description of the language.
 
-# Returns
+## Returns
 
 This function returns a series of chunks.
 
