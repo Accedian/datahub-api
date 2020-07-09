@@ -14,7 +14,7 @@ title: Sensors Defintions
 
 <h2 id="fields-list">Fields</h2>
 <p class="Subtitle">
-List of fields (both <em>values</em> and <em>keys</em>) used in <a href="#query">PVQL</a> to query data.
+List of fields (both <em>values</em> and <em>keys</em>) used in <a href="query">PVQL</a> to query data.
 </p>
 <div id="filter-by-layer"></div>
 <section>
