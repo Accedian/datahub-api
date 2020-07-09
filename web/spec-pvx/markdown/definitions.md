@@ -1,4 +1,7 @@
-# Definitions
+---
+layout: Dinky
+title: Sensors Defintions
+---
 
 <h2>Table of contents</h2>
 <div class="Nav">
