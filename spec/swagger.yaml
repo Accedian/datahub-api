@@ -99,6 +99,8 @@ paths:
           description: "Unexpected error processing request"
           schema:
             type: string
+      tags:
+        - OpenIDConnectService
 
   /callback:
     get:
@@ -128,6 +130,8 @@ paths:
           description: "Unexpected error processing request"
           schema:
             type: string
+      tags:
+        - OpenIDConnectService
 
   /openid-configuration/{clientName}:
     get:
@@ -147,6 +151,8 @@ paths:
           required: true
           type: string
           description: "The name of the openID provider we're trying to access"
+      tags:
+        - OpenIDConnectService
 
   /openid-token/{clientName}:
     post:
@@ -193,6 +199,8 @@ paths:
           required: true
           type: string
           description: "The name of the openID provider we're trying to access"
+      tags:
+        - OpenIDConnectService
 
 
   /openid-auth:
@@ -235,6 +243,8 @@ paths:
           required: true
           type: string
           default: "openid"
+      tags:
+        - OpenIDConnectService
 
 
   /v1/grant:
