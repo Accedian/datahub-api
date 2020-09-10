@@ -58,9 +58,9 @@ The group clause (with the `BY` keyword) specifies how to partition the
 results: by time, by zones, applications, IP subnets, etc. You can group
 by multiple expressions.
 
-    client.traffic BY application FROM transport
+    client.traffic BY application.name FROM transport
     
-    traffic BY client.zone, server.zone FROM transport
+    traffic BY client.zone.name, server.zone FROM transport
     
     traffic BY time(600) FROM transport
 
@@ -74,10 +74,10 @@ actually the data accumulated between 11:50:00 and 12:00:00.
 The filter specified with the `WHERE` keyword lets you limit the query
 to certain keys.
 
-    client.traffic BY layer, application FROM transport WHERE application != "http"
+    client.traffic BY layer, application.name FROM transport WHERE application.name != "http"
     
-    client.rtt BY client.ip FROM transport WHERE (application = "http"
-        OR application = "https") AND server.zone IN "/Local"
+    client.rtt BY client.ip FROM transport WHERE (application.name = "http"
+        OR application.name = "https") AND server.zone IN "/Local"
 
 Notice the `IN` operator in this last example. It allows for filtering
 on the `"/Local"` zone or any of its children.
@@ -101,14 +101,14 @@ There are also functions `text` / `itext` for simple string comparisons
 You can further filter the final result with an `HAVING` clause, to keep
 only the rows matching the given expression.
 
-    client.traffic BY application FROM transport HAVING client.traffic >= 10000
+    client.traffic BY application.name FROM transport HAVING client.traffic >= 10000
 
 Additionnaly, if you need to eliminate values at an early stage of the
 query, you can filter fields directly in the `WHERE` clause using the
 `raw.` prefix. Note that filtering this way requires a certain knowledge
 of the way we store data.
 
-    client.traffic, client.dtt BY application FROM transport WHERE raw.client.dtt != 0
+    client.traffic, client.dtt BY application.name FROM transport WHERE raw.client.dtt != 0
 
 ## Window and Ordering
 
@@ -116,24 +116,24 @@ The window & ordering clause (which uses the `TOP` keyword) allows to
 order and extract a portion of the result. To extract the first 5
 results, use the following:
 
-    client.traffic BY application FROM transport TOP 5
+    client.traffic BY application.name FROM transport TOP 5
 
 To request 10 lines of data while skipping the first 5 (that is, at
 offset 5, since offsets start at 0), use the following:
 
-    client.traffic, server.traffic BY client.zone, server.zone FROM transport TOP 10@5
+    client.traffic, server.traffic BY client.zone.name, server.zone FROM transport TOP 10@5
 
 The `ALL` keyword lets you request all lines of data starting at a given
 offset:
 
-    client.traffic, server.traffic BY client.zone, server.zone FROM transport TOP ALL@5
+    client.traffic, server.traffic BY client.zone.name, server.zone FROM transport TOP ALL@5
 
 As for sorting, PVQL lets you sort on any or all of the values and keys
 in the query. The i-th value is referred to by the name `vi`, while the
 j-th key is referred to by the name `kj`. These names are used in the
 `TOP` clause:
 
-    client.traffic, server.traffic BY client.zone, server.zone FROM transport
+    client.traffic, server.traffic BY client.zone.name, server.zone FROM transport
         TOP 10@5 {v2 ASC, k1 ASC}
 
 The sort direction accepts `ASC` or `DESC`. By default, the keys are
@@ -153,7 +153,7 @@ Please note that you can only sort on expressions present in the query.
 
 The `FROM` clause lets you specify which layer to request.
 
-    global.dtt BY application FROM http
+    global.dtt BY application.name FROM http
 
 ## Date Range
 
@@ -161,7 +161,7 @@ The `SINCE` / `UNTIL` clauses allow for limitting the query to a given
 time interval. They accept either the ISO8601 standard, or time
 expressions:
 
-    global.dtt BY application FROM http SINCE @(2018-02-20T10:00:00) UNTIL @now - 60*60
+    global.dtt BY application.name FROM http SINCE @(2018-02-20T10:00:00) UNTIL @now - 60*60
 
 In this example, `@now` refers to the current time in seconds, thus
 `@now - 60*60` refers to 3600 seconds ago (1 hour ago).
@@ -238,7 +238,7 @@ down the whole system.
 Finally, the `RAW` clause lets you disable result aggregation and
 retrieve raw values stored in the database:
 
-    traffic BY application FROM transport RAW
+    traffic BY application.name FROM transport RAW
 
 This query does not return the total traffic for each application, but
 the traffic and application of each database record.
@@ -331,20 +331,20 @@ substituted with the corresponding values.
 For example, if you want a PVQL query regarding an application for a
 specific server, you would usually write something like this:
 
-    server.rt, server.dtt FROM tcp WHERE application = "NC" AND server.ip = 8.8.8.8
+    server.rt, server.dtt FROM tcp WHERE application.name = "NC" AND server.ip = 8.8.8.8
 
 However, you might want to be able to easily choose another IP address
 without rewriting the query each time. For this purpose, you can
 introduce a variable, such as `$server`, in place of the actual value:
 
-    server.rt, server.dtt FROM tcp WHERE application = "NC" AND server.ip = $server
+    server.rt, server.dtt FROM tcp WHERE application.name = "NC" AND server.ip = $server
 
 Then wherever you request data using this query, you pass the
 corresponding value in the `variables` parameters.
 
 Example:
 
-    => query expr="server.rt, server.dtt FROM tcp WHERE application = \"NC\" AND server.ip = $server" \
+    => query expr="server.rt, server.dtt FROM tcp WHERE application.name = \"NC\" AND server.ip = $server" \
     ..       variables={"server": {"value": "8.8.4.4", "type": {"type": "ip"}}}
 
 ## Examples
@@ -377,15 +377,15 @@ in `192.168.0.0/16` (thus for each 256 `192.168.x.0/24` networks):
 Retrieving the 20 highest average server response times for a matrix of
 application × client zone:
 
-    server.rt BY application, client.zone FROM transport TOP 20
+    server.rt BY application.name, client.zone.name FROM transport TOP 20
 
 Retrieving the server traffic per client zone:
 
-    server.traffic BY client.zone FROM transport
+    server.traffic BY client.zone.name FROM transport
 
 Retrieving the server traffic for a matrix of client zone × application:
 
-    server.traffic BY client.zone, application FROM transport
+    server.traffic BY client.zone.name, application.name FROM transport
 
 Retrieving the total traffic by protocol stack for each IPv4 client
 within `192.168.0.0/16`:
@@ -463,7 +463,7 @@ A parent zone, depending on `depth`.
 
 ### Example
 
-`flatten(client.zone, 2)` where `client.zone = "/All/Public/Documents"`
+`flatten(client.zone.name, 2)` where `client.zone.name = "/All/Public/Documents"`
 returns `/All/Public`.
 
 ## glob[](#glob)
