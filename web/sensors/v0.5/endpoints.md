@@ -1,88 +1,64 @@
----
-title: Functions
----
-![](https://accedian.com/wp-content/themes/accedian/images/accedian-logo-gold.svg)
-
 # PVX API
 
 Version 0.5.1
 
-  - [Functions](functions)
-  - [Definitions](definitions)
-  - [PVQL](pvql)
-  - [Changelog](changelog)
-
-## Entry Points
-
-Query
-
-[get-degradations](#get-degradations)
-
-Get the list of fields for each layer, which fields and on which
-aggregation level, the field is degraded.
-
-[list-fields](#list-fields)
-
-List all available fields and type descriptions.
-
-[query](#query)
-
-Request PVX data with the PVQL language.
-
-Test
-
-[echo](#echo)
-
-Echo back the passed arguments.
-
-Other
-
-[cancel](#cancel)
+# cancel
 
 Cancel an API call.
 
-[get-api-version](#get-api-version)
-
-Return the API version.
-
-cancel[¶](#cancel)
-
-Cancel an API call.
-
-# Arguments
+## Arguments
 
   - `id`: The ID of the call to cancel.
 
-# Returns
+## Returns
 
 A boolean indicating if the cancellation succeeded.
 
-# Example
+## Example
 
     => cancel id="Query-DXGWL"
     true
 
-echo[¶](#echo)
+# echo
 
 Echo back the passed arguments.
 
 This is a test function, perfect to get a feel of the API.
 
-# Example
+## Example
 
     => echo name="Neptune" radius=24622
     {"name": "Neptune", "radius": 24622}
 
-get-api-version[¶](#get-api-version)
+# get-api-version
 
 Return the API version.
 
-get-degradations[¶](#get-degradations)
+# get-applications
+
+Retrieve applications configuration.
+
+## Returns
+
+An object with the following entries:
+
+    {
+        <application_id>: {
+            "bca_id": <bca_id>,
+            "is_deleted": <boolean>,        // Flag to see if the application is used.
+            "description": <string>,        // Description of application.
+            "color": <string>,              // Hexadecimal color representation used by the application.
+            "id": <numeric>,                // ID of application.
+            "name": <string>                // Name of application.
+        }, ...
+    }
+
+# get-degradations
 
 Get the list of fields for each layer, which fields and on which
 aggregation level, the field is degraded.
 
-# Returns
+## Returns
 
     {
         <field>: {
@@ -94,11 +70,41 @@ aggregation level, the field is degraded.
         ...
     }
 
-list-fields[¶](#list-fields)
+# get-layers
+
+Get the list of layers, with the minimum granularity of each layer.
+
+## Returns
+
+    {
+        <layer>: {
+            <min granularity>: <duration in seconds>
+        },
+        ...
+    }
+
+# get-zones
+
+Retrieve zones configuration.
+
+## Returns
+
+An object with the following entries:
+
+    {
+        <zone_id>: {
+            "parent_id": <id>,  // ID of the parent, could be empty.
+            "fullpath": <path>, // Path of the current zone.
+            "id": <id>,         // Current ID of zone.
+            "name": <name>      // Name of zone.
+        }, ...
+    }
+
+# list-fields
 
 List all available fields and type descriptions.
 
-# Returns
+## Returns
 
 An object of the form:
 
@@ -141,11 +147,11 @@ An object of the form:
         }
     }
 
-query[¶](#query)
+# query
 
 Request PVX data with the PVQL language.
 
-# Arguments
+## Arguments
 
   - `expr`: The PVQL expression to execute.
   - `variables`: An optional object to map variables values used in the
@@ -160,7 +166,7 @@ Request PVX data with the PVQL language.
 
 See the [PVQL](./pvql) topic for a detailed description of the language.
 
-# Returns
+## Returns
 
 This function returns a series of chunks.
 
@@ -174,7 +180,7 @@ Each chunk contains one or more of the following entries:
 More precisely, the chunk contains one of the following set of entries:
 - `info` - `data` and `meta` - `info`, `data` and `meta`
 
-## The `info` entry
+### The `info` entry
 
 The `info` entry contains important information, such as:
 
@@ -215,14 +221,14 @@ on the first element of the group (is ascendant order).
         ["key", 0, "ASC"]
     ]
 
-## The `data` entry
+### The `data` entry
 
 The `data` entry contains the rows of data resulting from the execution
 of the query.
 
 Its structure depends of the `format` argument.
 
-### The `plain` format
+#### The `plain` format
 
 In this format, the data are structured as an array of rows, where each
 row is made of two parts: the key, and the values.
@@ -268,7 +274,7 @@ results in the following chunk:
 Due to grouping by `server.ip[8]`, each row has a subnet in its key
 portion.
 
-### The `compact` format
+#### The `compact` format
 
 In this format, the data are structured accordingly to the query.
 
@@ -300,7 +306,7 @@ grouped:
         ]
     }
 
-### The `named` format
+#### The `named` format
 
 In this format, each row of the result is an object.
 
@@ -317,7 +323,7 @@ TOP 5`, this will return:
         ]
     }
 
-## The `meta` entry
+### The `meta` entry
 
 This entry is directly linked to the `data`, i.e. there will be no
 `meta` entry unless there is a `data` one.
