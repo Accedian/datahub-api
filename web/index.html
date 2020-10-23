@@ -1,141 +1,1433 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Skylight Analytics API Portal</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-        <!-- Third party plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Accedian Skylight API Portal</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Info</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+<html lang="en-US">
+<head>
+    <title>Skylight Analytics API Portal</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://accedian.com/wp-content/themes/accedian/images/fav-acc-2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://accedian.com/wp-content/themes/accedian/images/fav-acc-2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://accedian.com/wp-content/themes/accedian/images/fav-acc-2/favicon-16x16.png">
+    <link rel="manifest" href="https://accedian.com/wp-content/themes/accedian/images/fav-acc-2/site.webmanifest">
+    <link rel="mask-icon" href="https://accedian.com/wp-content/themes/accedian/images/fav-acc-2/safari-pinned-tab.svg"
+        color="#5bbad5">
+    <link rel="shortcut icon" href="https://accedian.com/wp-content/themes/accedian/images/fav-acc-2/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config"
+        content="https://accedian.com/wp-content/themes/accedian/images/fav-acc-2/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Skylight Analytics API Portal" />
+    <meta property="og:site_name" content="Accedian" />
+    <meta property="article:modified_time" content="2020-10-19T21:17:40+00:00" />
+    <meta property="og:image" content="https://accedian.com/wp-content/uploads/2020/10/diamond-01.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel='dns-prefetch' href='//use.fontawesome.com' />
+    <link rel='stylesheet' id='wp-block-library-css'
+        href='https://accedian.com/wp-includes/css/dist/block-library/style.min.css?ver=5.5.1' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='cta-block-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/cta/style.css?ver=1588599694' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='wp-components-css'
+        href='https://accedian.com/wp-includes/css/dist/components/style.min.css?ver=5.5.1' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='wp-editor-font-css'
+        href='https://fonts.googleapis.com/css?family=Noto+Serif%3A400%2C400i%2C700%2C700i&#038;ver=5.5.1'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='wp-block-editor-css'
+        href='https://accedian.com/wp-includes/css/dist/block-editor/style.min.css?ver=5.5.1' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='wp-nux-css' href='https://accedian.com/wp-includes/css/dist/nux/style.min.css?ver=5.5.1'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='wp-editor-css'
+        href='https://accedian.com/wp-includes/css/dist/editor/style.min.css?ver=5.5.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='wp-block-library-theme-css'
+        href='https://accedian.com/wp-includes/css/dist/block-library/theme.min.css?ver=5.5.1' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='wp-edit-blocks-css'
+        href='https://accedian.com/wp-includes/css/dist/block-library/editor.min.css?ver=5.5.1' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='splash-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/splash/splash.css?ver=1590418877' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='accordion-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/accordion/accordion.css?ver=1587576777'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='action-cards-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/action-cards/action-cards.css?ver=1600191928'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='article-quote-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/article-quote/article-quote.css?ver=1603374544'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='benefits-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/benefits/benefits.css?ver=1588599698'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='blog-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/blog/blog.css?ver=1594907612' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='blog-article-large-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/blog-article-large/blog-article-large.css?ver=1589208011'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='careers-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/careers/careers.css?ver=1589507385' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='career-quote-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/career-quote/career-quote.css?ver=1586378417'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='card-article-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/card-article/card-article.css?ver=1589312843'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='card-hover-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/card-hover/card-hover.css?ver=1592927387'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='card-profile-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/card-profile/card-profile.css?ver=1593014014'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='card-resource-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/card-resource/card-resource.css?ver=1591037283'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='card-quote-tall-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/card-quote-tall/card-quote-tall.css?ver=1588872979'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='card-box-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/card-box/card-box.css?ver=1591037250'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='card-content-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/card-content/card-content.css?ver=1591037250'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='card-quote-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/card-quote/card-quote.css?ver=1592359437'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='contact-banner-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/contact-banner/contact-banner.css?ver=1592406067'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='demo-banner-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/demo-banner/demo-banner.css?ver=1592840658'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='event-agenda-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/event-agenda/event-agenda.css?ver=1601912249'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='event-date-banner-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/event-date-banner/event-date-banner.css?ver=1599752204'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='large-media-and-features-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/large-media-and-features/large-media-and-features.css?ver=1587146707'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='feature-rows-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/feature-rows/feature-rows.css?ver=1587143258'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='gradient-banner-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/gradient-banner/gradient-banner.css?ver=1590021744'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='highlights-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/highlights/highlights.css?ver=1591717943'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='home-articles-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/home-articles/home-articles.css?ver=1584557652'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='home-pyramid-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/home-pyramid/home-pyramid.css?ver=1588205738'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='link-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/link/link.css?ver=1590773543' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='link-banner-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/link-banner/link-banner.css?ver=1603301039'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='link-icon-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/link-icon/link-icon.css?ver=1603290386'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='link-image-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/link-image/link-image.css?ver=1603455050'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='suggested-links-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/suggested-links/suggested-links.css?ver=1591362282'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='table-block-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/table-block/table-block.css?ver=1591107045'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='logo-strip-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/logo-strip/logo-strip.css?ver=1589514290'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='map-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/map/map.css?ver=1586365175' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='problem-solution-banner-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/problem-solution-banner/problem-solution-banner.css?ver=1584557653'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='training-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/training/training.css?ver=1591112925'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='quote-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/quote/quote.css?ver=1587739198' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='quote-centered-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/quote-centered/quote-centered.css?ver=1593708155'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='related-articles-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/related-articles/related-articles.css?ver=1584557654'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='related-content-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/related-content/related-content.css?ver=1586882170'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='services-banner-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/services-banner/services-banner.css?ver=1587958104'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='services-text-area-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/services-text-area/services-text-area.css?ver=1588012499'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='skylight-text-media-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/skylight-text-media/skylight-text-media.css?ver=1603301017'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='skylight-walkthrough-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/skylight-walkthrough/skylight-walkthrough.css?ver=1594213862'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='splash-cebr-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/splash-cebr/splash-cebr.css?ver=1593095669'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='splash-form-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/splash-form/splash-form.css?ver=1589392994'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='splash-video-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/splash-video/splash-video.css?ver=1585102097'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='slider-logos-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/slider-logos/slider-logos.css?ver=1598445071'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='slideshow-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/slideshow/slideshow.css?ver=1588214932'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='slideshow-testimonials-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/slideshow-testimonials/slideshow-testimonials.css?ver=1585063801'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='split-block-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/split-block/split-block.css?ver=1584557657'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='split-text-media-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/split-text-media/split-text-media.css?ver=1587064114'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='thin-banner-css'
+        href='https://accedian.com/wp-content/themes/accedian/blocks/thin-banner/thin-banner.css?ver=1588867102'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome-official-css'
+        href='https://use.fontawesome.com/releases/v5.13.0/css/all.css' type='text/css' media='all'
+        integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+    <link rel='stylesheet' id='font-awesome-official-v4shim-css'
+        href='https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css' type='text/css' media='all'
+        integrity="sha384-/7iOrVBege33/9vHFYEtviVcxjUsNCqyeMnlW/Ms+PH8uRdFkKFmqf9CbVAN0Qef" crossorigin="anonymous" />
+    <style id='font-awesome-official-v4shim-inline-css' type='text/css'>
+        @font-face {
+            font-family: "FontAwesome";
+            src: url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-brands-400.eot"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-brands-400.woff2") format("woff2"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-brands-400.woff") format("woff"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-brands-400.ttf") format("truetype"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+        }
+
+        @font-face {
+            font-family: "FontAwesome";
+            src: url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-solid-900.eot"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-solid-900.woff2") format("woff2"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-solid-900.woff") format("woff"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-solid-900.ttf") format("truetype"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+        }
+
+        @font-face {
+            font-family: "FontAwesome";
+            src: url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-regular-400.eot"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-regular-400.woff2") format("woff2"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-regular-400.woff") format("woff"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-regular-400.ttf") format("truetype"),
+                url("https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+            unicode-range: U+F004-F005, U+F007, U+F017, U+F022, U+F024, U+F02E, U+F03E, U+F044, U+F057-F059, U+F06E, U+F070, U+F075, U+F07B-F07C, U+F080, U+F086, U+F089, U+F094, U+F09D, U+F0A0, U+F0A4-F0A7, U+F0C5, U+F0C7-F0C8, U+F0E0, U+F0EB, U+F0F3, U+F0F8, U+F0FE, U+F111, U+F118-F11A, U+F11C, U+F133, U+F144, U+F146, U+F14A, U+F14D-F14E, U+F150-F152, U+F15B-F15C, U+F164-F165, U+F185-F186, U+F191-F192, U+F1AD, U+F1C1-F1C9, U+F1CD, U+F1D8, U+F1E3, U+F1EA, U+F1F6, U+F1F9, U+F20A, U+F247-F249, U+F24D, U+F254-F25B, U+F25D, U+F267, U+F271-F274, U+F279, U+F28B, U+F28D, U+F2B5-F2B6, U+F2B9, U+F2BB, U+F2BD, U+F2C1-F2C2, U+F2D0, U+F2D2, U+F2DC, U+F2ED, U+F328, U+F358-F35B, U+F3A5, U+F3D1, U+F410, U+F4AD;
+        }
+    </style>
+    <script type="743ae138abee7ee910089336-text/javascript" src='https://code.jquery.com/jquery-3.1.1.min.js?ver=3.1.1'
+        id='jquery-core-js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://accedian.com/wp-content/themes/accedian/public/main.b51d16ed92b892257193.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"
+        type="743ae138abee7ee910089336-text/javascript"></script>
+</head>
+
+<body class="ltr page-template-default page page-id-24491 no-customize-support">
+    <header class="header" id="header">
+        <div class="wrapper">
+            <div class="flex -middle">
+                <a href="https://accedian.com" class="header__logo">
+                    <img alt="Accedian Logo"
+                        src="https://accedian.com/wp-content/themes/accedian/images/accedian-logo-gold.svg">
+                </a>
+                <ul class="header__menu">
+                    <li
+                        class="dropdown-btn js-dd  menu-item menu-item-type-custom menu-item-object-custom menu-item-13633 menu-item-has-children ">
+                        <div class="dd">
+                            <span>Solutions</span>
+                            <svg>
+                                <use
+                                    xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                                </use>
+                            </svg>
+                        </div>
+                        <div class="mega-menu  -full ">
+                            <div class="mega-menu__main">
+                                <div class="mega-menu__col">
+                                    <strong class="mega-menu__col-title">
+                                        <img
+                                            src="https://accedian.com/wp-content/uploads/2020/04/menu-cloud-visibility.svg" />
+                                        Cloud Visibility
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14768"
+                                                href="https://accedian.com/solutions/cloud-migration-monitoring/">Cloud
+                                                Migration Monitoring</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14770"
+                                                href="https://accedian.com/solutions/hybrid-cloud-monitoring/">Hybrid
+                                                Cloud Monitoring</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14769"
+                                                href="https://accedian.com/solutions/public-cloud-visibility/">Public
+                                                Cloud Visibility</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14767"
+                                                href="https://accedian.com/solutions/sdn-virtualization/">SDN &#038;
+                                                Virtualization</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu__col">
+                                    <strong class="mega-menu__col-title">
+                                        <img
+                                            src="https://accedian.com/wp-content/uploads/2020/04/menu-application-performance.svg" />
+                                        Application Performance
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14774"
+                                                href="https://accedian.com/solutions/end-user-experience-monitoring/">End
+                                                User Experience
+                                                Monitoring</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14771"
+                                                href="https://accedian.com/solutions/end-to-end-application-delivery/">End-To-End
+                                                Application
+                                                Delivery</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14772"
+                                                href="https://accedian.com/solutions/saas-visibility/">SaaS
+                                                Visibility</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14773"
+                                                href="https://accedian.com/solutions/upgrades-deployment/">Upgrades
+                                                &#038; Deployment</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu__col">
+                                    <strong class="mega-menu__col-title">
+                                        <img src="https://accedian.com/wp-content/uploads/2020/04/rocket.svg" />
+                                        Network Performance Optimization
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14760"
+                                                href="https://accedian.com/solutions/performance-troubleshooting/">Performance
+                                                Troubleshooting</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14762"
+                                                href="https://accedian.com/solutions/monitoring-the-edge/">Monitoring
+                                                The Edge</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14764"
+                                                href="https://accedian.com/solutions/optimizing-sd-wan-and-end-user-experience/">Optimizing
+                                                SD-WAN</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14761"
+                                                href="https://accedian.com/solutions/network-evolution-5g-performance/">Network
+                                                Evolution &#038;
+                                                5G</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14765"
+                                                href="https://accedian.com/solutions/network-capacity-planning-that-assures-end-user-application-performance/">Capacity
+                                                Planning</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14766"
+                                                href="https://accedian.com/solutions/mobile-backhaul-monitoring-service-demarcation-slas/">Service
+                                                Demarcation, Visibility &#038; SLAs</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu__col">
+                                    <strong class="mega-menu__col-title">
+                                        <img src="https://accedian.com/wp-content/uploads/2020/04/menu-security.svg" />
+                                        Network Traffic Security Analytics
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14778"
+                                                href="https://accedian.com/solutions/behavior-based-intrusion-detection/">Behavior-based
+                                                Intrusion Detection</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14777"
+                                                href="https://accedian.com/solutions/investigation-hunting-forensics/">Investigation,
+                                                Hunting
+                                                &#038; Forensics</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li
+                        class="dropdown-btn js-dd  menu-item menu-item-type-custom menu-item-object-custom menu-item-13639 menu-item-has-children ">
+                        <div class="dd">
+                            <span>Industries</span>
+                            <svg>
+                                <use
+                                    xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                                </use>
+                            </svg>
+                        </div>
+                        <div class="mega-menu ">
+                            <div class="mega-menu__main">
+                                <ul>
+                                    <li>
+                                        <div class="mega-menu__col">
+                                            <strong class="mega-menu__col-title">
+                                                <img
+                                                    src="https://accedian.com/wp-content/uploads/2020/04/Industries-11.svg" />
+                                                Industries
+                                            </strong>
+                                            <ul>
+                                                <li>
+                                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14807"
+                                                        href="https://accedian.com/industries/financial-services/">Financial
+                                                        Services</a>
+                                                </li>
+                                                <li>
+                                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14810"
+                                                        href="https://accedian.com/industries/healthcare/">Healthcare</a>
+                                                </li>
+                                                <li>
+                                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14808"
+                                                        href="https://accedian.com/industries/government/">Government</a>
+                                                </li>
+                                                <li>
+                                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14811"
+                                                        href="https://accedian.com/industries/retail-hospitality/">Retail
+                                                        &#038; Hospitality</a>
+                                                </li>
+                                                <li>
+                                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14802"
+                                                        href="https://accedian.com/industries/cloud-service-providers/">Cloud
+                                                        Service Providers</a>
+                                                </li>
+                                                <li>
+                                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14780"
+                                                        href="https://accedian.com/industries/mobile-network-operators/">Mobile
+                                                        Network
+                                                        Operators</a>
+                                                </li>
+                                                <li>
+                                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14885"
+                                                        href="https://accedian.com/industries/managed-service-providers/">Managed
+                                                        Service
+                                                        Providers</a>
+                                                </li>
+                                                <li>
+                                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14805"
+                                                        href="https://accedian.com/industries/business-services/">Business
+                                                        Services</a>
+                                                </li>
+                                                <li>
+                                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14781"
+                                                        href="https://accedian.com/industries/cable-msos/">Cable
+                                                        MSOs</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-16001"
+                            href="https://accedian.com/platform/skylight/"> Platform</a>
+                    </li>
+                    <li
+                        class="dropdown-btn js-dd  menu-item menu-item-type-custom menu-item-object-custom menu-item-13885 menu-item-has-children ">
+                        <div class="dd">
+                            <span>About Us</span>
+                            <svg>
+                                <use
+                                    xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                                </use>
+                            </svg>
+                        </div>
+                        <div class="mega-menu ">
+                            <div class="mega-menu__main">
+                                <ul>
+                                    <li>
+                                        <div class="mega-menu__col">
+                                            <strong class="mega-menu__col-title">
+                                                <img
+                                                    src="https://accedian.com/wp-content/uploads/2020/04/Blue-Gold-telescope.svg" />
+                                                About Us
+                                            </strong>
+                                            <ul>
+                                                <li>
+                                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-13884"
+                                                        href="/about-us/contact">Contact Us</a>
+                                                </li>
+                                                <li>
+                                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-13937"
+                                                        href="https://accedian.com/about-us/company/">Company</a>
+                                                </li>
+                                                <li>
+                                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14057"
+                                                        href="https://accedian.com/about-us/newsroom/">Newsroom</a>
+                                                </li>
+                                                <li>
+                                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-18159"
+                                                        href="https://accedian.com/about-us/events/">Events</a>
+                                                </li>
+                                                <li>
+                                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14058"
+                                                        href="https://accedian.com/about-us/careers/">Careers</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li
+                        class="dropdown-btn js-dd  menu-item menu-item-type-custom menu-item-object-custom menu-item-13894 menu-item-has-children ">
+                        <div class="dd">
+                            <span>Resources</span>
+                            <svg>
+                                <use
+                                    xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                                </use>
+                            </svg>
+                        </div>
+                        <div class="mega-menu  -full ">
+                            <div class="mega-menu__main">
+                                <div class="mega-menu__col">
+                                    <strong class="mega-menu__col-title">
+                                        <img src="https://accedian.com/wp-content/uploads/2020/04/learn.svg" />
+                                        Learn
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18199"
+                                                href="/resources">All Resources</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18095"
+                                                href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Analyst%20Reports">Analyst
+                                                Reports</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18096"
+                                                href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Case%20Studies">Case
+                                                Studies</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18103"
+                                                href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Data%20Sheets">Data
+                                                Sheets</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18097"
+                                                href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Guides">Guides</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-20407"
+                                                href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Podcasts">Podcasts</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18098"
+                                                href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Solution%20Briefs">Solution
+                                                Briefs</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18099"
+                                                href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Videos">Videos</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18100"
+                                                href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Webinars">Webinars</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18101"
+                                                href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=White%20Papers">White
+                                                Papers</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu__col">
+                                    <strong class="mega-menu__col-title">
+                                        <img src="https://accedian.com/wp-content/uploads/2020/04/blog.svg" />
+                                        Blogs
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18438"
+                                                href="/blog">All Blogs</a>
+                                        </li>
+                                    </ul>
+                                    <div class="mega-menu__articles" style="max-width: 350px">
+                                        <div style="margin-bottom:12px;">
+                                            <strong style="font-size: 14px;">Most Recent Blogs:</strong>
+                                        </div>
+                                        <a
+                                            href="https://accedian.com/blog/the-future-of-enterprise-networking-with-5g-taking-center-stage/">
+                                            <img
+                                                src="https://accedian.com/wp-content/uploads/2020/10/drew-graham-s4dfrh7hdDU-unsplash-scaled.jpg" />
+                                            The future of enterprise networking with 5G taking center stage
+                                        </a>
+                                        <a
+                                            href="https://accedian.com/blog/how-to-secure-todays-perimeter-less-it-environments/">
+                                            <img
+                                                src="https://accedian.com/wp-content/uploads/2020/10/pexels-jaymantri-5439.jpg" />
+                                            How to secure today&#8217;s perimeter-less IT environments
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="mega-menu__col">
+                                    <div class="mega-menu__col-bg"></div>
+                                    <strong class="mega-menu__col-title">
+                                        <img src="https://accedian.com/wp-content/uploads/2020/04/Tools-Support.svg" />
+                                        Tools & Support
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18104"
+                                                href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Tutorials">Tutorials</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18105"
+                                                href="/support">Support</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18106"
+                                                href="/services">Skylight Services</a>
+                                        </li>
+                                        <li>
+                                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18107"
+                                                href="/training-certification/">Skylight Training and Schedule</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="-right flex">
+                <ul class="header__menu">
+                    <li>
+                        <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-13638 "
+                            href="https://accedian.com/partners/">
+                            <span>Partners</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-204 "
+                            href="https://accedian.com/contact/">
+                            <span>Contact Us</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="header__icons">
+                    <li>
+                        <a href="https://accedian.com/?s=">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path
+                                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/fr" style='text-transform: uppercase;margin-left: 4px;position:relative; top:-1px;'>
+                            fr
+                        </a>
+                    </li>
+                </ul>
+                <ul class=" header__menu">
+                    <li>
+                        <a class="btn menu-item menu-item-type-custom menu-item-object-custom menu-item-13637"
+                            href="https://go.accedian.com/platform/demo">
+                            <span>Book A Demo</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger js-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="nav js-mobile-nav">
+            <ul class="nav__main">
+                <li
+                    class="js-accordion  menu-item menu-item-type-custom menu-item-object-custom menu-item-13633 menu-item-has-children">
+                    <div class="dd">
+                        <span>Solutions</span>
+                        <svg>
+                            <use
+                                xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                            </use>
+                        </svg>
+                    </div>
+                    <ul class="nav__subnav">
+                        <li>
+                        <li
+                            class="js-accordion  menu-item menu-item-type-custom menu-item-object-custom menu-item-13640 menu-item-has-children">
+                            <div class="dd">
+                                <span>Cloud Visibility</span>
+                                <svg>
+                                    <use
+                                        xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                                    </use>
+                                </svg>
+                            </div>
+                            <ul class="nav__subnav">
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14768"
+                                        href="https://accedian.com/solutions/cloud-migration-monitoring/">Cloud
+                                        Migration Monitoring</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14770"
+                                        href="https://accedian.com/solutions/hybrid-cloud-monitoring/">Hybrid Cloud
+                                        Monitoring</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14769"
+                                        href="https://accedian.com/solutions/public-cloud-visibility/">Public Cloud
+                                        Visibility</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14767"
+                                        href="https://accedian.com/solutions/sdn-virtualization/">SDN &#038;
+                                        Virtualization</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                        <li
+                            class="js-accordion  menu-item menu-item-type-custom menu-item-object-custom menu-item-13786 menu-item-has-children">
+                            <div class="dd">
+                                <span>Application Performance</span>
+                                <svg>
+                                    <use
+                                        xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                                    </use>
+                                </svg>
+                            </div>
+                            <ul class="nav__subnav">
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14774"
+                                        href="https://accedian.com/solutions/end-user-experience-monitoring/">End User
+                                        Experience
+                                        Monitoring</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14771"
+                                        href="https://accedian.com/solutions/end-to-end-application-delivery/">End-To-End
+                                        Application
+                                        Delivery</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14772"
+                                        href="https://accedian.com/solutions/saas-visibility/">SaaS Visibility</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14773"
+                                        href="https://accedian.com/solutions/upgrades-deployment/">Upgrades &#038;
+                                        Deployment</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                        <li
+                            class="js-accordion  menu-item menu-item-type-custom menu-item-object-custom menu-item-13791 menu-item-has-children">
+                            <div class="dd">
+                                <span>Network Performance Optimization</span>
+                                <svg>
+                                    <use
+                                        xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                                    </use>
+                                </svg>
+                            </div>
+                            <ul class="nav__subnav">
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14760"
+                                        href="https://accedian.com/solutions/performance-troubleshooting/">Performance
+                                        Troubleshooting</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14762"
+                                        href="https://accedian.com/solutions/monitoring-the-edge/">Monitoring The
+                                        Edge</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14764"
+                                        href="https://accedian.com/solutions/optimizing-sd-wan-and-end-user-experience/">Optimizing
+                                        SD-WAN</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14761"
+                                        href="https://accedian.com/solutions/network-evolution-5g-performance/">Network
+                                        Evolution &#038;
+                                        5G</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14765"
+                                        href="https://accedian.com/solutions/network-capacity-planning-that-assures-end-user-application-performance/">Capacity
+                                        Planning</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14766"
+                                        href="https://accedian.com/solutions/mobile-backhaul-monitoring-service-demarcation-slas/">Service
+                                        Demarcation, Visibility &#038; SLAs</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                        <li
+                            class="js-accordion  menu-item menu-item-type-custom menu-item-object-custom menu-item-13788 menu-item-has-children">
+                            <div class="dd">
+                                <span>Network Traffic Security Analytics</span>
+                                <svg>
+                                    <use
+                                        xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                                    </use>
+                                </svg>
+                            </div>
+                            <ul class="nav__subnav">
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14778"
+                                        href="https://accedian.com/solutions/behavior-based-intrusion-detection/">Behavior-based
+                                        Intrusion
+                                        Detection</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14777"
+                                        href="https://accedian.com/solutions/investigation-hunting-forensics/">Investigation,
+                                        Hunting &#038;
+                                        Forensics</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li
+                    class="js-accordion  menu-item menu-item-type-custom menu-item-object-custom menu-item-13639 menu-item-has-children">
+                    <div class="dd">
+                        <span>Industries</span>
+                        <svg>
+                            <use
+                                xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                            </use>
+                        </svg>
+                    </div>
+                    <ul class="nav__subnav">
+                        <li>
+                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14807"
+                                href="https://accedian.com/industries/financial-services/">Financial Services</a>
+                        </li>
+                        <li>
+                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14810"
+                                href="https://accedian.com/industries/healthcare/">Healthcare</a>
+                        </li>
+                        <li>
+                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14808"
+                                href="https://accedian.com/industries/government/">Government</a>
+                        </li>
+                        <li>
+                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14811"
+                                href="https://accedian.com/industries/retail-hospitality/">Retail &#038; Hospitality</a>
+                        </li>
+                        <li>
+                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14802"
+                                href="https://accedian.com/industries/cloud-service-providers/">Cloud Service
+                                Providers</a>
+                        </li>
+                        <li>
+                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14780"
+                                href="https://accedian.com/industries/mobile-network-operators/">Mobile Network
+                                Operators</a>
+                        </li>
+                        <li>
+                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14885"
+                                href="https://accedian.com/industries/managed-service-providers/">Managed Service
+                                Providers</a>
+                        </li>
+                        <li>
+                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14805"
+                                href="https://accedian.com/industries/business-services/">Business Services</a>
+                        </li>
+                        <li>
+                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14781"
+                                href="https://accedian.com/industries/cable-msos/">Cable MSOs</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-16001"
+                        href="https://accedian.com/platform/skylight/">
+                        <span>Platform</span>
+                    </a>
+                </li>
+                <li
+                    class="js-accordion  menu-item menu-item-type-custom menu-item-object-custom menu-item-13885 menu-item-has-children">
+                    <div class="dd">
+                        <span>About Us</span>
+                        <svg>
+                            <use
+                                xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                            </use>
+                        </svg>
+                    </div>
+                    <ul class="nav__subnav">
+                        <li>
+                            <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-13884"
+                                href="/about-us/contact">Contact Us</a>
+                        </li>
+                        <li>
+                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-13937"
+                                href="https://accedian.com/about-us/company/">Company</a>
+                        </li>
+                        <li>
+                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14057"
+                                href="https://accedian.com/about-us/newsroom/">Newsroom</a>
+                        </li>
+                        <li>
+                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-18159"
+                                href="https://accedian.com/about-us/events/">Events</a>
+                        </li>
+                        <li>
+                            <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14058"
+                                href="https://accedian.com/about-us/careers/">Careers</a>
+                        </li>
+                    </ul>
+                </li>
+                <li
+                    class="js-accordion  menu-item menu-item-type-custom menu-item-object-custom menu-item-13894 menu-item-has-children">
+                    <div class="dd">
+                        <span>Resources</span>
+                        <svg>
+                            <use
+                                xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                            </use>
+                        </svg>
+                    </div>
+                    <ul class="nav__subnav">
+                        <li>
+                        <li
+                            class="js-accordion  menu-item menu-item-type-post_type menu-item-object-page menu-item-16004 menu-item-has-children">
+                            <div class="dd">
+                                <span>Learn</span>
+                                <svg>
+                                    <use
+                                        xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                                    </use>
+                                </svg>
+                            </div>
+                            <ul class="nav__subnav">
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18199"
+                                        href="/resources">All Resources</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18095"
+                                        href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Analyst%20Reports">Analyst
+                                        Reports</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18096"
+                                        href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Case%20Studies">Case
+                                        Studies</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18103"
+                                        href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Data%20Sheets">Data
+                                        Sheets</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18097"
+                                        href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Guides">Guides</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-20407"
+                                        href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Podcasts">Podcasts</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18098"
+                                        href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Solution%20Briefs">Solution
+                                        Briefs</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18099"
+                                        href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Videos">Videos</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18100"
+                                        href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Webinars">Webinars</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18101"
+                                        href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=White%20Papers">White
+                                        Papers</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                        <li
+                            class="js-accordion  menu-item menu-item-type-post_type menu-item-object-page menu-item-16003 menu-item-has-children">
+                            <div class="dd">
+                                <span>Blogs</span>
+                                <svg>
+                                    <use
+                                        xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                                    </use>
+                                </svg>
+                            </div>
+                            <ul class="nav__subnav">
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18438"
+                                        href="/blog">All
+                                        Blogs</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                        <li
+                            class="js-accordion  menu-item menu-item-type-custom menu-item-object-custom menu-item-18102 menu-item-has-children">
+                            <div class="dd">
+                                <span>Tools & Support</span>
+                                <svg>
+                                    <use
+                                        xlink:href="/assets/img/fa-regular.svg#chevron-down">
+                                    </use>
+                                </svg>
+                            </div>
+                            <ul class="nav__subnav">
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18104"
+                                        href="https://accedian.com/resources/?posts%5BrefinementList%5D%5Bcategories%5D%5B0%5D=&posts%5BrefinementList%5D%5Bcategories%5D%5B1%5D=Tutorials">Tutorials</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18105"
+                                        href="/support">Support</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18106"
+                                        href="/services">Skylight Services</a>
+                                </li>
+                                <li>
+                                    <a class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-18107"
+                                        href="/training-certification/">Skylight Training and Schedule</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-13638"
+                        href="https://accedian.com/partners/">
+                        <span>Partners</span>
+                    </a>
+                </li>
+                <li>
+                    <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-204"
+                        href="https://accedian.com/contact/">
+                        <span>Contact Us</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/fr">
+                        <span>FR</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/?s=">
+                        <span>Search</span>
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.667 2.6687C1.34066 3.99478 1.34066 6.15188 2.667 7.47796L3.19896 6.94611C2.16591 5.91326 2.16591 4.2334 3.19896 3.20056L2.667 2.6687Z" />
+                            <path
+                                d="M9.54895 7.4626C10.5713 5.54412 10.2756 3.1021 8.65958 1.48635C7.70252 0.527107 6.42724 0 5.0724 0C3.71637 0 2.44228 0.527107 1.48404 1.48635C-0.494191 3.46419 -0.494191 6.68381 1.48404 8.66165C2.44228 9.61971 3.71637 10.148 5.0724 10.148C5.92021 10.148 6.73597 9.94143 7.46266 9.55204L9.91111 12L11.9998 9.91175L9.54895 7.4626ZM5.0724 9.39533C3.91824 9.39533 2.83175 8.94539 2.016 8.1298C0.331061 6.44519 0.331061 3.70281 2.016 2.01702C2.83294 1.20024 3.91824 0.751484 5.0724 0.751484C6.22657 0.751484 7.31305 1.20142 8.1288 2.01702C9.81374 3.70162 9.81374 6.44401 8.1288 8.1298C7.31186 8.94658 6.22657 9.39533 5.0724 9.39533ZM8.11099 9.13771C8.30335 8.99288 8.48621 8.83498 8.65958 8.66165C8.83412 8.48714 8.99205 8.30431 9.13573 8.11199L10.9358 9.91175L9.91111 10.9363L8.11099 9.13771Z" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav__btn">
+                <a class="btn menu-item menu-item-type-custom menu-item-object-custom menu-item-13637"
+                    href="https://go.accedian.com/platform/demo">
+                    <span>Book A Demo</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <style>
+            .api-portal h3,
+            .api-portal h4,
+            .api-portal p {
+                color: #fff;
+            }
+
+
+            .api-portal h3 {
+                margin: 0 0 2rem;
+            }
+
+            .api-portal h3+h3 {
+                margin-top: -2rem;
+            }
+
+            .api-portal-1 p {
+                margin: 0 auto;
+                max-width: 950px;
+            }
+
+            .api-portal-2 h3 {
+                margin-bottom: 3rem;
+            }
+
+            .api-portal-2 {
+                text-align: center;
+            }
+
+            .api-portal-2 img {
+                margin-bottom: 1rem;
+            }
+
+            .api-portal-2 h4 {
+                margin-bottom: 0.5rem;
+            }
+
+            .api-portal-2 .wp-block-columns {
+                margin: 0 auto;
+                max-width: 1100px;
+            }
+
+            .api-portal-3 p {
+                margin: 0;
+            }
+
+            .api-portal-3 p+p {
+                margin-bottom: 3rem;
+            }
+
+            .api-portal-3 .wp-block-columns {
+                margin: 0 auto;
+                max-width: 600px;
+            }
+
+
+            .api-portal-1 {
+                background: linear-gradient(180deg, #000024 0%, #0d2a4b 100%);
+            }
+
+            .api-portal-2 {
+                background: linear-gradient(180deg, #0d2a4b 0%, #1e6181 100%);
+            }
+
+            .api-portal-3 {
+                background: linear-gradient(180deg, #1e6181 0%, #3099b7 100%);
+            }
+        </style>
+        <div>
+            <div class="splash-2020  full-width" id="splash-block_5f8dfd0563172"
+                style='background-image: url(https://accedian.com/wp-content/uploads/2020/10/api-portal-splash.png)'>
+                <div class="cover"></div>
+                <div class="wrapper grid grid-cols-12 gap-5">
+                    <div class="splash__column col-start-1 col-end-13 lg:col-end-10 xl:col-end-8">
+                        <h1>Accedian Skylight API Portal</h1>
+                        <p>Leverage Skylight performance analytics to provide end-user performance visibility and
+                            predictive
+                            analytics to engineering, operations and planning teams</p>
+                        <a class="btn -gold js-scroll-to" href="https://api.analytics.accedian.io/session.html">
+                            Skylights Performance Analytics API </a>
+                    </div>
+                </div>
+            </div>
+            <div class="wp-block-group api-portal-1 api-portal">
+                <div class="wp-block-group__inner-container">
+                    <h3 class="has-text-align-center">Slow is the New Down.</h3>
+                    <h3 class="has-text-align-center">Guarantee Speed with Accedian Skylight.</h3>
+                    <p class="has-text-align-center">Skylight is a cloud-native, always-on performance assurance
+                        platform that
+                        delivers end-to-end network, application and service performance visibility— from the core to
+                        the cloud to
+                        the real user edge.<br>Skylight proactively ensures networks and cloud applications meet
+                        increasingly
+                        stringent performance requirements, allowing you to optimize network capacity and meet demanding
+                        customer
+                        expectations on quality of experience. Skylight leverages its high-quality performance data,
+                        analytics and
+                        machine learning to help you identify, predict and prevent customer-impacting issues.</p>
+                </div>
+            </div>
+            <div class="wp-block-group api-portal-2 api-portal">
+                <div class="wp-block-group__inner-container">
+                    <h3 class="has-text-align-center">At your service</h3>
+                    <div class="wp-block-columns">
+                        <div class="wp-block-column">
+                            <div class="wp-block-image">
+                                <figure class="aligncenter size-large"><img loading="lazy" width="116" height="116"
+                                        src="https://accedian.com/wp-content/uploads/2020/10/diamond-01.png" alt=""
+                                        class="wp-image-24494" /></figure>
+                            </div>
+                            <h4 class="has-text-align-center">Robust API</h4>
+                            <p class="has-text-align-center">We dog food our APIs</p>
+                        </div>
+                        <div class="wp-block-column">
+                            <div class="wp-block-image">
+                                <figure class="aligncenter size-large"><img loading="lazy" width="116" height="116"
+                                        src="https://accedian.com/wp-content/uploads/2020/10/laptop.png" alt=""
+                                        class="wp-image-24496" />
+                                </figure>
+                            </div>
+                            <h4 class="has-text-align-center">Up to date</h4>
+                            <p class="has-text-align-center">Regularly updated</p>
+                        </div>
+                        <div class="wp-block-column">
+                            <div class="wp-block-image">
+                                <figure class="aligncenter size-large"><img loading="lazy" width="116" height="116"
+                                        src="https://accedian.com/wp-content/uploads/2020/10/globe.png" alt=""
+                                        class="wp-image-24498" />
+                                </figure>
+                            </div>
+                            <h4 class="has-text-align-center">Ready to publish</h4>
+                            <p class="has-text-align-center">Production-ready</p>
+                        </div>
+                        <div class="wp-block-column">
+                            <div class="wp-block-image">
+                                <figure class="aligncenter size-large"><img loading="lazy" width="116" height="116"
+                                        src="https://accedian.com/wp-content/uploads/2020/10/heart.png" alt=""
+                                        class="wp-image-24500" />
+                                </figure>
+                            </div>
+                            <h4 class="has-text-align-center">Made with love</h4>
+                            <p class="has-text-align-center">Artisanal API made in Ottawa and Paris</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wp-block-group api-portal-3 api-portal">
+                <div class="wp-block-group__inner-container">
+                    <h3 class="has-text-align-center">Let&#8217;s chat!</h3>
+                    <p class="has-text-align-center">Ready to start your next performance and experience optimization
+                        project?</p>
+                    <p class="has-text-align-center">Give us a call or send us a message and we’ll get back as soon as
+                        we can!</p>
+                    <div class="wp-block-columns">
+                        <div class="wp-block-column">
+                            <a class="link-icon " href="tel:15143312210">
+                                <img width="60" height="60"
+                                    src="https://accedian.com/wp-content/uploads/2020/10/phone-01.png"
+                                    class="attachment-large size-large" alt="" loading="lazy" />
+                                <p>+1.514.331-2210</p>
+                            </a></div>
+                        <div class="wp-block-column">
+                            <a class="link-icon orange" href="https://accedian.com/contact/">
+                                <img width="60" height="60"
+                                    src="https://accedian.com/wp-content/uploads/2020/10/email-01.png"
+                                    class="attachment-large size-large" alt="" loading="lazy" />
+                                <p>Contact Us</p>
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer__top">
+                <div class="wrapper grid row-gap-10 gap-5 grid-cols-12">
+                    <a href="https://accedian.com" class="footer__logo col-span-12 lg:col-span-2">
+                        <img alt="Accedian Logo"
+                            src="https://accedian.com/wp-content/themes/accedian/images/accedian-logo-gold.svg">
+                    </a>
+                    <div class="footer__list col-span-6 sm:col-span-4 lg:col-span-2">
+                        <strong>Get In Touch</strong>
+                        <ul>
+                            <li>
+                                <a class="link" href="/contact">Sales</a>
+                            </li>
+                            <li>
+                                <a class="link" href="/contact">Support</a>
+                            </li>
+                            <li>
+                                <a class="link" href="/partners">Partners</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__list col-span-6 sm:col-span-4 lg:col-span-2">
+                        <strong>Learn</strong>
+                        <ul>
+                            <li>
+                                <a class="link" href="/platform/skylight">Skylight Platform</a>
+                            </li>
+                            <li>
+                                <a class="link" href="/resources">Resources</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://go.accedian.com/platform/demo">Watch a Demo</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://go.accedian.com/free-trial-form">Free Trial</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__list col-span-6 sm:col-span-4 lg:col-span-2">
+                        <strong>About Us</strong>
+                        <ul>
+                            <li>
+                                <a class="link" href="/about-us/newsroom">Newsroom</a>
+                            </li>
+                            <li>
+                                <a class="link" href="/about-us/events">Events</a>
+                            </li>
+                            <li>
+                                <a class="link" href="/about-us/careers">Careers</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__link col-span-12 lg:col-span-4">
+                        <h4>Get the Accedian Top 10</h4>
+                        <p class="text-sm">The 10 most valuable pieces of content for network & app performance
+                            fanatics. Every 2
+                            weeks.</p>
+                        <a href="https://go.accedian.com/accedian-top-10" class="link">
+                            Sign Up
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path
+                                    d="M311.03 131.515l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887l-83.928 83.444c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l116.485-116c4.686-4.686 4.686-12.284 0-16.971L328 131.515c-4.686-4.687-12.284-4.687-16.97 0z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="wrapper">
+                    <ul class="footer__social">
+                        <li>
+                            <a href="https://twitter.com/accedian" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <path
+                                        d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/accedian/?utm_campaign=19%20-%20Social%20activity&utm_source=linkedin&utm_medium=social"
+                                target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <path
+                                        d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/accedian" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <path
+                                        d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCRwN6muy07q93Ufkvp4V3_A" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <path
+                                        d="M186.8 202.1l95.2 54.1-95.2 54.1V202.1zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-42 176.3s0-59.6-7.6-88.2c-4.2-15.8-16.5-28.2-32.2-32.4C337.9 128 224 128 224 128s-113.9 0-142.2 7.7c-15.7 4.2-28 16.6-32.2 32.4-7.6 28.5-7.6 88.2-7.6 88.2s0 59.6 7.6 88.2c4.2 15.8 16.5 27.7 32.2 31.9C110.1 384 224 384 224 384s113.9 0 142.2-7.7c15.7-4.2 28-16.1 32.2-31.9 7.6-28.5 7.6-88.1 7.6-88.1z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="footer__legal">
+                        <li>
+                            <span>&copy; 2020 Accedian</span>
+                        </li>
+                        <li>
+                            <a href="/legal">Legal</a>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center justify-content-center text-center">
-                    <div class="col-lg-10 align-self-end">
-                        <h1 class="text-uppercase text-white font-weight-bold">Slow is the new down</h1>
-                        <hr class="divider my-4" />
-                    </div>
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 font-weight-light mb-5">Leverage Skylight analytics to provide end-user performance visibility and predictive analytics to engineering, operations and planning teams to keep KPIs on track.</p>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="./session.html">Skylight Analytics API</a>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="./sensors/v0.5/functions">Skylight Sensors API</a>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- About-->
-        <section class="page-section bg-primary" id="about">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">Skylight Platform</h2>
-                        <hr class="divider light my-4" />
-                        <p class="text-white-50 mb-4">Skylight is a virtualized performance assurance platform, delivering end-to-end network, application and service performance visibility—right from the user edge to the core network and cloud.
-                        <br/>
-
-Skylight proactively ensures networks and cloud applications meet increasingly stringent performance requirements, optimize network capacity and meet demanding customer expectations on quality of experience.
-<br/>
-Skylight leverages its high-quality performance data, analytics and machine learning to identify, predict and prevent customer-impacting issues.
-
-</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Services-->
-        <section class="page-section" id="services">
-            <div class="container">
-                <h2 class="text-center mt-0">At Your Service</h2>
-                <hr class="divider my-4" />
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <i class="fas fa-4x fa-gem text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Robust API</h3>
-                            <p class="text-muted mb-0">We dog food our APIs</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Up to Date</h3>
-                            <p class="text-muted mb-0">Regularly updated</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <i class="fas fa-4x fa-globe text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Ready to Publish</h3>
-                            <p class="text-muted mb-0">Production ready</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <i class="fas fa-4x fa-heart text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Made with Love</h3>
-                            <p class="text-muted mb-0">Artisanal API made in Ottawa and Paris</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="page-section" id="contact">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="mt-0">Let's Get In Touch!</h2>
-                        <hr class="divider my-4" />
-                        <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-                        <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-                        <div>+1.514.331-2210</div>
-                    </div>
-                    <div class="col-lg-4 mr-auto text-center">
-                        <i class="fas fa-envelope fa-3x mb-3 text-muted"></i
-                        ><!-- Make sure to change the email address in BOTH the anchor text and the link target below!--><a class="d-block" href="https://accedian.com/contact/">contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="bg-light py-5">
-            <div class="container"><div class="small text-center text-muted">Copyright © 2020 - Accedian Networks</div></div>
         </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+        <footer class="footer__secondary"></footer>
+    </main>
+    <div class="cookie" id="cookies-msg">
+        <div class="wrapper">
+            <p>
+                This website stores cookies on your computer. These cookies are used to improve our website and provide
+                more
+                personalized services to you, both on this website and through other media. To find out more about the
+                cookies
+                we use, see our <a href="/legal/cookie-policy/">Cookies Policy</a>. You accept the use of cookies by
+                clicking a
+                link or button or by continuing to browse otherwise.
+            </p>
+            <div class="btn -telecom js-btn"><span>Accept</span></div>
+            <div class="btn -grey js-btn-decline"><span>Decline</span></div>
+        </div>
+    </div>
+    <script src="https://accedian.com/wp-content/themes/accedian/public/app.b51d16ed92b892257193.js"
+        type="743ae138abee7ee910089336-text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+        type="743ae138abee7ee910089336-text/javascript"></script>
+    <script type="743ae138abee7ee910089336-text/javascript">
+        (function () {
+            var request, b = document.body,
+                c = 'className',
+                cs = 'customize-support',
+                rcs = new RegExp('(^|\\s+)(no-)?' + cs + '(\\s+|$)');
+
+            request = true;
+
+            b[c] = b[c].replace(rcs, ' ');
+            // The customizer requires postMessage and CORS (if the site is cross domain).
+            b[c] += (window.postMessage && request ? ' ' : ' no-') + cs;
+        }());
+    </script>
+    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
+        data-cf-settings="743ae138abee7ee910089336-|49" defer=""></script>
+</body>
 </html>
