@@ -1,16 +1,6 @@
----
-title: Sensors Definitions
----
-![](https://accedian.com/wp-content/themes/accedian/images/accedian-logo-gold.svg)
-
 # PVX API
 
 Version 0.5.1
-
-  - [Functions](functions)
-  - [Definitions](definitions)
-  - [PVQL](pvql)
-  - [Changelog](changelog)
 
 ## Table of contents
 
@@ -3310,12 +3300,12 @@ smb</code></pre></td>
 <td>The total amount of bytes of payload in request PDUs (protocol data units) emitted by the client</td>
 </tr>
 <tr class="even">
-<td><span id="field-request.payload.md5"></span>
-<pre><code>request.payload.md5</code></pre></td>
-<td><a href="#type-md5"></a>
-<pre><code>md5</code></pre></td>
+<td><span id="field-request.payload.sha256"></span>
+<pre><code>request.payload.sha256</code></pre></td>
+<td><a href="#type-sha256"></a>
+<pre><code>sha256</code></pre></td>
 <td><pre><code>http</code></pre></td>
-<td>The hash md5 calculated using the bytes of payload in request PDUs (protocol data units) emitted by the client</td>
+<td>The hash sha256 calculated using the bytes of payload in request PDUs (protocol data units) emitted by the client</td>
 </tr>
 <tr class="odd">
 <td><span id="field-request.traffic"></span>
@@ -3400,12 +3390,12 @@ smb</code></pre></td>
 <td>The total amount of bytes of payload in response PDUs (protocol data units) emitted by the server</td>
 </tr>
 <tr class="odd">
-<td><span id="field-response.payload.md5"></span>
-<pre><code>response.payload.md5</code></pre></td>
-<td><a href="#type-md5"></a>
-<pre><code>md5</code></pre></td>
+<td><span id="field-response.payload.sha256"></span>
+<pre><code>response.payload.sha256</code></pre></td>
+<td><a href="#type-sha256"></a>
+<pre><code>sha256</code></pre></td>
 <td><pre><code>http</code></pre></td>
-<td>The hash md5 calculated using the bytes of payload in response PDUs (protocol data units) emitted by the server</td>
+<td>The hash sha256 calculated using the bytes of payload in response PDUs (protocol data units) emitted by the server</td>
 </tr>
 <tr class="even">
 <td><span id="field-response.pdus"></span>
@@ -4494,12 +4484,12 @@ voip</code></pre></td>
 <td>The raw SMB command</td>
 </tr>
 <tr class="odd">
-<td><span id="field-smb.md5"></span>
-<pre><code>smb.md5</code></pre></td>
-<td><a href="#type-md5"></a>
-<pre><code>md5</code></pre></td>
+<td><span id="field-smb.sha256"></span>
+<pre><code>smb.sha256</code></pre></td>
+<td><a href="#type-sha256"></a>
+<pre><code>sha256</code></pre></td>
 <td><pre><code>smb</code></pre></td>
-<td>The MD5 hash</td>
+<td>The sha256 hash</td>
 </tr>
 <tr class="even">
 <td><span id="field-smb.status"></span>
@@ -5527,7 +5517,7 @@ voip</code></pre></td>
 <tbody>
 <tr class="odd">
 <td><pre><code>alerttypes</code></pre></td>
-<td><pre><code>array</code></pre></td>
+<td><pre><code>array&lt;str&gt;</code></pre></td>
 <td><a href="#alerttypes-items">items</a></td>
 <td>-</td>
 </tr>
@@ -5659,7 +5649,7 @@ voip</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre><code>icmpmessage</code></pre></td>
-<td><pre><code>tuple</code></pre></td>
+<td><pre><code>tuple&lt;int, int&gt;</code></pre></td>
 <td><a href="#icmpmessage-items">items</a></td>
 <td>Yes</td>
 </tr>
@@ -5706,73 +5696,73 @@ voip</code></pre></td>
 <td>-</td>
 </tr>
 <tr class="odd">
-<td><pre><code>md5</code></pre></td>
-<td><pre><code>str</code></pre></td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr class="even">
 <td><pre><code>mimetype</code></pre></td>
 <td><pre><code>str</code></pre></td>
 <td>-</td>
 <td>-</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><pre><code>number</code></pre></td>
 <td><pre><code>int</code></pre></td>
 <td>-</td>
 <td>-</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><pre><code>os</code></pre></td>
 <td><pre><code>int</code></pre></td>
 <td><a href="#os-items">items</a></td>
 <td>No</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><pre><code>path</code></pre></td>
 <td><pre><code>str|null</code></pre></td>
 <td>-</td>
 <td>-</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><pre><code>pktsourcekind</code></pre></td>
 <td><pre><code>int</code></pre></td>
 <td><a href="#pktsourcekind-items">items</a></td>
 <td>No</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><pre><code>pktsourcename</code></pre></td>
 <td><pre><code>str</code></pre></td>
 <td>-</td>
 <td>-</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><pre><code>pktsourcepair</code></pre></td>
-<td><pre><code>tuple</code></pre></td>
+<td><pre><code>tuple&lt;int, str&gt;</code></pre></td>
 <td>-</td>
 <td>-</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><pre><code>poller</code></pre></td>
 <td><pre><code>str</code></pre></td>
 <td>-</td>
 <td>-</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><pre><code>poller_id</code></pre></td>
 <td><pre><code>str</code></pre></td>
 <td>-</td>
 <td>-</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><pre><code>port</code></pre></td>
 <td><pre><code>int</code></pre></td>
 <td>-</td>
 <td>-</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><pre><code>protostack</code></pre></td>
+<td><pre><code>str</code></pre></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td><pre><code>sha256</code></pre></td>
 <td><pre><code>str</code></pre></td>
 <td>-</td>
 <td>-</td>
@@ -5785,7 +5775,7 @@ voip</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre><code>smbcommand</code></pre></td>
-<td><pre><code>tuple</code></pre></td>
+<td><pre><code>tuple&lt;int, int&gt;</code></pre></td>
 <td><a href="#smbcommand-items">items</a></td>
 <td>Yes</td>
 </tr>
@@ -5797,7 +5787,7 @@ voip</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre><code>smbsubcommand</code></pre></td>
-<td><pre><code>tuple</code></pre></td>
+<td><pre><code>tuple&lt;int, int, int&gt;</code></pre></td>
 <td><a href="#smbsubcommand-items">items</a></td>
 <td>Yes</td>
 </tr>
@@ -6036,11 +6026,11 @@ voip</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Inbound</code></pre></td>
-<td><pre><code>0 - 0x0</code></pre></td>
+<td><pre><code>0 - 0x0</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Outbound</code></pre></td>
-<td><pre><code>1 - 0x1</code></pre></td>
+<td><pre><code>1 - 0x1</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -6061,31 +6051,31 @@ voip</code></pre></td>
 <tbody>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>In ring</code></pre></td>
-<td><pre><code>0 - 0x0</code></pre></td>
+<td><pre><code>0 - 0x0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Hang down</code></pre></td>
-<td><pre><code>1 - 0x1</code></pre></td>
+<td><pre><code>1 - 0x1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Dial</code></pre></td>
-<td><pre><code>2 - 0x2</code></pre></td>
+<td><pre><code>2 - 0x2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Out ring</code></pre></td>
-<td><pre><code>3 - 0x3</code></pre></td>
+<td><pre><code>3 - 0x3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Voice</code></pre></td>
-<td><pre><code>4 - 0x4</code></pre></td>
+<td><pre><code>4 - 0x4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Hang up</code></pre></td>
-<td><pre><code>5 - 0x5</code></pre></td>
+<td><pre><code>5 - 0x5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Closed</code></pre></td>
-<td><pre><code>6 - 0x6</code></pre></td>
+<td><pre><code>6 - 0x6</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -6113,337 +6103,337 @@ This field does not allow any custom items.
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXSCRN</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>0 - 0x0</code></pre></td>
+<td><pre><code>0 - 0x0</code></pre></td>
 <td>CTXSCRN</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXLPT1</code></pre></td>
 <td>Printer and scanner management</td>
-<td><pre><code>1 - 0x1</code></pre></td>
+<td><pre><code>1 - 0x1</code></pre></td>
 <td>CTXLPT1: Printer mapping for non-spooling client (Thin client devices) - vdcpm30N.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXLPT2</code></pre></td>
 <td>Printer and scanner management</td>
-<td><pre><code>2 - 0x2</code></pre></td>
+<td><pre><code>2 - 0x2</code></pre></td>
 <td>CTXLPT2: Printer mapping for non-spooling client (Thin client devices) - vdcpm30N.dll</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXSBR</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>3 - 0x3</code></pre></td>
+<td><pre><code>3 - 0x3</code></pre></td>
 <td>CTXSBR: Browser acceleration - vdtw30n.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXCPM</code></pre></td>
 <td>Printer and scanner management</td>
-<td><pre><code>4 - 0x4</code></pre></td>
+<td><pre><code>4 - 0x4</code></pre></td>
 <td>CTXCPM: Printer mapping for client spooler - vdcpm30N.dll</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXCOM1</code></pre></td>
 <td>Printer and scanner management</td>
-<td><pre><code>5 - 0x5</code></pre></td>
+<td><pre><code>5 - 0x5</code></pre></td>
 <td>CTXCOM1: Printer mapping for non-spooling client (Thin client devices) - vdcom30N.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXCOM2</code></pre></td>
 <td>Printer and scanner management</td>
-<td><pre><code>6 - 0x6</code></pre></td>
+<td><pre><code>6 - 0x6</code></pre></td>
 <td>CTXCOM2: Printer mapping for non-spooling client (Thin client devices) - vdcom30N.dll</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXCCM</code></pre></td>
 <td>Peripherals forwarding (like USB)</td>
-<td><pre><code>7 - 0x7</code></pre></td>
+<td><pre><code>7 - 0x7</code></pre></td>
 <td>CTXCCM: Client COM port mapping - vdcom30N.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXTW</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>8 - 0x8</code></pre></td>
+<td><pre><code>8 - 0x8</code></pre></td>
 <td>CTXTW: Remote Windows screen update (ThinWire) - vdtw30n.dll</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXCDM</code></pre></td>
 <td>Peripherals forwarding (like USB)</td>
-<td><pre><code>9 - 0x9</code></pre></td>
+<td><pre><code>9 - 0x9</code></pre></td>
 <td>CTXCDM: Client drive mapping - vdcdm30n.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SHADOW</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>10 - 0xA</code></pre></td>
+<td><pre><code>10 - 0xA</code></pre></td>
 <td>SHADOW</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXOEM</code></pre></td>
 <td>Implementation and usage defined by O.E.M.</td>
-<td><pre><code>11 - 0xB</code></pre></td>
+<td><pre><code>11 - 0xB</code></pre></td>
 <td>CTXOEM: Used by Original Equipment Manufacturers</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXOEM2</code></pre></td>
 <td>Implementation and usage defined by O.E.M.</td>
-<td><pre><code>12 - 0xC</code></pre></td>
+<td><pre><code>12 - 0xC</code></pre></td>
 <td>CTXOEM2: Used by Original Equipment Manufacturers</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXCLIP</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>13 - 0xD</code></pre></td>
+<td><pre><code>13 - 0xD</code></pre></td>
 <td>CTXCLIP: Client clipboard - vdclipn.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXCAM</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>14 - 0xE</code></pre></td>
+<td><pre><code>14 - 0xE</code></pre></td>
 <td>CTXCAM: Client audio mapping - vdcamN.dll</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXDRTP</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>15 - 0xF</code></pre></td>
+<td><pre><code>15 - 0xF</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXTWI</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>16 - 0x10</code></pre></td>
+<td><pre><code>16 - 0x10</code></pre></td>
 <td>CTXTWI: Seamless Windows screen update data (ThinWire)</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXZLFK</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>17 - 0x11</code></pre></td>
+<td><pre><code>17 - 0x11</code></pre></td>
 <td>CTXZLFK: Local Text Echo and Keyboard Feedback / Screen latency reduction (fonts) - vdzlcn.dll, vdfon30n.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXTUI</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>18 - 0x12</code></pre></td>
+<td><pre><code>18 - 0x12</code></pre></td>
 <td>Transparent User Interface</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXCTL</code></pre></td>
 <td>Core Citrix channels (updates, licensing, configuration, ...)</td>
-<td><pre><code>19 - 0x13</code></pre></td>
+<td><pre><code>19 - 0x13</code></pre></td>
 <td>CTXCTL: Citrix control virtual channel - vdctln.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXSCRD</code></pre></td>
 <td>Authentication related</td>
-<td><pre><code>20 - 0x14</code></pre></td>
+<td><pre><code>20 - 0x14</code></pre></td>
 <td>CTXSCRD: Smartcard - vdscardn.dll</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXEUEM</code></pre></td>
 <td>Core Citrix channels (updates, licensing, configuration, ...)</td>
-<td><pre><code>21 - 0x15</code></pre></td>
+<td><pre><code>21 - 0x15</code></pre></td>
 <td>CTXEUEM: End user experience monitoring - vdeuemn.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXLIC</code></pre></td>
 <td>Core Citrix channels (updates, licensing, configuration, ...)</td>
-<td><pre><code>22 - 0x16</code></pre></td>
+<td><pre><code>22 - 0x16</code></pre></td>
 <td>CTXLIC: License management - wfica32.exe</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXMM</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>23 - 0x17</code></pre></td>
+<td><pre><code>23 - 0x17</code></pre></td>
 <td>CTXMM: Windows Multimedia redirection - vdmmn.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXSSPI</code></pre></td>
 <td>Authentication related</td>
-<td><pre><code>24 - 0x18</code></pre></td>
+<td><pre><code>24 - 0x18</code></pre></td>
 <td>CTXSSPI: Kerberos</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXTWN</code></pre></td>
 <td>Printer and scanner management</td>
-<td><pre><code>25 - 0x19</code></pre></td>
+<td><pre><code>25 - 0x19</code></pre></td>
 <td>CTXTWN: TWAIN redirection - vdtwn.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CITRIXD</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>26 - 0x1A</code></pre></td>
+<td><pre><code>26 - 0x1A</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PNPREDI</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>27 - 0x1B</code></pre></td>
+<td><pre><code>27 - 0x1B</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXSENS</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>28 - 0x1C</code></pre></td>
+<td><pre><code>28 - 0x1C</code></pre></td>
 <td>Location and sensor</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXMTCH</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>29 - 0x1D</code></pre></td>
+<td><pre><code>29 - 0x1D</code></pre></td>
 <td>CTXMTCH: Multitouch</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXLFP</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>30 - 0x1E</code></pre></td>
+<td><pre><code>30 - 0x1E</code></pre></td>
 <td>CTXLFP: Framehawk Display channel over UDP-like transport</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXGUSB</code></pre></td>
 <td>Peripherals forwarding (like USB)</td>
-<td><pre><code>31 - 0x1F</code></pre></td>
+<td><pre><code>31 - 0x1F</code></pre></td>
 <td>CTXGUSB: USB redirection - vdgusbn.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXFLSH</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>32 - 0x20</code></pre></td>
+<td><pre><code>32 - 0x20</code></pre></td>
 <td>CTXFLSH: Flash redirection - vdflash.dll</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXFLS2</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>33 - 0x21</code></pre></td>
+<td><pre><code>33 - 0x21</code></pre></td>
 <td>CTXFLS2</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXD3D</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>34 - 0x22</code></pre></td>
+<td><pre><code>34 - 0x22</code></pre></td>
 <td>CTXD3D: Direct3D virtual channel adapter - vd3dn.dll</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXPN</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>35 - 0x23</code></pre></td>
+<td><pre><code>35 - 0x23</code></pre></td>
 <td>CTXPN: Program Neighborhood - vdpnn.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXZLC</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>36 - 0x24</code></pre></td>
+<td><pre><code>36 - 0x24</code></pre></td>
 <td>CTXZLC: Screen latency reduction (screen) - vdzlcn.dll</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXSPMK</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>37 - 0x25</code></pre></td>
+<td><pre><code>37 - 0x25</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CARANOC</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>38 - 0x26</code></pre></td>
+<td><pre><code>38 - 0x26</code></pre></td>
 <td>CARANOC</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>AURTCX</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>39 - 0x27</code></pre></td>
+<td><pre><code>39 - 0x27</code></pre></td>
 <td>AURTCX</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IMP1166</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>40 - 0x28</code></pre></td>
+<td><pre><code>40 - 0x28</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SPECIAL_THINWIRE</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>41 - 0x29</code></pre></td>
+<td><pre><code>41 - 0x29</code></pre></td>
 <td>SPECIAL_THINWIRE</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ESCAPE</code></pre></td>
 <td>Core Citrix channels (updates, licensing, configuration, ...)</td>
-<td><pre><code>42 - 0x2A</code></pre></td>
+<td><pre><code>42 - 0x2A</code></pre></td>
 <td>ESCAPE</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>BASE</code></pre></td>
 <td>Core Citrix channels (updates, licensing, configuration, ...)</td>
-<td><pre><code>43 - 0x2B</code></pre></td>
+<td><pre><code>43 - 0x2B</code></pre></td>
 <td>BASE</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXVFM</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>44 - 0x2C</code></pre></td>
+<td><pre><code>44 - 0x2C</code></pre></td>
 <td>CTXVFM: Video server (not ThinWire, deprecated)</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXCM</code></pre></td>
 <td>Core Citrix channels (updates, licensing, configuration, ...)</td>
-<td><pre><code>45 - 0x2D</code></pre></td>
+<td><pre><code>45 - 0x2D</code></pre></td>
 <td>CTXCM: Client management (auto client update) - vdcmN.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CTXPASS</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>46 - 0x2E</code></pre></td>
+<td><pre><code>46 - 0x2E</code></pre></td>
 <td>CTXPASS: Transparent key pass-through - vdkbhook.dll</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXTW1</code></pre></td>
 <td>Audio and video management</td>
-<td><pre><code>47 - 0x2F</code></pre></td>
+<td><pre><code>47 - 0x2F</code></pre></td>
 <td>CTXTW1: Seamless Windows screen update (ThinWire) - vdtwin.dll</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSPXSBE</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>48 - 0x30</code></pre></td>
+<td><pre><code>48 - 0x30</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>MHA_VC</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>49 - 0x31</code></pre></td>
+<td><pre><code>49 - 0x31</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>EVDSSO</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>50 - 0x32</code></pre></td>
+<td><pre><code>50 - 0x32</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CTXMOB</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>51 - 0x33</code></pre></td>
+<td><pre><code>51 - 0x33</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSPCTRL</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>52 - 0x34</code></pre></td>
+<td><pre><code>52 - 0x34</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSPMIX</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>53 - 0x35</code></pre></td>
+<td><pre><code>53 - 0x35</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSPSBEX</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>54 - 0x36</code></pre></td>
+<td><pre><code>54 - 0x36</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSPXMIX</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>55 - 0x37</code></pre></td>
+<td><pre><code>55 - 0x37</code></pre></td>
 <td></td>
 </tr>
 </tbody>
@@ -6465,1459 +6455,1459 @@ This field does not allow any custom items.
 <tbody>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>null with null null</code></pre></td>
-<td><pre><code>0 - 0x0</code></pre></td>
+<td><pre><code>0 - 0x0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with null MD5</code></pre></td>
-<td><pre><code>1 - 0x1</code></pre></td>
+<td><pre><code>1 - 0x1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with null SHA</code></pre></td>
-<td><pre><code>2 - 0x2</code></pre></td>
+<td><pre><code>2 - 0x2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA export with RC4 40 MD5</code></pre></td>
-<td><pre><code>3 - 0x3</code></pre></td>
+<td><pre><code>3 - 0x3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with RC4 128 MD5</code></pre></td>
-<td><pre><code>4 - 0x4</code></pre></td>
+<td><pre><code>4 - 0x4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with RC4 128 SHA</code></pre></td>
-<td><pre><code>5 - 0x5</code></pre></td>
+<td><pre><code>5 - 0x5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA export with RC2 CBC 40 MD5</code></pre></td>
-<td><pre><code>6 - 0x6</code></pre></td>
+<td><pre><code>6 - 0x6</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with IDEA CBC SHA</code></pre></td>
-<td><pre><code>7 - 0x7</code></pre></td>
+<td><pre><code>7 - 0x7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA export with DES40 CBC SHA</code></pre></td>
-<td><pre><code>8 - 0x8</code></pre></td>
+<td><pre><code>8 - 0x8</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with DES CBC SHA</code></pre></td>
-<td><pre><code>9 - 0x9</code></pre></td>
+<td><pre><code>9 - 0x9</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>10 - 0xA</code></pre></td>
+<td><pre><code>10 - 0xA</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH DSS export with DES40 CBC SHA</code></pre></td>
-<td><pre><code>11 - 0xB</code></pre></td>
+<td><pre><code>11 - 0xB</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with DES CBC SHA</code></pre></td>
-<td><pre><code>12 - 0xC</code></pre></td>
+<td><pre><code>12 - 0xC</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>13 - 0xD</code></pre></td>
+<td><pre><code>13 - 0xD</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH RSA export with DES40 CBC SHA</code></pre></td>
-<td><pre><code>14 - 0xE</code></pre></td>
+<td><pre><code>14 - 0xE</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with DES CBC SHA</code></pre></td>
-<td><pre><code>15 - 0xF</code></pre></td>
+<td><pre><code>15 - 0xF</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>16 - 0x10</code></pre></td>
+<td><pre><code>16 - 0x10</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS export with DES40 CBC SHA</code></pre></td>
-<td><pre><code>17 - 0x11</code></pre></td>
+<td><pre><code>17 - 0x11</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with DES CBC SHA</code></pre></td>
-<td><pre><code>18 - 0x12</code></pre></td>
+<td><pre><code>18 - 0x12</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>19 - 0x13</code></pre></td>
+<td><pre><code>19 - 0x13</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA export with DES40 CBC SHA</code></pre></td>
-<td><pre><code>20 - 0x14</code></pre></td>
+<td><pre><code>20 - 0x14</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with DES CBC SHA</code></pre></td>
-<td><pre><code>21 - 0x15</code></pre></td>
+<td><pre><code>21 - 0x15</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>22 - 0x16</code></pre></td>
+<td><pre><code>22 - 0x16</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH anon export with RC4 40 MD5</code></pre></td>
-<td><pre><code>23 - 0x17</code></pre></td>
+<td><pre><code>23 - 0x17</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH anon with RC4 128 MD5</code></pre></td>
-<td><pre><code>24 - 0x18</code></pre></td>
+<td><pre><code>24 - 0x18</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH anon export with DES40 CBC SHA</code></pre></td>
-<td><pre><code>25 - 0x19</code></pre></td>
+<td><pre><code>25 - 0x19</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH anon with DES CBC SHA</code></pre></td>
-<td><pre><code>26 - 0x1A</code></pre></td>
+<td><pre><code>26 - 0x1A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH anon with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>27 - 0x1B</code></pre></td>
+<td><pre><code>27 - 0x1B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>KRB5 with DES CBC SHA</code></pre></td>
-<td><pre><code>30 - 0x1E</code></pre></td>
+<td><pre><code>30 - 0x1E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>KRB5 with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>31 - 0x1F</code></pre></td>
+<td><pre><code>31 - 0x1F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>KRB5 with RC4 128 SHA</code></pre></td>
-<td><pre><code>32 - 0x20</code></pre></td>
+<td><pre><code>32 - 0x20</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>KRB5 with IDEA CBC SHA</code></pre></td>
-<td><pre><code>33 - 0x21</code></pre></td>
+<td><pre><code>33 - 0x21</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>KRB5 with DES CBC MD5</code></pre></td>
-<td><pre><code>34 - 0x22</code></pre></td>
+<td><pre><code>34 - 0x22</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>KRB5 with 3DES EDE CBC MD5</code></pre></td>
-<td><pre><code>35 - 0x23</code></pre></td>
+<td><pre><code>35 - 0x23</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>KRB5 with RC4 128 MD5</code></pre></td>
-<td><pre><code>36 - 0x24</code></pre></td>
+<td><pre><code>36 - 0x24</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>KRB5 with IDEA CBC MD5</code></pre></td>
-<td><pre><code>37 - 0x25</code></pre></td>
+<td><pre><code>37 - 0x25</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>KRB5 export with DES CBC 40 SHA</code></pre></td>
-<td><pre><code>38 - 0x26</code></pre></td>
+<td><pre><code>38 - 0x26</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>KRB5 export with RC2 CBC 40 SHA</code></pre></td>
-<td><pre><code>39 - 0x27</code></pre></td>
+<td><pre><code>39 - 0x27</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>KRB5 export with RC4 40 SHA</code></pre></td>
-<td><pre><code>40 - 0x28</code></pre></td>
+<td><pre><code>40 - 0x28</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>KRB5 export with DES CBC 40 MD5</code></pre></td>
-<td><pre><code>41 - 0x29</code></pre></td>
+<td><pre><code>41 - 0x29</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>KRB5 export with RC2 CBC 40 MD5</code></pre></td>
-<td><pre><code>42 - 0x2A</code></pre></td>
+<td><pre><code>42 - 0x2A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>KRB5 export with RC4 40 MD5</code></pre></td>
-<td><pre><code>43 - 0x2B</code></pre></td>
+<td><pre><code>43 - 0x2B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK with null SHA</code></pre></td>
-<td><pre><code>44 - 0x2C</code></pre></td>
+<td><pre><code>44 - 0x2C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with null SHA</code></pre></td>
-<td><pre><code>45 - 0x2D</code></pre></td>
+<td><pre><code>45 - 0x2D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with null SHA</code></pre></td>
-<td><pre><code>46 - 0x2E</code></pre></td>
+<td><pre><code>46 - 0x2E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>47 - 0x2F</code></pre></td>
+<td><pre><code>47 - 0x2F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>48 - 0x30</code></pre></td>
+<td><pre><code>48 - 0x30</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>49 - 0x31</code></pre></td>
+<td><pre><code>49 - 0x31</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>50 - 0x32</code></pre></td>
+<td><pre><code>50 - 0x32</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>51 - 0x33</code></pre></td>
+<td><pre><code>51 - 0x33</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH anon with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>52 - 0x34</code></pre></td>
+<td><pre><code>52 - 0x34</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>53 - 0x35</code></pre></td>
+<td><pre><code>53 - 0x35</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>54 - 0x36</code></pre></td>
+<td><pre><code>54 - 0x36</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>55 - 0x37</code></pre></td>
+<td><pre><code>55 - 0x37</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>56 - 0x38</code></pre></td>
+<td><pre><code>56 - 0x38</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>57 - 0x39</code></pre></td>
+<td><pre><code>57 - 0x39</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH anon with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>58 - 0x3A</code></pre></td>
+<td><pre><code>58 - 0x3A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with null SHA256</code></pre></td>
-<td><pre><code>59 - 0x3B</code></pre></td>
+<td><pre><code>59 - 0x3B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with AES 128 CBC SHA256</code></pre></td>
-<td><pre><code>60 - 0x3C</code></pre></td>
+<td><pre><code>60 - 0x3C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with AES 256 CBC SHA256</code></pre></td>
-<td><pre><code>61 - 0x3D</code></pre></td>
+<td><pre><code>61 - 0x3D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with AES 128 CBC SHA256</code></pre></td>
-<td><pre><code>62 - 0x3E</code></pre></td>
+<td><pre><code>62 - 0x3E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with AES 128 CBC SHA256</code></pre></td>
-<td><pre><code>63 - 0x3F</code></pre></td>
+<td><pre><code>63 - 0x3F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with AES 128 CBC SHA256</code></pre></td>
-<td><pre><code>64 - 0x40</code></pre></td>
+<td><pre><code>64 - 0x40</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with CAMELLIA 128 CBC SHA</code></pre></td>
-<td><pre><code>65 - 0x41</code></pre></td>
+<td><pre><code>65 - 0x41</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with CAMELLIA 128 CBC SHA</code></pre></td>
-<td><pre><code>66 - 0x42</code></pre></td>
+<td><pre><code>66 - 0x42</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with CAMELLIA 128 CBC SHA</code></pre></td>
-<td><pre><code>67 - 0x43</code></pre></td>
+<td><pre><code>67 - 0x43</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with CAMELLIA 128 CBC SHA</code></pre></td>
-<td><pre><code>68 - 0x44</code></pre></td>
+<td><pre><code>68 - 0x44</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with CAMELLIA 128 CBC SHA</code></pre></td>
-<td><pre><code>69 - 0x45</code></pre></td>
+<td><pre><code>69 - 0x45</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH anon with CAMELLIA 128 CBC SHA</code></pre></td>
-<td><pre><code>70 - 0x46</code></pre></td>
+<td><pre><code>70 - 0x46</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with DES CBC SHA</code></pre></td>
-<td><pre><code>73 - 0x49</code></pre></td>
+<td><pre><code>73 - 0x49</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA export1024 with RC4 56 MD5</code></pre></td>
-<td><pre><code>96 - 0x60</code></pre></td>
+<td><pre><code>96 - 0x60</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA export1024 with RC2 CBC 56 MD5</code></pre></td>
-<td><pre><code>97 - 0x61</code></pre></td>
+<td><pre><code>97 - 0x61</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA export1024 with DES CBC SHA</code></pre></td>
-<td><pre><code>98 - 0x62</code></pre></td>
+<td><pre><code>98 - 0x62</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS export1024 with DES CBC SHA</code></pre></td>
-<td><pre><code>99 - 0x63</code></pre></td>
+<td><pre><code>99 - 0x63</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA export1024 with RC4 56 SHA</code></pre></td>
-<td><pre><code>100 - 0x64</code></pre></td>
+<td><pre><code>100 - 0x64</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS export1024 with RC4 56 SHA</code></pre></td>
-<td><pre><code>101 - 0x65</code></pre></td>
+<td><pre><code>101 - 0x65</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with RC4 128 SHA</code></pre></td>
-<td><pre><code>102 - 0x66</code></pre></td>
+<td><pre><code>102 - 0x66</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with AES 128 CBC SHA256</code></pre></td>
-<td><pre><code>103 - 0x67</code></pre></td>
+<td><pre><code>103 - 0x67</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with AES 256 CBC SHA256</code></pre></td>
-<td><pre><code>104 - 0x68</code></pre></td>
+<td><pre><code>104 - 0x68</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with AES 256 CBC SHA256</code></pre></td>
-<td><pre><code>105 - 0x69</code></pre></td>
+<td><pre><code>105 - 0x69</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with AES 256 CBC SHA256</code></pre></td>
-<td><pre><code>106 - 0x6A</code></pre></td>
+<td><pre><code>106 - 0x6A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with AES 256 CBC SHA256</code></pre></td>
-<td><pre><code>107 - 0x6B</code></pre></td>
+<td><pre><code>107 - 0x6B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH anon with AES 128 CBC SHA256</code></pre></td>
-<td><pre><code>108 - 0x6C</code></pre></td>
+<td><pre><code>108 - 0x6C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH anon with AES 256 CBC SHA256</code></pre></td>
-<td><pre><code>109 - 0x6D</code></pre></td>
+<td><pre><code>109 - 0x6D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>GOSTR341094 with 28147 CNT IMIT</code></pre></td>
-<td><pre><code>128 - 0x80</code></pre></td>
+<td><pre><code>128 - 0x80</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>GOSTR341001 with 28147 CNT IMIT</code></pre></td>
-<td><pre><code>129 - 0x81</code></pre></td>
+<td><pre><code>129 - 0x81</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>GOSTR341094 with null GOSTR3411</code></pre></td>
-<td><pre><code>130 - 0x82</code></pre></td>
+<td><pre><code>130 - 0x82</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>GOSTR341001 with null GOSTR3411</code></pre></td>
-<td><pre><code>131 - 0x83</code></pre></td>
+<td><pre><code>131 - 0x83</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with CAMELLIA 256 CBC SHA</code></pre></td>
-<td><pre><code>132 - 0x84</code></pre></td>
+<td><pre><code>132 - 0x84</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with CAMELLIA 256 CBC SHA</code></pre></td>
-<td><pre><code>133 - 0x85</code></pre></td>
+<td><pre><code>133 - 0x85</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with CAMELLIA 256 CBC SHA</code></pre></td>
-<td><pre><code>134 - 0x86</code></pre></td>
+<td><pre><code>134 - 0x86</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with CAMELLIA 256 CBC SHA</code></pre></td>
-<td><pre><code>135 - 0x87</code></pre></td>
+<td><pre><code>135 - 0x87</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with CAMELLIA 256 CBC SHA</code></pre></td>
-<td><pre><code>136 - 0x88</code></pre></td>
+<td><pre><code>136 - 0x88</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH anon with CAMELLIA 256 CBC SHA</code></pre></td>
-<td><pre><code>137 - 0x89</code></pre></td>
+<td><pre><code>137 - 0x89</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK with RC4 128 SHA</code></pre></td>
-<td><pre><code>138 - 0x8A</code></pre></td>
+<td><pre><code>138 - 0x8A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSK with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>139 - 0x8B</code></pre></td>
+<td><pre><code>139 - 0x8B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>140 - 0x8C</code></pre></td>
+<td><pre><code>140 - 0x8C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSK with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>141 - 0x8D</code></pre></td>
+<td><pre><code>141 - 0x8D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with RC4 128 SHA</code></pre></td>
-<td><pre><code>142 - 0x8E</code></pre></td>
+<td><pre><code>142 - 0x8E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>143 - 0x8F</code></pre></td>
+<td><pre><code>143 - 0x8F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>144 - 0x90</code></pre></td>
+<td><pre><code>144 - 0x90</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>145 - 0x91</code></pre></td>
+<td><pre><code>145 - 0x91</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with RC4 128 SHA</code></pre></td>
-<td><pre><code>146 - 0x92</code></pre></td>
+<td><pre><code>146 - 0x92</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>147 - 0x93</code></pre></td>
+<td><pre><code>147 - 0x93</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>148 - 0x94</code></pre></td>
+<td><pre><code>148 - 0x94</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>149 - 0x95</code></pre></td>
+<td><pre><code>149 - 0x95</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with seed CBC SHA</code></pre></td>
-<td><pre><code>150 - 0x96</code></pre></td>
+<td><pre><code>150 - 0x96</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with seed CBC SHA</code></pre></td>
-<td><pre><code>151 - 0x97</code></pre></td>
+<td><pre><code>151 - 0x97</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with seed CBC SHA</code></pre></td>
-<td><pre><code>152 - 0x98</code></pre></td>
+<td><pre><code>152 - 0x98</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with seed CBC SHA</code></pre></td>
-<td><pre><code>153 - 0x99</code></pre></td>
+<td><pre><code>153 - 0x99</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with seed CBC SHA</code></pre></td>
-<td><pre><code>154 - 0x9A</code></pre></td>
+<td><pre><code>154 - 0x9A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH anon with seed CBC SHA</code></pre></td>
-<td><pre><code>155 - 0x9B</code></pre></td>
+<td><pre><code>155 - 0x9B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>156 - 0x9C</code></pre></td>
+<td><pre><code>156 - 0x9C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>157 - 0x9D</code></pre></td>
+<td><pre><code>157 - 0x9D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>158 - 0x9E</code></pre></td>
+<td><pre><code>158 - 0x9E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>159 - 0x9F</code></pre></td>
+<td><pre><code>159 - 0x9F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>160 - 0xA0</code></pre></td>
+<td><pre><code>160 - 0xA0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>161 - 0xA1</code></pre></td>
+<td><pre><code>161 - 0xA1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>162 - 0xA2</code></pre></td>
+<td><pre><code>162 - 0xA2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>163 - 0xA3</code></pre></td>
+<td><pre><code>163 - 0xA3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>164 - 0xA4</code></pre></td>
+<td><pre><code>164 - 0xA4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>165 - 0xA5</code></pre></td>
+<td><pre><code>165 - 0xA5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH anon with AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>166 - 0xA6</code></pre></td>
+<td><pre><code>166 - 0xA6</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH anon with AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>167 - 0xA7</code></pre></td>
+<td><pre><code>167 - 0xA7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK with AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>168 - 0xA8</code></pre></td>
+<td><pre><code>168 - 0xA8</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSK with AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>169 - 0xA9</code></pre></td>
+<td><pre><code>169 - 0xA9</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>170 - 0xAA</code></pre></td>
+<td><pre><code>170 - 0xAA</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>171 - 0xAB</code></pre></td>
+<td><pre><code>171 - 0xAB</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>172 - 0xAC</code></pre></td>
+<td><pre><code>172 - 0xAC</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>173 - 0xAD</code></pre></td>
+<td><pre><code>173 - 0xAD</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK with AES 128 CBC SHA256</code></pre></td>
-<td><pre><code>174 - 0xAE</code></pre></td>
+<td><pre><code>174 - 0xAE</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSK with AES 256 CBC SHA384</code></pre></td>
-<td><pre><code>175 - 0xAF</code></pre></td>
+<td><pre><code>175 - 0xAF</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK with null SHA256</code></pre></td>
-<td><pre><code>176 - 0xB0</code></pre></td>
+<td><pre><code>176 - 0xB0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSK with null SHA384</code></pre></td>
-<td><pre><code>177 - 0xB1</code></pre></td>
+<td><pre><code>177 - 0xB1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with AES 128 CBC SHA256</code></pre></td>
-<td><pre><code>178 - 0xB2</code></pre></td>
+<td><pre><code>178 - 0xB2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with AES 256 CBC SHA384</code></pre></td>
-<td><pre><code>179 - 0xB3</code></pre></td>
+<td><pre><code>179 - 0xB3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with null SHA256</code></pre></td>
-<td><pre><code>180 - 0xB4</code></pre></td>
+<td><pre><code>180 - 0xB4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with null SHA384</code></pre></td>
-<td><pre><code>181 - 0xB5</code></pre></td>
+<td><pre><code>181 - 0xB5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with AES 128 CBC SHA256</code></pre></td>
-<td><pre><code>182 - 0xB6</code></pre></td>
+<td><pre><code>182 - 0xB6</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with AES 256 CBC SHA384</code></pre></td>
-<td><pre><code>183 - 0xB7</code></pre></td>
+<td><pre><code>183 - 0xB7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with null SHA256</code></pre></td>
-<td><pre><code>184 - 0xB8</code></pre></td>
+<td><pre><code>184 - 0xB8</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with null SHA384</code></pre></td>
-<td><pre><code>185 - 0xB9</code></pre></td>
+<td><pre><code>185 - 0xB9</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with CAMELLIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>186 - 0xBA</code></pre></td>
+<td><pre><code>186 - 0xBA</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with CAMELLIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>187 - 0xBB</code></pre></td>
+<td><pre><code>187 - 0xBB</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with CAMELLIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>188 - 0xBC</code></pre></td>
+<td><pre><code>188 - 0xBC</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with CAMELLIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>189 - 0xBD</code></pre></td>
+<td><pre><code>189 - 0xBD</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with CAMELLIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>190 - 0xBE</code></pre></td>
+<td><pre><code>190 - 0xBE</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH anon with CAMELLIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>191 - 0xBF</code></pre></td>
+<td><pre><code>191 - 0xBF</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with CAMELLIA 256 CBC SHA256</code></pre></td>
-<td><pre><code>192 - 0xC0</code></pre></td>
+<td><pre><code>192 - 0xC0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with CAMELLIA 256 CBC SHA256</code></pre></td>
-<td><pre><code>193 - 0xC1</code></pre></td>
+<td><pre><code>193 - 0xC1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with CAMELLIA 256 CBC SHA256</code></pre></td>
-<td><pre><code>194 - 0xC2</code></pre></td>
+<td><pre><code>194 - 0xC2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with CAMELLIA 256 CBC SHA256</code></pre></td>
-<td><pre><code>195 - 0xC3</code></pre></td>
+<td><pre><code>195 - 0xC3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with CAMELLIA 256 CBC SHA256</code></pre></td>
-<td><pre><code>196 - 0xC4</code></pre></td>
+<td><pre><code>196 - 0xC4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH anon with CAMELLIA 256 CBC SHA256</code></pre></td>
-<td><pre><code>197 - 0xC5</code></pre></td>
+<td><pre><code>197 - 0xC5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>empty renegotiation info SCSV</code></pre></td>
-<td><pre><code>255 - 0xFF</code></pre></td>
+<td><pre><code>255 - 0xFF</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>4865 - 0x1301</code></pre></td>
+<td><pre><code>4865 - 0x1301</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>4866 - 0x1302</code></pre></td>
+<td><pre><code>4866 - 0x1302</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CHACHA20 POLY1305 SHA256</code></pre></td>
-<td><pre><code>4867 - 0x1303</code></pre></td>
+<td><pre><code>4867 - 0x1303</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>AES 128 CCM SHA256</code></pre></td>
-<td><pre><code>4868 - 0x1304</code></pre></td>
+<td><pre><code>4868 - 0x1304</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>AES 128 CCM 8 SHA256</code></pre></td>
-<td><pre><code>4869 - 0x1305</code></pre></td>
+<td><pre><code>4869 - 0x1305</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>fallback SCSV</code></pre></td>
-<td><pre><code>22016 - 0x5600</code></pre></td>
+<td><pre><code>22016 - 0x5600</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with null SHA</code></pre></td>
-<td><pre><code>49153 - 0xC001</code></pre></td>
+<td><pre><code>49153 - 0xC001</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with RC4 128 SHA</code></pre></td>
-<td><pre><code>49154 - 0xC002</code></pre></td>
+<td><pre><code>49154 - 0xC002</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>49155 - 0xC003</code></pre></td>
+<td><pre><code>49155 - 0xC003</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>49156 - 0xC004</code></pre></td>
+<td><pre><code>49156 - 0xC004</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>49157 - 0xC005</code></pre></td>
+<td><pre><code>49157 - 0xC005</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with null SHA</code></pre></td>
-<td><pre><code>49158 - 0xC006</code></pre></td>
+<td><pre><code>49158 - 0xC006</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with RC4 128 SHA</code></pre></td>
-<td><pre><code>49159 - 0xC007</code></pre></td>
+<td><pre><code>49159 - 0xC007</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>49160 - 0xC008</code></pre></td>
+<td><pre><code>49160 - 0xC008</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>49161 - 0xC009</code></pre></td>
+<td><pre><code>49161 - 0xC009</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>49162 - 0xC00A</code></pre></td>
+<td><pre><code>49162 - 0xC00A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with null SHA</code></pre></td>
-<td><pre><code>49163 - 0xC00B</code></pre></td>
+<td><pre><code>49163 - 0xC00B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with RC4 128 SHA</code></pre></td>
-<td><pre><code>49164 - 0xC00C</code></pre></td>
+<td><pre><code>49164 - 0xC00C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>49165 - 0xC00D</code></pre></td>
+<td><pre><code>49165 - 0xC00D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>49166 - 0xC00E</code></pre></td>
+<td><pre><code>49166 - 0xC00E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>49167 - 0xC00F</code></pre></td>
+<td><pre><code>49167 - 0xC00F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with null SHA</code></pre></td>
-<td><pre><code>49168 - 0xC010</code></pre></td>
+<td><pre><code>49168 - 0xC010</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with RC4 128 SHA</code></pre></td>
-<td><pre><code>49169 - 0xC011</code></pre></td>
+<td><pre><code>49169 - 0xC011</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>49170 - 0xC012</code></pre></td>
+<td><pre><code>49170 - 0xC012</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>49171 - 0xC013</code></pre></td>
+<td><pre><code>49171 - 0xC013</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>49172 - 0xC014</code></pre></td>
+<td><pre><code>49172 - 0xC014</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH anon with null SHA</code></pre></td>
-<td><pre><code>49173 - 0xC015</code></pre></td>
+<td><pre><code>49173 - 0xC015</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH anon with RC4 128 SHA</code></pre></td>
-<td><pre><code>49174 - 0xC016</code></pre></td>
+<td><pre><code>49174 - 0xC016</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH anon with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>49175 - 0xC017</code></pre></td>
+<td><pre><code>49175 - 0xC017</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH anon with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>49176 - 0xC018</code></pre></td>
+<td><pre><code>49176 - 0xC018</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH anon with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>49177 - 0xC019</code></pre></td>
+<td><pre><code>49177 - 0xC019</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SRP SHA with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>49178 - 0xC01A</code></pre></td>
+<td><pre><code>49178 - 0xC01A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SRP SHA RSA with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>49179 - 0xC01B</code></pre></td>
+<td><pre><code>49179 - 0xC01B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SRP SHA DSS with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>49180 - 0xC01C</code></pre></td>
+<td><pre><code>49180 - 0xC01C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SRP SHA with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>49181 - 0xC01D</code></pre></td>
+<td><pre><code>49181 - 0xC01D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SRP SHA RSA with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>49182 - 0xC01E</code></pre></td>
+<td><pre><code>49182 - 0xC01E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SRP SHA DSS with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>49183 - 0xC01F</code></pre></td>
+<td><pre><code>49183 - 0xC01F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SRP SHA with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>49184 - 0xC020</code></pre></td>
+<td><pre><code>49184 - 0xC020</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SRP SHA RSA with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>49185 - 0xC021</code></pre></td>
+<td><pre><code>49185 - 0xC021</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SRP SHA DSS with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>49186 - 0xC022</code></pre></td>
+<td><pre><code>49186 - 0xC022</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with AES 128 CBC SHA256</code></pre></td>
-<td><pre><code>49187 - 0xC023</code></pre></td>
+<td><pre><code>49187 - 0xC023</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with AES 256 CBC SHA384</code></pre></td>
-<td><pre><code>49188 - 0xC024</code></pre></td>
+<td><pre><code>49188 - 0xC024</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with AES 128 CBC SHA256</code></pre></td>
-<td><pre><code>49189 - 0xC025</code></pre></td>
+<td><pre><code>49189 - 0xC025</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with AES 256 CBC SHA384</code></pre></td>
-<td><pre><code>49190 - 0xC026</code></pre></td>
+<td><pre><code>49190 - 0xC026</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with AES 128 CBC SHA256</code></pre></td>
-<td><pre><code>49191 - 0xC027</code></pre></td>
+<td><pre><code>49191 - 0xC027</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with AES 256 CBC SHA384</code></pre></td>
-<td><pre><code>49192 - 0xC028</code></pre></td>
+<td><pre><code>49192 - 0xC028</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with AES 128 CBC SHA256</code></pre></td>
-<td><pre><code>49193 - 0xC029</code></pre></td>
+<td><pre><code>49193 - 0xC029</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with AES 256 CBC SHA384</code></pre></td>
-<td><pre><code>49194 - 0xC02A</code></pre></td>
+<td><pre><code>49194 - 0xC02A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>49195 - 0xC02B</code></pre></td>
+<td><pre><code>49195 - 0xC02B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>49196 - 0xC02C</code></pre></td>
+<td><pre><code>49196 - 0xC02C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>49197 - 0xC02D</code></pre></td>
+<td><pre><code>49197 - 0xC02D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>49198 - 0xC02E</code></pre></td>
+<td><pre><code>49198 - 0xC02E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>49199 - 0xC02F</code></pre></td>
+<td><pre><code>49199 - 0xC02F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>49200 - 0xC030</code></pre></td>
+<td><pre><code>49200 - 0xC030</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>49201 - 0xC031</code></pre></td>
+<td><pre><code>49201 - 0xC031</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>49202 - 0xC032</code></pre></td>
+<td><pre><code>49202 - 0xC032</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with RC4 128 SHA</code></pre></td>
-<td><pre><code>49203 - 0xC033</code></pre></td>
+<td><pre><code>49203 - 0xC033</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with 3DES EDE CBC SHA</code></pre></td>
-<td><pre><code>49204 - 0xC034</code></pre></td>
+<td><pre><code>49204 - 0xC034</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with AES 128 CBC SHA</code></pre></td>
-<td><pre><code>49205 - 0xC035</code></pre></td>
+<td><pre><code>49205 - 0xC035</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with AES 256 CBC SHA</code></pre></td>
-<td><pre><code>49206 - 0xC036</code></pre></td>
+<td><pre><code>49206 - 0xC036</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with AES 128 CBC SHA256</code></pre></td>
-<td><pre><code>49207 - 0xC037</code></pre></td>
+<td><pre><code>49207 - 0xC037</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with AES 256 CBC SHA384</code></pre></td>
-<td><pre><code>49208 - 0xC038</code></pre></td>
+<td><pre><code>49208 - 0xC038</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with null SHA</code></pre></td>
-<td><pre><code>49209 - 0xC039</code></pre></td>
+<td><pre><code>49209 - 0xC039</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with null SHA256</code></pre></td>
-<td><pre><code>49210 - 0xC03A</code></pre></td>
+<td><pre><code>49210 - 0xC03A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with null SHA384</code></pre></td>
-<td><pre><code>49211 - 0xC03B</code></pre></td>
+<td><pre><code>49211 - 0xC03B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with ARIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49212 - 0xC03C</code></pre></td>
+<td><pre><code>49212 - 0xC03C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with ARIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49213 - 0xC03D</code></pre></td>
+<td><pre><code>49213 - 0xC03D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with ARIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49214 - 0xC03E</code></pre></td>
+<td><pre><code>49214 - 0xC03E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with ARIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49215 - 0xC03F</code></pre></td>
+<td><pre><code>49215 - 0xC03F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with ARIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49216 - 0xC040</code></pre></td>
+<td><pre><code>49216 - 0xC040</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with ARIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49217 - 0xC041</code></pre></td>
+<td><pre><code>49217 - 0xC041</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with ARIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49218 - 0xC042</code></pre></td>
+<td><pre><code>49218 - 0xC042</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with ARIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49219 - 0xC043</code></pre></td>
+<td><pre><code>49219 - 0xC043</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with ARIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49220 - 0xC044</code></pre></td>
+<td><pre><code>49220 - 0xC044</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with ARIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49221 - 0xC045</code></pre></td>
+<td><pre><code>49221 - 0xC045</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH anon with ARIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49222 - 0xC046</code></pre></td>
+<td><pre><code>49222 - 0xC046</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH anon with ARIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49223 - 0xC047</code></pre></td>
+<td><pre><code>49223 - 0xC047</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with ARIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49224 - 0xC048</code></pre></td>
+<td><pre><code>49224 - 0xC048</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with ARIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49225 - 0xC049</code></pre></td>
+<td><pre><code>49225 - 0xC049</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with ARIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49226 - 0xC04A</code></pre></td>
+<td><pre><code>49226 - 0xC04A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with ARIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49227 - 0xC04B</code></pre></td>
+<td><pre><code>49227 - 0xC04B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with ARIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49228 - 0xC04C</code></pre></td>
+<td><pre><code>49228 - 0xC04C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with ARIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49229 - 0xC04D</code></pre></td>
+<td><pre><code>49229 - 0xC04D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with ARIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49230 - 0xC04E</code></pre></td>
+<td><pre><code>49230 - 0xC04E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with ARIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49231 - 0xC04F</code></pre></td>
+<td><pre><code>49231 - 0xC04F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with ARIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49232 - 0xC050</code></pre></td>
+<td><pre><code>49232 - 0xC050</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with ARIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49233 - 0xC051</code></pre></td>
+<td><pre><code>49233 - 0xC051</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with ARIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49234 - 0xC052</code></pre></td>
+<td><pre><code>49234 - 0xC052</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with ARIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49235 - 0xC053</code></pre></td>
+<td><pre><code>49235 - 0xC053</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with ARIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49236 - 0xC054</code></pre></td>
+<td><pre><code>49236 - 0xC054</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with ARIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49237 - 0xC055</code></pre></td>
+<td><pre><code>49237 - 0xC055</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with ARIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49238 - 0xC056</code></pre></td>
+<td><pre><code>49238 - 0xC056</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with ARIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49239 - 0xC057</code></pre></td>
+<td><pre><code>49239 - 0xC057</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with ARIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49240 - 0xC058</code></pre></td>
+<td><pre><code>49240 - 0xC058</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with ARIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49241 - 0xC059</code></pre></td>
+<td><pre><code>49241 - 0xC059</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH anon with ARIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49242 - 0xC05A</code></pre></td>
+<td><pre><code>49242 - 0xC05A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH anon with ARIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49243 - 0xC05B</code></pre></td>
+<td><pre><code>49243 - 0xC05B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with ARIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49244 - 0xC05C</code></pre></td>
+<td><pre><code>49244 - 0xC05C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with ARIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49245 - 0xC05D</code></pre></td>
+<td><pre><code>49245 - 0xC05D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with ARIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49246 - 0xC05E</code></pre></td>
+<td><pre><code>49246 - 0xC05E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with ARIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49247 - 0xC05F</code></pre></td>
+<td><pre><code>49247 - 0xC05F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with ARIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49248 - 0xC060</code></pre></td>
+<td><pre><code>49248 - 0xC060</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with ARIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49249 - 0xC061</code></pre></td>
+<td><pre><code>49249 - 0xC061</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with ARIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49250 - 0xC062</code></pre></td>
+<td><pre><code>49250 - 0xC062</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with ARIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49251 - 0xC063</code></pre></td>
+<td><pre><code>49251 - 0xC063</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK with ARIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49252 - 0xC064</code></pre></td>
+<td><pre><code>49252 - 0xC064</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSK with ARIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49253 - 0xC065</code></pre></td>
+<td><pre><code>49253 - 0xC065</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with ARIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49254 - 0xC066</code></pre></td>
+<td><pre><code>49254 - 0xC066</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with ARIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49255 - 0xC067</code></pre></td>
+<td><pre><code>49255 - 0xC067</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with ARIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49256 - 0xC068</code></pre></td>
+<td><pre><code>49256 - 0xC068</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with ARIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49257 - 0xC069</code></pre></td>
+<td><pre><code>49257 - 0xC069</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK with ARIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49258 - 0xC06A</code></pre></td>
+<td><pre><code>49258 - 0xC06A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSK with ARIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49259 - 0xC06B</code></pre></td>
+<td><pre><code>49259 - 0xC06B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with ARIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49260 - 0xC06C</code></pre></td>
+<td><pre><code>49260 - 0xC06C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with ARIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49261 - 0xC06D</code></pre></td>
+<td><pre><code>49261 - 0xC06D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with ARIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49262 - 0xC06E</code></pre></td>
+<td><pre><code>49262 - 0xC06E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with ARIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49263 - 0xC06F</code></pre></td>
+<td><pre><code>49263 - 0xC06F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with ARIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49264 - 0xC070</code></pre></td>
+<td><pre><code>49264 - 0xC070</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with ARIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49265 - 0xC071</code></pre></td>
+<td><pre><code>49265 - 0xC071</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with CAMELLIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49266 - 0xC072</code></pre></td>
+<td><pre><code>49266 - 0xC072</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with CAMELLIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49267 - 0xC073</code></pre></td>
+<td><pre><code>49267 - 0xC073</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with CAMELLIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49268 - 0xC074</code></pre></td>
+<td><pre><code>49268 - 0xC074</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with CAMELLIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49269 - 0xC075</code></pre></td>
+<td><pre><code>49269 - 0xC075</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with CAMELLIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49270 - 0xC076</code></pre></td>
+<td><pre><code>49270 - 0xC076</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with CAMELLIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49271 - 0xC077</code></pre></td>
+<td><pre><code>49271 - 0xC077</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with CAMELLIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49272 - 0xC078</code></pre></td>
+<td><pre><code>49272 - 0xC078</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with CAMELLIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49273 - 0xC079</code></pre></td>
+<td><pre><code>49273 - 0xC079</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with CAMELLIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49274 - 0xC07A</code></pre></td>
+<td><pre><code>49274 - 0xC07A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with CAMELLIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49275 - 0xC07B</code></pre></td>
+<td><pre><code>49275 - 0xC07B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with CAMELLIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49276 - 0xC07C</code></pre></td>
+<td><pre><code>49276 - 0xC07C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with CAMELLIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49277 - 0xC07D</code></pre></td>
+<td><pre><code>49277 - 0xC07D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with CAMELLIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49278 - 0xC07E</code></pre></td>
+<td><pre><code>49278 - 0xC07E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH RSA with CAMELLIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49279 - 0xC07F</code></pre></td>
+<td><pre><code>49279 - 0xC07F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with CAMELLIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49280 - 0xC080</code></pre></td>
+<td><pre><code>49280 - 0xC080</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE DSS with CAMELLIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49281 - 0xC081</code></pre></td>
+<td><pre><code>49281 - 0xC081</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with CAMELLIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49282 - 0xC082</code></pre></td>
+<td><pre><code>49282 - 0xC082</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH DSS with CAMELLIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49283 - 0xC083</code></pre></td>
+<td><pre><code>49283 - 0xC083</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DH anon with CAMELLIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49284 - 0xC084</code></pre></td>
+<td><pre><code>49284 - 0xC084</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DH anon with CAMELLIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49285 - 0xC085</code></pre></td>
+<td><pre><code>49285 - 0xC085</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with CAMELLIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49286 - 0xC086</code></pre></td>
+<td><pre><code>49286 - 0xC086</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with CAMELLIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49287 - 0xC087</code></pre></td>
+<td><pre><code>49287 - 0xC087</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with CAMELLIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49288 - 0xC088</code></pre></td>
+<td><pre><code>49288 - 0xC088</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH ECDSA with CAMELLIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49289 - 0xC089</code></pre></td>
+<td><pre><code>49289 - 0xC089</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with CAMELLIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49290 - 0xC08A</code></pre></td>
+<td><pre><code>49290 - 0xC08A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with CAMELLIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49291 - 0xC08B</code></pre></td>
+<td><pre><code>49291 - 0xC08B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with CAMELLIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49292 - 0xC08C</code></pre></td>
+<td><pre><code>49292 - 0xC08C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDH RSA with CAMELLIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49293 - 0xC08D</code></pre></td>
+<td><pre><code>49293 - 0xC08D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK with CAMELLIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49294 - 0xC08E</code></pre></td>
+<td><pre><code>49294 - 0xC08E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSK with CAMELLIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49295 - 0xC08F</code></pre></td>
+<td><pre><code>49295 - 0xC08F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with CAMELLIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49296 - 0xC090</code></pre></td>
+<td><pre><code>49296 - 0xC090</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with CAMELLIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49297 - 0xC091</code></pre></td>
+<td><pre><code>49297 - 0xC091</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with CAMELLIA 128 GCM SHA256</code></pre></td>
-<td><pre><code>49298 - 0xC092</code></pre></td>
+<td><pre><code>49298 - 0xC092</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with CAMELLIA 256 GCM SHA384</code></pre></td>
-<td><pre><code>49299 - 0xC093</code></pre></td>
+<td><pre><code>49299 - 0xC093</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK with CAMELLIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49300 - 0xC094</code></pre></td>
+<td><pre><code>49300 - 0xC094</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSK with CAMELLIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49301 - 0xC095</code></pre></td>
+<td><pre><code>49301 - 0xC095</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with CAMELLIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49302 - 0xC096</code></pre></td>
+<td><pre><code>49302 - 0xC096</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with CAMELLIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49303 - 0xC097</code></pre></td>
+<td><pre><code>49303 - 0xC097</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with CAMELLIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49304 - 0xC098</code></pre></td>
+<td><pre><code>49304 - 0xC098</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with CAMELLIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49305 - 0xC099</code></pre></td>
+<td><pre><code>49305 - 0xC099</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with CAMELLIA 128 CBC SHA256</code></pre></td>
-<td><pre><code>49306 - 0xC09A</code></pre></td>
+<td><pre><code>49306 - 0xC09A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with CAMELLIA 256 CBC SHA384</code></pre></td>
-<td><pre><code>49307 - 0xC09B</code></pre></td>
+<td><pre><code>49307 - 0xC09B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with AES 128 CCM</code></pre></td>
-<td><pre><code>49308 - 0xC09C</code></pre></td>
+<td><pre><code>49308 - 0xC09C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with AES 256 CCM</code></pre></td>
-<td><pre><code>49309 - 0xC09D</code></pre></td>
+<td><pre><code>49309 - 0xC09D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with AES 128 CCM</code></pre></td>
-<td><pre><code>49310 - 0xC09E</code></pre></td>
+<td><pre><code>49310 - 0xC09E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with AES 256 CCM</code></pre></td>
-<td><pre><code>49311 - 0xC09F</code></pre></td>
+<td><pre><code>49311 - 0xC09F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with AES 128 CCM 8</code></pre></td>
-<td><pre><code>49312 - 0xC0A0</code></pre></td>
+<td><pre><code>49312 - 0xC0A0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with AES 256 CCM 8</code></pre></td>
-<td><pre><code>49313 - 0xC0A1</code></pre></td>
+<td><pre><code>49313 - 0xC0A1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with AES 128 CCM 8</code></pre></td>
-<td><pre><code>49314 - 0xC0A2</code></pre></td>
+<td><pre><code>49314 - 0xC0A2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with AES 256 CCM 8</code></pre></td>
-<td><pre><code>49315 - 0xC0A3</code></pre></td>
+<td><pre><code>49315 - 0xC0A3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK with AES 128 CCM</code></pre></td>
-<td><pre><code>49316 - 0xC0A4</code></pre></td>
+<td><pre><code>49316 - 0xC0A4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSK with AES 256 CCM</code></pre></td>
-<td><pre><code>49317 - 0xC0A5</code></pre></td>
+<td><pre><code>49317 - 0xC0A5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with AES 128 CCM</code></pre></td>
-<td><pre><code>49318 - 0xC0A6</code></pre></td>
+<td><pre><code>49318 - 0xC0A6</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with AES 256 CCM</code></pre></td>
-<td><pre><code>49319 - 0xC0A7</code></pre></td>
+<td><pre><code>49319 - 0xC0A7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK with AES 128 CCM 8</code></pre></td>
-<td><pre><code>49320 - 0xC0A8</code></pre></td>
+<td><pre><code>49320 - 0xC0A8</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSK with AES 256 CCM 8</code></pre></td>
-<td><pre><code>49321 - 0xC0A9</code></pre></td>
+<td><pre><code>49321 - 0xC0A9</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK DHE with AES 128 CCM 8</code></pre></td>
-<td><pre><code>49322 - 0xC0AA</code></pre></td>
+<td><pre><code>49322 - 0xC0AA</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSK DHE with AES 256 CCM 8</code></pre></td>
-<td><pre><code>49323 - 0xC0AB</code></pre></td>
+<td><pre><code>49323 - 0xC0AB</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with AES 128 CCM</code></pre></td>
-<td><pre><code>49324 - 0xC0AC</code></pre></td>
+<td><pre><code>49324 - 0xC0AC</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with AES 256 CCM</code></pre></td>
-<td><pre><code>49325 - 0xC0AD</code></pre></td>
+<td><pre><code>49325 - 0xC0AD</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with AES 128 CCM 8</code></pre></td>
-<td><pre><code>49326 - 0xC0AE</code></pre></td>
+<td><pre><code>49326 - 0xC0AE</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with AES 256 CCM 8</code></pre></td>
-<td><pre><code>49327 - 0xC0AF</code></pre></td>
+<td><pre><code>49327 - 0xC0AF</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECJPAKE with AES 128 CCM 8</code></pre></td>
-<td><pre><code>49407 - 0xC0FF</code></pre></td>
+<td><pre><code>49407 - 0xC0FF</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with CHACHA20 POLY1305 SHA256</code></pre></td>
-<td><pre><code>52392 - 0xCCA8</code></pre></td>
+<td><pre><code>52392 - 0xCCA8</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with CHACHA20 POLY1305 SHA256</code></pre></td>
-<td><pre><code>52393 - 0xCCA9</code></pre></td>
+<td><pre><code>52393 - 0xCCA9</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with CHACHA20 POLY1305 SHA256</code></pre></td>
-<td><pre><code>52394 - 0xCCAA</code></pre></td>
+<td><pre><code>52394 - 0xCCAA</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK with CHACHA20 POLY1305 SHA256</code></pre></td>
-<td><pre><code>52395 - 0xCCAB</code></pre></td>
+<td><pre><code>52395 - 0xCCAB</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with CHACHA20 POLY1305 SHA256</code></pre></td>
-<td><pre><code>52396 - 0xCCAC</code></pre></td>
+<td><pre><code>52396 - 0xCCAC</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with CHACHA20 POLY1305 SHA256</code></pre></td>
-<td><pre><code>52397 - 0xCCAD</code></pre></td>
+<td><pre><code>52397 - 0xCCAD</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with CHACHA20 POLY1305 SHA256</code></pre></td>
-<td><pre><code>52398 - 0xCCAE</code></pre></td>
+<td><pre><code>52398 - 0xCCAE</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with AES 128 GCM SHA256</code></pre></td>
-<td><pre><code>53249 - 0xD001</code></pre></td>
+<td><pre><code>53249 - 0xD001</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with AES 256 GCM SHA384</code></pre></td>
-<td><pre><code>53250 - 0xD002</code></pre></td>
+<td><pre><code>53250 - 0xD002</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with AES 128 CCM 8 SHA256</code></pre></td>
-<td><pre><code>53251 - 0xD003</code></pre></td>
+<td><pre><code>53251 - 0xD003</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with AES 128 CCM SHA256</code></pre></td>
-<td><pre><code>53253 - 0xD005</code></pre></td>
+<td><pre><code>53253 - 0xD005</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA with ESTREAM SALSA20 SHA1</code></pre></td>
-<td><pre><code>58384 - 0xE410</code></pre></td>
+<td><pre><code>58384 - 0xE410</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA with SALSA20 SHA1</code></pre></td>
-<td><pre><code>58385 - 0xE411</code></pre></td>
+<td><pre><code>58385 - 0xE411</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with ESTREAM SALSA20 SHA1</code></pre></td>
-<td><pre><code>58386 - 0xE412</code></pre></td>
+<td><pre><code>58386 - 0xE412</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE RSA with SALSA20 SHA1</code></pre></td>
-<td><pre><code>58387 - 0xE413</code></pre></td>
+<td><pre><code>58387 - 0xE413</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with ESTREAM SALSA20 SHA1</code></pre></td>
-<td><pre><code>58388 - 0xE414</code></pre></td>
+<td><pre><code>58388 - 0xE414</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE ECDSA with SALSA20 SHA1</code></pre></td>
-<td><pre><code>58389 - 0xE415</code></pre></td>
+<td><pre><code>58389 - 0xE415</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PSK with ESTREAM SALSA20 SHA1</code></pre></td>
-<td><pre><code>58390 - 0xE416</code></pre></td>
+<td><pre><code>58390 - 0xE416</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PSK with SALSA20 SHA1</code></pre></td>
-<td><pre><code>58391 - 0xE417</code></pre></td>
+<td><pre><code>58391 - 0xE417</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with ESTREAM SALSA20 SHA1</code></pre></td>
-<td><pre><code>58392 - 0xE418</code></pre></td>
+<td><pre><code>58392 - 0xE418</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECDHE PSK with SALSA20 SHA1</code></pre></td>
-<td><pre><code>58393 - 0xE419</code></pre></td>
+<td><pre><code>58393 - 0xE419</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with ESTREAM SALSA20 SHA1</code></pre></td>
-<td><pre><code>58394 - 0xE41A</code></pre></td>
+<td><pre><code>58394 - 0xE41A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RSA PSK with SALSA20 SHA1</code></pre></td>
-<td><pre><code>58395 - 0xE41B</code></pre></td>
+<td><pre><code>58395 - 0xE41B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with ESTREAM SALSA20 SHA1</code></pre></td>
-<td><pre><code>58396 - 0xE41C</code></pre></td>
+<td><pre><code>58396 - 0xE41C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE PSK with SALSA20 SHA1</code></pre></td>
-<td><pre><code>58397 - 0xE41D</code></pre></td>
+<td><pre><code>58397 - 0xE41D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with ESTREAM SALSA20 SHA1</code></pre></td>
-<td><pre><code>58398 - 0xE41E</code></pre></td>
+<td><pre><code>58398 - 0xE41E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHE RSA with SALSA20 SHA1</code></pre></td>
-<td><pre><code>58399 - 0xE41F</code></pre></td>
+<td><pre><code>58399 - 0xE41F</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -7940,91 +7930,91 @@ This field does not allow any custom items.
 <tbody>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SELECT</code></pre></td>
-<td><pre><code>256 - 0x100</code></pre></td>
+<td><pre><code>256 - 0x100</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>INSERT</code></pre></td>
-<td><pre><code>512 - 0x200</code></pre></td>
+<td><pre><code>512 - 0x200</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>UPDATE</code></pre></td>
-<td><pre><code>768 - 0x300</code></pre></td>
+<td><pre><code>768 - 0x300</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DELETE</code></pre></td>
-<td><pre><code>1024 - 0x400</code></pre></td>
+<td><pre><code>1024 - 0x400</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CREATE</code></pre></td>
-<td><pre><code>1280 - 0x500</code></pre></td>
+<td><pre><code>1280 - 0x500</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CREATE TABLE</code></pre></td>
-<td><pre><code>1281 - 0x501</code></pre></td>
+<td><pre><code>1281 - 0x501</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CREATE INDEX</code></pre></td>
-<td><pre><code>1282 - 0x502</code></pre></td>
+<td><pre><code>1282 - 0x502</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CREATE VIEW</code></pre></td>
-<td><pre><code>1283 - 0x503</code></pre></td>
+<td><pre><code>1283 - 0x503</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DROP</code></pre></td>
-<td><pre><code>1536 - 0x600</code></pre></td>
+<td><pre><code>1536 - 0x600</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DROP TABLE</code></pre></td>
-<td><pre><code>1537 - 0x601</code></pre></td>
+<td><pre><code>1537 - 0x601</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DROP INDEX</code></pre></td>
-<td><pre><code>1538 - 0x602</code></pre></td>
+<td><pre><code>1538 - 0x602</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DROP VIEW</code></pre></td>
-<td><pre><code>1539 - 0x603</code></pre></td>
+<td><pre><code>1539 - 0x603</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ALTER</code></pre></td>
-<td><pre><code>1792 - 0x700</code></pre></td>
+<td><pre><code>1792 - 0x700</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ALTER TABLE</code></pre></td>
-<td><pre><code>1793 - 0x701</code></pre></td>
+<td><pre><code>1793 - 0x701</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PREPARE</code></pre></td>
-<td><pre><code>2048 - 0x800</code></pre></td>
+<td><pre><code>2048 - 0x800</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>EXECUTE</code></pre></td>
-<td><pre><code>2304 - 0x900</code></pre></td>
+<td><pre><code>2304 - 0x900</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>BEGIN</code></pre></td>
-<td><pre><code>61440 - 0xF000</code></pre></td>
+<td><pre><code>61440 - 0xF000</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>COMMIT</code></pre></td>
-<td><pre><code>61696 - 0xF100</code></pre></td>
+<td><pre><code>61696 - 0xF100</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ROLLBACK</code></pre></td>
-<td><pre><code>61952 - 0xF200</code></pre></td>
+<td><pre><code>61952 - 0xF200</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>FETCH</code></pre></td>
-<td><pre><code>62208 - 0xF300</code></pre></td>
+<td><pre><code>62208 - 0xF300</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CLOSE</code></pre></td>
-<td><pre><code>62464 - 0xF400</code></pre></td>
+<td><pre><code>62464 - 0xF400</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>EMPTY</code></pre></td>
-<td><pre><code>62720 - 0xF500</code></pre></td>
+<td><pre><code>62720 - 0xF500</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -8066,6 +8056,10 @@ This field does not allow any custom items.
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Oracle</code></pre></td>
 <td><pre><code>TNS</code></pre></td>
+</tr>
+<tr class="odd">
+<td><pre style="white-space: pre-wrap"><code>IBM Informix</code></pre></td>
+<td><pre><code>Informix</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -11686,22 +11680,22 @@ This field does not allow any custom items.
 <tbody>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IN</code></pre></td>
-<td><pre><code>1 - 0x1</code></pre></td>
+<td><pre><code>1 - 0x1</code></pre></td>
 <td>Internet</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CS</code></pre></td>
-<td><pre><code>2 - 0x2</code></pre></td>
+<td><pre><code>2 - 0x2</code></pre></td>
 <td>CSNET class (Obsolete - used only for examples)</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CH</code></pre></td>
-<td><pre><code>3 - 0x3</code></pre></td>
+<td><pre><code>3 - 0x3</code></pre></td>
 <td>CHAOS class</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>HS</code></pre></td>
-<td><pre><code>4 - 0x4</code></pre></td>
+<td><pre><code>4 - 0x4</code></pre></td>
 <td>Hesiod</td>
 </tr>
 </tbody>
@@ -11727,97 +11721,97 @@ This field does not allow any custom items.
 <tbody>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>No DNS Response</code></pre></td>
-<td><pre><code>-1 - 0x-1</code></pre></td>
+<td><pre><code>-1 - 0x-1</code></pre></td>
 <td>No DNS Response</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NoError</code></pre></td>
-<td><pre><code>0 - 0x0</code></pre></td>
+<td><pre><code>0 - 0x0</code></pre></td>
 <td>No Error</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>FormErr</code></pre></td>
-<td><pre><code>1 - 0x1</code></pre></td>
+<td><pre><code>1 - 0x1</code></pre></td>
 <td>Format Error</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ServFail</code></pre></td>
-<td><pre><code>2 - 0x2</code></pre></td>
+<td><pre><code>2 - 0x2</code></pre></td>
 <td>Server Failure</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NXDomain</code></pre></td>
-<td><pre><code>3 - 0x3</code></pre></td>
+<td><pre><code>3 - 0x3</code></pre></td>
 <td>Non-Existent Domain</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NotImp</code></pre></td>
-<td><pre><code>4 - 0x4</code></pre></td>
+<td><pre><code>4 - 0x4</code></pre></td>
 <td>Not Implemented</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Refused</code></pre></td>
-<td><pre><code>5 - 0x5</code></pre></td>
+<td><pre><code>5 - 0x5</code></pre></td>
 <td>Query Refused</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>YXDomain</code></pre></td>
-<td><pre><code>6 - 0x6</code></pre></td>
+<td><pre><code>6 - 0x6</code></pre></td>
 <td>Name Exists when it should not</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>YXRRSet</code></pre></td>
-<td><pre><code>7 - 0x7</code></pre></td>
+<td><pre><code>7 - 0x7</code></pre></td>
 <td>RR Set Exists when it should not</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NXRRSet</code></pre></td>
-<td><pre><code>8 - 0x8</code></pre></td>
+<td><pre><code>8 - 0x8</code></pre></td>
 <td>RR Set that should exist does not</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NotAuth</code></pre></td>
-<td><pre><code>9 - 0x9</code></pre></td>
+<td><pre><code>9 - 0x9</code></pre></td>
 <td>Server Not Authoritative for zone</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NotZone</code></pre></td>
-<td><pre><code>10 - 0xA</code></pre></td>
+<td><pre><code>10 - 0xA</code></pre></td>
 <td>Name not contained in zone</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>BadSig/BadVers</code></pre></td>
-<td><pre><code>16 - 0x10</code></pre></td>
+<td><pre><code>16 - 0x10</code></pre></td>
 <td>TSIG Signature Failure OR Bad OPT version</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>BadKey</code></pre></td>
-<td><pre><code>17 - 0x11</code></pre></td>
+<td><pre><code>17 - 0x11</code></pre></td>
 <td>Key not recognized</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>BadTime</code></pre></td>
-<td><pre><code>18 - 0x12</code></pre></td>
+<td><pre><code>18 - 0x12</code></pre></td>
 <td>Signature out of time window</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>BadMode</code></pre></td>
-<td><pre><code>19 - 0x13</code></pre></td>
+<td><pre><code>19 - 0x13</code></pre></td>
 <td>Bad TKEY Mode</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>BadName</code></pre></td>
-<td><pre><code>20 - 0x14</code></pre></td>
+<td><pre><code>20 - 0x14</code></pre></td>
 <td>Duplicate key name</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>BadAlg</code></pre></td>
-<td><pre><code>21 - 0x15</code></pre></td>
+<td><pre><code>21 - 0x15</code></pre></td>
 <td>Algorithm not supported</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>BadTrunc</code></pre></td>
-<td><pre><code>22 - 0x16</code></pre></td>
+<td><pre><code>22 - 0x16</code></pre></td>
 <td>Bad Truncation</td>
 </tr>
 </tbody>
@@ -11843,367 +11837,367 @@ This field does not allow any custom items.
 <tbody>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RESERVED</code></pre></td>
-<td><pre><code>0 - 0x0</code></pre></td>
+<td><pre><code>0 - 0x0</code></pre></td>
 <td>reserved type, sometimes mistakenly used by Microsoft protocols</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>A</code></pre></td>
-<td><pre><code>1 - 0x1</code></pre></td>
+<td><pre><code>1 - 0x1</code></pre></td>
 <td>a host address</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NS</code></pre></td>
-<td><pre><code>2 - 0x2</code></pre></td>
+<td><pre><code>2 - 0x2</code></pre></td>
 <td>an authoritative name server</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>MD</code></pre></td>
-<td><pre><code>3 - 0x3</code></pre></td>
+<td><pre><code>3 - 0x3</code></pre></td>
 <td>a mail destination (Obsolete - use MX)</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>MF</code></pre></td>
-<td><pre><code>4 - 0x4</code></pre></td>
+<td><pre><code>4 - 0x4</code></pre></td>
 <td>a mail forwarder (Obsolete - use MX)</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CNAME</code></pre></td>
-<td><pre><code>5 - 0x5</code></pre></td>
+<td><pre><code>5 - 0x5</code></pre></td>
 <td>the canonical name for an alias</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SOA</code></pre></td>
-<td><pre><code>6 - 0x6</code></pre></td>
+<td><pre><code>6 - 0x6</code></pre></td>
 <td>marks the start of a zone of authority</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>MB</code></pre></td>
-<td><pre><code>7 - 0x7</code></pre></td>
+<td><pre><code>7 - 0x7</code></pre></td>
 <td>a mailbox domain name (EXPERIMENTAL)</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>MG</code></pre></td>
-<td><pre><code>8 - 0x8</code></pre></td>
+<td><pre><code>8 - 0x8</code></pre></td>
 <td>a mail group member (EXPERIMENTAL)</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>MR</code></pre></td>
-<td><pre><code>9 - 0x9</code></pre></td>
+<td><pre><code>9 - 0x9</code></pre></td>
 <td>a mail rename domain name (EXPERIMENTAL)</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NULL</code></pre></td>
-<td><pre><code>10 - 0xA</code></pre></td>
+<td><pre><code>10 - 0xA</code></pre></td>
 <td>a null RR (EXPERIMENTAL)</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>WKS</code></pre></td>
-<td><pre><code>11 - 0xB</code></pre></td>
+<td><pre><code>11 - 0xB</code></pre></td>
 <td>a well known service description</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PTR</code></pre></td>
-<td><pre><code>12 - 0xC</code></pre></td>
+<td><pre><code>12 - 0xC</code></pre></td>
 <td>a domain name pointer</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>HINFO</code></pre></td>
-<td><pre><code>13 - 0xD</code></pre></td>
+<td><pre><code>13 - 0xD</code></pre></td>
 <td>host information</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>MINFO</code></pre></td>
-<td><pre><code>14 - 0xE</code></pre></td>
+<td><pre><code>14 - 0xE</code></pre></td>
 <td>mailbox or mail list information</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>MX</code></pre></td>
-<td><pre><code>15 - 0xF</code></pre></td>
+<td><pre><code>15 - 0xF</code></pre></td>
 <td>mail exchange</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>TXT</code></pre></td>
-<td><pre><code>16 - 0x10</code></pre></td>
+<td><pre><code>16 - 0x10</code></pre></td>
 <td>text strings</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RP</code></pre></td>
-<td><pre><code>17 - 0x11</code></pre></td>
+<td><pre><code>17 - 0x11</code></pre></td>
 <td>for Responsible Person</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>AFSDB</code></pre></td>
-<td><pre><code>18 - 0x12</code></pre></td>
+<td><pre><code>18 - 0x12</code></pre></td>
 <td>for AFS Data Base location</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>X25</code></pre></td>
-<td><pre><code>19 - 0x13</code></pre></td>
+<td><pre><code>19 - 0x13</code></pre></td>
 <td>for X.25 PSDN address</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ISDN</code></pre></td>
-<td><pre><code>20 - 0x14</code></pre></td>
+<td><pre><code>20 - 0x14</code></pre></td>
 <td>for ISDN address</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RT</code></pre></td>
-<td><pre><code>21 - 0x15</code></pre></td>
+<td><pre><code>21 - 0x15</code></pre></td>
 <td>for Route Through</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NSAP</code></pre></td>
-<td><pre><code>22 - 0x16</code></pre></td>
+<td><pre><code>22 - 0x16</code></pre></td>
 <td>for NSAP address, NSAP style A record</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NSAP-PTR</code></pre></td>
-<td><pre><code>23 - 0x17</code></pre></td>
+<td><pre><code>23 - 0x17</code></pre></td>
 <td>for domain name pointer, NSAP style</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SIG</code></pre></td>
-<td><pre><code>24 - 0x18</code></pre></td>
+<td><pre><code>24 - 0x18</code></pre></td>
 <td>for security signature</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>KEY</code></pre></td>
-<td><pre><code>25 - 0x19</code></pre></td>
+<td><pre><code>25 - 0x19</code></pre></td>
 <td>for security key</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PX</code></pre></td>
-<td><pre><code>26 - 0x1A</code></pre></td>
+<td><pre><code>26 - 0x1A</code></pre></td>
 <td>X.400 mail mapping information</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>GPOS</code></pre></td>
-<td><pre><code>27 - 0x1B</code></pre></td>
+<td><pre><code>27 - 0x1B</code></pre></td>
 <td>Geographical Position</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>AAAA</code></pre></td>
-<td><pre><code>28 - 0x1C</code></pre></td>
+<td><pre><code>28 - 0x1C</code></pre></td>
 <td>a IP6 host address</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>LOC</code></pre></td>
-<td><pre><code>29 - 0x1D</code></pre></td>
+<td><pre><code>29 - 0x1D</code></pre></td>
 <td>Location Information</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NXT</code></pre></td>
-<td><pre><code>30 - 0x1E</code></pre></td>
+<td><pre><code>30 - 0x1E</code></pre></td>
 <td>Next Domain - OBSOLETE</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>EID</code></pre></td>
-<td><pre><code>31 - 0x1F</code></pre></td>
+<td><pre><code>31 - 0x1F</code></pre></td>
 <td>Endpoint Identifier</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NIMLOC/NB</code></pre></td>
-<td><pre><code>32 - 0x20</code></pre></td>
+<td><pre><code>32 - 0x20</code></pre></td>
 <td>Nimrod Locator OR Netbios</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SRV/NBSTAT</code></pre></td>
-<td><pre><code>33 - 0x21</code></pre></td>
+<td><pre><code>33 - 0x21</code></pre></td>
 <td>Server Selection OR Netbios Stats</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ATMA</code></pre></td>
-<td><pre><code>34 - 0x22</code></pre></td>
+<td><pre><code>34 - 0x22</code></pre></td>
 <td>ATM Address</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NAPTR</code></pre></td>
-<td><pre><code>35 - 0x23</code></pre></td>
+<td><pre><code>35 - 0x23</code></pre></td>
 <td>Naming Authority Pointer</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>KX</code></pre></td>
-<td><pre><code>36 - 0x24</code></pre></td>
+<td><pre><code>36 - 0x24</code></pre></td>
 <td>Key Exchanger</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CERT</code></pre></td>
-<td><pre><code>37 - 0x25</code></pre></td>
+<td><pre><code>37 - 0x25</code></pre></td>
 <td>CERT</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>A6</code></pre></td>
-<td><pre><code>38 - 0x26</code></pre></td>
+<td><pre><code>38 - 0x26</code></pre></td>
 <td>A6 (Experimental)</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DNAME</code></pre></td>
-<td><pre><code>39 - 0x27</code></pre></td>
+<td><pre><code>39 - 0x27</code></pre></td>
 <td>DNAME</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SINK</code></pre></td>
-<td><pre><code>40 - 0x28</code></pre></td>
+<td><pre><code>40 - 0x28</code></pre></td>
 <td>SINK</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>OPT</code></pre></td>
-<td><pre><code>41 - 0x29</code></pre></td>
+<td><pre><code>41 - 0x29</code></pre></td>
 <td>OPT</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>APL</code></pre></td>
-<td><pre><code>42 - 0x2A</code></pre></td>
+<td><pre><code>42 - 0x2A</code></pre></td>
 <td>APL</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DS</code></pre></td>
-<td><pre><code>43 - 0x2B</code></pre></td>
+<td><pre><code>43 - 0x2B</code></pre></td>
 <td>Delegation Signer</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SSHFP</code></pre></td>
-<td><pre><code>44 - 0x2C</code></pre></td>
+<td><pre><code>44 - 0x2C</code></pre></td>
 <td>SSH Key Fingerprint</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPSECKEY</code></pre></td>
-<td><pre><code>45 - 0x2D</code></pre></td>
+<td><pre><code>45 - 0x2D</code></pre></td>
 <td>IPSECKEY</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RRSIG</code></pre></td>
-<td><pre><code>46 - 0x2E</code></pre></td>
+<td><pre><code>46 - 0x2E</code></pre></td>
 <td>RRSIG</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NSEC</code></pre></td>
-<td><pre><code>47 - 0x2F</code></pre></td>
+<td><pre><code>47 - 0x2F</code></pre></td>
 <td>NSEC</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DNSKEY</code></pre></td>
-<td><pre><code>48 - 0x30</code></pre></td>
+<td><pre><code>48 - 0x30</code></pre></td>
 <td>DNSKEY</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DHCID</code></pre></td>
-<td><pre><code>49 - 0x31</code></pre></td>
+<td><pre><code>49 - 0x31</code></pre></td>
 <td>DHCID</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NSEC3</code></pre></td>
-<td><pre><code>50 - 0x32</code></pre></td>
+<td><pre><code>50 - 0x32</code></pre></td>
 <td>NSEC3</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NSEC3PARAM</code></pre></td>
-<td><pre><code>51 - 0x33</code></pre></td>
+<td><pre><code>51 - 0x33</code></pre></td>
 <td>NSEC3PARAM</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>HIP</code></pre></td>
-<td><pre><code>55 - 0x37</code></pre></td>
+<td><pre><code>55 - 0x37</code></pre></td>
 <td>Host Identity Protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NINFO</code></pre></td>
-<td><pre><code>56 - 0x38</code></pre></td>
+<td><pre><code>56 - 0x38</code></pre></td>
 <td>NINFO</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RKEY</code></pre></td>
-<td><pre><code>57 - 0x39</code></pre></td>
+<td><pre><code>57 - 0x39</code></pre></td>
 <td>RKEY</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>TALINK</code></pre></td>
-<td><pre><code>58 - 0x3A</code></pre></td>
+<td><pre><code>58 - 0x3A</code></pre></td>
 <td>Trust Anchor LINK</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CDS</code></pre></td>
-<td><pre><code>59 - 0x3B</code></pre></td>
+<td><pre><code>59 - 0x3B</code></pre></td>
 <td>Child DS</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SPF</code></pre></td>
-<td><pre><code>99 - 0x63</code></pre></td>
+<td><pre><code>99 - 0x63</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>UINFO</code></pre></td>
-<td><pre><code>100 - 0x64</code></pre></td>
+<td><pre><code>100 - 0x64</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>UID</code></pre></td>
-<td><pre><code>101 - 0x65</code></pre></td>
+<td><pre><code>101 - 0x65</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>GID</code></pre></td>
-<td><pre><code>102 - 0x66</code></pre></td>
+<td><pre><code>102 - 0x66</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>UNSPEC</code></pre></td>
-<td><pre><code>103 - 0x67</code></pre></td>
+<td><pre><code>103 - 0x67</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>TKEY</code></pre></td>
-<td><pre><code>249 - 0xF9</code></pre></td>
+<td><pre><code>249 - 0xF9</code></pre></td>
 <td>Transaction Key</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>TSIG</code></pre></td>
-<td><pre><code>250 - 0xFA</code></pre></td>
+<td><pre><code>250 - 0xFA</code></pre></td>
 <td>Transaction Signature</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IXFR</code></pre></td>
-<td><pre><code>251 - 0xFB</code></pre></td>
+<td><pre><code>251 - 0xFB</code></pre></td>
 <td>incremental transfer</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>AXFR</code></pre></td>
-<td><pre><code>252 - 0xFC</code></pre></td>
+<td><pre><code>252 - 0xFC</code></pre></td>
 <td>transfer of an entire zone</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>MAILB</code></pre></td>
-<td><pre><code>253 - 0xFD</code></pre></td>
+<td><pre><code>253 - 0xFD</code></pre></td>
 <td>mailbox-related RRs (MB, MG or MR)</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>MAILA</code></pre></td>
-<td><pre><code>254 - 0xFE</code></pre></td>
+<td><pre><code>254 - 0xFE</code></pre></td>
 <td>mail agent RRs (Obsolete - see MX)</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>*</code></pre></td>
-<td><pre><code>255 - 0xFF</code></pre></td>
+<td><pre><code>255 - 0xFF</code></pre></td>
 <td>A request for all records</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>URI</code></pre></td>
-<td><pre><code>256 - 0x100</code></pre></td>
+<td><pre><code>256 - 0x100</code></pre></td>
 <td>URI</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>CAA</code></pre></td>
-<td><pre><code>257 - 0x101</code></pre></td>
+<td><pre><code>257 - 0x101</code></pre></td>
 <td>Certification Authority Authorization</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>TA</code></pre></td>
-<td><pre><code>32768 - 0x8000</code></pre></td>
+<td><pre><code>32768 - 0x8000</code></pre></td>
 <td>DNSSEC Trust Authorities</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DLV</code></pre></td>
-<td><pre><code>32769 - 0x8001</code></pre></td>
+<td><pre><code>32769 - 0x8001</code></pre></td>
 <td>DNSSEC Lookaside Validation</td>
 </tr>
 </tbody>
@@ -12227,23 +12221,23 @@ This field does not allow any custom items.
 <tbody>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Off</code></pre></td>
-<td><pre><code>0 - 0x0</code></pre></td>
+<td><pre><code>0 - 0x0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Off stream</code></pre></td>
-<td><pre><code>1 - 0x1</code></pre></td>
+<td><pre><code>1 - 0x1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Basic</code></pre></td>
-<td><pre><code>2 - 0x2</code></pre></td>
+<td><pre><code>2 - 0x2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Basic stream</code></pre></td>
-<td><pre><code>3 - 0x3</code></pre></td>
+<td><pre><code>3 - 0x3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Rc5</code></pre></td>
-<td><pre><code>4 - 0x4</code></pre></td>
+<td><pre><code>4 - 0x4</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -12266,2159 +12260,2159 @@ This field does not allow any custom items.
 <tbody>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>XEROX PUP</code></pre></td>
-<td><pre><code>512 - 0x200</code></pre></td>
+<td><pre><code>512 - 0x200</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PUP Addr Trans</code></pre></td>
-<td><pre><code>513 - 0x201</code></pre></td>
+<td><pre><code>513 - 0x201</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Nixdorf (conflicts with 802.3 Length Field)</code></pre></td>
-<td><pre><code>1024 - 0x400</code></pre></td>
+<td><pre><code>1024 - 0x400</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Ethernet II</code></pre></td>
-<td><pre><code>1528 - 0x5F8</code></pre></td>
+<td><pre><code>1528 - 0x5F8</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>XEROX NS IDP</code></pre></td>
-<td><pre><code>1536 - 0x600</code></pre></td>
+<td><pre><code>1536 - 0x600</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>XNS Address Translation</code></pre></td>
-<td><pre><code>1537 - 0x601</code></pre></td>
+<td><pre><code>1537 - 0x601</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DLog</code></pre></td>
-<td><pre><code>1632 - 0x660</code></pre></td>
+<td><pre><code>1632 - 0x660</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DLog</code></pre></td>
-<td><pre><code>1633 - 0x661</code></pre></td>
+<td><pre><code>1633 - 0x661</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv4</code></pre></td>
-<td><pre><code>2048 - 0x800</code></pre></td>
+<td><pre><code>2048 - 0x800</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Valid Systems</code></pre></td>
-<td><pre><code>2049 - 0x801</code></pre></td>
+<td><pre><code>2049 - 0x801</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NBS Internet</code></pre></td>
-<td><pre><code>2050 - 0x802</code></pre></td>
+<td><pre><code>2050 - 0x802</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ECMA Internet</code></pre></td>
-<td><pre><code>2051 - 0x803</code></pre></td>
+<td><pre><code>2051 - 0x803</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Chaosnet</code></pre></td>
-<td><pre><code>2052 - 0x804</code></pre></td>
+<td><pre><code>2052 - 0x804</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>X.25 Level 3</code></pre></td>
-<td><pre><code>2053 - 0x805</code></pre></td>
+<td><pre><code>2053 - 0x805</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ARP</code></pre></td>
-<td><pre><code>2054 - 0x806</code></pre></td>
+<td><pre><code>2054 - 0x806</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>XNS Compatability</code></pre></td>
-<td><pre><code>2055 - 0x807</code></pre></td>
+<td><pre><code>2055 - 0x807</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Frame Relay ARP</code></pre></td>
-<td><pre><code>2056 - 0x808</code></pre></td>
+<td><pre><code>2056 - 0x808</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Symbolics Private</code></pre></td>
-<td><pre><code>2076 - 0x81C</code></pre></td>
+<td><pre><code>2076 - 0x81C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Wake-on-LAN (WOL)</code></pre></td>
-<td><pre><code>2114 - 0x842</code></pre></td>
+<td><pre><code>2114 - 0x842</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Xyplex</code></pre></td>
-<td><pre><code>2184 - 0x888</code></pre></td>
+<td><pre><code>2184 - 0x888</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Xyplex</code></pre></td>
-<td><pre><code>2185 - 0x889</code></pre></td>
+<td><pre><code>2185 - 0x889</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Xyplex</code></pre></td>
-<td><pre><code>2186 - 0x88A</code></pre></td>
+<td><pre><code>2186 - 0x88A</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>WiMax Mac to Mac Packet</code></pre></td>
-<td><pre><code>2288 - 0x8F0</code></pre></td>
+<td><pre><code>2288 - 0x8F0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>G8BPQ AX.25 over Ethernet</code></pre></td>
-<td><pre><code>2303 - 0x8FF</code></pre></td>
+<td><pre><code>2303 - 0x8FF</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Ungermann-Bass net debugr</code></pre></td>
-<td><pre><code>2304 - 0x900</code></pre></td>
+<td><pre><code>2304 - 0x900</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Xerox IEEE802.3 PUP</code></pre></td>
-<td><pre><code>2560 - 0xA00</code></pre></td>
+<td><pre><code>2560 - 0xA00</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PUP Addr Trans</code></pre></td>
-<td><pre><code>2561 - 0xA01</code></pre></td>
+<td><pre><code>2561 - 0xA01</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Banyan VINES</code></pre></td>
-<td><pre><code>2989 - 0xBAD</code></pre></td>
+<td><pre><code>2989 - 0xBAD</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>VINES Loopback</code></pre></td>
-<td><pre><code>2990 - 0xBAE</code></pre></td>
+<td><pre><code>2990 - 0xBAE</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>VINES Echo</code></pre></td>
-<td><pre><code>2991 - 0xBAF</code></pre></td>
+<td><pre><code>2991 - 0xBAF</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Berkeley Trailer nego</code></pre></td>
-<td><pre><code>4096 - 0x1000</code></pre></td>
+<td><pre><code>4096 - 0x1000</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Berkeley Trailer encap/IP</code></pre></td>
-<td><pre><code>4097 - 0x1001</code></pre></td>
+<td><pre><code>4097 - 0x1001</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DCA - Multicast</code></pre></td>
-<td><pre><code>4660 - 0x1234</code></pre></td>
+<td><pre><code>4660 - 0x1234</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Valid Systems</code></pre></td>
-<td><pre><code>5632 - 0x1600</code></pre></td>
+<td><pre><code>5632 - 0x1600</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>TRAIL - MS Network Monitor Summary Packet</code></pre></td>
-<td><pre><code>6532 - 0x1984</code></pre></td>
+<td><pre><code>6532 - 0x1984</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Artificial Horizons</code></pre></td>
-<td><pre><code>6537 - 0x1989</code></pre></td>
+<td><pre><code>6537 - 0x1989</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Datapoint Corporation</code></pre></td>
-<td><pre><code>6549 - 0x1995</code></pre></td>
+<td><pre><code>6549 - 0x1995</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Cisco Group Multicast Protocol (CGMP)</code></pre></td>
-<td><pre><code>8193 - 0x2001</code></pre></td>
+<td><pre><code>8193 - 0x2001</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>GigaSMART Headers</code></pre></td>
-<td><pre><code>8933 - 0x22E5</code></pre></td>
+<td><pre><code>8933 - 0x22E5</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Multiple Stream Reservation Protocol (MSRP)</code></pre></td>
-<td><pre><code>8938 - 0x22EA</code></pre></td>
+<td><pre><code>8938 - 0x22EA</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Audio Video Bridging Transport Protocol (AVBTP)</code></pre></td>
-<td><pre><code>8944 - 0x22F0</code></pre></td>
+<td><pre><code>8944 - 0x22F0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Robust Header Compression (ROHC)</code></pre></td>
-<td><pre><code>8945 - 0x22F1</code></pre></td>
+<td><pre><code>8945 - 0x22F1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Transparent Interconnection of Lots of Links (TRILL)</code></pre></td>
-<td><pre><code>8947 - 0x22F3</code></pre></td>
+<td><pre><code>8947 - 0x22F3</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Intermediate System to Intermediate System</code></pre></td>
-<td><pre><code>8948 - 0x22F4</code></pre></td>
+<td><pre><code>8948 - 0x22F4</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Intel Centrino Promiscuous Packets</code></pre></td>
-<td><pre><code>9298 - 0x2452</code></pre></td>
+<td><pre><code>9298 - 0x2452</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>3Com NBP Virtual Circuit Datagram</code></pre></td>
-<td><pre><code>15360 - 0x3C00</code></pre></td>
+<td><pre><code>15360 - 0x3C00</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>3Com NBP System Control Datagram</code></pre></td>
-<td><pre><code>15361 - 0x3C01</code></pre></td>
+<td><pre><code>15361 - 0x3C01</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>3Com NBP Connect Request (Virtual CCT)</code></pre></td>
-<td><pre><code>15362 - 0x3C02</code></pre></td>
+<td><pre><code>15362 - 0x3C02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>3Com NBP Connect Response</code></pre></td>
-<td><pre><code>15363 - 0x3C03</code></pre></td>
+<td><pre><code>15363 - 0x3C03</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>3Com NBP Connect Complete</code></pre></td>
-<td><pre><code>15364 - 0x3C04</code></pre></td>
+<td><pre><code>15364 - 0x3C04</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>3Com NBP Close Request (Virtual CCT)</code></pre></td>
-<td><pre><code>15365 - 0x3C05</code></pre></td>
+<td><pre><code>15365 - 0x3C05</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>3Com NBP Close Response</code></pre></td>
-<td><pre><code>15366 - 0x3C06</code></pre></td>
+<td><pre><code>15366 - 0x3C06</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>3Com NBP Datagram</code></pre></td>
-<td><pre><code>15367 - 0x3C07</code></pre></td>
+<td><pre><code>15367 - 0x3C07</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>3Com NBP Datagram Broadcast</code></pre></td>
-<td><pre><code>15368 - 0x3C08</code></pre></td>
+<td><pre><code>15368 - 0x3C08</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>3Com NBP Claim NetBIOS Name</code></pre></td>
-<td><pre><code>15369 - 0x3C09</code></pre></td>
+<td><pre><code>15369 - 0x3C09</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>3Com NBP Delete Netbios Name</code></pre></td>
-<td><pre><code>15370 - 0x3C0A</code></pre></td>
+<td><pre><code>15370 - 0x3C0A</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>3Com NBP Remote Adaptor Status Request</code></pre></td>
-<td><pre><code>15371 - 0x3C0B</code></pre></td>
+<td><pre><code>15371 - 0x3C0B</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>3Com NBP Remote Adaptor Response</code></pre></td>
-<td><pre><code>15372 - 0x3C0C</code></pre></td>
+<td><pre><code>15372 - 0x3C0C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>3Com NBP Reset</code></pre></td>
-<td><pre><code>15373 - 0x3C0D</code></pre></td>
+<td><pre><code>15373 - 0x3C0D</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Ethernet Powerlink (EPL v1)</code></pre></td>
-<td><pre><code>15935 - 0x3E3F</code></pre></td>
+<td><pre><code>15935 - 0x3E3F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PCS Basic Block Protocol</code></pre></td>
-<td><pre><code>16962 - 0x4242</code></pre></td>
+<td><pre><code>16962 - 0x4242</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Information Modes Little Big LAN Diagnostic</code></pre></td>
-<td><pre><code>16972 - 0x424C</code></pre></td>
+<td><pre><code>16972 - 0x424C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>THD - Diddle</code></pre></td>
-<td><pre><code>17185 - 0x4321</code></pre></td>
+<td><pre><code>17185 - 0x4321</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Information Modes Little Big LAN</code></pre></td>
-<td><pre><code>19522 - 0x4C42</code></pre></td>
+<td><pre><code>19522 - 0x4C42</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>BBN Simnet</code></pre></td>
-<td><pre><code>21000 - 0x5208</code></pre></td>
+<td><pre><code>21000 - 0x5208</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DEC Unassigned</code></pre></td>
-<td><pre><code>24576 - 0x6000</code></pre></td>
+<td><pre><code>24576 - 0x6000</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DEC Maintenance Operation Protocol (MOP)</code></pre></td>
-<td><pre><code>24577 - 0x6001</code></pre></td>
+<td><pre><code>24577 - 0x6001</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DEC Maintenance Operation Protocol (MOP)</code></pre></td>
-<td><pre><code>24578 - 0x6002</code></pre></td>
+<td><pre><code>24578 - 0x6002</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DECNET Phase IV</code></pre></td>
-<td><pre><code>24579 - 0x6003</code></pre></td>
+<td><pre><code>24579 - 0x6003</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DEC Local Area Transport (LAT)</code></pre></td>
-<td><pre><code>24580 - 0x6004</code></pre></td>
+<td><pre><code>24580 - 0x6004</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DEC Diagnostic Protocol</code></pre></td>
-<td><pre><code>24581 - 0x6005</code></pre></td>
+<td><pre><code>24581 - 0x6005</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DEC Customer Protocol</code></pre></td>
-<td><pre><code>24582 - 0x6006</code></pre></td>
+<td><pre><code>24582 - 0x6006</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DEC Local Area VAX Cluster (LAVC)</code></pre></td>
-<td><pre><code>24583 - 0x6007</code></pre></td>
+<td><pre><code>24583 - 0x6007</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DEC AMBER</code></pre></td>
-<td><pre><code>24584 - 0x6008</code></pre></td>
+<td><pre><code>24584 - 0x6008</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DEC MUMPS</code></pre></td>
-<td><pre><code>24585 - 0x6009</code></pre></td>
+<td><pre><code>24585 - 0x6009</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>3Com Corporation</code></pre></td>
-<td><pre><code>24592 - 0x6010</code></pre></td>
+<td><pre><code>24592 - 0x6010</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>3Com Corporation</code></pre></td>
-<td><pre><code>24593 - 0x6011</code></pre></td>
+<td><pre><code>24593 - 0x6011</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>3Com Corporation</code></pre></td>
-<td><pre><code>24594 - 0x6012</code></pre></td>
+<td><pre><code>24594 - 0x6012</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>3Com Corporation</code></pre></td>
-<td><pre><code>24595 - 0x6013</code></pre></td>
+<td><pre><code>24595 - 0x6013</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>3Com Corporation</code></pre></td>
-<td><pre><code>24596 - 0x6014</code></pre></td>
+<td><pre><code>24596 - 0x6014</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Trans Ether Bridging</code></pre></td>
-<td><pre><code>25944 - 0x6558</code></pre></td>
+<td><pre><code>25944 - 0x6558</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Raw Frame Relay</code></pre></td>
-<td><pre><code>25945 - 0x6559</code></pre></td>
+<td><pre><code>25945 - 0x6559</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Ungermann-Bass download</code></pre></td>
-<td><pre><code>28672 - 0x7000</code></pre></td>
+<td><pre><code>28672 - 0x7000</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Ungermann-Bass NIUs</code></pre></td>
-<td><pre><code>28673 - 0x7001</code></pre></td>
+<td><pre><code>28673 - 0x7001</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Ungermann-Bass dia/loop</code></pre></td>
-<td><pre><code>28674 - 0x7002</code></pre></td>
+<td><pre><code>28674 - 0x7002</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Ungermann-Bass (NMC to/from UB Bridge)</code></pre></td>
-<td><pre><code>28675 - 0x7003</code></pre></td>
+<td><pre><code>28675 - 0x7003</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Ungermann-Bass Bridge Spanning Tree</code></pre></td>
-<td><pre><code>28676 - 0x7004</code></pre></td>
+<td><pre><code>28676 - 0x7004</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>OS/9 Microware</code></pre></td>
-<td><pre><code>28679 - 0x7007</code></pre></td>
+<td><pre><code>28679 - 0x7007</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>OS/9 Net</code></pre></td>
-<td><pre><code>28681 - 0x7009</code></pre></td>
+<td><pre><code>28681 - 0x7009</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Sintrom (was LRT - England)</code></pre></td>
-<td><pre><code>28704 - 0x7020</code></pre></td>
+<td><pre><code>28704 - 0x7020</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Sintrom (was LRT - England)</code></pre></td>
-<td><pre><code>28705 - 0x7021</code></pre></td>
+<td><pre><code>28705 - 0x7021</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Sintrom (was LRT - England)</code></pre></td>
-<td><pre><code>28706 - 0x7022</code></pre></td>
+<td><pre><code>28706 - 0x7022</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Sintrom (was LRT - England)</code></pre></td>
-<td><pre><code>28707 - 0x7023</code></pre></td>
+<td><pre><code>28707 - 0x7023</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Sintrom (was LRT - England)</code></pre></td>
-<td><pre><code>28708 - 0x7024</code></pre></td>
+<td><pre><code>28708 - 0x7024</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Sintrom (was LRT - England)</code></pre></td>
-<td><pre><code>28709 - 0x7025</code></pre></td>
+<td><pre><code>28709 - 0x7025</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Sintrom (was LRT - England)</code></pre></td>
-<td><pre><code>28710 - 0x7026</code></pre></td>
+<td><pre><code>28710 - 0x7026</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Sintrom (was LRT - England)</code></pre></td>
-<td><pre><code>28711 - 0x7027</code></pre></td>
+<td><pre><code>28711 - 0x7027</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Sintrom (was LRT - England)</code></pre></td>
-<td><pre><code>28712 - 0x7028</code></pre></td>
+<td><pre><code>28712 - 0x7028</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Sintrom (was LRT - England)</code></pre></td>
-<td><pre><code>28713 - 0x7029</code></pre></td>
+<td><pre><code>28713 - 0x7029</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Proteon</code></pre></td>
-<td><pre><code>28720 - 0x7030</code></pre></td>
+<td><pre><code>28720 - 0x7030</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Prime NTS (Network Terminal Service)</code></pre></td>
-<td><pre><code>28721 - 0x7031</code></pre></td>
+<td><pre><code>28721 - 0x7031</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Cabletron</code></pre></td>
-<td><pre><code>28724 - 0x7034</code></pre></td>
+<td><pre><code>28724 - 0x7034</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Cronus VLN</code></pre></td>
-<td><pre><code>32771 - 0x8003</code></pre></td>
+<td><pre><code>32771 - 0x8003</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Cronus Direct</code></pre></td>
-<td><pre><code>32772 - 0x8004</code></pre></td>
+<td><pre><code>32772 - 0x8004</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>HP Probe</code></pre></td>
-<td><pre><code>32773 - 0x8005</code></pre></td>
+<td><pre><code>32773 - 0x8005</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Nestar</code></pre></td>
-<td><pre><code>32774 - 0x8006</code></pre></td>
+<td><pre><code>32774 - 0x8006</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>AT&amp;T</code></pre></td>
-<td><pre><code>32776 - 0x8008</code></pre></td>
+<td><pre><code>32776 - 0x8008</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Excelan</code></pre></td>
-<td><pre><code>32784 - 0x8010</code></pre></td>
+<td><pre><code>32784 - 0x8010</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SGI diagnostics</code></pre></td>
-<td><pre><code>32787 - 0x8013</code></pre></td>
+<td><pre><code>32787 - 0x8013</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SGI network games</code></pre></td>
-<td><pre><code>32788 - 0x8014</code></pre></td>
+<td><pre><code>32788 - 0x8014</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SGI reserved</code></pre></td>
-<td><pre><code>32789 - 0x8015</code></pre></td>
+<td><pre><code>32789 - 0x8015</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SGI bounce server</code></pre></td>
-<td><pre><code>32790 - 0x8016</code></pre></td>
+<td><pre><code>32790 - 0x8016</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Apollo Domain</code></pre></td>
-<td><pre><code>32793 - 0x8019</code></pre></td>
+<td><pre><code>32793 - 0x8019</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Tymshare</code></pre></td>
-<td><pre><code>32815 - 0x802F</code></pre></td>
+<td><pre><code>32815 - 0x802F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Tigan, Inc.</code></pre></td>
-<td><pre><code>32816 - 0x8030</code></pre></td>
+<td><pre><code>32816 - 0x8030</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Reverse ARP</code></pre></td>
-<td><pre><code>32821 - 0x8035</code></pre></td>
+<td><pre><code>32821 - 0x8035</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Aeonic Systems</code></pre></td>
-<td><pre><code>32822 - 0x8036</code></pre></td>
+<td><pre><code>32822 - 0x8036</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPX (Novell Netware)</code></pre></td>
-<td><pre><code>32823 - 0x8037</code></pre></td>
+<td><pre><code>32823 - 0x8037</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DEC LANBridge Management</code></pre></td>
-<td><pre><code>32824 - 0x8038</code></pre></td>
+<td><pre><code>32824 - 0x8038</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DEC DSM/DDP</code></pre></td>
-<td><pre><code>32825 - 0x8039</code></pre></td>
+<td><pre><code>32825 - 0x8039</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DEC Argonaut Console</code></pre></td>
-<td><pre><code>32826 - 0x803A</code></pre></td>
+<td><pre><code>32826 - 0x803A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DEC VAXELN</code></pre></td>
-<td><pre><code>32827 - 0x803B</code></pre></td>
+<td><pre><code>32827 - 0x803B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DEC DNS Naming Service</code></pre></td>
-<td><pre><code>32828 - 0x803C</code></pre></td>
+<td><pre><code>32828 - 0x803C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DEC Ethernet CSMA/CD Encryption Protocol</code></pre></td>
-<td><pre><code>32829 - 0x803D</code></pre></td>
+<td><pre><code>32829 - 0x803D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DEC Distributed Time Service</code></pre></td>
-<td><pre><code>32830 - 0x803E</code></pre></td>
+<td><pre><code>32830 - 0x803E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DEC LAN Traffic Monitor Protocol</code></pre></td>
-<td><pre><code>32831 - 0x803F</code></pre></td>
+<td><pre><code>32831 - 0x803F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DEC PATHWORKS DECnet NETBIOS Emulation</code></pre></td>
-<td><pre><code>32832 - 0x8040</code></pre></td>
+<td><pre><code>32832 - 0x8040</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DEC Local Area System Transport</code></pre></td>
-<td><pre><code>32833 - 0x8041</code></pre></td>
+<td><pre><code>32833 - 0x8041</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DEC unassigned</code></pre></td>
-<td><pre><code>32834 - 0x8042</code></pre></td>
+<td><pre><code>32834 - 0x8042</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Planning Research Corp.</code></pre></td>
-<td><pre><code>32836 - 0x8044</code></pre></td>
+<td><pre><code>32836 - 0x8044</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>AT&amp;T</code></pre></td>
-<td><pre><code>32838 - 0x8046</code></pre></td>
+<td><pre><code>32838 - 0x8046</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>AT&amp;T</code></pre></td>
-<td><pre><code>32839 - 0x8047</code></pre></td>
+<td><pre><code>32839 - 0x8047</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DEC Availability Manager</code></pre></td>
-<td><pre><code>32840 - 0x8048</code></pre></td>
+<td><pre><code>32840 - 0x8048</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ExperData</code></pre></td>
-<td><pre><code>32841 - 0x8049</code></pre></td>
+<td><pre><code>32841 - 0x8049</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>VMTP (Versatile Message Transaction Protocol)</code></pre></td>
-<td><pre><code>32859 - 0x805B</code></pre></td>
+<td><pre><code>32859 - 0x805B</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Stanford V Kernel prod.</code></pre></td>
-<td><pre><code>32860 - 0x805C</code></pre></td>
+<td><pre><code>32860 - 0x805C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Evans &amp; Sutherland</code></pre></td>
-<td><pre><code>32861 - 0x805D</code></pre></td>
+<td><pre><code>32861 - 0x805D</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Little Machines</code></pre></td>
-<td><pre><code>32864 - 0x8060</code></pre></td>
+<td><pre><code>32864 - 0x8060</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Counterpoint Computers</code></pre></td>
-<td><pre><code>32866 - 0x8062</code></pre></td>
+<td><pre><code>32866 - 0x8062</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Univ. of Mass. @ Amherst</code></pre></td>
-<td><pre><code>32869 - 0x8065</code></pre></td>
+<td><pre><code>32869 - 0x8065</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Univ. of Mass. @ Amherst</code></pre></td>
-<td><pre><code>32870 - 0x8066</code></pre></td>
+<td><pre><code>32870 - 0x8066</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Veeco Integrated Auto.</code></pre></td>
-<td><pre><code>32871 - 0x8067</code></pre></td>
+<td><pre><code>32871 - 0x8067</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>General Dynamics</code></pre></td>
-<td><pre><code>32872 - 0x8068</code></pre></td>
+<td><pre><code>32872 - 0x8068</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>AT&amp;T</code></pre></td>
-<td><pre><code>32873 - 0x8069</code></pre></td>
+<td><pre><code>32873 - 0x8069</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Autophon</code></pre></td>
-<td><pre><code>32874 - 0x806A</code></pre></td>
+<td><pre><code>32874 - 0x806A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ComDesign</code></pre></td>
-<td><pre><code>32876 - 0x806C</code></pre></td>
+<td><pre><code>32876 - 0x806C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Computgraphic Corp.</code></pre></td>
-<td><pre><code>32877 - 0x806D</code></pre></td>
+<td><pre><code>32877 - 0x806D</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Landmark Graphics Corporation</code></pre></td>
-<td><pre><code>32878 - 0x806E</code></pre></td>
+<td><pre><code>32878 - 0x806E</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Landmark Graphics Corporation</code></pre></td>
-<td><pre><code>32879 - 0x806F</code></pre></td>
+<td><pre><code>32879 - 0x806F</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Landmark Graphics Corporation</code></pre></td>
-<td><pre><code>32880 - 0x8070</code></pre></td>
+<td><pre><code>32880 - 0x8070</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Landmark Graphics Corporation</code></pre></td>
-<td><pre><code>32881 - 0x8071</code></pre></td>
+<td><pre><code>32881 - 0x8071</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Landmark Graphics Corporation</code></pre></td>
-<td><pre><code>32882 - 0x8072</code></pre></td>
+<td><pre><code>32882 - 0x8072</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Landmark Graphics Corporation</code></pre></td>
-<td><pre><code>32883 - 0x8073</code></pre></td>
+<td><pre><code>32883 - 0x8073</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Landmark Graphics Corporation</code></pre></td>
-<td><pre><code>32884 - 0x8074</code></pre></td>
+<td><pre><code>32884 - 0x8074</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Landmark Graphics Corporation</code></pre></td>
-<td><pre><code>32885 - 0x8075</code></pre></td>
+<td><pre><code>32885 - 0x8075</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Landmark Graphics Corporation</code></pre></td>
-<td><pre><code>32886 - 0x8076</code></pre></td>
+<td><pre><code>32886 - 0x8076</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Landmark Graphics Corporation</code></pre></td>
-<td><pre><code>32887 - 0x8077</code></pre></td>
+<td><pre><code>32887 - 0x8077</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Matra</code></pre></td>
-<td><pre><code>32890 - 0x807A</code></pre></td>
+<td><pre><code>32890 - 0x807A</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Dansk Data Elektronik</code></pre></td>
-<td><pre><code>32891 - 0x807B</code></pre></td>
+<td><pre><code>32891 - 0x807B</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Merit Internodal</code></pre></td>
-<td><pre><code>32892 - 0x807C</code></pre></td>
+<td><pre><code>32892 - 0x807C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Vitalink Communications</code></pre></td>
-<td><pre><code>32893 - 0x807D</code></pre></td>
+<td><pre><code>32893 - 0x807D</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Vitalink Communications</code></pre></td>
-<td><pre><code>32894 - 0x807E</code></pre></td>
+<td><pre><code>32894 - 0x807E</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Vitalink Communications</code></pre></td>
-<td><pre><code>32895 - 0x807F</code></pre></td>
+<td><pre><code>32895 - 0x807F</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Vitalink TransLAN III</code></pre></td>
-<td><pre><code>32896 - 0x8080</code></pre></td>
+<td><pre><code>32896 - 0x8080</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Counterpoint Computers</code></pre></td>
-<td><pre><code>32897 - 0x8081</code></pre></td>
+<td><pre><code>32897 - 0x8081</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Counterpoint Computers</code></pre></td>
-<td><pre><code>32898 - 0x8082</code></pre></td>
+<td><pre><code>32898 - 0x8082</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Counterpoint Computers</code></pre></td>
-<td><pre><code>32899 - 0x8083</code></pre></td>
+<td><pre><code>32899 - 0x8083</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Xyplex</code></pre></td>
-<td><pre><code>32904 - 0x8088</code></pre></td>
+<td><pre><code>32904 - 0x8088</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Xyplex</code></pre></td>
-<td><pre><code>32906 - 0x808A</code></pre></td>
+<td><pre><code>32906 - 0x808A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Ethertalk (AppleTalk over Ethernet)</code></pre></td>
-<td><pre><code>32923 - 0x809B</code></pre></td>
+<td><pre><code>32923 - 0x809B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>32924 - 0x809C</code></pre></td>
+<td><pre><code>32924 - 0x809C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>32925 - 0x809D</code></pre></td>
+<td><pre><code>32925 - 0x809D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>32926 - 0x809E</code></pre></td>
+<td><pre><code>32926 - 0x809E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Spider Systems Ltd.</code></pre></td>
-<td><pre><code>32927 - 0x809F</code></pre></td>
+<td><pre><code>32927 - 0x809F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Nixdorf Computers</code></pre></td>
-<td><pre><code>32931 - 0x80A3</code></pre></td>
+<td><pre><code>32931 - 0x80A3</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32932 - 0x80A4</code></pre></td>
+<td><pre><code>32932 - 0x80A4</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32933 - 0x80A5</code></pre></td>
+<td><pre><code>32933 - 0x80A5</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32934 - 0x80A6</code></pre></td>
+<td><pre><code>32934 - 0x80A6</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32935 - 0x80A7</code></pre></td>
+<td><pre><code>32935 - 0x80A7</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32936 - 0x80A8</code></pre></td>
+<td><pre><code>32936 - 0x80A8</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32937 - 0x80A9</code></pre></td>
+<td><pre><code>32937 - 0x80A9</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32938 - 0x80AA</code></pre></td>
+<td><pre><code>32938 - 0x80AA</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32939 - 0x80AB</code></pre></td>
+<td><pre><code>32939 - 0x80AB</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32940 - 0x80AC</code></pre></td>
+<td><pre><code>32940 - 0x80AC</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32941 - 0x80AD</code></pre></td>
+<td><pre><code>32941 - 0x80AD</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32942 - 0x80AE</code></pre></td>
+<td><pre><code>32942 - 0x80AE</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32943 - 0x80AF</code></pre></td>
+<td><pre><code>32943 - 0x80AF</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32944 - 0x80B0</code></pre></td>
+<td><pre><code>32944 - 0x80B0</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32945 - 0x80B1</code></pre></td>
+<td><pre><code>32945 - 0x80B1</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32946 - 0x80B2</code></pre></td>
+<td><pre><code>32946 - 0x80B2</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Siemens Gammasonics Inc.</code></pre></td>
-<td><pre><code>32947 - 0x80B3</code></pre></td>
-</tr>
-<tr class="even">
-<td><pre style="white-space: pre-wrap"><code>DCA Data Exchange Cluster</code></pre></td>
-<td><pre><code>32960 - 0x80C0</code></pre></td>
-</tr>
-<tr class="odd">
-<td><pre style="white-space: pre-wrap"><code>DCA Data Exchange Cluster</code></pre></td>
-<td><pre><code>32961 - 0x80C1</code></pre></td>
+<td><pre><code>32947 - 0x80B3</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DCA Data Exchange Cluster</code></pre></td>
-<td><pre><code>32962 - 0x80C2</code></pre></td>
+<td><pre><code>32960 - 0x80C0</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>DCA Data Exchange Cluster</code></pre></td>
-<td><pre><code>32963 - 0x80C3</code></pre></td>
+<td><pre><code>32961 - 0x80C1</code></pre></td>
+</tr>
+<tr class="even">
+<td><pre style="white-space: pre-wrap"><code>DCA Data Exchange Cluster</code></pre></td>
+<td><pre><code>32962 - 0x80C2</code></pre></td>
+</tr>
+<tr class="odd">
+<td><pre style="white-space: pre-wrap"><code>DCA Data Exchange Cluster</code></pre></td>
+<td><pre><code>32963 - 0x80C3</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Banyan Systems</code></pre></td>
-<td><pre><code>32964 - 0x80C4</code></pre></td>
+<td><pre><code>32964 - 0x80C4</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Banyan Systems</code></pre></td>
-<td><pre><code>32965 - 0x80C5</code></pre></td>
+<td><pre><code>32965 - 0x80C5</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Pacer Software</code></pre></td>
-<td><pre><code>32966 - 0x80C6</code></pre></td>
+<td><pre><code>32966 - 0x80C6</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Applitek Corporation</code></pre></td>
-<td><pre><code>32967 - 0x80C7</code></pre></td>
+<td><pre><code>32967 - 0x80C7</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Intergraph Corporation</code></pre></td>
-<td><pre><code>32968 - 0x80C8</code></pre></td>
+<td><pre><code>32968 - 0x80C8</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Intergraph Corporation</code></pre></td>
-<td><pre><code>32969 - 0x80C9</code></pre></td>
+<td><pre><code>32969 - 0x80C9</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Intergraph Corporation</code></pre></td>
-<td><pre><code>32970 - 0x80CA</code></pre></td>
+<td><pre><code>32970 - 0x80CA</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Intergraph Corporation</code></pre></td>
-<td><pre><code>32971 - 0x80CB</code></pre></td>
+<td><pre><code>32971 - 0x80CB</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Intergraph Corporation</code></pre></td>
-<td><pre><code>32972 - 0x80CC</code></pre></td>
+<td><pre><code>32972 - 0x80CC</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Harris Corporation</code></pre></td>
-<td><pre><code>32973 - 0x80CD</code></pre></td>
+<td><pre><code>32973 - 0x80CD</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Harris Corporation</code></pre></td>
-<td><pre><code>32974 - 0x80CE</code></pre></td>
+<td><pre><code>32974 - 0x80CE</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Taylor Instrument</code></pre></td>
-<td><pre><code>32975 - 0x80CF</code></pre></td>
+<td><pre><code>32975 - 0x80CF</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Taylor Instrument</code></pre></td>
-<td><pre><code>32976 - 0x80D0</code></pre></td>
+<td><pre><code>32976 - 0x80D0</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Taylor Instrument</code></pre></td>
-<td><pre><code>32977 - 0x80D1</code></pre></td>
+<td><pre><code>32977 - 0x80D1</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Taylor Instrument</code></pre></td>
-<td><pre><code>32978 - 0x80D2</code></pre></td>
+<td><pre><code>32978 - 0x80D2</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Rosemount Corporation</code></pre></td>
-<td><pre><code>32979 - 0x80D3</code></pre></td>
+<td><pre><code>32979 - 0x80D3</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Rosemount Corporation</code></pre></td>
-<td><pre><code>32980 - 0x80D4</code></pre></td>
+<td><pre><code>32980 - 0x80D4</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IBM SNA Service on Ether</code></pre></td>
-<td><pre><code>32981 - 0x80D5</code></pre></td>
+<td><pre><code>32981 - 0x80D5</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Varian Associates</code></pre></td>
-<td><pre><code>32989 - 0x80DD</code></pre></td>
+<td><pre><code>32989 - 0x80DD</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Transparent Remote File System (TRFS)</code></pre></td>
-<td><pre><code>32990 - 0x80DE</code></pre></td>
+<td><pre><code>32990 - 0x80DE</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Transparent Remote File System (TRFS)</code></pre></td>
-<td><pre><code>32991 - 0x80DF</code></pre></td>
+<td><pre><code>32991 - 0x80DF</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Allen-Bradley</code></pre></td>
-<td><pre><code>32992 - 0x80E0</code></pre></td>
+<td><pre><code>32992 - 0x80E0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Allen-Bradley</code></pre></td>
-<td><pre><code>32993 - 0x80E1</code></pre></td>
+<td><pre><code>32993 - 0x80E1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Allen-Bradley</code></pre></td>
-<td><pre><code>32994 - 0x80E2</code></pre></td>
+<td><pre><code>32994 - 0x80E2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Allen-Bradley</code></pre></td>
-<td><pre><code>32995 - 0x80E3</code></pre></td>
+<td><pre><code>32995 - 0x80E3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>32996 - 0x80E4</code></pre></td>
+<td><pre><code>32996 - 0x80E4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>32997 - 0x80E5</code></pre></td>
+<td><pre><code>32997 - 0x80E5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>32998 - 0x80E6</code></pre></td>
+<td><pre><code>32998 - 0x80E6</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>32999 - 0x80E7</code></pre></td>
+<td><pre><code>32999 - 0x80E7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>33000 - 0x80E8</code></pre></td>
+<td><pre><code>33000 - 0x80E8</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>33001 - 0x80E9</code></pre></td>
+<td><pre><code>33001 - 0x80E9</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>33002 - 0x80EA</code></pre></td>
+<td><pre><code>33002 - 0x80EA</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>33003 - 0x80EB</code></pre></td>
+<td><pre><code>33003 - 0x80EB</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>33004 - 0x80EC</code></pre></td>
+<td><pre><code>33004 - 0x80EC</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>33005 - 0x80ED</code></pre></td>
+<td><pre><code>33005 - 0x80ED</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>33006 - 0x80EE</code></pre></td>
+<td><pre><code>33006 - 0x80EE</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>33007 - 0x80EF</code></pre></td>
+<td><pre><code>33007 - 0x80EF</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Datability</code></pre></td>
-<td><pre><code>33008 - 0x80F0</code></pre></td>
+<td><pre><code>33008 - 0x80F0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Retix</code></pre></td>
-<td><pre><code>33010 - 0x80F2</code></pre></td>
+<td><pre><code>33010 - 0x80F2</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>AppleTalk AARP (Kinetics)</code></pre></td>
-<td><pre><code>33011 - 0x80F3</code></pre></td>
+<td><pre><code>33011 - 0x80F3</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Kinetics</code></pre></td>
-<td><pre><code>33012 - 0x80F4</code></pre></td>
+<td><pre><code>33012 - 0x80F4</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Kinetics</code></pre></td>
-<td><pre><code>33013 - 0x80F5</code></pre></td>
+<td><pre><code>33013 - 0x80F5</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Apollo Computer</code></pre></td>
-<td><pre><code>33015 - 0x80F7</code></pre></td>
+<td><pre><code>33015 - 0x80F7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Wellfleet Communications</code></pre></td>
-<td><pre><code>33023 - 0x80FF</code></pre></td>
+<td><pre><code>33023 - 0x80FF</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IEEE 802.1Q VLAN-tagged</code></pre></td>
-<td><pre><code>33024 - 0x8100</code></pre></td>
+<td><pre><code>33024 - 0x8100</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Wellfleet Communications</code></pre></td>
-<td><pre><code>33025 - 0x8101</code></pre></td>
+<td><pre><code>33025 - 0x8101</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Wellfleet - BOFL (Breath Of Life)</code></pre></td>
-<td><pre><code>33026 - 0x8102</code></pre></td>
+<td><pre><code>33026 - 0x8102</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Wellfleet Communications</code></pre></td>
-<td><pre><code>33027 - 0x8103</code></pre></td>
+<td><pre><code>33027 - 0x8103</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Symbolics Private</code></pre></td>
-<td><pre><code>33031 - 0x8107</code></pre></td>
+<td><pre><code>33031 - 0x8107</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Symbolics Private</code></pre></td>
-<td><pre><code>33032 - 0x8108</code></pre></td>
+<td><pre><code>33032 - 0x8108</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Symbolics Private</code></pre></td>
-<td><pre><code>33033 - 0x8109</code></pre></td>
+<td><pre><code>33033 - 0x8109</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Talaris</code></pre></td>
-<td><pre><code>33067 - 0x812B</code></pre></td>
+<td><pre><code>33067 - 0x812B</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Hayes Microcomputers</code></pre></td>
-<td><pre><code>33072 - 0x8130</code></pre></td>
+<td><pre><code>33072 - 0x8130</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>VG Laboratory Systems</code></pre></td>
-<td><pre><code>33073 - 0x8131</code></pre></td>
+<td><pre><code>33073 - 0x8131</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Bridge Communications</code></pre></td>
-<td><pre><code>33074 - 0x8132</code></pre></td>
+<td><pre><code>33074 - 0x8132</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Juniper NetScreen Redundancy Protocol (NSRP v2)</code></pre></td>
-<td><pre><code>33075 - 0x8133</code></pre></td>
+<td><pre><code>33075 - 0x8133</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Bridge Communications</code></pre></td>
-<td><pre><code>33076 - 0x8134</code></pre></td>
+<td><pre><code>33076 - 0x8134</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Bridge Communications</code></pre></td>
-<td><pre><code>33077 - 0x8135</code></pre></td>
+<td><pre><code>33077 - 0x8135</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Bridge Communications</code></pre></td>
-<td><pre><code>33078 - 0x8136</code></pre></td>
+<td><pre><code>33078 - 0x8136</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPX - NetWare</code></pre></td>
-<td><pre><code>33079 - 0x8137</code></pre></td>
+<td><pre><code>33079 - 0x8137</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPX - Novell</code></pre></td>
-<td><pre><code>33080 - 0x8138</code></pre></td>
+<td><pre><code>33080 - 0x8138</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>KTI</code></pre></td>
-<td><pre><code>33081 - 0x8139</code></pre></td>
+<td><pre><code>33081 - 0x8139</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>KTI</code></pre></td>
-<td><pre><code>33082 - 0x813A</code></pre></td>
+<td><pre><code>33082 - 0x813A</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>KTI</code></pre></td>
-<td><pre><code>33083 - 0x813B</code></pre></td>
+<td><pre><code>33083 - 0x813B</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>KTI</code></pre></td>
-<td><pre><code>33084 - 0x813C</code></pre></td>
+<td><pre><code>33084 - 0x813C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>KTI</code></pre></td>
-<td><pre><code>33085 - 0x813D</code></pre></td>
+<td><pre><code>33085 - 0x813D</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>M/MUMPS Data Sharing</code></pre></td>
-<td><pre><code>33087 - 0x813F</code></pre></td>
+<td><pre><code>33087 - 0x813F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Amoeba 4 RPC - Vrije Universiteit (NL)</code></pre></td>
-<td><pre><code>33093 - 0x8145</code></pre></td>
+<td><pre><code>33093 - 0x8145</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Fast Local Internet Protocol (FLIP)</code></pre></td>
-<td><pre><code>33094 - 0x8146</code></pre></td>
+<td><pre><code>33094 - 0x8146</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Vrije Universiteit (NL)</code></pre></td>
-<td><pre><code>33095 - 0x8147</code></pre></td>
+<td><pre><code>33095 - 0x8147</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Logicraft</code></pre></td>
-<td><pre><code>33096 - 0x8148</code></pre></td>
+<td><pre><code>33096 - 0x8148</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Network Computing Devices</code></pre></td>
-<td><pre><code>33097 - 0x8149</code></pre></td>
+<td><pre><code>33097 - 0x8149</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Alpha Micro</code></pre></td>
-<td><pre><code>33098 - 0x814A</code></pre></td>
+<td><pre><code>33098 - 0x814A</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SNMP over Eth.</code></pre></td>
-<td><pre><code>33100 - 0x814C</code></pre></td>
+<td><pre><code>33100 - 0x814C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>BIIN</code></pre></td>
-<td><pre><code>33101 - 0x814D</code></pre></td>
+<td><pre><code>33101 - 0x814D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>BIIN 814F Technically Elite Concepts</code></pre></td>
-<td><pre><code>33102 - 0x814E</code></pre></td>
+<td><pre><code>33102 - 0x814E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Technically Elite Concepts</code></pre></td>
-<td><pre><code>33103 - 0x814F</code></pre></td>
+<td><pre><code>33103 - 0x814F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Rational Corp</code></pre></td>
-<td><pre><code>33104 - 0x8150</code></pre></td>
+<td><pre><code>33104 - 0x8150</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Qualcomm</code></pre></td>
-<td><pre><code>33105 - 0x8151</code></pre></td>
+<td><pre><code>33105 - 0x8151</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Qualcomm</code></pre></td>
-<td><pre><code>33106 - 0x8152</code></pre></td>
+<td><pre><code>33106 - 0x8152</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Qualcomm</code></pre></td>
-<td><pre><code>33107 - 0x8153</code></pre></td>
+<td><pre><code>33107 - 0x8153</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Computer Protocol Pty Ltd</code></pre></td>
-<td><pre><code>33116 - 0x815C</code></pre></td>
+<td><pre><code>33116 - 0x815C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Computer Protocol Pty Ltd</code></pre></td>
-<td><pre><code>33117 - 0x815D</code></pre></td>
+<td><pre><code>33117 - 0x815D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Computer Protocol Pty Ltd</code></pre></td>
-<td><pre><code>33118 - 0x815E</code></pre></td>
+<td><pre><code>33118 - 0x815E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Charles River Data System</code></pre></td>
-<td><pre><code>33124 - 0x8164</code></pre></td>
+<td><pre><code>33124 - 0x8164</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Charles River Data System</code></pre></td>
-<td><pre><code>33125 - 0x8165</code></pre></td>
+<td><pre><code>33125 - 0x8165</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Charles River Data System</code></pre></td>
-<td><pre><code>33126 - 0x8166</code></pre></td>
+<td><pre><code>33126 - 0x8166</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>XTP</code></pre></td>
-<td><pre><code>33149 - 0x817D</code></pre></td>
+<td><pre><code>33149 - 0x817D</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SGI/Time Warner Proprietary</code></pre></td>
-<td><pre><code>33150 - 0x817E</code></pre></td>
+<td><pre><code>33150 - 0x817E</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>High-Performance Parallel Interface-Framing (HIPPI-FP)</code></pre></td>
-<td><pre><code>33152 - 0x8180</code></pre></td>
+<td><pre><code>33152 - 0x8180</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>High-Performance Parallel Interface-Scheduled Transfer (HIPPI-STP)</code></pre></td>
-<td><pre><code>33153 - 0x8181</code></pre></td>
+<td><pre><code>33153 - 0x8181</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Reserved for HIPPI-6400</code></pre></td>
-<td><pre><code>33154 - 0x8182</code></pre></td>
+<td><pre><code>33154 - 0x8182</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Reserved for HIPPI-6400</code></pre></td>
-<td><pre><code>33155 - 0x8183</code></pre></td>
+<td><pre><code>33155 - 0x8183</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Silicon Graphics Proprietary</code></pre></td>
-<td><pre><code>33156 - 0x8184</code></pre></td>
+<td><pre><code>33156 - 0x8184</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Silicon Graphics Proprietary</code></pre></td>
-<td><pre><code>33157 - 0x8185</code></pre></td>
+<td><pre><code>33157 - 0x8185</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Silicon Graphics Proprietary</code></pre></td>
-<td><pre><code>33158 - 0x8186</code></pre></td>
+<td><pre><code>33158 - 0x8186</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Silicon Graphics Proprietary</code></pre></td>
-<td><pre><code>33159 - 0x8187</code></pre></td>
+<td><pre><code>33159 - 0x8187</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Silicon Graphics Proprietary</code></pre></td>
-<td><pre><code>33160 - 0x8188</code></pre></td>
+<td><pre><code>33160 - 0x8188</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Silicon Graphics Proprietary</code></pre></td>
-<td><pre><code>33161 - 0x8189</code></pre></td>
+<td><pre><code>33161 - 0x8189</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Silicon Graphics Proprietary</code></pre></td>
-<td><pre><code>33162 - 0x818A</code></pre></td>
+<td><pre><code>33162 - 0x818A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Silicon Graphics Proprietary</code></pre></td>
-<td><pre><code>33163 - 0x818B</code></pre></td>
+<td><pre><code>33163 - 0x818B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Silicon Graphics Proprietary</code></pre></td>
-<td><pre><code>33164 - 0x818C</code></pre></td>
+<td><pre><code>33164 - 0x818C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Motorola Computer</code></pre></td>
-<td><pre><code>33165 - 0x818D</code></pre></td>
+<td><pre><code>33165 - 0x818D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PowerLAN / NetBIOS/NetBEUI (PC)</code></pre></td>
-<td><pre><code>33169 - 0x8191</code></pre></td>
+<td><pre><code>33169 - 0x8191</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Qualcomm</code></pre></td>
-<td><pre><code>33178 - 0x819A</code></pre></td>
+<td><pre><code>33178 - 0x819A</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Qualcomm</code></pre></td>
-<td><pre><code>33179 - 0x819B</code></pre></td>
+<td><pre><code>33179 - 0x819B</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Qualcomm</code></pre></td>
-<td><pre><code>33180 - 0x819C</code></pre></td>
+<td><pre><code>33180 - 0x819C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Qualcomm</code></pre></td>
-<td><pre><code>33181 - 0x819D</code></pre></td>
+<td><pre><code>33181 - 0x819D</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Qualcomm</code></pre></td>
-<td><pre><code>33182 - 0x819E</code></pre></td>
+<td><pre><code>33182 - 0x819E</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Qualcomm</code></pre></td>
-<td><pre><code>33183 - 0x819F</code></pre></td>
+<td><pre><code>33183 - 0x819F</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Qualcomm</code></pre></td>
-<td><pre><code>33184 - 0x81A0</code></pre></td>
+<td><pre><code>33184 - 0x81A0</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Qualcomm</code></pre></td>
-<td><pre><code>33185 - 0x81A1</code></pre></td>
+<td><pre><code>33185 - 0x81A1</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Qualcomm</code></pre></td>
-<td><pre><code>33186 - 0x81A2</code></pre></td>
+<td><pre><code>33186 - 0x81A2</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Qualcomm</code></pre></td>
-<td><pre><code>33187 - 0x81A3</code></pre></td>
+<td><pre><code>33187 - 0x81A3</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ARAI Bunkichi</code></pre></td>
-<td><pre><code>33188 - 0x81A4</code></pre></td>
+<td><pre><code>33188 - 0x81A4</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RAD Network Devices</code></pre></td>
-<td><pre><code>33189 - 0x81A5</code></pre></td>
+<td><pre><code>33189 - 0x81A5</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RAD Network Devices</code></pre></td>
-<td><pre><code>33198 - 0x81AE</code></pre></td>
+<td><pre><code>33198 - 0x81AE</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Xyplex</code></pre></td>
-<td><pre><code>33207 - 0x81B7</code></pre></td>
+<td><pre><code>33207 - 0x81B7</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Xyplex</code></pre></td>
-<td><pre><code>33208 - 0x81B8</code></pre></td>
+<td><pre><code>33208 - 0x81B8</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Xyplex</code></pre></td>
-<td><pre><code>33209 - 0x81B9</code></pre></td>
+<td><pre><code>33209 - 0x81B9</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Apricot Computers</code></pre></td>
-<td><pre><code>33228 - 0x81CC</code></pre></td>
+<td><pre><code>33228 - 0x81CC</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Apricot Computers</code></pre></td>
-<td><pre><code>33229 - 0x81CD</code></pre></td>
+<td><pre><code>33229 - 0x81CD</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Apricot Computers</code></pre></td>
-<td><pre><code>33230 - 0x81CE</code></pre></td>
+<td><pre><code>33230 - 0x81CE</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Apricot Computers</code></pre></td>
-<td><pre><code>33231 - 0x81CF</code></pre></td>
+<td><pre><code>33231 - 0x81CF</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Apricot Computers</code></pre></td>
-<td><pre><code>33232 - 0x81D0</code></pre></td>
+<td><pre><code>33232 - 0x81D0</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Apricot Computers</code></pre></td>
-<td><pre><code>33233 - 0x81D1</code></pre></td>
+<td><pre><code>33233 - 0x81D1</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Apricot Computers</code></pre></td>
-<td><pre><code>33234 - 0x81D2</code></pre></td>
+<td><pre><code>33234 - 0x81D2</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Apricot Computers</code></pre></td>
-<td><pre><code>33235 - 0x81D3</code></pre></td>
+<td><pre><code>33235 - 0x81D3</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Apricot Computers</code></pre></td>
-<td><pre><code>33236 - 0x81D4</code></pre></td>
+<td><pre><code>33236 - 0x81D4</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Apricot Computers</code></pre></td>
-<td><pre><code>33237 - 0x81D5</code></pre></td>
+<td><pre><code>33237 - 0x81D5</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Artisoft Lantastic</code></pre></td>
-<td><pre><code>33238 - 0x81D6</code></pre></td>
+<td><pre><code>33238 - 0x81D6</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Artisoft Lantastic</code></pre></td>
-<td><pre><code>33239 - 0x81D7</code></pre></td>
+<td><pre><code>33239 - 0x81D7</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Artisoft Lantastic</code></pre></td>
-<td><pre><code>33240 - 0x81D8</code></pre></td>
+<td><pre><code>33240 - 0x81D8</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Artisoft Lantastic</code></pre></td>
-<td><pre><code>33241 - 0x81D9</code></pre></td>
+<td><pre><code>33241 - 0x81D9</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Artisoft Lantastic</code></pre></td>
-<td><pre><code>33242 - 0x81DA</code></pre></td>
+<td><pre><code>33242 - 0x81DA</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Artisoft Lantastic</code></pre></td>
-<td><pre><code>33243 - 0x81DB</code></pre></td>
+<td><pre><code>33243 - 0x81DB</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Artisoft Lantastic</code></pre></td>
-<td><pre><code>33244 - 0x81DC</code></pre></td>
+<td><pre><code>33244 - 0x81DC</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Artisoft Lantastic</code></pre></td>
-<td><pre><code>33245 - 0x81DD</code></pre></td>
+<td><pre><code>33245 - 0x81DD</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Polygon</code></pre></td>
-<td><pre><code>33254 - 0x81E6</code></pre></td>
+<td><pre><code>33254 - 0x81E6</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Polygon</code></pre></td>
-<td><pre><code>33255 - 0x81E7</code></pre></td>
+<td><pre><code>33255 - 0x81E7</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Polygon</code></pre></td>
-<td><pre><code>33256 - 0x81E8</code></pre></td>
+<td><pre><code>33256 - 0x81E8</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Polygon</code></pre></td>
-<td><pre><code>33257 - 0x81E9</code></pre></td>
+<td><pre><code>33257 - 0x81E9</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Polygon</code></pre></td>
-<td><pre><code>33258 - 0x81EA</code></pre></td>
+<td><pre><code>33258 - 0x81EA</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Polygon</code></pre></td>
-<td><pre><code>33259 - 0x81EB</code></pre></td>
+<td><pre><code>33259 - 0x81EB</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Polygon</code></pre></td>
-<td><pre><code>33260 - 0x81EC</code></pre></td>
+<td><pre><code>33260 - 0x81EC</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Polygon</code></pre></td>
-<td><pre><code>33261 - 0x81ED</code></pre></td>
+<td><pre><code>33261 - 0x81ED</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Polygon</code></pre></td>
-<td><pre><code>33262 - 0x81EE</code></pre></td>
+<td><pre><code>33262 - 0x81EE</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Polygon</code></pre></td>
-<td><pre><code>33263 - 0x81EF</code></pre></td>
+<td><pre><code>33263 - 0x81EF</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Comsat Labs</code></pre></td>
-<td><pre><code>33264 - 0x81F0</code></pre></td>
+<td><pre><code>33264 - 0x81F0</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Comsat Labs</code></pre></td>
-<td><pre><code>33265 - 0x81F1</code></pre></td>
+<td><pre><code>33265 - 0x81F1</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Comsat Labs</code></pre></td>
-<td><pre><code>33266 - 0x81F2</code></pre></td>
+<td><pre><code>33266 - 0x81F2</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SAIC</code></pre></td>
-<td><pre><code>33267 - 0x81F3</code></pre></td>
+<td><pre><code>33267 - 0x81F3</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SAIC</code></pre></td>
-<td><pre><code>33268 - 0x81F4</code></pre></td>
+<td><pre><code>33268 - 0x81F4</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SAIC</code></pre></td>
-<td><pre><code>33269 - 0x81F5</code></pre></td>
+<td><pre><code>33269 - 0x81F5</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>VG Analytical</code></pre></td>
-<td><pre><code>33270 - 0x81F6</code></pre></td>
+<td><pre><code>33270 - 0x81F6</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>VG Analytical</code></pre></td>
-<td><pre><code>33271 - 0x81F7</code></pre></td>
+<td><pre><code>33271 - 0x81F7</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>VG Analytical</code></pre></td>
-<td><pre><code>33272 - 0x81F8</code></pre></td>
+<td><pre><code>33272 - 0x81F8</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Cabletron InterSwitch Message Protocol</code></pre></td>
-<td><pre><code>33277 - 0x81FD</code></pre></td>
+<td><pre><code>33277 - 0x81FD</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Cabletron InterSwitch Message Protocol</code></pre></td>
-<td><pre><code>33279 - 0x81FF</code></pre></td>
+<td><pre><code>33279 - 0x81FF</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>QNX QNet Software Systems Ltd.</code></pre></td>
-<td><pre><code>33283 - 0x8203</code></pre></td>
+<td><pre><code>33283 - 0x8203</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>QNX QNet Software Systems Ltd.</code></pre></td>
-<td><pre><code>33284 - 0x8204</code></pre></td>
+<td><pre><code>33284 - 0x8204</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>QNX QNet Software Systems Ltd.</code></pre></td>
-<td><pre><code>33285 - 0x8205</code></pre></td>
+<td><pre><code>33285 - 0x8205</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Ascom Banking Systems</code></pre></td>
-<td><pre><code>33313 - 0x8221</code></pre></td>
+<td><pre><code>33313 - 0x8221</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Ascom Banking Systems</code></pre></td>
-<td><pre><code>33314 - 0x8222</code></pre></td>
+<td><pre><code>33314 - 0x8222</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Advanced Encryption System</code></pre></td>
-<td><pre><code>33342 - 0x823E</code></pre></td>
+<td><pre><code>33342 - 0x823E</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Advanced Encryption System</code></pre></td>
-<td><pre><code>33343 - 0x823F</code></pre></td>
+<td><pre><code>33343 - 0x823F</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Advanced Encryption System</code></pre></td>
-<td><pre><code>33344 - 0x8240</code></pre></td>
+<td><pre><code>33344 - 0x8240</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Charles River Data System</code></pre></td>
-<td><pre><code>33379 - 0x8263</code></pre></td>
+<td><pre><code>33379 - 0x8263</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Charles River Data System</code></pre></td>
-<td><pre><code>33380 - 0x8264</code></pre></td>
+<td><pre><code>33380 - 0x8264</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Charles River Data System</code></pre></td>
-<td><pre><code>33381 - 0x8265</code></pre></td>
+<td><pre><code>33381 - 0x8265</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Charles River Data System</code></pre></td>
-<td><pre><code>33382 - 0x8266</code></pre></td>
+<td><pre><code>33382 - 0x8266</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Charles River Data System</code></pre></td>
-<td><pre><code>33383 - 0x8267</code></pre></td>
+<td><pre><code>33383 - 0x8267</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Charles River Data System</code></pre></td>
-<td><pre><code>33384 - 0x8268</code></pre></td>
+<td><pre><code>33384 - 0x8268</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Charles River Data System</code></pre></td>
-<td><pre><code>33385 - 0x8269</code></pre></td>
+<td><pre><code>33385 - 0x8269</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Charles River Data System</code></pre></td>
-<td><pre><code>33386 - 0x826A</code></pre></td>
-</tr>
-<tr class="odd">
-<td><pre style="white-space: pre-wrap"><code>Athena Programming</code></pre></td>
-<td><pre><code>33407 - 0x827F</code></pre></td>
-</tr>
-<tr class="even">
-<td><pre style="white-space: pre-wrap"><code>Athena Programming</code></pre></td>
-<td><pre><code>33408 - 0x8280</code></pre></td>
+<td><pre><code>33386 - 0x826A</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Athena Programming</code></pre></td>
-<td><pre><code>33409 - 0x8281</code></pre></td>
+<td><pre><code>33407 - 0x827F</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Athena Programming</code></pre></td>
-<td><pre><code>33410 - 0x8282</code></pre></td>
+<td><pre><code>33408 - 0x8280</code></pre></td>
+</tr>
+<tr class="odd">
+<td><pre style="white-space: pre-wrap"><code>Athena Programming</code></pre></td>
+<td><pre><code>33409 - 0x8281</code></pre></td>
+</tr>
+<tr class="even">
+<td><pre style="white-space: pre-wrap"><code>Athena Programming</code></pre></td>
+<td><pre><code>33410 - 0x8282</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Institute for Industrial Information Tech. Ltd</code></pre></td>
-<td><pre><code>33434 - 0x829A</code></pre></td>
+<td><pre><code>33434 - 0x829A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Institute for Industrial Information Tech. Ltd</code></pre></td>
-<td><pre><code>33435 - 0x829B</code></pre></td>
+<td><pre><code>33435 - 0x829B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33436 - 0x829C</code></pre></td>
+<td><pre><code>33436 - 0x829C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33437 - 0x829D</code></pre></td>
+<td><pre><code>33437 - 0x829D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33438 - 0x829E</code></pre></td>
+<td><pre><code>33438 - 0x829E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33439 - 0x829F</code></pre></td>
+<td><pre><code>33439 - 0x829F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33440 - 0x82A0</code></pre></td>
+<td><pre><code>33440 - 0x82A0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33441 - 0x82A1</code></pre></td>
+<td><pre><code>33441 - 0x82A1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33442 - 0x82A2</code></pre></td>
+<td><pre><code>33442 - 0x82A2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33443 - 0x82A3</code></pre></td>
+<td><pre><code>33443 - 0x82A3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33444 - 0x82A4</code></pre></td>
+<td><pre><code>33444 - 0x82A4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33445 - 0x82A5</code></pre></td>
+<td><pre><code>33445 - 0x82A5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33446 - 0x82A6</code></pre></td>
+<td><pre><code>33446 - 0x82A6</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33447 - 0x82A7</code></pre></td>
+<td><pre><code>33447 - 0x82A7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33448 - 0x82A8</code></pre></td>
+<td><pre><code>33448 - 0x82A8</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33449 - 0x82A9</code></pre></td>
+<td><pre><code>33449 - 0x82A9</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33450 - 0x82AA</code></pre></td>
+<td><pre><code>33450 - 0x82AA</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Taurus Controls</code></pre></td>
-<td><pre><code>33451 - 0x82AB</code></pre></td>
+<td><pre><code>33451 - 0x82AB</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Accton Technologies</code></pre></td>
-<td><pre><code>33680 - 0x8390</code></pre></td>
+<td><pre><code>33680 - 0x8390</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Talaris Multicast</code></pre></td>
-<td><pre><code>34091 - 0x852B</code></pre></td>
+<td><pre><code>34091 - 0x852B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Kalpana</code></pre></td>
-<td><pre><code>34178 - 0x8582</code></pre></td>
+<td><pre><code>34178 - 0x8582</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Idea Courier</code></pre></td>
-<td><pre><code>34452 - 0x8694</code></pre></td>
+<td><pre><code>34452 - 0x8694</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Idea Courier</code></pre></td>
-<td><pre><code>34453 - 0x8695</code></pre></td>
+<td><pre><code>34453 - 0x8695</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Idea Courier</code></pre></td>
-<td><pre><code>34454 - 0x8696</code></pre></td>
+<td><pre><code>34454 - 0x8696</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Idea Courier</code></pre></td>
-<td><pre><code>34455 - 0x8697</code></pre></td>
+<td><pre><code>34455 - 0x8697</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Idea Courier</code></pre></td>
-<td><pre><code>34456 - 0x8698</code></pre></td>
+<td><pre><code>34456 - 0x8698</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Idea Courier</code></pre></td>
-<td><pre><code>34457 - 0x8699</code></pre></td>
+<td><pre><code>34457 - 0x8699</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Idea Courier</code></pre></td>
-<td><pre><code>34458 - 0x869A</code></pre></td>
+<td><pre><code>34458 - 0x869A</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Idea Courier</code></pre></td>
-<td><pre><code>34459 - 0x869B</code></pre></td>
+<td><pre><code>34459 - 0x869B</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Idea Courier</code></pre></td>
-<td><pre><code>34460 - 0x869C</code></pre></td>
+<td><pre><code>34460 - 0x869C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Idea Courier</code></pre></td>
-<td><pre><code>34461 - 0x869D</code></pre></td>
+<td><pre><code>34461 - 0x869D</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Computer Network Tech</code></pre></td>
-<td><pre><code>34462 - 0x869E</code></pre></td>
+<td><pre><code>34462 - 0x869E</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Computer Network Tech</code></pre></td>
-<td><pre><code>34463 - 0x869F</code></pre></td>
+<td><pre><code>34463 - 0x869F</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Computer Network Tech</code></pre></td>
-<td><pre><code>34464 - 0x86A0</code></pre></td>
+<td><pre><code>34464 - 0x86A0</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Computer Network Tech</code></pre></td>
-<td><pre><code>34465 - 0x86A1</code></pre></td>
+<td><pre><code>34465 - 0x86A1</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Gateway Communications</code></pre></td>
-<td><pre><code>34467 - 0x86A3</code></pre></td>
+<td><pre><code>34467 - 0x86A3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Gateway Communications</code></pre></td>
-<td><pre><code>34468 - 0x86A4</code></pre></td>
+<td><pre><code>34468 - 0x86A4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Gateway Communications</code></pre></td>
-<td><pre><code>34469 - 0x86A5</code></pre></td>
+<td><pre><code>34469 - 0x86A5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Gateway Communications</code></pre></td>
-<td><pre><code>34470 - 0x86A6</code></pre></td>
+<td><pre><code>34470 - 0x86A6</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Gateway Communications</code></pre></td>
-<td><pre><code>34471 - 0x86A7</code></pre></td>
+<td><pre><code>34471 - 0x86A7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Gateway Communications</code></pre></td>
-<td><pre><code>34472 - 0x86A8</code></pre></td>
+<td><pre><code>34472 - 0x86A8</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Gateway Communications</code></pre></td>
-<td><pre><code>34473 - 0x86A9</code></pre></td>
+<td><pre><code>34473 - 0x86A9</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Gateway Communications</code></pre></td>
-<td><pre><code>34474 - 0x86AA</code></pre></td>
+<td><pre><code>34474 - 0x86AA</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Gateway Communications</code></pre></td>
-<td><pre><code>34475 - 0x86AB</code></pre></td>
+<td><pre><code>34475 - 0x86AB</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Gateway Communications</code></pre></td>
-<td><pre><code>34476 - 0x86AC</code></pre></td>
+<td><pre><code>34476 - 0x86AC</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SECTRA</code></pre></td>
-<td><pre><code>34523 - 0x86DB</code></pre></td>
+<td><pre><code>34523 - 0x86DB</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv6</code></pre></td>
-<td><pre><code>34525 - 0x86DD</code></pre></td>
+<td><pre><code>34525 - 0x86DD</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Delta Controls</code></pre></td>
-<td><pre><code>34526 - 0x86DE</code></pre></td>
+<td><pre><code>34526 - 0x86DE</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ATOMIC</code></pre></td>
-<td><pre><code>34527 - 0x86DF</code></pre></td>
+<td><pre><code>34527 - 0x86DF</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Landis &amp; Gyr Powers</code></pre></td>
-<td><pre><code>34528 - 0x86E0</code></pre></td>
+<td><pre><code>34528 - 0x86E0</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Landis &amp; Gyr Powers</code></pre></td>
-<td><pre><code>34543 - 0x86EF</code></pre></td>
+<td><pre><code>34543 - 0x86EF</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Motorola</code></pre></td>
-<td><pre><code>34560 - 0x8700</code></pre></td>
+<td><pre><code>34560 - 0x8700</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Motorola</code></pre></td>
-<td><pre><code>34576 - 0x8710</code></pre></td>
+<td><pre><code>34576 - 0x8710</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Cisco Wireless Lan Context Control Protocol (WLCCP)</code></pre></td>
-<td><pre><code>34605 - 0x872D</code></pre></td>
+<td><pre><code>34605 - 0x872D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Control Technology Inc. - RDP Without IP</code></pre></td>
-<td><pre><code>34617 - 0x8739</code></pre></td>
+<td><pre><code>34617 - 0x8739</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Control Technology Inc. - Multicast </code></pre></td>
-<td><pre><code>34618 - 0x873A</code></pre></td>
+<td><pre><code>34618 - 0x873A</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Control Technology Inc. - Proprietary</code></pre></td>
-<td><pre><code>34619 - 0x873B</code></pre></td>
+<td><pre><code>34619 - 0x873B</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Control Technology Inc. - Proprietary</code></pre></td>
-<td><pre><code>34620 - 0x873C</code></pre></td>
+<td><pre><code>34620 - 0x873C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>TCP/IP Compression</code></pre></td>
-<td><pre><code>34667 - 0x876B</code></pre></td>
+<td><pre><code>34667 - 0x876B</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IP Autonomous Systems</code></pre></td>
-<td><pre><code>34668 - 0x876C</code></pre></td>
+<td><pre><code>34668 - 0x876C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Secure Data</code></pre></td>
-<td><pre><code>34669 - 0x876D</code></pre></td>
+<td><pre><code>34669 - 0x876D</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Symbol Technologies</code></pre></td>
-<td><pre><code>34688 - 0x8780</code></pre></td>
+<td><pre><code>34688 - 0x8780</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Motorola Protocol, Roaming  Updates between Access Points </code></pre></td>
-<td><pre><code>34689 - 0x8781</code></pre></td>
+<td><pre><code>34689 - 0x8781</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Motorola Protocol, Access Point Adoption, extended VLANs and Clustering</code></pre></td>
-<td><pre><code>34691 - 0x8783</code></pre></td>
+<td><pre><code>34691 - 0x8783</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Ethernet Flow Control / Ethernet Passive Optical Network (EPON)</code></pre></td>
-<td><pre><code>34824 - 0x8808</code></pre></td>
+<td><pre><code>34824 - 0x8808</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Ethernet OAM Protocol IEEE 802.3ah (a.k.a.: Slow Protocols)</code></pre></td>
-<td><pre><code>34825 - 0x8809</code></pre></td>
+<td><pre><code>34825 - 0x8809</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Point-to-Point Protocol (PPP)</code></pre></td>
-<td><pre><code>34827 - 0x880B</code></pre></td>
+<td><pre><code>34827 - 0x880B</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>General Switch Management Protocol (GSMP)</code></pre></td>
-<td><pre><code>34828 - 0x880C</code></pre></td>
+<td><pre><code>34828 - 0x880C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Cirrus CobraNet</code></pre></td>
-<td><pre><code>34841 - 0x8819</code></pre></td>
+<td><pre><code>34841 - 0x8819</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Hitachi Cable (Optoelectronic Systems Laboratory)</code></pre></td>
-<td><pre><code>34848 - 0x8820</code></pre></td>
+<td><pre><code>34848 - 0x8820</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Web-cache Coordination Protocol</code></pre></td>
-<td><pre><code>34878 - 0x883E</code></pre></td>
+<td><pre><code>34878 - 0x883E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Multi-Protocol Label Switching (MPLS) Unicast </code></pre></td>
-<td><pre><code>34887 - 0x8847</code></pre></td>
+<td><pre><code>34887 - 0x8847</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Multi-Protocol Label Switching (MPLS) Multicast</code></pre></td>
-<td><pre><code>34888 - 0x8848</code></pre></td>
+<td><pre><code>34888 - 0x8848</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Axis Communications AB - Proprietary</code></pre></td>
-<td><pre><code>34902 - 0x8856</code></pre></td>
+<td><pre><code>34902 - 0x8856</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Foundry Proprietary Protocol</code></pre></td>
-<td><pre><code>34906 - 0x885A</code></pre></td>
+<td><pre><code>34906 - 0x885A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Multicast Channel Allocation Protocol (MCAP)</code></pre></td>
-<td><pre><code>34913 - 0x8861</code></pre></td>
+<td><pre><code>34913 - 0x8861</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PPP Over Ethernet (PPPoE) Discovery Stage</code></pre></td>
-<td><pre><code>34915 - 0x8863</code></pre></td>
+<td><pre><code>34915 - 0x8863</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PPP Over Ethernet (PPPoE) Session Stage</code></pre></td>
-<td><pre><code>34916 - 0x8864</code></pre></td>
+<td><pre><code>34916 - 0x8864</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Intel ANS (NIC Teaming)</code></pre></td>
-<td><pre><code>34925 - 0x886D</code></pre></td>
+<td><pre><code>34925 - 0x886D</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Microsoft Network Load Balancing Hearbeat</code></pre></td>
-<td><pre><code>34927 - 0x886F</code></pre></td>
+<td><pre><code>34927 - 0x886F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Jumbo Frames</code></pre></td>
-<td><pre><code>34928 - 0x8870</code></pre></td>
+<td><pre><code>34928 - 0x8870</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>HomePlug 1.0 MME</code></pre></td>
-<td><pre><code>34939 - 0x887B</code></pre></td>
+<td><pre><code>34939 - 0x887B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Byte Stream Protocol for IP based micro-mobility bearer interfaces (A10)</code></pre></td>
-<td><pre><code>34945 - 0x8881</code></pre></td>
+<td><pre><code>34945 - 0x8881</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Frame-based ATM Transport over Ethernet</code></pre></td>
-<td><pre><code>34948 - 0x8884</code></pre></td>
+<td><pre><code>34948 - 0x8884</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>HP LanProbe Test</code></pre></td>
-<td><pre><code>34952 - 0x8888</code></pre></td>
+<td><pre><code>34952 - 0x8888</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>EAP over LAN - Authentication (IEEE 802.1X)</code></pre></td>
-<td><pre><code>34958 - 0x888E</code></pre></td>
+<td><pre><code>34958 - 0x888E</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PROFIBUS PROFINET Protocol</code></pre></td>
-<td><pre><code>34962 - 0x8892</code></pre></td>
+<td><pre><code>34962 - 0x8892</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Realtek Remote Control Protocol (RRCP)</code></pre></td>
-<td><pre><code>34969 - 0x8899</code></pre></td>
+<td><pre><code>34969 - 0x8899</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>HyperSCSI (SCSI over Ethernet)</code></pre></td>
-<td><pre><code>34970 - 0x889A</code></pre></td>
+<td><pre><code>34970 - 0x889A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CSM_ENCAPS Protocol - Mindspeed Technologies</code></pre></td>
-<td><pre><code>34971 - 0x889B</code></pre></td>
+<td><pre><code>34971 - 0x889B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Telkonet Powerline Ethernet</code></pre></td>
-<td><pre><code>34977 - 0x88A1</code></pre></td>
+<td><pre><code>34977 - 0x88A1</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ATA over Ethernet (AoE)</code></pre></td>
-<td><pre><code>34978 - 0x88A2</code></pre></td>
+<td><pre><code>34978 - 0x88A2</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>EtherCAT Protocol</code></pre></td>
-<td><pre><code>34980 - 0x88A4</code></pre></td>
+<td><pre><code>34980 - 0x88A4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Huawei Technologies / Cluster</code></pre></td>
-<td><pre><code>34983 - 0x88A7</code></pre></td>
+<td><pre><code>34983 - 0x88A7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Provider Bridging (IEEE 802.1ad) &amp; Shortest Path Bridging IEEE 802.1aq</code></pre></td>
-<td><pre><code>34984 - 0x88A8</code></pre></td>
+<td><pre><code>34984 - 0x88A8</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Ethernet Powerlink, Communication Profile for Real-Time Ethernet (RTE)</code></pre></td>
-<td><pre><code>34987 - 0x88AB</code></pre></td>
+<td><pre><code>34987 - 0x88AB</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>XiMeta Technology Americas Inc. Proprietary </code></pre></td>
-<td><pre><code>34989 - 0x88AD</code></pre></td>
+<td><pre><code>34989 - 0x88AD</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Boardwalk</code></pre></td>
-<td><pre><code>34990 - 0x88AE</code></pre></td>
+<td><pre><code>34990 - 0x88AE</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>WLAN Authentication Infrastructure (WAI) Authentication Protocol</code></pre></td>
-<td><pre><code>34996 - 0x88B4</code></pre></td>
+<td><pre><code>34996 - 0x88B4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IEEE 802a OUI Extended Ethertype</code></pre></td>
-<td><pre><code>34999 - 0x88B7</code></pre></td>
+<td><pre><code>34999 - 0x88B7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Generic substation Events - International Electrotechnical Commission - Electrical Substation Automation (IEC-61850)</code></pre></td>
-<td><pre><code>35000 - 0x88B8</code></pre></td>
+<td><pre><code>35000 - 0x88B8</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Sampled Value Services - International Electrotechnical Commission</code></pre></td>
-<td><pre><code>35002 - 0x88BA</code></pre></td>
+<td><pre><code>35002 - 0x88BA</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Light Weight Access Point Protocol (LWAPP)</code></pre></td>
-<td><pre><code>35003 - 0x88BB</code></pre></td>
+<td><pre><code>35003 - 0x88BB</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Robust Security Network (RSN) Pre-Authentication - 802.11i </code></pre></td>
-<td><pre><code>35015 - 0x88C7</code></pre></td>
+<td><pre><code>35015 - 0x88C7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Transparent Inter Process Communication Protocol (TIPC)</code></pre></td>
-<td><pre><code>35018 - 0x88CA</code></pre></td>
+<td><pre><code>35018 - 0x88CA</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Link Layer Discovery Protocol (LLDP)</code></pre></td>
-<td><pre><code>35020 - 0x88CC</code></pre></td>
+<td><pre><code>35020 - 0x88CC</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SERCOS III Real-time Protocol for Motion Control</code></pre></td>
-<td><pre><code>35021 - 0x88CD</code></pre></td>
+<td><pre><code>35021 - 0x88CD</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>3rd Generation Partnership Project 2 (3GPP2) for CDMA2000 Access Network Interfaces</code></pre></td>
-<td><pre><code>35026 - 0x88D2</code></pre></td>
+<td><pre><code>35026 - 0x88D2</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Circuit Emulation Services over Ethernet (MEF 8)</code></pre></td>
-<td><pre><code>35032 - 0x88D8</code></pre></td>
+<td><pre><code>35032 - 0x88D8</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Link Layer Topology Discovery (LLTD)</code></pre></td>
-<td><pre><code>35033 - 0x88D9</code></pre></td>
+<td><pre><code>35033 - 0x88D9</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Wireless Access in a Vehicle Environment - WAVE Short Message Protocol (WSMP)</code></pre></td>
-<td><pre><code>35036 - 0x88DC</code></pre></td>
+<td><pre><code>35036 - 0x88DC</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>VMware LabManager</code></pre></td>
-<td><pre><code>35038 - 0x88DE</code></pre></td>
+<td><pre><code>35038 - 0x88DE</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>HomePlug AV</code></pre></td>
-<td><pre><code>35041 - 0x88E1</code></pre></td>
+<td><pre><code>35041 - 0x88E1</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Media Redundancy Protocol (IEC62439-2)</code></pre></td>
-<td><pre><code>35043 - 0x88E3</code></pre></td>
+<td><pre><code>35043 - 0x88E3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>MAC security (IEEE 802.1AE)</code></pre></td>
-<td><pre><code>35045 - 0x88E5</code></pre></td>
+<td><pre><code>35045 - 0x88E5</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Provider Backbone Bridge Mac-in-Mac - IEEE 802.1ah</code></pre></td>
-<td><pre><code>35047 - 0x88E7</code></pre></td>
+<td><pre><code>35047 - 0x88E7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Ethernet Local Management Interface (E-LMI)</code></pre></td>
-<td><pre><code>35054 - 0x88EE</code></pre></td>
+<td><pre><code>35054 - 0x88EE</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Multiple VLAN Registration Protocol (MVRP) - IEEE 802.1ak</code></pre></td>
-<td><pre><code>35061 - 0x88F5</code></pre></td>
+<td><pre><code>35061 - 0x88F5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Multiple MAC Registration Protocol (MMRP) - IEEE 802.1ak</code></pre></td>
-<td><pre><code>35062 - 0x88F6</code></pre></td>
+<td><pre><code>35062 - 0x88F6</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Precision Time Protocol over Eth. (PTP v2) - IEEE-1588</code></pre></td>
-<td><pre><code>35063 - 0x88F7</code></pre></td>
+<td><pre><code>35063 - 0x88F7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Network Controller Sideband Interface (NCSI)</code></pre></td>
-<td><pre><code>35064 - 0x88F8</code></pre></td>
+<td><pre><code>35064 - 0x88F8</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Parallel Redundancy Protocol (IEC62439 Part 3)</code></pre></td>
-<td><pre><code>35067 - 0x88FB</code></pre></td>
+<td><pre><code>35067 - 0x88FB</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Nokia Siemens Networks Flow Layer Internal Protocol (FLIP)</code></pre></td>
-<td><pre><code>35073 - 0x8901</code></pre></td>
+<td><pre><code>35073 - 0x8901</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IEEE 802.1ag Connectivity Fault Management (CFM) Protocol / ITU-T Recommendation Y.1731 (OAM)</code></pre></td>
-<td><pre><code>35074 - 0x8902</code></pre></td>
+<td><pre><code>35074 - 0x8902</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Cisco FabricPath Switching - Frame Encapsulation - DCE</code></pre></td>
-<td><pre><code>35075 - 0x8903</code></pre></td>
+<td><pre><code>35075 - 0x8903</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Fiber Channel over Ethernet (FCoE)</code></pre></td>
-<td><pre><code>35078 - 0x8906</code></pre></td>
+<td><pre><code>35078 - 0x8906</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Wireless LAN - Data Encapsulation (IEEE-802.11)</code></pre></td>
-<td><pre><code>35085 - 0x890D</code></pre></td>
+<td><pre><code>35085 - 0x890D</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ENEA LINX (Inter Process Communication) IPC Protocol over Ethernet</code></pre></td>
-<td><pre><code>35089 - 0x8911</code></pre></td>
+<td><pre><code>35089 - 0x8911</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Fiber Channel over Ethernet (FCoE)- Initialization Protocol</code></pre></td>
-<td><pre><code>35092 - 0x8914</code></pre></td>
+<td><pre><code>35092 - 0x8914</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Infiniband Remote Direct Memory Access (RDMA) over Converged Ethernet (RoCE)</code></pre></td>
-<td><pre><code>35093 - 0x8915</code></pre></td>
+<td><pre><code>35093 - 0x8915</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Media Independent Handover Protocol</code></pre></td>
-<td><pre><code>35095 - 0x8917</code></pre></td>
+<td><pre><code>35095 - 0x8917</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>TTEthernet Protocol Control Frame</code></pre></td>
-<td><pre><code>35101 - 0x891D</code></pre></td>
+<td><pre><code>35101 - 0x891D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>High-availability Seamless Redundancy (IEC-62439)</code></pre></td>
-<td><pre><code>35119 - 0x892F</code></pre></td>
+<td><pre><code>35119 - 0x892F</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Invisible Software</code></pre></td>
-<td><pre><code>35478 - 0x8A96</code></pre></td>
+<td><pre><code>35478 - 0x8A96</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Invisible Software</code></pre></td>
-<td><pre><code>35479 - 0x8A97</code></pre></td>
+<td><pre><code>35479 - 0x8A97</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Loopback (Configuration Layer 2 Test Protocol)</code></pre></td>
-<td><pre><code>36864 - 0x9000</code></pre></td>
+<td><pre><code>36864 - 0x9000</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>3Com (Formerly Bridge Communications), XNS Systems Management</code></pre></td>
-<td><pre><code>36865 - 0x9001</code></pre></td>
+<td><pre><code>36865 - 0x9001</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>3Com (Formerly Bridge Communications), TCP/IP Systems Management</code></pre></td>
-<td><pre><code>36866 - 0x9002</code></pre></td>
+<td><pre><code>36866 - 0x9002</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>3Com (Formerly Bridge Communications), Loopback Detection</code></pre></td>
-<td><pre><code>36867 - 0x9003</code></pre></td>
+<td><pre><code>36867 - 0x9003</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RTnet: Real-Time Media Access Control (RTMAC)</code></pre></td>
-<td><pre><code>36897 - 0x9021</code></pre></td>
+<td><pre><code>36897 - 0x9021</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RTnet: Real-Time Configuration Protocol (RTCFG)</code></pre></td>
-<td><pre><code>36898 - 0x9022</code></pre></td>
+<td><pre><code>36898 - 0x9022</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Q-in-Q / VLAN-tagged frame</code></pre></td>
-<td><pre><code>37120 - 0x9100</code></pre></td>
+<td><pre><code>37120 - 0x9100</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Q-in-Q / VLAN-tagged frame</code></pre></td>
-<td><pre><code>37376 - 0x9200</code></pre></td>
+<td><pre><code>37376 - 0x9200</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DECNET - Used by VAX 6220 DEBNI</code></pre></td>
-<td><pre><code>43690 - 0xAAAA</code></pre></td>
+<td><pre><code>43690 - 0xAAAA</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Veritas Low Latency Transport (LLT)</code></pre></td>
-<td><pre><code>51966 - 0xCAFE</code></pre></td>
+<td><pre><code>51966 - 0xCAFE</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Digium Time Division Multiplexing (TDM) over Ethernet (TDMoE)</code></pre></td>
-<td><pre><code>53261 - 0xD00D</code></pre></td>
+<td><pre><code>53261 - 0xD00D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Ethertype Distributed Switch Architecture (DSA)</code></pre></td>
-<td><pre><code>56026 - 0xDADA</code></pre></td>
+<td><pre><code>56026 - 0xDADA</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Sonix Arpeggio</code></pre></td>
-<td><pre><code>64245 - 0xFAF5</code></pre></td>
+<td><pre><code>64245 - 0xFAF5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Cisco Multilayer Director Switches (MDS)</code></pre></td>
-<td><pre><code>64764 - 0xFCFC</code></pre></td>
+<td><pre><code>64764 - 0xFCFC</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>BBN VITAL-LanBridge cache wakeups</code></pre></td>
-<td><pre><code>65280 - 0xFF00</code></pre></td>
+<td><pre><code>65280 - 0xFF00</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ISC Bunker Ramo</code></pre></td>
-<td><pre><code>65281 - 0xFF01</code></pre></td>
+<td><pre><code>65281 - 0xFF01</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ISC Bunker Ramo</code></pre></td>
-<td><pre><code>65282 - 0xFF02</code></pre></td>
+<td><pre><code>65282 - 0xFF02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ISC Bunker Ramo</code></pre></td>
-<td><pre><code>65283 - 0xFF03</code></pre></td>
+<td><pre><code>65283 - 0xFF03</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ISC Bunker Ramo</code></pre></td>
-<td><pre><code>65284 - 0xFF04</code></pre></td>
+<td><pre><code>65284 - 0xFF04</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ISC Bunker Ramo</code></pre></td>
-<td><pre><code>65285 - 0xFF05</code></pre></td>
+<td><pre><code>65285 - 0xFF05</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ISC Bunker Ramo</code></pre></td>
-<td><pre><code>65286 - 0xFF06</code></pre></td>
+<td><pre><code>65286 - 0xFF06</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ISC Bunker Ramo</code></pre></td>
-<td><pre><code>65287 - 0xFF07</code></pre></td>
+<td><pre><code>65287 - 0xFF07</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ISC Bunker Ramo</code></pre></td>
-<td><pre><code>65288 - 0xFF08</code></pre></td>
+<td><pre><code>65288 - 0xFF08</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ISC Bunker Ramo</code></pre></td>
-<td><pre><code>65289 - 0xFF09</code></pre></td>
+<td><pre><code>65289 - 0xFF09</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ISC Bunker Ramo</code></pre></td>
-<td><pre><code>65290 - 0xFF0A</code></pre></td>
+<td><pre><code>65290 - 0xFF0A</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ISC Bunker Ramo</code></pre></td>
-<td><pre><code>65291 - 0xFF0B</code></pre></td>
+<td><pre><code>65291 - 0xFF0B</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ISC Bunker Ramo</code></pre></td>
-<td><pre><code>65292 - 0xFF0C</code></pre></td>
+<td><pre><code>65292 - 0xFF0C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ISC Bunker Ramo</code></pre></td>
-<td><pre><code>65293 - 0xFF0D</code></pre></td>
+<td><pre><code>65293 - 0xFF0D</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ISC Bunker Ramo</code></pre></td>
-<td><pre><code>65294 - 0xFF0E</code></pre></td>
+<td><pre><code>65294 - 0xFF0E</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Reserved</code></pre></td>
-<td><pre><code>65535 - 0xFFFF</code></pre></td>
+<td><pre><code>65535 - 0xFFFF</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -14439,35 +14433,35 @@ This field does not allow any custom items.
 <tbody>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>GET</code></pre></td>
-<td><pre><code>0 - 0x0</code></pre></td>
+<td><pre><code>0 - 0x0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>HEAD</code></pre></td>
-<td><pre><code>1 - 0x1</code></pre></td>
+<td><pre><code>1 - 0x1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>POST</code></pre></td>
-<td><pre><code>2 - 0x2</code></pre></td>
+<td><pre><code>2 - 0x2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>CONNECT</code></pre></td>
-<td><pre><code>3 - 0x3</code></pre></td>
+<td><pre><code>3 - 0x3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>PUT</code></pre></td>
-<td><pre><code>4 - 0x4</code></pre></td>
+<td><pre><code>4 - 0x4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>OPTIONS</code></pre></td>
-<td><pre><code>5 - 0x5</code></pre></td>
+<td><pre><code>5 - 0x5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>TRACE</code></pre></td>
-<td><pre><code>6 - 0x6</code></pre></td>
+<td><pre><code>6 - 0x6</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>DELETE</code></pre></td>
-<td><pre><code>7 - 0x7</code></pre></td>
+<td><pre><code>7 - 0x7</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -14494,251 +14488,251 @@ This field does not allow any custom items.
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Continue</code></pre></td>
-<td><pre><code>100 - 0x64</code></pre></td>
+<td><pre><code>100 - 0x64</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Switching Protocols</code></pre></td>
-<td><pre><code>101 - 0x65</code></pre></td>
+<td><pre><code>101 - 0x65</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Processing</code></pre></td>
-<td><pre><code>102 - 0x66</code></pre></td>
+<td><pre><code>102 - 0x66</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Early Hints</code></pre></td>
-<td><pre><code>103 - 0x67</code></pre></td>
+<td><pre><code>103 - 0x67</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>OK</code></pre></td>
-<td><pre><code>200 - 0xC8</code></pre></td>
+<td><pre><code>200 - 0xC8</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Created</code></pre></td>
-<td><pre><code>201 - 0xC9</code></pre></td>
+<td><pre><code>201 - 0xC9</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Accepted</code></pre></td>
-<td><pre><code>202 - 0xCA</code></pre></td>
+<td><pre><code>202 - 0xCA</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Non-Authoritative Information</code></pre></td>
-<td><pre><code>203 - 0xCB</code></pre></td>
+<td><pre><code>203 - 0xCB</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>No Content</code></pre></td>
-<td><pre><code>204 - 0xCC</code></pre></td>
+<td><pre><code>204 - 0xCC</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Reset Content</code></pre></td>
-<td><pre><code>205 - 0xCD</code></pre></td>
+<td><pre><code>205 - 0xCD</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Partial Content</code></pre></td>
-<td><pre><code>206 - 0xCE</code></pre></td>
+<td><pre><code>206 - 0xCE</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Multi-Status</code></pre></td>
-<td><pre><code>207 - 0xCF</code></pre></td>
+<td><pre><code>207 - 0xCF</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Already Reported</code></pre></td>
-<td><pre><code>208 - 0xD0</code></pre></td>
+<td><pre><code>208 - 0xD0</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IM Used</code></pre></td>
-<td><pre><code>226 - 0xE2</code></pre></td>
+<td><pre><code>226 - 0xE2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Multiple Choices</code></pre></td>
-<td><pre><code>300 - 0x12C</code></pre></td>
+<td><pre><code>300 - 0x12C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Moved Permanently</code></pre></td>
-<td><pre><code>301 - 0x12D</code></pre></td>
+<td><pre><code>301 - 0x12D</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Found</code></pre></td>
-<td><pre><code>302 - 0x12E</code></pre></td>
+<td><pre><code>302 - 0x12E</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>See Other</code></pre></td>
-<td><pre><code>303 - 0x12F</code></pre></td>
+<td><pre><code>303 - 0x12F</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Not Modified</code></pre></td>
-<td><pre><code>304 - 0x130</code></pre></td>
+<td><pre><code>304 - 0x130</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Use Proxy</code></pre></td>
-<td><pre><code>305 - 0x131</code></pre></td>
+<td><pre><code>305 - 0x131</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Switch Proxy</code></pre></td>
-<td><pre><code>306 - 0x132</code></pre></td>
+<td><pre><code>306 - 0x132</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Temporary Redirect</code></pre></td>
-<td><pre><code>307 - 0x133</code></pre></td>
+<td><pre><code>307 - 0x133</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Permanent Redirect</code></pre></td>
-<td><pre><code>308 - 0x134</code></pre></td>
+<td><pre><code>308 - 0x134</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Bad Request</code></pre></td>
-<td><pre><code>400 - 0x190</code></pre></td>
+<td><pre><code>400 - 0x190</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Unauthorized</code></pre></td>
-<td><pre><code>401 - 0x191</code></pre></td>
+<td><pre><code>401 - 0x191</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Payment Required</code></pre></td>
-<td><pre><code>402 - 0x192</code></pre></td>
+<td><pre><code>402 - 0x192</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Forbidden</code></pre></td>
-<td><pre><code>403 - 0x193</code></pre></td>
+<td><pre><code>403 - 0x193</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Not Found</code></pre></td>
-<td><pre><code>404 - 0x194</code></pre></td>
+<td><pre><code>404 - 0x194</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Method Not Allowed</code></pre></td>
-<td><pre><code>405 - 0x195</code></pre></td>
+<td><pre><code>405 - 0x195</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Not Acceptable</code></pre></td>
-<td><pre><code>406 - 0x196</code></pre></td>
+<td><pre><code>406 - 0x196</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Proxy Authentication Required</code></pre></td>
-<td><pre><code>407 - 0x197</code></pre></td>
+<td><pre><code>407 - 0x197</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Request Timeout</code></pre></td>
-<td><pre><code>408 - 0x198</code></pre></td>
+<td><pre><code>408 - 0x198</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Conflict</code></pre></td>
-<td><pre><code>409 - 0x199</code></pre></td>
+<td><pre><code>409 - 0x199</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Gone</code></pre></td>
-<td><pre><code>410 - 0x19A</code></pre></td>
+<td><pre><code>410 - 0x19A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Length Required</code></pre></td>
-<td><pre><code>411 - 0x19B</code></pre></td>
+<td><pre><code>411 - 0x19B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Precondition Failed</code></pre></td>
-<td><pre><code>412 - 0x19C</code></pre></td>
+<td><pre><code>412 - 0x19C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Request Entity Too Large</code></pre></td>
-<td><pre><code>413 - 0x19D</code></pre></td>
+<td><pre><code>413 - 0x19D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Request-URI Too Long</code></pre></td>
-<td><pre><code>414 - 0x19E</code></pre></td>
+<td><pre><code>414 - 0x19E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Unsupported Media Type</code></pre></td>
-<td><pre><code>415 - 0x19F</code></pre></td>
+<td><pre><code>415 - 0x19F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Requested Range Not Satisfiable</code></pre></td>
-<td><pre><code>416 - 0x1A0</code></pre></td>
+<td><pre><code>416 - 0x1A0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Expectation Failed</code></pre></td>
-<td><pre><code>417 - 0x1A1</code></pre></td>
+<td><pre><code>417 - 0x1A1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>I&#39;m a teapot</code></pre></td>
-<td><pre><code>418 - 0x1A2</code></pre></td>
+<td><pre><code>418 - 0x1A2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Misdirected Request</code></pre></td>
-<td><pre><code>421 - 0x1A5</code></pre></td>
+<td><pre><code>421 - 0x1A5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Unprocessable Entity</code></pre></td>
-<td><pre><code>422 - 0x1A6</code></pre></td>
+<td><pre><code>422 - 0x1A6</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Locked</code></pre></td>
-<td><pre><code>423 - 0x1A7</code></pre></td>
+<td><pre><code>423 - 0x1A7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Failed Dependency</code></pre></td>
-<td><pre><code>424 - 0x1A8</code></pre></td>
+<td><pre><code>424 - 0x1A8</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Upgrade Required</code></pre></td>
-<td><pre><code>426 - 0x1AA</code></pre></td>
+<td><pre><code>426 - 0x1AA</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Precondition Required</code></pre></td>
-<td><pre><code>428 - 0x1AC</code></pre></td>
+<td><pre><code>428 - 0x1AC</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Too Many Requests</code></pre></td>
-<td><pre><code>429 - 0x1AD</code></pre></td>
+<td><pre><code>429 - 0x1AD</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Request Header Fields Too Large</code></pre></td>
-<td><pre><code>431 - 0x1AF</code></pre></td>
+<td><pre><code>431 - 0x1AF</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Unavailable For Legal Reasons</code></pre></td>
-<td><pre><code>451 - 0x1C3</code></pre></td>
+<td><pre><code>451 - 0x1C3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Internal Server Error</code></pre></td>
-<td><pre><code>500 - 0x1F4</code></pre></td>
+<td><pre><code>500 - 0x1F4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Not Implemented</code></pre></td>
-<td><pre><code>501 - 0x1F5</code></pre></td>
+<td><pre><code>501 - 0x1F5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Bad Gateway</code></pre></td>
-<td><pre><code>502 - 0x1F6</code></pre></td>
+<td><pre><code>502 - 0x1F6</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Service Unavailable</code></pre></td>
-<td><pre><code>503 - 0x1F7</code></pre></td>
+<td><pre><code>503 - 0x1F7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Gateway Timeout</code></pre></td>
-<td><pre><code>504 - 0x1F8</code></pre></td>
+<td><pre><code>504 - 0x1F8</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>HTTP Version Not Supported</code></pre></td>
-<td><pre><code>505 - 0x1F9</code></pre></td>
+<td><pre><code>505 - 0x1F9</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Variant Also Negotiates</code></pre></td>
-<td><pre><code>506 - 0x1FA</code></pre></td>
+<td><pre><code>506 - 0x1FA</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Insufficient Storage</code></pre></td>
-<td><pre><code>507 - 0x1FB</code></pre></td>
+<td><pre><code>507 - 0x1FB</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Loop Detected</code></pre></td>
-<td><pre><code>508 - 0x1FC</code></pre></td>
+<td><pre><code>508 - 0x1FC</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Not Extended</code></pre></td>
-<td><pre><code>510 - 0x1FE</code></pre></td>
+<td><pre><code>510 - 0x1FE</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Network Authentication Required</code></pre></td>
-<td><pre><code>511 - 0x1FF</code></pre></td>
+<td><pre><code>511 - 0x1FF</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -14765,23 +14759,23 @@ This field does not allow any custom items.
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Informational (1xx)</code></pre></td>
-<td><pre><code>1 - 0x1</code></pre></td>
+<td><pre><code>1 - 0x1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>OK (2xx)</code></pre></td>
-<td><pre><code>2 - 0x2</code></pre></td>
+<td><pre><code>2 - 0x2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Multiple Choices (3xx)</code></pre></td>
-<td><pre><code>3 - 0x3</code></pre></td>
+<td><pre><code>3 - 0x3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Bad Request (4xx)</code></pre></td>
-<td><pre><code>4 - 0x4</code></pre></td>
+<td><pre><code>4 - 0x4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Internal Server Error (5xx)</code></pre></td>
-<td><pre><code>5 - 0x5</code></pre></td>
+<td><pre><code>5 - 0x5</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -15210,317 +15204,317 @@ This field does not allow any custom items.
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Echo Reply</code></pre></td>
 <td>Message</td>
-<td><pre><code>0 - 0x0</code></pre></td>
+<td><pre><code>0 - 0x0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Destination Unreachable</code></pre></td>
 <td>Error</td>
-<td><pre><code>3 - 0x3</code></pre></td>
+<td><pre><code>3 - 0x3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Source Quench</code></pre></td>
 <td>Error</td>
-<td><pre><code>4 - 0x4</code></pre></td>
+<td><pre><code>4 - 0x4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Redirect</code></pre></td>
 <td>Message</td>
-<td><pre><code>5 - 0x5</code></pre></td>
+<td><pre><code>5 - 0x5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Alternate Host Address</code></pre></td>
 <td>Message</td>
-<td><pre><code>6 - 0x6</code></pre></td>
+<td><pre><code>6 - 0x6</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Echo</code></pre></td>
 <td>Message</td>
-<td><pre><code>8 - 0x8</code></pre></td>
+<td><pre><code>8 - 0x8</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Router Advertisement</code></pre></td>
 <td>Error</td>
-<td><pre><code>9 - 0x9</code></pre></td>
+<td><pre><code>9 - 0x9</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Router Selection</code></pre></td>
 <td>Error</td>
-<td><pre><code>10 - 0xA</code></pre></td>
+<td><pre><code>10 - 0xA</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Time Exceeded</code></pre></td>
 <td>Error</td>
-<td><pre><code>11 - 0xB</code></pre></td>
+<td><pre><code>11 - 0xB</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Parameter Problem</code></pre></td>
 <td>Error</td>
-<td><pre><code>12 - 0xC</code></pre></td>
+<td><pre><code>12 - 0xC</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Timestamp</code></pre></td>
 <td>Message</td>
-<td><pre><code>13 - 0xD</code></pre></td>
+<td><pre><code>13 - 0xD</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Timestamp Reply</code></pre></td>
 <td>Message</td>
-<td><pre><code>14 - 0xE</code></pre></td>
+<td><pre><code>14 - 0xE</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Information Request</code></pre></td>
 <td>Message</td>
-<td><pre><code>15 - 0xF</code></pre></td>
+<td><pre><code>15 - 0xF</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Information Reply</code></pre></td>
 <td>Message</td>
-<td><pre><code>16 - 0x10</code></pre></td>
+<td><pre><code>16 - 0x10</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Address Mask Request</code></pre></td>
 <td>Message</td>
-<td><pre><code>17 - 0x11</code></pre></td>
+<td><pre><code>17 - 0x11</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Address Mask Reply</code></pre></td>
 <td>Message</td>
-<td><pre><code>18 - 0x12</code></pre></td>
+<td><pre><code>18 - 0x12</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Reserved (for Security)</code></pre></td>
 <td>Error</td>
-<td><pre><code>19 - 0x13</code></pre></td>
+<td><pre><code>19 - 0x13</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Reserved (for Robustness Experiment)</code></pre></td>
 <td>Error</td>
-<td><pre><code>20 - 0x14</code></pre></td>
+<td><pre><code>20 - 0x14</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Reserved (for Robustness Experiment)</code></pre></td>
 <td>Error</td>
-<td><pre><code>21 - 0x15</code></pre></td>
+<td><pre><code>21 - 0x15</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Reserved (for Robustness Experiment)</code></pre></td>
 <td>Error</td>
-<td><pre><code>22 - 0x16</code></pre></td>
+<td><pre><code>22 - 0x16</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Reserved (for Robustness Experiment)</code></pre></td>
 <td>Error</td>
-<td><pre><code>23 - 0x17</code></pre></td>
+<td><pre><code>23 - 0x17</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Reserved (for Robustness Experiment)</code></pre></td>
 <td>Error</td>
-<td><pre><code>24 - 0x18</code></pre></td>
+<td><pre><code>24 - 0x18</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Reserved (for Robustness Experiment)</code></pre></td>
 <td>Error</td>
-<td><pre><code>25 - 0x19</code></pre></td>
+<td><pre><code>25 - 0x19</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Reserved (for Robustness Experiment)</code></pre></td>
 <td>Error</td>
-<td><pre><code>26 - 0x1A</code></pre></td>
+<td><pre><code>26 - 0x1A</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Reserved (for Robustness Experiment)</code></pre></td>
 <td>Error</td>
-<td><pre><code>27 - 0x1B</code></pre></td>
+<td><pre><code>27 - 0x1B</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Reserved (for Robustness Experiment)</code></pre></td>
 <td>Error</td>
-<td><pre><code>28 - 0x1C</code></pre></td>
+<td><pre><code>28 - 0x1C</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Reserved (for Robustness Experiment)</code></pre></td>
 <td>Error</td>
-<td><pre><code>29 - 0x1D</code></pre></td>
+<td><pre><code>29 - 0x1D</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Traceroute</code></pre></td>
 <td>Error</td>
-<td><pre><code>30 - 0x1E</code></pre></td>
+<td><pre><code>30 - 0x1E</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Datagram Conversion Error</code></pre></td>
 <td>Error</td>
-<td><pre><code>31 - 0x1F</code></pre></td>
+<td><pre><code>31 - 0x1F</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Mobile Host Redirect</code></pre></td>
 <td>Error</td>
-<td><pre><code>32 - 0x20</code></pre></td>
+<td><pre><code>32 - 0x20</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Where-Are-You</code></pre></td>
 <td>Error</td>
-<td><pre><code>33 - 0x21</code></pre></td>
+<td><pre><code>33 - 0x21</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPv6 I-Am-Here</code></pre></td>
 <td>Error</td>
-<td><pre><code>34 - 0x22</code></pre></td>
+<td><pre><code>34 - 0x22</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Mobile Registration Request</code></pre></td>
 <td>Message</td>
-<td><pre><code>35 - 0x23</code></pre></td>
+<td><pre><code>35 - 0x23</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Mobile Registration Reply</code></pre></td>
 <td>Message</td>
-<td><pre><code>36 - 0x24</code></pre></td>
+<td><pre><code>36 - 0x24</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Skip</code></pre></td>
 <td>Error</td>
-<td><pre><code>39 - 0x27</code></pre></td>
+<td><pre><code>39 - 0x27</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Photuris</code></pre></td>
 <td>Error</td>
-<td><pre><code>40 - 0x28</code></pre></td>
+<td><pre><code>40 - 0x28</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Echo Request</code></pre></td>
 <td>Message</td>
-<td><pre><code>128 - 0x80</code></pre></td>
+<td><pre><code>128 - 0x80</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Echo Reply</code></pre></td>
 <td>Message</td>
-<td><pre><code>129 - 0x81</code></pre></td>
+<td><pre><code>129 - 0x81</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Multicast Listener Query</code></pre></td>
 <td>Message</td>
-<td><pre><code>130 - 0x82</code></pre></td>
+<td><pre><code>130 - 0x82</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Multicast Listener Report</code></pre></td>
 <td>Message</td>
-<td><pre><code>131 - 0x83</code></pre></td>
+<td><pre><code>131 - 0x83</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Multicast Listener Done</code></pre></td>
 <td>Message</td>
-<td><pre><code>132 - 0x84</code></pre></td>
+<td><pre><code>132 - 0x84</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Router Solicitation</code></pre></td>
 <td>Message</td>
-<td><pre><code>133 - 0x85</code></pre></td>
+<td><pre><code>133 - 0x85</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Router Advertisement</code></pre></td>
 <td>Message</td>
-<td><pre><code>134 - 0x86</code></pre></td>
+<td><pre><code>134 - 0x86</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Neighbor Solicitation</code></pre></td>
 <td>Message</td>
-<td><pre><code>135 - 0x87</code></pre></td>
+<td><pre><code>135 - 0x87</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Neighbor Advertisement</code></pre></td>
 <td>Message</td>
-<td><pre><code>136 - 0x88</code></pre></td>
+<td><pre><code>136 - 0x88</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Redirect Message</code></pre></td>
 <td>Message</td>
-<td><pre><code>137 - 0x89</code></pre></td>
+<td><pre><code>137 - 0x89</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Router Renumbering</code></pre></td>
 <td>Message</td>
-<td><pre><code>138 - 0x8A</code></pre></td>
+<td><pre><code>138 - 0x8A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ICMPv6 Node Information Query</code></pre></td>
 <td>Message</td>
-<td><pre><code>139 - 0x8B</code></pre></td>
+<td><pre><code>139 - 0x8B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ICMPv6 Node Information Response</code></pre></td>
 <td>Message</td>
-<td><pre><code>140 - 0x8C</code></pre></td>
+<td><pre><code>140 - 0x8C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Inverse Neighbor Discovery Solicitation Message</code></pre></td>
 <td>Message</td>
-<td><pre><code>141 - 0x8D</code></pre></td>
+<td><pre><code>141 - 0x8D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Inverse Neighbor Discovery Advertisement Message</code></pre></td>
 <td>Message</td>
-<td><pre><code>142 - 0x8E</code></pre></td>
+<td><pre><code>142 - 0x8E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Home Agent Address Discovery Request Message</code></pre></td>
 <td>Message</td>
-<td><pre><code>144 - 0x90</code></pre></td>
+<td><pre><code>144 - 0x90</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Home Agent Address Discovery Reply Message</code></pre></td>
 <td>Message</td>
-<td><pre><code>145 - 0x91</code></pre></td>
+<td><pre><code>145 - 0x91</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Mobile Prefix Solicitation</code></pre></td>
 <td>Message</td>
-<td><pre><code>146 - 0x92</code></pre></td>
+<td><pre><code>146 - 0x92</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Mobile Prefix Advertisement</code></pre></td>
 <td>Message</td>
-<td><pre><code>147 - 0x93</code></pre></td>
+<td><pre><code>147 - 0x93</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Certification Path Solicitation Message</code></pre></td>
 <td>Message</td>
-<td><pre><code>148 - 0x94</code></pre></td>
+<td><pre><code>148 - 0x94</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Certification Path Advertisement Message</code></pre></td>
 <td>Message</td>
-<td><pre><code>149 - 0x95</code></pre></td>
+<td><pre><code>149 - 0x95</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Multicast Router Advertisement</code></pre></td>
 <td>Message</td>
-<td><pre><code>151 - 0x97</code></pre></td>
+<td><pre><code>151 - 0x97</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Multicast Router Solicitation</code></pre></td>
 <td>Message</td>
-<td><pre><code>152 - 0x98</code></pre></td>
+<td><pre><code>152 - 0x98</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPv6 Multicast Router Termination</code></pre></td>
 <td>Message</td>
-<td><pre><code>153 - 0x99</code></pre></td>
+<td><pre><code>153 - 0x99</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>FMIPv6 Messages</code></pre></td>
 <td>Message</td>
-<td><pre><code>154 - 0x9A</code></pre></td>
+<td><pre><code>154 - 0x9A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RFC3692-style Experiment 1</code></pre></td>
 <td>Error</td>
-<td><pre><code>253 - 0xFD</code></pre></td>
+<td><pre><code>253 - 0xFD</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RFC3692-style Experiment 2</code></pre></td>
 <td>Error</td>
-<td><pre><code>254 - 0xFE</code></pre></td>
+<td><pre><code>254 - 0xFE</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -15545,11 +15539,11 @@ This field does not allow any custom items.
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>IPv4</code></pre></td>
-<td><pre><code>4 - 0x4</code></pre></td>
+<td><pre><code>4 - 0x4</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>IPv6</code></pre></td>
-<td><pre><code>6 - 0x6</code></pre></td>
+<td><pre><code>6 - 0x6</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -15574,697 +15568,697 @@ This field does not allow any custom items.
 <tbody>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>icmp</code></pre></td>
-<td><pre><code>1 - 0x1</code></pre></td>
+<td><pre><code>1 - 0x1</code></pre></td>
 <td>Internet control message protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>igmp</code></pre></td>
-<td><pre><code>2 - 0x2</code></pre></td>
+<td><pre><code>2 - 0x2</code></pre></td>
 <td>Internet group management</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ggp</code></pre></td>
-<td><pre><code>3 - 0x3</code></pre></td>
+<td><pre><code>3 - 0x3</code></pre></td>
 <td>Gateway-gateway protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ipencap</code></pre></td>
-<td><pre><code>4 - 0x4</code></pre></td>
+<td><pre><code>4 - 0x4</code></pre></td>
 <td>Ip encapsulated in ip</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>st</code></pre></td>
-<td><pre><code>5 - 0x5</code></pre></td>
+<td><pre><code>5 - 0x5</code></pre></td>
 <td>St datagram mode</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>tcp</code></pre></td>
-<td><pre><code>6 - 0x6</code></pre></td>
+<td><pre><code>6 - 0x6</code></pre></td>
 <td>Transmission control protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>cbt</code></pre></td>
-<td><pre><code>7 - 0x7</code></pre></td>
+<td><pre><code>7 - 0x7</code></pre></td>
 <td>Cbt</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>egp</code></pre></td>
-<td><pre><code>8 - 0x8</code></pre></td>
+<td><pre><code>8 - 0x8</code></pre></td>
 <td>Exterior gateway protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>igp</code></pre></td>
-<td><pre><code>9 - 0x9</code></pre></td>
+<td><pre><code>9 - 0x9</code></pre></td>
 <td>Any private interior gateway (used by cisco for igrp)</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>bbn-rcc-mon</code></pre></td>
-<td><pre><code>10 - 0xA</code></pre></td>
+<td><pre><code>10 - 0xA</code></pre></td>
 <td>Bbn rcc monitoring</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>nvp-ii</code></pre></td>
-<td><pre><code>11 - 0xB</code></pre></td>
+<td><pre><code>11 - 0xB</code></pre></td>
 <td>Network voice protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>pup</code></pre></td>
-<td><pre><code>12 - 0xC</code></pre></td>
+<td><pre><code>12 - 0xC</code></pre></td>
 <td>Parc universal packet protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>argus</code></pre></td>
-<td><pre><code>13 - 0xD</code></pre></td>
+<td><pre><code>13 - 0xD</code></pre></td>
 <td>Argus</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>emcom</code></pre></td>
-<td><pre><code>14 - 0xE</code></pre></td>
+<td><pre><code>14 - 0xE</code></pre></td>
 <td>Emcon</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>xnet</code></pre></td>
-<td><pre><code>15 - 0xF</code></pre></td>
+<td><pre><code>15 - 0xF</code></pre></td>
 <td>Cross net debugger</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>chaos</code></pre></td>
-<td><pre><code>16 - 0x10</code></pre></td>
+<td><pre><code>16 - 0x10</code></pre></td>
 <td>Chaos</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>udp</code></pre></td>
-<td><pre><code>17 - 0x11</code></pre></td>
+<td><pre><code>17 - 0x11</code></pre></td>
 <td>User datagram protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>mux</code></pre></td>
-<td><pre><code>18 - 0x12</code></pre></td>
+<td><pre><code>18 - 0x12</code></pre></td>
 <td>Multiplexing</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>dcn-meas</code></pre></td>
-<td><pre><code>19 - 0x13</code></pre></td>
+<td><pre><code>19 - 0x13</code></pre></td>
 <td>Dcn measurement subsystems</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>hmp</code></pre></td>
-<td><pre><code>20 - 0x14</code></pre></td>
+<td><pre><code>20 - 0x14</code></pre></td>
 <td>Host monitoring protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>prm</code></pre></td>
-<td><pre><code>21 - 0x15</code></pre></td>
+<td><pre><code>21 - 0x15</code></pre></td>
 <td>Packet radio measurement</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>xns-idp</code></pre></td>
-<td><pre><code>22 - 0x16</code></pre></td>
+<td><pre><code>22 - 0x16</code></pre></td>
 <td>Xerox ns idp</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>trunk-1</code></pre></td>
-<td><pre><code>23 - 0x17</code></pre></td>
+<td><pre><code>23 - 0x17</code></pre></td>
 <td>Trunk-1</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>trunk-2</code></pre></td>
-<td><pre><code>24 - 0x18</code></pre></td>
+<td><pre><code>24 - 0x18</code></pre></td>
 <td>Trunk-2</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>leaf-1</code></pre></td>
-<td><pre><code>25 - 0x19</code></pre></td>
+<td><pre><code>25 - 0x19</code></pre></td>
 <td>Leaf-1</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>leaf-2</code></pre></td>
-<td><pre><code>26 - 0x1A</code></pre></td>
+<td><pre><code>26 - 0x1A</code></pre></td>
 <td>Leaf-2</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>rdp</code></pre></td>
-<td><pre><code>27 - 0x1B</code></pre></td>
+<td><pre><code>27 - 0x1B</code></pre></td>
 <td>Reliable data protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>irtp</code></pre></td>
-<td><pre><code>28 - 0x1C</code></pre></td>
+<td><pre><code>28 - 0x1C</code></pre></td>
 <td>Internet reliable transaction</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>iso-tp4</code></pre></td>
-<td><pre><code>29 - 0x1D</code></pre></td>
+<td><pre><code>29 - 0x1D</code></pre></td>
 <td>Iso transport protocol class 4</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>netblt</code></pre></td>
-<td><pre><code>30 - 0x1E</code></pre></td>
+<td><pre><code>30 - 0x1E</code></pre></td>
 <td>Bulk data transfer protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>mfe-nsp</code></pre></td>
-<td><pre><code>31 - 0x1F</code></pre></td>
+<td><pre><code>31 - 0x1F</code></pre></td>
 <td>Mfe network services protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>merit-inp</code></pre></td>
-<td><pre><code>32 - 0x20</code></pre></td>
+<td><pre><code>32 - 0x20</code></pre></td>
 <td>Merit internodal protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>dccp</code></pre></td>
-<td><pre><code>33 - 0x21</code></pre></td>
+<td><pre><code>33 - 0x21</code></pre></td>
 <td>Datagram congestion control protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>3pc</code></pre></td>
-<td><pre><code>34 - 0x22</code></pre></td>
+<td><pre><code>34 - 0x22</code></pre></td>
 <td>Third party connect protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>idpr</code></pre></td>
-<td><pre><code>35 - 0x23</code></pre></td>
+<td><pre><code>35 - 0x23</code></pre></td>
 <td>Inter-domain policy routing protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>xtp</code></pre></td>
-<td><pre><code>36 - 0x24</code></pre></td>
+<td><pre><code>36 - 0x24</code></pre></td>
 <td>Xpress transfer protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ddp</code></pre></td>
-<td><pre><code>37 - 0x25</code></pre></td>
+<td><pre><code>37 - 0x25</code></pre></td>
 <td>Datagram delivery protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>idpr-cmtp</code></pre></td>
-<td><pre><code>38 - 0x26</code></pre></td>
+<td><pre><code>38 - 0x26</code></pre></td>
 <td>Idpr control message transport</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>tp++</code></pre></td>
-<td><pre><code>39 - 0x27</code></pre></td>
+<td><pre><code>39 - 0x27</code></pre></td>
 <td>Tp++ transport protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>il</code></pre></td>
-<td><pre><code>40 - 0x28</code></pre></td>
+<td><pre><code>40 - 0x28</code></pre></td>
 <td>Il transport protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ipv6</code></pre></td>
-<td><pre><code>41 - 0x29</code></pre></td>
+<td><pre><code>41 - 0x29</code></pre></td>
 <td>Ipv6</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>sdrp</code></pre></td>
-<td><pre><code>42 - 0x2A</code></pre></td>
+<td><pre><code>42 - 0x2A</code></pre></td>
 <td>Source demand routing protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ipv6-route</code></pre></td>
-<td><pre><code>43 - 0x2B</code></pre></td>
+<td><pre><code>43 - 0x2B</code></pre></td>
 <td>Routing header for ipv6</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ipv6-frag</code></pre></td>
-<td><pre><code>44 - 0x2C</code></pre></td>
+<td><pre><code>44 - 0x2C</code></pre></td>
 <td>Fragment header for ipv6</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>idrp</code></pre></td>
-<td><pre><code>45 - 0x2D</code></pre></td>
+<td><pre><code>45 - 0x2D</code></pre></td>
 <td>Inter-domain routing protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>rsvp</code></pre></td>
-<td><pre><code>46 - 0x2E</code></pre></td>
+<td><pre><code>46 - 0x2E</code></pre></td>
 <td>Reservation protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>gre</code></pre></td>
-<td><pre><code>47 - 0x2F</code></pre></td>
+<td><pre><code>47 - 0x2F</code></pre></td>
 <td>General routing encapsulation</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>dsr</code></pre></td>
-<td><pre><code>48 - 0x30</code></pre></td>
+<td><pre><code>48 - 0x30</code></pre></td>
 <td>Dynamic source routing protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>bna</code></pre></td>
-<td><pre><code>49 - 0x31</code></pre></td>
+<td><pre><code>49 - 0x31</code></pre></td>
 <td>Bna</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>esp</code></pre></td>
-<td><pre><code>50 - 0x32</code></pre></td>
+<td><pre><code>50 - 0x32</code></pre></td>
 <td>Encap security payload</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ah</code></pre></td>
-<td><pre><code>51 - 0x33</code></pre></td>
+<td><pre><code>51 - 0x33</code></pre></td>
 <td>Authentication header</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>i-nlsp</code></pre></td>
-<td><pre><code>52 - 0x34</code></pre></td>
+<td><pre><code>52 - 0x34</code></pre></td>
 <td>Integrated net layer security tuba</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>swipe</code></pre></td>
-<td><pre><code>53 - 0x35</code></pre></td>
+<td><pre><code>53 - 0x35</code></pre></td>
 <td>Ip with encryption</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>narp</code></pre></td>
-<td><pre><code>54 - 0x36</code></pre></td>
+<td><pre><code>54 - 0x36</code></pre></td>
 <td>Nbma address resolution protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>mobile</code></pre></td>
-<td><pre><code>55 - 0x37</code></pre></td>
+<td><pre><code>55 - 0x37</code></pre></td>
 <td>Ip mobility</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>tlsp</code></pre></td>
-<td><pre><code>56 - 0x38</code></pre></td>
+<td><pre><code>56 - 0x38</code></pre></td>
 <td>Transport layer security protocol using kryptonet key management</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>skip</code></pre></td>
-<td><pre><code>57 - 0x39</code></pre></td>
+<td><pre><code>57 - 0x39</code></pre></td>
 <td>Skip</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ipv6-icmp</code></pre></td>
-<td><pre><code>58 - 0x3A</code></pre></td>
+<td><pre><code>58 - 0x3A</code></pre></td>
 <td>Icmp for ipv6</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ipv6-nonxt</code></pre></td>
-<td><pre><code>59 - 0x3B</code></pre></td>
+<td><pre><code>59 - 0x3B</code></pre></td>
 <td>No next header for ipv6</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ipv6-opts</code></pre></td>
-<td><pre><code>60 - 0x3C</code></pre></td>
+<td><pre><code>60 - 0x3C</code></pre></td>
 <td>Destination options for ipv6</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>anyhost</code></pre></td>
-<td><pre><code>61 - 0x3D</code></pre></td>
+<td><pre><code>61 - 0x3D</code></pre></td>
 <td>Any host internal protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>cftp</code></pre></td>
-<td><pre><code>62 - 0x3E</code></pre></td>
+<td><pre><code>62 - 0x3E</code></pre></td>
 <td>Cftp</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>anylan</code></pre></td>
-<td><pre><code>63 - 0x3F</code></pre></td>
+<td><pre><code>63 - 0x3F</code></pre></td>
 <td>Any local network</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>sat-expak</code></pre></td>
-<td><pre><code>64 - 0x40</code></pre></td>
+<td><pre><code>64 - 0x40</code></pre></td>
 <td>Satnet and backroom expak</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>kryptolan</code></pre></td>
-<td><pre><code>65 - 0x41</code></pre></td>
+<td><pre><code>65 - 0x41</code></pre></td>
 <td>Kryptolan</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>rvd</code></pre></td>
-<td><pre><code>66 - 0x42</code></pre></td>
+<td><pre><code>66 - 0x42</code></pre></td>
 <td>Mit remote virtual disk protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ippc internet</code></pre></td>
-<td><pre><code>67 - 0x43</code></pre></td>
+<td><pre><code>67 - 0x43</code></pre></td>
 <td>Internet pluribus packet core</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>anydfs</code></pre></td>
-<td><pre><code>68 - 0x44</code></pre></td>
+<td><pre><code>68 - 0x44</code></pre></td>
 <td>Any distributed file system</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>sat-mon</code></pre></td>
-<td><pre><code>69 - 0x45</code></pre></td>
+<td><pre><code>69 - 0x45</code></pre></td>
 <td>Satnet monitoring</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>visa</code></pre></td>
-<td><pre><code>70 - 0x46</code></pre></td>
+<td><pre><code>70 - 0x46</code></pre></td>
 <td>Visa protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ipcv</code></pre></td>
-<td><pre><code>71 - 0x47</code></pre></td>
+<td><pre><code>71 - 0x47</code></pre></td>
 <td>Internet packet core utility</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>cpnx</code></pre></td>
-<td><pre><code>72 - 0x48</code></pre></td>
+<td><pre><code>72 - 0x48</code></pre></td>
 <td>Computer protocol network executive</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>rspf</code></pre></td>
-<td><pre><code>73 - 0x49</code></pre></td>
+<td><pre><code>73 - 0x49</code></pre></td>
 <td>Radio shortest path first (officially cphb, computer protocol heart beat</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>br-sat-mon</code></pre></td>
-<td><pre><code>76 - 0x4C</code></pre></td>
+<td><pre><code>76 - 0x4C</code></pre></td>
 <td>Backroom satnet monitoring</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>sun-nd</code></pre></td>
-<td><pre><code>77 - 0x4D</code></pre></td>
+<td><pre><code>77 - 0x4D</code></pre></td>
 <td>Sun nd protocol-temporary</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>wb-mon</code></pre></td>
-<td><pre><code>78 - 0x4E</code></pre></td>
+<td><pre><code>78 - 0x4E</code></pre></td>
 <td>Wideband monitoring</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>wb-expak</code></pre></td>
-<td><pre><code>79 - 0x4F</code></pre></td>
+<td><pre><code>79 - 0x4F</code></pre></td>
 <td>Wideband expak</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>iso-ip</code></pre></td>
-<td><pre><code>80 - 0x50</code></pre></td>
+<td><pre><code>80 - 0x50</code></pre></td>
 <td>Iso internet protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>vmtp</code></pre></td>
-<td><pre><code>81 - 0x51</code></pre></td>
+<td><pre><code>81 - 0x51</code></pre></td>
 <td>Versatile message transport</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>secure-vmtp</code></pre></td>
-<td><pre><code>82 - 0x52</code></pre></td>
+<td><pre><code>82 - 0x52</code></pre></td>
 <td>Versatile message transport</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>vines</code></pre></td>
-<td><pre><code>83 - 0x53</code></pre></td>
+<td><pre><code>83 - 0x53</code></pre></td>
 <td>Vines</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ttp</code></pre></td>
-<td><pre><code>84 - 0x54</code></pre></td>
+<td><pre><code>84 - 0x54</code></pre></td>
 <td>Ttp</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>msfnet-igp</code></pre></td>
-<td><pre><code>85 - 0x55</code></pre></td>
+<td><pre><code>85 - 0x55</code></pre></td>
 <td>Msfnet-igp</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>dgp</code></pre></td>
-<td><pre><code>86 - 0x56</code></pre></td>
+<td><pre><code>86 - 0x56</code></pre></td>
 <td>Dissimilar gateway protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>tcf</code></pre></td>
-<td><pre><code>87 - 0x57</code></pre></td>
+<td><pre><code>87 - 0x57</code></pre></td>
 <td>Tcf</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>eigrp</code></pre></td>
-<td><pre><code>88 - 0x58</code></pre></td>
+<td><pre><code>88 - 0x58</code></pre></td>
 <td>Enhanced interior routing protocol (cisco)</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ospf</code></pre></td>
-<td><pre><code>89 - 0x59</code></pre></td>
+<td><pre><code>89 - 0x59</code></pre></td>
 <td>Open shortest path first igp</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>sprite-rpc</code></pre></td>
-<td><pre><code>90 - 0x5A</code></pre></td>
+<td><pre><code>90 - 0x5A</code></pre></td>
 <td>Sprite rpc protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>larp</code></pre></td>
-<td><pre><code>91 - 0x5B</code></pre></td>
+<td><pre><code>91 - 0x5B</code></pre></td>
 <td>Locus address resolution protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>mtp</code></pre></td>
-<td><pre><code>92 - 0x5C</code></pre></td>
+<td><pre><code>92 - 0x5C</code></pre></td>
 <td>Multicast transport protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ax.25</code></pre></td>
-<td><pre><code>93 - 0x5D</code></pre></td>
+<td><pre><code>93 - 0x5D</code></pre></td>
 <td>Ax.25 frames</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ipip</code></pre></td>
-<td><pre><code>94 - 0x5E</code></pre></td>
+<td><pre><code>94 - 0x5E</code></pre></td>
 <td>Ip-within-ip encapsulation protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>micp</code></pre></td>
-<td><pre><code>95 - 0x5F</code></pre></td>
+<td><pre><code>95 - 0x5F</code></pre></td>
 <td>Mobile internetworking control pro.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>scc-sp</code></pre></td>
-<td><pre><code>96 - 0x60</code></pre></td>
+<td><pre><code>96 - 0x60</code></pre></td>
 <td>Semaphore communications sec. pro.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>etherip</code></pre></td>
-<td><pre><code>97 - 0x61</code></pre></td>
+<td><pre><code>97 - 0x61</code></pre></td>
 <td>Ethernet-within-ip encapsulation</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>anyprivenc</code></pre></td>
-<td><pre><code>98 - 0x62</code></pre></td>
+<td><pre><code>98 - 0x62</code></pre></td>
 <td>Any private encryption scheme</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>gmtp</code></pre></td>
-<td><pre><code>100 - 0x64</code></pre></td>
+<td><pre><code>100 - 0x64</code></pre></td>
 <td>Gmtp</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ifmp</code></pre></td>
-<td><pre><code>101 - 0x65</code></pre></td>
+<td><pre><code>101 - 0x65</code></pre></td>
 <td>Ipsilon flow management protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>pnni</code></pre></td>
-<td><pre><code>102 - 0x66</code></pre></td>
+<td><pre><code>102 - 0x66</code></pre></td>
 <td>Pnni over ip</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>pim</code></pre></td>
-<td><pre><code>103 - 0x67</code></pre></td>
+<td><pre><code>103 - 0x67</code></pre></td>
 <td>Protocol independent multicast</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>aris</code></pre></td>
-<td><pre><code>104 - 0x68</code></pre></td>
+<td><pre><code>104 - 0x68</code></pre></td>
 <td>Aris</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>scps</code></pre></td>
-<td><pre><code>105 - 0x69</code></pre></td>
+<td><pre><code>105 - 0x69</code></pre></td>
 <td>Scps</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>qnx</code></pre></td>
-<td><pre><code>106 - 0x6A</code></pre></td>
+<td><pre><code>106 - 0x6A</code></pre></td>
 <td>Qnx</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>a/n</code></pre></td>
-<td><pre><code>107 - 0x6B</code></pre></td>
+<td><pre><code>107 - 0x6B</code></pre></td>
 <td>Active networks</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ipcomp</code></pre></td>
-<td><pre><code>108 - 0x6C</code></pre></td>
+<td><pre><code>108 - 0x6C</code></pre></td>
 <td>Ip payload compression protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>snp</code></pre></td>
-<td><pre><code>109 - 0x6D</code></pre></td>
+<td><pre><code>109 - 0x6D</code></pre></td>
 <td>Sitara networks protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>compaq-peer</code></pre></td>
-<td><pre><code>110 - 0x6E</code></pre></td>
+<td><pre><code>110 - 0x6E</code></pre></td>
 <td>Compaq peer protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ipx-in-ip</code></pre></td>
-<td><pre><code>111 - 0x6F</code></pre></td>
+<td><pre><code>111 - 0x6F</code></pre></td>
 <td>Ipx in ip</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>vrrp</code></pre></td>
-<td><pre><code>112 - 0x70</code></pre></td>
+<td><pre><code>112 - 0x70</code></pre></td>
 <td>Virtual router redundancy protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>pgm</code></pre></td>
-<td><pre><code>113 - 0x71</code></pre></td>
+<td><pre><code>113 - 0x71</code></pre></td>
 <td>Pgm reliable transport protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>any0hop</code></pre></td>
-<td><pre><code>114 - 0x72</code></pre></td>
+<td><pre><code>114 - 0x72</code></pre></td>
 <td>Any 0-hop protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>l2tp</code></pre></td>
-<td><pre><code>115 - 0x73</code></pre></td>
+<td><pre><code>115 - 0x73</code></pre></td>
 <td>Layer two tunneling protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>ddx</code></pre></td>
-<td><pre><code>116 - 0x74</code></pre></td>
+<td><pre><code>116 - 0x74</code></pre></td>
 <td>D-ii data exchange (ddx)</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>iatp</code></pre></td>
-<td><pre><code>117 - 0x75</code></pre></td>
+<td><pre><code>117 - 0x75</code></pre></td>
 <td>Interactive agent transfer protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>stp</code></pre></td>
-<td><pre><code>118 - 0x76</code></pre></td>
+<td><pre><code>118 - 0x76</code></pre></td>
 <td>Schedule transfer protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>srp</code></pre></td>
-<td><pre><code>119 - 0x77</code></pre></td>
+<td><pre><code>119 - 0x77</code></pre></td>
 <td>Spectralink radio protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>uti</code></pre></td>
-<td><pre><code>120 - 0x78</code></pre></td>
+<td><pre><code>120 - 0x78</code></pre></td>
 <td>Uti</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>smp</code></pre></td>
-<td><pre><code>121 - 0x79</code></pre></td>
+<td><pre><code>121 - 0x79</code></pre></td>
 <td>Simple message protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>sm</code></pre></td>
-<td><pre><code>122 - 0x7A</code></pre></td>
+<td><pre><code>122 - 0x7A</code></pre></td>
 <td>Sm</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>ptp</code></pre></td>
-<td><pre><code>123 - 0x7B</code></pre></td>
+<td><pre><code>123 - 0x7B</code></pre></td>
 <td>Performance transparency protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>isis</code></pre></td>
-<td><pre><code>124 - 0x7C</code></pre></td>
+<td><pre><code>124 - 0x7C</code></pre></td>
 <td>Isis over ipv4</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>fire</code></pre></td>
-<td><pre><code>125 - 0x7D</code></pre></td>
+<td><pre><code>125 - 0x7D</code></pre></td>
 <td>Fire</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>crtp</code></pre></td>
-<td><pre><code>126 - 0x7E</code></pre></td>
+<td><pre><code>126 - 0x7E</code></pre></td>
 <td>Combat radio transport protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>crudp</code></pre></td>
-<td><pre><code>127 - 0x7F</code></pre></td>
+<td><pre><code>127 - 0x7F</code></pre></td>
 <td>Combat radio user datagram</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>sscopmce</code></pre></td>
-<td><pre><code>128 - 0x80</code></pre></td>
+<td><pre><code>128 - 0x80</code></pre></td>
 <td>Sscopmce</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>iplt</code></pre></td>
-<td><pre><code>129 - 0x81</code></pre></td>
+<td><pre><code>129 - 0x81</code></pre></td>
 <td>Iplt</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>sps</code></pre></td>
-<td><pre><code>130 - 0x82</code></pre></td>
+<td><pre><code>130 - 0x82</code></pre></td>
 <td>Secure packet shield</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>pipe</code></pre></td>
-<td><pre><code>131 - 0x83</code></pre></td>
+<td><pre><code>131 - 0x83</code></pre></td>
 <td>Private ip encapsulation within ip</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>sctp</code></pre></td>
-<td><pre><code>132 - 0x84</code></pre></td>
+<td><pre><code>132 - 0x84</code></pre></td>
 <td>Stream control transmission protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>fc</code></pre></td>
-<td><pre><code>133 - 0x85</code></pre></td>
+<td><pre><code>133 - 0x85</code></pre></td>
 <td>Fibre channel</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>rsvp-e2e-ignore</code></pre></td>
-<td><pre><code>134 - 0x86</code></pre></td>
+<td><pre><code>134 - 0x86</code></pre></td>
 <td>Rsvp-e2e-ignore</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>mobilityheader</code></pre></td>
-<td><pre><code>135 - 0x87</code></pre></td>
+<td><pre><code>135 - 0x87</code></pre></td>
 <td>Mobility header</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>udplite</code></pre></td>
-<td><pre><code>136 - 0x88</code></pre></td>
+<td><pre><code>136 - 0x88</code></pre></td>
 <td>Udp-lite</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>mpls-in-ip</code></pre></td>
-<td><pre><code>137 - 0x89</code></pre></td>
+<td><pre><code>137 - 0x89</code></pre></td>
 <td>Mpls-in-ip</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>manet</code></pre></td>
-<td><pre><code>138 - 0x8A</code></pre></td>
+<td><pre><code>138 - 0x8A</code></pre></td>
 <td>Manet protocols</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>hip</code></pre></td>
-<td><pre><code>139 - 0x8B</code></pre></td>
+<td><pre><code>139 - 0x8B</code></pre></td>
 <td>Host identity protocol</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>shim6</code></pre></td>
-<td><pre><code>140 - 0x8C</code></pre></td>
+<td><pre><code>140 - 0x8C</code></pre></td>
 <td>Shim6 protocol</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>testing1</code></pre></td>
-<td><pre><code>253 - 0xFD</code></pre></td>
+<td><pre><code>253 - 0xFD</code></pre></td>
 <td>Use for experimentation and testing</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>testing2</code></pre></td>
-<td><pre><code>254 - 0xFE</code></pre></td>
+<td><pre><code>254 - 0xFE</code></pre></td>
 <td>Use for experimentation and testing</td>
 </tr>
 </tbody>
@@ -16286,11 +16280,11 @@ This field does not allow any custom items.
 <tbody>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RSA</code></pre></td>
-<td><pre><code>0 - 0x0</code></pre></td>
+<td><pre><code>0 - 0x0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>EC</code></pre></td>
-<td><pre><code>1 - 0x1</code></pre></td>
+<td><pre><code>1 - 0x1</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -16383,307 +16377,307 @@ This field does not allow any custom items.
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Unknown</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>0 - 0x0</code></pre></td>
+<td><pre><code>0 - 0x0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Linux:3.x</code></pre></td>
 <td>linux</td>
-<td><pre><code>1 - 0x1</code></pre></td>
+<td><pre><code>1 - 0x1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.6.x</code></pre></td>
 <td>linux</td>
-<td><pre><code>2 - 0x2</code></pre></td>
+<td><pre><code>2 - 0x2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.4.x</code></pre></td>
 <td>linux</td>
-<td><pre><code>3 - 0x3</code></pre></td>
+<td><pre><code>3 - 0x3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.2.x</code></pre></td>
 <td>linux</td>
-<td><pre><code>4 - 0x4</code></pre></td>
+<td><pre><code>4 - 0x4</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.0</code></pre></td>
 <td>linux</td>
-<td><pre><code>5 - 0x5</code></pre></td>
+<td><pre><code>5 - 0x5</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Linux:3.x (loopback)</code></pre></td>
 <td>linux</td>
-<td><pre><code>6 - 0x6</code></pre></td>
+<td><pre><code>6 - 0x6</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.6.x (loopback)</code></pre></td>
 <td>linux</td>
-<td><pre><code>7 - 0x7</code></pre></td>
+<td><pre><code>7 - 0x7</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.4.x (loopback)</code></pre></td>
 <td>linux</td>
-<td><pre><code>8 - 0x8</code></pre></td>
+<td><pre><code>8 - 0x8</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.2.x (loopback)</code></pre></td>
 <td>linux</td>
-<td><pre><code>9 - 0x9</code></pre></td>
+<td><pre><code>9 - 0x9</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.6.x (google crawler)</code></pre></td>
 <td>linux</td>
-<td><pre><code>10 - 0xA</code></pre></td>
+<td><pre><code>10 - 0xA</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Linux:Android</code></pre></td>
 <td>mobile</td>
-<td><pre><code>11 - 0xB</code></pre></td>
+<td><pre><code>11 - 0xB</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Linux:3.x (generic)</code></pre></td>
 <td>linux</td>
-<td><pre><code>12 - 0xC</code></pre></td>
+<td><pre><code>12 - 0xC</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.4.x-2.6.x (generic)</code></pre></td>
 <td>linux</td>
-<td><pre><code>13 - 0xD</code></pre></td>
+<td><pre><code>13 - 0xD</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.2.x-3.x (generic)</code></pre></td>
 <td>linux</td>
-<td><pre><code>14 - 0xE</code></pre></td>
+<td><pre><code>14 - 0xE</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.2.x-3.x (generic, no ts)</code></pre></td>
 <td>linux</td>
-<td><pre><code>15 - 0xF</code></pre></td>
+<td><pre><code>15 - 0xF</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.2.x-3.x (generic, barebone)</code></pre></td>
 <td>linux</td>
-<td><pre><code>16 - 0x10</code></pre></td>
+<td><pre><code>16 - 0x10</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Windows:XP</code></pre></td>
 <td>windows</td>
-<td><pre><code>17 - 0x11</code></pre></td>
+<td><pre><code>17 - 0x11</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Windows:7 or 8</code></pre></td>
 <td>windows</td>
-<td><pre><code>18 - 0x12</code></pre></td>
+<td><pre><code>18 - 0x12</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Windows:7 (Websense crawler)</code></pre></td>
 <td>windows</td>
-<td><pre><code>19 - 0x13</code></pre></td>
+<td><pre><code>19 - 0x13</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Windows:NT kernel 5.x (generic)</code></pre></td>
 <td>windows</td>
-<td><pre><code>20 - 0x14</code></pre></td>
+<td><pre><code>20 - 0x14</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Windows:NT kernel 6.x (generic)</code></pre></td>
 <td>windows</td>
-<td><pre><code>21 - 0x15</code></pre></td>
+<td><pre><code>21 - 0x15</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Windows:NT kernel (generic)</code></pre></td>
 <td>windows</td>
-<td><pre><code>22 - 0x16</code></pre></td>
+<td><pre><code>22 - 0x16</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Mac OS X:10.x</code></pre></td>
 <td>macos</td>
-<td><pre><code>23 - 0x17</code></pre></td>
+<td><pre><code>23 - 0x17</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>iOS:iPhone or iPad</code></pre></td>
 <td>mobile</td>
-<td><pre><code>24 - 0x18</code></pre></td>
+<td><pre><code>24 - 0x18</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Mac OS X (generic)</code></pre></td>
 <td>macos</td>
-<td><pre><code>25 - 0x19</code></pre></td>
+<td><pre><code>25 - 0x19</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>FreeBSD:9.x</code></pre></td>
 <td>bsd</td>
-<td><pre><code>26 - 0x1A</code></pre></td>
+<td><pre><code>26 - 0x1A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>FreeBSD:8.x</code></pre></td>
 <td>bsd</td>
-<td><pre><code>27 - 0x1B</code></pre></td>
+<td><pre><code>27 - 0x1B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>FreeBSD (generic)</code></pre></td>
 <td>bsd</td>
-<td><pre><code>28 - 0x1C</code></pre></td>
+<td><pre><code>28 - 0x1C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>OpenBSD:3.x</code></pre></td>
 <td>bsd</td>
-<td><pre><code>29 - 0x1D</code></pre></td>
+<td><pre><code>29 - 0x1D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>OpenBSD:4.x-5.x</code></pre></td>
 <td>bsd</td>
-<td><pre><code>30 - 0x1E</code></pre></td>
+<td><pre><code>30 - 0x1E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Solaris:8</code></pre></td>
 <td>solaris</td>
-<td><pre><code>31 - 0x1F</code></pre></td>
+<td><pre><code>31 - 0x1F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Solaris:10</code></pre></td>
 <td>solaris</td>
-<td><pre><code>32 - 0x20</code></pre></td>
+<td><pre><code>32 - 0x20</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>OpenVMS:8.x</code></pre></td>
 <td>other</td>
-<td><pre><code>33 - 0x21</code></pre></td>
+<td><pre><code>33 - 0x21</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>OpenVMS:7.x</code></pre></td>
 <td>other</td>
-<td><pre><code>34 - 0x22</code></pre></td>
+<td><pre><code>34 - 0x22</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NeXTSTEP</code></pre></td>
 <td>other</td>
-<td><pre><code>35 - 0x23</code></pre></td>
+<td><pre><code>35 - 0x23</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Tru64:4.x</code></pre></td>
 <td>other</td>
-<td><pre><code>36 - 0x24</code></pre></td>
+<td><pre><code>36 - 0x24</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NMap:SYN scan</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>37 - 0x25</code></pre></td>
+<td><pre><code>37 - 0x25</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NMap:OS detection</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>38 - 0x26</code></pre></td>
+<td><pre><code>38 - 0x26</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>p0f:sendsyn utility</code></pre></td>
 <td>Unknown</td>
-<td><pre><code>39 - 0x27</code></pre></td>
+<td><pre><code>39 - 0x27</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Blackberry</code></pre></td>
 <td>mobile</td>
-<td><pre><code>40 - 0x28</code></pre></td>
+<td><pre><code>40 - 0x28</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Nintendo:3DS</code></pre></td>
 <td>other</td>
-<td><pre><code>41 - 0x29</code></pre></td>
+<td><pre><code>41 - 0x29</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Nintendo:Wii</code></pre></td>
 <td>other</td>
-<td><pre><code>42 - 0x2A</code></pre></td>
+<td><pre><code>42 - 0x2A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>BaiduSpider</code></pre></td>
 <td>other</td>
-<td><pre><code>43 - 0x2B</code></pre></td>
+<td><pre><code>43 - 0x2B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Linux:3.x (syn+ack)</code></pre></td>
 <td>linux</td>
-<td><pre><code>44 - 0x2C</code></pre></td>
+<td><pre><code>44 - 0x2C</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.4-2.6 (syn+ack)</code></pre></td>
 <td>linux</td>
-<td><pre><code>45 - 0x2D</code></pre></td>
+<td><pre><code>45 - 0x2D</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.4.x (syn+ack)</code></pre></td>
 <td>linux</td>
-<td><pre><code>46 - 0x2E</code></pre></td>
+<td><pre><code>46 - 0x2E</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Linux:2.6.x (syn+ack)</code></pre></td>
 <td>linux</td>
-<td><pre><code>47 - 0x2F</code></pre></td>
+<td><pre><code>47 - 0x2F</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Windows:XP (syn+ack)</code></pre></td>
 <td>windows</td>
-<td><pre><code>48 - 0x30</code></pre></td>
+<td><pre><code>48 - 0x30</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Windows:7 or 8 (syn+ack)</code></pre></td>
 <td>windows</td>
-<td><pre><code>49 - 0x31</code></pre></td>
+<td><pre><code>49 - 0x31</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>FreeBSD:9.x (syn+ack)</code></pre></td>
 <td>bsd</td>
-<td><pre><code>50 - 0x32</code></pre></td>
+<td><pre><code>50 - 0x32</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>FreeBSD:8.x (syn+ack)</code></pre></td>
 <td>bsd</td>
-<td><pre><code>51 - 0x33</code></pre></td>
+<td><pre><code>51 - 0x33</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>FreeBSD:8.x-9.x (syn+ack)</code></pre></td>
 <td>bsd</td>
-<td><pre><code>52 - 0x34</code></pre></td>
+<td><pre><code>52 - 0x34</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>OpenBSD:5.x (syn+ack)</code></pre></td>
 <td>bsd</td>
-<td><pre><code>53 - 0x35</code></pre></td>
+<td><pre><code>53 - 0x35</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Mac OS X:10.x (syn+ack)</code></pre></td>
 <td>macos</td>
-<td><pre><code>54 - 0x36</code></pre></td>
+<td><pre><code>54 - 0x36</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Solaris:6 (syn+ack)</code></pre></td>
 <td>solaris</td>
-<td><pre><code>55 - 0x37</code></pre></td>
+<td><pre><code>55 - 0x37</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Solaris:8 (syn+ack)</code></pre></td>
 <td>solaris</td>
-<td><pre><code>56 - 0x38</code></pre></td>
+<td><pre><code>56 - 0x38</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Solaris:10 (syn+ack)</code></pre></td>
 <td>solaris</td>
-<td><pre><code>57 - 0x39</code></pre></td>
+<td><pre><code>57 - 0x39</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>HP-UX:11.x (syn+ack)</code></pre></td>
 <td>other</td>
-<td><pre><code>58 - 0x3A</code></pre></td>
+<td><pre><code>58 - 0x3A</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>OpenVMS:7.x (syn+ack)</code></pre></td>
 <td>other</td>
-<td><pre><code>59 - 0x3B</code></pre></td>
+<td><pre><code>59 - 0x3B</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Tru64:4.x (syn+ack)</code></pre></td>
 <td>other</td>
-<td><pre><code>60 - 0x3C</code></pre></td>
+<td><pre><code>60 - 0x3C</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -16704,23 +16698,23 @@ This field does not allow any custom items.
 <tbody>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>Missing</code></pre></td>
-<td><pre><code>0 - 0x0</code></pre></td>
+<td><pre><code>0 - 0x0</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>Network Interface</code></pre></td>
-<td><pre><code>1 - 0x1</code></pre></td>
+<td><pre><code>1 - 0x1</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPCAPD Remote Capture</code></pre></td>
-<td><pre><code>2 - 0x2</code></pre></td>
+<td><pre><code>2 - 0x2</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>PCAP File</code></pre></td>
-<td><pre><code>3 - 0x3</code></pre></td>
+<td><pre><code>3 - 0x3</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NetFlow</code></pre></td>
-<td><pre><code>4 - 0x4</code></pre></td>
+<td><pre><code>4 - 0x4</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -17239,5653 +17233,5653 @@ This field does not allow any custom items.
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_ok</code></pre></td>
 <td>Success</td>
-<td><pre><code>0 - 0x0</code></pre></td>
+<td><pre><code>0 - 0x0</code></pre></td>
 <td>The operation completed successfully.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_abandoned</code></pre></td>
 <td>Success</td>
-<td><pre><code>128 - 0x80</code></pre></td>
+<td><pre><code>128 - 0x80</code></pre></td>
 <td>The caller attempted to wait for a mutex that has been abandoned.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_user_apc</code></pre></td>
 <td>Success</td>
-<td><pre><code>192 - 0xC0</code></pre></td>
+<td><pre><code>192 - 0xC0</code></pre></td>
 <td>A user-mode APC was delivered before the given Interval expired.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_kernel_apc</code></pre></td>
 <td>Success</td>
-<td><pre><code>256 - 0x100</code></pre></td>
+<td><pre><code>256 - 0x100</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_alerted</code></pre></td>
 <td>Success</td>
-<td><pre><code>257 - 0x101</code></pre></td>
+<td><pre><code>257 - 0x101</code></pre></td>
 <td>The delay completed because the thread was alerted.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_timeout</code></pre></td>
 <td>Success</td>
-<td><pre><code>258 - 0x102</code></pre></td>
+<td><pre><code>258 - 0x102</code></pre></td>
 <td>The given Timeout interval expired.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pending</code></pre></td>
 <td>Success</td>
-<td><pre><code>259 - 0x103</code></pre></td>
+<td><pre><code>259 - 0x103</code></pre></td>
 <td>The operation that was requested is pending completion.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_reparse</code></pre></td>
 <td>Success</td>
-<td><pre><code>260 - 0x104</code></pre></td>
+<td><pre><code>260 - 0x104</code></pre></td>
 <td>A reparse should be performed by the Object Manager because the name of the file resulted in a symbolic link.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_more_entries</code></pre></td>
 <td>Success</td>
-<td><pre><code>261 - 0x105</code></pre></td>
+<td><pre><code>261 - 0x105</code></pre></td>
 <td>Returned by enumeration APIs to indicate more information is available to successive calls.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_all_assigned</code></pre></td>
 <td>Success</td>
-<td><pre><code>262 - 0x106</code></pre></td>
+<td><pre><code>262 - 0x106</code></pre></td>
 <td>Indicates not all privileges or groups that are referenced are assigned to the caller. This allows, for example, all privileges to be disabled without having to know exactly which privileges are assigned.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_some_not_mapped</code></pre></td>
 <td>Success</td>
-<td><pre><code>263 - 0x107</code></pre></td>
+<td><pre><code>263 - 0x107</code></pre></td>
 <td>Some of the information to be translated has not been translated.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_oplock_break_in_progress</code></pre></td>
 <td>Success</td>
-<td><pre><code>264 - 0x108</code></pre></td>
+<td><pre><code>264 - 0x108</code></pre></td>
 <td>An open/create operation completed while an opportunistic lock (oplock) break is underway.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_volume_mounted</code></pre></td>
 <td>Success</td>
-<td><pre><code>265 - 0x109</code></pre></td>
+<td><pre><code>265 - 0x109</code></pre></td>
 <td>A new volume has been mounted by a file system.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_rxact_committed</code></pre></td>
 <td>Success</td>
-<td><pre><code>266 - 0x10A</code></pre></td>
+<td><pre><code>266 - 0x10A</code></pre></td>
 <td>This success level status indicates that the transaction state already exists for the registry subtree but that a transaction commit was previously aborted. The commit has now been completed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_notify_cleanup</code></pre></td>
 <td>Success</td>
-<td><pre><code>267 - 0x10B</code></pre></td>
+<td><pre><code>267 - 0x10B</code></pre></td>
 <td>Indicates that a notify change request has been completed due to closing the handle that made the notify change request.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_notify_enum_dir</code></pre></td>
 <td>Warning</td>
-<td><pre><code>268 - 0x10C</code></pre></td>
+<td><pre><code>268 - 0x10C</code></pre></td>
 <td>Indicates that a notify change request is being completed and that the information is not being returned in the caller's buffer. The caller now needs to enumerate the files to find the changes.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_quotas_for_account</code></pre></td>
 <td>Success</td>
-<td><pre><code>269 - 0x10D</code></pre></td>
+<td><pre><code>269 - 0x10D</code></pre></td>
 <td>{No Quotas} No system quota limits are specifically set for this account.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_primary_transport_connect_failed</code></pre></td>
 <td>Success</td>
-<td><pre><code>270 - 0x10E</code></pre></td>
+<td><pre><code>270 - 0x10E</code></pre></td>
 <td>{Connect Failure on Primary Transport} An attempt was made to connect to the remote server on the primary transport, but the connection failed. The computer WAS able to connect on a secondary transport.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_page_fault_transition</code></pre></td>
 <td>Success</td>
-<td><pre><code>272 - 0x110</code></pre></td>
+<td><pre><code>272 - 0x110</code></pre></td>
 <td>The page fault was a transition fault.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_page_fault_demand_zero</code></pre></td>
 <td>Success</td>
-<td><pre><code>273 - 0x111</code></pre></td>
+<td><pre><code>273 - 0x111</code></pre></td>
 <td>The page fault was a demand zero fault.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_page_fault_copy_on_write</code></pre></td>
 <td>Success</td>
-<td><pre><code>274 - 0x112</code></pre></td>
+<td><pre><code>274 - 0x112</code></pre></td>
 <td>The page fault was a demand zero fault.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_page_fault_guard_page</code></pre></td>
 <td>Success</td>
-<td><pre><code>275 - 0x113</code></pre></td>
+<td><pre><code>275 - 0x113</code></pre></td>
 <td>The page fault was a demand zero fault.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_page_fault_paging_file</code></pre></td>
 <td>Success</td>
-<td><pre><code>276 - 0x114</code></pre></td>
+<td><pre><code>276 - 0x114</code></pre></td>
 <td>The page fault was satisfied by reading from a secondary storage device.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_cache_page_locked</code></pre></td>
 <td>Success</td>
-<td><pre><code>277 - 0x115</code></pre></td>
+<td><pre><code>277 - 0x115</code></pre></td>
 <td>The cached page was locked during operation.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_crash_dump</code></pre></td>
 <td>Success</td>
-<td><pre><code>278 - 0x116</code></pre></td>
+<td><pre><code>278 - 0x116</code></pre></td>
 <td>The crash dump exists in a paging file.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_buffer_all_zeros</code></pre></td>
 <td>Success</td>
-<td><pre><code>279 - 0x117</code></pre></td>
+<td><pre><code>279 - 0x117</code></pre></td>
 <td>The specified buffer contains all zeros.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_reparse_object</code></pre></td>
 <td>Success</td>
-<td><pre><code>280 - 0x118</code></pre></td>
+<td><pre><code>280 - 0x118</code></pre></td>
 <td>A reparse should be performed by the Object Manager because the name of the file resulted in a symbolic link.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_resource_requirements_changed</code></pre></td>
 <td>Success</td>
-<td><pre><code>281 - 0x119</code></pre></td>
+<td><pre><code>281 - 0x119</code></pre></td>
 <td>The device has succeeded a query-stop and its resource requirements have changed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_translation_complete</code></pre></td>
 <td>Success</td>
-<td><pre><code>288 - 0x120</code></pre></td>
+<td><pre><code>288 - 0x120</code></pre></td>
 <td>The translator has translated these resources into the global space and no additional translations should be performed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_membership_evaluated_locally</code></pre></td>
 <td>Success</td>
-<td><pre><code>289 - 0x121</code></pre></td>
+<td><pre><code>289 - 0x121</code></pre></td>
 <td>The directory service evaluated group memberships locally, because it was unable to contact a global catalog server.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_nothing_to_terminate</code></pre></td>
 <td>Success</td>
-<td><pre><code>290 - 0x122</code></pre></td>
+<td><pre><code>290 - 0x122</code></pre></td>
 <td>A process being terminated has no threads to terminate.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_process_not_in_job</code></pre></td>
 <td>Success</td>
-<td><pre><code>291 - 0x123</code></pre></td>
+<td><pre><code>291 - 0x123</code></pre></td>
 <td>The specified process is not part of a job.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_process_in_job</code></pre></td>
 <td>Success</td>
-<td><pre><code>292 - 0x124</code></pre></td>
+<td><pre><code>292 - 0x124</code></pre></td>
 <td>The specified process is part of a job.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wait_for_oplock</code></pre></td>
 <td>Success</td>
-<td><pre><code>871 - 0x367</code></pre></td>
+<td><pre><code>871 - 0x367</code></pre></td>
 <td>An operation is blocked and waiting for an oplock.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_invalid_smb</code></pre></td>
 <td>Error</td>
-<td><pre><code>65538 - 0x10002</code></pre></td>
+<td><pre><code>65538 - 0x10002</code></pre></td>
 <td>The debugger continued.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_smb_bad_tid</code></pre></td>
 <td>Error</td>
-<td><pre><code>327682 - 0x50002</code></pre></td>
+<td><pre><code>327682 - 0x50002</code></pre></td>
 <td>The TID is no longer valid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_smb_bad_fid</code></pre></td>
 <td>Warning</td>
-<td><pre><code>393217 - 0x60001</code></pre></td>
+<td><pre><code>393217 - 0x60001</code></pre></td>
 <td>Invalid FID.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_os2_invalid_access</code></pre></td>
 <td>Warning</td>
-<td><pre><code>786433 - 0xC0001</code></pre></td>
+<td><pre><code>786433 - 0xC0001</code></pre></td>
 <td>Invalid open mode.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_smb_bad_command</code></pre></td>
 <td>Error</td>
-<td><pre><code>1441794 - 0x160002</code></pre></td>
+<td><pre><code>1441794 - 0x160002</code></pre></td>
 <td>An unknown SMB command code was received by the server.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_smb_bad_uid</code></pre></td>
 <td>Error</td>
-<td><pre><code>5963778 - 0x5B0002</code></pre></td>
+<td><pre><code>5963778 - 0x5B0002</code></pre></td>
 <td>The UID specified is not known as a valid ID on this server session.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_os2_no_more_sids</code></pre></td>
 <td>Warning</td>
-<td><pre><code>7405569 - 0x710001</code></pre></td>
+<td><pre><code>7405569 - 0x710001</code></pre></td>
 <td>Maximum number of searches has been exhausted.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_os2_invalid_level</code></pre></td>
 <td>Warning</td>
-<td><pre><code>8126465 - 0x7C0001</code></pre></td>
+<td><pre><code>8126465 - 0x7C0001</code></pre></td>
 <td>The InformationLevel supplied is invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_os2_negative_seek</code></pre></td>
 <td>Warning</td>
-<td><pre><code>8585217 - 0x830001</code></pre></td>
+<td><pre><code>8585217 - 0x830001</code></pre></td>
 <td>An attempt was made to seek to a negative absolute offset within a file.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_os2_cancel_violation</code></pre></td>
 <td>Warning</td>
-<td><pre><code>11337729 - 0xAD0001</code></pre></td>
+<td><pre><code>11337729 - 0xAD0001</code></pre></td>
 <td>No lock request was outstanding for the supplied cancel region.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_os2_atomic_locks_not_supported</code></pre></td>
 <td>Warning</td>
-<td><pre><code>11403265 - 0xAE0001</code></pre></td>
+<td><pre><code>11403265 - 0xAE0001</code></pre></td>
 <td>The file system does not support atomic changes to the lock type.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_smb_use_mpx</code></pre></td>
 <td>Error</td>
-<td><pre><code>16384002 - 0xFA0002</code></pre></td>
+<td><pre><code>16384002 - 0xFA0002</code></pre></td>
 <td>Temporarily unable to support RAW mode transfers. Use MPX mode.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_smb_use_standard</code></pre></td>
 <td>Error</td>
-<td><pre><code>16449538 - 0xFB0002</code></pre></td>
+<td><pre><code>16449538 - 0xFB0002</code></pre></td>
 <td>Temporarily unable to support RAW or MPX mode transfers. Use standard read/write.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_smb_continue_mpx</code></pre></td>
 <td>Error</td>
-<td><pre><code>16515074 - 0xFC0002</code></pre></td>
+<td><pre><code>16515074 - 0xFC0002</code></pre></td>
 <td>Continue in MPX mode. This error code is reserved for future use.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_os2_cannot_copy</code></pre></td>
 <td>Warning</td>
-<td><pre><code>17432577 - 0x10A0001</code></pre></td>
+<td><pre><code>17432577 - 0x10A0001</code></pre></td>
 <td>The copy functions cannot be used.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_os2_eas_didnt_fit</code></pre></td>
 <td>Warning</td>
-<td><pre><code>18022401 - 0x1130001</code></pre></td>
+<td><pre><code>18022401 - 0x1130001</code></pre></td>
 <td>Either there are no extended attributes, or the available extended attributes did not fit into the response.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_os2_ea_access_denied</code></pre></td>
 <td>Warning</td>
-<td><pre><code>65142785 - 0x3E20001</code></pre></td>
+<td><pre><code>65142785 - 0x3E20001</code></pre></td>
 <td>Access to the extended attribute was denied.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_object_name_exists</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741824 - 0x40000000</code></pre></td>
+<td><pre><code>1073741824 - 0x40000000</code></pre></td>
 <td>{Object Exists} An attempt was made to create an object but the object name already exists.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_thread_was_suspended</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741825 - 0x40000001</code></pre></td>
+<td><pre><code>1073741825 - 0x40000001</code></pre></td>
 <td>{Thread Suspended} A thread termination occurred while the thread was suspended. The thread resumed, and termination proceeded.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_working_set_limit_range</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741826 - 0x40000002</code></pre></td>
+<td><pre><code>1073741826 - 0x40000002</code></pre></td>
 <td>{Working Set Range Error} An attempt was made to set the working set minimum or maximum to values that are outside the allowable range.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_image_not_at_base</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741827 - 0x40000003</code></pre></td>
+<td><pre><code>1073741827 - 0x40000003</code></pre></td>
 <td>{Image Relocated} An image file could not be mapped at the address that is specified in the image file. Local fixes must be performed on this image.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_rxact_state_created</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741828 - 0x40000004</code></pre></td>
+<td><pre><code>1073741828 - 0x40000004</code></pre></td>
 <td>This informational level status indicates that a specified registry subtree transaction state did not yet exist and had to be created.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_segment_notification</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741829 - 0x40000005</code></pre></td>
+<td><pre><code>1073741829 - 0x40000005</code></pre></td>
 <td>{Segment Load} A virtual DOS machine (VDM) is loading, unloading, or moving an MS-DOS or Win16 program segment image. An exception is raised so that a debugger can load, unload, or track symbols and breakpoints within these 16-bit segments.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_local_user_session_key</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741830 - 0x40000006</code></pre></td>
+<td><pre><code>1073741830 - 0x40000006</code></pre></td>
 <td>{Local Session Key} A user session key was requested for a local remote procedure call (RPC) connection. The session key that is returned is a constant value and not unique to this connection.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_current_directory</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741831 - 0x40000007</code></pre></td>
+<td><pre><code>1073741831 - 0x40000007</code></pre></td>
 <td>{Invalid Current Directory} The process cannot switch to the startup current directory. Select OK to set the current directory, or select CANCEL to exit.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_serial_more_writes</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741832 - 0x40000008</code></pre></td>
+<td><pre><code>1073741832 - 0x40000008</code></pre></td>
 <td>{Serial IOCTL Complete} A serial I/O operation was completed by another write to a serial port. (The IOCTL_SERIAL_XOFF_COUNTER reached zero.)</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_registry_recovered</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741833 - 0x40000009</code></pre></td>
+<td><pre><code>1073741833 - 0x40000009</code></pre></td>
 <td>{Registry Recovery} One of the files that contains the system registry data had to be recovered by using a log or alternate copy. The recovery was successful.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ft_read_recovery_from_backup</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741834 - 0x4000000A</code></pre></td>
-<td>{Redundant Read} To satisfy a read request, the Windows NT fault-tolerant file system successfully read the requested data from a redundant copy. This was done because the file system encountered a failure on a member of the fault-tolerant volume but was unable to reassign the failing area of the device.</td>
+<td><pre><code>1073741834 - 0x4000000A</code></pre></td>
+<td>{Redundant Read} To satisfy a read request, the Windows&amp;nbsp;NT fault-tolerant file system successfully read the requested data from a redundant copy. This was done because the file system encountered a failure on a member of the fault-tolerant volume but was unable to reassign the failing area of the device.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ft_write_recovery</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741835 - 0x4000000B</code></pre></td>
-<td>{Redundant Write} To satisfy a write request, the Windows NT fault-tolerant file system successfully wrote a redundant copy of the information. This was done because the file system encountered a failure on a member of the fault-tolerant volume but was unable to reassign the failing area of the device.</td>
+<td><pre><code>1073741835 - 0x4000000B</code></pre></td>
+<td>{Redundant Write} To satisfy a write request, the Windows&amp;nbsp;NT fault-tolerant file system successfully wrote a redundant copy of the information. This was done because the file system encountered a failure on a member of the fault-tolerant volume but was unable to reassign the failing area of the device.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_serial_counter_timeout</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741836 - 0x4000000C</code></pre></td>
+<td><pre><code>1073741836 - 0x4000000C</code></pre></td>
 <td>{Serial IOCTL Timeout} A serial I/O operation completed because the time-out period expired. (The IOCTL_SERIAL_XOFF_COUNTER had not reached zero.)</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_null_lm_password</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741837 - 0x4000000D</code></pre></td>
+<td><pre><code>1073741837 - 0x4000000D</code></pre></td>
 <td>{Password Too Complex} The Windows password is too complex to be converted to a LAN Manager password. The LAN Manager password that returned is a NULL string.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_image_machine_type_mismatch</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741838 - 0x4000000E</code></pre></td>
+<td><pre><code>1073741838 - 0x4000000E</code></pre></td>
 <td>{Machine Type Mismatch} The image file is valid but is for a machine type other than the current machine. Select OK to continue, or CANCEL to fail the DLL load.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_receive_partial</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741839 - 0x4000000F</code></pre></td>
+<td><pre><code>1073741839 - 0x4000000F</code></pre></td>
 <td>{Partial Data Received} The network transport returned partial data to its client. The remaining data will be sent later.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_receive_expedited</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741840 - 0x40000010</code></pre></td>
+<td><pre><code>1073741840 - 0x40000010</code></pre></td>
 <td>{Expedited Data Received} The network transport returned data to its client that was marked as expedited by the remote system.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_receive_partial_expedited</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741841 - 0x40000011</code></pre></td>
+<td><pre><code>1073741841 - 0x40000011</code></pre></td>
 <td>{Partial Expedited Data Received} The network transport returned partial data to its client and this data was marked as expedited by the remote system. The remaining data will be sent later.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_event_done</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741842 - 0x40000012</code></pre></td>
+<td><pre><code>1073741842 - 0x40000012</code></pre></td>
 <td>{TDI Event Done} The TDI indication has completed successfully.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_event_pending</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741843 - 0x40000013</code></pre></td>
+<td><pre><code>1073741843 - 0x40000013</code></pre></td>
 <td>{TDI Event Pending} The TDI indication has entered the pending state.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_checking_file_system</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741844 - 0x40000014</code></pre></td>
+<td><pre><code>1073741844 - 0x40000014</code></pre></td>
 <td>Checking file system.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_fatal_app_exit</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741845 - 0x40000015</code></pre></td>
+<td><pre><code>1073741845 - 0x40000015</code></pre></td>
 <td>{Fatal Application Exit}</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_predefined_handle</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741846 - 0x40000016</code></pre></td>
+<td><pre><code>1073741846 - 0x40000016</code></pre></td>
 <td>The specified registry key is referenced by a predefined handle.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_was_unlocked</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741847 - 0x40000017</code></pre></td>
+<td><pre><code>1073741847 - 0x40000017</code></pre></td>
 <td>{Page Unlocked} The page protection of a locked page was changed to 'No Access' and the page was unlocked from memory and from the process.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_service_notification</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741848 - 0x40000018</code></pre></td>
+<td><pre><code>1073741848 - 0x40000018</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_was_locked</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741849 - 0x40000019</code></pre></td>
+<td><pre><code>1073741849 - 0x40000019</code></pre></td>
 <td>{Page Locked} One of the pages to lock was already locked.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_log_hard_error</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741850 - 0x4000001A</code></pre></td>
+<td><pre><code>1073741850 - 0x4000001A</code></pre></td>
 <td>Application popup</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_already_win32</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741851 - 0x4000001B</code></pre></td>
+<td><pre><code>1073741851 - 0x4000001B</code></pre></td>
 <td>A Win32 process already exists.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wx86_unsimulate</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741852 - 0x4000001C</code></pre></td>
+<td><pre><code>1073741852 - 0x4000001C</code></pre></td>
 <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wx86_continue</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741853 - 0x4000001D</code></pre></td>
+<td><pre><code>1073741853 - 0x4000001D</code></pre></td>
 <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wx86_single_step</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741854 - 0x4000001E</code></pre></td>
+<td><pre><code>1073741854 - 0x4000001E</code></pre></td>
 <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wx86_breakpoint</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741855 - 0x4000001F</code></pre></td>
+<td><pre><code>1073741855 - 0x4000001F</code></pre></td>
 <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wx86_exception_continue</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741856 - 0x40000020</code></pre></td>
+<td><pre><code>1073741856 - 0x40000020</code></pre></td>
 <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wx86_exception_lastchance</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741857 - 0x40000021</code></pre></td>
+<td><pre><code>1073741857 - 0x40000021</code></pre></td>
 <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wx86_exception_chain</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741858 - 0x40000022</code></pre></td>
+<td><pre><code>1073741858 - 0x40000022</code></pre></td>
 <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_image_machine_type_mismatch_exe</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741859 - 0x40000023</code></pre></td>
+<td><pre><code>1073741859 - 0x40000023</code></pre></td>
 <td>{Machine Type Mismatch} The image file is valid but is for a machine type other than the current machine.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_yield_performed</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741860 - 0x40000024</code></pre></td>
+<td><pre><code>1073741860 - 0x40000024</code></pre></td>
 <td>A yield execution was performed and no thread was available to run.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_timer_resume_ignored</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741861 - 0x40000025</code></pre></td>
+<td><pre><code>1073741861 - 0x40000025</code></pre></td>
 <td>The resume flag to a timer API was ignored.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_arbitration_unhandled</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741862 - 0x40000026</code></pre></td>
+<td><pre><code>1073741862 - 0x40000026</code></pre></td>
 <td>The arbiter has deferred arbitration of these resources to its parent.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_cardbus_not_supported</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741863 - 0x40000027</code></pre></td>
+<td><pre><code>1073741863 - 0x40000027</code></pre></td>
 <td>The device has detected a CardBus card in its slot.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wx86_createwx86tib</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741864 - 0x40000028</code></pre></td>
+<td><pre><code>1073741864 - 0x40000028</code></pre></td>
 <td>An exception status code that is used by the Win32 x86 emulation subsystem.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_mp_processor_mismatch</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741865 - 0x40000029</code></pre></td>
+<td><pre><code>1073741865 - 0x40000029</code></pre></td>
 <td>The CPUs in this multiprocessor system are not all the same revision level. To use all processors, the operating system restricts itself to the features of the least capable processor in the system. If problems occur with this system, contact the CPU manufacturer to see if this mix of processors is supported.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_hibernated</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741866 - 0x4000002A</code></pre></td>
+<td><pre><code>1073741866 - 0x4000002A</code></pre></td>
 <td>The system was put into hibernation.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_resume_hibernation</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073741867 - 0x4000002B</code></pre></td>
+<td><pre><code>1073741867 - 0x4000002B</code></pre></td>
 <td>The system was resumed from hibernation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wake_system</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073742484 - 0x40000294</code></pre></td>
+<td><pre><code>1073742484 - 0x40000294</code></pre></td>
 <td>The system has awoken.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_shutting_down</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073742704 - 0x40000370</code></pre></td>
+<td><pre><code>1073742704 - 0x40000370</code></pre></td>
 <td>The directory service is shutting down.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_uuid_local_only</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073872982 - 0x40020056</code></pre></td>
+<td><pre><code>1073872982 - 0x40020056</code></pre></td>
 <td>A UUID that is valid only on this computer has been allocated.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_send_incomplete</code></pre></td>
 <td>Success</td>
-<td><pre><code>1073873071 - 0x400200AF</code></pre></td>
+<td><pre><code>1073873071 - 0x400200AF</code></pre></td>
 <td>Some data remains to be sent in the request buffer.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_guard_page_violation</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483649 - 0x80000001</code></pre></td>
+<td><pre><code>2147483649 - 0x80000001</code></pre></td>
 <td>{EXCEPTION} Guard Page Exception A page of memory that marks the end of a data structure, such as a stack or an array, has been accessed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_datatype_misalignment</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483650 - 0x80000002</code></pre></td>
+<td><pre><code>2147483650 - 0x80000002</code></pre></td>
 <td>{EXCEPTION} Alignment Fault A data type misalignment was detected in a load or store instruction.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_breakpoint</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483651 - 0x80000003</code></pre></td>
+<td><pre><code>2147483651 - 0x80000003</code></pre></td>
 <td>{EXCEPTION} Breakpoint A breakpoint has been reached.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_single_step</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483652 - 0x80000004</code></pre></td>
+<td><pre><code>2147483652 - 0x80000004</code></pre></td>
 <td>{EXCEPTION} Single Step A single step or trace operation has just been completed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_buffer_overflow</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483653 - 0x80000005</code></pre></td>
+<td><pre><code>2147483653 - 0x80000005</code></pre></td>
 <td>{Buffer Overflow} The data was too large to fit into the specified buffer.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_no_more_files</code></pre></td>
 <td>Success</td>
-<td><pre><code>2147483654 - 0x80000006</code></pre></td>
+<td><pre><code>2147483654 - 0x80000006</code></pre></td>
 <td>{No More Files} No more files were found which match the file specification. This is a warning status in specification but since it is used to end a query directory request, we consider it as an ok status.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wake_system_debugger</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483655 - 0x80000007</code></pre></td>
+<td><pre><code>2147483655 - 0x80000007</code></pre></td>
 <td>{Kernel Debugger Awakened} The system debugger was awakened by an interrupt.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_handles_closed</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483658 - 0x8000000A</code></pre></td>
+<td><pre><code>2147483658 - 0x8000000A</code></pre></td>
 <td>{Handles Closed} Handles to objects have been automatically closed because of the requested operation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_inheritance</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483659 - 0x8000000B</code></pre></td>
+<td><pre><code>2147483659 - 0x8000000B</code></pre></td>
 <td>{Non-Inheritable ACL} An access control list (ACL) contains no components that can be inherited.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_guid_substitution_made</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483660 - 0x8000000C</code></pre></td>
+<td><pre><code>2147483660 - 0x8000000C</code></pre></td>
 <td>{GUID Substitution} During the translation of a globally unique identifier (GUID) to a Windows security ID (SID), no administratively defined GUID prefix was found. A substitute prefix was used, which will not compromise system security. However, this may provide a more restrictive access than intended.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_partial_copy</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483661 - 0x8000000D</code></pre></td>
+<td><pre><code>2147483661 - 0x8000000D</code></pre></td>
 <td>Because of protection conflicts, not all the requested bytes could be copied.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_device_paper_empty</code></pre></td>
 <td>Error</td>
-<td><pre><code>2147483662 - 0x8000000E</code></pre></td>
+<td><pre><code>2147483662 - 0x8000000E</code></pre></td>
 <td>{Out of Paper} The printer is out of paper.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_powered_off</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483663 - 0x8000000F</code></pre></td>
+<td><pre><code>2147483663 - 0x8000000F</code></pre></td>
 <td>{Device Power Is Off} The printer power has been turned off.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_off_line</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483664 - 0x80000010</code></pre></td>
+<td><pre><code>2147483664 - 0x80000010</code></pre></td>
 <td>{Device Offline} The printer has been taken offline.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_busy</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483665 - 0x80000011</code></pre></td>
+<td><pre><code>2147483665 - 0x80000011</code></pre></td>
 <td>{Device Busy} The device is currently busy.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_more_eas</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483666 - 0x80000012</code></pre></td>
+<td><pre><code>2147483666 - 0x80000012</code></pre></td>
 <td>{No More EAs} No more extended attributes (EAs) were found for the file.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_ea_name</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483667 - 0x80000013</code></pre></td>
+<td><pre><code>2147483667 - 0x80000013</code></pre></td>
 <td>{Illegal EA} The specified extended attribute (EA) name contains at least one illegal character.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ea_list_inconsistent</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483668 - 0x80000014</code></pre></td>
+<td><pre><code>2147483668 - 0x80000014</code></pre></td>
 <td>{Inconsistent EA List} The extended attribute (EA) list is inconsistent.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_ea_flag</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483669 - 0x80000015</code></pre></td>
+<td><pre><code>2147483669 - 0x80000015</code></pre></td>
 <td>{Invalid EA Flag} An invalid extended attribute (EA) flag was set.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_verify_required</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483670 - 0x80000016</code></pre></td>
+<td><pre><code>2147483670 - 0x80000016</code></pre></td>
 <td>{Verifying Disk} The media has changed and a verify operation is in progress; therefore, no reads or writes may be performed to the device, except those that are used in the verify operation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_extraneous_information</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483671 - 0x80000017</code></pre></td>
+<td><pre><code>2147483671 - 0x80000017</code></pre></td>
 <td>{Too Much Information} The specified access control list (ACL) contained more information than was expected.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_rxact_commit_necessary</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483672 - 0x80000018</code></pre></td>
+<td><pre><code>2147483672 - 0x80000018</code></pre></td>
 <td>This warning level status indicates that the transaction state already exists for the registry subtree, but that a transaction commit was previously aborted. The commit has NOT been completed but has not been rolled back either; therefore, it may still be committed, if needed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_more_entries</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483674 - 0x8000001A</code></pre></td>
+<td><pre><code>2147483674 - 0x8000001A</code></pre></td>
 <td>{No More Entries} No more entries are available from an enumeration operation.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_filemark_detected</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483675 - 0x8000001B</code></pre></td>
+<td><pre><code>2147483675 - 0x8000001B</code></pre></td>
 <td>{Filemark Found} A filemark was detected.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_media_changed</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483676 - 0x8000001C</code></pre></td>
+<td><pre><code>2147483676 - 0x8000001C</code></pre></td>
 <td>{Media Changed} The media may have changed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bus_reset</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483677 - 0x8000001D</code></pre></td>
+<td><pre><code>2147483677 - 0x8000001D</code></pre></td>
 <td>{I/O Bus Reset} An I/O bus reset was detected.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_end_of_media</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483678 - 0x8000001E</code></pre></td>
+<td><pre><code>2147483678 - 0x8000001E</code></pre></td>
 <td>{End of Media} The end of the media was encountered.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_beginning_of_media</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483679 - 0x8000001F</code></pre></td>
+<td><pre><code>2147483679 - 0x8000001F</code></pre></td>
 <td>The beginning of a tape or partition has been detected.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_media_check</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483680 - 0x80000020</code></pre></td>
+<td><pre><code>2147483680 - 0x80000020</code></pre></td>
 <td>{Media Changed} The media may have changed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_setmark_detected</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483681 - 0x80000021</code></pre></td>
+<td><pre><code>2147483681 - 0x80000021</code></pre></td>
 <td>A tape access reached a set mark.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_data_detected</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483682 - 0x80000022</code></pre></td>
+<td><pre><code>2147483682 - 0x80000022</code></pre></td>
 <td>During a tape access, the end of the data written is reached.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_redirector_has_open_handles</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483683 - 0x80000023</code></pre></td>
+<td><pre><code>2147483683 - 0x80000023</code></pre></td>
 <td>The redirector is in use and cannot be unloaded.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_server_has_open_handles</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483684 - 0x80000024</code></pre></td>
+<td><pre><code>2147483684 - 0x80000024</code></pre></td>
 <td>The server is in use and cannot be unloaded.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_already_disconnected</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483685 - 0x80000025</code></pre></td>
+<td><pre><code>2147483685 - 0x80000025</code></pre></td>
 <td>The specified connection has already been disconnected.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_longjump</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483686 - 0x80000026</code></pre></td>
+<td><pre><code>2147483686 - 0x80000026</code></pre></td>
 <td>A long jump has been executed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_cleaner_cartridge_installed</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483687 - 0x80000027</code></pre></td>
+<td><pre><code>2147483687 - 0x80000027</code></pre></td>
 <td>A cleaner cartridge is present in the tape library.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_plugplay_query_vetoed</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483688 - 0x80000028</code></pre></td>
+<td><pre><code>2147483688 - 0x80000028</code></pre></td>
 <td>The Plug and Play query operation was not successful.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unwind_consolidate</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147483689 - 0x80000029</code></pre></td>
+<td><pre><code>2147483689 - 0x80000029</code></pre></td>
 <td>A frame consolidation has been executed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_requires_cleaning</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147484296 - 0x80000288</code></pre></td>
+<td><pre><code>2147484296 - 0x80000288</code></pre></td>
 <td>The device has indicated that cleaning is necessary.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_door_open</code></pre></td>
 <td>Warning</td>
-<td><pre><code>2147484297 - 0x80000289</code></pre></td>
+<td><pre><code>2147484297 - 0x80000289</code></pre></td>
 <td>The device has indicated that its door is open. Further operations require it closed and secured.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_unsuccessful</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225473 - 0xC0000001</code></pre></td>
+<td><pre><code>3221225473 - 0xC0000001</code></pre></td>
 <td>{Operation Failed} The requested operation was unsuccessful.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_not_implemented</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225474 - 0xC0000002</code></pre></td>
+<td><pre><code>3221225474 - 0xC0000002</code></pre></td>
 <td>{Not Implemented} The requested operation is not implemented.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_invalid_info_class</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225475 - 0xC0000003</code></pre></td>
+<td><pre><code>3221225475 - 0xC0000003</code></pre></td>
 <td>{Invalid Parameter} The specified information class is not a valid information class for the specified object.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_info_length_mismatch</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225476 - 0xC0000004</code></pre></td>
+<td><pre><code>3221225476 - 0xC0000004</code></pre></td>
 <td>The specified information record length does not match the length that is required for the specified information class.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_access_violation</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225477 - 0xC0000005</code></pre></td>
+<td><pre><code>3221225477 - 0xC0000005</code></pre></td>
 <td>The instruction caused a memory access violation.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_in_page_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225478 - 0xC0000006</code></pre></td>
+<td><pre><code>3221225478 - 0xC0000006</code></pre></td>
 <td>The required data was not placed into memory because of an I/O error.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pagefile_quota</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225479 - 0xC0000007</code></pre></td>
+<td><pre><code>3221225479 - 0xC0000007</code></pre></td>
 <td>The page file quota for the process has been exhausted.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_invalid_handle</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225480 - 0xC0000008</code></pre></td>
+<td><pre><code>3221225480 - 0xC0000008</code></pre></td>
 <td>An invalid HANDLE was specified.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_initial_stack</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225481 - 0xC0000009</code></pre></td>
+<td><pre><code>3221225481 - 0xC0000009</code></pre></td>
 <td>An invalid initial stack was specified in a call to NtCreateThread.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_initial_pc</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225482 - 0xC000000A</code></pre></td>
+<td><pre><code>3221225482 - 0xC000000A</code></pre></td>
 <td>An invalid initial start address was specified in a call to NtCreateThread.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_cid</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225483 - 0xC000000B</code></pre></td>
+<td><pre><code>3221225483 - 0xC000000B</code></pre></td>
 <td>An invalid client ID was specified.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_timer_not_canceled</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225484 - 0xC000000C</code></pre></td>
+<td><pre><code>3221225484 - 0xC000000C</code></pre></td>
 <td>An attempt was made to cancel or set a timer that has an associated APC and the specified thread is not the thread that originally set the timer with an associated APC routine.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_invalid_parameter</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225485 - 0xC000000D</code></pre></td>
+<td><pre><code>3221225485 - 0xC000000D</code></pre></td>
 <td>An invalid parameter was passed to a service or function.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_no_such_device</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225486 - 0xC000000E</code></pre></td>
+<td><pre><code>3221225486 - 0xC000000E</code></pre></td>
 <td>A device that does not exist was specified.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_no_such_file</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225487 - 0xC000000F</code></pre></td>
+<td><pre><code>3221225487 - 0xC000000F</code></pre></td>
 <td>{File Not Found} The file does not exist.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_invalid_device_request</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225488 - 0xC0000010</code></pre></td>
+<td><pre><code>3221225488 - 0xC0000010</code></pre></td>
 <td>The specified request is not a valid operation for the target device.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_end_of_file</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225489 - 0xC0000011</code></pre></td>
+<td><pre><code>3221225489 - 0xC0000011</code></pre></td>
 <td>The end-of-file marker has been reached. There is no valid data in the file beyond this marker.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_wrong_volume</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225490 - 0xC0000012</code></pre></td>
+<td><pre><code>3221225490 - 0xC0000012</code></pre></td>
 <td>{Wrong Volume} The wrong volume is in the drive. Insert volume into drive.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_no_media_in_device</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225491 - 0xC0000013</code></pre></td>
+<td><pre><code>3221225491 - 0xC0000013</code></pre></td>
 <td>{No Disk} There is no disk in the drive. Insert a disk into drive.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unrecognized_media</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225492 - 0xC0000014</code></pre></td>
+<td><pre><code>3221225492 - 0xC0000014</code></pre></td>
 <td>{Unknown Disk Format} The disk in drive is not formatted properly. Check the disk, and reformat it, if needed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_nonexistent_sector</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225493 - 0xC0000015</code></pre></td>
+<td><pre><code>3221225493 - 0xC0000015</code></pre></td>
 <td>{Sector Not Found} The specified sector does not exist.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_more_processing_required</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225494 - 0xC0000016</code></pre></td>
+<td><pre><code>3221225494 - 0xC0000016</code></pre></td>
 <td>{Still Busy} The specified I/O request packet (IRP) cannot be disposed of because the I/O operation is not complete.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_memory</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225495 - 0xC0000017</code></pre></td>
+<td><pre><code>3221225495 - 0xC0000017</code></pre></td>
 <td>{Not Enough Quota} Not enough virtual memory or paging file quota is available to complete the specified operation.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_conflicting_addresses</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225496 - 0xC0000018</code></pre></td>
+<td><pre><code>3221225496 - 0xC0000018</code></pre></td>
 <td>{Conflicting Address Range} The specified address range conflicts with the address space.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_mapped_view</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225497 - 0xC0000019</code></pre></td>
+<td><pre><code>3221225497 - 0xC0000019</code></pre></td>
 <td>The address range to unmap is not a mapped view.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unable_to_free_vm</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225498 - 0xC000001A</code></pre></td>
+<td><pre><code>3221225498 - 0xC000001A</code></pre></td>
 <td>The virtual memory cannot be freed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unable_to_delete_section</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225499 - 0xC000001B</code></pre></td>
+<td><pre><code>3221225499 - 0xC000001B</code></pre></td>
 <td>The specified section cannot be deleted.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_system_service</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225500 - 0xC000001C</code></pre></td>
+<td><pre><code>3221225500 - 0xC000001C</code></pre></td>
 <td>An invalid system service was specified in a system service call.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_illegal_instruction</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225501 - 0xC000001D</code></pre></td>
+<td><pre><code>3221225501 - 0xC000001D</code></pre></td>
 <td>{EXCEPTION} Illegal Instruction An attempt was made to execute an illegal instruction.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_invalid_lock_sequence</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225502 - 0xC000001E</code></pre></td>
+<td><pre><code>3221225502 - 0xC000001E</code></pre></td>
 <td>{Invalid Lock Sequence} An attempt was made to execute an invalid lock sequence.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_invalid_view_size</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225503 - 0xC000001F</code></pre></td>
+<td><pre><code>3221225503 - 0xC000001F</code></pre></td>
 <td>{Invalid Mapping} An attempt was made to create a view for a section that is bigger than the section.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_file_for_section</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225504 - 0xC0000020</code></pre></td>
+<td><pre><code>3221225504 - 0xC0000020</code></pre></td>
 <td>{Bad File} The attributes of the specified mapping file for a section of memory cannot be read.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_already_committed</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225505 - 0xC0000021</code></pre></td>
+<td><pre><code>3221225505 - 0xC0000021</code></pre></td>
 <td>{Already Committed} The specified address range is already committed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_access_denied</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225506 - 0xC0000022</code></pre></td>
+<td><pre><code>3221225506 - 0xC0000022</code></pre></td>
 <td>{Access Denied} A process has requested access to an object but has not been granted those access rights.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_buffer_too_small</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225507 - 0xC0000023</code></pre></td>
+<td><pre><code>3221225507 - 0xC0000023</code></pre></td>
 <td>{Buffer Too Small} The buffer is too small to contain the entry. No information has been written to the buffer.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_object_type_mismatch</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225508 - 0xC0000024</code></pre></td>
+<td><pre><code>3221225508 - 0xC0000024</code></pre></td>
 <td>{Wrong Type} There is a mismatch between the type of object that is required by the requested operation and the type of object that is specified in the request.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_noncontinuable_exception</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225509 - 0xC0000025</code></pre></td>
+<td><pre><code>3221225509 - 0xC0000025</code></pre></td>
 <td>{EXCEPTION} Cannot Continue Windows cannot continue from this exception.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_disposition</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225510 - 0xC0000026</code></pre></td>
+<td><pre><code>3221225510 - 0xC0000026</code></pre></td>
 <td>An invalid exception disposition was returned by an exception handler.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unwind</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225511 - 0xC0000027</code></pre></td>
+<td><pre><code>3221225511 - 0xC0000027</code></pre></td>
 <td>Unwind exception code.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_stack</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225512 - 0xC0000028</code></pre></td>
+<td><pre><code>3221225512 - 0xC0000028</code></pre></td>
 <td>An invalid or unaligned stack was encountered during an unwind operation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_unwind_target</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225513 - 0xC0000029</code></pre></td>
+<td><pre><code>3221225513 - 0xC0000029</code></pre></td>
 <td>An invalid unwind target was encountered during an unwind operation.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_locked</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225514 - 0xC000002A</code></pre></td>
+<td><pre><code>3221225514 - 0xC000002A</code></pre></td>
 <td>An attempt was made to unlock a page of memory that was not locked.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_parity_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225515 - 0xC000002B</code></pre></td>
+<td><pre><code>3221225515 - 0xC000002B</code></pre></td>
 <td>A device parity error on an I/O operation.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unable_to_decommit_vm</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225516 - 0xC000002C</code></pre></td>
+<td><pre><code>3221225516 - 0xC000002C</code></pre></td>
 <td>An attempt was made to decommit uncommitted virtual memory.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_committed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225517 - 0xC000002D</code></pre></td>
+<td><pre><code>3221225517 - 0xC000002D</code></pre></td>
 <td>An attempt was made to change the attributes on memory that has not been committed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_port_attributes</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225518 - 0xC000002E</code></pre></td>
+<td><pre><code>3221225518 - 0xC000002E</code></pre></td>
 <td>Invalid object attributes specified to NtCreatePort or invalid port attributes specified to NtConnectPort.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_port_message_too_long</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225519 - 0xC000002F</code></pre></td>
+<td><pre><code>3221225519 - 0xC000002F</code></pre></td>
 <td>The length of the message that was passed to NtRequestPort or NtRequestWaitReplyPort is longer than the maximum message that is allowed by the port.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_parameter_mix</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225520 - 0xC0000030</code></pre></td>
+<td><pre><code>3221225520 - 0xC0000030</code></pre></td>
 <td>An invalid combination of parameters was specified.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_quota_lower</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225521 - 0xC0000031</code></pre></td>
+<td><pre><code>3221225521 - 0xC0000031</code></pre></td>
 <td>An attempt was made to lower a quota limit below the current usage.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_disk_corrupt_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225522 - 0xC0000032</code></pre></td>
+<td><pre><code>3221225522 - 0xC0000032</code></pre></td>
 <td>{Corrupt Disk} The file system structure on the disk is corrupt and unusable. Run the Chkdsk utility on the volume.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_object_name_invalid</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225523 - 0xC0000033</code></pre></td>
+<td><pre><code>3221225523 - 0xC0000033</code></pre></td>
 <td>The object name is invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_object_name_not_found</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225524 - 0xC0000034</code></pre></td>
+<td><pre><code>3221225524 - 0xC0000034</code></pre></td>
 <td>The object name is not found.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_object_name_collision</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225525 - 0xC0000035</code></pre></td>
+<td><pre><code>3221225525 - 0xC0000035</code></pre></td>
 <td>The object name already exists.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_port_disconnected</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225527 - 0xC0000037</code></pre></td>
+<td><pre><code>3221225527 - 0xC0000037</code></pre></td>
 <td>An attempt was made to send a message to a disconnected communication port.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_already_attached</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225528 - 0xC0000038</code></pre></td>
+<td><pre><code>3221225528 - 0xC0000038</code></pre></td>
 <td>An attempt was made to attach to a device that was already attached to another device.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_object_path_invalid</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225529 - 0xC0000039</code></pre></td>
+<td><pre><code>3221225529 - 0xC0000039</code></pre></td>
 <td>The object path component was not a directory object.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_object_path_not_found</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225530 - 0xC000003A</code></pre></td>
+<td><pre><code>3221225530 - 0xC000003A</code></pre></td>
 <td>{Path Not Found} The path does not exist.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_object_path_syntax_bad</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225531 - 0xC000003B</code></pre></td>
+<td><pre><code>3221225531 - 0xC000003B</code></pre></td>
 <td>The object path component was not a directory object.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_data_overrun</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225532 - 0xC000003C</code></pre></td>
+<td><pre><code>3221225532 - 0xC000003C</code></pre></td>
 <td>{Data Overrun} A data overrun error occurred.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_data_late_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225533 - 0xC000003D</code></pre></td>
+<td><pre><code>3221225533 - 0xC000003D</code></pre></td>
 <td>{Data Late} A data late error occurred.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_data_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225534 - 0xC000003E</code></pre></td>
+<td><pre><code>3221225534 - 0xC000003E</code></pre></td>
 <td>{Data Error} An error occurred in reading or writing data.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_crc_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225535 - 0xC000003F</code></pre></td>
+<td><pre><code>3221225535 - 0xC000003F</code></pre></td>
 <td>{Bad CRC} A cyclic redundancy check (CRC) checksum error occurred.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_section_too_big</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225536 - 0xC0000040</code></pre></td>
+<td><pre><code>3221225536 - 0xC0000040</code></pre></td>
 <td>{Section Too Large} The specified section is too big to map the file.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_port_connection_refused</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225537 - 0xC0000041</code></pre></td>
+<td><pre><code>3221225537 - 0xC0000041</code></pre></td>
 <td>The NtConnectPort request is refused.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_invalid_port_handle</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225538 - 0xC0000042</code></pre></td>
+<td><pre><code>3221225538 - 0xC0000042</code></pre></td>
 <td>The type of port handle is invalid for the operation that is requested.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_sharing_violation</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225539 - 0xC0000043</code></pre></td>
+<td><pre><code>3221225539 - 0xC0000043</code></pre></td>
 <td>A file cannot be opened because the share access flags are incompatible.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_quota_exceeded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225540 - 0xC0000044</code></pre></td>
+<td><pre><code>3221225540 - 0xC0000044</code></pre></td>
 <td>Insufficient quota exists to complete the operation.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_page_protection</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225541 - 0xC0000045</code></pre></td>
+<td><pre><code>3221225541 - 0xC0000045</code></pre></td>
 <td>The specified page protection was not valid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_mutant_not_owned</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225542 - 0xC0000046</code></pre></td>
+<td><pre><code>3221225542 - 0xC0000046</code></pre></td>
 <td>An attempt to release a mutant object was made by a thread that was not the owner of the mutant object.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_semaphore_limit_exceeded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225543 - 0xC0000047</code></pre></td>
+<td><pre><code>3221225543 - 0xC0000047</code></pre></td>
 <td>An attempt was made to release a semaphore such that its maximum count would have been exceeded.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_port_already_set</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225544 - 0xC0000048</code></pre></td>
+<td><pre><code>3221225544 - 0xC0000048</code></pre></td>
 <td>An attempt was made to set the DebugPort or ExceptionPort of a process, but a port already exists in the process, or an attempt was made to set the CompletionPort of a file but a port was already set in the file, or an attempt was made to set the associated completion port of an ALPC port but it is already set.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_section_not_image</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225545 - 0xC0000049</code></pre></td>
+<td><pre><code>3221225545 - 0xC0000049</code></pre></td>
 <td>An attempt was made to query image information on a section that does not map an image.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_suspend_count_exceeded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225546 - 0xC000004A</code></pre></td>
+<td><pre><code>3221225546 - 0xC000004A</code></pre></td>
 <td>An attempt was made to suspend a thread whose suspend count was at its maximum.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_thread_is_terminating</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225547 - 0xC000004B</code></pre></td>
+<td><pre><code>3221225547 - 0xC000004B</code></pre></td>
 <td>An attempt was made to suspend a thread that has begun termination.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_working_set_limit</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225548 - 0xC000004C</code></pre></td>
+<td><pre><code>3221225548 - 0xC000004C</code></pre></td>
 <td>An attempt was made to set the working set limit to an invalid value (for example, the minimum greater than maximum).</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_incompatible_file_map</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225549 - 0xC000004D</code></pre></td>
+<td><pre><code>3221225549 - 0xC000004D</code></pre></td>
 <td>A section was created to map a file that is not compatible with an already existing section that maps the same file.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_section_protection</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225550 - 0xC000004E</code></pre></td>
+<td><pre><code>3221225550 - 0xC000004E</code></pre></td>
 <td>A view to a section specifies a protection that is incompatible with the protection of the initial view.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_eas_not_supported</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225551 - 0xC000004F</code></pre></td>
+<td><pre><code>3221225551 - 0xC000004F</code></pre></td>
 <td>An operation involving EAs failed because the file system does not support EAs.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_ea_too_large</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225552 - 0xC0000050</code></pre></td>
+<td><pre><code>3221225552 - 0xC0000050</code></pre></td>
 <td>An EA operation failed because the EA set is too large.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_nonexistent_ea_entry</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225553 - 0xC0000051</code></pre></td>
+<td><pre><code>3221225553 - 0xC0000051</code></pre></td>
 <td>An EA operation failed because the name or EA index is invalid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_eas_on_file</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225554 - 0xC0000052</code></pre></td>
+<td><pre><code>3221225554 - 0xC0000052</code></pre></td>
 <td>The file for which EAs were requested has no EAs.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ea_corrupt_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225555 - 0xC0000053</code></pre></td>
+<td><pre><code>3221225555 - 0xC0000053</code></pre></td>
 <td>The EA is corrupt and cannot be read.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_file_lock_conflict</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225556 - 0xC0000054</code></pre></td>
+<td><pre><code>3221225556 - 0xC0000054</code></pre></td>
 <td>A requested read/write cannot be granted due to a conflicting file lock.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_lock_not_granted</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225557 - 0xC0000055</code></pre></td>
+<td><pre><code>3221225557 - 0xC0000055</code></pre></td>
 <td>A requested file lock cannot be granted due to other existing locks.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_delete_pending</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225558 - 0xC0000056</code></pre></td>
+<td><pre><code>3221225558 - 0xC0000056</code></pre></td>
 <td>A non-close operation has been requested of a file object that has a delete pending.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ctl_file_not_supported</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225559 - 0xC0000057</code></pre></td>
+<td><pre><code>3221225559 - 0xC0000057</code></pre></td>
 <td>An attempt was made to set the control attribute on a file. This attribute is not supported in the destination file system.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unknown_revision</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225560 - 0xC0000058</code></pre></td>
+<td><pre><code>3221225560 - 0xC0000058</code></pre></td>
 <td>Indicates a revision number that was encountered or specified is not one that is known by the service. It may be a more recent revision than the service is aware of.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_revision_mismatch</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225561 - 0xC0000059</code></pre></td>
+<td><pre><code>3221225561 - 0xC0000059</code></pre></td>
 <td>Indicates that two revision levels are incompatible.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_owner</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225562 - 0xC000005A</code></pre></td>
+<td><pre><code>3221225562 - 0xC000005A</code></pre></td>
 <td>Indicates a particular security ID may not be assigned as the owner of an object.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_primary_group</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225563 - 0xC000005B</code></pre></td>
+<td><pre><code>3221225563 - 0xC000005B</code></pre></td>
 <td>Indicates a particular security ID may not be assigned as the primary group of an object.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_impersonation_token</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225564 - 0xC000005C</code></pre></td>
+<td><pre><code>3221225564 - 0xC000005C</code></pre></td>
 <td>An attempt has been made to operate on an impersonation token by a thread that is not currently impersonating a client.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_cant_disable_mandatory</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225565 - 0xC000005D</code></pre></td>
+<td><pre><code>3221225565 - 0xC000005D</code></pre></td>
 <td>A mandatory group may not be disabled.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_logon_servers</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225566 - 0xC000005E</code></pre></td>
+<td><pre><code>3221225566 - 0xC000005E</code></pre></td>
 <td>No logon servers are currently available to service the logon request.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_such_logon_session</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225567 - 0xC000005F</code></pre></td>
+<td><pre><code>3221225567 - 0xC000005F</code></pre></td>
 <td>A specified logon session does not exist. It may already have been terminated.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_such_privilege</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225568 - 0xC0000060</code></pre></td>
+<td><pre><code>3221225568 - 0xC0000060</code></pre></td>
 <td>A specified privilege does not exist.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_privilege_not_held</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225569 - 0xC0000061</code></pre></td>
+<td><pre><code>3221225569 - 0xC0000061</code></pre></td>
 <td>A required privilege is not held by the client.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_account_name</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225570 - 0xC0000062</code></pre></td>
+<td><pre><code>3221225570 - 0xC0000062</code></pre></td>
 <td>The name provided is not a properly formed account name.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_user_exists</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225571 - 0xC0000063</code></pre></td>
+<td><pre><code>3221225571 - 0xC0000063</code></pre></td>
 <td>The specified account already exists.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_such_user</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225572 - 0xC0000064</code></pre></td>
+<td><pre><code>3221225572 - 0xC0000064</code></pre></td>
 <td>The specified account does not exist.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_group_exists</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225573 - 0xC0000065</code></pre></td>
+<td><pre><code>3221225573 - 0xC0000065</code></pre></td>
 <td>The specified group already exists.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_such_group</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225574 - 0xC0000066</code></pre></td>
+<td><pre><code>3221225574 - 0xC0000066</code></pre></td>
 <td>The specified group does not exist.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_member_in_group</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225575 - 0xC0000067</code></pre></td>
+<td><pre><code>3221225575 - 0xC0000067</code></pre></td>
 <td>The specified user account is already in the specified group account. Also used to indicate a group cannot be deleted because it contains a member.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_member_not_in_group</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225576 - 0xC0000068</code></pre></td>
+<td><pre><code>3221225576 - 0xC0000068</code></pre></td>
 <td>The specified user account is not a member of the specified group account.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_last_admin</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225577 - 0xC0000069</code></pre></td>
+<td><pre><code>3221225577 - 0xC0000069</code></pre></td>
 <td>Indicates the requested operation would disable or delete the last remaining administration account. This is not allowed to prevent creating a situation in which the system cannot be administrated.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_wrong_password</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225578 - 0xC000006A</code></pre></td>
+<td><pre><code>3221225578 - 0xC000006A</code></pre></td>
 <td>When trying to update a password, this return status indicates that the value provided as the current password is not correct.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ill_formed_password</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225579 - 0xC000006B</code></pre></td>
+<td><pre><code>3221225579 - 0xC000006B</code></pre></td>
 <td>When trying to update a password, this return status indicates that the value provided for the new password contains values that are not allowed in passwords.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_password_restriction</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225580 - 0xC000006C</code></pre></td>
+<td><pre><code>3221225580 - 0xC000006C</code></pre></td>
 <td>When trying to update a password, this status indicates that some password update rule has been violated. For example, the password may not meet length criteria.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_logon_failure</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225581 - 0xC000006D</code></pre></td>
+<td><pre><code>3221225581 - 0xC000006D</code></pre></td>
 <td>The attempted logon is invalid. This is either due to a bad username or authentication information.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_account_restriction</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225582 - 0xC000006E</code></pre></td>
+<td><pre><code>3221225582 - 0xC000006E</code></pre></td>
 <td>Indicates a referenced user name and authentication information are valid, but some user account restriction has prevented successful authentication (such as time-of-day restrictions).</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_invalid_logon_hours</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225583 - 0xC000006F</code></pre></td>
+<td><pre><code>3221225583 - 0xC000006F</code></pre></td>
 <td>The user account has time restrictions and may not be logged onto at this time.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_invalid_workstation</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225584 - 0xC0000070</code></pre></td>
+<td><pre><code>3221225584 - 0xC0000070</code></pre></td>
 <td>The user account is restricted so that it may not be used to log on from the source workstation.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_password_expired</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225585 - 0xC0000071</code></pre></td>
+<td><pre><code>3221225585 - 0xC0000071</code></pre></td>
 <td>The user account password has expired.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_account_disabled</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225586 - 0xC0000072</code></pre></td>
+<td><pre><code>3221225586 - 0xC0000072</code></pre></td>
 <td>The referenced account is currently disabled and may not be logged on to.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_too_many_luids_requested</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225588 - 0xC0000074</code></pre></td>
+<td><pre><code>3221225588 - 0xC0000074</code></pre></td>
 <td>The number of LUIDs requested may not be allocated with a single allocation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_luids_exhausted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225589 - 0xC0000075</code></pre></td>
+<td><pre><code>3221225589 - 0xC0000075</code></pre></td>
 <td>Indicates there are no more LUIDs to allocate.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_sub_authority</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225590 - 0xC0000076</code></pre></td>
+<td><pre><code>3221225590 - 0xC0000076</code></pre></td>
 <td>Indicates the sub-authority value is invalid for the particular use.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_acl</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225591 - 0xC0000077</code></pre></td>
+<td><pre><code>3221225591 - 0xC0000077</code></pre></td>
 <td>Indicates the ACL structure is not valid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_sid</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225592 - 0xC0000078</code></pre></td>
+<td><pre><code>3221225592 - 0xC0000078</code></pre></td>
 <td>Indicates the SID structure is not valid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_security_descr</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225593 - 0xC0000079</code></pre></td>
+<td><pre><code>3221225593 - 0xC0000079</code></pre></td>
 <td>Indicates the SECURITY_DESCRIPTOR structure is not valid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_procedure_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225594 - 0xC000007A</code></pre></td>
+<td><pre><code>3221225594 - 0xC000007A</code></pre></td>
 <td>Indicates the specified procedure address cannot be found in the DLL.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_image_format</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225595 - 0xC000007B</code></pre></td>
+<td><pre><code>3221225595 - 0xC000007B</code></pre></td>
 <td>{Bad Image} The image is either not designed to run on Windows or it contains an error. Try installing the program again using the original installation media or contact your system administrator or the software vendor for support.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_token</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225596 - 0xC000007C</code></pre></td>
+<td><pre><code>3221225596 - 0xC000007C</code></pre></td>
 <td>An attempt was made to reference a token that does not exist. This is typically done by referencing the token that is associated with a thread when the thread is not impersonating a client.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_inheritance_acl</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225597 - 0xC000007D</code></pre></td>
+<td><pre><code>3221225597 - 0xC000007D</code></pre></td>
 <td>Indicates that an attempt to build either an inherited ACL or ACE was not successful. This can be caused by a number of things. One of the more probable causes is the replacement of a CreatorId with a SID that did not fit into the ACE or ACL.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_range_not_locked</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225598 - 0xC000007E</code></pre></td>
+<td><pre><code>3221225598 - 0xC000007E</code></pre></td>
 <td>The range specified in NtUnlockFile was not locked.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_disk_full</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225599 - 0xC000007F</code></pre></td>
+<td><pre><code>3221225599 - 0xC000007F</code></pre></td>
 <td>An operation failed because the disk was full.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_server_disabled</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225600 - 0xC0000080</code></pre></td>
+<td><pre><code>3221225600 - 0xC0000080</code></pre></td>
 <td>The GUID allocation server is disabled at the moment.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_server_not_disabled</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225601 - 0xC0000081</code></pre></td>
+<td><pre><code>3221225601 - 0xC0000081</code></pre></td>
 <td>The GUID allocation server is enabled at the moment.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_too_many_guids_requested</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225602 - 0xC0000082</code></pre></td>
+<td><pre><code>3221225602 - 0xC0000082</code></pre></td>
 <td>Too many GUIDs were requested from the allocation server at once.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_guids_exhausted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225603 - 0xC0000083</code></pre></td>
+<td><pre><code>3221225603 - 0xC0000083</code></pre></td>
 <td>The GUIDs could not be allocated because the Authority Agent was exhausted.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_id_authority</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225604 - 0xC0000084</code></pre></td>
+<td><pre><code>3221225604 - 0xC0000084</code></pre></td>
 <td>The value provided was an invalid value for an identifier authority.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_agents_exhausted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225605 - 0xC0000085</code></pre></td>
+<td><pre><code>3221225605 - 0xC0000085</code></pre></td>
 <td>No more authority agent values are available for the particular identifier authority value.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_volume_label</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225606 - 0xC0000086</code></pre></td>
+<td><pre><code>3221225606 - 0xC0000086</code></pre></td>
 <td>An invalid volume label has been specified.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_section_not_extended</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225607 - 0xC0000087</code></pre></td>
+<td><pre><code>3221225607 - 0xC0000087</code></pre></td>
 <td>A mapped section could not be extended.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_mapped_data</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225608 - 0xC0000088</code></pre></td>
+<td><pre><code>3221225608 - 0xC0000088</code></pre></td>
 <td>Specified section to flush does not map a data file.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_resource_data_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225609 - 0xC0000089</code></pre></td>
+<td><pre><code>3221225609 - 0xC0000089</code></pre></td>
 <td>Indicates the specified image file did not contain a resource section.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_resource_type_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225610 - 0xC000008A</code></pre></td>
+<td><pre><code>3221225610 - 0xC000008A</code></pre></td>
 <td>Indicates the specified resource type cannot be found in the image file.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_resource_name_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225611 - 0xC000008B</code></pre></td>
+<td><pre><code>3221225611 - 0xC000008B</code></pre></td>
 <td>Indicates the specified resource name cannot be found in the image file.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_array_bounds_exceeded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225612 - 0xC000008C</code></pre></td>
+<td><pre><code>3221225612 - 0xC000008C</code></pre></td>
 <td>{EXCEPTION} Array bounds exceeded.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_float_denormal_operand</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225613 - 0xC000008D</code></pre></td>
+<td><pre><code>3221225613 - 0xC000008D</code></pre></td>
 <td>{EXCEPTION} Floating-point denormal operand.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_float_divide_by_zero</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225614 - 0xC000008E</code></pre></td>
+<td><pre><code>3221225614 - 0xC000008E</code></pre></td>
 <td>{EXCEPTION} Floating-point division by zero.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_float_inexact_result</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225615 - 0xC000008F</code></pre></td>
+<td><pre><code>3221225615 - 0xC000008F</code></pre></td>
 <td>{EXCEPTION} Floating-point inexact result.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_float_invalid_operation</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225616 - 0xC0000090</code></pre></td>
+<td><pre><code>3221225616 - 0xC0000090</code></pre></td>
 <td>{EXCEPTION} Floating-point invalid operation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_float_overflow</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225617 - 0xC0000091</code></pre></td>
+<td><pre><code>3221225617 - 0xC0000091</code></pre></td>
 <td>{EXCEPTION} Floating-point overflow.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_float_stack_check</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225618 - 0xC0000092</code></pre></td>
+<td><pre><code>3221225618 - 0xC0000092</code></pre></td>
 <td>{EXCEPTION} Floating-point stack check.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_float_underflow</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225619 - 0xC0000093</code></pre></td>
+<td><pre><code>3221225619 - 0xC0000093</code></pre></td>
 <td>{EXCEPTION} Floating-point underflow.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_integer_divide_by_zero</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225620 - 0xC0000094</code></pre></td>
+<td><pre><code>3221225620 - 0xC0000094</code></pre></td>
 <td>{EXCEPTION} Integer division by zero.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_integer_overflow</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225621 - 0xC0000095</code></pre></td>
+<td><pre><code>3221225621 - 0xC0000095</code></pre></td>
 <td>{EXCEPTION} Integer overflow.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_privileged_instruction</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225622 - 0xC0000096</code></pre></td>
+<td><pre><code>3221225622 - 0xC0000096</code></pre></td>
 <td>{EXCEPTION} Privileged instruction.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_too_many_paging_files</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225623 - 0xC0000097</code></pre></td>
+<td><pre><code>3221225623 - 0xC0000097</code></pre></td>
 <td>An attempt was made to install more paging files than the system supports.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_file_invalid</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225624 - 0xC0000098</code></pre></td>
+<td><pre><code>3221225624 - 0xC0000098</code></pre></td>
 <td>The volume for a file has been externally altered such that the opened file is no longer valid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_allotted_space_exceeded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225625 - 0xC0000099</code></pre></td>
+<td><pre><code>3221225625 - 0xC0000099</code></pre></td>
 <td>When a block of memory is allotted for future updates, such as the memory allocated to hold discretionary access control and primary group information, successive updates may exceed the amount of memory originally allotted. Because a quota may already have been charged to several processes that have handles to the object, it is not reasonable to alter the size of the allocated memory. Instead, a request that requires more memory than has been allotted must fail and the STATUS_ALLOTTED_SPACE_EXCEEDED error returned.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_insufficient_resources</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225626 - 0xC000009A</code></pre></td>
+<td><pre><code>3221225626 - 0xC000009A</code></pre></td>
 <td>Insufficient system resources exist to complete the API.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_dfs_exit_path_found</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225627 - 0xC000009B</code></pre></td>
+<td><pre><code>3221225627 - 0xC000009B</code></pre></td>
 <td>An attempt has been made to open a DFS exit path control file.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_data_error_unused</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225628 - 0xC000009C</code></pre></td>
+<td><pre><code>3221225628 - 0xC000009C</code></pre></td>
 <td>There are bad blocks (sectors) on the hard disk.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_not_connected</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225629 - 0xC000009D</code></pre></td>
+<td><pre><code>3221225629 - 0xC000009D</code></pre></td>
 <td>There is bad cabling, non-termination, or the controller is not able to obtain access to the hard disk.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_power_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225630 - 0xC000009E</code></pre></td>
+<td><pre><code>3221225630 - 0xC000009E</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_free_vm_not_at_base</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225631 - 0xC000009F</code></pre></td>
+<td><pre><code>3221225631 - 0xC000009F</code></pre></td>
 <td>Virtual memory cannot be freed because the base address is not the base of the region and a region size of zero was specified.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_memory_not_allocated</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225632 - 0xC00000A0</code></pre></td>
+<td><pre><code>3221225632 - 0xC00000A0</code></pre></td>
 <td>An attempt was made to free virtual memory that is not allocated.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_working_set_quota</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225633 - 0xC00000A1</code></pre></td>
+<td><pre><code>3221225633 - 0xC00000A1</code></pre></td>
 <td>The working set is not big enough to allow the requested pages to be locked.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_media_write_protected</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225634 - 0xC00000A2</code></pre></td>
+<td><pre><code>3221225634 - 0xC00000A2</code></pre></td>
 <td>{Write Protect Error} The disk cannot be written to because it is write-protected. Remove the write protection from the volume in drive.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_not_ready</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225635 - 0xC00000A3</code></pre></td>
+<td><pre><code>3221225635 - 0xC00000A3</code></pre></td>
 <td>{Drive Not Ready} The drive is not ready for use; its door may be open. Check drive and make sure that a disk is inserted and that the drive door is closed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_group_attributes</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225636 - 0xC00000A4</code></pre></td>
+<td><pre><code>3221225636 - 0xC00000A4</code></pre></td>
 <td>The specified attributes are invalid or are incompatible with the attributes for the group as a whole.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_impersonation_level</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225637 - 0xC00000A5</code></pre></td>
+<td><pre><code>3221225637 - 0xC00000A5</code></pre></td>
 <td>A specified impersonation level is invalid. Also used to indicate that a required impersonation level was not provided.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_cant_open_anonymous</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225638 - 0xC00000A6</code></pre></td>
+<td><pre><code>3221225638 - 0xC00000A6</code></pre></td>
 <td>An attempt was made to open an anonymous-level token. Anonymous tokens may not be opened.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_validation_class</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225639 - 0xC00000A7</code></pre></td>
+<td><pre><code>3221225639 - 0xC00000A7</code></pre></td>
 <td>The validation information class requested was invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_token_type</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225640 - 0xC00000A8</code></pre></td>
+<td><pre><code>3221225640 - 0xC00000A8</code></pre></td>
 <td>The type of a token object is inappropriate for its attempted use.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_master_boot_record</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225641 - 0xC00000A9</code></pre></td>
+<td><pre><code>3221225641 - 0xC00000A9</code></pre></td>
 <td>The type of a token object is inappropriate for its attempted use.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_instruction_misalignment</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225642 - 0xC00000AA</code></pre></td>
+<td><pre><code>3221225642 - 0xC00000AA</code></pre></td>
 <td>An attempt was made to execute an instruction at an unaligned address and the host system does not support unaligned instruction references.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_instance_not_available</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225643 - 0xC00000AB</code></pre></td>
+<td><pre><code>3221225643 - 0xC00000AB</code></pre></td>
 <td>The maximum named pipe instance count has been reached.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_pipe_not_available</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225644 - 0xC00000AC</code></pre></td>
+<td><pre><code>3221225644 - 0xC00000AC</code></pre></td>
 <td>An instance of a named pipe cannot be found in the listening state.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_invalid_pipe_state</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225645 - 0xC00000AD</code></pre></td>
+<td><pre><code>3221225645 - 0xC00000AD</code></pre></td>
 <td>The named pipe is not in the connected or closing state.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_pipe_busy</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225646 - 0xC00000AE</code></pre></td>
+<td><pre><code>3221225646 - 0xC00000AE</code></pre></td>
 <td>The specified pipe is set to complete operations and there are current I/O operations queued so that it cannot be changed to queue operations.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_illegal_function</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225647 - 0xC00000AF</code></pre></td>
+<td><pre><code>3221225647 - 0xC00000AF</code></pre></td>
 <td>The specified handle is not open to the server end of the named pipe.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_pipe_disconnected</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225648 - 0xC00000B0</code></pre></td>
+<td><pre><code>3221225648 - 0xC00000B0</code></pre></td>
 <td>The specified named pipe is in the disconnected state.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_pipe_closing</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225649 - 0xC00000B1</code></pre></td>
+<td><pre><code>3221225649 - 0xC00000B1</code></pre></td>
 <td>The specified named pipe is in the closing state.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pipe_connected</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225650 - 0xC00000B2</code></pre></td>
+<td><pre><code>3221225650 - 0xC00000B2</code></pre></td>
 <td>The specified named pipe is in the connected state.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pipe_listening</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225651 - 0xC00000B3</code></pre></td>
+<td><pre><code>3221225651 - 0xC00000B3</code></pre></td>
 <td>The specified named pipe is in the listening state.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_invalid_read_mode</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225652 - 0xC00000B4</code></pre></td>
+<td><pre><code>3221225652 - 0xC00000B4</code></pre></td>
 <td>The specified named pipe is not in message mode.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_io_timeout</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225653 - 0xC00000B5</code></pre></td>
+<td><pre><code>3221225653 - 0xC00000B5</code></pre></td>
 <td>{Device Timeout} The specified I/O operation was not completed before the time-out period expired.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_file_forced_closed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225654 - 0xC00000B6</code></pre></td>
+<td><pre><code>3221225654 - 0xC00000B6</code></pre></td>
 <td>The specified file has been closed by another process.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_profiling_not_started</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225655 - 0xC00000B7</code></pre></td>
+<td><pre><code>3221225655 - 0xC00000B7</code></pre></td>
 <td>Profiling is not started.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_profiling_not_stopped</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225656 - 0xC00000B8</code></pre></td>
+<td><pre><code>3221225656 - 0xC00000B8</code></pre></td>
 <td>Profiling is not stopped.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_could_not_interpret</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225657 - 0xC00000B9</code></pre></td>
+<td><pre><code>3221225657 - 0xC00000B9</code></pre></td>
 <td>The passed ACL did not contain the minimum required information.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_file_is_a_directory</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225658 - 0xC00000BA</code></pre></td>
+<td><pre><code>3221225658 - 0xC00000BA</code></pre></td>
 <td>The file that was specified as a target is a directory, and the caller specified that it could be anything but a directory.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_remote_not_listening</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225660 - 0xC00000BC</code></pre></td>
+<td><pre><code>3221225660 - 0xC00000BC</code></pre></td>
 <td>This remote computer is not listening.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_duplicate_name</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225661 - 0xC00000BD</code></pre></td>
+<td><pre><code>3221225661 - 0xC00000BD</code></pre></td>
 <td>A duplicate name exists on the network.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_network_path</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225662 - 0xC00000BE</code></pre></td>
+<td><pre><code>3221225662 - 0xC00000BE</code></pre></td>
 <td>The network path cannot be located.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_network_busy</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225663 - 0xC00000BF</code></pre></td>
+<td><pre><code>3221225663 - 0xC00000BF</code></pre></td>
 <td>The network is busy.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_does_not_exist</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225664 - 0xC00000C0</code></pre></td>
+<td><pre><code>3221225664 - 0xC00000C0</code></pre></td>
 <td>This device does not exist.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_too_many_commands</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225665 - 0xC00000C1</code></pre></td>
+<td><pre><code>3221225665 - 0xC00000C1</code></pre></td>
 <td>The network BIOS command limit has been reached.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_adapter_hardware_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225666 - 0xC00000C2</code></pre></td>
+<td><pre><code>3221225666 - 0xC00000C2</code></pre></td>
 <td>An I/O adapter hardware error has occurred.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_network_response</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225667 - 0xC00000C3</code></pre></td>
+<td><pre><code>3221225667 - 0xC00000C3</code></pre></td>
 <td>The network responded incorrectly.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_unexpected_network_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225668 - 0xC00000C4</code></pre></td>
+<td><pre><code>3221225668 - 0xC00000C4</code></pre></td>
 <td>An unexpected network error occurred.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_remote_adapter</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225669 - 0xC00000C5</code></pre></td>
+<td><pre><code>3221225669 - 0xC00000C5</code></pre></td>
 <td>The remote adapter is not compatible.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_print_queue_full</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225670 - 0xC00000C6</code></pre></td>
+<td><pre><code>3221225670 - 0xC00000C6</code></pre></td>
 <td>The print queue is full.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_no_spool_space</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225671 - 0xC00000C7</code></pre></td>
+<td><pre><code>3221225671 - 0xC00000C7</code></pre></td>
 <td>Space to store the file that is waiting to be printed is not available on the server.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_print_cancelled</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225672 - 0xC00000C8</code></pre></td>
+<td><pre><code>3221225672 - 0xC00000C8</code></pre></td>
 <td>The requested print file has been canceled.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_network_name_deleted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225673 - 0xC00000C9</code></pre></td>
+<td><pre><code>3221225673 - 0xC00000C9</code></pre></td>
 <td>The network name was deleted.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_network_access_denied</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225674 - 0xC00000CA</code></pre></td>
+<td><pre><code>3221225674 - 0xC00000CA</code></pre></td>
 <td>Network access is denied.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_bad_device_type</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225675 - 0xC00000CB</code></pre></td>
+<td><pre><code>3221225675 - 0xC00000CB</code></pre></td>
 <td>{Incorrect Network Resource Type} The specified device type (LPT, for example) conflicts with the actual device type on the remote resource.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_bad_network_name</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225676 - 0xC00000CC</code></pre></td>
+<td><pre><code>3221225676 - 0xC00000CC</code></pre></td>
 <td>{Network Name Not Found} The specified share name cannot be found on the remote server.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_too_many_names</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225677 - 0xC00000CD</code></pre></td>
+<td><pre><code>3221225677 - 0xC00000CD</code></pre></td>
 <td>The name limit for the network adapter card of the local computer was exceeded.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_too_many_sessions</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225678 - 0xC00000CE</code></pre></td>
+<td><pre><code>3221225678 - 0xC00000CE</code></pre></td>
 <td>The network BIOS session limit was exceeded.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_sharing_paused</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225679 - 0xC00000CF</code></pre></td>
+<td><pre><code>3221225679 - 0xC00000CF</code></pre></td>
 <td>File sharing has been temporarily paused.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_request_not_accepted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225680 - 0xC00000D0</code></pre></td>
+<td><pre><code>3221225680 - 0xC00000D0</code></pre></td>
 <td>No more connections can be made to this remote computer at this time because the computer has already accepted the maximum number of connections.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_redirector_paused</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225681 - 0xC00000D1</code></pre></td>
+<td><pre><code>3221225681 - 0xC00000D1</code></pre></td>
 <td>Print or disk redirection is temporarily paused.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_net_write_fault</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225682 - 0xC00000D2</code></pre></td>
+<td><pre><code>3221225682 - 0xC00000D2</code></pre></td>
 <td>A network data fault occurred.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_profiling_at_limit</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225683 - 0xC00000D3</code></pre></td>
+<td><pre><code>3221225683 - 0xC00000D3</code></pre></td>
 <td>The number of active profiling objects is at the maximum and no more may be started.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_not_same_device</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225684 - 0xC00000D4</code></pre></td>
+<td><pre><code>3221225684 - 0xC00000D4</code></pre></td>
 <td>{Incorrect Volume} The destination file of a rename request is located on a different device than the source of the rename request.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_file_renamed</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225685 - 0xC00000D5</code></pre></td>
+<td><pre><code>3221225685 - 0xC00000D5</code></pre></td>
 <td>The specified file has been renamed and thus cannot be modified.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_virtual_circuit_closed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225686 - 0xC00000D6</code></pre></td>
+<td><pre><code>3221225686 - 0xC00000D6</code></pre></td>
 <td>{Network Request Timeout} The session with a remote server has been disconnected because the time-out interval for a request has expired.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_security_on_object</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225687 - 0xC00000D7</code></pre></td>
+<td><pre><code>3221225687 - 0xC00000D7</code></pre></td>
 <td>Indicates an attempt was made to operate on the security of an object that does not have security associated with it.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_cant_wait</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225688 - 0xC00000D8</code></pre></td>
+<td><pre><code>3221225688 - 0xC00000D8</code></pre></td>
 <td>Used to indicate that an operation cannot continue without blocking for I/O.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_pipe_empty</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225689 - 0xC00000D9</code></pre></td>
+<td><pre><code>3221225689 - 0xC00000D9</code></pre></td>
 <td>Used to indicate that a read operation was done on an empty pipe.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_cant_access_domain_info</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225690 - 0xC00000DA</code></pre></td>
+<td><pre><code>3221225690 - 0xC00000DA</code></pre></td>
 <td>Configuration information could not be read from the domain controller, either because the machine is unavailable or access has been denied.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_cant_terminate_self</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225691 - 0xC00000DB</code></pre></td>
+<td><pre><code>3221225691 - 0xC00000DB</code></pre></td>
 <td>Indicates that a thread attempted to terminate itself by default (called NtTerminateThread with NULL) and it was the last thread in the current process.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_server_state</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225692 - 0xC00000DC</code></pre></td>
+<td><pre><code>3221225692 - 0xC00000DC</code></pre></td>
 <td>Indicates the Sam Server was in the wrong state to perform the desired operation.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_domain_state</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225693 - 0xC00000DD</code></pre></td>
+<td><pre><code>3221225693 - 0xC00000DD</code></pre></td>
 <td>Indicates the domain was in the wrong state to perform the desired operation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_domain_role</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225694 - 0xC00000DE</code></pre></td>
+<td><pre><code>3221225694 - 0xC00000DE</code></pre></td>
 <td>This operation is only allowed for the primary domain controller of the domain.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_such_domain</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225695 - 0xC00000DF</code></pre></td>
+<td><pre><code>3221225695 - 0xC00000DF</code></pre></td>
 <td>The specified domain did not exist.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_domain_exists</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225696 - 0xC00000E0</code></pre></td>
+<td><pre><code>3221225696 - 0xC00000E0</code></pre></td>
 <td>The specified domain already exists.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_domain_limit_exceeded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225697 - 0xC00000E1</code></pre></td>
+<td><pre><code>3221225697 - 0xC00000E1</code></pre></td>
 <td>An attempt was made to exceed the limit on the number of domains per server for this release.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_oplock_not_granted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225698 - 0xC00000E2</code></pre></td>
+<td><pre><code>3221225698 - 0xC00000E2</code></pre></td>
 <td>An error status returned when the opportunistic lock (oplock) request is denied.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_oplock_protocol</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225699 - 0xC00000E3</code></pre></td>
+<td><pre><code>3221225699 - 0xC00000E3</code></pre></td>
 <td>An error status returned when an invalid opportunistic lock (oplock) acknowledgment is received by a file system.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_internal_db_corruption</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225700 - 0xC00000E4</code></pre></td>
+<td><pre><code>3221225700 - 0xC00000E4</code></pre></td>
 <td>This error indicates that the requested operation cannot be completed due to a catastrophic media failure or an on-disk data structure corruption.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_internal_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225701 - 0xC00000E5</code></pre></td>
+<td><pre><code>3221225701 - 0xC00000E5</code></pre></td>
 <td>An internal error occurred.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_generic_not_mapped</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225702 - 0xC00000E6</code></pre></td>
+<td><pre><code>3221225702 - 0xC00000E6</code></pre></td>
 <td>Indicates generic access types were contained in an access mask which should already be mapped to non-generic access types.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_descriptor_format</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225703 - 0xC00000E7</code></pre></td>
+<td><pre><code>3221225703 - 0xC00000E7</code></pre></td>
 <td>Indicates a security descriptor is not in the necessary format (absolute or self-relative).</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_user_buffer</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225704 - 0xC00000E8</code></pre></td>
+<td><pre><code>3221225704 - 0xC00000E8</code></pre></td>
 <td>An access to a user buffer failed at an expected point in time. This code is defined because the caller does not want to accept STATUS_ACCESS_VIOLATION in its filter.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unexpected_io_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225705 - 0xC00000E9</code></pre></td>
+<td><pre><code>3221225705 - 0xC00000E9</code></pre></td>
 <td>If an I/O error that is not defined in the standard FsRtl filter is returned, it is converted to the following error, which is guaranteed to be in the filter. In this case, information is lost; however, the filter correctly handles the exception.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unexpected_mm_create_err</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225706 - 0xC00000EA</code></pre></td>
+<td><pre><code>3221225706 - 0xC00000EA</code></pre></td>
 <td>If an MM error that is not defined in the standard FsRtl filter is returned, it is converted to one of the following errors, which are guaranteed to be in the filter. In this case, information is lost; however, the filter correctly handles the exception.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unexpected_mm_map_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225707 - 0xC00000EB</code></pre></td>
+<td><pre><code>3221225707 - 0xC00000EB</code></pre></td>
 <td>If an MM error that is not defined in the standard FsRtl filter is returned, it is converted to one of the following errors, which are guaranteed to be in the filter. In this case, information is lost; however, the filter correctly handles the exception.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unexpected_mm_extend_err</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225708 - 0xC00000EC</code></pre></td>
+<td><pre><code>3221225708 - 0xC00000EC</code></pre></td>
 <td>If an MM error that is not defined in the standard FsRtl filter is returned, it is converted to one of the following errors, which are guaranteed to be in the filter. In this case, information is lost; however, the filter correctly handles the exception.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_logon_process</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225709 - 0xC00000ED</code></pre></td>
+<td><pre><code>3221225709 - 0xC00000ED</code></pre></td>
 <td>The requested action is restricted for use by logon processes only. The calling process has not registered as a logon process.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_logon_session_exists</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225710 - 0xC00000EE</code></pre></td>
+<td><pre><code>3221225710 - 0xC00000EE</code></pre></td>
 <td>An attempt has been made to start a new session manager or LSA logon session by using an ID that is already in use.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_parameter_1</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225711 - 0xC00000EF</code></pre></td>
+<td><pre><code>3221225711 - 0xC00000EF</code></pre></td>
 <td>An invalid parameter was passed to a service or function as the first argument.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_parameter_2</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225712 - 0xC00000F0</code></pre></td>
+<td><pre><code>3221225712 - 0xC00000F0</code></pre></td>
 <td>An invalid parameter was passed to a service or function as the second argument.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_parameter_3</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225713 - 0xC00000F1</code></pre></td>
+<td><pre><code>3221225713 - 0xC00000F1</code></pre></td>
 <td>An invalid parameter was passed to a service or function as the third argument.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_parameter_4</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225714 - 0xC00000F2</code></pre></td>
+<td><pre><code>3221225714 - 0xC00000F2</code></pre></td>
 <td>An invalid parameter was passed to a service or function as the fourth argument.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_parameter_5</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225715 - 0xC00000F3</code></pre></td>
+<td><pre><code>3221225715 - 0xC00000F3</code></pre></td>
 <td>An invalid parameter was passed to a service or function as the fifth argument.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_parameter_6</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225716 - 0xC00000F4</code></pre></td>
+<td><pre><code>3221225716 - 0xC00000F4</code></pre></td>
 <td>An invalid parameter was passed to a service or function as the sixth argument.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_parameter_7</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225717 - 0xC00000F5</code></pre></td>
+<td><pre><code>3221225717 - 0xC00000F5</code></pre></td>
 <td>An invalid parameter was passed to a service or function as the seventh argument.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_parameter_8</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225718 - 0xC00000F6</code></pre></td>
+<td><pre><code>3221225718 - 0xC00000F6</code></pre></td>
 <td>An invalid parameter was passed to a service or function as the eighth argument.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_parameter_9</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225719 - 0xC00000F7</code></pre></td>
+<td><pre><code>3221225719 - 0xC00000F7</code></pre></td>
 <td>An invalid parameter was passed to a service or function as the ninth argument.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_parameter_10</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225720 - 0xC00000F8</code></pre></td>
+<td><pre><code>3221225720 - 0xC00000F8</code></pre></td>
 <td>An invalid parameter was passed to a service or function as the tenth argument.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_parameter_11</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225721 - 0xC00000F9</code></pre></td>
+<td><pre><code>3221225721 - 0xC00000F9</code></pre></td>
 <td>An invalid parameter was passed to a service or function as the eleventh argument.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_parameter_12</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225722 - 0xC00000FA</code></pre></td>
+<td><pre><code>3221225722 - 0xC00000FA</code></pre></td>
 <td>An invalid parameter was passed to a service or function as the twelfth argument.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_redirector_not_started</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225723 - 0xC00000FB</code></pre></td>
+<td><pre><code>3221225723 - 0xC00000FB</code></pre></td>
 <td>An attempt was made to access a network file, but the network software was not yet started.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_redirector_started</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225724 - 0xC00000FC</code></pre></td>
+<td><pre><code>3221225724 - 0xC00000FC</code></pre></td>
 <td>An attempt was made to start the redirector, but the redirector has already been started.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_stack_overflow</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225725 - 0xC00000FD</code></pre></td>
+<td><pre><code>3221225725 - 0xC00000FD</code></pre></td>
 <td>A new guard page for the stack cannot be created.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_such_package</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225726 - 0xC00000FE</code></pre></td>
+<td><pre><code>3221225726 - 0xC00000FE</code></pre></td>
 <td>A specified authentication package is unknown.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_function_table</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225727 - 0xC00000FF</code></pre></td>
+<td><pre><code>3221225727 - 0xC00000FF</code></pre></td>
 <td>A malformed function table was encountered during an unwind operation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_variable_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225728 - 0xC0000100</code></pre></td>
+<td><pre><code>3221225728 - 0xC0000100</code></pre></td>
 <td>Indicates the specified environment variable name was not found in the specified environment block.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_directory_not_empty</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225729 - 0xC0000101</code></pre></td>
+<td><pre><code>3221225729 - 0xC0000101</code></pre></td>
 <td>Indicates that the directory trying to be deleted is not empty.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_file_corrupt_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225730 - 0xC0000102</code></pre></td>
+<td><pre><code>3221225730 - 0xC0000102</code></pre></td>
 <td>{Corrupt File} The file or directory is corrupt and unreadable. Run the Chkdsk utility.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_a_directory</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225731 - 0xC0000103</code></pre></td>
+<td><pre><code>3221225731 - 0xC0000103</code></pre></td>
 <td>A requested opened file is not a directory.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_logon_session_state</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225732 - 0xC0000104</code></pre></td>
+<td><pre><code>3221225732 - 0xC0000104</code></pre></td>
 <td>The logon session is not in a state that is consistent with the requested operation.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_logon_session_collision</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225733 - 0xC0000105</code></pre></td>
+<td><pre><code>3221225733 - 0xC0000105</code></pre></td>
 <td>An internal LSA error has occurred. An authentication package has requested the creation of a logon session but the ID of an already existing logon session has been specified.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_name_too_long</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225734 - 0xC0000106</code></pre></td>
+<td><pre><code>3221225734 - 0xC0000106</code></pre></td>
 <td>A specified name string is too long for its intended use.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_files_open</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225735 - 0xC0000107</code></pre></td>
+<td><pre><code>3221225735 - 0xC0000107</code></pre></td>
 <td>The user attempted to force close the files on a redirected drive, but there were opened files on the drive, and the user did not specify a sufficient level of force.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_connection_in_use</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225736 - 0xC0000108</code></pre></td>
+<td><pre><code>3221225736 - 0xC0000108</code></pre></td>
 <td>The user attempted to force close the files on a redirected drive, but there were opened directories on the drive, and the user did not specify a sufficient level of force.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_message_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225737 - 0xC0000109</code></pre></td>
+<td><pre><code>3221225737 - 0xC0000109</code></pre></td>
 <td>RtlFindMessage could not locate the requested message ID in the message table resource.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_process_is_terminating</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225738 - 0xC000010A</code></pre></td>
+<td><pre><code>3221225738 - 0xC000010A</code></pre></td>
 <td>An attempt was made to duplicate an object handle into or out of an exiting process.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_logon_type</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225739 - 0xC000010B</code></pre></td>
+<td><pre><code>3221225739 - 0xC000010B</code></pre></td>
 <td>Indicates an invalid value has been provided for the LogonType requested.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_guid_translation</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225740 - 0xC000010C</code></pre></td>
+<td><pre><code>3221225740 - 0xC000010C</code></pre></td>
 <td>Indicates that an attempt was made to assign protection to a file system file or directory and one of the SIDs in the security descriptor could not be translated into a GUID that could be stored by the file system. This causes the protection attempt to fail, which may cause a file creation attempt to fail.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_cannot_impersonate</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225741 - 0xC000010D</code></pre></td>
+<td><pre><code>3221225741 - 0xC000010D</code></pre></td>
 <td>Indicates that an attempt has been made to impersonate via a named pipe that has not yet been read from.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_image_already_loaded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225742 - 0xC000010E</code></pre></td>
+<td><pre><code>3221225742 - 0xC000010E</code></pre></td>
 <td>Indicates that the specified image is already loaded.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_abios_not_present</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225743 - 0xC000010F</code></pre></td>
+<td><pre><code>3221225743 - 0xC000010F</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_abios_lid_not_exist</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225744 - 0xC0000110</code></pre></td>
+<td><pre><code>3221225744 - 0xC0000110</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_abios_lid_already_owned</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225745 - 0xC0000111</code></pre></td>
+<td><pre><code>3221225745 - 0xC0000111</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_abios_not_lid_owner</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225746 - 0xC0000112</code></pre></td>
+<td><pre><code>3221225746 - 0xC0000112</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_abios_invalid_command</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225747 - 0xC0000113</code></pre></td>
+<td><pre><code>3221225747 - 0xC0000113</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_abios_invalid_lid</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225748 - 0xC0000114</code></pre></td>
+<td><pre><code>3221225748 - 0xC0000114</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_abios_selector_not_available</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225749 - 0xC0000115</code></pre></td>
+<td><pre><code>3221225749 - 0xC0000115</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_abios_invalid_selector</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225750 - 0xC0000116</code></pre></td>
+<td><pre><code>3221225750 - 0xC0000116</code></pre></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_ldt</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225751 - 0xC0000117</code></pre></td>
+<td><pre><code>3221225751 - 0xC0000117</code></pre></td>
 <td>Indicates that an attempt was made to change the size of the LDT for a process that has no LDT.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_ldt_size</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225752 - 0xC0000118</code></pre></td>
+<td><pre><code>3221225752 - 0xC0000118</code></pre></td>
 <td>Indicates that an attempt was made to grow an LDT by setting its size, or that the size was not an even number of selectors.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_ldt_offset</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225753 - 0xC0000119</code></pre></td>
+<td><pre><code>3221225753 - 0xC0000119</code></pre></td>
 <td>Indicates that the starting value for the LDT information was not an integral multiple of the selector size.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_ldt_descriptor</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225754 - 0xC000011A</code></pre></td>
+<td><pre><code>3221225754 - 0xC000011A</code></pre></td>
 <td>Indicates that the user supplied an invalid descriptor when trying to set up LDT descriptors.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_image_ne_format</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225755 - 0xC000011B</code></pre></td>
+<td><pre><code>3221225755 - 0xC000011B</code></pre></td>
 <td>The specified image file did not have the correct format. It appears to be NE format.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_rxact_invalid_state</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225756 - 0xC000011C</code></pre></td>
+<td><pre><code>3221225756 - 0xC000011C</code></pre></td>
 <td>Indicates that the transaction state of a registry subtree is incompatible with the requested operation. For example, a request has been made to start a new transaction with one already in progress, or a request has been made to apply a transaction when one is not currently in progress.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_rxact_commit_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225757 - 0xC000011D</code></pre></td>
+<td><pre><code>3221225757 - 0xC000011D</code></pre></td>
 <td>Indicates an error has occurred during a registry transaction commit. The database has been left in an unknown, but probably inconsistent, state. The state of the registry transaction is left as COMMITTING.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_mapped_file_size_zero</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225758 - 0xC000011E</code></pre></td>
+<td><pre><code>3221225758 - 0xC000011E</code></pre></td>
 <td>An attempt was made to map a file of size zero with the maximum size specified as zero.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_too_many_opened_files</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225759 - 0xC000011F</code></pre></td>
+<td><pre><code>3221225759 - 0xC000011F</code></pre></td>
 <td>Too many files are opened on a remote server. This error should only be returned by the Windows redirector on a remote drive.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_cancelled</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225760 - 0xC0000120</code></pre></td>
+<td><pre><code>3221225760 - 0xC0000120</code></pre></td>
 <td>The I/O request was canceled.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_cannot_delete</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225761 - 0xC0000121</code></pre></td>
+<td><pre><code>3221225761 - 0xC0000121</code></pre></td>
 <td>An attempt has been made to remove a file or directory that cannot be deleted.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_computer_name</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225762 - 0xC0000122</code></pre></td>
+<td><pre><code>3221225762 - 0xC0000122</code></pre></td>
 <td>Indicates a name that was specified as a remote computer name is syntactically invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_file_deleted</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225763 - 0xC0000123</code></pre></td>
+<td><pre><code>3221225763 - 0xC0000123</code></pre></td>
 <td>An I/O request other than close was performed on a file after it was deleted, which can only happen to a request that did not complete before the last handle was closed via NtClose.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_special_account</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225764 - 0xC0000124</code></pre></td>
+<td><pre><code>3221225764 - 0xC0000124</code></pre></td>
 <td>Indicates an operation that is incompatible with built-in accounts has been attempted on a built-in (special) SAM account. For example, built-in accounts cannot be deleted.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_special_group</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225765 - 0xC0000125</code></pre></td>
+<td><pre><code>3221225765 - 0xC0000125</code></pre></td>
 <td>The operation requested may not be performed on the specified group because it is a built-in special group.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_special_user</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225766 - 0xC0000126</code></pre></td>
+<td><pre><code>3221225766 - 0xC0000126</code></pre></td>
 <td>The operation requested may not be performed on the specified user because it is a built-in special user.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_members_primary_group</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225767 - 0xC0000127</code></pre></td>
+<td><pre><code>3221225767 - 0xC0000127</code></pre></td>
 <td>Indicates a member cannot be removed from a group because the group is currently the member's primary group.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_file_closed</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225768 - 0xC0000128</code></pre></td>
+<td><pre><code>3221225768 - 0xC0000128</code></pre></td>
 <td>An I/O request other than close and several other special case operations was attempted using a file object that had already been closed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_too_many_threads</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225769 - 0xC0000129</code></pre></td>
+<td><pre><code>3221225769 - 0xC0000129</code></pre></td>
 <td>Indicates a process has too many threads to perform the requested action. For example, assignment of a primary token may only be performed when a process has zero or one threads.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_thread_not_in_process</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225770 - 0xC000012A</code></pre></td>
+<td><pre><code>3221225770 - 0xC000012A</code></pre></td>
 <td>An attempt was made to operate on a thread within a specific process, but the specified thread is not in the specified process.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_token_already_in_use</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225771 - 0xC000012B</code></pre></td>
+<td><pre><code>3221225771 - 0xC000012B</code></pre></td>
 <td>An attempt was made to establish a token for use as a primary token but the token is already in use. A token can only be the primary token of one process at a time.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pagefile_quota_exceeded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225772 - 0xC000012C</code></pre></td>
+<td><pre><code>3221225772 - 0xC000012C</code></pre></td>
 <td>The page file quota was exceeded.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_commitment_limit</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225773 - 0xC000012D</code></pre></td>
+<td><pre><code>3221225773 - 0xC000012D</code></pre></td>
 <td>{Out of Virtual Memory} Your system is low on virtual memory. To ensure that Windows runs correctly, increase the size of your virtual memory paging file. For more information, see Help.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_image_le_format</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225774 - 0xC000012E</code></pre></td>
+<td><pre><code>3221225774 - 0xC000012E</code></pre></td>
 <td>The specified image file did not have the correct format: it appears to be LE format.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_image_not_mz</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225775 - 0xC000012F</code></pre></td>
+<td><pre><code>3221225775 - 0xC000012F</code></pre></td>
 <td>The specified image file did not have the correct format: it did not have an initial MZ.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_image_protect</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225776 - 0xC0000130</code></pre></td>
+<td><pre><code>3221225776 - 0xC0000130</code></pre></td>
 <td>The specified image file did not have the correct format: it did not have a proper e_lfarlc in the MZ header.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_image_win_16</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225777 - 0xC0000131</code></pre></td>
+<td><pre><code>3221225777 - 0xC0000131</code></pre></td>
 <td>The specified image file did not have the correct format: it appears to be a 16-bit Windows image.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_logon_server_conflict</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225778 - 0xC0000132</code></pre></td>
+<td><pre><code>3221225778 - 0xC0000132</code></pre></td>
 <td>The Netlogon service cannot start because another Netlogon service running in the domain conflicts with the specified role.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_time_difference_at_dc</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225779 - 0xC0000133</code></pre></td>
+<td><pre><code>3221225779 - 0xC0000133</code></pre></td>
 <td>The time at the primary domain controller is different from the time at the backup domain controller or member server by too large an amount.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_synchronization_required</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225780 - 0xC0000134</code></pre></td>
-<td>The SAM database on a Windows Server is significantly out of synchronization with the copy on the domain controller. A complete synchronization is required.</td>
+<td><pre><code>3221225780 - 0xC0000134</code></pre></td>
+<td>The SAM database on a Windows&amp;nbsp;Server is significantly out of synchronization with the copy on the domain controller. A complete synchronization is required.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_dll_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225781 - 0xC0000135</code></pre></td>
+<td><pre><code>3221225781 - 0xC0000135</code></pre></td>
 <td>{Unable To Locate Component} This application has failed to start because the component was not found. Reinstalling the application may fix this problem.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_open_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225782 - 0xC0000136</code></pre></td>
+<td><pre><code>3221225782 - 0xC0000136</code></pre></td>
 <td>The NtCreateFile API failed. This error should never be returned to an application; it is a place holder for the Windows LAN Manager Redirector to use in its internal error-mapping routines.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_io_privilege_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225783 - 0xC0000137</code></pre></td>
+<td><pre><code>3221225783 - 0xC0000137</code></pre></td>
 <td>{Privilege Failed} The I/O permissions for the process could not be changed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ordinal_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225784 - 0xC0000138</code></pre></td>
+<td><pre><code>3221225784 - 0xC0000138</code></pre></td>
 <td>{Ordinal Not Found} The ordinal could not be located in the dynamic link library.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_entrypoint_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225785 - 0xC0000139</code></pre></td>
+<td><pre><code>3221225785 - 0xC0000139</code></pre></td>
 <td>{Entry Point Not Found} The procedure entry point could not be located in the dynamic link library.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_control_c_exit</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225786 - 0xC000013A</code></pre></td>
+<td><pre><code>3221225786 - 0xC000013A</code></pre></td>
 <td>{Application Exit by CTRL+C} The application terminated as a result of a CTRL+C.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_local_disconnect</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225787 - 0xC000013B</code></pre></td>
+<td><pre><code>3221225787 - 0xC000013B</code></pre></td>
 <td>{Virtual Circuit Closed} The network transport on your computer has closed a network connection. There may or may not be I/O requests outstanding.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_remote_disconnect</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225788 - 0xC000013C</code></pre></td>
+<td><pre><code>3221225788 - 0xC000013C</code></pre></td>
 <td>{Virtual Circuit Closed} The network transport on a remote computer has closed a network connection. There may or may not be I/O requests outstanding.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_remote_resources</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225789 - 0xC000013D</code></pre></td>
+<td><pre><code>3221225789 - 0xC000013D</code></pre></td>
 <td>{Insufficient Resources on Remote Computer} The remote computer has insufficient resources to complete the network request. For example, the remote computer may not have enough available memory to carry out the request at this time.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_link_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225790 - 0xC000013E</code></pre></td>
+<td><pre><code>3221225790 - 0xC000013E</code></pre></td>
 <td>{Virtual Circuit Closed} An existing connection (virtual circuit) has been broken at the remote computer. There is probably something wrong with the network software protocol or the network hardware on the remote computer.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_link_timeout</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225791 - 0xC000013F</code></pre></td>
+<td><pre><code>3221225791 - 0xC000013F</code></pre></td>
 <td>{Virtual Circuit Closed} The network transport on your computer has closed a network connection because it had to wait too long for a response from the remote computer.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_connection</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225792 - 0xC0000140</code></pre></td>
+<td><pre><code>3221225792 - 0xC0000140</code></pre></td>
 <td>The connection handle that was given to the transport was invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_address</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225793 - 0xC0000141</code></pre></td>
+<td><pre><code>3221225793 - 0xC0000141</code></pre></td>
 <td>The address handle that was given to the transport was invalid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_dll_init_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225794 - 0xC0000142</code></pre></td>
+<td><pre><code>3221225794 - 0xC0000142</code></pre></td>
 <td>{DLL Initialization Failed} Initialization of the dynamic link library failed. The process is terminating abnormally.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_missing_systemfile</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225795 - 0xC0000143</code></pre></td>
+<td><pre><code>3221225795 - 0xC0000143</code></pre></td>
 <td>{Missing System File} The required system file is bad or missing.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unhandled_exception</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225796 - 0xC0000144</code></pre></td>
+<td><pre><code>3221225796 - 0xC0000144</code></pre></td>
 <td>{Application Error} An exception occurred in the application.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_app_init_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225797 - 0xC0000145</code></pre></td>
+<td><pre><code>3221225797 - 0xC0000145</code></pre></td>
 <td>{Application Error} The application failed to initialize properly. Click OK to terminate the application.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pagefile_create_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225798 - 0xC0000146</code></pre></td>
+<td><pre><code>3221225798 - 0xC0000146</code></pre></td>
 <td>{Unable to Create Paging File} The creation of the paging file failed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_pagefile</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225799 - 0xC0000147</code></pre></td>
+<td><pre><code>3221225799 - 0xC0000147</code></pre></td>
 <td>{No Paging File Specified} No paging file was specified in the system configuration.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_level</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225800 - 0xC0000148</code></pre></td>
+<td><pre><code>3221225800 - 0xC0000148</code></pre></td>
 <td>{Incorrect System Call Level} An invalid level was passed into the specified system call.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wrong_password_core</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225801 - 0xC0000149</code></pre></td>
+<td><pre><code>3221225801 - 0xC0000149</code></pre></td>
 <td>{Incorrect Password to LAN Manager Server} You specified an incorrect password to a LAN Manager 2.x or MS-NET server.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_illegal_float_context</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225802 - 0xC000014A</code></pre></td>
+<td><pre><code>3221225802 - 0xC000014A</code></pre></td>
 <td>{EXCEPTION} A real-mode application issued a floating-point instruction and floating-point hardware is not present.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pipe_broken</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225803 - 0xC000014B</code></pre></td>
+<td><pre><code>3221225803 - 0xC000014B</code></pre></td>
 <td>The pipe operation has failed because the other end of the pipe has been closed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_registry_corrupt</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225804 - 0xC000014C</code></pre></td>
+<td><pre><code>3221225804 - 0xC000014C</code></pre></td>
 <td>{The Registry Is Corrupt} The structure of one of the files that contains registry data is corrupt; the image of the file in memory is corrupt; or the file could not be recovered because the alternate copy or log was absent or corrupt.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_registry_io_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225805 - 0xC000014D</code></pre></td>
+<td><pre><code>3221225805 - 0xC000014D</code></pre></td>
 <td>An I/O operation initiated by the Registry failed and cannot be recovered. The registry could not read in, write out, or flush one of the files that contain the system's image of the registry.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_event_pair</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225806 - 0xC000014E</code></pre></td>
+<td><pre><code>3221225806 - 0xC000014E</code></pre></td>
 <td>An event pair synchronization operation was performed using the thread-specific client/server event pair object, but no event pair object was associated with the thread.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unrecognized_volume</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225807 - 0xC000014F</code></pre></td>
+<td><pre><code>3221225807 - 0xC000014F</code></pre></td>
 <td>The volume does not contain a recognized file system. Be sure that all required file system drivers are loaded and that the volume is not corrupt.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_serial_no_device_inited</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225808 - 0xC0000150</code></pre></td>
+<td><pre><code>3221225808 - 0xC0000150</code></pre></td>
 <td>No serial device was successfully initialized. The serial driver will unload.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_such_alias</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225809 - 0xC0000151</code></pre></td>
+<td><pre><code>3221225809 - 0xC0000151</code></pre></td>
 <td>The specified local group does not exist.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_member_not_in_alias</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225810 - 0xC0000152</code></pre></td>
+<td><pre><code>3221225810 - 0xC0000152</code></pre></td>
 <td>The specified account name is not a member of the group.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_member_in_alias</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225811 - 0xC0000153</code></pre></td>
+<td><pre><code>3221225811 - 0xC0000153</code></pre></td>
 <td>The specified account name is already a member of the group.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_alias_exists</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225812 - 0xC0000154</code></pre></td>
+<td><pre><code>3221225812 - 0xC0000154</code></pre></td>
 <td>The specified local group already exists.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_logon_not_granted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225813 - 0xC0000155</code></pre></td>
+<td><pre><code>3221225813 - 0xC0000155</code></pre></td>
 <td>A requested type of logon (for example, interactive, network, and service) is not granted by the local security policy of the target system. Ask the system administrator to grant the necessary form of logon.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_too_many_secrets</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225814 - 0xC0000156</code></pre></td>
+<td><pre><code>3221225814 - 0xC0000156</code></pre></td>
 <td>The maximum number of secrets that may be stored in a single system was exceeded. The length and number of secrets is limited to satisfy U.S. State Department export restrictions.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_secret_too_long</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225815 - 0xC0000157</code></pre></td>
+<td><pre><code>3221225815 - 0xC0000157</code></pre></td>
 <td>The length of a secret exceeds the maximum allowable length. The length and number of secrets is limited to satisfy U.S. State Department export restrictions.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_internal_db_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225816 - 0xC0000158</code></pre></td>
+<td><pre><code>3221225816 - 0xC0000158</code></pre></td>
 <td>The local security authority (LSA) database contains an internal inconsistency.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_fullscreen_mode</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225817 - 0xC0000159</code></pre></td>
+<td><pre><code>3221225817 - 0xC0000159</code></pre></td>
 <td>The requested operation cannot be performed in full-screen mode.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_too_many_context_ids</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225818 - 0xC000015A</code></pre></td>
+<td><pre><code>3221225818 - 0xC000015A</code></pre></td>
 <td>During a logon attempt, the user's security context accumulated too many security IDs. This is a very unusual situation. Remove the user from some global or local groups to reduce the number of security IDs to incorporate into the security context.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_logon_type_not_granted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225819 - 0xC000015B</code></pre></td>
+<td><pre><code>3221225819 - 0xC000015B</code></pre></td>
 <td>A user has requested a type of logon (for example, interactive or network) that has not been granted. An administrator has control over who may logon interactively and through the network.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_registry_file</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225820 - 0xC000015C</code></pre></td>
+<td><pre><code>3221225820 - 0xC000015C</code></pre></td>
 <td>The system has attempted to load or restore a file into the registry, and the specified file is not in the format of a registry file.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_nt_cross_encryption_required</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225821 - 0xC000015D</code></pre></td>
+<td><pre><code>3221225821 - 0xC000015D</code></pre></td>
 <td>An attempt was made to change a user password in the security account manager without providing the necessary Windows cross-encrypted password.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_domain_ctrlr_config_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225822 - 0xC000015E</code></pre></td>
-<td>A Windows Server has an incorrect configuration.</td>
+<td><pre><code>3221225822 - 0xC000015E</code></pre></td>
+<td>A Windows&amp;nbsp;Server has an incorrect configuration.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ft_missing_member</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225823 - 0xC000015F</code></pre></td>
+<td><pre><code>3221225823 - 0xC000015F</code></pre></td>
 <td>An attempt was made to explicitly access the secondary copy of information via a device control to the fault tolerance driver and the secondary copy is not present in the system.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ill_formed_service_entry</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225824 - 0xC0000160</code></pre></td>
+<td><pre><code>3221225824 - 0xC0000160</code></pre></td>
 <td>A configuration registry node that represents a driver service entry was ill-formed and did not contain the required value entries.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_illegal_character</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225825 - 0xC0000161</code></pre></td>
+<td><pre><code>3221225825 - 0xC0000161</code></pre></td>
 <td>An illegal character was encountered. For a multibyte character set, this includes a lead byte without a succeeding trail byte. For the Unicode character set this includes the characters 0xFFFF and 0xFFFE.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unmappable_character</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225826 - 0xC0000162</code></pre></td>
+<td><pre><code>3221225826 - 0xC0000162</code></pre></td>
 <td>No mapping for the Unicode character exists in the target multibyte code page.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_undefined_character</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225827 - 0xC0000163</code></pre></td>
+<td><pre><code>3221225827 - 0xC0000163</code></pre></td>
 <td>The Unicode character is not defined in the Unicode character set that is installed on the system.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_floppy_volume</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225828 - 0xC0000164</code></pre></td>
+<td><pre><code>3221225828 - 0xC0000164</code></pre></td>
 <td>The paging file cannot be created on a floppy disk.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_floppy_id_mark_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225829 - 0xC0000165</code></pre></td>
+<td><pre><code>3221225829 - 0xC0000165</code></pre></td>
 <td>{Floppy Disk Error} While accessing a floppy disk, an ID address mark was not found.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_floppy_wrong_cylinder</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225830 - 0xC0000166</code></pre></td>
+<td><pre><code>3221225830 - 0xC0000166</code></pre></td>
 <td>{Floppy Disk Error} While accessing a floppy disk, the track address from the sector ID field was found to be different from the track address that is maintained by the controller.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_floppy_unknown_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225831 - 0xC0000167</code></pre></td>
+<td><pre><code>3221225831 - 0xC0000167</code></pre></td>
 <td>{Floppy Disk Error} The floppy disk controller reported an error that is not recognized by the floppy disk driver.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_floppy_bad_registers</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225832 - 0xC0000168</code></pre></td>
+<td><pre><code>3221225832 - 0xC0000168</code></pre></td>
 <td>{Floppy Disk Error} While accessing a floppy-disk, the controller returned inconsistent results via its registers.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_disk_recalibrate_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225833 - 0xC0000169</code></pre></td>
+<td><pre><code>3221225833 - 0xC0000169</code></pre></td>
 <td>{Hard Disk Error} While accessing the hard disk, a recalibrate operation failed, even after retries.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_disk_operation_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225834 - 0xC000016A</code></pre></td>
+<td><pre><code>3221225834 - 0xC000016A</code></pre></td>
 <td>{Hard Disk Error} While accessing the hard disk, a disk operation failed even after retries.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_disk_reset_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225835 - 0xC000016B</code></pre></td>
+<td><pre><code>3221225835 - 0xC000016B</code></pre></td>
 <td>{Hard Disk Error} While accessing the hard disk, a disk controller reset was needed, but even that failed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_shared_irq_busy</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225836 - 0xC000016C</code></pre></td>
+<td><pre><code>3221225836 - 0xC000016C</code></pre></td>
 <td>An attempt was made to open a device that was sharing an interrupt request (IRQ) with other devices. At least one other device that uses that IRQ was already opened. Two concurrent opens of devices that share an IRQ and only work via interrupts is not supported for the particular bus type that the devices use.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ft_orphaning</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225837 - 0xC000016D</code></pre></td>
+<td><pre><code>3221225837 - 0xC000016D</code></pre></td>
 <td>{FT Orphaning} A disk that is part of a fault-tolerant volume can no longer be accessed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bios_failed_to_connect_interrupt</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225838 - 0xC000016E</code></pre></td>
+<td><pre><code>3221225838 - 0xC000016E</code></pre></td>
 <td>The basic input/output system (BIOS) failed to connect a system interrupt to the device or bus for which the device is connected.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_partition_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225842 - 0xC0000172</code></pre></td>
+<td><pre><code>3221225842 - 0xC0000172</code></pre></td>
 <td>The tape could not be partitioned.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_block_length</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225843 - 0xC0000173</code></pre></td>
+<td><pre><code>3221225843 - 0xC0000173</code></pre></td>
 <td>When accessing a new tape of a multi-volume partition, the current blocksize is incorrect.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_not_partitioned</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225844 - 0xC0000174</code></pre></td>
+<td><pre><code>3221225844 - 0xC0000174</code></pre></td>
 <td>The tape partition information could not be found when loading a tape.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unable_to_lock_media</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225845 - 0xC0000175</code></pre></td>
+<td><pre><code>3221225845 - 0xC0000175</code></pre></td>
 <td>An attempt to lock the eject media mechanism failed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unable_to_unload_media</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225846 - 0xC0000176</code></pre></td>
+<td><pre><code>3221225846 - 0xC0000176</code></pre></td>
 <td>An attempt to unload media failed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_eom_overflow</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225847 - 0xC0000177</code></pre></td>
+<td><pre><code>3221225847 - 0xC0000177</code></pre></td>
 <td>The physical end of tape was detected.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_media</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225848 - 0xC0000178</code></pre></td>
+<td><pre><code>3221225848 - 0xC0000178</code></pre></td>
 <td>{No Media} There is no media in the drive.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_such_member</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225850 - 0xC000017A</code></pre></td>
+<td><pre><code>3221225850 - 0xC000017A</code></pre></td>
 <td>A member could not be added to or removed from the local group because the member does not exist.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_member</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225851 - 0xC000017B</code></pre></td>
+<td><pre><code>3221225851 - 0xC000017B</code></pre></td>
 <td>A new member could not be added to a local group because the member has the wrong account type.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_key_deleted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225852 - 0xC000017C</code></pre></td>
+<td><pre><code>3221225852 - 0xC000017C</code></pre></td>
 <td>An illegal operation was attempted on a registry key that has been marked for deletion.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_log_space</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225853 - 0xC000017D</code></pre></td>
+<td><pre><code>3221225853 - 0xC000017D</code></pre></td>
 <td>The system could not allocate the required space in a registry log.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_too_many_sids</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225854 - 0xC000017E</code></pre></td>
+<td><pre><code>3221225854 - 0xC000017E</code></pre></td>
 <td>Too many SIDs have been specified.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_lm_cross_encryption_required</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225855 - 0xC000017F</code></pre></td>
+<td><pre><code>3221225855 - 0xC000017F</code></pre></td>
 <td>An attempt was made to change a user password in the security account manager without providing the necessary LM cross-encrypted password.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_key_has_children</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225856 - 0xC0000180</code></pre></td>
+<td><pre><code>3221225856 - 0xC0000180</code></pre></td>
 <td>An attempt was made to create a symbolic link in a registry key that already has subkeys or values.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_child_must_be_volatile</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225857 - 0xC0000181</code></pre></td>
+<td><pre><code>3221225857 - 0xC0000181</code></pre></td>
 <td>An attempt was made to create a stable subkey under a volatile parent key.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_configuration_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225858 - 0xC0000182</code></pre></td>
+<td><pre><code>3221225858 - 0xC0000182</code></pre></td>
 <td>The I/O device is configured incorrectly or the configuration parameters to the driver are incorrect.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_driver_internal_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225859 - 0xC0000183</code></pre></td>
+<td><pre><code>3221225859 - 0xC0000183</code></pre></td>
 <td>An error was detected between two drivers or within an I/O driver.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_invalid_device_state</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225860 - 0xC0000184</code></pre></td>
+<td><pre><code>3221225860 - 0xC0000184</code></pre></td>
 <td>The device is not in a valid state to perform this request.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_io_device_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225861 - 0xC0000185</code></pre></td>
+<td><pre><code>3221225861 - 0xC0000185</code></pre></td>
 <td>The I/O device reported an I/O error.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_protocol_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225862 - 0xC0000186</code></pre></td>
+<td><pre><code>3221225862 - 0xC0000186</code></pre></td>
 <td>A protocol error was detected between the driver and the device.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_backup_controller</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225863 - 0xC0000187</code></pre></td>
+<td><pre><code>3221225863 - 0xC0000187</code></pre></td>
 <td>This operation is only allowed for the primary domain controller of the domain.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_log_file_full</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225864 - 0xC0000188</code></pre></td>
+<td><pre><code>3221225864 - 0xC0000188</code></pre></td>
 <td>The log file space is insufficient to support this operation.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_too_late</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225865 - 0xC0000189</code></pre></td>
+<td><pre><code>3221225865 - 0xC0000189</code></pre></td>
 <td>A write operation was attempted to a volume after it was dismounted.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_trust_lsa_secret</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225866 - 0xC000018A</code></pre></td>
+<td><pre><code>3221225866 - 0xC000018A</code></pre></td>
 <td>The workstation does not have a trust secret for the primary domain in the local LSA database.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_trust_sam_account</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225867 - 0xC000018B</code></pre></td>
-<td>The SAM database on the Windows Server does not have a computer account for this workstation trust relationship.</td>
+<td><pre><code>3221225867 - 0xC000018B</code></pre></td>
+<td>The SAM database on the Windows&amp;nbsp;Server does not have a computer account for this workstation trust relationship.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_trusted_domain_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225868 - 0xC000018C</code></pre></td>
+<td><pre><code>3221225868 - 0xC000018C</code></pre></td>
 <td>The logon request failed because the trust relationship between the primary domain and the trusted domain failed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_trusted_relationship_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225869 - 0xC000018D</code></pre></td>
+<td><pre><code>3221225869 - 0xC000018D</code></pre></td>
 <td>The logon request failed because the trust relationship between this workstation and the primary domain failed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_eventlog_file_corrupt</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225870 - 0xC000018E</code></pre></td>
+<td><pre><code>3221225870 - 0xC000018E</code></pre></td>
 <td>The Eventlog log file is corrupt.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_eventlog_cant_start</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225871 - 0xC000018F</code></pre></td>
+<td><pre><code>3221225871 - 0xC000018F</code></pre></td>
 <td>No Eventlog log file could be opened. The Eventlog service did not start.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_trust_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225872 - 0xC0000190</code></pre></td>
+<td><pre><code>3221225872 - 0xC0000190</code></pre></td>
 <td>The network logon failed. This may be because the validation authority cannot be reached.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_mutant_limit_exceeded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225873 - 0xC0000191</code></pre></td>
+<td><pre><code>3221225873 - 0xC0000191</code></pre></td>
 <td>An attempt was made to acquire a mutant such that its maximum count would have been exceeded.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_netlogon_not_started</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225874 - 0xC0000192</code></pre></td>
+<td><pre><code>3221225874 - 0xC0000192</code></pre></td>
 <td>An attempt was made to logon, but the NetLogon service was not started.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_account_expired</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225875 - 0xC0000193</code></pre></td>
+<td><pre><code>3221225875 - 0xC0000193</code></pre></td>
 <td>The user account has expired.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_possible_deadlock</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225876 - 0xC0000194</code></pre></td>
+<td><pre><code>3221225876 - 0xC0000194</code></pre></td>
 <td>{EXCEPTION} Possible deadlock condition.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_network_credential_conflict</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225877 - 0xC0000195</code></pre></td>
+<td><pre><code>3221225877 - 0xC0000195</code></pre></td>
 <td>Multiple connections to a server or shared resource by the same user, using more than one user name, are not allowed. Disconnect all previous connections to the server or shared resource and try again.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_remote_session_limit</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225878 - 0xC0000196</code></pre></td>
+<td><pre><code>3221225878 - 0xC0000196</code></pre></td>
 <td>An attempt was made to establish a session to a network server, but there are already too many sessions established to that server.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_eventlog_file_changed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225879 - 0xC0000197</code></pre></td>
+<td><pre><code>3221225879 - 0xC0000197</code></pre></td>
 <td>The log file has changed between reads.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_nologon_interdomain_trust_account</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225880 - 0xC0000198</code></pre></td>
+<td><pre><code>3221225880 - 0xC0000198</code></pre></td>
 <td>The account used is an interdomain trust account. Use your global user account or local user account to access this server.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_nologon_workstation_trust_account</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225881 - 0xC0000199</code></pre></td>
+<td><pre><code>3221225881 - 0xC0000199</code></pre></td>
 <td>The account used is a computer account. Use your global user account or local user account to access this server.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_nologon_server_trust_account</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225882 - 0xC000019A</code></pre></td>
+<td><pre><code>3221225882 - 0xC000019A</code></pre></td>
 <td>The account used is a server trust account. Use your global user account or local user account to access this server.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_domain_trust_inconsistent</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225883 - 0xC000019B</code></pre></td>
+<td><pre><code>3221225883 - 0xC000019B</code></pre></td>
 <td>The name or SID of the specified domain is inconsistent with the trust information for that domain.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_fs_driver_required</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225884 - 0xC000019C</code></pre></td>
+<td><pre><code>3221225884 - 0xC000019C</code></pre></td>
 <td>A volume has been accessed for which a file system driver is required that has not yet been loaded.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_user_session_key</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225986 - 0xC0000202</code></pre></td>
+<td><pre><code>3221225986 - 0xC0000202</code></pre></td>
 <td>There is no user session key for the specified logon session.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_user_session_deleted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225987 - 0xC0000203</code></pre></td>
+<td><pre><code>3221225987 - 0xC0000203</code></pre></td>
 <td>The remote user session has been deleted.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_resource_lang_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225988 - 0xC0000204</code></pre></td>
+<td><pre><code>3221225988 - 0xC0000204</code></pre></td>
 <td>Indicates the specified resource language ID cannot be found in the image file.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_insuff_server_resources</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221225989 - 0xC0000205</code></pre></td>
+<td><pre><code>3221225989 - 0xC0000205</code></pre></td>
 <td>Insufficient server resources exist to complete the request.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_buffer_size</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225990 - 0xC0000206</code></pre></td>
+<td><pre><code>3221225990 - 0xC0000206</code></pre></td>
 <td>The size of the buffer is invalid for the specified operation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_address_component</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225991 - 0xC0000207</code></pre></td>
+<td><pre><code>3221225991 - 0xC0000207</code></pre></td>
 <td>The transport rejected the specified network address as invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_address_wildcard</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225992 - 0xC0000208</code></pre></td>
+<td><pre><code>3221225992 - 0xC0000208</code></pre></td>
 <td>The transport rejected the specified network address due to invalid use of a wildcard.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_too_many_addresses</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225993 - 0xC0000209</code></pre></td>
+<td><pre><code>3221225993 - 0xC0000209</code></pre></td>
 <td>The transport address could not be opened because all the available addresses are in use.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_address_already_exists</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225994 - 0xC000020A</code></pre></td>
+<td><pre><code>3221225994 - 0xC000020A</code></pre></td>
 <td>The transport address could not be opened because it already exists.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_address_closed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225995 - 0xC000020B</code></pre></td>
+<td><pre><code>3221225995 - 0xC000020B</code></pre></td>
 <td>The transport address is now closed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_connection_disconnected</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225996 - 0xC000020C</code></pre></td>
+<td><pre><code>3221225996 - 0xC000020C</code></pre></td>
 <td>The transport connection is now disconnected.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_connection_reset</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225997 - 0xC000020D</code></pre></td>
+<td><pre><code>3221225997 - 0xC000020D</code></pre></td>
 <td>The transport connection has been reset.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_too_many_nodes</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225998 - 0xC000020E</code></pre></td>
+<td><pre><code>3221225998 - 0xC000020E</code></pre></td>
 <td>The transport cannot dynamically acquire any more nodes.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_transaction_aborted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221225999 - 0xC000020F</code></pre></td>
+<td><pre><code>3221225999 - 0xC000020F</code></pre></td>
 <td>The transport aborted a pending transaction.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_transaction_timed_out</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226000 - 0xC0000210</code></pre></td>
+<td><pre><code>3221226000 - 0xC0000210</code></pre></td>
 <td>The transport timed out a request that is waiting for a response.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_transaction_no_release</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226001 - 0xC0000211</code></pre></td>
+<td><pre><code>3221226001 - 0xC0000211</code></pre></td>
 <td>The transport did not receive a release for a pending response.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_transaction_no_match</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226002 - 0xC0000212</code></pre></td>
+<td><pre><code>3221226002 - 0xC0000212</code></pre></td>
 <td>The transport did not find a transaction that matches the specific token.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_transaction_responded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226003 - 0xC0000213</code></pre></td>
+<td><pre><code>3221226003 - 0xC0000213</code></pre></td>
 <td>The transport had previously responded to a transaction request.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_transaction_invalid_id</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226004 - 0xC0000214</code></pre></td>
+<td><pre><code>3221226004 - 0xC0000214</code></pre></td>
 <td>The transport does not recognize the specified transaction request ID.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_transaction_invalid_type</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226005 - 0xC0000215</code></pre></td>
+<td><pre><code>3221226005 - 0xC0000215</code></pre></td>
 <td>The transport does not recognize the specified transaction request type.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_server_session</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226006 - 0xC0000216</code></pre></td>
+<td><pre><code>3221226006 - 0xC0000216</code></pre></td>
 <td>The transport can only process the specified request on the server side of a session.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_client_session</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226007 - 0xC0000217</code></pre></td>
+<td><pre><code>3221226007 - 0xC0000217</code></pre></td>
 <td>The transport can only process the specified request on the client side of a session.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_cannot_load_registry_file</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226008 - 0xC0000218</code></pre></td>
+<td><pre><code>3221226008 - 0xC0000218</code></pre></td>
 <td>{Registry File Failure} The registry cannot load the hive (file). It is corrupt, absent, or not writable.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_debug_attach_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226009 - 0xC0000219</code></pre></td>
+<td><pre><code>3221226009 - 0xC0000219</code></pre></td>
 <td>{Unexpected Failure in DebugActiveProcess} An unexpected failure occurred while processing a DebugActiveProcess API request. You may choose OK to terminate the process, or Cancel to ignore the error.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_system_process_terminated</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226010 - 0xC000021A</code></pre></td>
+<td><pre><code>3221226010 - 0xC000021A</code></pre></td>
 <td>{Fatal System Error} The system process terminated unexpectedly. The system has been shut down.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_data_not_accepted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226011 - 0xC000021B</code></pre></td>
+<td><pre><code>3221226011 - 0xC000021B</code></pre></td>
 <td>{Data Not Accepted} The TDI client could not handle the data received during an indication.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_browser_servers_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226012 - 0xC000021C</code></pre></td>
+<td><pre><code>3221226012 - 0xC000021C</code></pre></td>
 <td>{Unable to Retrieve Browser Server List} The list of servers for this workgroup is not currently available.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_vdm_hard_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226013 - 0xC000021D</code></pre></td>
+<td><pre><code>3221226013 - 0xC000021D</code></pre></td>
 <td>NTVDM encountered a hard error.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_driver_cancel_timeout</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226014 - 0xC000021E</code></pre></td>
+<td><pre><code>3221226014 - 0xC000021E</code></pre></td>
 <td>{Cancel Timeout} The driver failed to complete a canceled I/O request in the allotted time.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_reply_message_mismatch</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226015 - 0xC000021F</code></pre></td>
+<td><pre><code>3221226015 - 0xC000021F</code></pre></td>
 <td>{Reply Message Mismatch} An attempt was made to reply to an LPC message, but the thread specified by the client ID in the message was not waiting on that message.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_mapped_alignment</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226016 - 0xC0000220</code></pre></td>
+<td><pre><code>3221226016 - 0xC0000220</code></pre></td>
 <td>{Mapped View Alignment Incorrect} An attempt was made to map a view of a file, but either the specified base address or the offset into the file were not aligned on the proper allocation granularity.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_image_checksum_mismatch</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226017 - 0xC0000221</code></pre></td>
+<td><pre><code>3221226017 - 0xC0000221</code></pre></td>
 <td>{Bad Image Checksum} The image is possibly corrupt. The header checksum does not match the computed checksum.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_lost_writebehind_data</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226018 - 0xC0000222</code></pre></td>
+<td><pre><code>3221226018 - 0xC0000222</code></pre></td>
 <td>{Delayed Write Failed} Windows was unable to save all the data for the file. The data has been lost. This error may be caused by a failure of your computer hardware or network connection. Try to save this file elsewhere.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_client_server_parameters_invalid</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226019 - 0xC0000223</code></pre></td>
+<td><pre><code>3221226019 - 0xC0000223</code></pre></td>
 <td>The parameters passed to the server in the client/server shared memory window were invalid. Too much data may have been put in the shared memory window.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_password_must_change</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226020 - 0xC0000224</code></pre></td>
+<td><pre><code>3221226020 - 0xC0000224</code></pre></td>
 <td>The user password must be changed before logging on the first time.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226021 - 0xC0000225</code></pre></td>
+<td><pre><code>3221226021 - 0xC0000225</code></pre></td>
 <td>The object was not found.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_tiny_stream</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226022 - 0xC0000226</code></pre></td>
+<td><pre><code>3221226022 - 0xC0000226</code></pre></td>
 <td>The stream is not a tiny stream.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_recovery_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226023 - 0xC0000227</code></pre></td>
+<td><pre><code>3221226023 - 0xC0000227</code></pre></td>
 <td>A transaction recovery failed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_stack_overflow_read</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226024 - 0xC0000228</code></pre></td>
+<td><pre><code>3221226024 - 0xC0000228</code></pre></td>
 <td>The request must be handled by the stack overflow code.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_fail_check</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226025 - 0xC0000229</code></pre></td>
+<td><pre><code>3221226025 - 0xC0000229</code></pre></td>
 <td>A consistency check failed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_duplicate_objectid</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226026 - 0xC000022A</code></pre></td>
+<td><pre><code>3221226026 - 0xC000022A</code></pre></td>
 <td>The attempt to insert the ID in the index failed because the ID is already in the index.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_objectid_exists</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226027 - 0xC000022B</code></pre></td>
+<td><pre><code>3221226027 - 0xC000022B</code></pre></td>
 <td>The attempt to set the object ID failed because the object already has an ID.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_convert_to_large</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226028 - 0xC000022C</code></pre></td>
+<td><pre><code>3221226028 - 0xC000022C</code></pre></td>
 <td>Internal OFS status codes indicating how an allocation operation is handled. Either it is retried after the containing oNode is moved or the extent stream is converted to a large stream.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_retry</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226029 - 0xC000022D</code></pre></td>
+<td><pre><code>3221226029 - 0xC000022D</code></pre></td>
 <td>The request needs to be retried.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_found_out_of_scope</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226030 - 0xC000022E</code></pre></td>
+<td><pre><code>3221226030 - 0xC000022E</code></pre></td>
 <td>The attempt to find the object found an object on the volume that matches by ID; however, it is out of the scope of the handle that is used for the operation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_allocate_bucket</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226031 - 0xC000022F</code></pre></td>
+<td><pre><code>3221226031 - 0xC000022F</code></pre></td>
 <td>The bucket array must be grown. Retry the transaction after doing so.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_propset_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226032 - 0xC0000230</code></pre></td>
+<td><pre><code>3221226032 - 0xC0000230</code></pre></td>
 <td>The specified property set does not exist on the object.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_marshall_overflow</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226033 - 0xC0000231</code></pre></td>
+<td><pre><code>3221226033 - 0xC0000231</code></pre></td>
 <td>The user/kernel marshaling buffer has overflowed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_variant</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226034 - 0xC0000232</code></pre></td>
+<td><pre><code>3221226034 - 0xC0000232</code></pre></td>
 <td>The supplied variant structure contains invalid data.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_domain_controller_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226035 - 0xC0000233</code></pre></td>
+<td><pre><code>3221226035 - 0xC0000233</code></pre></td>
 <td>A domain controller for this domain was not found.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_account_locked_out</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226036 - 0xC0000234</code></pre></td>
+<td><pre><code>3221226036 - 0xC0000234</code></pre></td>
 <td>The user account has been automatically locked because too many invalid logon attempts or password change attempts have been requested.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_handle_not_closable</code></pre></td>
 <td>Warning</td>
-<td><pre><code>3221226037 - 0xC0000235</code></pre></td>
+<td><pre><code>3221226037 - 0xC0000235</code></pre></td>
 <td>NtClose was called on a handle that was protected from close via NtSetInformationObject.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_connection_refused</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226038 - 0xC0000236</code></pre></td>
+<td><pre><code>3221226038 - 0xC0000236</code></pre></td>
 <td>The transport-connection attempt was refused by the remote system.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_graceful_disconnect</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226039 - 0xC0000237</code></pre></td>
+<td><pre><code>3221226039 - 0xC0000237</code></pre></td>
 <td>The transport connection was gracefully closed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_address_already_associated</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226040 - 0xC0000238</code></pre></td>
+<td><pre><code>3221226040 - 0xC0000238</code></pre></td>
 <td>The transport endpoint already has an address associated with it.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_address_not_associated</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226041 - 0xC0000239</code></pre></td>
+<td><pre><code>3221226041 - 0xC0000239</code></pre></td>
 <td>An address has not yet been associated with the transport endpoint.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_connection_invalid</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226042 - 0xC000023A</code></pre></td>
+<td><pre><code>3221226042 - 0xC000023A</code></pre></td>
 <td>An operation was attempted on a nonexistent transport connection.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_connection_active</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226043 - 0xC000023B</code></pre></td>
+<td><pre><code>3221226043 - 0xC000023B</code></pre></td>
 <td>An invalid operation was attempted on an active transport connection.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_network_unreachable</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226044 - 0xC000023C</code></pre></td>
+<td><pre><code>3221226044 - 0xC000023C</code></pre></td>
 <td>The remote network is not reachable by the transport.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_host_unreachable</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226045 - 0xC000023D</code></pre></td>
+<td><pre><code>3221226045 - 0xC000023D</code></pre></td>
 <td>The remote system is not reachable by the transport.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_protocol_unreachable</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226046 - 0xC000023E</code></pre></td>
+<td><pre><code>3221226046 - 0xC000023E</code></pre></td>
 <td>The remote system does not support the transport protocol.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_port_unreachable</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226047 - 0xC000023F</code></pre></td>
+<td><pre><code>3221226047 - 0xC000023F</code></pre></td>
 <td>No service is operating at the destination port of the transport on the remote system.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_request_aborted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226048 - 0xC0000240</code></pre></td>
+<td><pre><code>3221226048 - 0xC0000240</code></pre></td>
 <td>The request was aborted.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_connection_aborted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226049 - 0xC0000241</code></pre></td>
+<td><pre><code>3221226049 - 0xC0000241</code></pre></td>
 <td>The transport connection was aborted by the local system.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_compression_buffer</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226050 - 0xC0000242</code></pre></td>
+<td><pre><code>3221226050 - 0xC0000242</code></pre></td>
 <td>The specified buffer contains ill-formed data.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_user_mapped_file</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226051 - 0xC0000243</code></pre></td>
+<td><pre><code>3221226051 - 0xC0000243</code></pre></td>
 <td>The requested operation cannot be performed on a file with a user mapped section open.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_audit_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226052 - 0xC0000244</code></pre></td>
+<td><pre><code>3221226052 - 0xC0000244</code></pre></td>
 <td>{Audit Failed} An attempt to generate a security audit failed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_timer_resolution_not_set</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226053 - 0xC0000245</code></pre></td>
+<td><pre><code>3221226053 - 0xC0000245</code></pre></td>
 <td>The timer resolution was not previously set by the current process.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_connection_count_limit</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226054 - 0xC0000246</code></pre></td>
+<td><pre><code>3221226054 - 0xC0000246</code></pre></td>
 <td>A connection to the server could not be made because the limit on the number of concurrent connections for this account has been reached.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_login_time_restriction</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226055 - 0xC0000247</code></pre></td>
+<td><pre><code>3221226055 - 0xC0000247</code></pre></td>
 <td>Attempting to log on during an unauthorized time of day for this account.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_login_wksta_restriction</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226056 - 0xC0000248</code></pre></td>
+<td><pre><code>3221226056 - 0xC0000248</code></pre></td>
 <td>The account is not authorized to log on from this station.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_image_mp_up_mismatch</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226057 - 0xC0000249</code></pre></td>
+<td><pre><code>3221226057 - 0xC0000249</code></pre></td>
 <td>{UP/MP Image Mismatch} The image has been modified for use on a uniprocessor system, but you are running it on a multiprocessor machine. Reinstall the image file.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_insufficient_logon_info</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226064 - 0xC0000250</code></pre></td>
+<td><pre><code>3221226064 - 0xC0000250</code></pre></td>
 <td>There is insufficient account information to log you on.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_dll_entrypoint</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226065 - 0xC0000251</code></pre></td>
+<td><pre><code>3221226065 - 0xC0000251</code></pre></td>
 <td>{Invalid DLL Entrypoint} The dynamic link library is not written correctly. The stack pointer has been left in an inconsistent state. The entry point should be declared as WINAPI or STDCALL. Select YES to fail the DLL load. Select NO to continue execution. Selecting NO may cause the application to operate incorrectly.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_service_entrypoint</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226066 - 0xC0000252</code></pre></td>
+<td><pre><code>3221226066 - 0xC0000252</code></pre></td>
 <td>{Invalid Service Callback Entrypoint} The service is not written correctly. The stack pointer has been left in an inconsistent state. The callback entry point should be declared as WINAPI or STDCALL. Selecting OK will cause the service to continue operation. However, the service process may operate incorrectly.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_lpc_reply_lost</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226067 - 0xC0000253</code></pre></td>
+<td><pre><code>3221226067 - 0xC0000253</code></pre></td>
 <td>The server received the messages but did not send a reply.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ip_address_conflict1</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226068 - 0xC0000254</code></pre></td>
+<td><pre><code>3221226068 - 0xC0000254</code></pre></td>
 <td>There is an IP address conflict with another system on the network.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ip_address_conflict2</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226069 - 0xC0000255</code></pre></td>
+<td><pre><code>3221226069 - 0xC0000255</code></pre></td>
 <td>There is an IP address conflict with another system on the network.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_registry_quota_limit</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226070 - 0xC0000256</code></pre></td>
+<td><pre><code>3221226070 - 0xC0000256</code></pre></td>
 <td>{Low On Registry Space} The system has reached the maximum size that is allowed for the system part of the registry. Additional storage requests will be ignored.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>SMB_status_path_not_covered</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226071 - 0xC0000257</code></pre></td>
+<td><pre><code>3221226071 - 0xC0000257</code></pre></td>
 <td>The contacted server does not support the indicated part of the DFS namespace.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_callback_active</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226072 - 0xC0000258</code></pre></td>
+<td><pre><code>3221226072 - 0xC0000258</code></pre></td>
 <td>A callback return system service cannot be executed when no callback is active.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_license_quota_exceeded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226073 - 0xC0000259</code></pre></td>
+<td><pre><code>3221226073 - 0xC0000259</code></pre></td>
 <td>The service being accessed is licensed for a particular number of connections. No more connections can be made to the service at this time because the service has already accepted the maximum number of connections.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pwd_too_short</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226074 - 0xC000025A</code></pre></td>
+<td><pre><code>3221226074 - 0xC000025A</code></pre></td>
 <td>The password provided is too short to meet the policy of your user account. Choose a longer password.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pwd_too_recent</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226075 - 0xC000025B</code></pre></td>
+<td><pre><code>3221226075 - 0xC000025B</code></pre></td>
 <td>The policy of your user account does not allow you to change passwords too frequently. This is done to prevent users from changing back to a familiar, but potentially discovered, password. If you feel your password has been compromised, contact your administrator immediately to have a new one assigned.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pwd_history_conflict</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226076 - 0xC000025C</code></pre></td>
+<td><pre><code>3221226076 - 0xC000025C</code></pre></td>
 <td>You have attempted to change your password to one that you have used in the past. The policy of your user account does not allow this. Select a password that you have not previously used.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_plugplay_no_device</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226078 - 0xC000025E</code></pre></td>
+<td><pre><code>3221226078 - 0xC000025E</code></pre></td>
 <td>You have attempted to load a legacy device driver while its device instance had been disabled.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unsupported_compression</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226079 - 0xC000025F</code></pre></td>
+<td><pre><code>3221226079 - 0xC000025F</code></pre></td>
 <td>The specified compression format is unsupported.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_hw_profile</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226080 - 0xC0000260</code></pre></td>
+<td><pre><code>3221226080 - 0xC0000260</code></pre></td>
 <td>The specified hardware profile configuration is invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_plugplay_device_path</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226081 - 0xC0000261</code></pre></td>
+<td><pre><code>3221226081 - 0xC0000261</code></pre></td>
 <td>The specified Plug and Play registry device path is invalid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_driver_ordinal_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226082 - 0xC0000262</code></pre></td>
+<td><pre><code>3221226082 - 0xC0000262</code></pre></td>
 <td>{Driver Entry Point Not Found} The device driver could not locate the ordinal in driver.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_driver_entrypoint_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226083 - 0xC0000263</code></pre></td>
+<td><pre><code>3221226083 - 0xC0000263</code></pre></td>
 <td>{Driver Entry Point Not Found} The device driver could not locate the entry point in driver.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_resource_not_owned</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226084 - 0xC0000264</code></pre></td>
+<td><pre><code>3221226084 - 0xC0000264</code></pre></td>
 <td>{Application Error} The application attempted to release a resource it did not own. Click OK to terminate the application.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_too_many_links</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226085 - 0xC0000265</code></pre></td>
+<td><pre><code>3221226085 - 0xC0000265</code></pre></td>
 <td>An attempt was made to create more links on a file than the file system supports.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_quota_list_inconsistent</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226086 - 0xC0000266</code></pre></td>
+<td><pre><code>3221226086 - 0xC0000266</code></pre></td>
 <td>The specified quota list is internally inconsistent with its descriptor.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_file_is_offline</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226087 - 0xC0000267</code></pre></td>
+<td><pre><code>3221226087 - 0xC0000267</code></pre></td>
 <td>The specified file has been relocated to offline storage.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_evaluation_expiration</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226088 - 0xC0000268</code></pre></td>
+<td><pre><code>3221226088 - 0xC0000268</code></pre></td>
 <td>{Windows Evaluation Notification} The evaluation period for this installation of Windows has expired. This system will shutdown in 1 hour. To restore access to this installation of Windows, upgrade this installation by using a licensed distribution of this product.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_illegal_dll_relocation</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226089 - 0xC0000269</code></pre></td>
+<td><pre><code>3221226089 - 0xC0000269</code></pre></td>
 <td>{Illegal System DLL Relocation} The system DLL was relocated in memory. The application will not run properly. The relocation occurred because the DLL occupied an address range that is reserved for Windows system DLLs. The vendor supplying the DLL should be contacted for a new DLL.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_license_violation</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226090 - 0xC000026A</code></pre></td>
+<td><pre><code>3221226090 - 0xC000026A</code></pre></td>
 <td>{License Violation} The system has detected tampering with your registered product type. This is a violation of your software license. Tampering with the product type is not permitted.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_dll_init_failed_logoff</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226091 - 0xC000026B</code></pre></td>
+<td><pre><code>3221226091 - 0xC000026B</code></pre></td>
 <td>{DLL Initialization Failed} The application failed to initialize because the window station is shutting down.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_driver_unable_to_load</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226092 - 0xC000026C</code></pre></td>
+<td><pre><code>3221226092 - 0xC000026C</code></pre></td>
 <td>{Unable to Load Device Driver} The device driver could not be loaded.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_dfs_unavailable</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226093 - 0xC000026D</code></pre></td>
+<td><pre><code>3221226093 - 0xC000026D</code></pre></td>
 <td>DFS is unavailable on the contacted server.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_volume_dismounted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226094 - 0xC000026E</code></pre></td>
+<td><pre><code>3221226094 - 0xC000026E</code></pre></td>
 <td>An operation was attempted to a volume after it was dismounted.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wx86_internal_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226095 - 0xC000026F</code></pre></td>
+<td><pre><code>3221226095 - 0xC000026F</code></pre></td>
 <td>An internal error occurred in the Win32 x86 emulation subsystem.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wx86_float_stack_check</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226096 - 0xC0000270</code></pre></td>
+<td><pre><code>3221226096 - 0xC0000270</code></pre></td>
 <td>Win32 x86 emulation subsystem floating-point stack check.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_validate_continue</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226097 - 0xC0000271</code></pre></td>
+<td><pre><code>3221226097 - 0xC0000271</code></pre></td>
 <td>The validation process needs to continue on to the next step.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_match</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226098 - 0xC0000272</code></pre></td>
+<td><pre><code>3221226098 - 0xC0000272</code></pre></td>
 <td>There was no match for the specified key in the index.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_more_matches</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226099 - 0xC0000273</code></pre></td>
+<td><pre><code>3221226099 - 0xC0000273</code></pre></td>
 <td>There are no more matches for the current index enumeration.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_a_reparse_point</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226101 - 0xC0000275</code></pre></td>
+<td><pre><code>3221226101 - 0xC0000275</code></pre></td>
 <td>The NTFS file or directory is not a reparse point.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_io_reparse_tag_invalid</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226102 - 0xC0000276</code></pre></td>
+<td><pre><code>3221226102 - 0xC0000276</code></pre></td>
 <td>The Windows I/O reparse tag passed for the NTFS reparse point is invalid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_io_reparse_tag_mismatch</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226103 - 0xC0000277</code></pre></td>
+<td><pre><code>3221226103 - 0xC0000277</code></pre></td>
 <td>The Windows I/O reparse tag does not match the one that is in the NTFS reparse point.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_io_reparse_data_invalid</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226104 - 0xC0000278</code></pre></td>
+<td><pre><code>3221226104 - 0xC0000278</code></pre></td>
 <td>The user data passed for the NTFS reparse point is invalid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_io_reparse_tag_not_handled</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226105 - 0xC0000279</code></pre></td>
+<td><pre><code>3221226105 - 0xC0000279</code></pre></td>
 <td>The layered file system driver for this I/O tag did not handle it when needed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_reparse_point_not_resolved</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226112 - 0xC0000280</code></pre></td>
+<td><pre><code>3221226112 - 0xC0000280</code></pre></td>
 <td>The NTFS symbolic link could not be resolved even though the initial file name is valid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_directory_is_a_reparse_point</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226113 - 0xC0000281</code></pre></td>
+<td><pre><code>3221226113 - 0xC0000281</code></pre></td>
 <td>The NTFS directory is a reparse point.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_range_list_conflict</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226114 - 0xC0000282</code></pre></td>
+<td><pre><code>3221226114 - 0xC0000282</code></pre></td>
 <td>The range could not be added to the range list because of a conflict.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_source_element_empty</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226115 - 0xC0000283</code></pre></td>
+<td><pre><code>3221226115 - 0xC0000283</code></pre></td>
 <td>The specified medium changer source element contains no media.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_destination_element_full</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226116 - 0xC0000284</code></pre></td>
+<td><pre><code>3221226116 - 0xC0000284</code></pre></td>
 <td>The specified medium changer destination element already contains media.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_illegal_element_address</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226117 - 0xC0000285</code></pre></td>
+<td><pre><code>3221226117 - 0xC0000285</code></pre></td>
 <td>The specified medium changer element does not exist.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_magazine_not_present</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226118 - 0xC0000286</code></pre></td>
+<td><pre><code>3221226118 - 0xC0000286</code></pre></td>
 <td>The specified element is contained in a magazine that is no longer present.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_reinitialization_needed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226119 - 0xC0000287</code></pre></td>
+<td><pre><code>3221226119 - 0xC0000287</code></pre></td>
 <td>The device requires re-initialization due to hardware errors.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_encryption_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226122 - 0xC000028A</code></pre></td>
+<td><pre><code>3221226122 - 0xC000028A</code></pre></td>
 <td>The file encryption attempt failed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_decryption_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226123 - 0xC000028B</code></pre></td>
+<td><pre><code>3221226123 - 0xC000028B</code></pre></td>
 <td>The file decryption attempt failed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_range_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226124 - 0xC000028C</code></pre></td>
+<td><pre><code>3221226124 - 0xC000028C</code></pre></td>
 <td>The specified range could not be found in the range list.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_recovery_policy</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226125 - 0xC000028D</code></pre></td>
+<td><pre><code>3221226125 - 0xC000028D</code></pre></td>
 <td>There is no encryption recovery policy configured for this system.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_efs</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226126 - 0xC000028E</code></pre></td>
+<td><pre><code>3221226126 - 0xC000028E</code></pre></td>
 <td>The required encryption driver is not loaded for this system.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wrong_efs</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226127 - 0xC000028F</code></pre></td>
+<td><pre><code>3221226127 - 0xC000028F</code></pre></td>
 <td>The file was encrypted with a different encryption driver than is currently loaded.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_user_keys</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226128 - 0xC0000290</code></pre></td>
+<td><pre><code>3221226128 - 0xC0000290</code></pre></td>
 <td>There are no EFS keys defined for the user.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_file_not_encrypted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226129 - 0xC0000291</code></pre></td>
+<td><pre><code>3221226129 - 0xC0000291</code></pre></td>
 <td>The specified file is not encrypted.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_export_format</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226130 - 0xC0000292</code></pre></td>
+<td><pre><code>3221226130 - 0xC0000292</code></pre></td>
 <td>The specified file is not in the defined EFS export format.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_file_encrypted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226131 - 0xC0000293</code></pre></td>
+<td><pre><code>3221226131 - 0xC0000293</code></pre></td>
 <td>The specified file is encrypted and the user does not have the ability to decrypt it.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wmi_guid_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226133 - 0xC0000295</code></pre></td>
+<td><pre><code>3221226133 - 0xC0000295</code></pre></td>
 <td>The GUID passed was not recognized as valid by a WMI data provider.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wmi_instance_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226134 - 0xC0000296</code></pre></td>
+<td><pre><code>3221226134 - 0xC0000296</code></pre></td>
 <td>The instance name passed was not recognized as valid by a WMI data provider.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wmi_itemid_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226135 - 0xC0000297</code></pre></td>
+<td><pre><code>3221226135 - 0xC0000297</code></pre></td>
 <td>The data item ID passed was not recognized as valid by a WMI data provider.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wmi_try_again</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226136 - 0xC0000298</code></pre></td>
+<td><pre><code>3221226136 - 0xC0000298</code></pre></td>
 <td>The WMI request could not be completed and should be retried.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_shared_policy</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226137 - 0xC0000299</code></pre></td>
+<td><pre><code>3221226137 - 0xC0000299</code></pre></td>
 <td>The policy object is shared and can only be modified at the root.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_policy_object_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226138 - 0xC000029A</code></pre></td>
+<td><pre><code>3221226138 - 0xC000029A</code></pre></td>
 <td>The policy object does not exist when it should.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_policy_only_in_ds</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226139 - 0xC000029B</code></pre></td>
+<td><pre><code>3221226139 - 0xC000029B</code></pre></td>
 <td>The requested policy information only lives in the Ds.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_volume_not_upgraded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226140 - 0xC000029C</code></pre></td>
+<td><pre><code>3221226140 - 0xC000029C</code></pre></td>
 <td>The volume must be upgraded to enable this feature.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_remote_storage_not_active</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226141 - 0xC000029D</code></pre></td>
+<td><pre><code>3221226141 - 0xC000029D</code></pre></td>
 <td>The remote storage service is not operational at this time.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_remote_storage_media_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226142 - 0xC000029E</code></pre></td>
+<td><pre><code>3221226142 - 0xC000029E</code></pre></td>
 <td>The remote storage service encountered a media error.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_tracking_service</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226143 - 0xC000029F</code></pre></td>
+<td><pre><code>3221226143 - 0xC000029F</code></pre></td>
 <td>The tracking (workstation) service is not running.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_server_sid_mismatch</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226144 - 0xC00002A0</code></pre></td>
+<td><pre><code>3221226144 - 0xC00002A0</code></pre></td>
 <td>The server process is running under a SID that is different from the SID that is required by client.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_no_attribute_or_value</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226145 - 0xC00002A1</code></pre></td>
+<td><pre><code>3221226145 - 0xC00002A1</code></pre></td>
 <td>The specified directory service attribute or value does not exist.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_invalid_attribute_syntax</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226146 - 0xC00002A2</code></pre></td>
+<td><pre><code>3221226146 - 0xC00002A2</code></pre></td>
 <td>The attribute syntax specified to the directory service is invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_attribute_type_undefined</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226147 - 0xC00002A3</code></pre></td>
+<td><pre><code>3221226147 - 0xC00002A3</code></pre></td>
 <td>The attribute type specified to the directory service is not defined.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_attribute_or_value_exists</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226148 - 0xC00002A4</code></pre></td>
+<td><pre><code>3221226148 - 0xC00002A4</code></pre></td>
 <td>The specified directory service attribute or value already exists.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_busy</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226149 - 0xC00002A5</code></pre></td>
+<td><pre><code>3221226149 - 0xC00002A5</code></pre></td>
 <td>The directory service is busy.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_unavailable</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226150 - 0xC00002A6</code></pre></td>
+<td><pre><code>3221226150 - 0xC00002A6</code></pre></td>
 <td>The directory service is unavailable.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_no_rids_allocated</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226151 - 0xC00002A7</code></pre></td>
+<td><pre><code>3221226151 - 0xC00002A7</code></pre></td>
 <td>The directory service was unable to allocate a relative identifier.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_no_more_rids</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226152 - 0xC00002A8</code></pre></td>
+<td><pre><code>3221226152 - 0xC00002A8</code></pre></td>
 <td>The directory service has exhausted the pool of relative identifiers.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_incorrect_role_owner</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226153 - 0xC00002A9</code></pre></td>
+<td><pre><code>3221226153 - 0xC00002A9</code></pre></td>
 <td>The requested operation could not be performed because the directory service is not the master for that type of operation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_ridmgr_init_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226154 - 0xC00002AA</code></pre></td>
+<td><pre><code>3221226154 - 0xC00002AA</code></pre></td>
 <td>The directory service was unable to initialize the subsystem that allocates relative identifiers.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_obj_class_violation</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226155 - 0xC00002AB</code></pre></td>
+<td><pre><code>3221226155 - 0xC00002AB</code></pre></td>
 <td>The requested operation did not satisfy one or more constraints that are associated with the class of the object.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_cant_on_non_leaf</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226156 - 0xC00002AC</code></pre></td>
+<td><pre><code>3221226156 - 0xC00002AC</code></pre></td>
 <td>The directory service can perform the requested operation only on a leaf object.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_cant_on_rdn</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226157 - 0xC00002AD</code></pre></td>
+<td><pre><code>3221226157 - 0xC00002AD</code></pre></td>
 <td>The directory service cannot perform the requested operation on the Relatively Defined Name (RDN) attribute of an object.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_cant_mod_obj_class</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226158 - 0xC00002AE</code></pre></td>
+<td><pre><code>3221226158 - 0xC00002AE</code></pre></td>
 <td>The directory service detected an attempt to modify the object class of an object.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_cross_dom_move_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226159 - 0xC00002AF</code></pre></td>
+<td><pre><code>3221226159 - 0xC00002AF</code></pre></td>
 <td>An error occurred while performing a cross domain move operation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_gc_not_available</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226160 - 0xC00002B0</code></pre></td>
+<td><pre><code>3221226160 - 0xC00002B0</code></pre></td>
 <td>Unable to contact the global catalog server.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_directory_service_required</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226161 - 0xC00002B1</code></pre></td>
+<td><pre><code>3221226161 - 0xC00002B1</code></pre></td>
 <td>The requested operation requires a directory service, and none was available.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_reparse_attribute_conflict</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226162 - 0xC00002B2</code></pre></td>
+<td><pre><code>3221226162 - 0xC00002B2</code></pre></td>
 <td>The reparse attribute cannot be set because it is incompatible with an existing attribute.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_cant_enable_deny_only</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226163 - 0xC00002B3</code></pre></td>
+<td><pre><code>3221226163 - 0xC00002B3</code></pre></td>
 <td>A group marked 'use for deny only' cannot be enabled.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_float_multiple_faults</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226164 - 0xC00002B4</code></pre></td>
+<td><pre><code>3221226164 - 0xC00002B4</code></pre></td>
 <td>{EXCEPTION} Multiple floating-point faults.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_float_multiple_traps</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226165 - 0xC00002B5</code></pre></td>
+<td><pre><code>3221226165 - 0xC00002B5</code></pre></td>
 <td>{EXCEPTION} Multiple floating-point traps.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_removed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226166 - 0xC00002B6</code></pre></td>
+<td><pre><code>3221226166 - 0xC00002B6</code></pre></td>
 <td>The device has been removed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_journal_delete_in_progress</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226167 - 0xC00002B7</code></pre></td>
+<td><pre><code>3221226167 - 0xC00002B7</code></pre></td>
 <td>The volume change journal is being deleted.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_journal_not_active</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226168 - 0xC00002B8</code></pre></td>
+<td><pre><code>3221226168 - 0xC00002B8</code></pre></td>
 <td>The volume change journal is not active.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_nointerface</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226169 - 0xC00002B9</code></pre></td>
+<td><pre><code>3221226169 - 0xC00002B9</code></pre></td>
 <td>The requested interface is not supported.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_admin_limit_exceeded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226177 - 0xC00002C1</code></pre></td>
+<td><pre><code>3221226177 - 0xC00002C1</code></pre></td>
 <td>A directory service resource limit has been exceeded.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_driver_failed_sleep</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226178 - 0xC00002C2</code></pre></td>
+<td><pre><code>3221226178 - 0xC00002C2</code></pre></td>
 <td>{System Standby Failed} The driver does not support standby mode. Updating this driver may allow the system to go to standby mode.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_mutual_authentication_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226179 - 0xC00002C3</code></pre></td>
+<td><pre><code>3221226179 - 0xC00002C3</code></pre></td>
 <td>Mutual Authentication failed. The server password is out of date at the domain controller.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_corrupt_system_file</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226180 - 0xC00002C4</code></pre></td>
+<td><pre><code>3221226180 - 0xC00002C4</code></pre></td>
 <td>The system file has become corrupt and has been replaced.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_datatype_misalignment_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226181 - 0xC00002C5</code></pre></td>
+<td><pre><code>3221226181 - 0xC00002C5</code></pre></td>
 <td>{EXCEPTION} Alignment Error A data type misalignment error was detected in a load or store instruction.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wmi_read_only</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226182 - 0xC00002C6</code></pre></td>
+<td><pre><code>3221226182 - 0xC00002C6</code></pre></td>
 <td>The WMI data item or data block is read-only.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wmi_set_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226183 - 0xC00002C7</code></pre></td>
+<td><pre><code>3221226183 - 0xC00002C7</code></pre></td>
 <td>The WMI data item or data block could not be changed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_commitment_minimum</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226184 - 0xC00002C8</code></pre></td>
+<td><pre><code>3221226184 - 0xC00002C8</code></pre></td>
 <td>{Virtual Memory Minimum Too Low} Your system is low on virtual memory. Windows is increasing the size of your virtual memory paging file. During this process, memory requests for some applications may be denied. For more information, see Help.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_reg_nat_consumption</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226185 - 0xC00002C9</code></pre></td>
+<td><pre><code>3221226185 - 0xC00002C9</code></pre></td>
 <td>{EXCEPTION} Register NaT consumption faults. A NaT value is consumed on a non-speculative instruction.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_transport_full</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226186 - 0xC00002CA</code></pre></td>
+<td><pre><code>3221226186 - 0xC00002CA</code></pre></td>
 <td>The transport element of the medium changer contains media, which is causing the operation to fail.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_sam_init_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226187 - 0xC00002CB</code></pre></td>
+<td><pre><code>3221226187 - 0xC00002CB</code></pre></td>
 <td>Security Accounts Manager initialization failed. Click OK to shut down this system and restart in Directory Services Restore Mode. Check the event log for more detailed information.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_only_if_connected</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226188 - 0xC00002CC</code></pre></td>
+<td><pre><code>3221226188 - 0xC00002CC</code></pre></td>
 <td>This operation is supported only when you are connected to the server.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_sensitive_group_violation</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226189 - 0xC00002CD</code></pre></td>
+<td><pre><code>3221226189 - 0xC00002CD</code></pre></td>
 <td>Only an administrator can modify the membership list of an administrative group.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pnp_restart_enumeration</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226190 - 0xC00002CE</code></pre></td>
+<td><pre><code>3221226190 - 0xC00002CE</code></pre></td>
 <td>A device was removed so enumeration must be restarted.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_journal_entry_deleted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226191 - 0xC00002CF</code></pre></td>
+<td><pre><code>3221226191 - 0xC00002CF</code></pre></td>
 <td>The journal entry has been deleted from the journal.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_cant_mod_primarygroupid</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226192 - 0xC00002D0</code></pre></td>
+<td><pre><code>3221226192 - 0xC00002D0</code></pre></td>
 <td>Cannot change the primary group ID of a domain controller account.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_system_image_bad_signature</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226193 - 0xC00002D1</code></pre></td>
+<td><pre><code>3221226193 - 0xC00002D1</code></pre></td>
 <td>{Fatal System Error} The system image is not properly signed. The file has been replaced with the signed file. The system has been shut down.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pnp_reboot_required</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226194 - 0xC00002D2</code></pre></td>
+<td><pre><code>3221226194 - 0xC00002D2</code></pre></td>
 <td>The device will not start without a reboot.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_power_state_invalid</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226195 - 0xC00002D3</code></pre></td>
+<td><pre><code>3221226195 - 0xC00002D3</code></pre></td>
 <td>The power state of the current device cannot support this request.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_invalid_group_type</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226196 - 0xC00002D4</code></pre></td>
+<td><pre><code>3221226196 - 0xC00002D4</code></pre></td>
 <td>The specified group type is invalid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_no_nest_globalgroup_in_mixeddomain</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226197 - 0xC00002D5</code></pre></td>
+<td><pre><code>3221226197 - 0xC00002D5</code></pre></td>
 <td>In a mixed domain, no nesting of a global group if the group is security enabled.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_no_nest_localgroup_in_mixeddomain</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226198 - 0xC00002D6</code></pre></td>
+<td><pre><code>3221226198 - 0xC00002D6</code></pre></td>
 <td>In a mixed domain, cannot nest local groups with other local groups, if the group is security enabled.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_global_cant_have_local_member</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226199 - 0xC00002D7</code></pre></td>
+<td><pre><code>3221226199 - 0xC00002D7</code></pre></td>
 <td>A global group cannot have a local group as a member.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_global_cant_have_universal_member</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226200 - 0xC00002D8</code></pre></td>
+<td><pre><code>3221226200 - 0xC00002D8</code></pre></td>
 <td>A global group cannot have a universal group as a member.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_universal_cant_have_local_member</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226201 - 0xC00002D9</code></pre></td>
+<td><pre><code>3221226201 - 0xC00002D9</code></pre></td>
 <td>A universal group cannot have a local group as a member.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_global_cant_have_crossdomain_member</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226202 - 0xC00002DA</code></pre></td>
+<td><pre><code>3221226202 - 0xC00002DA</code></pre></td>
 <td>A global group cannot have a cross-domain member.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_local_cant_have_crossdomain_local_member</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226203 - 0xC00002DB</code></pre></td>
+<td><pre><code>3221226203 - 0xC00002DB</code></pre></td>
 <td>A local group cannot have another cross-domain local group as a member.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_have_primary_members</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226204 - 0xC00002DC</code></pre></td>
+<td><pre><code>3221226204 - 0xC00002DC</code></pre></td>
 <td>Cannot change to a security-disabled group because primary members are in this group.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wmi_not_supported</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226205 - 0xC00002DD</code></pre></td>
+<td><pre><code>3221226205 - 0xC00002DD</code></pre></td>
 <td>The WMI operation is not supported by the data block or method.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_insufficient_power</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226206 - 0xC00002DE</code></pre></td>
+<td><pre><code>3221226206 - 0xC00002DE</code></pre></td>
 <td>There is not enough power to complete the requested operation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_sam_need_bootkey_password</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226207 - 0xC00002DF</code></pre></td>
+<td><pre><code>3221226207 - 0xC00002DF</code></pre></td>
 <td>The Security Accounts Manager needs to get the boot password.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_sam_need_bootkey_floppy</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226208 - 0xC00002E0</code></pre></td>
+<td><pre><code>3221226208 - 0xC00002E0</code></pre></td>
 <td>The Security Accounts Manager needs to get the boot key from the floppy disk.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_cant_start</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226209 - 0xC00002E1</code></pre></td>
+<td><pre><code>3221226209 - 0xC00002E1</code></pre></td>
 <td>The directory service cannot start.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_init_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226210 - 0xC00002E2</code></pre></td>
+<td><pre><code>3221226210 - 0xC00002E2</code></pre></td>
 <td>The directory service could not start. Click OK to shut down this system and restart in Directory Services Restore Mode. Check the event log for more detailed information.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_sam_init_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226211 - 0xC00002E3</code></pre></td>
+<td><pre><code>3221226211 - 0xC00002E3</code></pre></td>
 <td>The Security Accounts Manager initialization failed. Click OK to shut down this system and restart in Safe Mode. Check the event log for more detailed information.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_gc_required</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226212 - 0xC00002E4</code></pre></td>
+<td><pre><code>3221226212 - 0xC00002E4</code></pre></td>
 <td>The requested operation can be performed only on a global catalog server.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_local_member_of_local_only</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226213 - 0xC00002E5</code></pre></td>
+<td><pre><code>3221226213 - 0xC00002E5</code></pre></td>
 <td>A local group can only be a member of other local groups in the same domain.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_no_fpo_in_universal_groups</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226214 - 0xC00002E6</code></pre></td>
+<td><pre><code>3221226214 - 0xC00002E6</code></pre></td>
 <td>Foreign security principals cannot be members of universal groups.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_machine_account_quota_exceeded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226215 - 0xC00002E7</code></pre></td>
+<td><pre><code>3221226215 - 0xC00002E7</code></pre></td>
 <td>Your computer could not be joined to the domain. You have exceeded the maximum number of computer accounts you are allowed to create in this domain. Contact your system administrator to have this limit reset or increased.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_multiple_fault_violation</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226216 - 0xC00002E8</code></pre></td>
+<td><pre><code>3221226216 - 0xC00002E8</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_current_domain_not_allowed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226217 - 0xC00002E9</code></pre></td>
+<td><pre><code>3221226217 - 0xC00002E9</code></pre></td>
 <td>This operation cannot be performed on the current domain.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_cannot_make</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226218 - 0xC00002EA</code></pre></td>
+<td><pre><code>3221226218 - 0xC00002EA</code></pre></td>
 <td>The directory or file cannot be created.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_system_shutdown</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226219 - 0xC00002EB</code></pre></td>
+<td><pre><code>3221226219 - 0xC00002EB</code></pre></td>
 <td>The system is in the process of shutting down.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_init_failure_console</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226220 - 0xC00002EC</code></pre></td>
+<td><pre><code>3221226220 - 0xC00002EC</code></pre></td>
 <td>Directory Services could not start. Click OK to shut down the system. You can use the recovery console to diagnose the system further.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_sam_init_failure_console</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226221 - 0xC00002ED</code></pre></td>
+<td><pre><code>3221226221 - 0xC00002ED</code></pre></td>
 <td>Security Accounts Manager initialization failed. Click OK to shut down the system. You can use the recovery console to diagnose the system further.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unfinished_context_deleted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226222 - 0xC00002EE</code></pre></td>
+<td><pre><code>3221226222 - 0xC00002EE</code></pre></td>
 <td>A security context was deleted before the context was completed. This is considered a logon failure.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_tgt_reply</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226223 - 0xC00002EF</code></pre></td>
+<td><pre><code>3221226223 - 0xC00002EF</code></pre></td>
 <td>The client is trying to negotiate a context and the server requires user-to-user but did not send a TGT reply.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_objectid_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226224 - 0xC00002F0</code></pre></td>
+<td><pre><code>3221226224 - 0xC00002F0</code></pre></td>
 <td>An object ID was not found in the file.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_ip_addresses</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226225 - 0xC00002F1</code></pre></td>
+<td><pre><code>3221226225 - 0xC00002F1</code></pre></td>
 <td>Unable to accomplish the requested task because the local machine does not have any IP addresses.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wrong_credential_handle</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226226 - 0xC00002F2</code></pre></td>
+<td><pre><code>3221226226 - 0xC00002F2</code></pre></td>
 <td>The supplied credential handle does not match the credential that is associated with the security context.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_crypto_system_invalid</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226227 - 0xC00002F3</code></pre></td>
+<td><pre><code>3221226227 - 0xC00002F3</code></pre></td>
 <td>The crypto system or checksum function is invalid because a required function is unavailable.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_max_referrals_exceeded</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226228 - 0xC00002F4</code></pre></td>
+<td><pre><code>3221226228 - 0xC00002F4</code></pre></td>
 <td>The number of maximum ticket referrals has been exceeded.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_must_be_kdc</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226229 - 0xC00002F5</code></pre></td>
+<td><pre><code>3221226229 - 0xC00002F5</code></pre></td>
 <td>The local machine must be a Kerberos KDC (domain controller) and it is not.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_strong_crypto_not_supported</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226230 - 0xC00002F6</code></pre></td>
+<td><pre><code>3221226230 - 0xC00002F6</code></pre></td>
 <td>The other end of the security negotiation requires strong crypto but it is not supported on the local machine.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_too_many_principals</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226231 - 0xC00002F7</code></pre></td>
+<td><pre><code>3221226231 - 0xC00002F7</code></pre></td>
 <td>The KDC reply contained more than one principal name.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_pa_data</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226232 - 0xC00002F8</code></pre></td>
+<td><pre><code>3221226232 - 0xC00002F8</code></pre></td>
 <td>Expected to find PA data for a hint of what etype to use, but it was not found.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pkinit_name_mismatch</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226233 - 0xC00002F9</code></pre></td>
+<td><pre><code>3221226233 - 0xC00002F9</code></pre></td>
 <td>The client certificate does not contain a valid UPN, or does not match the client name in the logon request. Contact your administrator.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_smartcard_logon_required</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226234 - 0xC00002FA</code></pre></td>
+<td><pre><code>3221226234 - 0xC00002FA</code></pre></td>
 <td>Smart card logon is required and was not used.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_kdc_invalid_request</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226235 - 0xC00002FB</code></pre></td>
+<td><pre><code>3221226235 - 0xC00002FB</code></pre></td>
 <td>An invalid request was sent to the KDC.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_kdc_unable_to_refer</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226236 - 0xC00002FC</code></pre></td>
+<td><pre><code>3221226236 - 0xC00002FC</code></pre></td>
 <td>The KDC was unable to generate a referral for the service requested.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_kdc_unknown_etype</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226237 - 0xC00002FD</code></pre></td>
+<td><pre><code>3221226237 - 0xC00002FD</code></pre></td>
 <td>The encryption type requested is not supported by the KDC.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_shutdown_in_progress</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226238 - 0xC00002FE</code></pre></td>
+<td><pre><code>3221226238 - 0xC00002FE</code></pre></td>
 <td>A system shutdown is in progress.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_server_shutdown_in_progress</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226239 - 0xC00002FF</code></pre></td>
+<td><pre><code>3221226239 - 0xC00002FF</code></pre></td>
 <td>The server machine is shutting down.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_supported_on_sbs</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226240 - 0xC0000300</code></pre></td>
-<td>This operation is not supported on a computer running Windows Server 2003 for Small Business Server.</td>
+<td><pre><code>3221226240 - 0xC0000300</code></pre></td>
+<td>This operation is not supported on a computer running Windows Server&amp;nbsp;2003 for Small Business Server.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wmi_guid_disconnected</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226241 - 0xC0000301</code></pre></td>
+<td><pre><code>3221226241 - 0xC0000301</code></pre></td>
 <td>The WMI GUID is no longer available.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wmi_already_disabled</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226242 - 0xC0000302</code></pre></td>
+<td><pre><code>3221226242 - 0xC0000302</code></pre></td>
 <td>Collection or events for the WMI GUID is already disabled.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wmi_already_enabled</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226243 - 0xC0000303</code></pre></td>
+<td><pre><code>3221226243 - 0xC0000303</code></pre></td>
 <td>Collection or events for the WMI GUID is already enabled.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_mft_too_fragmented</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226244 - 0xC0000304</code></pre></td>
+<td><pre><code>3221226244 - 0xC0000304</code></pre></td>
 <td>The master file table on the volume is too fragmented to complete this operation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_copy_protection_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226245 - 0xC0000305</code></pre></td>
+<td><pre><code>3221226245 - 0xC0000305</code></pre></td>
 <td>Copy protection failure.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_css_authentication_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226246 - 0xC0000306</code></pre></td>
+<td><pre><code>3221226246 - 0xC0000306</code></pre></td>
 <td>Copy protection error—DVD CSS Authentication failed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_css_key_not_present</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226247 - 0xC0000307</code></pre></td>
+<td><pre><code>3221226247 - 0xC0000307</code></pre></td>
 <td>Copy protection error—The specified sector does not contain a valid key.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_css_key_not_established</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226248 - 0xC0000308</code></pre></td>
+<td><pre><code>3221226248 - 0xC0000308</code></pre></td>
 <td>Copy protection error—DVD session key not established.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_css_scrambled_sector</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226249 - 0xC0000309</code></pre></td>
+<td><pre><code>3221226249 - 0xC0000309</code></pre></td>
 <td>Copy protection error—The read failed because the sector is encrypted.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_css_region_mismatch</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226250 - 0xC000030A</code></pre></td>
+<td><pre><code>3221226250 - 0xC000030A</code></pre></td>
 <td>Copy protection error—The region of the specified DVD does not correspond to the region setting of the drive.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_css_resets_exhausted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226251 - 0xC000030B</code></pre></td>
+<td><pre><code>3221226251 - 0xC000030B</code></pre></td>
 <td>Copy protection error—The region setting of the drive may be permanent.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pkinit_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226272 - 0xC0000320</code></pre></td>
+<td><pre><code>3221226272 - 0xC0000320</code></pre></td>
 <td>The Kerberos protocol encountered an error while validating the KDC certificate during smart card logon. There is more information in the system event log.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_smartcard_subsystem_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226273 - 0xC0000321</code></pre></td>
+<td><pre><code>3221226273 - 0xC0000321</code></pre></td>
 <td>The Kerberos protocol encountered an error while attempting to use the smart card subsystem.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_no_kerb_key</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226274 - 0xC0000322</code></pre></td>
+<td><pre><code>3221226274 - 0xC0000322</code></pre></td>
 <td>The target server does not have acceptable Kerberos credentials.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_host_down</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226320 - 0xC0000350</code></pre></td>
+<td><pre><code>3221226320 - 0xC0000350</code></pre></td>
 <td>The transport determined that the remote system is down.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_unsupported_preauth</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226321 - 0xC0000351</code></pre></td>
+<td><pre><code>3221226321 - 0xC0000351</code></pre></td>
 <td>An unsupported pre-authentication mechanism was presented to the Kerberos package.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_efs_alg_blob_too_big</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226322 - 0xC0000352</code></pre></td>
+<td><pre><code>3221226322 - 0xC0000352</code></pre></td>
 <td>The encryption algorithm that is used on the source file needs a bigger key buffer than the one that is used on the destination file.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_port_not_set</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226323 - 0xC0000353</code></pre></td>
+<td><pre><code>3221226323 - 0xC0000353</code></pre></td>
 <td>An attempt to remove a processes DebugPort was made, but a port was not already associated with the process.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_debugger_inactive</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226324 - 0xC0000354</code></pre></td>
+<td><pre><code>3221226324 - 0xC0000354</code></pre></td>
 <td>An attempt to do an operation on a debug port failed because the port is in the process of being deleted.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_version_check_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226325 - 0xC0000355</code></pre></td>
+<td><pre><code>3221226325 - 0xC0000355</code></pre></td>
 <td>This version of Windows is not compatible with the behavior version of the directory forest, domain, or domain controller.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_auditing_disabled</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226326 - 0xC0000356</code></pre></td>
+<td><pre><code>3221226326 - 0xC0000356</code></pre></td>
 <td>The specified event is currently not being audited.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_prent4_machine_account</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226327 - 0xC0000357</code></pre></td>
-<td>The machine account was created prior to Windows NT 4.0. The account needs to be recreated.</td>
+<td><pre><code>3221226327 - 0xC0000357</code></pre></td>
+<td>The machine account was created prior to Windows&amp;nbsp;NT 4.0. The account needs to be recreated.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_ds_ag_cant_have_universal_member</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226328 - 0xC0000358</code></pre></td>
+<td><pre><code>3221226328 - 0xC0000358</code></pre></td>
 <td>An account group cannot have a universal group as a member.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_image_win_32</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226329 - 0xC0000359</code></pre></td>
+<td><pre><code>3221226329 - 0xC0000359</code></pre></td>
 <td>The specified image file did not have the correct format; it appears to be a 32-bit Windows image.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_image_win_64</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226330 - 0xC000035A</code></pre></td>
+<td><pre><code>3221226330 - 0xC000035A</code></pre></td>
 <td>The specified image file did not have the correct format; it appears to be a 64-bit Windows image.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_bad_bindings</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226331 - 0xC000035B</code></pre></td>
+<td><pre><code>3221226331 - 0xC000035B</code></pre></td>
 <td>The client's supplied SSPI channel bindings were incorrect.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_network_session_expired</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226332 - 0xC000035C</code></pre></td>
+<td><pre><code>3221226332 - 0xC000035C</code></pre></td>
 <td>The client session has expired; so the client must re-authenticate to continue accessing the remote resources.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_apphelp_block</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226333 - 0xC000035D</code></pre></td>
+<td><pre><code>3221226333 - 0xC000035D</code></pre></td>
 <td>The AppHelp dialog box canceled; thus preventing the application from starting.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_all_sids_filtered</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226334 - 0xC000035E</code></pre></td>
+<td><pre><code>3221226334 - 0xC000035E</code></pre></td>
 <td>The SID filtering operation removed all SIDs.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_not_safe_mode_driver</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226335 - 0xC000035F</code></pre></td>
+<td><pre><code>3221226335 - 0xC000035F</code></pre></td>
 <td>The driver was not loaded because the system is starting in safe mode.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_access_disabled_by_policy_default</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226337 - 0xC0000361</code></pre></td>
+<td><pre><code>3221226337 - 0xC0000361</code></pre></td>
 <td>Access has been restricted by your Administrator by the default software restriction policy level.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_access_disabled_by_policy_path</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226338 - 0xC0000362</code></pre></td>
+<td><pre><code>3221226338 - 0xC0000362</code></pre></td>
 <td>Access has been restricted by your Administrator by location with policy rule.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_access_disabled_by_policy_publisher</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226339 - 0xC0000363</code></pre></td>
+<td><pre><code>3221226339 - 0xC0000363</code></pre></td>
 <td>Access has been restricted by your Administrator by software publisher policy.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_access_disabled_by_policy_other</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226340 - 0xC0000364</code></pre></td>
+<td><pre><code>3221226340 - 0xC0000364</code></pre></td>
 <td>Access to has been restricted by your Administrator by policy rule.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_failed_driver_entry</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226341 - 0xC0000365</code></pre></td>
+<td><pre><code>3221226341 - 0xC0000365</code></pre></td>
 <td>The driver was not loaded because it failed its initialization call.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_device_enumeration_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226342 - 0xC0000366</code></pre></td>
+<td><pre><code>3221226342 - 0xC0000366</code></pre></td>
 <td>The device encountered an error while applying power or reading the device configuration. This may be caused by a failure of your hardware or by a poor connection.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_mount_point_not_resolved</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226344 - 0xC0000368</code></pre></td>
+<td><pre><code>3221226344 - 0xC0000368</code></pre></td>
 <td>The create operation failed because the name contained at least one mount point that resolves to a volume to which the specified device object is not attached.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_device_object_parameter</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226345 - 0xC0000369</code></pre></td>
+<td><pre><code>3221226345 - 0xC0000369</code></pre></td>
 <td>The device object parameter is either not a valid device object or is not attached to the volume that is specified by the file name.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_mca_occured</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226346 - 0xC000036A</code></pre></td>
+<td><pre><code>3221226346 - 0xC000036A</code></pre></td>
 <td>A machine check error has occurred. Check the system event log for additional information.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_driver_blocked_critical</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226347 - 0xC000036B</code></pre></td>
+<td><pre><code>3221226347 - 0xC000036B</code></pre></td>
 <td>Driver has been blocked from loading.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_driver_blocked</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226348 - 0xC000036C</code></pre></td>
+<td><pre><code>3221226348 - 0xC000036C</code></pre></td>
 <td>Driver has been blocked from loading.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_driver_database_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226349 - 0xC000036D</code></pre></td>
+<td><pre><code>3221226349 - 0xC000036D</code></pre></td>
 <td>There was error processing the driver database.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_system_hive_too_large</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226350 - 0xC000036E</code></pre></td>
+<td><pre><code>3221226350 - 0xC000036E</code></pre></td>
 <td>System hive size has exceeded its limit.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_invalid_import_of_non_dll</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226351 - 0xC000036F</code></pre></td>
+<td><pre><code>3221226351 - 0xC000036F</code></pre></td>
 <td>A dynamic link library (DLL) referenced a module that was neither a DLL nor the process's executable image.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_smartcard_wrong_pin</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226368 - 0xC0000380</code></pre></td>
+<td><pre><code>3221226368 - 0xC0000380</code></pre></td>
 <td>An incorrect PIN was presented to the smart card.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_smartcard_card_blocked</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226369 - 0xC0000381</code></pre></td>
+<td><pre><code>3221226369 - 0xC0000381</code></pre></td>
 <td>The smart card is blocked.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_smartcard_card_not_authenticated</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226370 - 0xC0000382</code></pre></td>
+<td><pre><code>3221226370 - 0xC0000382</code></pre></td>
 <td>No PIN was presented to the smart card.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_smartcard_no_card</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226371 - 0xC0000383</code></pre></td>
+<td><pre><code>3221226371 - 0xC0000383</code></pre></td>
 <td>No smart card is available.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_smartcard_no_key_container</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226372 - 0xC0000384</code></pre></td>
+<td><pre><code>3221226372 - 0xC0000384</code></pre></td>
 <td>The requested key container does not exist on the smart card.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_smartcard_no_certificate</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226373 - 0xC0000385</code></pre></td>
+<td><pre><code>3221226373 - 0xC0000385</code></pre></td>
 <td>The requested certificate does not exist on the smart card.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_smartcard_no_keyset</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226374 - 0xC0000386</code></pre></td>
+<td><pre><code>3221226374 - 0xC0000386</code></pre></td>
 <td>The requested keyset does not exist.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_smartcard_io_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226375 - 0xC0000387</code></pre></td>
+<td><pre><code>3221226375 - 0xC0000387</code></pre></td>
 <td>A communication error with the smart card has been detected.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_downgrade_detected</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226376 - 0xC0000388</code></pre></td>
+<td><pre><code>3221226376 - 0xC0000388</code></pre></td>
 <td>The system detected a possible attempt to compromise security. Ensure that you can contact the server that authenticated you.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_smartcard_cert_revoked</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226377 - 0xC0000389</code></pre></td>
+<td><pre><code>3221226377 - 0xC0000389</code></pre></td>
 <td>The smart card certificate used for authentication has been revoked. Contact your system administrator. There may be additional information in the event log.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_issuing_ca_untrusted</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226378 - 0xC000038A</code></pre></td>
+<td><pre><code>3221226378 - 0xC000038A</code></pre></td>
 <td>An untrusted certificate authority was detected while processing the smart card certificate that is used for authentication. Contact your system administrator.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_revocation_offline_c</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226379 - 0xC000038B</code></pre></td>
+<td><pre><code>3221226379 - 0xC000038B</code></pre></td>
 <td>The revocation status of the smart card certificate that is used for authentication could not be determined. Contact your system administrator.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_pkinit_client_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226380 - 0xC000038C</code></pre></td>
+<td><pre><code>3221226380 - 0xC000038C</code></pre></td>
 <td>The smart card certificate used for authentication was not trusted. Contact your system administrator.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_smartcard_cert_expired</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226381 - 0xC000038D</code></pre></td>
+<td><pre><code>3221226381 - 0xC000038D</code></pre></td>
 <td>The smart card certificate used for authentication has expired. Contact your system administrator.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>NT_status_driver_failed_prior_unload</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221226382 - 0xC000038E</code></pre></td>
+<td><pre><code>3221226382 - 0xC000038E</code></pre></td>
 <td>The driver could not be loaded because a previous version of the driver is still in memory.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>NT_status_wow_assertion</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221264536 - 0xC0009898</code></pre></td>
+<td><pre><code>3221264536 - 0xC0009898</code></pre></td>
 <td>WOW Assertion Error.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_string_binding</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356545 - 0xC0020001</code></pre></td>
+<td><pre><code>3221356545 - 0xC0020001</code></pre></td>
 <td>The string binding is invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_wrong_kind_of_binding</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356546 - 0xC0020002</code></pre></td>
+<td><pre><code>3221356546 - 0xC0020002</code></pre></td>
 <td>The binding handle is not the correct type.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_binding</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356547 - 0xC0020003</code></pre></td>
+<td><pre><code>3221356547 - 0xC0020003</code></pre></td>
 <td>The binding handle is invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_protseq_not_supported</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356548 - 0xC0020004</code></pre></td>
+<td><pre><code>3221356548 - 0xC0020004</code></pre></td>
 <td>The RPC protocol sequence is not supported.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_rpc_protseq</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356549 - 0xC0020005</code></pre></td>
+<td><pre><code>3221356549 - 0xC0020005</code></pre></td>
 <td>The RPC protocol sequence is invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_string_uuid</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356550 - 0xC0020006</code></pre></td>
+<td><pre><code>3221356550 - 0xC0020006</code></pre></td>
 <td>The string UUID is invalid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_endpoint_format</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356551 - 0xC0020007</code></pre></td>
+<td><pre><code>3221356551 - 0xC0020007</code></pre></td>
 <td>The endpoint format is invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_net_addr</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356552 - 0xC0020008</code></pre></td>
+<td><pre><code>3221356552 - 0xC0020008</code></pre></td>
 <td>The network address is invalid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_no_endpoint_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356553 - 0xC0020009</code></pre></td>
+<td><pre><code>3221356553 - 0xC0020009</code></pre></td>
 <td>No endpoint was found.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_timeout</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356554 - 0xC002000A</code></pre></td>
+<td><pre><code>3221356554 - 0xC002000A</code></pre></td>
 <td>The time-out value is invalid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_object_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356555 - 0xC002000B</code></pre></td>
+<td><pre><code>3221356555 - 0xC002000B</code></pre></td>
 <td>The object UUID was not found.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_already_registered</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356556 - 0xC002000C</code></pre></td>
+<td><pre><code>3221356556 - 0xC002000C</code></pre></td>
 <td>The object UUID has already been registered.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_type_already_registered</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356557 - 0xC002000D</code></pre></td>
+<td><pre><code>3221356557 - 0xC002000D</code></pre></td>
 <td>The type UUID has already been registered.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_already_listening</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356558 - 0xC002000E</code></pre></td>
+<td><pre><code>3221356558 - 0xC002000E</code></pre></td>
 <td>The RPC server is already listening.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_no_protseqs_registered</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356559 - 0xC002000F</code></pre></td>
+<td><pre><code>3221356559 - 0xC002000F</code></pre></td>
 <td>No protocol sequences have been registered.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_not_listening</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356560 - 0xC0020010</code></pre></td>
+<td><pre><code>3221356560 - 0xC0020010</code></pre></td>
 <td>The RPC server is not listening.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_unknown_mgr_type</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356561 - 0xC0020011</code></pre></td>
+<td><pre><code>3221356561 - 0xC0020011</code></pre></td>
 <td>The manager type is unknown.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_unknown_if</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356562 - 0xC0020012</code></pre></td>
+<td><pre><code>3221356562 - 0xC0020012</code></pre></td>
 <td>The interface is unknown.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_no_bindings</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356563 - 0xC0020013</code></pre></td>
+<td><pre><code>3221356563 - 0xC0020013</code></pre></td>
 <td>There are no bindings.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_no_protseqs</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356564 - 0xC0020014</code></pre></td>
+<td><pre><code>3221356564 - 0xC0020014</code></pre></td>
 <td>There are no protocol sequences.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_cant_create_endpoint</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356565 - 0xC0020015</code></pre></td>
+<td><pre><code>3221356565 - 0xC0020015</code></pre></td>
 <td>The endpoint cannot be created.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_out_of_resources</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356566 - 0xC0020016</code></pre></td>
+<td><pre><code>3221356566 - 0xC0020016</code></pre></td>
 <td>Insufficient resources are available to complete this operation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_server_unavailable</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356567 - 0xC0020017</code></pre></td>
+<td><pre><code>3221356567 - 0xC0020017</code></pre></td>
 <td>The RPC server is unavailable.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_server_too_busy</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356568 - 0xC0020018</code></pre></td>
+<td><pre><code>3221356568 - 0xC0020018</code></pre></td>
 <td>The RPC server is too busy to complete this operation.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_network_options</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356569 - 0xC0020019</code></pre></td>
+<td><pre><code>3221356569 - 0xC0020019</code></pre></td>
 <td>The network options are invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_no_call_active</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356570 - 0xC002001A</code></pre></td>
+<td><pre><code>3221356570 - 0xC002001A</code></pre></td>
 <td>No RPCs are active on this thread.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_call_failed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356571 - 0xC002001B</code></pre></td>
+<td><pre><code>3221356571 - 0xC002001B</code></pre></td>
 <td>The RPC failed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_call_failed_dne</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356572 - 0xC002001C</code></pre></td>
+<td><pre><code>3221356572 - 0xC002001C</code></pre></td>
 <td>The RPC failed and did not execute.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_protocol_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356573 - 0xC002001D</code></pre></td>
+<td><pre><code>3221356573 - 0xC002001D</code></pre></td>
 <td>An RPC protocol error occurred.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_unsupported_trans_syn</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356575 - 0xC002001F</code></pre></td>
+<td><pre><code>3221356575 - 0xC002001F</code></pre></td>
 <td>The RPC server does not support the transfer syntax.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_unsupported_type</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356577 - 0xC0020021</code></pre></td>
+<td><pre><code>3221356577 - 0xC0020021</code></pre></td>
 <td>The type UUID is not supported.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_tag</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356578 - 0xC0020022</code></pre></td>
+<td><pre><code>3221356578 - 0xC0020022</code></pre></td>
 <td>The tag is invalid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_bound</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356579 - 0xC0020023</code></pre></td>
+<td><pre><code>3221356579 - 0xC0020023</code></pre></td>
 <td>The array bounds are invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_no_entry_name</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356580 - 0xC0020024</code></pre></td>
+<td><pre><code>3221356580 - 0xC0020024</code></pre></td>
 <td>The binding does not contain an entry name.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_name_syntax</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356581 - 0xC0020025</code></pre></td>
+<td><pre><code>3221356581 - 0xC0020025</code></pre></td>
 <td>The name syntax is invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_unsupported_name_syntax</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356582 - 0xC0020026</code></pre></td>
+<td><pre><code>3221356582 - 0xC0020026</code></pre></td>
 <td>The name syntax is not supported.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_uuid_no_address</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356584 - 0xC0020028</code></pre></td>
+<td><pre><code>3221356584 - 0xC0020028</code></pre></td>
 <td>No network address is available to construct a UUID.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_duplicate_endpoint</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356585 - 0xC0020029</code></pre></td>
+<td><pre><code>3221356585 - 0xC0020029</code></pre></td>
 <td>The endpoint is a duplicate.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_unknown_authn_type</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356586 - 0xC002002A</code></pre></td>
+<td><pre><code>3221356586 - 0xC002002A</code></pre></td>
 <td>The authentication type is unknown.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_max_calls_too_small</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356587 - 0xC002002B</code></pre></td>
+<td><pre><code>3221356587 - 0xC002002B</code></pre></td>
 <td>The maximum number of calls is too small.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_string_too_long</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356588 - 0xC002002C</code></pre></td>
+<td><pre><code>3221356588 - 0xC002002C</code></pre></td>
 <td>The string is too long.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_protseq_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356589 - 0xC002002D</code></pre></td>
+<td><pre><code>3221356589 - 0xC002002D</code></pre></td>
 <td>The RPC protocol sequence was not found.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_procnum_out_of_range</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356590 - 0xC002002E</code></pre></td>
+<td><pre><code>3221356590 - 0xC002002E</code></pre></td>
 <td>The procedure number is out of range.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_binding_has_no_auth</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356591 - 0xC002002F</code></pre></td>
+<td><pre><code>3221356591 - 0xC002002F</code></pre></td>
 <td>The binding does not contain any authentication information.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_unknown_authn_service</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356592 - 0xC0020030</code></pre></td>
+<td><pre><code>3221356592 - 0xC0020030</code></pre></td>
 <td>The authentication service is unknown.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_unknown_authn_level</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356593 - 0xC0020031</code></pre></td>
+<td><pre><code>3221356593 - 0xC0020031</code></pre></td>
 <td>The authentication level is unknown.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_auth_identity</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356594 - 0xC0020032</code></pre></td>
+<td><pre><code>3221356594 - 0xC0020032</code></pre></td>
 <td>The security context is invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_unknown_authz_service</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356595 - 0xC0020033</code></pre></td>
+<td><pre><code>3221356595 - 0xC0020033</code></pre></td>
 <td>The authorization service is unknown.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>EPT_NT_invalid_entry</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356596 - 0xC0020034</code></pre></td>
+<td><pre><code>3221356596 - 0xC0020034</code></pre></td>
 <td>The entry is invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>EPT_NT_cant_perform_op</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356597 - 0xC0020035</code></pre></td>
+<td><pre><code>3221356597 - 0xC0020035</code></pre></td>
 <td>The operation cannot be performed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>EPT_NT_not_registered</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356598 - 0xC0020036</code></pre></td>
+<td><pre><code>3221356598 - 0xC0020036</code></pre></td>
 <td>No more endpoints are available from the endpoint mapper.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_nothing_to_export</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356599 - 0xC0020037</code></pre></td>
+<td><pre><code>3221356599 - 0xC0020037</code></pre></td>
 <td>No interfaces have been exported.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_incomplete_name</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356600 - 0xC0020038</code></pre></td>
+<td><pre><code>3221356600 - 0xC0020038</code></pre></td>
 <td>The entry name is incomplete.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_vers_option</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356601 - 0xC0020039</code></pre></td>
+<td><pre><code>3221356601 - 0xC0020039</code></pre></td>
 <td>The version option is invalid.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_no_more_members</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356602 - 0xC002003A</code></pre></td>
+<td><pre><code>3221356602 - 0xC002003A</code></pre></td>
 <td>There are no more members.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_not_all_objs_unexported</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356603 - 0xC002003B</code></pre></td>
+<td><pre><code>3221356603 - 0xC002003B</code></pre></td>
 <td>There is nothing to unexport.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_interface_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356604 - 0xC002003C</code></pre></td>
+<td><pre><code>3221356604 - 0xC002003C</code></pre></td>
 <td>The interface was not found.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_entry_already_exists</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356605 - 0xC002003D</code></pre></td>
+<td><pre><code>3221356605 - 0xC002003D</code></pre></td>
 <td>The entry already exists.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_entry_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356606 - 0xC002003E</code></pre></td>
+<td><pre><code>3221356606 - 0xC002003E</code></pre></td>
 <td>The entry was not found.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_name_service_unavailable</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356607 - 0xC002003F</code></pre></td>
+<td><pre><code>3221356607 - 0xC002003F</code></pre></td>
 <td>The name service is unavailable.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_naf_id</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356608 - 0xC0020040</code></pre></td>
+<td><pre><code>3221356608 - 0xC0020040</code></pre></td>
 <td>The network address family is invalid.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_cannot_support</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356609 - 0xC0020041</code></pre></td>
+<td><pre><code>3221356609 - 0xC0020041</code></pre></td>
 <td>The requested operation is not supported.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_no_context_available</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356610 - 0xC0020042</code></pre></td>
+<td><pre><code>3221356610 - 0xC0020042</code></pre></td>
 <td>No security context is available to allow impersonation.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_internal_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356611 - 0xC0020043</code></pre></td>
+<td><pre><code>3221356611 - 0xC0020043</code></pre></td>
 <td>An internal error occurred in the RPC.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_zero_divide</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356612 - 0xC0020044</code></pre></td>
+<td><pre><code>3221356612 - 0xC0020044</code></pre></td>
 <td>The RPC server attempted to divide an integer by zero.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_address_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356613 - 0xC0020045</code></pre></td>
+<td><pre><code>3221356613 - 0xC0020045</code></pre></td>
 <td>An addressing error occurred in the RPC server.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_fp_div_zero</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356614 - 0xC0020046</code></pre></td>
+<td><pre><code>3221356614 - 0xC0020046</code></pre></td>
 <td>A floating point operation at the RPC server caused a divide by zero.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_fp_underflow</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356615 - 0xC0020047</code></pre></td>
+<td><pre><code>3221356615 - 0xC0020047</code></pre></td>
 <td>A floating point underflow occurred at the RPC server.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_fp_overflow</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356616 - 0xC0020048</code></pre></td>
+<td><pre><code>3221356616 - 0xC0020048</code></pre></td>
 <td>A floating point overflow occurred at the RPC server.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_call_in_progress</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356617 - 0xC0020049</code></pre></td>
+<td><pre><code>3221356617 - 0xC0020049</code></pre></td>
 <td>An RPC is already in progress for this thread.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_no_more_bindings</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356618 - 0xC002004A</code></pre></td>
+<td><pre><code>3221356618 - 0xC002004A</code></pre></td>
 <td>There are no more bindings.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_group_member_not_found</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356619 - 0xC002004B</code></pre></td>
+<td><pre><code>3221356619 - 0xC002004B</code></pre></td>
 <td>The group member was not found.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>EPT_NT_cant_create</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356620 - 0xC002004C</code></pre></td>
+<td><pre><code>3221356620 - 0xC002004C</code></pre></td>
 <td>The endpoint mapper database entry could not be created.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_object</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356621 - 0xC002004D</code></pre></td>
+<td><pre><code>3221356621 - 0xC002004D</code></pre></td>
 <td>The object UUID is the nil UUID.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_no_interfaces</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356623 - 0xC002004F</code></pre></td>
+<td><pre><code>3221356623 - 0xC002004F</code></pre></td>
 <td>No interfaces have been registered.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_call_cancelled</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356624 - 0xC0020050</code></pre></td>
+<td><pre><code>3221356624 - 0xC0020050</code></pre></td>
 <td>The RPC was canceled.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_binding_incomplete</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356625 - 0xC0020051</code></pre></td>
+<td><pre><code>3221356625 - 0xC0020051</code></pre></td>
 <td>The binding handle does not contain all the required information.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_comm_failure</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356626 - 0xC0020052</code></pre></td>
+<td><pre><code>3221356626 - 0xC0020052</code></pre></td>
 <td>A communications failure occurred during an RPC.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_unsupported_authn_level</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356627 - 0xC0020053</code></pre></td>
+<td><pre><code>3221356627 - 0xC0020053</code></pre></td>
 <td>The requested authentication level is not supported.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_no_princ_name</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356628 - 0xC0020054</code></pre></td>
+<td><pre><code>3221356628 - 0xC0020054</code></pre></td>
 <td>No principal name was registered.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_not_rpc_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356629 - 0xC0020055</code></pre></td>
+<td><pre><code>3221356629 - 0xC0020055</code></pre></td>
 <td>The error specified is not a valid Windows RPC error code.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_sec_pkg_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356631 - 0xC0020057</code></pre></td>
+<td><pre><code>3221356631 - 0xC0020057</code></pre></td>
 <td>A security package-specific error occurred.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_not_cancelled</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356632 - 0xC0020058</code></pre></td>
+<td><pre><code>3221356632 - 0xC0020058</code></pre></td>
 <td>The thread was not canceled.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_async_handle</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356642 - 0xC0020062</code></pre></td>
+<td><pre><code>3221356642 - 0xC0020062</code></pre></td>
 <td>Invalid asynchronous RPC handle.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_async_call</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356643 - 0xC0020063</code></pre></td>
+<td><pre><code>3221356643 - 0xC0020063</code></pre></td>
 <td>Invalid asynchronous RPC call handle for this operation.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_proxy_access_denied</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221356644 - 0xC0020064</code></pre></td>
+<td><pre><code>3221356644 - 0xC0020064</code></pre></td>
 <td>Access to the HTTP proxy is denied.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_no_more_entries</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422081 - 0xC0030001</code></pre></td>
+<td><pre><code>3221422081 - 0xC0030001</code></pre></td>
 <td>The list of RPC servers available for auto-handle binding has been exhausted.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_ss_char_trans_open_fail</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422082 - 0xC0030002</code></pre></td>
+<td><pre><code>3221422082 - 0xC0030002</code></pre></td>
 <td>The file designated by DCERPCCHARTRANS cannot be opened.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_ss_char_trans_short_file</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422083 - 0xC0030003</code></pre></td>
+<td><pre><code>3221422083 - 0xC0030003</code></pre></td>
 <td>The file containing the character translation table has fewer than 512 bytes.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_ss_in_null_context</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422084 - 0xC0030004</code></pre></td>
+<td><pre><code>3221422084 - 0xC0030004</code></pre></td>
 <td>A null context handle is passed as an [in] parameter.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_ss_context_mismatch</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422085 - 0xC0030005</code></pre></td>
+<td><pre><code>3221422085 - 0xC0030005</code></pre></td>
 <td>The context handle does not match any known context handles.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_ss_context_damaged</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422086 - 0xC0030006</code></pre></td>
+<td><pre><code>3221422086 - 0xC0030006</code></pre></td>
 <td>The context handle changed during a call.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_ss_handles_mismatch</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422087 - 0xC0030007</code></pre></td>
+<td><pre><code>3221422087 - 0xC0030007</code></pre></td>
 <td>The binding handles passed to an RPC do not match.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_ss_cannot_get_call_handle</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422088 - 0xC0030008</code></pre></td>
+<td><pre><code>3221422088 - 0xC0030008</code></pre></td>
 <td>The stub is unable to get the call handle.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_null_ref_pointer</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422089 - 0xC0030009</code></pre></td>
+<td><pre><code>3221422089 - 0xC0030009</code></pre></td>
 <td>A null reference pointer was passed to the stub.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_enum_value_out_of_range</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422090 - 0xC003000A</code></pre></td>
+<td><pre><code>3221422090 - 0xC003000A</code></pre></td>
 <td>The enumeration value is out of range.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_byte_count_too_small</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422091 - 0xC003000B</code></pre></td>
+<td><pre><code>3221422091 - 0xC003000B</code></pre></td>
 <td>The byte count is too small.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_bad_stub_data</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422092 - 0xC003000C</code></pre></td>
+<td><pre><code>3221422092 - 0xC003000C</code></pre></td>
 <td>The stub received bad data.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_es_action</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422169 - 0xC0030059</code></pre></td>
+<td><pre><code>3221422169 - 0xC0030059</code></pre></td>
 <td>Invalid operation on the encoding/decoding handle.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_wrong_es_version</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422170 - 0xC003005A</code></pre></td>
+<td><pre><code>3221422170 - 0xC003005A</code></pre></td>
 <td>Incompatible version of the serializing package.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_wrong_stub_version</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422171 - 0xC003005B</code></pre></td>
+<td><pre><code>3221422171 - 0xC003005B</code></pre></td>
 <td>Incompatible version of the RPC stub.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_pipe_object</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422172 - 0xC003005C</code></pre></td>
+<td><pre><code>3221422172 - 0xC003005C</code></pre></td>
 <td>The RPC pipe object is invalid or corrupt.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_invalid_pipe_operation</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422173 - 0xC003005D</code></pre></td>
+<td><pre><code>3221422173 - 0xC003005D</code></pre></td>
 <td>An invalid operation was attempted on an RPC pipe object.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_wrong_pipe_version</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422174 - 0xC003005E</code></pre></td>
+<td><pre><code>3221422174 - 0xC003005E</code></pre></td>
 <td>Unsupported RPC pipe version.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_pipe_closed</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422175 - 0xC003005F</code></pre></td>
+<td><pre><code>3221422175 - 0xC003005F</code></pre></td>
 <td>The RPC pipe object has already been closed.</td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_pipe_discipline_error</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422176 - 0xC0030060</code></pre></td>
+<td><pre><code>3221422176 - 0xC0030060</code></pre></td>
 <td>The RPC call completed before all pipes were processed.</td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>RPC_NT_pipe_empty</code></pre></td>
 <td>Error</td>
-<td><pre><code>3221422177 - 0xC0030061</code></pre></td>
+<td><pre><code>3221422177 - 0xC0030061</code></pre></td>
 <td>No more data is available from the RPC pipe.</td>
 </tr>
 </tbody>
@@ -23098,23 +23092,23 @@ This field does not allow any custom items.
 <tbody>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>SSL 3.0</code></pre></td>
-<td><pre><code>48 - 0x30</code></pre></td>
+<td><pre><code>48 - 0x30</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>TLS 1.0</code></pre></td>
-<td><pre><code>49 - 0x31</code></pre></td>
+<td><pre><code>49 - 0x31</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>TLS 1.1</code></pre></td>
-<td><pre><code>50 - 0x32</code></pre></td>
+<td><pre><code>50 - 0x32</code></pre></td>
 </tr>
 <tr class="even">
 <td><pre style="white-space: pre-wrap"><code>TLS 1.2</code></pre></td>
-<td><pre><code>51 - 0x33</code></pre></td>
+<td><pre><code>51 - 0x33</code></pre></td>
 </tr>
 <tr class="odd">
 <td><pre style="white-space: pre-wrap"><code>TLS 1.3</code></pre></td>
-<td><pre><code>52 - 0x34</code></pre></td>
+<td><pre><code>52 - 0x34</code></pre></td>
 </tr>
 </tbody>
 </table>

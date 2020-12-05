@@ -1,16 +1,11 @@
----
-title: PVQL 
----
-![](https://accedian.com/wp-content/themes/accedian/images/accedian-logo-gold.svg)
-
-# PVX API — The PVQL Language
+# PVX API — PVQL
 
 Version 0.5.1
 
-  - [Functions](functions)
-  - [Definitions](definitions)
-  - [PVQL](pvql)
-  - [Changelog](changelog)
+# Table of contents
+
+1.  [PVQL syntax](#pvql-syntax)
+2.  [PVQL functions](#pvql-function)
 
 # The PVQL Syntax
 
@@ -48,7 +43,7 @@ defined as `client.traffic + server.traffic`. You can use either one
 when querying:
 
     traffic FROM transport
-
+    
     client.traffic + server.traffic FROM transport
 
 When requesting multiple complex expressions, it is useful to name them
@@ -63,10 +58,10 @@ The group clause (with the `BY` keyword) specifies how to partition the
 results: by time, by zones, applications, IP subnets, etc. You can group
 by multiple expressions.
 
-    client.traffic BY application FROM transport
-
-    traffic BY client.zone, server.zone FROM transport
-
+    client.traffic BY application.name FROM transport
+    
+    traffic BY client.zone.name, server.zone FROM transport
+    
     traffic BY time(600) FROM transport
 
 In the last example, we group the data for each period of 10 minutes
@@ -79,10 +74,10 @@ actually the data accumulated between 11:50:00 and 12:00:00.
 The filter specified with the `WHERE` keyword lets you limit the query
 to certain keys.
 
-    client.traffic BY layer, application FROM transport WHERE application != "http"
-
-    client.rtt BY client.ip FROM transport WHERE (application = "http"
-        OR application = "https") AND server.zone IN "/Local"
+    client.traffic BY layer, application.name FROM transport WHERE application.name != "http"
+    
+    client.rtt BY client.ip FROM transport WHERE (application.name = "http"
+        OR application.name = "https") AND server.zone IN "/Local"
 
 Notice the `IN` operator in this last example. It allows for filtering
 on the `"/Local"` zone or any of its children.
@@ -96,7 +91,7 @@ and for wildcard or pattern matching (using [re2
 syntax](https://github.com/google/re2/wiki/Syntax)):
 
     client.traffic FROM tls WHERE server_name IN glob("*.google.*")
-
+    
     client.traffic FROM http WHERE host IN re("^www\d")
 
 These functions exist in case-insensitive variants (`iglob`, `ire`).
@@ -106,14 +101,14 @@ There are also functions `text` / `itext` for simple string comparisons
 You can further filter the final result with an `HAVING` clause, to keep
 only the rows matching the given expression.
 
-    client.traffic BY application FROM transport HAVING client.traffic >= 10000
+    client.traffic BY application.name FROM transport HAVING client.traffic >= 10000
 
 Additionnaly, if you need to eliminate values at an early stage of the
 query, you can filter fields directly in the `WHERE` clause using the
 `raw.` prefix. Note that filtering this way requires a certain knowledge
 of the way we store data.
 
-    client.traffic, client.dtt BY application FROM transport WHERE raw.client.dtt != 0
+    client.traffic, client.dtt BY application.name FROM transport WHERE raw.client.dtt != 0
 
 ## Window and Ordering
 
@@ -121,24 +116,24 @@ The window & ordering clause (which uses the `TOP` keyword) allows to
 order and extract a portion of the result. To extract the first 5
 results, use the following:
 
-    client.traffic BY application FROM transport TOP 5
+    client.traffic BY application.name FROM transport TOP 5
 
 To request 10 lines of data while skipping the first 5 (that is, at
 offset 5, since offsets start at 0), use the following:
 
-    client.traffic, server.traffic BY client.zone, server.zone FROM transport TOP 10@5
+    client.traffic, server.traffic BY client.zone.name, server.zone FROM transport TOP 10@5
 
 The `ALL` keyword lets you request all lines of data starting at a given
 offset:
 
-    client.traffic, server.traffic BY client.zone, server.zone FROM transport TOP ALL@5
+    client.traffic, server.traffic BY client.zone.name, server.zone FROM transport TOP ALL@5
 
 As for sorting, PVQL lets you sort on any or all of the values and keys
 in the query. The i-th value is referred to by the name `vi`, while the
 j-th key is referred to by the name `kj`. These names are used in the
 `TOP` clause:
 
-    client.traffic, server.traffic BY client.zone, server.zone FROM transport
+    client.traffic, server.traffic BY client.zone.name, server.zone FROM transport
         TOP 10@5 {v2 ASC, k1 ASC}
 
 The sort direction accepts `ASC` or `DESC`. By default, the keys are
@@ -158,7 +153,7 @@ Please note that you can only sort on expressions present in the query.
 
 The `FROM` clause lets you specify which layer to request.
 
-    global.dtt BY application FROM http
+    global.dtt BY application.name FROM http
 
 ## Date Range
 
@@ -166,7 +161,7 @@ The `SINCE` / `UNTIL` clauses allow for limitting the query to a given
 time interval. They accept either the ISO8601 standard, or time
 expressions:
 
-    global.dtt BY application FROM http SINCE @(2018-02-20T10:00:00) UNTIL @now - 60*60
+    global.dtt BY application.name FROM http SINCE @(2018-02-20T10:00:00) UNTIL @now - 60*60
 
 In this example, `@now` refers to the current time in seconds, thus
 `@now - 60*60` refers to 3600 seconds ago (1 hour ago).
@@ -243,7 +238,7 @@ down the whole system.
 Finally, the `RAW` clause lets you disable result aggregation and
 retrieve raw values stored in the database:
 
-    traffic BY application FROM transport RAW
+    traffic BY application.name FROM transport RAW
 
 This query does not return the total traffic for each application, but
 the traffic and application of each database record.
@@ -336,20 +331,20 @@ substituted with the corresponding values.
 For example, if you want a PVQL query regarding an application for a
 specific server, you would usually write something like this:
 
-    server.rt, server.dtt FROM tcp WHERE application = "NC" AND server.ip = 8.8.8.8
+    server.rt, server.dtt FROM tcp WHERE application.name = "NC" AND server.ip = 8.8.8.8
 
 However, you might want to be able to easily choose another IP address
 without rewriting the query each time. For this purpose, you can
 introduce a variable, such as `$server`, in place of the actual value:
 
-    server.rt, server.dtt FROM tcp WHERE application = "NC" AND server.ip = $server
+    server.rt, server.dtt FROM tcp WHERE application.name = "NC" AND server.ip = $server
 
 Then wherever you request data using this query, you pass the
 corresponding value in the `variables` parameters.
 
 Example:
 
-    => query expr="server.rt, server.dtt FROM tcp WHERE application = \"NC\" AND server.ip = $server" \
+    => query expr="server.rt, server.dtt FROM tcp WHERE application.name = \"NC\" AND server.ip = $server" \
     ..       variables={"server": {"value": "8.8.4.4", "type": {"type": "ip"}}}
 
 ## Examples
@@ -382,15 +377,15 @@ in `192.168.0.0/16` (thus for each 256 `192.168.x.0/24` networks):
 Retrieving the 20 highest average server response times for a matrix of
 application × client zone:
 
-    server.rt BY application, client.zone FROM transport TOP 20
+    server.rt BY application.name, client.zone.name FROM transport TOP 20
 
 Retrieving the server traffic per client zone:
 
-    server.traffic BY client.zone FROM transport
+    server.traffic BY client.zone.name FROM transport
 
 Retrieving the server traffic for a matrix of client zone × application:
 
-    server.traffic BY client.zone, application FROM transport
+    server.traffic BY client.zone.name, application.name FROM transport
 
 Retrieving the total traffic by protocol stack for each IPv4 client
 within `192.168.0.0/16`:
@@ -407,3 +402,409 @@ to those matching the given pattern:
     traffic BY host FROM http WHERE host IN "*.google.com" TOP 10
 
 The `server.ip[n]` expression in these examples refer to subnets.
+
+# PVQL Functions
+
+## date[](#date)
+
+### Signature
+
+    date(spec: string) -> time
+
+### Description
+
+Parse a date in ISO 8601 format as a PVQL time.
+
+### Arguments
+
+  - `date`: a literal string that represents a date in ISO 8601 format.
+
+### Returns
+
+A PVQL time based on the date string.
+
+## family[](#family)
+
+### Signature
+
+    family(ip: ip) -> ipfamily
+
+### Description
+
+Get the family type of the current IP.
+
+### Arguments
+
+  - `ip`: An IP field.
+
+### Returns
+
+IPv4 or IPv6, depending of the current IP address type.
+
+## flatten[](#flatten)
+
+### Signature
+
+    flatten(zone: zone, level: number) -> zone
+
+### Description
+
+Simplify a zone hierarchy up to a maximum depth level.
+
+### Arguments
+
+  - `zone`: A zone field.
+  - `depth`: A literal positive numeric value that represents the
+    maximum depth of the returned zone path.
+
+### Returns
+
+A parent zone, depending on `depth`.
+
+### Example
+
+`flatten(client.zone.name, 2)` where `client.zone.name = "/All/Public/Documents"`
+returns `/All/Public`.
+
+## glob[](#glob)
+
+### Signature
+
+    glob(value: string) -> regex
+
+### Description
+
+Build a wildcard pattern matcher.
+
+Internally, the PVQL wildcard pattern is converted to a case sensitive
+regex.
+
+### Arguments
+
+  - `value`: A PVQL wildcard pattern.
+
+### Returns
+
+A case sensitive regex.
+
+### Example
+
+`traffic FROM http WHERE url IN glob("http://*")` returns the traffic
+from all URLs that use the HTTP scheme.
+
+## iglob[](#iglob)
+
+### Signature
+
+    iglob(value: string) -> regex
+
+### Description
+
+Build a wildcard pattern matcher.
+
+Internally, the PVQL wildcard pattern is converted to a non-case
+sensitive regex.
+
+### Arguments
+
+  - `value`: A PVQL wildcard pattern.
+
+### Returns
+
+A non-case sensitive regex.
+
+### Example
+
+`traffic FROM http WHERE url IN glob("http://*")` returns the traffic
+from all URL using the HTTP protocol.
+
+## ire[](#ire)
+
+### Signature
+
+    ire(value: string) -> regex
+
+### Description
+
+Build with a [re2 regex](https://github.com/google/re2/wiki/Syntax)
+string, as a PVQL case-insensitive regex.
+
+### Arguments
+
+  - `value`: A [re2 regex](https://github.com/google/re2/wiki/Syntax).
+
+### Returns
+
+The same string, converted to a regex type.
+
+### Example
+
+`traffic FROM http WHERE url IN re("^(http|https)://*.com$")` returns
+the traffic from HTTP URLs that use the top-level domain `.com`.
+
+## itext[](#itext)
+
+### Signature
+
+    itext(value: Parameter<S>) -> normalized_case
+
+### Description
+
+Force PVQL to apply a case insentitive comparaison on filtering.
+
+### Arguments
+
+  - `value`: A string.
+
+### Returns
+
+The same string, with an internal marker for doing case-insensitive
+operations.
+
+### Example
+
+`query FROM databases WHERE itext(system) = itext("mysql")` returns all
+queries from the MySQL databases.
+
+## lower[](#lower)
+
+### Signature
+
+    lower(value: Parameter<S>) -> Parameter<S>
+
+### Description
+
+Transform a string to a lowercase string.
+
+### Arguments
+
+  - `value`: A string.
+
+### Returns
+
+The same string, on lowercase format.
+
+## points[](#points)
+
+### Signature
+
+    points() -> number
+
+### Description
+
+Return the number of rows aggregated in each result group. The value
+depends on the aggregation level used to run the query.
+
+### Returns
+
+A positive numeric value.
+
+## prefix[](#prefix)
+
+### Signature
+
+    prefix(ip: ip, mask: number) -> ip
+
+### Description
+
+Apply a CIDR mask on the current IPv4. The expression
+`prefix(client.ip, 24)` is equivalent to `client.ip/24`.
+
+### Arguments
+
+  - `ip`: An IPv4 address.
+  - `mask`: A literal numeric value between 0 to 32 that represents the
+    CIDR prefix length.
+
+### Returns
+
+An IPv4 with the applied CIDR mask.
+
+## prefix[](#prefix)
+
+### Signature
+
+    prefix(mac: mac, mask: number) -> mac
+
+### Description
+
+Keep the nth bytes on the current MAC address. The expression
+`prefix_mac(client.mac, 24)` is equivalent to `client.mac/24`.
+
+### Arguments
+
+  - `mac`: A MAC address.
+  - `mask`: A literal numeric value between 0 to 48 that represents the
+    number of bytes to keep.
+
+### Returns
+
+A MAC address where the first nth bytes have been kept, and the
+remaining ones are zeros.
+
+## prefix6[](#prefix6)
+
+### Signature
+
+    prefix6(ip: ip, mask: number) -> ip
+
+### Description
+
+Apply a CIDR mask on the current IPv6. The expression
+`prefix_ipv6(client.ip, 48)` is equivalent to `client.ip/48`.
+
+### Arguments
+
+  - `ip`: An IPv6 address.
+  - `mask`: A literal numeric value between 0 to 128 that represents the
+    CIDR prefix length.
+
+### Returns
+
+An IPv6 with the applied CIDR mask.
+
+## re[](#re)
+
+### Signature
+
+    re(value: string) -> regex
+
+### Description
+
+Build with a [re2 regex](https://github.com/google/re2/wiki/Syntax)
+string, as a PVQL case sensitive regex.
+
+### Arguments
+
+  - `value`: A [re2 regex](https://github.com/google/re2/wiki/Syntax).
+
+### Returns
+
+The same string, converted as a regex type.
+
+### Example
+
+`traffic FROM http WHERE url IN re("^(http|https)://*.com$")` returns
+the traffic from HTTP URLs that use the top-level domain `.com`.
+
+## safesum[](#safesum)
+
+### Signature
+
+    safesum(left: number, right: number) -> number
+
+### Description
+
+Safe operator for `add` if we have a nullable argument. If either
+operand is NULL, it will be replaced by 0.
+
+### Arguments
+
+  - `left`: A numeric value that can be nullable.
+  - `right`: A numeric value that can be nullable.
+
+### Returns
+
+The result of left + right.
+
+## strip\_url[](#strip_url)
+
+### Signature
+
+    strip_url(value: string) -> url
+
+### Description
+
+Removes the query string and fragment identifier from an URL.
+
+### Arguments
+
+  - `url`: An URL.
+
+### Returns
+
+An URL, without the query string and fragmant identifier.
+
+## strip\_url[](#strip_url)
+
+### Signature
+
+    strip_url(value: url) -> url
+
+### Description
+
+Removes the query string and fragment identifier from an URL.
+
+### Arguments
+
+  - `url`: An URL.
+
+### Returns
+
+An URL, without the query string and fragmant identifier.
+
+## substr[](#substr)
+
+### Signature
+
+    substr(value: Parameter<S>, offset: number, length: number) -> Parameter<S>
+
+### Description
+
+Return a substring from an offset, up to a certain bytes length.
+
+### Arguments
+
+  - `value`: A type value who should be a subset of string.
+  - `offset`: A constant positive numeric value that represents the
+    start position of the substring.
+  - `length`: A constant positive numeric value that represents the
+    length of the substring.
+
+### Returns
+
+A substring.
+
+## substr[](#substr)
+
+### Signature
+
+    substr(value: Parameter<S>, length: number) -> Parameter<S>
+
+### Description
+
+Return a substring from the beginning, up to a certain bytes length.
+
+### Arguments
+
+  - `value`: A type value that should be a subset of string.
+  - `length`: A constant positive numeric value that represents the
+    length of the substring.
+
+### Returns
+
+A substring.
+
+## text[](#text)
+
+### Signature
+
+    text(value: Parameter<S>) -> normalized_case
+
+### Description
+
+Force PVQL to apply a case-insentitive comparaison on the filtering.
+
+### Arguments
+
+  - `value`: A string.
+
+### Returns
+
+The same string, with an internal marker for not doing case-insensitive
+operations.
+
+### Example
+
+`query FROM databases WHERE text(system) = text("MySQL")` returns all
+queries from the MySQL databases.

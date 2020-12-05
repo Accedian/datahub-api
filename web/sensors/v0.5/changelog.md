@@ -1,22 +1,14 @@
----
-title: Change Log
----
-![](https://accedian.com/wp-content/themes/accedian/images/accedian-logo-gold.svg)
-
 # PVX API — Changelog
 
 Version 0.5.1
-
-  - [Functions](functions)
-  - [Definitions](definitions)
-  - [PVQL](pvql)
-  - [Changelog](changelog)
 
 ## \[0.5.1\] - In development
 
 ### Added
 
   - Added new field [smb.md5](./definitions#field-smb.md5)
+  - Added new endpoint [get-degradations](./endpoints#get-degradations)
+  - Added new endpoint [get-layers](./endpoints#get-layers)
 
 ## \[0.5\]
 
