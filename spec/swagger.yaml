@@ -1,4 +1,4 @@
-swagger: '2.0'
+swagger: "2.0"
 host: api.analytics.accedian.io
 info:
   title: Skylight Analytics API documentation
@@ -10393,29 +10393,7 @@ definitions:
         type: "string"
 
 
-  JsonApiRelationship:
-    type: "object"
-    properties:
-      data:
-        type: "array"
-        items:
-          $ref: '#/definitions/JsonApiRelationshipData'
-  JsonApiSingleRelationship:
-    type: "object"
-    properties:
-      data:
-        $ref: '#/definitions/JsonApiRelationshipData'
-
-
-  JsonApiRelationshipData:
-    type: "object"
-    properties:
-      type:
-        type: "string"
-      id:
-        type: "string"
-
-
+  
   AAAUser:
     type: "object"
     required:
@@ -11450,18 +11428,6 @@ definitions:
     properties:
       data:
         $ref: '#/definitions/TenantMetadata'
-  TenantMetadata:
-    type: "object"
-    properties:
-      type: 
-        type: "string"
-        enum: [tenantMetadata]
-      id:
-        type: "string"
-      attributes:
-        $ref: '#/definitions/TenantMetadataAttr'
-      relationships:
-        $ref: '#/definitions/TenantMetadataRelationships'
   TenantMetadataAttr:
     type: "object"
     properties:
