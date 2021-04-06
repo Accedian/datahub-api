@@ -2,7 +2,7 @@
 
 Version 0.6.0
 
-## \[0.6\] - In development
+## \[0.6\]
 
 ### Added
 
