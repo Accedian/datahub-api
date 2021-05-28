@@ -2,7 +2,7 @@ swagger: '2.0'
 host: api.analytics.accedian.io
 info:
   title: Skylight Analytics API documentation
-  version: 2020.06.0
+  version: 2021.03.0
   contact:
     email: the.team@accedian.com 
   description: |
@@ -8838,7 +8838,207 @@ paths:
             $ref: '#/definitions/JsonApiAggregateV3Request'
       tags:
         - MetricsServiceV3
-    
+  /v3/twe:
+    post:
+      summary: Provisions a time exclusion for the current tenant
+      operationId: CreateTimeExclusion
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/TimeExclusionRequestSpec'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/TimeExclusionResponseSpec'
+        '403':
+          description: Access to resource forbidden for user
+          schema:
+            $ref: '#/definitions/Error'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Time Window Exclusions
+    get:
+      summary: Retrieves all provisioned time exclusion for the current tenant
+      operationId: GetAllTimeExclusion
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/TimeExclusionResponseArraySpec'
+        '403':
+          description: Access to resource forbidden for user
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Time Window Exclusions
+  /v3/twe/{id}:
+    patch:
+      summary: Updates a provisioned time exclusion of the current tenant
+      operationId: UpdateTimeExclusion
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/TimeExclusionUpdateRequestSpec'
+      responses:
+        '200':
+          description: Updated
+          schema:
+            $ref: '#/definitions/TimeExclusionResponseSpec'
+        '403':
+          description: Access to resource forbidden for user
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/Error'
+        '412':
+          description: Precondition failed
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Unexpected error processing request
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Time Window Exclusions
+    get:
+      summary: Retrieves a provisioned time exclusion for the current tenant by name
+      operationId: GetTimeExclusion
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/TimeExclusionResponseSpec'
+        '403':
+          description: Access to resource forbidden for user
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Time Window Exclusions
+    delete:
+      summary: Removes a provisioned time exclusion for the current tenant by name
+      operationId: DeleteTimeExclusion
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Deleted
+        '403':
+          description: Access to resource forbidden for user
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Time Window Exclusions
+  /v3/twe/events:
+    get:
+      summary: Returns all time window exclusions for the tenant that have occurrences between start and end time. If monitoredObjectID is specified, only time window exclusions that affect the monitored object during the specified time window are returned
+      operationId: TimeExclusionEvents
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      parameters:
+        - name: start
+          in: query
+          required: true
+          type: integer
+        - name: end
+          in: query
+          required: true
+          type: integer
+        - in: query
+          name: monitoredObjectID
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/TimeWindowExclusionEventArraySpec'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Monitored object not found
+          schema:
+            $ref: '#/definitions/Error'
+        '403':
+          description: Access to resource forbidden for user
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Time Window Exclusions
+
 
 definitions:
 
@@ -18767,4 +18967,551 @@ definitions:
       value:
         type: number
         format: double
+  Error:
+    type: object
+    properties:
+      errors:
+        type: array
+        items:
+          type: object
+          properties:
+            title:
+              type: string
+            status:
+              type: string
+            code:
+              type: string
+            detail:
+              type: string
+    example:
+      errors:
+        - status: 500
+          code: GATHER-34
+          title: Warp engine failure
+          details: Replace dilithium
 
+  TimeExclusionRequestSpec:
+    type: object
+    required:
+      - data
+    properties:
+      data:
+        type: object
+        required:
+          - type
+          - attributes
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+            enum:
+              - twe
+          attributes:
+            $ref: '#/definitions/TimeExclusionRequest'
+    example:
+      data:
+        type: twe
+        attributes:
+          name: FridayNightBusyHour
+          description: Friday night prime time
+          locale: Canada/Montreal
+          exclusionType: busyHour
+          match:
+            metadata:
+              include:
+                location:
+                  - football stadium
+                zone:
+                  - east
+                  - west
+              exclude:
+                zone:
+                  - north
+                  - south
+            monitoredObjectIDs:
+              - abc
+              - cde
+            zones:
+              - Zone A
+              - Zone B
+            applicationIds:
+              - ID1
+              - ID2
+            sensorIDs:
+              - ID1
+              - ID2
+          startTime: "2020-12-20T17:00:00.00Z"
+          endTime: "2020-12-20T21:00:00.00Z"
+          duration: "P5DT5H30M00S"
+          recurrence:
+            freq: WEEKLY
+            wkst: FRI
+
+  TimeExclusionRequest:
+    type: object
+    required:
+      - name
+      - exclusionType
+      - match
+      - startTime
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+        x-nullable: true
+      locale:
+        type: string
+        x-nullable: true
+        description: Locale label - Should match tome zone define in startTime and endTime, but is not enforced
+      exclusionType:
+        type: string
+        enum:
+          - busyHour
+          - maintenance
+      match:
+        $ref: '#/definitions/TimeWindowExclusionMatch'
+      startTime:
+        type: string
+        format: date-time
+      endTime:
+        type: string
+        format: date-time
+        x-nullable: true
+      duration:
+        type: string
+        pattern: P(\d+W)?(\d+D)?(T(\d+H)?(\d+M)?(\d+S)?)?
+      recurrence:
+        type: array
+        items:
+          $ref: '#/definitions/TimeWindowExclusionRecurrence'
+
+  TimeExclusionUpdateRequestSpec:
+    type: object
+    required:
+      - data
+    properties:
+      data:
+        type: object
+        required:
+          - id
+          - type
+          - attributes
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+          attributes:
+            $ref: '#/definitions/TimeExclusionUpdateRequest'
+    example:
+      data:
+        type: twe
+        attributes:
+          name: FridayNightBusyHour
+          description: Friday night prime time
+          locale: Canada/Montreal
+          exclusionType: busyHour
+          match:
+            metadata:
+              include:
+                location:
+                  - football stadium
+                zone:
+                  - east
+                  - west
+              exclude:
+                zone:
+                  - north
+                  - south
+            monitoredObjectIDs:
+              - abc
+              - cde
+            zones:
+              - Zone A
+              - Zone B
+          startTime: "2020-12-20T17:00:00.00Z"
+          duration: "PT1H"
+          recurring:
+            freq: WEEKLY
+            wkst: FRI
+            count: 5
+  TimeExclusionUpdateRequest:
+    type: object
+    properties:
+      name:
+        type: string
+        x-nullable: true
+      description:
+        type: string
+        x-nullable: true
+      locale:
+        type: string
+        x-nullable: true
+        description: Locale label - Should match tome zone define in startTime and endTime, but is not enforced
+      exclusionType:
+        type: string
+        enum:
+          - busyHour
+          - maintenance
+        x-nullable: true
+      match:
+        $ref: '#/definitions/TimeWindowExclusionMatch'
+      startTime:
+        type: string
+        format: date-time
+        x-nullable: true
+      endTime:
+        type: string
+        format: date-time
+        x-nullable: true
+      duration:
+        type: string
+        pattern: P(\d+W)?(\d+D)?(T(\d+H)?(\d+M)?(\d+S)?)?
+      recurrence:
+        type: array
+        items:
+          $ref: '#/definitions/TimeWindowExclusionRecurrence'
+
+  TimeExclusionResponseSpec:
+    type: object
+    required:
+      - data
+    properties:
+      data:
+        type: object
+        required:
+          - id
+          - type
+          - attributes
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+          attributes:
+            $ref: '#/definitions/TimeExclusionResponse'
+    example:
+      data:
+        id: "3211177d-c211-43ec-949b-e109686a4abe"
+        type: twe
+        attributes:
+          name: Friday Night Busy Hour
+          description: Friday night prime time
+          locale: Canada/Montreal
+          exclusionType: busyHour
+          match:
+            metadata:
+              include:
+                location:
+                  - football stadium
+                zone:
+                  - east
+                  - west
+              exclude:
+                zone:
+                  - north
+                  - south
+            monitoredObjectIDs:
+              - abc
+              - cde
+            zones:
+              - Zone A
+              - Zone B
+            applicationIds:
+              - ID1
+              - ID2
+            sensorIDs:
+              - ID1
+              - ID2
+          startTime: "2020-12-20T17:00:00.00Z"
+          endTime: "2020-12-20T21:00:00.00Z"
+          recurrence:
+            freq: WEEKLY
+            wkst: FRI
+  TimeExclusionResponseArraySpec:
+    type: object
+    required:
+      - data
+    properties:
+      data:
+        type: array
+        items:
+          required:
+            - id
+            - type
+            - attributes
+          properties:
+            id:
+              type: string
+            type:
+              type: string
+            attributes:
+              $ref: '#/definitions/TimeExclusionResponse'
+    example:
+      data:
+        - id: "3211177d-c211-43ec-949b-e109686a4abe"
+          type: twe
+          attributes:
+            name: FridayNightBusyHour
+            description: Friday night prime time
+            locale: Canada/Montreal
+            exclusionType: busyHour
+            match:
+              metadata:
+                include:
+                  location:
+                    - football stadium
+                  zone:
+                    - east
+                    - west
+                exclude:
+                  zone:
+                    - north
+                    - south
+              monitoredObjectIDs:
+                - abc
+                - cde
+              zones:
+                - Zone A
+                - Zone B
+              applicationIds:
+                - ID1
+                - ID2
+              sensorIDs:
+                - ID1
+                - ID2
+            startTime: "2020-12-20T17:00:00.00Z"
+            endTime: "2020-12-20T21:00:00.00Z"
+            recurrence:
+              freq: WEEKLY
+              wkst: FRI
+  TimeExclusionResponse:
+    type: object
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+        x-nullable: true
+      locale:
+        type: string
+        x-nullable: true
+        description: Locale label - Should match tome zone define in startTime and endTime, but is not enforced
+      exclusionType:
+        type: string
+        enum:
+          - busyHour
+          - maintenance
+      match:
+        $ref: '#/definitions/TimeWindowExclusionMatch'
+      startTime:
+        type: string
+        format: date-time
+      endTime:
+        type: string
+        format: date-time
+        x-nullable: true
+      duration:
+        type: string
+        pattern: P(\d+W)?(\d+D)?(T(\d+H)?(\d+M)?(\d+S)?)?
+      recurrence:
+        type: array
+        items:
+          $ref: '#/definitions/TimeWindowExclusionRecurrence'
+  TimeWindowExclusionMatch:
+    type: object
+    properties:
+      monitoredObjectIds:
+        type: array
+        description: A list of monitored object IDs. Supports '*' wildcard to match all monitored objects
+        items:
+          type: string
+      metaData:
+        type: object
+        properties:
+          include:
+            type: object
+            additionalProperties:
+              type: array
+              items:
+                type: string
+          exclude:
+            type: object
+            additionalProperties:
+              type: array
+              items:
+                type: string
+      applicationIds:
+        type: array
+        items:
+          type: string
+      zones:
+        type: array
+        items:
+          type: string
+      sensorIds:
+        type: array
+        items:
+          type: string
+  TimeWindowExclusionRecurrence:
+    type: object
+    required:
+      - freq
+    properties:
+      freq:
+        type: string
+        enum:
+          - SECONDLY
+          - MINUTELY
+          - HOURLY
+          - DAILY
+          - WEEKLY
+          - MONTHLY
+          - YEARLY
+        description: The frequency
+        x-nullable: true
+      until:
+        type: string
+        format: date-time
+        description: The end of this recurrence
+        x-nullable: true
+      count:
+        type: integer
+        description: The maximum number of recurrence
+        x-nullable: true
+      interval:
+        type: integer
+        description: The numeric interval
+        x-nullable: true
+      bySecond:
+        type: array
+        items:
+          type: integer
+          minimum: 0
+          maximum: 60
+      byMinute:
+        type: array
+        items:
+          type: integer
+          minimum: 0
+          maximum: 59
+      byHour:
+        type: array
+        items:
+          type: integer
+          minimum: 0
+          maximum:  23
+      byDay:
+        type: array
+        items:
+          type: string
+          pattern: ^(\+|-)?([1-9]|[0-4][0-9]|5[0-3])?(MO|TU|WE|TH|FR|SA|SU)
+      byMonthDay:
+        type: array
+        items:
+          type: string
+          pattern: ^(\+|-)?([1-9]|[1-2][0-9]|3[0-1])
+      byYearDay:
+        type: array
+        items:
+          type: string
+          pattern: ^(\+|-)?([1-9]|[1-2][0-9][0-9]|3[0-5][0-9]|36[0-6])
+      byWeekNo:
+        type: array
+        items:
+          type: string
+          pattern: ^(\+|-)?([1-9]|[0-4][0-9]|5[0-3])
+      byMonth:
+        type: array
+        items:
+          type: integer
+          minimum: 1
+          maximum: 12
+          x-nullable: true
+      bySetPos:
+        type: array
+        items:
+          type: string
+          pattern: ^(\+|-)?([1-9]|[1-2][0-9][0-9]|3[0-5][0-9]|36[0-6])
+      wkst:
+        type: string
+        pattern: ^(MO|TU|WE|TH|FR|SA|SU)
+  TimeWindowExclusionEventArraySpec:
+    type: object
+    required:
+      - data
+    properties:
+      data:
+        type: array
+        items:
+          type: object
+          required:
+            - id
+            - type
+            - attributes
+          properties:
+            id:
+              type: string
+            type:
+              type: string
+            attributes:
+              $ref: '#/definitions/TimeWindowExclusionEvent'
+
+  TimeWindowExclusionEvent:
+    type: object
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+        x-nullable: true
+      locale:
+        type: string
+        x-nullable: true
+        description: Locale label - Should match tome zone define in startTime and endTime, but is not enforced
+      exclusionType:
+        type: string
+        enum:
+          - busyHour
+          - maintenance
+      match:
+        $ref: '#/definitions/TimeWindowExclusionMatch'
+      occurrences:
+        type: array
+        items:
+          type: object
+          properties:
+            startTimestamp:
+              type: integer
+              description: Unix timestamp (ms)
+              format: int64
+            endTimestamp:
+              type: integer
+              description: Unix timestamp (ms)
+              format: int64
+    example:
+      - name: Example
+        description: An example
+        exclusionType: Busyhour
+        occurances:
+          - startTimestamp: 1607009009
+            endTimestamp: 1607010009
+          - startTimestamp: 1608009009
+            endTimestamp: 1608010009
+        match:
+          metadata:
+            - location: football stadium
+          monitoredObjectIDs:
+            - abc
+            - cde
+          zones:
+            - Zone A
+            - Zone B
+          applicationIds:
+            - ID1
+            - ID2
+          sensorIDs:
+            - ID1
+            - ID2
