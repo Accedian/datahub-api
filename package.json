@@ -2,7 +2,7 @@
   "name": "Skylight-openapi-spec",
   "version": "2.0.0",
   "dependencies": {
-    "bower": "^1.8.8",
+    "bower": "^1.8.12",
     "connect": "^3.4.1",
     "cors": "^2.7.1",
     "deploy-to-gh-pages": "^1.1.0",
