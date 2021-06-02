@@ -14,7 +14,7 @@
     "redoc": "^2.0.0-rc.14",
     "shelljs": "^0.7.0",
     "swagger-repo": "^1.0.1",
-    "swagger-ui-dist": "^3.18.0"
+    "swagger-ui-dist": "^3.48.0"
   },
   "private": true,
   "scripts": {
