@@ -79,7 +79,6 @@ produces:
 paths:
 
   ##### SKYLIGHT-AAA PATHS #####
-  
 
   /openid-configuration/{clientName}:
     get:
@@ -1903,7 +1902,6 @@ paths:
         - AuthService
 
 ##### GATHER PATHS #####
-  
 
   /v1/export/configurations:
     post:
@@ -3855,6 +3853,179 @@ paths:
           type: string
       tags:
         - TenantProvisioningServiceV2
+
+  /v2/connector-configs/templates:
+    post:
+      summary: Create a ConnectorConfigTemplate for a Tenant.
+      operationId: CreateConnectorConfigTemplateV2
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/ConnectorConfigResponse'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '409':
+          description: "The Connector being provisioned already exists"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ConnectorConfigTemplateCreateRequest'
+      tags:
+        - TenantProvisioningServiceV2
+    get:
+      summary: Retrieve all of the ConnectorConfigTemplates for the specified Tenant.
+      operationId: GetAllConnectorConfigTemplatesV2
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ConnectorConfigListResponse'
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "No connector configurations are provisioned"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      tags:
+        - TenantProvisioningServiceV2
+
+  /v2/connector-configs/templates/{templateId}:
+    get:
+      summary: Retrieves a connector configuration template by id.
+      operationId: GetConnectorConfigTemplateV2
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ConnectorConfigResponse'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "The specified Connector Configuration is not provisioned"
+          schema:
+            type: string
+        '409':
+          description: "Incorrect revision number passed in to the Connector Configuration being updated"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string      
+      parameters:
+        - name: templateId
+          in: path
+          required: true
+          type: string
+      tags:
+        - TenantProvisioningServiceV2
+    patch:
+      summary: Update a Tenant ConnectorConfigTemplate specified by the provided Template Id.
+      operationId: UpdateConnectorConfigTemplateV2
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ConnectorConfigResponse'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "The specified Connector Configuration is not provisioned"
+          schema:
+            type: string
+        '409':
+          description: "Incorrect revision number passed in to the Connector Configuration being updated"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ConnectorConfigTemplateUpdateRequest'
+        - name: templateId
+          in: path
+          required: true
+          type: string
+      tags:
+        - TenantProvisioningServiceV2
+
+    delete:
+      summary: Delete a Tenant ConnectorConfigTemplate specified by the provided Template Id.
+      operationId: DeleteConnectorConfigTemplateV2
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ConnectorConfigResponse'
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "The specified Connector Configuration is not provisioned"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: templateId
+          in: path
+          required: true
+          type: string
+      tags:
+        - TenantProvisioningServiceV2
   /v2/cyber/network-assets:
     post:
       summary: Create a Network Asset
@@ -5616,6 +5787,9 @@ paths:
           in: query
           type: integer
           description: "The maximum number of records to return for a single page"
+          default: 5000
+          minimum: 1
+          maximum: 5000
       tags:
         - TenantProvisioningServiceV2
     post:
@@ -5693,7 +5867,7 @@ paths:
         - TenantProvisioningServiceV2
   /v2/monitored-objects/id-list:
     post:
-      summary: Retrieve a list of monitored objects based on the provided filter criteria
+      summary: Retrieve a list of monitored objects based on the provided filter criteria, in order to retreive all records pagination must be used. 
       operationId: GetFilteredMonitoredObjectListV2
       consumes:
         - application/json
@@ -5701,7 +5875,7 @@ paths:
         - application/vnd.api+json
       responses:
         '200':
-          description: 'Response list containing all monitored object IDs that match the provided meta filter criteria'
+          description: 'Response list containing monitored object IDs that match the provided meta filter criteria'
           schema:
             $ref: '#/definitions/MonitoredObjectFilteredListResponse'
         '400':
@@ -5717,6 +5891,20 @@ paths:
           schema:
             type: string
       parameters:
+        - name: start_key
+          in: query
+          type: string
+          required: false
+          description: "Pagination key to start from for results to return, default to empty string. Ex: 2"
+          default: ""
+        - name: limit
+          in: query
+          type: integer
+          required: false
+          description: "The maximum number of records to return for a single page, default to 10,000."
+          default: 10000
+          minimum: 1
+          maximum: 10000
         - name: body
           in: body
           required: true
@@ -6173,6 +6361,9 @@ paths:
           in: query
           type: integer
           description: "The maximum number of records to return for a single page"
+          default: 5000
+          minimum: 1
+          maximum: 5000
       tags:
         - TenantProvisioningServiceV2
 
@@ -6305,6 +6496,93 @@ paths:
           description: "The type of Metadata Category Mapping to be updated"
       tags:
         - TenantProvisioningServiceV2
+  /v2/policies/alerting/schedule:
+    post:
+      summary: Create an Alert Policy schedule entries set
+      operationId: createRequestAlertPolicyScheduleEntriesSet
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/alertConditionWorkingHoursSetCreateReq'
+      tags:
+        - TenantAlertServiceV2
+      responses:
+        '201':
+          description: "Policy alert schedule items collection successfully created"
+          schema:
+            $ref: '#/definitions/alertConditionWorkingHoursSet'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+    get:
+      summary: Get multiple Alert policy schedule items collections with pagination support
+      operationId: getMultipleRequestAlertPolicyScheduleItemSets
+      tags:
+        - TenantAlertServiceV2
+      parameters:
+        - in: query
+          name: limit
+          type: integer
+          description: Maximum number of results to return
+          default: 20
+          minimum: 0
+        - in: query
+          name: skip
+          type: integer
+          description: first N results skipped
+          minimum: 0
+      responses:
+        '200':
+          description: "Alert policy schedule items array"
+          schema:
+            $ref: '#/definitions/alertConditionWorkingHoursSetsCollection'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "alert policy schedule items id not found"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+  /v2/policies/alerting/schedule/{id}:
+    get:
+      summary: Get single Alert policy schedule items set, by it's ID
+      operationId: getRequestAlertPolicyScheduleItemsSetByID
+      tags:
+        - TenantAlertServiceV2
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: "Alert policy schedule items set"
+          schema:
+            $ref: '#/definitions/alertConditionWorkingHoursSet'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "alert policy schedule item id not found"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
   /v2/policies/alerting:
     post:
       summary: Create an Alert Policy
@@ -7280,6 +7558,41 @@ paths:
           required: true
           schema:
             $ref: '#/definitions/WrappedThreatFeed'
+      tags:
+        - TenantThreatFeedV2
+
+  /v2/threatfeeds/data/{threatFeedId}:
+    post:
+      summary: Upload a threat feed content
+      operationId: uploadThreatFeed
+      consumes:
+        - multipart/form-data
+      responses:
+        "200":
+          description: "Data for threat feed uploaded successfully"
+          schema:
+            $ref: "#/definitions/WrappedThreatFeed"
+        "403":
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "The requested threat feed is not found"
+          schema:
+            type: string
+        "500":
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: threatFeedId
+          in: path
+          required: true
+          type: string
+        - name: file
+          in: formData
+          required: true
+          type: file
       tags:
         - TenantThreatFeedV2
   /v2/threshold-profiles:
@@ -8917,6 +9230,30 @@ definitions:
       id:
         type: "string"
 
+
+  JsonApiRelationship:
+    type: "object"
+    properties:
+      data:
+        type: "array"
+        items:
+          $ref: '#/definitions/JsonApiRelationshipData'
+  JsonApiSingleRelationship:
+    type: "object"
+    properties:
+      data:
+        $ref: '#/definitions/JsonApiRelationshipData'
+
+
+  JsonApiRelationshipData:
+    type: "object"
+    properties:
+      type:
+        type: "string"
+      id:
+        type: "string"
+
+
   AAAUser:
     type: "object"
     required:
@@ -9202,10 +9539,42 @@ definitions:
         type: "string"
       id_token:
         type: "string"
-
-
+      
 ##### GATHER DEFINITIONS #####
 
+  TimeRangeInMilliseconds:
+    type: object
+    properties:
+      from:
+        type: integer
+        format: int64
+      to:
+        type: integer
+        format: int64
+  ConditionOperand:
+    type: string
+    enum: [ "gt", "lt", "eq", "gte", "lte", "in"]
+    default: "eq"
+    description: |
+      Operand to use when evaluating the condition.
+      gt  = greaterThan
+      lt  = lessThan
+      eq  = equal
+      gte  = greaterThan or equal
+      lte  = lessThan or equal
+  MultipleValuesEntry:
+    type: object
+    required: [ "key", "includes", "values" ]
+    properties:
+      key:
+        type: string
+      includes:
+        type: boolean
+        default: true
+      values:
+        type: array
+        items:
+          type: string
   PouchOk:
     type: object
     properties:
@@ -10922,9 +11291,9 @@ definitions:
       securityState:
         $ref: "#/definitions/ActiveAlertSecurityState"
       sourcePort:
-        type: number
+        type: string
       destinationPort:
-        type: number
+        type: string
       assignedIncidentId:
         type: string
 
@@ -11211,7 +11580,7 @@ definitions:
   # GroupBy DEFINITIONS
   ## REQUEST DEFINITIONS
   JsonApiActiveAlertGroupByRequest:
-    description: JSON API compliant wrapper for the groupby query
+    description: JSON API compliant wrapper for the group-by query
     type: object
     properties:
       data:
@@ -11364,6 +11733,9 @@ definitions:
                   type: object
                   additionalProperties:
                     type: "string"
+          total:
+            type: integer
+            format: int64
 
   ActiveAlertSpec:
     description: Filter object that identifies a specific metric within a monitored object by its key attributes
@@ -12293,28 +12665,6 @@ definitions:
           x-omitempty: true
           $ref: '#/definitions/expressionItems'
 
-  JsonApiRelationship:
-    type: "object"
-    properties:
-      data: 
-        type: "array"
-        items:
-          $ref: '#/definitions/JsonApiRelationshipData'
-          
-  JsonApiSingleRelationship:
-    type: "object"
-    properties:
-      data: 
-        $ref: '#/definitions/JsonApiRelationshipData'
-          
-  JsonApiRelationshipData:
-    type: "object"
-    properties:
-      type: 
-        type: "string"
-      id:
-        type: "string"
-        
   CompositeMetric:
     description: "Composite metrics"
     type: object
@@ -12707,6 +13057,8 @@ definitions:
             type: string
             enum: ["debug","info","warning","error"]
             default: info
+          label:
+            type: "string"
           datatype:
             type: "string"
           tenantId:
@@ -13206,7 +13558,150 @@ definitions:
         type: string
       Type:
         type: string
-        enum: ["fixed", "interpolate"]  #Network Asset
+        enum: ["fixed", "interpolate"]
+
+  ConnectorConfigTemplateCreateRequest:
+    type: "object"
+    required: ["data"]
+    properties:
+      data:
+        type: "object"
+        required: ["type", "attributes"]
+        properties:
+          type: 
+            type: "string"
+            enum: [connectorConfigs]
+          id:
+            type: "string"
+          attributes:
+            type: "object"
+            required: ["url", "type"]
+            properties:
+              name:
+                type: "string"
+              url: 
+                type: "string"
+              port:
+                type: "integer"
+              pollingFrequency:
+                type: "integer"
+                default: 60
+              username:
+                type: "string"
+              password:
+                type: "string"
+              exportGroup:
+                type: "string"
+              datahubHeartbeatFrequency:
+                type: "integer"
+              datahubConnectionRetryFrequency:
+                type: "integer"
+              type:
+                type: "string"
+              zone:
+                type: "string"
+              prometheusAddr:
+                type: string
+                description: When set, instructs roadrunner to connect to this local prometheus store intermediary metrics
+              prometheusPort:
+                type: integer
+              ciscoTelemetryConfig:
+                $ref: '#/definitions/CiscoTelemetryConfig'
+              openMetricsConfig:
+                $ref: '#/definitions/OpenMetricsConfig'
+              openMetricsScraperConfig:
+                $ref: '#/definitions/OpenMetricsScraperConfig'
+              agentProxyConfig:
+                $ref: '#/definitions/AgentProxyConfig'
+              dataLoggingConfig:
+                $ref: '#/definitions/DataLoggingConfig'
+              SNMPConfig:
+                $ref: '#/definitions/SNMPConfig'
+              SNMPTrapSenderConfig:
+                $ref: '#/definitions/SNMPTrapSenderConfig'
+              MQTTConfig:
+                $ref: '#/definitions/MQTTConfig'
+              restartRoadrunner:
+                type: boolean
+                description: Triggers a restart of roadrunner on configuration reload
+              pauseRoadRunnerMetricIngestion:
+                type: boolean
+                description: "Pauses RoadRunner Ingestion"
+                default: false
+              sessionFilterProfileID:
+                type: "string"
+                description: "If set, RR will fetch and use the session filter profile for the given ID."
+              groupedSQLOperations:
+                $ref: '#/definitions/ObjectTypeSqlOperations'
+
+  ConnectorConfigTemplateUpdateRequest:
+    type: "object"
+    required: ["data"]
+    properties:
+      data:
+        type: "object"
+        required: ["type", "attributes", "id"]
+        properties:
+          type: 
+            type: "string"
+            enum: [connectorConfigs]
+          id:
+            type: "string"
+          attributes:
+            type: "object"
+            required: ["_rev"]
+            properties:
+              _rev:
+                type: "string"
+                description: "Value used to ensure updates to this object are handled in order."
+              name:
+                type: "string"
+              url: 
+                type: "string"
+              port:
+                type: "integer"
+              pollingFrequency:
+                type: "integer"
+              username:
+                type: "string"
+              password:
+                type: "string"
+              exportGroup:
+                type: "string"
+              datahubHeartbeatFrequency:
+                type: "integer"
+              datahubConnectionRetryFrequency:
+                type: "integer"
+              type:
+                type: "string"
+              zone:
+                type: "string"
+              prometheusAddr:
+                type: string
+                description: When set, instructs roadrunner to connect to this local prometheus store intermediary metrics
+              prometheusPort:
+                type: integer
+              ciscoTelemetryConfig:
+                $ref: '#/definitions/CiscoTelemetryConfig'
+              openMetricsConfig:
+                $ref: '#/definitions/OpenMetricsConfig'
+              openMetricsScraperConfig:
+                $ref: '#/definitions/OpenMetricsScraperConfig'
+              agentProxyConfig:
+                $ref: '#/definitions/AgentProxyConfig'   
+              dataLoggingConfig:
+                $ref: '#/definitions/DataLoggingConfig'             
+              SNMPConfig:
+                $ref: '#/definitions/SNMPConfig'
+              SNMPTrapSenderConfig:
+                $ref: '#/definitions/SNMPTrapSenderConfig'
+              MQTTConfig:
+                $ref: '#/definitions/MQTTConfig'
+              sessionFilterProfileID:
+                type: "string"
+                description: "If set, RR will fetch and use the session filter profile for the given ID."
+              groupedSQLOperations:
+                $ref: '#/definitions/ObjectTypeSqlOperations'  #Network Asset
   NetworkAssetListResponse:
     type: object
     required: ["data"]
@@ -13251,11 +13746,11 @@ definitions:
     properties:
       field:
         type: string
-        enum: [ "firstSeen", "lastSeen" ]
+        enum: ["firstSeen", "lastSeen", "ip", "mac", "meta.classification", "meta.platform"]
       order:
         type: string
         x-isnullable: true
-        enum: [ "asc", "desc" ]
+        enum: ["asc", "desc"]
 
   NetworkAssetCountriesResponse:
     type: object
@@ -13315,23 +13810,9 @@ definitions:
         items:
           $ref: '#/definitions/NetworkAssetRole'
       firstSeen:
-        type: object
-        properties:
-          from:
-            type: integer
-            format: int64
-          to:
-            type: integer
-            format: int64
+        $ref: '#/definitions/TimeRangeInMilliseconds'
       lastSeen:
-        type: object
-        properties:
-          from:
-            type: integer
-            format: int64
-          to:
-            type: integer
-            format: int64
+        $ref: '#/definitions/TimeRangeInMilliseconds'
 
   NetworkAssetFilteredCountResponse:
     type: object
@@ -13602,6 +14083,10 @@ definitions:
           lastSeen:
             type: integer
             format: int64
+          sensor:
+            type: string
+            x-omitempty: true
+
   DashboardCreateRequest:
     type: "object"
     required: ["data"]
@@ -14471,23 +14956,9 @@ definitions:
           type: string
           enum: ["new", "in-progress", "resolved", "closed", "archived"]
       createdAt:
-        type: object
-        properties:
-          from:
-            type: integer
-            format: int64
-          to:
-            type: integer
-            format: int64
+        $ref: '#/definitions/TimeRangeInMilliseconds'
       modifiedAt:
-        type: object
-        properties:
-          from:
-            type: integer
-            format: int64
-          to:
-            type: integer
-            format: int64
+        $ref: '#/definitions/TimeRangeInMilliseconds'
 
   IncidentsStateUpdateRequest:
     type: object
@@ -15430,6 +15901,10 @@ definitions:
       type: "object"
       required: ["data"]
       properties:
+        links:
+          type: "object"
+          additionalProperties:
+            type: "string"
         data:
           $ref: '#/definitions/MonitoredObjectFilteredList'
   MonitoredObjectFilteredList:
@@ -16521,20 +16996,17 @@ definitions:
         type: number
       value:
         type: string
+      displayUnit:
+        type: string
+        description: Field for UI to perform visual only unit conversions in the front end
+        example: "bytes"
       values:
         type: array
         x-omitempty: true
         items:
           type: string
       comparator:
-        type: string
-        enum: ["gt", "lt", "eq", "gte", "lte", "in"]
-        default: "eq"
-        description: |
-          Operand to use when evaluating the condition.
-          gt  = greaterThan
-          lt  = lessThan
-          eq  = equal
+        $ref: '#/definitions/ConditionOperand'
       blacklist:
         description: |
           Generic blacklist of fields and their values that can trigger an alert.
@@ -16548,12 +17020,6 @@ definitions:
         x-omitempty: true
         items:
           $ref: '#/definitions/alertConditionListEntry'
-      workingHours:
-        description: General list of combinations of times at which the policy will be processed or suspended.
-        type: array
-        x-omitempty: true
-        items:
-          $ref: '#/definitions/alertConditionWorkingHoursEntry'
       advancedFilter:
         description: General list of combinations of different fields for which alerts will be triggered.
         type: array
@@ -16610,6 +17076,11 @@ definitions:
       sunday:
         type: boolean
 
+  alertConditionWorkingHoursSetCreateReq:
+    type: array
+    items:
+      $ref: '#/definitions/alertConditionWorkingHoursEntry'
+
   alertConditionWorkingHoursEntry:
     type: object
     properties:
@@ -16617,6 +17088,27 @@ definitions:
         $ref: '#/definitions/workingWeekdays'
       timeRange:
         $ref: '#/definitions/workingHoursRange'
+
+  alertConditionWorkingHoursSet:
+    type: object
+    properties:
+      id:
+        type: string
+      items:
+        type: array
+        items:
+          $ref: '#/definitions/alertConditionWorkingHoursEntry'
+
+  alertConditionWorkingHoursSetsCollection:
+    type: object
+    properties:
+      sets:
+        type: array
+        items:
+          $ref: '#/definitions/alertConditionWorkingHoursSet'
+      total:
+        type: number
+        format: integer
 
   filterWithMultipleValuesEntry:
     type: object
@@ -16634,16 +17126,14 @@ definitions:
 
   alertConditionListEntry:
     type: object
-    required: ["field", "value"]
+    required: ["triggerConditions", "workingHours"]
     properties:
-      field:
-        type: string
-      value:
-        type: string
-      description:
-        type: string
-        x-omitempty: false
-        default: ""
+      triggerConditions:
+        type: array
+        items:
+          $ref: '#/definitions/MultipleValuesEntry'
+      workingHours:
+        $ref: '#/definitions/alertConditionWorkingHoursSet'
 
   AlertPayload:
     type: object
@@ -16858,9 +17348,9 @@ definitions:
       destinationNetworkAssetRoles:
         type: string
       sourcePort:
-        type: number
+        type: string
       destinationPort:
-        type: number
+        type: string
 
   AutomaticAlertPolicyCreateRequest:
     type: object
@@ -17449,6 +17939,8 @@ definitions:
         type: string
       _rev:
         type: string
+      feedId:
+        type: string
       name:
         type: string
       description:
@@ -17459,6 +17951,10 @@ definitions:
       isPublic:
         type: boolean
         default: false
+      lastUpdatedTimestamp:
+        type: "integer"
+        format: "int64"
+        description: "Time when the data for the third feed was last updated."
 
   ThreatFeedsListResponse:
     type: object
@@ -18557,7 +19053,7 @@ definitions:
             items:
               $ref: '#/definitions/MetricTimeseriesResultEntry'
 
-                #TCP Throughput Test
+  #TCP Throughput Test
   TcpThroughputResponse:
     type: object
     required: [data]
