@@ -46,23 +46,6 @@ info:
           }
     }
     ```
-    ## Making an authorized API request - (RAW metrics API query)
-    Once you have optained an `Authorization bearer` token, you can make a query to retrieve [RAW metrics](/#operation/GetRawMetrics). 
-    ```bash
-    curl -X POST https://{url}/api/v2/raw-metrics \
-      -d "\
-        {'tenantId':'tenant12345',\
-         'interval':'2018-08-08T11%3A12%3A53-04%3A00%2F2018-08-09T11%3A12%3A53-04%3A00',\
-         'granularity':'PT78.545S',\
-         'meta':{'colors':['orange']},\
-         'timeout':30000,\
-         'metrics':['jitterP95'],\
-         'directions':['0','1','2'],\
-         'objectType':'twamp-sf'\
-        }" -H 'Cache-Control: no-cache' -H 'Authorization:  MTUzNTAyNDg[...]'
-    ``` 
-    
-    > Pro-tip: Replace "{url}" by your path
     
 basePath: /api
 
