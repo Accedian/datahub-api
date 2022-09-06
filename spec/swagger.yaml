@@ -4084,6 +4084,10 @@ paths:
           description: "Requestor does not have authorization to perform this action"
           schema:
             type: string
+        "404":
+          description: "Network assets not found"
+          schema:
+            type: string
         "500":
           description: "Unexpected error processing request"
           schema:
@@ -5765,7 +5769,8 @@ paths:
         - name: start_key
           in: query
           type: string
-          description: "The name of the Monitored Object from which the result set will begin"
+          description: "Pagination key to start from for results to return, default to empty string. Ex: 2"
+          default: ""
         - name: limit
           in: query
           type: integer
@@ -6035,7 +6040,7 @@ paths:
       parameters:
         - name: meta
           in: query
-          description: "List of metadata category names by which the request should be filtered"
+          description: "List of metadata category names by which the request should be filtered. Currently exactly one metadata category must be provided, for multiple category results you must query separately for each respective category."
           type: array
           items:
             type: string
@@ -6051,7 +6056,7 @@ paths:
       tags:
         - TenantProvisioningServiceV2
     post:
-      summary: Retrieve a record of the provisioned metadata including the counts of Monitored Objects that use each metadata value after being filtered by the passed in request body parameters
+      summary: Retrieve a record of the provisioned metadata including the counts of Monitored Objects that use each metadata value after being filtered by the passed in request body parameters, currently not supported.
       operationId: GetFilteredMonitoredObjectMetadataDetailsV2
       consumes:
         - application/json
@@ -6531,7 +6536,7 @@ paths:
           schema:
             type: string
         '404':
-          description: "alert policy schedule items id not found"
+          description: "alert policy schedule items not found"
           schema:
             type: string
         '500':
@@ -6559,7 +6564,39 @@ paths:
           schema:
             type: string
         '404':
-          description: "alert policy schedule item id not found"
+          description: "alert policy schedule item set wasn't found"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+    patch:
+      summary: Update single Alert policy schedule items set, by it's ID
+      operationId: patchRequestAlertPolicyScheduleItemsSet
+      tags:
+        - TenantAlertServiceV2
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/alertConditionWorkingHoursSet'
+      responses:
+        '200':
+          description: "Alert policy schedule items set"
+          schema:
+            $ref: '#/definitions/alertConditionWorkingHoursSet'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "alert policy schedule item set wasn't found"
           schema:
             type: string
         '500':
@@ -6648,11 +6685,11 @@ paths:
       operationId: getRequestDefaultAlertPolicy
       responses:
         '200':
-          description: "Got default alert policy document"
+          description: "Got default alert policy document, the format is DEPRECATED and after releasing 22.11 won't be supported"
           schema:
-            $ref: '#/definitions/alertPolicyResponse'
+            $ref: '#/definitions/alertPolicyResponseV2'
         '403':
-          description: "Requestor does not have authorization to perform this action"
+          description: "Requester does not have authorization to perform this action"
           schema:
             type: string
         '500':
@@ -6678,11 +6715,11 @@ paths:
       operationId: getRequestDefaultAlertPolicies
       responses:
         '200':
-          description: "Got the value of the default alert policies"
+          description: "Got the value of the default alert policies, the format is DEPRECATED and after releasing 22.11 won't be supported"
           schema:
-            $ref: '#/definitions/alertPoliciesResponse'
+            $ref: '#/definitions/alertPoliciesResponseV2'
         '403':
-          description: "Requestor does not have authorization to perform this action"
+          description: "Requester does not have authorization to perform this action"
           schema:
             type: string
         '500':
@@ -7544,6 +7581,48 @@ paths:
       tags:
         - TenantThreatFeedV2
 
+  /v2/threatfeeds/{threatFeedId}/set-last-uploaded:
+    patch:
+      summary: Set last updated timestamp for public a threat feed
+      operationId: setLastUploadedThreatFeed
+      responses:
+        '200':
+          description: "Threat feed updated successfully"
+          schema:
+            $ref: '#/definitions/ThreatFeedsListResponse'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "The requested threat feed is not found"
+          schema:
+            type: string
+        '409':
+          description: "Incorrect revision provided for the update request"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: threatFeedId
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/UpdatedTimestampThreatFeed'
+      tags:
+        - TenantThreatFeedV2
+
   /v2/threatfeeds/data/{threatFeedId}:
     post:
       summary: Upload a threat feed content
@@ -8371,6 +8450,155 @@ paths:
             $ref: '#/definitions/JsonApiAggregateV3Request'
       tags:
         - MetricsServiceV3
+  /v3/policies/alerting/default:
+    get:
+      summary: Get the value of the default alert policies
+      operationId: getDefaultAlertPoliciesV3
+      responses:
+        '200':
+          description: "Got the value of the default alert policies"
+          schema:
+            $ref: '#/definitions/alertPoliciesResponse'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: useRawMetaKey
+          in: query
+          default: false
+          type: "boolean"
+          description: "Returns the default raw metadata key's ID from the DB."
+      tags:
+        - TenantAlertServiceV3
+
+  /v3/policies/alerting/{id}/default:
+    get:
+      summary: Get a specific default Alert Policy
+      operationId: getDefaultAlertPolicyV3
+      responses:
+        '200':
+          description: "Got default alert policy document"
+          schema:
+            $ref: '#/definitions/alertPolicyResponse'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: useRawMetaKey
+          in: query
+          default: false
+          type: "boolean"
+          description: "Returns the default raw metadata key's ID from the DB."
+      tags:
+        - TenantAlertServiceV3
+
+  /v3/policies/alerting/condition/rules:
+    post:
+      summary: Creates reusable condition rule which can be used as whitelist|blacklist for alert policies
+      operationId: createConditionRuleV3
+      tags:
+        - TenantAlertServiceV3
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/createAlertPolicyConditionRuleReq'
+      responses:
+        '201':
+          description: "Got the value of the whitelisting object"
+          schema:
+            $ref: '#/definitions/alertConditionListEntry'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "related schedule items set not found"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+    get:
+      summary: Get multiple Alert policy condition rule objects with pagination support
+      operationId: getMultipleConditionRulesV3
+      tags:
+        - TenantAlertServiceV3
+      parameters:
+        - in: query
+          name: limit
+          type: integer
+          description: Maximum number of results to return
+          default: 25
+          minimum: 0
+        - in: query
+          name: skip
+          type: integer
+          description: first N results skipped
+          minimum: 0
+        - in: query
+          name: policyID
+          type: string
+          default: ""
+          description: optional id of related policy
+      responses:
+        '200':
+          description: "Alert policy whitelist"
+          schema:
+            $ref: '#/definitions/alertPolicyConditionRulesCollection'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+
+  /v3/policies/alerting/condition/rules/{id}:
+    get:
+      summary: Gets a single Alert Policy whitelist by specified ID
+      operationId: getConditionRuleByID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      tags:
+        - TenantAlertServiceV3
+      responses:
+        '200':
+          description: "Got default alert policy whitelist document"
+          schema:
+            $ref: '#/definitions/alertConditionListEntry'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "alert policy whitelist not found"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
   /v3/tcpThroughput/tests:
     post:
       summary: Create a TCP Throughput test report
@@ -9364,7 +9592,8 @@ definitions:
     properties:
       password:
         type: "string"
-        minLength: 8
+        description: "Password must be at least 9 characters long, contain at least one number, contain at least one special character, and must have a mixture of uppercase and lowercase letters"
+        minLength: 9
         maxLength: 64
       onboardingToken:
         type: "string"
@@ -9380,7 +9609,8 @@ definitions:
         maxLength: 64
       newPassword:
         type: "string"
-        minLength: 8
+        description: "Password must be at least 9 characters long, contain at least one number, contain at least one special character, and must have a mixture of uppercase and lowercase letters"
+        minLength: 9
         maxLength: 64
 
   JsonApiTenantInfo:
@@ -9549,6 +9779,10 @@ definitions:
     type: object
     required: [ "key", "includes", "values" ]
     properties:
+      description:
+        type: string
+        x-omitempty: false
+        default: ""
       key:
         type: string
       includes:
@@ -11078,7 +11312,7 @@ definitions:
 
   IngestionVersionRetetionProperties:
     type: "object"
-    required: ["metricAdmin", "metricDelta", "metricTable"]
+    required: ["metricAdmin", "metricDelta", "metricTable", "historyNotRequired"]
     properties:
       metricAdmin:
         type: "string"
@@ -11089,6 +11323,9 @@ definitions:
       metricTable:
         type: "string"
         description: "ISO8601 format period (only Time variant i.e. must start 'PT') which determines for what period of time old versions of metric refresh will be kept"
+      historyNotRequired:
+        type: "string"
+        description: "ISO8601 format period (only Time variant i.e. must start 'PT') which determines for what period of time old versions of data will be kept for data tables that DO NOT require history to be maintained"
 
   # Active Alerts
   ActiveAlert:
@@ -11716,9 +11953,9 @@ definitions:
                   type: object
                   additionalProperties:
                     type: "string"
-          total:
-            type: integer
-            format: int64
+          hasNextPage:
+            type: boolean
+            description: If true the next page can be requested with next request with bigger `pageNumber` value, otherwise all documents where already returned
 
   ActiveAlertSpec:
     description: Filter object that identifies a specific metric within a monitored object by its key attributes
@@ -12587,6 +12824,14 @@ definitions:
         example: 20
         description: "Describes the total number of active security policies"
 
+
+  expressionAllOfArray:
+    x-omitempty: true
+    type: array
+    items:
+      type: object
+
+
   expressionCondition:
     type: object
     properties:
@@ -12613,15 +12858,10 @@ definitions:
         x-nullable: true
         type: integer
       in:
-        x-omitempty: true
-        type: array
-        items:
-          type: string
+        $ref: '#/definitions/expressionAllOfArray'
       notin:
-        x-omitempty: true
-        type: array
-        items:
-          type: string
+        $ref: '#/definitions/expressionAllOfArray'
+
 
   expressionItems:
     type: object
@@ -12647,7 +12887,7 @@ definitions:
         items:
           x-omitempty: true
           $ref: '#/definitions/expressionItems'
-
+          
   CompositeMetric:
     description: "Composite metrics"
     type: object
@@ -12934,6 +13174,8 @@ definitions:
                 description: "If set, RR will fetch and use the session filter profile for the given ID."
               groupedSQLOperations:
                 $ref: '#/definitions/ObjectTypeSqlOperations'
+              filewatcherConfig:
+                $ref: '#/definitions/FilewatcherConfig'
 
   ConnectorConfigUpdateRequest:
     type: "object"
@@ -13004,6 +13246,8 @@ definitions:
                 description: "If set, RR will fetch and use the session filter profile for the given ID."
               groupedSQLOperations:
                 $ref: '#/definitions/ObjectTypeSqlOperations'
+              filewatcherConfig:
+                $ref: '#/definitions/FilewatcherConfig'
               
   ConnectorConfigResponse:
     type: "object"
@@ -13105,6 +13349,16 @@ definitions:
             description: "If set, RR will fetch and use the session filter profile for the given ID."
           groupedSQLOperations:
             $ref: '#/definitions/ObjectTypeSqlOperations'
+          filewatcherConfig:
+            $ref: '#/definitions/FilewatcherConfig'
+
+  FilewatcherConfig:
+    type: object
+    properties:
+      workerPoolSize:
+        type: "integer"
+      bufferSize:
+        type: "integer"
 
   SNMPConfig:
     type: object
@@ -16802,96 +17056,17 @@ definitions:
             items:
               $ref: '#/definitions/MetricTimeseriesResultEntry'
 
-
-  # The policies properties are based off of data cleaning!
-  # I want to move DataCleaning toward switching to this policy
-  # MetricIdentifier replaces the datacleaning's metricVendor&metricLabel
-  # I added severity which is optional
-  alertPolicy:
-    required: ["type", "attributes"]
+  alertPolicyRelationships:
+    type: "object"
     properties:
-      type:
-        type: "string"
-        enum: ["alertPolicies"]
-        default: "alertPolicies"
-      id:
-        type: "string"
-      relationships:
-        type: "object"
-        properties:
-          createdBy:
-            $ref: '#/definitions/JsonApiSingleRelationship'
-          modifiedBy:
-            $ref: '#/definitions/JsonApiSingleRelationship'
-          tenantId:
-            $ref: '#/definitions/JsonApiSingleRelationship'
-          tenantName:
-            $ref: '#/definitions/JsonApiSingleRelationship'
-      included:
-        type: array
-        items:
-          $ref: '#/definitions/alertPoliciesStatistics'
-      attributes:
-        type: object
-        description: |
-          Every alert policy requires a trigger condition. Recovery is optional as some alarms may need to be stopped
-          by an operator.
-          Trigger condition  - This is the policies that causes an alarm to start
-          Recovery condition - This is the policies that automatically causes an alarm to stop
-        required: ["conditions", "name", "description", "configuration"]
-        properties:
-          enabled:
-            type: boolean
-            default: true
-            description: "Controls whether this policy should be enabled"
-          deleted:
-            type: boolean
-            default: false
-            description: "This flag is to tell us whether the alert has been deleted and cannot be modified. The reasoning we don't do a real delete is because existing alerts in the database still need to correspond to something."
-          _rev:
-            type: string
-            description: "Policy revision. Not necessarily sequential"
-          lastModifiedTimestamp:
-            type: number
-            format: int64
-            description: "Last modification timestamp in POSIX epoch generated by server"
-          createdTimestamp:
-            type: number
-            format: int64
-            description: "Creation timestamp in POSIX epoch generated by server"
-          useCleanData:
-            type: boolean
-            default: true
-            description: "By default alerts will ignore records that are marked dirty. This can be overriden (switch this to false) in the scenarios that alert should check invalid records."
-          useBusyHourOnly:
-            type: boolean
-            default: false
-            description: "By default alerts will ignore records that are marked as busyHour. If this is set to true, ONLY busy hour data will be considered when alert rules are applied"
-          useMaintenance:
-            type: boolean
-            default: true
-            description: "By default alerts will consider records that are marked as maintenance. If this is set to false, data tagged as maintenance will be ignored when alert rules are applied"
-          conditions:
-            type: array
-            items:
-              $ref: '#/definitions/alertConditionGroup'
-          configuration:
-            $ref: '#/definitions/alertsConfiguration'
-            # Global configuration for the conditions. In the future, you may be able to override these globals per condition.
-          name:
-            type: string
-            description: "The name of the alert so it can be easily differentiated."
-            minLength: 1
-            maxLength: 64
-          description:
-            type: string
-            description: "Brief description of what the Alert Policy will do"
-            maxLength: 512
-          tags:
-            description: "Miscellaneous data the user wants to tag this alert with"
-            type: string
-            maxLength: 255
-            example: "orderId:uuid123"
+      createdBy:
+        $ref: '#/definitions/JsonApiSingleRelationship'
+      modifiedBy:
+        $ref: '#/definitions/JsonApiSingleRelationship'
+      tenantId:
+        $ref: '#/definitions/JsonApiSingleRelationship'
+      tenantName:
+        $ref: '#/definitions/JsonApiSingleRelationship'
 
   alertsConfiguration:
     type: object
@@ -16921,143 +17096,40 @@ definitions:
         items:
           $ref: '#/definitions/genericFilterMapItem'
 
-  alertConditionGroup:
-    type: object
-    required: ["triggersOn"]
-    description: |
-      "The conditions for an alert (violation or recovery). eg: metric > threshold"
-      "Note that metric will in the future support composite metrics."
-    properties:
-      triggersOn:
-        $ref: '#/definitions/alertCondition'
-      recoversOn:
-        $ref: '#/definitions/alertCondition'
-      severity:
-        type: string
-
-  alertCondition:
+  alertConditionMetric:
     type: object
     properties:
-      duration:
+      type:
         type: string
-        default: "PT5M"
-      metric:
-        type: object
-        properties:
-          type:
-            type: string
-            enum: ["session", "capture","security"] # composite
-            default: "session"
-          layer:
-            type: string
-            description: "Capture field name"
-            example: "http"
-          vendor:
-            description: Vendor name associated with the monitored object
-            type: string
-            example: accedian-twamp
-          objectType:
-            description: Object types to be considered as part of the filter
-            type: array
-            example:
-              - "twamp-sl"
-              - "twamp-sf"
-            items:
-              type: string
-          id:
-            description: The metric's identifier
-            type: string
-            example: delayP95
-          direction:
-            description: Set of one or more directions to be used by the filter to identify required metric records
-            type: array
-            example:
-              - "0"
-            items:
-              type: string
-      ratioPercent:
-        type: number
-      value:
+        enum: [ "session", "capture","security" ] # composite
+        default: "session"
+      layer:
         type: string
-      displayUnit:
+        description: "Capture field name"
+        example: "http"
+      vendor:
+        description: Vendor name associated with the monitored object
         type: string
-        description: Field for UI to perform visual only unit conversions in the front end
-        example: "bytes"
-      values:
+        example: accedian-twamp
+      objectType:
+        description: Object types to be considered as part of the filter
         type: array
-        x-omitempty: true
+        example:
+          - "twamp-sl"
+          - "twamp-sf"
         items:
           type: string
-      comparator:
-        $ref: '#/definitions/ConditionOperand'
-      blacklist:
-        description: |
-          Generic blacklist of fields and their values that can trigger an alert.
-          Supported only for "security" policy type!
+      id:
+        description: The metric's identifier
+        type: string
+        example: delayP95
+      direction:
+        description: Set of one or more directions to be used by the filter to identify required metric records
         type: array
-        x-omitempty: true
+        example:
+          - "0"
         items:
-          $ref: '#/definitions/alertConditionListEntry'
-      whitelist: 
-        type: array
-        x-omitempty: true
-        items:
-          $ref: '#/definitions/alertConditionListEntry'
-      advancedFilter:
-        description: General list of combinations of different fields for which alerts will be triggered.
-        type: array
-        x-omitempty: true
-        items:
-          $ref: '#/definitions/filterWithMultipleValuesEntry'
-          # We can add "withMessage" here so in the future, alert can include this information.
-
-  hour:
-    type: integer
-    minimum: 0
-    maximum: 23
-
-  minute:
-    type: integer
-    minimum: 0
-    maximum: 59
-
-  workingHoursBoundary:
-    type: object
-    properties:
-      hour:
-        $ref: '#/definitions/hour'
-      minute:
-        $ref: '#/definitions/minute'
-
-  workingHoursRange:
-    type: object
-    required: ["working24h"]
-    properties:
-      working24h:
-        type: boolean
-        default: true
-      from:
-        $ref: '#/definitions/workingHoursBoundary'
-      to:
-        $ref: '#/definitions/workingHoursBoundary'
-
-  workingWeekdays:
-    type: object
-    properties:
-      monday:
-        type: boolean
-      tuesday:
-        type: boolean
-      wednesday:
-        type: boolean
-      thursday:
-        type: boolean
-      friday:
-        type: boolean
-      saturday:
-        type: boolean
-      sunday:
-        type: boolean
+          type: string
 
   alertConditionWorkingHoursSetCreateReq:
     type: array
@@ -17078,6 +17150,7 @@ definitions:
       id:
         type: string
       items:
+        x-omitempty: true
         type: array
         items:
           $ref: '#/definitions/alertConditionWorkingHoursEntry'
@@ -17106,17 +17179,6 @@ definitions:
         type: array
         items:
           type: string
-
-  alertConditionListEntry:
-    type: object
-    required: ["triggerConditions", "workingHours"]
-    properties:
-      triggerConditions:
-        type: array
-        items:
-          $ref: '#/definitions/MultipleValuesEntry'
-      workingHours:
-        $ref: '#/definitions/alertConditionWorkingHoursSet'
 
   AlertPayload:
     type: object
@@ -17331,9 +17393,10 @@ definitions:
       destinationNetworkAssetRoles:
         type: string
       sourcePort:
-        type: string
+        type: integer
       destinationPort:
-        type: string
+        type: integer
+
 
   AutomaticAlertPolicyCreateRequest:
     type: object
@@ -17605,6 +17668,173 @@ definitions:
         items:
           $ref: '#/definitions/AlertPayload'
 
+  alertConditionListEntryV2:
+    type: object
+    required: [ "field", "value" ]
+    properties:
+      field:
+        type: string
+      value:
+        type: string
+      description:
+        type: string
+        x-omitempty: false
+        default: ""
+
+  alertConditionV2:
+    type: object
+    properties:
+      duration:
+        type: string
+        default: "PT5M"
+      metric:
+        $ref: '#/definitions/alertConditionMetric'
+      ratioPercent:
+        type: number
+      value:
+        type: string
+      displayUnit:
+        type: string
+        description: Field for UI to perform visual only unit conversions in the front end
+        example: "bytes"
+      values:
+        type: array
+        x-omitempty: true
+        items:
+          type: string
+      comparator:
+        $ref: '#/definitions/ConditionOperand'
+      blacklist:
+        description: |
+          Generic blacklist of fields and their values that can trigger an alert.
+          Supported only for "security" policy type!
+        type: array
+        x-omitempty: true
+        items:
+          $ref: '#/definitions/alertConditionListEntryV2'
+      whitelist:
+        type: array
+        x-omitempty: true
+        items:
+          $ref: '#/definitions/alertConditionListEntryV2'
+      advancedFilter:
+        description: General list of combinations of different fields for which alerts will be triggered.
+        type: array
+        x-omitempty: true
+        items:
+          $ref: '#/definitions/filterWithMultipleValuesEntry'
+  alertConditionGroupV2:
+    type: object
+    required: [ "triggersOn" ]
+    description: |
+      "The conditions for an alert (violation or recovery). eg: metric > threshold"
+      "Note that metric will in the future support composite metrics."
+    properties:
+      triggersOn:
+        $ref: '#/definitions/alertConditionV2'
+      recoversOn:
+        $ref: '#/definitions/alertConditionV2'
+      severity:
+        type: string
+
+  alertPolicyV2:
+    required: [ "type", "attributes" ]
+    properties:
+      type:
+        type: "string"
+        enum: [ "alertPolicies" ]
+        default: "alertPolicies"
+      id:
+        type: "string"
+      relationships:
+        $ref: '#/definitions/alertPolicyRelationships'
+      included:
+        type: array
+        items:
+          $ref: '#/definitions/alertPoliciesStatistics'
+      attributes:
+        type: object
+        description: |
+          Every alert policy requires a trigger condition. Recovery is optional as some alarms may need to be stopped
+          by an operator.
+          Trigger condition  - This is the policies that causes an alarm to start
+          Recovery condition - This is the policies that automatically causes an alarm to stop
+        required: [ "conditions", "name", "description", "configuration" ]
+        properties:
+          enabled:
+            type: boolean
+            default: true
+            description: "Controls whether this policy should be enabled"
+          deleted:
+            type: boolean
+            default: false
+            description: "This flag is to tell us whether the alert has been deleted and cannot be modified. The reasoning we don't do a real delete is because existing alerts in the database still need to correspond to something."
+          _rev:
+            type: string
+            description: "Policy revision. Not necessarily sequential"
+          lastModifiedTimestamp:
+            type: number
+            format: int64
+            description: "Last modification timestamp in POSIX epoch generated by server"
+          createdTimestamp:
+            type: number
+            format: int64
+            description: "Creation timestamp in POSIX epoch generated by server"
+          useCleanData:
+            type: boolean
+            default: true
+            description: "By default alerts will ignore records that are marked dirty. This can be overridden (switch this to false) in the scenarios that alert should check invalid records."
+          useBusyHourOnly:
+            type: boolean
+            default: false
+            description: "By default alerts will ignore records that are marked as busyHour. If this is set to true, ONLY busy hour data will be considered when alert rules are applied"
+          useMaintenance:
+            type: boolean
+            default: true
+            description: "By default alerts will consider records that are marked as maintenance. If this is set to false, data tagged as maintenance will be ignored when alert rules are applied"
+          conditions:
+            type: array
+            items:
+              $ref: '#/definitions/alertConditionGroupV2'
+          configuration:
+            $ref: '#/definitions/alertsConfiguration'
+            # Global configuration for the conditions. In the future, you may be able to override these globals per condition.
+          name:
+            type: string
+            description: "The name of the alert so it can be easily differentiated."
+            minLength: 1
+            maxLength: 64
+          description:
+            type: string
+            description: "Brief description of what the Alert Policy will do"
+            maxLength: 512
+          tags:
+            description: "Miscellaneous data the user wants to tag this alert with"
+            type: string
+            maxLength: 255
+            example: "orderId:uuid123"
+  alertPolicyResponseV2:
+    type: object
+    description: "[DEPRECATED] JSON API Response for Alert Policy"
+    required: [ "data" ]
+    properties:
+      data:
+        $ref: '#/definitions/alertPolicyV2'
+
+  alertPoliciesResponseV2:
+    type: object
+    description: "JSON API Response for Alert Policies"
+    required: [ "data" ]
+    properties:
+      meta:
+        type: object
+        properties:
+          enabledAlertPolicyLimit:
+            $ref: '#/definitions/enabledAlertPolicyLimit'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/alertPolicyV2'
   SessionFilterProfile:
     type: "object"
     required: ["type", "id", "attributes"]
@@ -17934,10 +18164,31 @@ definitions:
       isPublic:
         type: boolean
         default: false
-      lastUpdatedTimestamp:
+      tags:
+        x-omitempty: true
+        type: array
+        items:
+          type: string
+      changesHistory:
+        x-omitempty: true
+        type: array
+        items:
+          $ref: '#/definitions/ThreatFeedChangesHistory'
+      lastUploadedTimestamp:
         type: "integer"
         format: "int64"
         description: "Time when the data for the third feed was last updated."
+
+  ThreatFeedChangesHistory:
+    type: object
+    properties:
+      changed:
+        type: string
+      userId:
+        type: string
+      timestamp:
+        type: integer
+        format: int64
 
   ThreatFeedsListResponse:
     type: object
@@ -17967,6 +18218,13 @@ definitions:
     properties:
       data:
         $ref: '#/definitions/ThreatFeed'
+
+  UpdatedTimestampThreatFeed:
+    type: object
+    properties:
+      updatedTimestamp:
+        type: "integer"
+        format: "int64"
   ThresholdProfileCreateRequest:
     type: "object"
     required: ["data"]
@@ -18706,6 +18964,10 @@ definitions:
             type: array
             items:
               $ref: "#/definitions/IngestionDictionaryV3Item"
+          nonAggregatable:
+            type: boolean
+            description: "Indicate that the ingested data does not lend itself to being aggregated; treated as false when omitted"
+            default: false
           createdTimestamp:
             type: integer
             format: "int64"
@@ -19036,6 +19298,237 @@ definitions:
             items:
               $ref: '#/definitions/MetricTimeseriesResultEntry'
 
+  # The policies properties are based off of data cleaning!
+  # I want to move DataCleaning toward switching to this policy
+  # MetricIdentifier replaces the datacleaning's metricVendor&metricLabel
+  # I added severity which is optional
+  alertPolicy:
+    required: [ "type", "attributes" ]
+    properties:
+      type:
+        type: "string"
+        enum: [ "alertPolicies" ]
+        default: "alertPolicies"
+      id:
+        type: "string"
+      relationships:
+        $ref: '#/definitions/alertPolicyRelationships'
+      included:
+        type: array
+        items:
+          $ref: '#/definitions/alertPoliciesStatistics'
+      attributes:
+        type: object
+        description: |
+          Every alert policy requires a trigger condition. Recovery is optional as some alarms may need to be stopped
+          by an operator.
+          Trigger condition  - This is the policies that causes an alarm to start
+          Recovery condition - This is the policies that automatically causes an alarm to stop
+        required: [ "conditions", "name", "description", "configuration" ]
+        properties:
+          enabled:
+            type: boolean
+            default: true
+            description: "Controls whether this policy should be enabled"
+          deleted:
+            type: boolean
+            default: false
+            description: "This flag is to tell us whether the alert has been deleted and cannot be modified. The reasoning we don't do a real delete is because existing alerts in the database still need to correspond to something."
+          _rev:
+            type: string
+            description: "Policy revision. Not necessarily sequential"
+          lastModifiedTimestamp:
+            type: number
+            format: int64
+            description: "Last modification timestamp in POSIX epoch generated by server"
+          createdTimestamp:
+            type: number
+            format: int64
+            description: "Creation timestamp in POSIX epoch generated by server"
+          useCleanData:
+            type: boolean
+            default: true
+            description: "By default alerts will ignore records that are marked dirty. This can be overridden (switch this to false) in the scenarios that alert should check invalid records."
+          useBusyHourOnly:
+            type: boolean
+            default: false
+            description: "By default alerts will ignore records that are marked as busyHour. If this is set to true, ONLY busy hour data will be considered when alert rules are applied"
+          useMaintenance:
+            type: boolean
+            default: true
+            description: "By default alerts will consider records that are marked as maintenance. If this is set to false, data tagged as maintenance will be ignored when alert rules are applied"
+          conditions:
+            type: array
+            items:
+              $ref: '#/definitions/alertConditionGroup'
+          configuration:
+            $ref: '#/definitions/alertsConfiguration'
+            # Global configuration for the conditions. In the future, you may be able to override these globals per condition.
+          name:
+            type: string
+            description: "The name of the alert so it can be easily differentiated."
+            minLength: 1
+            maxLength: 64
+          description:
+            type: string
+            description: "Brief description of what the Alert Policy will do"
+            maxLength: 512
+          tags:
+            description: "Miscellaneous data the user wants to tag this alert with"
+            type: string
+            maxLength: 255
+            example: "orderId:uuid123"
+
+  alertConditionGroup:
+    type: object
+    required: [ "triggersOn" ]
+    description: |
+      "The conditions for an alert (violation or recovery). eg: metric > threshold"
+      "Note that metric will in the future support composite metrics."
+    properties:
+      triggersOn:
+        $ref: '#/definitions/alertCondition'
+      recoversOn:
+        $ref: '#/definitions/alertCondition'
+      severity:
+        type: string
+
+  alertCondition:
+    type: object
+    properties:
+      duration:
+        type: string
+        default: "PT5M"
+      metric:
+        $ref: '#/definitions/alertConditionMetric'
+      ratioPercent:
+        type: number
+      value:
+        type: string
+      displayUnit:
+        type: string
+        description: Field for UI to perform visual only unit conversions in the front end
+        example: "bytes"
+      values:
+        type: array
+        x-omitempty: true
+        items:
+          type: string
+      comparator:
+        $ref: '#/definitions/ConditionOperand'
+      blacklist:
+        description: |
+          Generic blacklist of fields and their values that can trigger an alert.
+          Supported only for "security" policy type!
+        type: array
+        x-omitempty: true
+        items:
+          $ref: '#/definitions/alertConditionListEntryV2'
+      whitelist:
+        type: array
+        x-omitempty: true
+        items:
+          $ref: '#/definitions/alertConditionListEntry'
+      advancedFilter:
+        description: General list of combinations of different fields for which alerts will be triggered.
+        type: array
+        x-omitempty: true
+        items:
+          $ref: '#/definitions/filterWithMultipleValuesEntry'
+          # We can add "withMessage" here so in the future, alert can include this information.
+
+  alertPolicyConditionRulesCollection:
+    type: object
+    properties:
+      items:
+        type: array
+        items:
+          $ref: '#/definitions/alertConditionListEntry'
+      total:
+        type: number
+        format: integer
+
+  alertConditionListEntry:
+    type: object
+    required: ["triggerConditions", "workingHours" ]
+    properties:
+      id:
+        type: string
+        default: ""
+        x-omitempty: true
+      relatedPolicies:
+        type: array
+        x-omitempty: true
+        items:
+          type: string
+      triggerConditions:
+        x-omitempty: true
+        type: array
+        items:
+          $ref: '#/definitions/MultipleValuesEntry'
+      workingHours:
+        $ref: '#/definitions/alertConditionWorkingHoursSet'
+
+  createAlertPolicyConditionRuleReq:
+    type: object
+    required: [ "triggerConditions" ]
+    properties:
+      triggerConditions:
+        type: array
+        items:
+          $ref: '#/definitions/MultipleValuesEntry'
+      workingHours:
+        type: string
+        default: ""
+        description: an id of existing alert policy schedule items set
+
+  hour:
+    type: integer
+    minimum: 0
+    maximum: 23
+
+  minute:
+    type: integer
+    minimum: 0
+    maximum: 59
+
+  workingHoursBoundary:
+    type: object
+    properties:
+      hour:
+        $ref: '#/definitions/hour'
+      minute:
+        $ref: '#/definitions/minute'
+
+  workingHoursRange:
+    type: object
+    required: [ "working24h" ]
+    properties:
+      working24h:
+        type: boolean
+        default: true
+      from:
+        $ref: '#/definitions/workingHoursBoundary'
+      to:
+        $ref: '#/definitions/workingHoursBoundary'
+
+  workingWeekdays:
+    type: object
+    properties:
+      monday:
+        type: boolean
+      tuesday:
+        type: boolean
+      wednesday:
+        type: boolean
+      thursday:
+        type: boolean
+      friday:
+        type: boolean
+      saturday:
+        type: boolean
+      sunday:
+        type: boolean
   #TCP Throughput Test
   TcpThroughputResponse:
     type: object
@@ -19251,3 +19744,4 @@ definitions:
           test-interval-metrics:
             x-omitempty: true
             $ref: '#/definitions/TcpThroughputInterval'
+
