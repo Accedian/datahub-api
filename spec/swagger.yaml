@@ -2,7 +2,7 @@ swagger: '2.0'
 host: api.analytics.accedian.io
 info:
   title: Skylight Analytics API documentation
-  version: 2022.07.0
+  version: 2022.11.0
   contact:
     email: the.team@accedian.com 
   description: |
@@ -1885,7 +1885,6 @@ paths:
         - AuthService
 
 ##### GATHER PATHS #####
-
   /v1/export/configurations:
     post:
       summary: Creates an export configuration
@@ -4900,6 +4899,49 @@ paths:
           type: string
       tags:
         - TenantProvisioningServiceV2
+
+  /v2/distribution/download-roadrunner-helm:
+    get:
+      summary: Download a roadrunner values yaml for use when helm installing roadrunner
+      operationId: DownloadRoadrunnerHelm
+      produces:
+        - application/octet-stream
+      responses:
+        '200':
+          description: 'download roadrunner helm artifacts archive'
+          schema:
+            type: string
+            format: binary
+          headers:
+            Content-Disposition:
+              type: string
+              default: "attachment; filename=DataHubConnectorHelmArtifacts.tar.gz;"
+            Content-Type:
+              type: string
+              default: "application/octet-stream"
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "No connector found for supplied zone"
+          schema:
+            type: string
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: zone
+          in: query
+          required: true
+          type: string
+      tags:
+        - TenantProvisioningServiceV2
   /v2/incidents:
     post:
       summary: Retrieve incidents based on the provided filter criterea
@@ -6484,10 +6526,10 @@ paths:
           description: "The type of Metadata Category Mapping to be updated"
       tags:
         - TenantProvisioningServiceV2
-  /v2/policies/alerting/schedule:
+  /v2/policies/alerting/schedule/sets:
     post:
       summary: Create an Alert Policy schedule entries set
-      operationId: createRequestAlertPolicyScheduleEntriesSet
+      operationId: createAlertPolicyScheduleEntriesSet
       parameters:
         - name: body
           in: body
@@ -6511,7 +6553,7 @@ paths:
             type: string
     get:
       summary: Get multiple Alert policy schedule items collections with pagination support
-      operationId: getMultipleRequestAlertPolicyScheduleItemSets
+      operationId: getMultipleAlertPolicyScheduleItemSets
       tags:
         - TenantAlertServiceV2
       parameters:
@@ -6535,18 +6577,14 @@ paths:
           description: "Requester does not have authorization to perform this action"
           schema:
             type: string
-        '404':
-          description: "alert policy schedule items not found"
-          schema:
-            type: string
         '500':
           description: "Unexpected error processing request"
           schema:
             type: string
-  /v2/policies/alerting/schedule/{id}:
+  /v2/policies/alerting/schedule/sets/{id}:
     get:
       summary: Get single Alert policy schedule items set, by it's ID
-      operationId: getRequestAlertPolicyScheduleItemsSetByID
+      operationId: getAlertPolicyScheduleItemsSetByID
       tags:
         - TenantAlertServiceV2
       parameters:
@@ -6558,7 +6596,7 @@ paths:
         '200':
           description: "Alert policy schedule items set"
           schema:
-            $ref: '#/definitions/alertConditionWorkingHoursSet'
+            $ref: '#/definitions/singleScheduleItemSetResp'
         '403':
           description: "Requester does not have authorization to perform this action"
           schema:
@@ -6573,7 +6611,7 @@ paths:
             type: string
     patch:
       summary: Update single Alert policy schedule items set, by it's ID
-      operationId: patchRequestAlertPolicyScheduleItemsSet
+      operationId: patchAlertPolicyScheduleItemsSet
       tags:
         - TenantAlertServiceV2
       parameters:
@@ -6590,7 +6628,7 @@ paths:
         '200':
           description: "Alert policy schedule items set"
           schema:
-            $ref: '#/definitions/alertConditionWorkingHoursSet'
+            $ref: '#/definitions/singleScheduleItemSetResp'
         '403':
           description: "Requester does not have authorization to perform this action"
           schema:
@@ -6862,7 +6900,7 @@ paths:
           schema:
             type: string
         '403':
-          description: "Requestor does not have authorization to perform this action"
+          description: "Requester does not have authorization to perform this action"
           schema:
             type: string
         '404':
@@ -6894,7 +6932,7 @@ paths:
           in: body
           required: true
           schema:
-            $ref: '#/definitions/alertPolicyCreateRequest'
+            $ref: '#/definitions/alertPolicyPatchRequest'
         - name: id
           in: path
           required: true
@@ -7505,11 +7543,11 @@ paths:
         "403":
           description: "Requester does not have authorization to perform this action"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
         "500":
           description: "Unexpected error processing request"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
       tags:
         - TenantThreatFeedV2
 
@@ -7521,14 +7559,26 @@ paths:
           description: "Threat feed created successfully, returns threat feed metadata"
           schema:
             $ref: "#/definitions/ThreatFeedsListResponse"
+        "400":
+          description: "Request data does not pass validation"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         "403":
           description: "Requester does not have authorization to perform this action"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
+        "409":
+          description: "Incorrect revision provided for the update request"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        "422":
+          description: "Semantically erroneous request"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         "500":
           description: "Unexpected error processing request"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
       parameters:
         - name: body
           in: body
@@ -7540,6 +7590,72 @@ paths:
 
 
   /v2/threatfeeds/{threatFeedId}:
+    get:
+      summary: Retrieve threat feeds metadata
+      operationId: getThreatFeedById
+      responses:
+        "200":
+          description: "Requested threat feeds metadata"
+          schema:
+            $ref: "#/definitions/WrappedThreatFeed"
+        "400":
+          description: "Request data does not pass validation"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        "403":
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        '404':
+          description: "The requested threat feed is not found"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        "500":
+          description: "Unexpected error processing request"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+      parameters:
+        - name: threatFeedId
+          in: path
+          required: true
+          type: string
+      tags:
+        - TenantThreatFeedV2
+    delete:
+      summary: Delete threat feeds metadata
+      operationId: deleteThreatFeedById
+      responses:
+        "200":
+          description: "Deleted threat feeds metadata"
+          schema:
+            $ref: "#/definitions/WrappedThreatFeed"
+        "400":
+          description: "Request data does not pass validation"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        "403":
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        '404':
+          description: "The requested threat feed is not found"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        '422':
+          description: "Semantically erroneous request"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        "500":
+          description: "Unexpected error processing request"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+      parameters:
+        - name: threatFeedId
+          in: path
+          required: true
+          type: string
+      tags:
+        - TenantThreatFeedV2
     patch:
       summary: Update a threat feed metadata
       operationId: updateThreatFeed
@@ -7551,23 +7667,27 @@ paths:
         '400':
           description: "Request data does not pass validation"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
         '403':
           description: "Requester does not have authorization to perform this action"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
         '404':
           description: "The requested threat feed is not found"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
         '409':
           description: "Incorrect revision provided for the update request"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
+        '422':
+          description: "Semantically erroneous request"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         '500':
           description: "Unexpected error processing request"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
       parameters:
         - name: threatFeedId
           in: path
@@ -7593,23 +7713,27 @@ paths:
         '400':
           description: "Request data does not pass validation"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
         '403':
           description: "Requester does not have authorization to perform this action"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
         '404':
           description: "The requested threat feed is not found"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
         '409':
           description: "Incorrect revision provided for the update request"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
+        '422':
+          description: "Semantically erroneous request"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         '500':
           description: "Unexpected error processing request"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
       parameters:
         - name: threatFeedId
           in: path
@@ -7634,18 +7758,22 @@ paths:
           description: "Data for threat feed uploaded successfully"
           schema:
             $ref: "#/definitions/WrappedThreatFeed"
+        "400":
+          description: "Request data does not pass validation"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         "403":
           description: "Requester does not have authorization to perform this action"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
         '404':
           description: "The requested threat feed is not found"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
         "500":
           description: "Unexpected error processing request"
           schema:
-            type: string
+            $ref: "#/definitions/ErrorResponse"
       parameters:
         - name: threatFeedId
           in: path
@@ -7821,6 +7949,48 @@ paths:
           type: string
       tags:
         - TenantProvisioningServiceV2
+  
+  /v3/connectors-admin/update/ingestion-dictionaries:
+    post:
+      summary: Upsert an ingestion dictionary using 'append only' rules 
+      operationId: AutoUpdateIngestionDictionaryV3
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/IngestionDictionaryV3Response'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "The specified Ingestion Dictionary is not provisioned"
+          schema:
+            type: string
+        '409':
+          description: "Incorrect revision provided for th update request"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/IngestionDictionaryV3UpdateRequest'
+      tags:
+        - TenantProvisioningServiceV3
   /v3/connectors/{ConnectorId}/operationalstates:
     get:
       summary: Get all operational states for a connector
@@ -8089,6 +8259,10 @@ paths:
           schema:
             type: string
       parameters:
+        - name: AutoUpdate
+          in: query
+          required: false
+          type: boolean
         - name: body
           in: body
           required: true
@@ -8226,6 +8400,10 @@ paths:
           in: path
           required: true
           type: string
+        - name: AutoUpdate
+          in: query
+          required: false
+          type: boolean
         - name: body
           in: body
           required: true
@@ -8262,6 +8440,106 @@ paths:
           type: string
       tags:
         - TenantProvisioningServiceV3
+  /v3/instance-metrics/{monitoredObjectId}/{reportType}:
+    get:
+      summary: Retrieve all instance metric runs having the specific monitoredObjectId and reportType within a specified interval for a tenant.
+      operationId: GetAllInstanceMetricsRunsInIntervalV3
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: "Fetch completed successfully"
+          schema:
+            $ref: '#/definitions/InstanceMetricsListResponse'
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - in: path
+          name: monitoredObjectId
+          type: string
+          required: true
+          description: "ID of the monitoredObject"
+        - in: path
+          name: reportType
+          type: string
+          enum: ["interval", "summary"]
+          required: true
+          description: "Instance's reportType filter"
+        - in: query
+          name: start
+          type: string
+          format: date-time
+          required: true
+          description: "Beginning of interval of runs returned"
+        - in: query
+          name: end
+          type: string
+          format: date-time
+          required: true
+          description: "End of interval of runs returned"
+        - in: query
+          name: cursor
+          type: string
+          required: false
+          description: "Use to traverse multiple \"pages\" of results"
+        - in: query
+          name: size
+          type: integer
+          required: false
+          minimum: 1
+          maximum: 10000
+          description: "Set/override the number of records returned in the response's payload"
+      tags:
+        - InstanceMetricsApiV3
+
+  /v3/instance-metrics/{monitoredObjectId}/{reportType}/{runId}:
+    get:
+      summary: Retrieve all instance metric runs matching the specific monitoredObjectId, reportType and runId for a tenant.
+      operationId: GetAllInstanceMetricsRunsV3
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: "Fetch completed successfully"
+          schema:
+            $ref: '#/definitions/InstanceMetricsListResponse'
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "No instance metrics are provisioned"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - in: path
+          name: monitoredObjectId
+          type: string
+          required: true
+          description: "ID of the monitoredObject"
+        - in: path
+          name: reportType
+          type: string
+          enum: [ "interval", "summary" ]
+          required: true
+          description: "Instance's reportType filter"
+        - in: path
+          name: runId
+          type: string
+          required: true
+          description: "RunId of the instance-metric"
+      tags:
+        - InstanceMetricsApiV3
   
   /v3/metrics-admin/reconciliation/datasource/{datasource}:
     post:
@@ -8508,7 +8786,7 @@ paths:
 
   /v3/policies/alerting/condition/rules:
     post:
-      summary: Creates reusable condition rule which can be used as whitelist|blacklist for alert policies
+      summary: Creates reusable condition rule which can be used as whitelist for alert policies
       operationId: createConditionRuleV3
       tags:
         - TenantAlertServiceV3
@@ -8520,7 +8798,7 @@ paths:
             $ref: '#/definitions/createAlertPolicyConditionRuleReq'
       responses:
         '201':
-          description: "Got the value of the whitelisting object"
+          description: "Got the value of the whitelist object"
           schema:
             $ref: '#/definitions/alertConditionListEntry'
         '403':
@@ -8528,7 +8806,7 @@ paths:
           schema:
             type: string
         '404':
-          description: "related schedule items set not found"
+          description: "related whitelist set not found"
           schema:
             type: string
         '500':
@@ -8555,8 +8833,15 @@ paths:
         - in: query
           name: policyID
           type: string
-          default: ""
           description: optional id of related policy
+        - in: query
+          name: policyName
+          type: string
+          description: optional name substring of related policy
+        - in: query
+          name: description
+          type: string
+          description: optional condition-rule description substring
       responses:
         '200':
           description: "Alert policy whitelist"
@@ -8584,9 +8869,9 @@ paths:
         - TenantAlertServiceV3
       responses:
         '200':
-          description: "Got default alert policy whitelist document"
+          description: "Got alert policy whitelist document"
           schema:
-            $ref: '#/definitions/alertConditionListEntry'
+            $ref: '#/definitions/singleConditionRuleResp'
         '403':
           description: "Requester does not have authorization to perform this action"
           schema:
@@ -8599,6 +8884,95 @@ paths:
           description: "Unexpected error processing request"
           schema:
             type: string
+    patch:
+      summary: Gets a single Alert Policy whitelist by specified ID
+      operationId: updateConditionRule
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/alertConditionListEntry'
+      tags:
+        - TenantAlertServiceV3
+      responses:
+        '200':
+          description: "Updated alert policy whitelist document"
+          schema:
+            $ref: '#/definitions/singleConditionRuleResp'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "Alert policy whitelist(or related info) not found"
+          schema:
+            type: string
+        '409':
+           description: "Whitelist update conflict"
+           schema:
+             type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+    delete:
+      summary: Deletes a single Alert Policy whitelist by specified ID. Deletion is allowed only if it's not used by any policy
+      operationId: deleteConditionRule
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      tags:
+        - TenantAlertServiceV3
+      responses:
+        '200':
+          description: "Condition rule is deleted"
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "Condition rule not found"
+          schema:
+            type: string
+        '406':
+          description: "Condition rule might be used by some alert policy"
+          schema:
+            $ref: '#/definitions/conditionRuleUsedResp'
+        '409':
+          description: "Condition rule delete conflict"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+
+  /v3/policies/alerting/migrate:
+    get:
+      summary: Migrate the whitelist to a new format
+      operationId: migrateAlertPoliciesV3
+      responses:
+        '200':
+          description: "Successfully migrated the whitelist to a new format"
+          schema:
+            type: string
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      tags:
+        - TenantAlertServiceV3
   /v3/tcpThroughput/tests:
     post:
       summary: Create a TCP Throughput test report
@@ -8903,7 +9277,6 @@ paths:
 definitions:
 
 ##### SKYLIGHT-AAA DEFINITIONS #####
-
   ValidationResponse:
     type: "object"
     properties:
@@ -9062,7 +9435,7 @@ definitions:
         type: "object"
         properties:
           tokenID:
-            type: "string"
+            type: "integer"
             description: "ID of the jwt"
           iss:
             type: "string"
@@ -9585,6 +9958,9 @@ definitions:
         type: "string"
         format: "email"
         maxLength: 256
+      password:
+        type: "string"
+        maxLength: 256
 
   SetPasswordRequest:
     type: "object"
@@ -9737,21 +10113,8 @@ definitions:
 
   OIDToken:
     type: "object"
-    properties:
-      access_token:
-        type: "string"
-      token_type:
-        type: "string"
-      refresh_token:
-        type: "string"
-      expires_in:
-        type: "integer"
-      refresh_expires_in:
-        type: "integer"
-      session_state:
-        type: "string"
-      id_token:
-        type: "string"
+    additionalProperties:
+      type: object
       
 ##### GATHER DEFINITIONS #####
 
@@ -9781,7 +10144,7 @@ definitions:
     properties:
       description:
         type: string
-        x-omitempty: false
+        x-omitempty: true
         default: ""
       key:
         type: string
@@ -11511,9 +11874,9 @@ definitions:
       securityState:
         $ref: "#/definitions/ActiveAlertSecurityState"
       sourcePort:
-        type: string
+        type: integer
       destinationPort:
-        type: string
+        type: integer
       assignedIncidentId:
         type: string
 
@@ -11678,6 +12041,11 @@ definitions:
       metaExclude:
         x-omitempty: true
         $ref: '#/definitions/MetaExclude'
+      uuid:
+        type: array
+        x-omitempty: true
+        items:
+          type: string
       objectId:
         type: array
         x-omitempty: true
@@ -11998,6 +12366,11 @@ definitions:
       topology:
         description: Name of a node on the route of the Monitored Object
         type: string
+      uuid:
+        type: array
+        x-omitempty: true
+        items:
+          type: string
       objectId:
         description: Set of object IDs to filter on
         type: array
@@ -13332,6 +13705,8 @@ definitions:
             $ref: '#/definitions/SNMPConfig'
           SNMPTrapSenderConfig:
             $ref: '#/definitions/SNMPTrapSenderConfig'
+          NATSConfig:
+            $ref: '#/definitions/NATSConfig'
           MQTTConfig:
             $ref: '#/definitions/MQTTConfig'
           ciscoTelemetryConfig:
@@ -13459,6 +13834,12 @@ definitions:
         type: string
       timeout:
         type: integer
+
+  NATSConfig:
+    type: object
+    properties:
+      host: 
+        type: string
 
   MQTTConfig:
     type: object
@@ -16995,6 +17376,14 @@ definitions:
       data:
         $ref: '#/definitions/alertPolicy'
 
+  alertPolicyPatchRequest:
+    type: object
+    description: "JSON API wrapper for updating Alert Policy"
+    required: [ "data" ]
+    properties:
+      data:
+        $ref: '#/definitions/alertPolicyRef'
+
   alertPoliciesResponse:
     type: object
     description: "JSON API Response for Alert Policies"
@@ -17155,10 +17544,16 @@ definitions:
         items:
           $ref: '#/definitions/alertConditionWorkingHoursEntry'
 
+  singleScheduleItemSetResp:
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/alertConditionWorkingHoursSet'
+
   alertConditionWorkingHoursSetsCollection:
     type: object
     properties:
-      sets:
+      data:
         type: array
         items:
           $ref: '#/definitions/alertConditionWorkingHoursSet'
@@ -17717,12 +18112,7 @@ definitions:
         x-omitempty: true
         items:
           $ref: '#/definitions/alertConditionListEntryV2'
-      advancedFilter:
-        description: General list of combinations of different fields for which alerts will be triggered.
-        type: array
-        x-omitempty: true
-        items:
-          $ref: '#/definitions/filterWithMultipleValuesEntry'
+
   alertConditionGroupV2:
     type: object
     required: [ "triggersOn" ]
@@ -18147,6 +18537,7 @@ definitions:
   ThreatFeed:
     type: object
     description: "A dataset with malicious IPs, hashes, domains"
+    required: ["name"]
     properties:
       _id:
         type: string
@@ -18178,6 +18569,9 @@ definitions:
         type: "integer"
         format: "int64"
         description: "Time when the data for the third feed was last updated."
+      lastUpdatedTimestamp:
+        type: "integer"
+        format: "int64"
 
   ThreatFeedChangesHistory:
     type: object
@@ -18225,6 +18619,15 @@ definitions:
       updatedTimestamp:
         type: "integer"
         format: "int64"
+
+  ErrorResponse:
+    type: object
+    properties:
+      code:
+        type: "integer"
+        format: "int64"
+      message:
+        type: "string"
   ThresholdProfileCreateRequest:
     type: "object"
     required: ["data"]
@@ -18430,6 +18833,10 @@ definitions:
             description: Name that identifies the specific metric within a monitored object
             type: string
             example: delayP95
+          allowNullMetrics:
+            description: Value of false indicates that all metrics with null value will be excluded from the calculation
+            type: boolean
+            default: false
 
   SupportedDerivedMetricsDimensionFilters:
     type: object
@@ -18964,10 +19371,11 @@ definitions:
             type: array
             items:
               $ref: "#/definitions/IngestionDictionaryV3Item"
-          nonAggregatable:
-            type: boolean
-            description: "Indicate that the ingested data does not lend itself to being aggregated; treated as false when omitted"
-            default: false
+          metricType:
+            type: string
+            description: "Indicate the type of data being ingested; treated as timeseries when omitted"
+            enum: [ "timeseries","instanced" ]
+            default: timeseries
           createdTimestamp:
             type: integer
             format: "int64"
@@ -18999,7 +19407,45 @@ definitions:
         type: "array"
         x-omitempty: true
         items:
-          type: "string"  
+          type: "string"
+  #Instance Metrics
+  InstanceMetricsListResponse:
+    type: object
+    required: [data]
+    properties:
+      links:
+        $ref: '#/definitions/InstanceMetricsListLinks'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/InstanceMetricContainer'
+
+  InstanceMetricContainer:
+    type: object
+    description: Container with Instance type definition
+    properties:
+      attributes:
+        $ref: '#/definitions/InstanceMetric'
+      type:
+        type: string
+        description: Type definition for the InstanceMetric
+
+  InstanceMetric:
+    type: object
+    description: Free form map of KPIs
+    additionalProperties:
+      type: object
+
+  InstanceMetricsListLinks:
+    type: object
+    properties:
+      prev:
+        type: string
+        description: URL to fetch results before those contained in the current response
+      next:
+        type: string
+        description: URL to fetch results after those contained in the current response
+  
   # RECONCILIATION DATASOURCE DEFINITIONS
   ## REQUEST DEFINITIONS
   DatasourceReconciliationTasks:
@@ -19379,6 +19825,84 @@ definitions:
             maxLength: 255
             example: "orderId:uuid123"
 
+  alertPolicyRef:
+    required: [ "type", "attributes" ]
+    description: identical to alertPolicy except conditions format
+    properties:
+      type:
+        type: "string"
+        enum: [ "alertPolicies" ]
+        default: "alertPolicies"
+      id:
+        type: "string"
+      relationships:
+        $ref: '#/definitions/alertPolicyRelationships'
+      included:
+        type: array
+        items:
+          $ref: '#/definitions/alertPoliciesStatistics'
+      attributes:
+        type: object
+        description: |
+          Every alert policy requires a trigger condition. Recovery is optional as some alarms may need to be stopped
+          by an operator.
+          Trigger condition  - This is the policies that causes an alarm to start
+          Recovery condition - This is the policies that automatically causes an alarm to stop
+        required: [ "conditions", "name", "description", "configuration" ]
+        properties:
+          enabled:
+            type: boolean
+            default: true
+            description: "Controls whether this policy should be enabled"
+          deleted:
+            type: boolean
+            default: false
+            description: "This flag is to tell us whether the alert has been deleted and cannot be modified. The reasoning we don't do a real delete is because existing alerts in the database still need to correspond to something."
+          _rev:
+            type: string
+            description: "Policy revision. Not necessarily sequential"
+          lastModifiedTimestamp:
+            type: number
+            format: int64
+            description: "Last modification timestamp in POSIX epoch generated by server"
+          createdTimestamp:
+            type: number
+            format: int64
+            description: "Creation timestamp in POSIX epoch generated by server"
+          useCleanData:
+            type: boolean
+            default: true
+            description: "By default alerts will ignore records that are marked dirty. This can be overridden (switch this to false) in the scenarios that alert should check invalid records."
+          useBusyHourOnly:
+            type: boolean
+            default: false
+            description: "By default alerts will ignore records that are marked as busyHour. If this is set to true, ONLY busy hour data will be considered when alert rules are applied"
+          useMaintenance:
+            type: boolean
+            default: true
+            description: "By default alerts will consider records that are marked as maintenance. If this is set to false, data tagged as maintenance will be ignored when alert rules are applied"
+          conditions:
+            type: array
+            items:
+              $ref: '#/definitions/alertConditionGroupRef'
+          configuration:
+            $ref: '#/definitions/alertsConfiguration'
+            # Global configuration for the conditions. In the future, you may be able to override these globals per condition.
+          name:
+            type: string
+            description: "The name of the alert so it can be easily differentiated."
+            minLength: 1
+            maxLength: 64
+          description:
+            type: string
+            description: "Brief description of what the Alert Policy will do"
+            maxLength: 512
+          tags:
+            description: "Miscellaneous data the user wants to tag this alert with"
+            type: string
+            maxLength: 255
+            example: "orderId:uuid123"
+
   alertConditionGroup:
     type: object
     required: [ "triggersOn" ]
@@ -19429,18 +19953,62 @@ definitions:
         x-omitempty: true
         items:
           $ref: '#/definitions/alertConditionListEntry'
-      advancedFilter:
-        description: General list of combinations of different fields for which alerts will be triggered.
+
+  alertConditionGroupRef:
+    type: object
+    required: [ "triggersOn" ]
+    description: |
+      "The conditions for an alert (violation or recovery). eg: metric > threshold"
+      "Note that metric will in the future support composite metrics."
+    properties:
+      triggersOn:
+        $ref: '#/definitions/alertConditionRef'
+      recoversOn:
+        $ref: '#/definitions/alertConditionRef'
+      severity:
+        type: string
+
+  alertConditionRef:
+    type: object
+    properties:
+      duration:
+        type: string
+        default: "PT5M"
+      metric:
+        $ref: '#/definitions/alertConditionMetric'
+      ratioPercent:
+        type: number
+      value:
+        type: string
+      displayUnit:
+        type: string
+        description: Field for UI to perform visual only unit conversions in the front end
+        example: "bytes"
+      values:
         type: array
         x-omitempty: true
         items:
-          $ref: '#/definitions/filterWithMultipleValuesEntry'
-          # We can add "withMessage" here so in the future, alert can include this information.
+          type: string
+      comparator:
+        $ref: '#/definitions/ConditionOperand'
+      blacklist:
+        description: |
+          Generic blacklist of fields and their values that can trigger an alert.
+          Supported only for "security" policy type!
+        type: array
+        x-omitempty: true
+        items:
+          $ref: '#/definitions/alertConditionListEntryV2'
+      whitelist:
+        type: array
+        x-omitempty: true
+        items:
+          $ref: '#/definitions/alertConditionListEntryRef'
 
   alertPolicyConditionRulesCollection:
     type: object
     properties:
-      items:
+      data:
         type: array
         items:
           $ref: '#/definitions/alertConditionListEntry'
@@ -19450,9 +20018,13 @@ definitions:
 
   alertConditionListEntry:
     type: object
-    required: ["triggerConditions", "workingHours" ]
+    required: ["triggerConditions"]
     properties:
       id:
+        type: string
+        default: ""
+        x-omitempty: true
+      rev_id:
         type: string
         default: ""
         x-omitempty: true
@@ -19468,11 +20040,41 @@ definitions:
           $ref: '#/definitions/MultipleValuesEntry'
       workingHours:
         $ref: '#/definitions/alertConditionWorkingHoursSet'
+      description:
+        type: string
+
+  alertConditionListEntryRef:
+    type: object
+    required: [ "id" ]
+    properties:
+      id:
+        type: string
+        x-omitempty: true
+
+  alertPolicyConditionRulesRefCollection:
+    type: object
+    properties:
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/alertConditionListEntryRef'
+      total:
+        type: number
+        format: integer
+
+  singleConditionRuleResp:
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/alertConditionListEntry'
 
   createAlertPolicyConditionRuleReq:
     type: object
     required: [ "triggerConditions" ]
     properties:
+      description:
+        type: string
+        x-omitempty: true
       triggerConditions:
         type: array
         items:
@@ -19502,11 +20104,10 @@ definitions:
 
   workingHoursRange:
     type: object
-    required: [ "working24h" ]
     properties:
       working24h:
         type: boolean
-        default: true
+        default: false
       from:
         $ref: '#/definitions/workingHoursBoundary'
       to:
@@ -19529,6 +20130,15 @@ definitions:
         type: boolean
       sunday:
         type: boolean
+
+  conditionRuleUsedResp:
+    type: object
+    description: condition rule is used bby a number of alert-policies, removal attempt not allowed
+    properties:
+      policy_ids:
+        type: array
+        items:
+          type: string
   #TCP Throughput Test
   TcpThroughputResponse:
     type: object
@@ -19744,4 +20354,3 @@ definitions:
           test-interval-metrics:
             x-omitempty: true
             $ref: '#/definitions/TcpThroughputInterval'
-
