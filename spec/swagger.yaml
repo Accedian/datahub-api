@@ -2,7 +2,7 @@ swagger: '2.0'
 host: api.analytics.accedian.io
 info:
   title: Skylight Analytics API documentation
-  version: 2022.11.0
+  version: 2023.04.0
   contact:
     email: the.team@accedian.com 
   description: |
@@ -1319,6 +1319,41 @@ paths:
           type: integer
           format: int64
           description: "The unique identifier of the Token to be deleted."
+      tags:
+        - AuthService
+  /v1/auth/tokens/validate:
+    get:
+      summary: Validate a JWT. Sets headers for proxy requests to have access to have Tenant Id.
+      operationId: ValidateJwtForProxy
+      consumes:
+        - application/x-www-form-urlencoded
+      produces:
+        - text/plain
+      responses:
+        '200':
+          description: "Sets Headers X-Forwarded-Tenant-Id and validates JWT"
+          schema:
+            type: string
+          headers:
+            X-Forwarded-Tenant-Id:
+              type: string
+              description: The TenantId associated with this request in Skylight-AAA.
+        '401':
+          description: "Session not Authorized"
+          schema:
+            type: string
+        '403':
+          description: "Session not Valid"
+          schema:
+            type: string
+        '404':
+          description: "Session not found"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
       tags:
         - AuthService
 
@@ -4940,6 +4975,10 @@ paths:
           in: query
           required: true
           type: string
+        - name: image
+          in: query
+          required: false
+          type: string
       tags:
         - TenantProvisioningServiceV2
   /v2/incidents:
@@ -5062,6 +5101,44 @@ paths:
           required: true
           schema:
             $ref: '#/definitions/IncidentsStateUpdateRequest'
+      tags:
+        - TenantIncidentsV2
+
+  /v2/incidents/groupBy:
+    post:
+      summary: Retrieves specified aggregation grouped by the provided fields and filtered by the metadata specification
+      operationId: getIncidentsGroupBy
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: "Group by successfully processed"
+          schema:
+            $ref: '#/definitions/IncidentsGroupByResponse'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "Missing provisioned data"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/IncidentsGroupByRequest'
       tags:
         - TenantIncidentsV2
   /v2/ingestion-profiles:
@@ -6528,7 +6605,7 @@ paths:
         - TenantProvisioningServiceV2
   /v2/policies/alerting/schedule/sets:
     post:
-      summary: Create an Alert Policy schedule entries set
+      summary: Create an Alert Policy schedule entries set template
       operationId: createAlertPolicyScheduleEntriesSet
       parameters:
         - name: body
@@ -6543,6 +6620,10 @@ paths:
           description: "Policy alert schedule items collection successfully created"
           schema:
             $ref: '#/definitions/alertConditionWorkingHoursSet'
+        '400':
+           description: "Request validation failed"
+           schema:
+             type: string
         '403':
           description: "Requester does not have authorization to perform this action"
           schema:
@@ -6552,7 +6633,7 @@ paths:
           schema:
             type: string
     get:
-      summary: Get multiple Alert policy schedule items collections with pagination support
+      summary: Get multiple Alert policy schedule items templates collections with pagination support
       operationId: getMultipleAlertPolicyScheduleItemSets
       tags:
         - TenantAlertServiceV2
@@ -6583,7 +6664,7 @@ paths:
             type: string
   /v2/policies/alerting/schedule/sets/{id}:
     get:
-      summary: Get single Alert policy schedule items set, by it's ID
+      summary: Get single Alert policy schedule items set template, by it's ID
       operationId: getAlertPolicyScheduleItemsSetByID
       tags:
         - TenantAlertServiceV2
@@ -6610,7 +6691,7 @@ paths:
           schema:
             type: string
     patch:
-      summary: Update single Alert policy schedule items set, by it's ID
+      summary: Update single Alert policy schedule items set template, by it's ID
       operationId: patchAlertPolicyScheduleItemsSet
       tags:
         - TenantAlertServiceV2
@@ -6641,10 +6722,37 @@ paths:
           description: "Unexpected error processing request"
           schema:
             type: string
+    delete:
+      summary: Deletes schedule items set template, by it's ID
+      operationId: deleteScheduleItemsSet
+      tags:
+        - TenantAlertServiceV2
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        '202':
+          description: "Alert policy schedule items set is successfully deleted"
+          schema:
+            type: string
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "alert policy schedule items set wasn't found"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
   /v2/policies/alerting:
     post:
       summary: Create an Alert Policy
-      operationId: createRequestAlertPolicy
+      operationId: createAlertPolicy
       responses:
         '201':
           description: "Policy creation completed successfully"
@@ -6665,7 +6773,7 @@ paths:
         '422':
           description: "The provided request did not pass validation"
           schema:
-            type: string
+            $ref: '#/definitions/dslFailedValidationResp'
         '424':
           description: "The provided request Failed Dependency"
           schema:
@@ -6684,14 +6792,16 @@ paths:
         - TenantAlertServiceV2
     get:
       summary: Get all Alert Policies
-      operationId: getAllRequestAlertPolicy
+      operationId: getMultipleAlertPolicies
       responses:
         '200':
-          description: "Policy get successful"
+          description: "Policies got successful"
           schema:
             $ref: '#/definitions/alertPoliciesResponse'
+        '304':
+          description: "There are no modified policies for the specified time in the If-Modified-Since header"
         '403':
-          description: "Requestor does not have authorization to perform this action"
+          description: "Requester does not have authorization to perform this action"
           schema:
             type: string
         '500':
@@ -6713,6 +6823,10 @@ paths:
           in: query # Example: GET /v2/policies/alerting?policyType=micro-tca,security
           description: "Only include policies of specified types."
           required: false
+          type: string
+        - name: tag
+          in: query
+          description: "pass any tag substring for optional filtering alert policies by custom tag"
           type: string
       tags:
         - TenantAlertServiceV2
@@ -6746,6 +6860,48 @@ paths:
           description: "Returns the default raw metadata key's ID from the DB."
       tags:
         - TenantAlertServiceV2
+
+  /v2/policies/alerting/{id}/status:
+    patch:
+      summary: an api to be used to update alertPolicy with given ID with new status
+      tags:
+        - TenantAlertServiceV2
+      operationId: updateAlertPolicyStatus
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: val
+          in: query
+          required: true
+          type: string
+          description: acceptable values are "pending" or "running"
+      responses:
+        '200':
+          description: "OK"
+          schema:
+            type: string
+        '400':
+          description: "Unsupported status value(must be only 'pending' or 'running'"
+          schema:
+            type: string
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "Alert policy not found"
+          schema:
+            type: string
+        '409':
+          description: "Alert policy status update conflict"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
 
   /v2/policies/alerting/default:
     get:
@@ -6889,7 +7045,7 @@ paths:
         - TenantAlertServiceV2
     patch:
       summary: Provides ability to patch a Alert Policy
-      operationId: PatchRequestAlertPolicy
+      operationId: patchAlertPolicy
       responses:
         '201':
           description: "Policy patch completed successfully"
@@ -6914,7 +7070,7 @@ paths:
         '422':
           description: "The provided request did not pass validation"
           schema:
-            type: string
+            $ref: '#/definitions/dslFailedValidationResp'
         '424':
           description: "The provided request Failed Dependency"
           schema:
@@ -7949,6 +8105,173 @@ paths:
           type: string
       tags:
         - TenantProvisioningServiceV2
+  /v3/alertexport:
+    post:
+      summary: Create an AlertExport for a Tenant.
+      operationId: CreateAlertExportV3
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/AlertExportResponse'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '409':
+          description: "The AlertExport being provisioned already exists"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/AlertExportCreateRequest'
+      tags:
+        - TenantProvisioningServiceV3
+    get:
+      summary: Retrieve all AlertExports for the specified Tenant.
+      operationId: GetAllAlertExportV3
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/AlertExportListResponse'
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "No AlertExport records are provisioned"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: zone
+          in: query
+          required: false
+          type: string
+      tags:
+        - TenantProvisioningServiceV3
+  /v3/alertexport/{alertexportId}:
+    get:
+      summary: Retrieve a Tenant AlertExport by Id.
+      operationId: GetAlertExportV3
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/AlertExportResponse'
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "The specified AlertExport is not provisioned"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: alertexportId
+          in: path
+          required: true
+          type: string
+      tags:
+        - TenantProvisioningServiceV3
+    patch:
+      summary: Update a Tenant AlertExport specified by the provided AlertExport Id.
+      operationId: UpdateAlertExportV3
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/AlertExportResponse'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "The specified alertexport is not provisioned"
+          schema:
+            type: string
+        '409':
+          description: "Incorrect revision number passed in to the alertexport being updated"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/AlertExportUpdateRequest'
+        - name: alertexportId
+          in: path
+          required: true
+          type: string
+      tags:
+        - TenantProvisioningServiceV3
+    delete:
+      summary: Delete a Tenant AlertExport specified by the provided AlertExport Id.
+      operationId: DeleteAlertExportV3
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/AlertExportResponse'
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "The specified AlertExport is not provisioned"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: alertexportId
+          in: path
+          required: true
+          type: string
+      tags:
+        - TenantProvisioningServiceV3
   
   /v3/connectors-admin/update/ingestion-dictionaries:
     post:
@@ -8154,6 +8477,20 @@ paths:
           type: string
       tags:
         - TenantMonitoringServiceV3
+  /v3/dependencies:
+    get:
+      summary: Returns a list of activated dependencies
+      responses:
+        '200':
+          description: "Return list of gather dependencies and their deployment state (Active or inactive)"
+          schema:
+            $ref: '#/definitions/dependencies'
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      tags:
+        - Dependencies
   /v3/derivedmetrics/groupBy:
     post:
       summary: Retrieves specified aggregation grouped by the provided fields and filtered by the metadata specification
@@ -8653,6 +8990,44 @@ paths:
       tags:
         - MetricsServiceV3
 
+  /v3/metricsByDatasource/groupBy:
+    post:
+      summary: Retrieves specified aggregation grouped by the provided fields and filtered by the metadata specification
+      operationId: MetricsByDatasourceGetGroupByV3
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: "Group by successfully processed"
+          schema:
+            $ref: '#/definitions/MetricsByDatasourceGroupByResponse'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Request does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "Missing provisioned data"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/MetricsByDatasourceGroupByRequest'
+      tags:
+        - MetricsServiceV3
+
   /v3/metrics/groupBy:
     post:
       summary: Retrieves specified aggregation grouped by the provided fields and filtered by the metadata specification
@@ -8783,6 +9158,32 @@ paths:
           description: "Returns the default raw metadata key's ID from the DB."
       tags:
         - TenantAlertServiceV3
+
+  /v3/policies/alerting/condition/generate-rules:
+    get:
+      summary: Generate condition rule based on provided alert
+      operationId: generateConditionRuleV3
+      tags:
+        - TenantAlertServiceV3
+      parameters:
+        - in: query
+          name: alertId
+          type: string
+          required: true
+          description: required id of alert
+      responses:
+        '200':
+          description: "Alert policy whitelist"
+          schema:
+            $ref: '#/definitions/alertConditionListEntry'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
 
   /v3/policies/alerting/condition/rules:
     post:
@@ -9813,30 +10214,6 @@ definitions:
             description: A description of the permission
       id:
         type: "string"
-
-
-  JsonApiRelationship:
-    type: "object"
-    properties:
-      data:
-        type: "array"
-        items:
-          $ref: '#/definitions/JsonApiRelationshipData'
-  JsonApiSingleRelationship:
-    type: "object"
-    properties:
-      data:
-        $ref: '#/definitions/JsonApiRelationshipData'
-
-
-  JsonApiRelationshipData:
-    type: "object"
-    properties:
-      type:
-        type: "string"
-      id:
-        type: "string"
-
 
   AAAUser:
     type: "object"
@@ -11664,6 +12041,8 @@ definitions:
             properties:
               enabledAlertPolicyLimit:
                 $ref: '#/definitions/enabledAlertPolicyLimit'
+          simConfig:
+            $ref: '#/definitions/SmartIncidentManagementConfig'
           createdTimestamp:
             type: "integer"
             format: "int64"
@@ -13141,6 +13520,11 @@ definitions:
       items:
         type: string
 
+  alertConfigMetadata:
+    type: array
+    items:
+      $ref: '#/definitions/genericFilterMapItem'
+
   genericFilterMapItem:
     properties:
       key:
@@ -13261,6 +13645,29 @@ definitions:
           x-omitempty: true
           $ref: '#/definitions/expressionItems'
           
+  JsonApiRelationship:
+    type: "object"
+    properties:
+      data: 
+        type: "array"
+        items:
+          $ref: '#/definitions/JsonApiRelationshipData'
+          
+  JsonApiSingleRelationship:
+    type: "object"
+    properties:
+      data: 
+        $ref: '#/definitions/JsonApiRelationshipData'
+          
+  JsonApiRelationshipData:
+    type: "object"
+    properties:
+      type: 
+        type: "string"
+      id:
+        type: "string"
+      
+
   CompositeMetric:
     description: "Composite metrics"
     type: object
@@ -13511,6 +13918,8 @@ definitions:
                 type: "integer"
               type:
                 type: "string"
+              templateId:
+                type: "string"
               zone:
                 type: "string"
                 pattern: '^[a-zA-Z0-9:_-]*$'
@@ -13529,6 +13938,10 @@ definitions:
                 $ref: '#/definitions/AgentProxyConfig'
               dataLoggingConfig:
                 $ref: '#/definitions/DataLoggingConfig'
+              traceConfig:
+                $ref: '#/definitions/TraceConfig'
+              persistenceService:
+                $ref: '#/definitions/PersistenceService'
               SNMPConfig:
                 $ref: '#/definitions/SNMPConfig'
               SNMPTrapSenderConfig:
@@ -13590,6 +14003,8 @@ definitions:
                 type: "integer"
               type:
                 type: "string"
+              templateId:
+                type: "string"
               zone:
                 type: "string"
                 pattern: '^[a-zA-Z0-9_-]*$'
@@ -13607,7 +14022,11 @@ definitions:
               agentProxyConfig:
                 $ref: '#/definitions/AgentProxyConfig'   
               dataLoggingConfig:
-                $ref: '#/definitions/DataLoggingConfig'             
+                $ref: '#/definitions/DataLoggingConfig'   
+              traceConfig:
+                $ref: '#/definitions/TraceConfig'
+              persistenceService:
+                $ref: '#/definitions/PersistenceService'          
               SNMPConfig:
                 $ref: '#/definitions/SNMPConfig'
               SNMPTrapSenderConfig:
@@ -13683,6 +14102,8 @@ definitions:
             type: "integer"
           type:
             type: "string"
+          templateId:
+            type: "string"
           zone:
             type: "string"
           createdTimestamp:
@@ -13718,7 +14139,11 @@ definitions:
           agentProxyConfig:
             $ref: '#/definitions/AgentProxyConfig'
           dataLoggingConfig:
-            $ref: '#/definitions/DataLoggingConfig'            
+            $ref: '#/definitions/DataLoggingConfig'  
+          traceConfig:
+            $ref: '#/definitions/TraceConfig'
+          persistenceService:
+            $ref: '#/definitions/PersistenceService'          
           sessionFilterProfileID:
             type: "string"
             description: "If set, RR will fetch and use the session filter profile for the given ID."
@@ -13977,7 +14402,33 @@ definitions:
           reached the file is renamed to <filename>.rolled and a new active log file is created.
           Subsequent rolleover events will overwrite an existing <filename>.rolled files (ie: we 
           maintain only one historical log file).  Setting this value to -1 disables log rollover.
-          
+  
+  TraceConfig:
+    type: object
+    properties:
+      persistenceService:
+        type: boolean
+        description: |
+          Enables highly verbose 'trace' logs from the Persistence Service in Roadrunner.
+
+  PersistenceService:
+    type: object
+    properties:
+      migrateLegacyData:
+        type: boolean
+        description: |
+          Enables or disables migration of BadgerDB data to the new Persistence Service.
+      batchSize :
+        type: integer
+        description: |
+          Size in bytes at which a persistence data log file will be published for shipping
+          to Fedex
+      period:
+        type: integer
+        description: |
+          Period in ms after which any active peristence data logs will be published regardless
+          of whether they have reached the target size or not.
+
   ObjectTypeSqlOperations:
     type: object
     description: |
@@ -14233,6 +14684,8 @@ definitions:
                 $ref: '#/definitions/AgentProxyConfig'
               dataLoggingConfig:
                 $ref: '#/definitions/DataLoggingConfig'
+              traceConfig:
+                $ref: '#/definitions/TraceConfig'
               SNMPConfig:
                 $ref: '#/definitions/SNMPConfig'
               SNMPTrapSenderConfig:
@@ -14308,7 +14761,9 @@ definitions:
               agentProxyConfig:
                 $ref: '#/definitions/AgentProxyConfig'   
               dataLoggingConfig:
-                $ref: '#/definitions/DataLoggingConfig'             
+                $ref: '#/definitions/DataLoggingConfig'  
+              traceConfig:
+                $ref: '#/definitions/TraceConfig'           
               SNMPConfig:
                 $ref: '#/definitions/SNMPConfig'
               SNMPTrapSenderConfig:
@@ -14402,13 +14857,12 @@ definitions:
   NetworkAssetFilteredListRequest:
     type: "object"
     properties:
+      search:
+        description: "A field value to search with a wildcard in different fields of the asset"
+        type: string
       queryContext:
         x-omitempty: true
         $ref: '#/definitions/NetworkAssetQueryContext'
-      meta:
-        $ref: '#/definitions/MetaFilter'
-      metaExclude:
-        $ref: '#/definitions/MetaExclude'
       ip:
         type: array
         x-omitempty: true
@@ -14421,16 +14875,16 @@ definitions:
         description: "An array of MACs"
         items:
           type: string
-      roles:
-        type: array
-        x-omitempty: true
-        description: "An array of Roles"
-        items:
-          $ref: '#/definitions/NetworkAssetRole'
       firstSeen:
         $ref: '#/definitions/TimeRangeInMilliseconds'
       lastSeen:
         $ref: '#/definitions/TimeRangeInMilliseconds'
+      captureZones:
+        x-omitempty: true
+        type: array
+        items:
+          type: string
+
 
   NetworkAssetFilteredCountResponse:
     type: object
@@ -14499,8 +14953,6 @@ definitions:
     properties:
       queryContext:
         $ref: '#/definitions/NetworkAssetQueryContext'
-      metaContext:
-        $ref: '#/definitions/MetaContext'
       groupingContext:
         $ref: '#/definitions/GroupingContext'
       aggregation:
@@ -14511,6 +14963,14 @@ definitions:
         description: A set of identifiers that considers specific network asset based on the provided information
         items:
           $ref: '#/definitions/NetworkAssetSpec'
+      search:
+        description: "A field value to search with a wildcard in different fields of the asset"
+        type: string
+      captureZones:
+        x-omitempty: true
+        type: array
+        items:
+          type: string
 
   NetworkAssetGroupByReport:
     description: The rendered response structure from the network asset query
@@ -14596,12 +15056,6 @@ definitions:
         x-omitempty: true
         items:
           type: string
-      roles:
-        description: Network Asset Roles to filter on
-        type: array
-        x-omitempty: true
-        items:
-          $ref: '#/definitions/NetworkAssetRole'
 
 
   NetworkAssetRole:
@@ -14677,6 +15131,8 @@ definitions:
           ip:
             type: string
           mac:
+            type: string
+          zoneId:
             type: string
           roles:
             type: array
@@ -15447,6 +15903,58 @@ definitions:
       processing:
         type: boolean
         default: false
+      captureZoneId:
+        x-isnullable: true
+        type: string
+
+
+  IncidentSpec:
+    type: object
+    properties:
+      id:
+        type: array
+        x-omitempty: true
+        items:
+          type: string
+      alias:
+        type: array
+        x-omitempty: true
+        items:
+          type: string
+      state:
+        type: array
+        x-omitempty: true
+        items:
+          $ref: "#/definitions/IncidentState"
+      severityIndex:
+        type: array
+        x-omitempty: true
+        items:
+          type: number
+          format: double
+      relatedAlerts:
+        x-omitempty: true
+        type: array
+        items:
+          type: string
+      alertCount:
+        type: array
+        x-omitempty: true
+        items:
+          format: int64
+          type: integer
+      lastAlertTimestamp:
+        type: array
+        x-omitempty: true
+        items:
+          format: int64
+          type: integer
+      comments:
+        x-omitempty: true
+        type: array
+        items:
+          $ref: "#/definitions/IncidentComment"
+
 
   IncidentPayload:
     type: object
@@ -15464,6 +15972,9 @@ definitions:
         type: "array"
         items:
           type: "string"
+      captureZoneId:
+        x-isnullable: true
+        type: string
 
   IncidentComment:
     type: object
@@ -15592,6 +16103,177 @@ definitions:
         enum: ["new", "in-progress", "resolved", "closed", "archived"]
       comment:
         type: string
+
+
+  IncidentsGroupByAggregation:
+    type: object
+    required: ["name", "type", "field"]
+    properties:
+      name:
+        type: string
+      type:
+        type: string
+        enum: ["min", "max", "avg", "sum", "mostFrequent", "distinctCount", "histogram"]
+      field:
+        type: string
+      fixedInterval:
+        description: "Value for fixed_interval with allowed format: 1m, 1h, 1d etc"
+        type: string
+        pattern: '^[0-9]{0,}[ms|s|m|h|d]+$'
+
+
+  IncidentsGroupByQueryContext:
+    description: Hints indicating how the query may be Returns
+    type: object
+    properties:
+      timeout:
+        description: Query timeout in milliseconds
+        type: integer
+        example: 30000
+      sortOnGroupingKey:
+        description: Allows a client to sort on a grouping key instead of the metric's value
+        default: id
+        type: string
+      sorted:
+        type: string
+        description: Indicates whether the response should return grouped by queries in ascending or descending order. Only applicable to grouped queries.
+        enum: [asc, desc]
+        example:
+          - asc
+          - desc
+      numResults:
+        description: Number of results to return in grouped queries. A non-positive integer for this value implies there is no result limit. Only applicable to grouped queries.
+        type: integer
+        format: int32
+        x-isnullable: true
+      pageNumber:
+        type: integer
+        format: int32
+        x-isnullable: true
+      sortByAggregation:
+        type: string
+        description: Name of custom aggregation to sort by. If null or absent, grouping results are sorted by metric's value.
+        x-isnullable: true
+
+
+  IncidentsGroupByConfig:
+    type: object
+    properties:
+      queryContext:
+        $ref: '#/definitions/IncidentsGroupByQueryContext'
+      metaContext:
+        $ref: '#/definitions/MetaContext'
+      groupingContext:
+        $ref: '#/definitions/GroupingContext'
+      aggregations:
+        description: Additional aggregations for each group of alerts
+        x-omitempty: true
+        type: array
+        items:
+          $ref: '#/definitions/IncidentsGroupByAggregation'
+      expressions:
+        description: Allows to filter alerts with expressions prior to grouping
+        $ref: '#/definitions/expressions'
+      incidents:
+        type: array
+        x-omitempty: true
+        description: A set of identifiers that considers specific alert based on the provided information
+        items:
+          $ref: '#/definitions/IncidentSpec'
+
+
+  IncidentsGroupByRequest:
+    type: object
+    properties:
+      data:
+        type: object
+        required: [type, attributes]
+        properties:
+          id:
+            type: string
+          attributes:
+            $ref: '#/definitions/IncidentsGroupByConfig'
+
+
+  IncidentsGroupedResultEntryParameters:
+    description: Describes filtering criteria used for a particular query that uses a grouping
+    type: object
+    allOf:
+      - $ref: '#/definitions/IncidentSpec'
+      - type: object
+        required:
+          - groupedResults
+        properties:
+          groupedResults:
+            type: array
+            x-omitempty: true
+            items:
+              type: object
+              required: [ value ]
+              properties:
+                groupings:
+                  type: object
+                  additionalProperties:
+                    type: "string"
+                value:
+                  type: number
+                  format: float
+                aggregations:
+                  type: object
+                  additionalProperties:
+                    type: "string"
+          hasNextPage:
+            type: boolean
+            description: If true the next page can be requested with next request with bigger `pageNumber` value, otherwise all documents where already returned
+
+
+  IncidentsGroupByReport:
+    description: The rendered response structure from the metric query
+    type: array
+    x-omitempty: true
+    items:
+      type: object
+      allOf:
+        - $ref: '#/definitions/IncidentsGroupedResultEntryParameters'
+
+
+  IncidentsGroupByResponse:
+    type: object
+    properties:
+      data:
+        type: object
+        required: [type]
+        properties:
+          id:
+            type: string
+          attributes:
+            type: object
+            allOf:
+              - $ref: '#/definitions/IncidentsGroupByConfig'
+              - type: object
+                required:
+                  - result
+                properties:
+                  result:
+                    $ref: '#/definitions/IncidentsGroupByReport'
+
+  SmartIncidentManagementConfig:
+    description: "Configuration block for the Smart Incident Management feature"
+    required: ["incidentSize", "maxSecurityScore", "minArtifacts"]
+    type: object
+    properties:
+      incidentSize:
+        description: "The minimum number of alerts an incident must contain in order to be analysed."
+        type: number
+        default: 50
+      maxSecurityScore:
+        description: "Incidents with a security score greater than the specified value should be ignored."
+        type: number
+        default: 6.0
+      minArtifacts:
+        description: "A cluster whose number of artifacts is less than the specified value should be ignored."
+        type: number
+        default: 2
   IngestionProfileCreateRequest:
     type: "object"
     description: "Object used to create an Ingestion Profile in Datahub"
@@ -17481,9 +18163,7 @@ definitions:
         items:
           type: string
       context:
-        type: array
-        items:
-          $ref: '#/definitions/genericFilterMapItem'
+        $ref: '#/definitions/alertConfigMetadata'
 
   alertConditionMetric:
     type: object
@@ -18200,9 +18880,11 @@ definitions:
             maxLength: 512
           tags:
             description: "Miscellaneous data the user wants to tag this alert with"
-            type: string
-            maxLength: 255
-            example: "orderId:uuid123"
+            type: array
+            items:
+              type: string
+              maxLength: 255
+              example: "orderId:uuid123"
   alertPolicyResponseV2:
     type: object
     description: "[DEPRECATED] JSON API Response for Alert Policy"
@@ -18225,6 +18907,27 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/alertPolicyV2'
+
+  dslValidationError:
+    required:
+      - idx
+      - msg
+    type: object
+    properties:
+      idx:
+        type: integer
+      msg:
+        type: string
+
+  dslFailedValidationResp:
+    type: object
+    properties:
+      error:
+        type: string
+      details:
+        type: array
+        items:
+          $ref: '#/definitions/dslValidationError'
   SessionFilterProfile:
     type: "object"
     required: ["type", "id", "attributes"]
@@ -18817,6 +19520,141 @@ definitions:
                                       type: "object"
                                       additionalProperties:
                                         type: "string"
+  AlertExportCreateRequest:
+    type: "object"
+    required: ["data"]
+    properties:
+      data:
+        type: "object"
+        required: ["type", "attributes"]
+        properties:
+          type: 
+            type: "string"
+            enum: [alertExports]
+          id:
+            type: "string"
+          attributes:
+            type: "object"
+            required: ["alertexportname", "alertexporturl","alertexportenabled","alertpolicylist"]
+            properties:
+              alertexporttype:
+                type: "string"
+                description: "The type of export integration. e.g. webhook"
+              alertexportname: 
+                type: "string"
+                description: "The name of the export integration. e.g. Workato"
+              alertexportenabled:
+                type: "boolean"
+                description: "Flag used to enable or disable the alert export configuration"
+              alertexporturl:
+                type: "string"
+                description: "The URL to send exported alerts to."
+              alertpolicylist:
+                type: "array"
+                description: "The list of alert policies specifically targeted for export"
+                items:
+                  type: string
+              
+  AlertExportUpdateRequest:
+    type: "object"
+    required: ["data"]
+    properties:
+      data:
+        type: "object"
+        required: ["type", "attributes", "id"]
+        properties:
+          type: 
+            type: "string"
+            enum: [alertExports]
+          id:
+            type: "string"
+          attributes:
+            type: "object"
+            required: ["_rev", "alertexportenabled"]
+            properties:
+              _rev:
+                type: "string"
+                description: "Value used to ensure updates to this object are handled in order."
+              tenantId:
+                type: "string"
+              alertexporttype:
+                type: "string"
+                description: "The type of export integration. e.g. webhook"
+              alertexportname: 
+                type: "string"
+                description: "The name of the export integration. e.g. Workato"
+              alertexportenabled:
+                type: "boolean"
+                description: "Flag used to enable or disable the alert export configuration"
+              alertexporturl:
+                type: "string"
+                description: "The URL to send exported alerts to."
+              alertpolicylist:
+                type: "array"
+                description: "The list of alert policies specifically targeted for export"
+                items:
+                  type: string
+  
+  AlertExportResponse:
+    type: "object"
+    required: ["data"]
+    properties:
+      data:
+        $ref: '#/definitions/AlertExport'
+  AlertExportListResponse:
+    type: "object"
+    required: ["data"]
+    properties:
+      data:
+        type: "array"
+        items:
+           $ref: '#/definitions/AlertExport'
+  
+  AlertExport:
+    type: "object"
+    required: ["type", "id", "attributes"]
+    properties:
+      type: 
+        type: "string"
+        enum: [alertExports]
+      id:
+        type: "string"
+      attributes:
+        type: "object"
+        required: ["_rev", "datatype", "alertexporttype", "alertexportname", "alertexporturl", "alertpolicylist", "alertexportenabled", "createdTimestamp", "lastModifiedTimestamp"]
+        properties:
+          _rev:
+            type: "string"
+            description: "Value used to ensure updates to this object are handled in order."
+          datatype:
+            type: "string"
+          tenantId:
+            type: "string"
+          alertexporttype:
+            type: "string"
+            description: "The type of export integration. e.g. webhook"
+          alertexportname: 
+            type: "string"
+            description: "The name of the export integration. e.g. Workato"
+          alertexportenabled:
+            type: "boolean"
+            description: "Flag used to enable or disable the alert export configuration"
+          alertexporturl:
+            type: "string"
+            description: "The URL to send exported alerts to."
+          alertpolicylist:
+            type: "array"
+            description: "The list of alert policies specifically targeted for export"
+            items:
+              type: string
+          createdTimestamp:
+            type: "integer"
+            format: "int64"
+            description: "Time since epoch at which this object was instantiated."
+          lastModifiedTimestamp:
+            type: "integer"
+            format: "int64"
+            description: "Time since epoch at which this object was last altered."
 
 
   DerivedMetricsSpec:
@@ -18921,6 +19759,7 @@ definitions:
       value:
         type: number
         format: double
+        x-nullable: true
 
   MetricQueryResponseMeta:
     description: Provides additional diagnostic information about the query to the skylight-admin user
@@ -18956,6 +19795,144 @@ definitions:
       type: string
 
 
+  alertPolicyConditionRulesCollection:
+    type: object
+    properties:
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/alertConditionListEntry'
+      total:
+        type: number
+        format: integer
+
+  alertConditionListEntry:
+    type: object
+    required: [ "triggerConditions" ]
+    properties:
+      id:
+        type: string
+        default: ""
+        x-omitempty: true
+      rev_id:
+        type: string
+        default: ""
+        x-omitempty: true
+      relatedPolicies:
+        type: array
+        x-omitempty: true
+        items:
+          type: string
+      triggerConditions:
+        x-omitempty: true
+        type: array
+        items:
+          $ref: '#/definitions/MultipleValuesEntry'
+      workingHours:
+        $ref: '#/definitions/alertConditionWorkingHoursSet'
+      description:
+        type: string
+
+  alertConditionListEntryRef:
+    type: object
+    required: [ "id" ]
+    properties:
+      id:
+        type: string
+        x-omitempty: true
+
+  alertPolicyConditionRulesRefCollection:
+    type: object
+    properties:
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/alertConditionListEntryRef'
+      total:
+        type: number
+        format: integer
+
+  singleConditionRuleResp:
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/alertConditionListEntry'
+
+  createAlertPolicyConditionRuleReq:
+    type: object
+    required: [ "triggerConditions" ]
+    properties:
+      description:
+        type: string
+        x-omitempty: true
+      triggerConditions:
+        type: array
+        items:
+          $ref: '#/definitions/MultipleValuesEntry'
+      workingHours:
+        type: object
+        properties:
+          items:
+            x-omitempty: true
+            type: array
+            items:
+              $ref: '#/definitions/alertConditionWorkingHoursEntry'
+
+  hour:
+    type: integer
+    minimum: 0
+    maximum: 23
+
+  minute:
+    type: integer
+    minimum: 0
+    maximum: 59
+
+  workingHoursBoundary:
+    type: object
+    properties:
+      hour:
+        $ref: '#/definitions/hour'
+      minute:
+        $ref: '#/definitions/minute'
+
+  workingHoursRange:
+    type: object
+    properties:
+      working24h:
+        type: boolean
+        default: false
+      from:
+        $ref: '#/definitions/workingHoursBoundary'
+      to:
+        $ref: '#/definitions/workingHoursBoundary'
+
+  workingWeekdays:
+    type: object
+    properties:
+      monday:
+        type: boolean
+      tuesday:
+        type: boolean
+      wednesday:
+        type: boolean
+      thursday:
+        type: boolean
+      friday:
+        type: boolean
+      saturday:
+        type: boolean
+      sunday:
+        type: boolean
+
+  conditionRuleUsedResp:
+    type: object
+    description: condition rule is used bby a number of alert-policies, removal attempt not allowed
+    properties:
+      policy_ids:
+        type: array
+        items:
+          type: string
   ConnectorOperationalStateResponse:
     type: object
     description: "Object displaying the operational state of a connected DataConnector (Roadrunner)"
@@ -19076,7 +20053,15 @@ definitions:
         enum: [ CONNECTED, DISCONNECTED ]
       zone:
         type: string
-
+      version:
+        type: string
+  dependencies:
+    type: object
+    properties:
+      data:
+        type: object
+        additionalProperties:
+          type: boolean
 
 
   # GroupBy DEFINITIONS
@@ -19510,6 +20495,129 @@ definitions:
         description: "Target granularity at which the files holding the data in the datasource will be compacted"
   # GroupBy DEFINITIONS
   ## REQUEST DEFINITIONS
+  MetricsByDatasourceGroupByRequest:
+    description: JSON API compliant wrapper for the groupby query
+    type: object
+    properties:
+      data:
+        type: object
+        required: [type, attributes]
+        properties:
+          id:
+            type: string
+          type: 
+            type: string
+            enum: [groupByMetrics]
+          attributes:
+            $ref: '#/definitions/MetricsByDatasourceGroupByConfig'
+
+  ## RESPONSE DEFINITIONS
+  MetricsByDatasourceGroupByResponse:
+    description: JSON API compliant wrapper for the groupby response
+    type: object
+    properties:
+      meta:
+        $ref: '#/definitions/MetricQueryResponseMeta'
+      data:
+        type: object
+        required: [type]
+        properties:
+          id:
+            type: string
+          type: 
+            type: string
+            enum: [groupByMetrics]
+          attributes:
+            type: object
+            allOf:
+              - $ref: '#/definitions/MetricsByDatasourceGroupByConfig'
+              - type: object
+                required:
+                  - result
+                properties:
+                  result:
+                    $ref: '#/definitions/MetricsByDatasourceGroupByReport'
+
+  ## ENTITY DEFINITIONS
+  MetricsByDatasourceGroupByConfig:
+    description: The necessary request parameters for the metric api call
+    type: object
+    required: [interval, aggregation, groupingContext, metrics]
+    properties:
+      queryContext:
+        $ref: '#/definitions/QueryContext'
+      metaContext:
+        $ref: '#/definitions/MetaContext'
+      groupingContext:
+        $ref: '#/definitions/GroupingContext'
+      interval:
+        description: Time boundary for the metrics under consideration using the ISO-8601 standard
+        type: string
+        example: 2018-04-08T14:00:00/2018-04-09T15:00:00
+      aggregation:
+        $ref: '#/definitions/MetricsByDatasourceSupportedAggregations'
+      globalMetricFilterContext:
+        $ref: '#/definitions/SupportedMetricDimensionFilters'
+      metrics:
+        type: array
+        description: A set of identifiers that considers specific metrics based on the provided information
+        items:
+          $ref: '#/definitions/MetricSpec'
+      datasource:
+        type: string
+        enum: [raw, derivedMetrics]
+        description: The type of datasource
+
+  MetricsByDatasourceGroupByReport:
+    description: The rendered response structure from the metric query
+    type: array
+    items:
+      $ref: '#/definitions/MetricsByDatasourceGroupedResultEntryParameters'
+        
+  MetricsByDatasourceGroupedResultEntryParameters:
+    description: Describes filtering criteria used for a particular query that uses a grouping
+    type: object
+    allOf:
+      - $ref: '#/definitions/MetricSpec'
+      - type: object
+        required:
+          - groupedResults
+        properties:
+          groupedResults:
+            type: array
+            items:
+              type: object
+              required: [groupings, value]
+              properties:
+                groupings:
+                  type: object
+                  additionalProperties:
+                    type: "string"
+                value:
+                  type: number
+                  format: float
+                count:
+                  type: number
+                  format: float
+
+  MetricsByDatasourceSupportedAggregations:
+    type: string
+    description: >
+      The type of aggregation (avg/min/max/count/sum)
+      avg - Returns the averaging the metric per monitored object for the time range, within the bounding filter as specified by the bucket property.
+      min - Returns the minimum value for the metric per monitored object for the time range, within the bounding filter as specified by the bucket property.
+      max - Returns the maximum value for the metric per monitored object for the time range, within the bounding filter as specified by the bucket property.
+      count - Returns the number of events within the specified bucket property. A single bucket is the preferred usage but multiple buckets can be used as a band pass filter.
+      sum - Returns the summed value of all records grouped by the provided groupings
+      percentile_95 - Returns the approximated percentile value of all records grouped by the provided groupings
+    example:
+      - min
+      - max
+      - avg
+      - count
+      - sum
+      - percentile_95  # GroupBy DEFINITIONS
+  ## REQUEST DEFINITIONS
   JsonApiGroupByRequest:
     description: JSON API compliant wrapper for the groupby query
     type: object
@@ -19772,6 +20880,8 @@ definitions:
           Recovery condition - This is the policies that automatically causes an alarm to stop
         required: [ "conditions", "name", "description", "configuration" ]
         properties:
+          status:
+            $ref: '#/definitions/alertPolicyStatus'
           enabled:
             type: boolean
             default: true
@@ -19821,9 +20931,21 @@ definitions:
             maxLength: 512
           tags:
             description: "Miscellaneous data the user wants to tag this alert with"
-            type: string
-            maxLength: 255
-            example: "orderId:uuid123"
+            type: array
+            items:
+              type: string
+              maxLength: 255
+              example: "orderId:uuid123"
+
+  alertPolicyStatus:
+    description: |
+      Status of alert policy dsl validation.
+      If not set or `running` - dsl policy was successfully validated
+      If `pending` validation is in progress
+    type: string
+    x-nullable: true
+    enum: ["pending", "running"]
+    example: "running"
 
   alertPolicyRef:
     required: [ "type", "attributes" ]
@@ -19899,9 +21021,13 @@ definitions:
             maxLength: 512
           tags:
             description: "Miscellaneous data the user wants to tag this alert with"
-            type: string
-            maxLength: 255
-            example: "orderId:uuid123"
+            type: array
+            items:
+              type: string
+              maxLength: 255
+              example: "orderId:uuid123"
+          status:
+            $ref: '#/definitions/alertPolicyStatus'
 
   alertConditionGroup:
     type: object
@@ -20004,141 +21130,6 @@ definitions:
         x-omitempty: true
         items:
           $ref: '#/definitions/alertConditionListEntryRef'
-
-  alertPolicyConditionRulesCollection:
-    type: object
-    properties:
-      data:
-        type: array
-        items:
-          $ref: '#/definitions/alertConditionListEntry'
-      total:
-        type: number
-        format: integer
-
-  alertConditionListEntry:
-    type: object
-    required: ["triggerConditions"]
-    properties:
-      id:
-        type: string
-        default: ""
-        x-omitempty: true
-      rev_id:
-        type: string
-        default: ""
-        x-omitempty: true
-      relatedPolicies:
-        type: array
-        x-omitempty: true
-        items:
-          type: string
-      triggerConditions:
-        x-omitempty: true
-        type: array
-        items:
-          $ref: '#/definitions/MultipleValuesEntry'
-      workingHours:
-        $ref: '#/definitions/alertConditionWorkingHoursSet'
-      description:
-        type: string
-
-  alertConditionListEntryRef:
-    type: object
-    required: [ "id" ]
-    properties:
-      id:
-        type: string
-        x-omitempty: true
-
-  alertPolicyConditionRulesRefCollection:
-    type: object
-    properties:
-      data:
-        type: array
-        items:
-          $ref: '#/definitions/alertConditionListEntryRef'
-      total:
-        type: number
-        format: integer
-
-  singleConditionRuleResp:
-    type: object
-    properties:
-      data:
-        $ref: '#/definitions/alertConditionListEntry'
-
-  createAlertPolicyConditionRuleReq:
-    type: object
-    required: [ "triggerConditions" ]
-    properties:
-      description:
-        type: string
-        x-omitempty: true
-      triggerConditions:
-        type: array
-        items:
-          $ref: '#/definitions/MultipleValuesEntry'
-      workingHours:
-        type: string
-        default: ""
-        description: an id of existing alert policy schedule items set
-
-  hour:
-    type: integer
-    minimum: 0
-    maximum: 23
-
-  minute:
-    type: integer
-    minimum: 0
-    maximum: 59
-
-  workingHoursBoundary:
-    type: object
-    properties:
-      hour:
-        $ref: '#/definitions/hour'
-      minute:
-        $ref: '#/definitions/minute'
-
-  workingHoursRange:
-    type: object
-    properties:
-      working24h:
-        type: boolean
-        default: false
-      from:
-        $ref: '#/definitions/workingHoursBoundary'
-      to:
-        $ref: '#/definitions/workingHoursBoundary'
-
-  workingWeekdays:
-    type: object
-    properties:
-      monday:
-        type: boolean
-      tuesday:
-        type: boolean
-      wednesday:
-        type: boolean
-      thursday:
-        type: boolean
-      friday:
-        type: boolean
-      saturday:
-        type: boolean
-      sunday:
-        type: boolean
-
-  conditionRuleUsedResp:
-    type: object
-    description: condition rule is used bby a number of alert-policies, removal attempt not allowed
-    properties:
-      policy_ids:
-        type: array
-        items:
-          type: string
   #TCP Throughput Test
   TcpThroughputResponse:
     type: object
@@ -20354,3 +21345,4 @@ definitions:
           test-interval-metrics:
             x-omitempty: true
             $ref: '#/definitions/TcpThroughputInterval'
+
