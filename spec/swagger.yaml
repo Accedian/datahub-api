@@ -2,7 +2,7 @@ swagger: '2.0'
 host: api.analytics.accedian.io
 info:
   title: Skylight Analytics API documentation
-  version: 2023.04.0
+  version: 2023.08.0
   contact:
     email: the.team@accedian.com 
   description: |
@@ -1920,6 +1920,7 @@ paths:
         - AuthService
 
 ##### GATHER PATHS #####
+
   /v1/export/configurations:
     post:
       summary: Creates an export configuration
@@ -2224,7 +2225,7 @@ paths:
         - ExportService
   /v1/solution-version-manifest:
     get:
-      summary: Retrieves the Skylight Analytics release and solution versions as well as the manifest of all services. If the local manifest has been manually modified, the isDirty flag is set to indicate that the currently running version differs from the original version
+      summary: Retrieves the Skyligth Analytics release and solution versions as well as the manifest of all services. If the local manifest has been manually modified, the isDirty flag is set to indicate that the currently running version differs from the original version
       operationId: GetSolutionManifest
       produces:
         - application/json
@@ -2811,7 +2812,7 @@ paths:
         - in: query
           name: interval
           type: string
-          description: The interval in ISO 8601 standard but with the '/' replaced with '_'
+          description: The interval in ISO 6801 standard but with the '/' replaced with '_'
           required: true
         - in: query
           name: alertState
@@ -4981,6 +4982,56 @@ paths:
           type: string
       tags:
         - TenantProvisioningServiceV2
+  /v2/honeytrap/{id}/metadata:
+    put:
+      summary: Sets a custom tags as metadata of specific honeytrap agent
+      operationId: setHoneyTrapMetadata
+      tags:
+        - TenantAlertServiceV2
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: honey-trap agent ID
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/honeyTrapMetadata'
+      responses:
+        '201':
+          description: "HoneyTrap tags successfully created"
+          schema:
+            $ref: '#/definitions/honeyTrapMetadata'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+
+  /v2/honeytrap/metadata:
+    get:
+      summary: Returns all tags for all agent IDs
+      operationId: getHoneyTrapMetadata
+      tags:
+        - TenantAlertServiceV2
+      responses:
+        '200':
+          description: "HoneyTrap metadata collection successfully returned"
+          schema:
+            $ref: '#/definitions/honeyTrapMetadataCollection'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
   /v2/incidents:
     post:
       summary: Retrieve incidents based on the provided filter criterea
@@ -8566,6 +8617,76 @@ paths:
             $ref: '#/definitions/DerivedMetricsAggregateV3Request'
       tags:
         - MetricsServiceV3
+  /v3/dynamic-metadata-mappings:
+    patch:
+      summary: Update Dynamic Metadata Dimension mappings for a Tenant. Fields to be disabled should be marked with `IsActive:false`
+      operationId: UpdateDynamicMetadataDimensionMappingsV3
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/DynamicMetadataDimensionMappingsV3Response'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/DynamicMetadataDimensionMappingsV3UpdateRequest'
+      tags:
+        - TenantProvisioningServiceV3
+    get:
+      summary: Get Dynamic Metadata Mappings
+      operationId: GetDynamicMetadataMappingsV3
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/DynamicMetadataDimensionMappingsV3Response'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "No Ingestion Profile is provisioned"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: includeOnlyActive
+          in: query
+          default: false
+          type: "boolean"
+          description: "Returns only active dynamic meta-data mappings."
+          required: false
+      tags:
+        - TenantProvisioningServiceV3
   /v3/ingestion-dictionaries:
     post:
       summary: Create an Ingestion Dictionary for a Tenant.
@@ -8990,6 +9111,44 @@ paths:
       tags:
         - MetricsServiceV3
 
+  /v3/metricsByDatasource/groupBy:
+    post:
+      summary: Retrieves specified aggregation grouped by the provided fields and filtered by the metadata specification
+      operationId: MetricsByDatasourceGetGroupByV3
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: "Group by successfully processed"
+          schema:
+            $ref: '#/definitions/MetricsByDatasourceGroupByResponse'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Request does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "Missing provisioned data"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/MetricsByDatasourceGroupByRequest'
+      tags:
+        - MetricsServiceV3
+
   /v3/metrics/groupBy:
     post:
       summary: Retrieves specified aggregation grouped by the provided fields and filtered by the metadata specification
@@ -9205,6 +9364,10 @@ paths:
           name: description
           type: string
           description: optional condition-rule description substring
+        - in: query
+          name: acceptingStatus
+          type: string
+          description: optional filter for acceptingStatus property
       responses:
         '200':
           description: "Alert policy whitelist"
@@ -9283,33 +9446,34 @@ paths:
           description: "Unexpected error processing request"
           schema:
             type: string
-    delete:
-      summary: Deletes a single Alert Policy whitelist by specified ID. Deletion is allowed only if it's not used by any policy
-      operationId: deleteConditionRule
+
+  /v3/policies/alerting/condition/rules/{id}/acceptingStatus:
+    patch:
+      summary: Accept or decline the automatically generated condition rule
+      operationId: conditionRuleAcceptingStatus
       parameters:
         - name: id
           in: path
           required: true
           type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/updateAcceptingStatusRequest'
       tags:
         - TenantAlertServiceV3
       responses:
         '200':
-          description: "Condition rule is deleted"
+          description: "Condition rule accepted or declined"
+          schema:
+            $ref: '#/definitions/alertConditionListEntry'
         '403':
           description: "Requester does not have authorization to perform this action"
           schema:
             type: string
         '404':
           description: "Condition rule not found"
-          schema:
-            type: string
-        '406':
-          description: "Condition rule might be used by some alert policy"
-          schema:
-            $ref: '#/definitions/conditionRuleUsedResp'
-        '409':
-          description: "Condition rule delete conflict"
           schema:
             type: string
         '500':
@@ -11864,6 +12028,8 @@ definitions:
                 properties:
                   enabledAlertPolicyLimit:
                     $ref: '#/definitions/enabledAlertPolicyLimit'
+              simConfig:
+                $ref: '#/definitions/SmartIncidentManagementConfig'
 
 
   TenantMetadataResponse:
@@ -12114,8 +12280,10 @@ definitions:
         items:
           type: "string"
       value:
-        # No, we don't send back the raw set of data that triggered the alert yet.
         description: This can either be the threshold value or a distance measure for dynamic thresholds
+        type: string
+      triggeredValue:
+        description: This is actual metric value which triggers the alert
         type: string
       comparator:
         # I'm not sure we need this element at all.
@@ -12219,6 +12387,8 @@ definitions:
       destinationPort:
         type: integer
       assignedIncidentId:
+        type: string
+      securityPolicyId:
         type: string
 
   ActiveAlertSecurityState:
@@ -14221,7 +14391,19 @@ definitions:
         type: string
       timeout:
         type: integer
-
+      alertMetaDataEnabled:
+        type: boolean
+      alertMetaDataKey1:
+        type: string
+      alertMetaDataKey2:
+        type: string
+      alertMetaDataKey3:
+        type: string
+      alertMetaDataKey4:
+        type: string
+      alertMetaDataKey5:
+        type: string
+        
   NATSConfig:
     type: object
     properties:
@@ -15821,6 +16003,23 @@ definitions:
         type: string
       errorCode:
         type: string
+  honeyTrapMetadata:
+    type: object
+    required: [agent_id, tags]
+    properties:
+      agent_id:
+        type: string
+      _rev:
+        type: string
+      tags:
+        type: array
+        items:
+          type: string
+
+  honeyTrapMetadataCollection:
+    type: object
+    additionalProperties:
+      $ref: '#/definitions/honeyTrapMetadata'
   Incident:
     type: object
     required: ["id", "state"]
@@ -15929,7 +16128,7 @@ definitions:
       action:
         type: string
         description: "Action on the incident"
-        enum: [ "create", "append", "merge" ]
+        enum: [ "create", "append", "merge", "archive" ]
       baseIncidentIds:
         type: "array"
         items:
@@ -16221,7 +16420,7 @@ definitions:
 
   SmartIncidentManagementConfig:
     description: "Configuration block for the Smart Incident Management feature"
-    required: ["incidentSize", "maxSecurityScore", "minArtifacts"]
+    required: ["incidentSize", "maxSecurityScore", "minArtifacts", "enabled"]
     type: object
     properties:
       incidentSize:
@@ -16236,6 +16435,9 @@ definitions:
         description: "A cluster whose number of artifacts is less than the specified value should be ignored."
         type: number
         default: 2
+      enabled:
+        description: "Announces whether it is necessary to work out the Smart Incident Management."
+        type: boolean
   IngestionProfileCreateRequest:
     type: "object"
     description: "Object used to create an Ingestion Profile in Datahub"
@@ -16261,6 +16463,8 @@ definitions:
                 type: "array"
                 items:
                   $ref: '#/definitions/IngestionProfileMetricListItem'
+              flags:
+                $ref: '#/definitions/IngestionProfileFlags'
                     
   IngestionProfileUpdateRequest:
     type: "object"
@@ -16291,6 +16495,8 @@ definitions:
                 type: "array"
                 items:
                   $ref: '#/definitions/IngestionProfileMetricListItem'
+              flags:
+                $ref: '#/definitions/IngestionProfileFlags'
             
              
   IngestionProfileListResponse:
@@ -16343,6 +16549,8 @@ definitions:
             type: "array"
             items:
               $ref: '#/definitions/IngestionProfileMetricListItem'
+          flags:
+            $ref: '#/definitions/IngestionProfileFlags'
           createdTimestamp:
             type: "integer"
             format: "int64"
@@ -16394,6 +16602,28 @@ definitions:
       dimensions:
         type: "object"
         description: "Provides data properties by which the Metric may be filtered and/or aggregated"
+
+  IngestionProfileFlags:
+    type: "object"
+    description: "A mapping of the ingestion profile state flags to their specific object-type"
+    x-omitempty: false
+    additionalProperties:
+      $ref: '#/definitions/IngestionProfileEnabledFlags'
+  
+  IngestionProfileEnabledFlags:
+    type: "object"
+    description: "ingestion profile state flags"
+    required: ["discovery", "continuity"]
+    default:
+      discovery: true
+      continuity: true
+    properties:
+      discovery:
+        type: "boolean"
+        description: "when true discovery feature will be enabled for this object, will default to true if not provided"
+      continuity:
+        type: "boolean"
+        description: "when true continuity feature will be enabled for this object, will default to true if not provided"
   MetadataConfigCreateRequest:
     type: "object"
     description: "Object used to create a Metadata Configuration in Datahub"
@@ -16877,7 +17107,17 @@ definitions:
               regulator, rfc8321, dmm, slm, eth-dm, eth-vs, port, sa, sa-metrics, pl, iperf, echo-icmp, echo-udp]. If using dynamic types (i.e, for SNMP), you must enter the name of the dynamic type here
           meta:
             type: "object"
-            description: "Attributes added to a Monitored Object that help identify the Monitored Object as well as provide flitering/grouping properties"
+            description: "Attributes added to a Monitored Object that help identify the Monitored Object as well as provide filtering/grouping properties"
+            pattern: '^[a-z_]+$'
+            additionalProperties:
+              type: "string"
+            example:
+              "region": "paris"
+              "wgs87_x": "-45.7123912"
+              "wgs87_y": "-74.2130912"
+          dynamicMetadata:
+            type: "object"
+            description: "Attributes dynamically added to a Monitored Object that help identify the Monitored Object as well as provide filtering/grouping properties"
             pattern: '^[a-z_]+$'
             additionalProperties:
               type: "string"
@@ -17440,8 +17680,13 @@ definitions:
             description: "Common name of the Monitored Object"
           meta:
             type: "object"
-            description: "The map of the metrics column and value that should be entered into that column"
+            description: "Attributes added to a Monitored Object that help identify the Monitored Object as well as provide filtering/grouping properties"
             additionalProperties: 
+              type: "string"
+          dynamicMetadata:
+            type: "object"
+            description: "Attributes dynamically added to a Monitored Object that help identify the Monitored Object as well as provide filtering/grouping properties"
+            additionalProperties:
               type: "string"
           srcLat:
             type: "number"
@@ -17853,6 +18098,12 @@ definitions:
     type: object
     properties:
       policyId:
+        description: Policy ID to filter on
+        type: array
+        x-omitempty: true
+        items:
+          type: string
+      securityPolicyId:
         description: Policy ID to filter on
         type: array
         x-omitempty: true
@@ -18333,8 +18584,10 @@ definitions:
         additionalProperties:
           type: "string"
       value:
-        # No, we don't send back the raw set of data that triggered the alert yet.
         description: This can either be the threshold value or a distance measure for dynamic thresholds
+        type: string
+      triggeredValue:
+        description: This is actual metric value which triggers the alert
         type: string
       comparator:
         # I'm not sure we need this element at all.
@@ -19794,6 +20047,22 @@ definitions:
         $ref: '#/definitions/alertConditionWorkingHoursSet'
       description:
         type: string
+      isAutomated:
+        type: boolean
+        default: false
+      acceptingStatus:
+        enum: ["NOT_YET_ACTIONED", "ACCEPTED", "REJECTED", "NOT_AUTOMATED"]
+        type: string
+      modifiedBy:
+        type: string
+      createdBy:
+        type: string
+      createdTimestamp:
+        type: "integer"
+        format: "int64"
+      lastModifiedTimestamp:
+        type: "integer"
+        format: "int64"
 
   alertConditionListEntryRef:
     type: object
@@ -19895,6 +20164,14 @@ definitions:
         type: array
         items:
           type: string
+
+  updateAcceptingStatusRequest:
+    type: object
+    required: [ "acceptingStatus" ]
+    properties:
+      acceptingStatus:
+        enum: [ "ACCEPTED", "REJECTED" ]
+        type: string
   ConnectorOperationalStateResponse:
     type: object
     description: "Object displaying the operational state of a connected DataConnector (Roadrunner)"
@@ -20240,6 +20517,105 @@ definitions:
         maximum: 10000
 
 
+  DynamicMetadataDimensionMappingsV3UpdateRequest:
+    type: "object"
+    description: "Object used to update dynamic metadata dimension mappings in Datahub"
+    required: ["data"]
+    properties:
+      data:
+        $ref: '#/definitions/DynamicMetadataDimensionMappings'
+
+  DynamicMetadataDimensionMappings:
+    type: object
+    properties:
+      _id:
+        type: string
+      _rev:
+        type: string
+        description: "Value used to ensure updates to this object are handled in order."
+      createdTimestamp:
+        type: integer
+        format: int64
+      datatype:
+        type: string
+      lastModifiedTimestamp:
+        type: integer
+        format: int64
+      objectType:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/DynamicMetadataDimensionMappingsDimensions'
+
+  DynamicMetadataDimensionMappingsDimensions:
+    type: object
+    required: ['dimension']
+    properties:
+      dimension:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/DynamicMetadataDimensionMappingsItem'
+
+  DynamicMetadataDimensionMappingsItem:
+    type: object
+    required: ["isActive", "metaKey"]
+    properties:
+      metaKey:
+        type: string
+      isActive:
+        type: boolean
+
+  DynamicMetadataDimensionMappingsV3Response:
+    type: "object"
+    description: "Dynamic Metadata Dimension mappings response from Datahub"
+    required: ["data"]
+    properties:
+      data:
+        $ref: '#/definitions/DynamicMetadataDimensionMappingsFull'
+
+  DynamicMetadataDimensionMappingsFull:
+    type: object
+    properties:
+      _id:
+        type: string
+      _rev:
+        type: string
+        description: "Value used to ensure updates to this object are handled in order."
+      createdTimestamp:
+        type: integer
+        format: int64
+      datatype:
+        type: string
+      lastModifiedTimestamp:
+        type: integer
+        format: int64
+      objectType:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/DynamicMetadataDimensionMappingsDimensionsFull'
+
+  DynamicMetadataDimensionMappingsDimensionsFull:
+    type: object
+    required: [ 'dimension' ]
+    properties:
+      dimension:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/DynamicMetadataDimensionMappingsItemFull'
+
+  DynamicMetadataDimensionMappingsItemFull:
+    type: object
+    required: [ "activeRangeMap", "isActive", "metaKey" ]
+    properties:
+      metaKey:
+        type: string
+      isActive:
+        type: boolean
+      activeRangeMap:
+        type: object
+        additionalProperties:
+          type: integer
+          format: "int64"
+
 
   IngestionDictionaryV3CreateRequest:
     type: "object"
@@ -20321,7 +20697,7 @@ definitions:
           metricType:
             type: string
             description: "Indicate the type of data being ingested; treated as timeseries when omitted"
-            enum: [ "timeseries","instanced" ]
+            enum: [ "timeseries","instanced","standalone" ]
             default: timeseries
           createdTimestamp:
             type: integer
@@ -20455,7 +20831,130 @@ definitions:
         type: string
         enum: [DAY, MONTH]
         description: "Target granularity at which the files holding the data in the datasource will be compacted"
+  # GroupBy DEFINITIONS
+  ## REQUEST DEFINITIONS
+  MetricsByDatasourceGroupByRequest:
+    description: JSON API compliant wrapper for the groupby query
+    type: object
+    properties:
+      data:
+        type: object
+        required: [type, attributes]
+        properties:
+          id:
+            type: string
+          type: 
+            type: string
+            enum: [groupByMetrics]
+          attributes:
+            $ref: '#/definitions/MetricsByDatasourceGroupByConfig'
 
+  ## RESPONSE DEFINITIONS
+  MetricsByDatasourceGroupByResponse:
+    description: JSON API compliant wrapper for the groupby response
+    type: object
+    properties:
+      meta:
+        $ref: '#/definitions/MetricQueryResponseMeta'
+      data:
+        type: object
+        required: [type]
+        properties:
+          id:
+            type: string
+          type: 
+            type: string
+            enum: [groupByMetrics]
+          attributes:
+            type: object
+            allOf:
+              - $ref: '#/definitions/MetricsByDatasourceGroupByConfig'
+              - type: object
+                required:
+                  - result
+                properties:
+                  result:
+                    $ref: '#/definitions/MetricsByDatasourceGroupByReport'
+
+  ## ENTITY DEFINITIONS
+  MetricsByDatasourceGroupByConfig:
+    description: The necessary request parameters for the metric api call
+    type: object
+    required: [interval, aggregation, groupingContext, metrics]
+    properties:
+      queryContext:
+        $ref: '#/definitions/QueryContext'
+      metaContext:
+        $ref: '#/definitions/MetaContext'
+      groupingContext:
+        $ref: '#/definitions/GroupingContext'
+      interval:
+        description: Time boundary for the metrics under consideration using the ISO-8601 standard
+        type: string
+        example: 2018-04-08T14:00:00/2018-04-09T15:00:00
+      aggregation:
+        $ref: '#/definitions/MetricsByDatasourceSupportedAggregations'
+      globalMetricFilterContext:
+        $ref: '#/definitions/SupportedMetricDimensionFilters'
+      metrics:
+        type: array
+        description: A set of identifiers that considers specific metrics based on the provided information
+        items:
+          $ref: '#/definitions/MetricSpec'
+      datasource:
+        type: string
+        enum: [raw, derivedMetrics]
+        description: The type of datasource
+
+  MetricsByDatasourceGroupByReport:
+    description: The rendered response structure from the metric query
+    type: array
+    items:
+      $ref: '#/definitions/MetricsByDatasourceGroupedResultEntryParameters'
+        
+  MetricsByDatasourceGroupedResultEntryParameters:
+    description: Describes filtering criteria used for a particular query that uses a grouping
+    type: object
+    allOf:
+      - $ref: '#/definitions/MetricSpec'
+      - type: object
+        required:
+          - groupedResults
+        properties:
+          groupedResults:
+            type: array
+            items:
+              type: object
+              required: [groupings, value]
+              properties:
+                groupings:
+                  type: object
+                  additionalProperties:
+                    type: "string"
+                value:
+                  type: number
+                  format: float
+                count:
+                  type: number
+                  format: float
+
+  MetricsByDatasourceSupportedAggregations:
+    type: string
+    description: >
+      The type of aggregation (avg/min/max/count/sum)
+      avg - Returns the averaging the metric per monitored object for the time range, within the bounding filter as specified by the bucket property.
+      min - Returns the minimum value for the metric per monitored object for the time range, within the bounding filter as specified by the bucket property.
+      max - Returns the maximum value for the metric per monitored object for the time range, within the bounding filter as specified by the bucket property.
+      count - Returns the number of events within the specified bucket property. A single bucket is the preferred usage but multiple buckets can be used as a band pass filter.
+      sum - Returns the summed value of all records grouped by the provided groupings
+      percentile_95 - Returns the approximated percentile value of all records grouped by the provided groupings
+    example:
+      - min
+      - max
+      - avg
+      - count
+      - sum
+      - percentile_95  # GroupBy DEFINITIONS
   ## REQUEST DEFINITIONS
   JsonApiGroupByRequest:
     description: JSON API compliant wrapper for the groupby query
