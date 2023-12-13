@@ -2,7 +2,7 @@ swagger: '2.0'
 host: api.analytics.accedian.io
 info:
   title: Skylight Analytics API documentation
-  version: 2023.08.0
+  version: 2023.11.0
   contact:
     email: the.team@accedian.com 
   description: |
@@ -3007,6 +3007,35 @@ paths:
       tags:
         - TenantAlertServiceV2
 
+  /v2/alerts/active/aggregate:
+    post:
+      summary: Aggregates the provided metrics and filters them based on the provided criteria
+      operationId: GetActiveAlertAggregateV2
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: "Aggregate query successfully processed"
+          schema:
+            $ref: '#/definitions/JsonApiAlertAggregateResponse'
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/JsonApiAlertAggregateRequest'
+      tags:
+        - TenantAlertServiceV2
 
   /v2/alerts/active:
     post:
@@ -3704,6 +3733,189 @@ paths:
           type: string
       tags:
         - TenantProvisioningServiceV2
+  /v2/policies/alerting/{id}/conditions/{conditionNum}/recoversOn/whitelist:
+    post:
+      description: creates an allow-list and attaches it to alert-policy's specified condition to `recoversOn` attribute.
+      operationId: createPolicyRecoversOnAllowList
+      tags:
+        - TenantAlertServiceV2
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: alert policy ID
+        - name: conditionNum
+          in: path
+          required: true
+          type: integer
+          description: existing number of `conditions` element
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/createAlertPolicyConditionRuleReq'
+      responses:
+        '201':
+          description: "Updated Alert policy with new whitelist added"
+          schema:
+            $ref: '#/definitions/alertConditionListEntry'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "related alert policy not found"
+          schema:
+            type: string
+        '409':
+          description: "Whitelist update conflict"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+  /v2/policies/alerting/{id}/conditions/{conditionNum}/triggersOn/whitelist:
+    post:
+      description: creates an allow-list and attaches it to alert-policy's specified condition to `triggersOn` attribute.
+      operationId: createPolicyTriggersOnAllowList
+      tags:
+        - TenantAlertServiceV2
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: alert policy ID
+        - name: conditionNum
+          in: path
+          required: true
+          type: integer
+          description: existing number of `conditions` element
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/createAlertPolicyConditionRuleReq'
+      responses:
+        '201':
+          description: "Updated Alert policy with new whitelist added"
+          schema:
+            $ref: '#/definitions/alertConditionListEntry'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "related alert policy not found"
+          schema:
+            type: string
+        '409':
+          description: "Whitelist update conflict"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+  /v2/policies/alerting/{id}/conditions/{conditionNum}/whitelist:
+    post:
+      description: creates an allow-list and attaches it to alert-policy's specified condition to `triggersOn` and `recoversOn` attributes both.
+      operationId: createPolicyAllowList
+      tags:
+        - TenantAlertServiceV2
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: alert policy ID
+        - name: conditionNum
+          in: path
+          required: true
+          type: integer
+          description: existing number of `conditions` element
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/createAlertPolicyConditionRuleReq'
+      responses:
+        '201':
+          description: "Updated Alert policy with new whitelist added"
+          schema:
+            $ref: '#/definitions/alertConditionListEntry'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "related alert policy not found"
+          schema:
+            type: string
+        '409':
+          description: "Whitelist update conflict"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+  /v2/policies/alerting/{id}/whitelist/{whitelistID}:
+    delete:
+      description: deletes an allowlist attached to policy.
+      operationId: deletePolicyAllowList
+      tags:
+        - TenantAlertServiceV2
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: alert policy ID
+        - name: whitelistID
+          in: path
+          required: true
+          type: string
+          description: whitelist id
+      responses:
+        '200':
+          description: "Updated Alert policy with specified whitelist removed"
+          schema:
+            $ref: '#/definitions/alertPolicyResponse'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requester does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "Related alert policy or whitelist weren't found"
+          schema:
+            type: string
+        '409':
+          description: "Data update conflict"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
   /v2/connector-configs:
     post:
       summary: Create a ConnectorConfig for a Tenant.
@@ -9307,34 +9519,6 @@ paths:
             type: string
 
   /v3/policies/alerting/condition/rules:
-    post:
-      summary: Creates reusable condition rule which can be used as whitelist for alert policies
-      operationId: createConditionRuleV3
-      tags:
-        - TenantAlertServiceV3
-      parameters:
-        - name: body
-          in: body
-          required: true
-          schema:
-            $ref: '#/definitions/createAlertPolicyConditionRuleReq'
-      responses:
-        '201':
-          description: "Got the value of the whitelist object"
-          schema:
-            $ref: '#/definitions/alertConditionListEntry'
-        '403':
-          description: "Requester does not have authorization to perform this action"
-          schema:
-            type: string
-        '404':
-          description: "related whitelist set not found"
-          schema:
-            type: string
-        '500':
-          description: "Unexpected error processing request"
-          schema:
-            type: string
     get:
       summary: Get multiple Alert policy condition rule objects with pagination support
       operationId: getMultipleConditionRulesV3
@@ -11988,6 +12172,9 @@ definitions:
               metadataCategoryLimit:
                 type: "integer"
                 description: "The maximum amount of Metadata Categories allowed for this Tenant"
+              storeMetadataValueCaseSensitive:
+                type: "boolean"
+                description: "If true, all detected dynamic metadata and provisioned static metadata are stored case sensitive. If set to false (default), all of metadata (dynamic/static) values are transformed toLowerCase before they are stored. WARNING: Once storeMetadataValueCaseSensitive is set to true it CANNOT be changed back to false"
               monitoredObjectSummaryPartitions:
                 type: "integer"
                 description: "The amount of partitions to use when configuring the MO Summary cache for the tenant"
@@ -12129,6 +12316,9 @@ definitions:
           metadataCategoryLimit:
             type: "integer"
             description: "The maximum amount of Metadata Categories allowed for this Tenant"
+          storeMetadataValueCaseSensitive:
+            type: "boolean"
+            description: "If true, all detected dynamic metadata and provisioned static metadata are stored case sensitive. If set to false, all of metadata (dynamic/static) values are transformed toLowerCase before they are stored. WARNING: Once storeMetadataValueCaseSensitive is set to true it CANNOT be changed back to false"
           monitoredObjectSummaryPartitions:
             type: "integer"
             description: "The amount of partitions to use when configuring the MO Summary cache for the tenant"
@@ -15305,6 +15495,18 @@ definitions:
             type: string
             x-omitempty: true
 
+  NetworkAssetEvent:
+    type: object
+    description: An event that contains an action and details of changed/removed asset
+    required: ["action", "id"]
+    properties:
+      action:
+        type: string
+        enum: ["create", "update", "remove"]
+      id:
+        type: string
+      asset:
+        $ref: "#/definitions/NetworkAsset"
   DashboardCreateRequest:
     type: "object"
     required: ["data"]
@@ -16043,6 +16245,9 @@ definitions:
         type: integer
         format: int64
       severityIndex:
+        type: number
+        format: double
+      diversityIndex:
         type: number
         format: double
       relatedAlerts:
@@ -21274,6 +21479,13 @@ definitions:
               type: string
               maxLength: 255
               example: "orderId:uuid123"
+          signatureVersion:
+            description: "[Interceptor] Current version of DSL detection signatures."
+            type: integer
+            format: int64
+          source:
+            description: "[Interceptor] The source (category, provider) of detection, e.g. `user` or `system-dsl`."
+            type: string
 
   alertPolicyStatus:
     description: |
@@ -21366,6 +21578,13 @@ definitions:
               example: "orderId:uuid123"
           status:
             $ref: '#/definitions/alertPolicyStatus'
+          signatureVersion:
+            description: "[Interceptor] Current version of DSL detection signatures."
+            type: integer
+            format: int64
+          source:
+            description: "[Interceptor] The source (category, provider) of detection, e.g. `user` or `system-dsl`."
+            type: string
 
   alertConditionGroup:
     type: object
@@ -21683,4 +21902,3 @@ definitions:
           test-interval-metrics:
             x-omitempty: true
             $ref: '#/definitions/TcpThroughputInterval'
-
