@@ -22,7 +22,7 @@ info:
        https://{url}/api/v1/auth/login \
        -H 'Cache-Control: no-cache' \
        -H 'Content-Type: application/x-www-form-urlencoded' \
-       -d 'username=tenantUsername&password=tenantUserPassword'
+       -d 'username=tenantUsername&password=tenantUserPassword' -v
     ```
     > Pro-tip: Replace "{url}" by your path
     The response will contained an authorized header and a set-cookie header
