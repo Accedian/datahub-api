@@ -7,13 +7,15 @@
    and ##### GATHER DEFINITIONS ##### portion with the latest one.
 2. After this, go to the Accedian/stitchIt repo, and from the master branch get the latest openapi.yaml.
    Run the command:
+   brew install npm
    npx @redocly/cli build-docs openapi.yaml  
    This will generate a static html file. Edit the HTML file, if needed, to have the latest Release Date.
    For example, replace all instances of 23.08 with 23.11 - this is only necessary if the openapi.yaml 
    has not had any updates since the last release.
    Rename this file to session-stitchIt.html and replace the existing HTML file in 
    the skylight-api/web/ and datahub-api/web/ folder.
-4. Repeat step 2 for Accedian/sensor-orchestrate (renaming it to agent-orchestration.html). 
+3. Go to  Accedian/sensor-orchestrate repo https://github.com/Accedian/sensor-orchestrate/blob/master/_resources/static/docs.html
+  (copy and paste all into /web/agent-orchestration.html). 
 4. For Capture-Orchestration, please go to https://console.cloud.google.com/storage/browser/pykouze-openapi 
    and download the HTML for the specific release date. Rename this file to capture-orchestration.html and place it in the web folder.
 5. Once this is done, create the PR.

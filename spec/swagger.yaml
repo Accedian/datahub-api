@@ -2285,6 +2285,37 @@ paths:
         - application/vnd.api+json
       produces:
         - application/vnd.api+json
+      parameters:
+        - name: start
+          in: query
+          required: false
+          type: integer
+          description: "Filter TWEs with events (occurrences) after the start timestamp (inclusive) in ms"
+        - name: end
+          in: query
+          required: false
+          type: integer
+          description: "Filter TWEs with events (occurrences) earlier than the end timestamp (inclusive) in ms"
+        - name: type
+          in: query
+          required: false
+          type: string
+          description: "Filter by TWE type i.e.: busyHour | maintenance"
+        - name: archived
+          in: query
+          required: false
+          type: boolean
+          description: "If true, archived TWEs are returned, otherwise active TWEs are returned"
+        - name: pageSize
+          in: query
+          required: false
+          type: integer
+          description: "Number of TWEs returned on a single page"
+        - name: page
+          in: query
+          required: false
+          type: integer
+          description: "The page number"
       responses:
         '200':
           description: Success
@@ -2292,6 +2323,10 @@ paths:
             $ref: '#/definitions/TimeExclusionResponseArraySpec'
         '403':
           description: Access to resource forbidden for user
+          schema:
+            $ref: '#/definitions/Error'
+        '400':
+          description: Bad request
           schema:
             $ref: '#/definitions/Error'
         '500':
@@ -2329,6 +2364,50 @@ paths:
             $ref: '#/definitions/Error'
         '404':
           description: Not Found
+          schema:
+            $ref: '#/definitions/Error'
+        '412':
+          description: Precondition failed
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Unexpected error processing request
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Time Window Exclusions
+    put:
+      summary: Replaces a provisioned time exclusion of the current tenant with the time exclusion provided in the body
+      operationId: ReplaceTimeExclusion
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/TimeExclusionRequestSpec'
+      responses:
+        '200':
+          description: Updated
+          schema:
+            $ref: '#/definitions/TimeExclusionResponseSpec'
+        '403':
+          description: Access to resource forbidden for user
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/Error'
+        '400':
+          description: Bad Request
           schema:
             $ref: '#/definitions/Error'
         '412':
@@ -2422,6 +2501,21 @@ paths:
           name: monitoredObjectID
           required: false
           type: string
+        - name: pageSize
+          in: query
+          required: false
+          type: integer
+          description: "Number of TWEs and events returned on a single page"
+        - name: page
+          in: query
+          required: false
+          type: integer
+          description: "The page number"
+        - name: type
+          in: query
+          required: false
+          type: string
+          description: "Filter by TWE type i.e.: busyHour | maintenance"
       responses:
         '200':
           description: Success
@@ -3405,7 +3499,7 @@ paths:
           type: string
       tags:
         - TenantProvisioningServiceV2
-    
+
   /v2/locales:
     post:
       summary: Create a Locale for a Tenant.
@@ -4176,7 +4270,7 @@ paths:
         '500':
           description: "Unexpected error processing request"
           schema:
-            type: string      
+            type: string
       parameters:
         - name: templateId
           in: path
@@ -5420,7 +5514,7 @@ paths:
         '400':
           description: "Request data does not pass validation"
           schema:
-            type: string
+            $ref: '#/definitions/IngestionError'
         '403':
           description: "Requestor does not have authorization to perform this action"
           schema:
@@ -5453,10 +5547,6 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/IngestionProfileListResponse'
-        '400':
-          description: "Request data does not pass validation"
-          schema:
-            type: string
         '403':
           description: "Requestor does not have authorization to perform this action"
           schema:
@@ -5471,7 +5561,7 @@ paths:
             type: string
       tags:
         - TenantProvisioningServiceV2
-    
+
   /v2/ingestion-profiles/{ingestionProfileId}:
     get:
       summary: Retrieve a Tenant Ingestion Profile by id.
@@ -5517,7 +5607,7 @@ paths:
         '400':
           description: "Request data does not pass validation"
           schema:
-            type: string
+            $ref: '#/definitions/IngestionError'
         '403':
           description: "Requestor does not have authorization to perform this action"
           schema:
@@ -5735,7 +5825,7 @@ paths:
             type: string
       tags:
         - TenantProvisioningServiceV2
-    
+
   /v2/metadata-configs/{MetadataConfigId}:
     get:
       summary: Retrieve a Tenant Metadata Configuration by id.
@@ -6022,7 +6112,7 @@ paths:
           type: string
       tags:
         - TenantProvisioningServiceV2
-        
+
   /v2/monitored-object-tag-mappings/{monitoredObjectTagMappingId}:
     get:
       summary: Retrieve a Tenant MonitoredObjectTagMapping by Id.
@@ -6237,7 +6327,7 @@ paths:
         - TenantProvisioningServiceV2
   /v2/monitored-objects/id-list:
     post:
-      summary: Retrieve a list of monitored objects based on the provided filter criteria, in order to retreive all records pagination must be used. 
+      summary: Retrieve a list of monitored objects based on the provided filter criteria, in order to retreive all records pagination must be used.
       operationId: GetFilteredMonitoredObjectListV2
       consumes:
         - application/json
@@ -6601,7 +6691,7 @@ paths:
           in: body
           required: true
           schema:
-              $ref: '#/definitions/BulkMonitoredObjectPatchRequest'
+            $ref: '#/definitions/BulkMonitoredObjectPatchRequest'
       tags:
         - TenantProvisioningServiceV2
   /v2/bulk/insert/monitored-objects:
@@ -6632,7 +6722,7 @@ paths:
           in: body
           required: true
           schema:
-              $ref: '#/definitions/BulkMonitoredObjectCreateRequest'
+            $ref: '#/definitions/BulkMonitoredObjectCreateRequest'
       tags:
         - TenantProvisioningServiceV2
     put:
@@ -6662,7 +6752,7 @@ paths:
           in: body
           required: true
           schema:
-              $ref: '#/definitions/BulkMonitoredObjectUpdateRequest'
+            $ref: '#/definitions/BulkMonitoredObjectUpdateRequest'
       tags:
         - TenantProvisioningServiceV2
 
@@ -6695,7 +6785,7 @@ paths:
           in: body
           required: true
           schema:
-              $ref: '#/definitions/BulkMonitoredObjectMetaCreateRequest'
+            $ref: '#/definitions/BulkMonitoredObjectMetaCreateRequest'
       tags:
         - TenantProvisioningServiceV2
 
@@ -6837,9 +6927,9 @@ paths:
           schema:
             $ref: '#/definitions/MonitoredObjectMetadataCategoryMappingResponse'
         '400':
-            description: "Request data does not pass validation"
-            schema:
-              type: string
+          description: "Request data does not pass validation"
+          schema:
+            type: string
         '403':
           description: "Requestor does not have authorization to perform this action"
           schema:
@@ -6857,7 +6947,7 @@ paths:
           in: body
           required: true
           schema:
-              $ref: '#/definitions/MetadataCategoryMappingUpdateRequest'
+            $ref: '#/definitions/MetadataCategoryMappingUpdateRequest'
         - name: mappingType
           in: path
           required: true
@@ -6884,9 +6974,9 @@ paths:
           schema:
             $ref: '#/definitions/alertConditionWorkingHoursSet'
         '400':
-           description: "Request validation failed"
-           schema:
-             type: string
+          description: "Request validation failed"
+          schema:
+            type: string
         '403':
           description: "Requester does not have authorization to perform this action"
           schema:
@@ -7393,7 +7483,7 @@ paths:
         - in: query
           name: interval
           type: string
-          description: The interval in ISO 6801 standard but with the '/' replaced with '_'
+          description: The interval in ISO 8601 standard but with the '/' replaced with '_'
         - in: query
           name: monitoredObjectId
           type: string
@@ -7406,7 +7496,7 @@ paths:
         - in: query
           name: policyType
           type: string
-          enum: ["micro-tca", "anomaly", "capture", "capture-automatic", "percentage-violations"]
+          enum: ["micro-tca", "anomaly", "capture", "capture-automatic", "percentage-violations", "baseline-percent"]
         - in: query
           name: limit
           type: number
@@ -8535,10 +8625,10 @@ paths:
           type: string
       tags:
         - TenantProvisioningServiceV3
-  
+
   /v3/connectors-admin/update/ingestion-dictionaries:
     post:
-      summary: Upsert an ingestion dictionary using 'append only' rules 
+      summary: Upsert an ingestion dictionary using 'append only' rules
       operationId: AutoUpdateIngestionDictionaryV3
       consumes:
         - application/vnd.api+json
@@ -8915,7 +9005,7 @@ paths:
         '400':
           description: "Request data does not pass validation"
           schema:
-            type: string
+            $ref: '#/definitions/IngestionError'
         '403':
           description: "Requestor does not have authorization to perform this action"
           schema:
@@ -9002,7 +9092,7 @@ paths:
             type: string
       tags:
         - TenantProvisioningServiceV3
-    
+
   /v3/ingestion-dictionaries/{IngestionDictionaryId}:
     get:
       summary: Retrieve a Tenant Ingestion Dictionary by id.
@@ -9048,7 +9138,7 @@ paths:
         '400':
           description: "Request data does not pass validation"
           schema:
-            type: string
+            $ref: '#/definitions/IngestionError'
         '403':
           description: "Requestor does not have authorization to perform this action"
           schema:
@@ -9082,7 +9172,7 @@ paths:
       tags:
         - TenantProvisioningServiceV3
     delete:
-      summary: Delete a Tenant Ingestion Dictionary specified by the provided Ingestion Dictionary Id.
+      summary: Delete a Tenant Staged Ingestion Dictionary specified by the provided Ingestion Dictionary Id.
       operationId: DeleteIngestionDictionaryV3
       produces:
         - application/vnd.api+json
@@ -9097,6 +9187,178 @@ paths:
             type: string
         '404':
           description: "The specified Ingestion Dictionary is not provisioned"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: IngestionDictionaryId
+          in: path
+          required: true
+          type: string
+      tags:
+        - TenantProvisioningServiceV3
+
+  /v3/staged-ingestion-dictionaries:
+    post:
+      summary: Create an Staged Ingestion Dictionary for a Tenant.
+      operationId: CreateStagedIngestionDictionaryV3
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/IngestionDictionaryV3Response'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '409':
+          description: "The Staged Ingestion Dictionary already exists"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/IngestionDictionaryV3CreateRequest'
+      tags:
+        - TenantProvisioningServiceV3
+    get:
+      summary: Get all Tenant Staged Ingestion Dictionaries
+      operationId: GetAllStagedIngestionDictionaryV3
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/IngestionDictionaryV3ListResponse'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "No Staged Ingestion Dictionary is provisioned"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      tags:
+        - TenantProvisioningServiceV3
+
+  /v3/staged-ingestion-dictionaries/{IngestionDictionaryId}:
+    get:
+      summary: Retrieve a Tenant's Staged Ingestion Dictionary by id.
+      operationId: GetStagedIngestionDictionaryV3
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/IngestionDictionaryV3Response'
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "The specified Staged Ingestion Dictionary is not provisioned"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: IngestionDictionaryId
+          in: path
+          required: true
+          type: string
+      tags:
+        - TenantProvisioningServiceV3
+    patch:
+      summary: Update a Tenant's Staged Ingestion Dictionary
+      operationId: UpdateStagedIngestionDictionaryV3
+      consumes:
+        - application/vnd.api+json
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/IngestionDictionaryV3Response'
+        '400':
+          description: "Request data does not pass validation"
+          schema:
+            type: string
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "The specified Staged Ingestion Dictionary is not provisioned"
+          schema:
+            type: string
+        '409':
+          description: "Incorrect revision provided for the update request"
+          schema:
+            type: string
+        '500':
+          description: "Unexpected error processing request"
+          schema:
+            type: string
+      parameters:
+        - name: IngestionDictionaryId
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/IngestionDictionaryV3UpdateRequest'
+      tags:
+        - TenantProvisioningServiceV3
+    delete:
+      summary: Delete a Tenant's Staged Ingestion Dictionary specified by the provided Ingestion Dictionary Id.
+      operationId: DeleteStagedIngestionDictionaryV3
+      produces:
+        - application/vnd.api+json
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/IngestionDictionaryV3Response'
+        '403':
+          description: "Requestor does not have authorization to perform this action"
+          schema:
+            type: string
+        '404':
+          description: "The specified Staged Ingestion Dictionary is not provisioned"
           schema:
             type: string
         '500':
@@ -9210,7 +9472,230 @@ paths:
           description: "RunId of the instance-metric"
       tags:
         - InstanceMetricsApiV3
-  
+  /v3/mapping-templates:
+    post:
+      summary: Create MDT mapping template
+      operationId: CreateMappingTemplate
+      responses:
+        '201':
+          description: "Mapping template created"
+          schema:
+            $ref: '#/definitions/mappingTemplateEntity'
+        '422':
+          description: "The provided request did not pass validation"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        '403':
+          description: "Requester does not have authorization to perform this action"
+        '409':
+          description: "Conflict with stored object"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        '500':
+          description: "Unexpected error processing request"
+      parameters:
+        - in: body
+          name: body
+          required: true
+          description: The Mapping template
+          schema:
+            $ref: "#/definitions/mappingTemplate"
+      tags:
+        - MdtMappingTemplates
+    get:
+      summary: Retrieve mapping template documents from the repository
+      operationId: ListMappingTemplates
+      responses:
+        '200':
+          description: "Got the value of the mapping templates"
+          schema:
+            $ref: '#/definitions/mappingTemplatesResponse'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+        '500':
+          description: "Unexpected error processing request"
+      parameters:
+        - in: query
+          name: limit
+          type: integer
+          description: Maximum number of results to return
+          default: 1000
+          minimum: 0
+          required: true
+        - in: query
+          name: skip
+          type: integer
+          description: first N results skipped
+          default: 0
+          minimum: 0
+          required: true
+        - in: query
+          name: family
+          type: string
+          description: Template family to retrieve
+        - in: query
+          name: category
+          type: string
+          description: Template category to retrieve documents for
+        - in: query
+          name: name
+          type: string
+          description: The unique name for the template to retrieve
+        - in: query
+          name: version
+          type: string
+          description: Specific template version to retrieve.Also support special version tag ‘latest’ to retrieve the most recent version.
+          pattern: ^((0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)|(latest)$
+      tags:
+        - MdtMappingTemplates
+  /v3/mapping-templates/{family}/{category}/{name}:
+    delete:
+      summary: Deletes the specified template from the repository.
+      operationId: DeleteMappingTemplate
+      responses:
+        '204':
+          description: "Deleted"
+        '403':
+          description: "Requester does not have authorization to perform this action"
+        '404':
+          description: "Requested document does not exist"
+        '500':
+          description: "Unexpected error processing request"
+      parameters:
+        - in: path
+          name: family
+          type: string
+          required: true
+          description: Template family
+        - in: path
+          name: category
+          type: string
+          required: true
+          description: Template category
+        - in: path
+          name: name
+          type: string
+          required: true
+          description: The unique name
+        - in: query
+          name: delete_version
+          type: string
+          description: Specific template version to delete.
+          pattern: ^((0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)$
+      tags:
+        - MdtMappingTemplates
+    get:
+      summary: Retrieve mapping template document from the repository
+      operationId: RetrieveMappingTemplate
+      responses:
+        '200':
+          description: "Got the value of the mapping templates"
+          schema:
+            $ref: '#/definitions/mappingTemplateVersion'
+        '403':
+          description: "Requester does not have authorization to perform this action"
+        '404':
+          description: "Requested mapping template not found"
+        '500':
+          description: "Unexpected error processing request"
+      parameters:
+        - in: path
+          name: family
+          type: string
+          required: true
+          description: Template family
+        - in: path
+          name: category
+          type: string
+          required: true
+          description: Template category
+        - in: path
+          name: name
+          type: string
+          required: true
+          description: The unique name
+        - in: query
+          name: version
+          type: string
+          description: Specific template version to retrieve.Also support special version tag ‘latest’ to retrieve the most recent version, and this is default value of this parameter.
+          pattern: ^((0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)|(latest)$
+          default: "latest"
+      tags:
+        - MdtMappingTemplates
+    put:
+      summary: Updates an existing template in the repository. Works in 2 modes, in default update is performed and  latest version is  stored  in history. In second mode when parameter overwrite_version is used a specific version is overwritten.
+      operationId: UpdateMappingTemplate
+      responses:
+        '204':
+          description: "Document was successfully updated"
+        '403':
+          description: "Requester does not have authorization to perform this action"
+        '404':
+          description:  "Requested document does not exist"
+        '422':
+          description: "The provided request did not pass validation"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        '500':
+          description: "Unexpected error processing request"
+      parameters:
+        - in: path
+          name: family
+          type: string
+          required: true
+          description: Template family
+        - in: path
+          name: category
+          type: string
+          required: true
+          description: Template category
+        - in: path
+          name: name
+          type: string
+          required: true
+          description: The unique name
+        - in: query
+          name: overwrite_version
+          type: string
+          description: Specific template version to overwrite.
+          pattern: ^((0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)$
+        - in: body
+          name: body
+          required: true
+          description: The Mapping template
+          schema:
+            $ref: "#/definitions/mappingTemplateForUpdate"
+      tags:
+        - MdtMappingTemplates
+  /v3/mapping-templates/build-mdt-agent-configuration:
+    post:
+      summary: Builds agent configuration with most recent versions of all MDT mapping templates
+      operationId: BuildMDTAgentConfiguration
+      produces:
+        - text/plain
+      responses:
+        '200':
+          description: "Agent configuration"
+          schema:
+            type: string
+        '422':
+          description: "The provided request did not pass validation"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        '403':
+          description: "Requester does not have authorization to perform this action"
+        '500':
+          description: "Unexpected error processing request"
+      parameters:
+        - in: body
+          name: body
+          required: true
+          description: "Agent configuration parameters"
+          schema:
+            $ref: "#/definitions/MDTAgentConfigurationParameters"
+      tags:
+        - MdtMappingTemplates
+
   /v3/metrics-admin/reconciliation/datasource/{datasource}:
     post:
       summary: Re-ingests data into the datasource given the input parameters
@@ -9248,11 +9733,13 @@ paths:
         - name: taskCount
           in: query
           type: integer
+          minimum: 1
           required: false
           description: Sets the concurrency level of the ingestion task
         - name: maxSizePerTask
           in: query
           type: integer
+          minimum: 1
           required: false
           format: "int64"
         - name: body
@@ -9262,10 +9749,10 @@ paths:
             $ref: '#/definitions/DatasourceReconciliationTasks'
       tags:
         - MetricsServiceV3
-  
+
   /v3/metrics-admin/reindex/datasource/{datasource}:
     post:
-      summary: Re-formats data in the datasource to optomize the datasource 
+      summary: Re-formats data in the datasource to optomize the datasource
       operationId: CreateDatasourceReindexTasksV3
       consumes:
         - application/vnd.api+json
@@ -9300,12 +9787,14 @@ paths:
         - name: taskCount
           in: query
           type: integer
+          minimum: 1
           required: false
           default: 1
           description: Sets the concurrency level of the granularity compaction task
         - name: maxSizePerTask
           in: query
           type: integer
+          minimum: 1
           required: false
           format: "int64"
           description: Sets the amount of data each task can process. Used to control the number of tasks that will be created up to max value of 'taskCount'
@@ -9623,9 +10112,9 @@ paths:
           schema:
             type: string
         '409':
-           description: "Whitelist update conflict"
-           schema:
-             type: string
+          description: "Whitelist update conflict"
+          schema:
+            type: string
         '500':
           description: "Unexpected error processing request"
           schema:
@@ -9757,7 +10246,7 @@ paths:
       tags:
         - TcpThroughputTestReportServiceV3
 
-  /v3/tcpThroughput/tests/{testId}/reports:  
+  /v3/tcpThroughput/tests/{testId}/reports:
     get:
       summary: Retrieve all TCP Throughput test reports for a test instance.
       operationId: GetAllTcpThroughputReportsForTestV3
@@ -10825,6 +11314,7 @@ definitions:
       eq  = equal
       gte  = greaterThan or equal
       lte  = lessThan or equal
+      in   = in the specified range
   MultipleValuesEntry:
     type: object
     required: [ "key", "includes", "values" ]
@@ -11449,6 +11939,15 @@ definitions:
               type: string
             attributes:
               $ref: '#/definitions/TimeExclusionResponse'
+      links:
+        type: object
+        properties:
+          next:
+            type: string
+          prev:
+            type: string
+          self:
+            type: string
     example:
       data:
         - id: "3211177d-c211-43ec-949b-e109686a4abe"
@@ -11487,6 +11986,10 @@ definitions:
             recurrence:
               freq: WEEKLY
               wkst: FRI
+      links:
+        self: "/api/v3/twe?start=123456789&end=234567890&pageSize=100&page=2"
+        prev: "/api/v3/twe?start=123456789&end=234567890&pageSize=100&page=1"
+        next: "/api/v3/twe?start=123456789&end=234567890&pageSize=100&page=3"
   TimeExclusionResponse:
     type: object
     properties:
@@ -11495,6 +11998,9 @@ definitions:
       description:
         type: string
         x-nullable: true
+      archivedTime:
+        type: string
+        format: date-time
       locale:
         type: string
         x-nullable: true
@@ -11563,8 +12069,6 @@ definitions:
       freq:
         type: string
         enum:
-          - SECONDLY
-          - MINUTELY
           - HOURLY
           - DAILY
           - WEEKLY
@@ -11660,7 +12164,15 @@ definitions:
               type: string
             attributes:
               $ref: '#/definitions/TimeWindowExclusionEvent'
-
+      links:
+        type: object
+        properties:
+          next:
+            type: string
+          prev:
+            type: string
+          self:
+            type: string
   TimeWindowExclusionEvent:
     type: object
     properties:
@@ -11750,7 +12262,7 @@ definitions:
     properties:
       data:
         $ref: '#/definitions/Tenant'
-  
+
   TenantListResponse:
     type: "object"
     required: ["data"]
@@ -11765,7 +12277,7 @@ definitions:
     type: "object"
     required: ["type", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [tenants]
       id:
@@ -11802,7 +12314,7 @@ definitions:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [tenants]
       id:
@@ -11842,7 +12354,7 @@ definitions:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [tenants]
       id:
@@ -11893,9 +12405,9 @@ definitions:
       domainMapping:
         type: "object"
         additionalProperties:
-            type: "array"
-            items:
-              type: "string"
+          type: "array"
+          items:
+            type: "string"
       default:
         type: "boolean"
       label:
@@ -11908,7 +12420,7 @@ definitions:
         type: "string"
       secretEnv:
         type: "string"
-  
+
   SAMLConfig:
     type: "object"
     required: ["identityProviderMetadataPath"]
@@ -11942,7 +12454,7 @@ definitions:
         items:
           type: "object"
           properties:
-            type: 
+            type:
               type: "string"
               enum: [ingestionDictionaries]
             id:
@@ -11962,7 +12474,7 @@ definitions:
                       groups:
                         type: "array"
                         items:
-                            type: "string"
+                          type: "string"
                 metricList:
                   description: "Provides an array of objects that describe the possible metric combinations that may be retained by Datahub"
                   type: "array"
@@ -12008,7 +12520,7 @@ definitions:
                 metrics:
                   description: "Metrics will be deprecated in the next API version. Please use the 'metricList' property instead"
                   type: "object"
-                  additionalProperties:               
+                  additionalProperties:
                     type: "object"
                     properties:
                       ui:
@@ -12016,8 +12528,8 @@ definitions:
                         properties:
                           metricGroups:
                             type: "array"
-                            items: 
-                                type: "string"
+                            items:
+                              type: "string"
                       metricMap:
                         type: "object"
                         additionalProperties:
@@ -12057,7 +12569,7 @@ definitions:
         items:
           type: "object"
           properties:
-            type: 
+            type:
               type: "string"
               enum: [validTypes]
             id:
@@ -12095,12 +12607,12 @@ definitions:
                 type: "string"
                 description: "The currently installed solution version. If followed by a *, indicates that local modification has been detected"
                 additionalProperties:
-                    type: "string"
+                  type: "string"
               releaseVersion:
                 type: "string"
                 description: "The currently installed release version."
                 additionalProperties:
-                    type: "string"
+                  type: "string"
               captureSystemVersion:
                 type: "string"
                 description: "The currently installed capture system version."
@@ -12121,8 +12633,8 @@ definitions:
                       type: "string"
                     version:
                       type: "string"
-              
-                            
+
+
   TenantSummaryResponse:
     type: "object"
     description: "Contains the mapping of an alias to a Tenant ID"
@@ -12130,7 +12642,7 @@ definitions:
       data:
         type: "object"
         properties:
-          type: 
+          type:
             type: "string"
             enum: [tenantSummaries]
           id:
@@ -12138,7 +12650,7 @@ definitions:
           attributes:
             type: "object"
             properties:
-              id: 
+              id:
                 type: "string"
                 description: "The unique identifier of the Tenant in Datahub"
               alias:
@@ -12154,7 +12666,7 @@ definitions:
         type: "object"
         required: ["type", "attributes", "id"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [tenantMetadata]
           id:
@@ -12172,6 +12684,9 @@ definitions:
               metadataCategoryLimit:
                 type: "integer"
                 description: "The maximum amount of Metadata Categories allowed for this Tenant"
+              tweArchiveDuration:
+                type: "string"
+                description: "The retention period after which an Archived TWE is deleted"
               storeMetadataValueCaseSensitive:
                 type: "boolean"
                 description: "If true, all detected dynamic metadata and provisioned static metadata are stored case sensitive. If set to false (default), all of metadata (dynamic/static) values are transformed toLowerCase before they are stored. WARNING: Once storeMetadataValueCaseSensitive is set to true it CANNOT be changed back to false"
@@ -12217,6 +12732,12 @@ definitions:
                     $ref: '#/definitions/enabledAlertPolicyLimit'
               simConfig:
                 $ref: '#/definitions/SmartIncidentManagementConfig'
+              ingestionTemporalPriority:
+                $ref: '#/definitions/IngestionTemporalPriorityProperties'
+              reportCountLimit:
+                type: "integer"
+                description: "The maximum amount of Reports (custom and dataset export combined) that may be provisioned for this tenant"
+                default: 120
 
 
   TenantMetadataResponse:
@@ -12234,24 +12755,30 @@ definitions:
     properties:
       maxDeltaIngestionSizePerIngestionThread:
         type: "integer"
+        minimum: 1
         format: "int64"
         description: "The maximum amount of bytes to process in a single thread. Used to increase number of threads used within the 'maxDeltaIngestionThreads' limit"
       maxIngestionSizePerIngestionThread:
         type: "integer"
+        minimum: 1
         format: "int64"
         description: "The maximum amount of bytes to process in a single thread. Used to increase number of threads used within the 'maxIngestionThreads' limit"
       maxDeltaIngestionThreads:
         type: "integer"
+        minimum: 1
         description: "The maximum amount of threads that will be used to ingest data into this datasource for delta tasks"
       maxIngestionThreads:
         type: "integer"
+        minimum: 1
         description: "The maximum amount of threads that will be used to ingest data into this datasource for refresh tasks"
       maxRowsPerFile:
         type: "integer"
+        minimum: 1
         format: "int64"
         description: "The maximum amount of rows that will be stored in a persisted metric file"
       maxRowsInMemory:
         type: "integer"
+        minimum: 1
         format: "int64"
         description: "The maximum amount of rows that will be processed (among all threads) before persisting the metrics files"
       maxIngestionPeriod:
@@ -12272,6 +12799,10 @@ definitions:
       tableName:
         type: "string"
         description: "Name of the table root for finding ingestion data for this datasource."
+      ingestionPriority:
+        $ref: '#/definitions/IngestionPriorityModifierProperty'
+        description: "The ingestion priority for this datasource, default value of 1 if not provided or unset"
+
 
   MetricQueryConfig:
     type: "object"
@@ -12292,7 +12823,7 @@ definitions:
     required: ["type", "id", "attributes"]
     description: "Represents TenantMetadata used to provide context for a Tenant in Datahub"
     properties:
-      type: 
+      type:
         type: "string"
         enum: [tenantMetadata]
       id:
@@ -12316,6 +12847,9 @@ definitions:
           metadataCategoryLimit:
             type: "integer"
             description: "The maximum amount of Metadata Categories allowed for this Tenant"
+          tweArchiveDuration:
+            type: "string"
+            description: "The retention period after which an Archived TWE is deleted"
           storeMetadataValueCaseSensitive:
             type: "boolean"
             description: "If true, all detected dynamic metadata and provisioned static metadata are stored case sensitive. If set to false, all of metadata (dynamic/static) values are transformed toLowerCase before they are stored. WARNING: Once storeMetadataValueCaseSensitive is set to true it CANNOT be changed back to false"
@@ -12350,7 +12884,7 @@ definitions:
             additionalProperties:
               $ref: '#/definitions/MetricDatasourceConfig'
           metricQueryConfig:
-              $ref: '#/definitions/MetricQueryConfig'
+            $ref: '#/definitions/MetricQueryConfig'
           latentDataPeriod:
             type: "string"
             description: "ISO8601 format period (only Time variant i.e. must start 'PT') which determines how far in the past data for this Tenant data will be accepted in the real-time ingestion pipeline."
@@ -12361,6 +12895,10 @@ definitions:
                 $ref: '#/definitions/enabledAlertPolicyLimit'
           simConfig:
             $ref: '#/definitions/SmartIncidentManagementConfig'
+          reportCountLimit:
+            type: "integer"
+            description: "The maximum amount of Reports (custom and dataset export combined) that may be provisioned for this tenant"
+            default: 120
           createdTimestamp:
             type: "integer"
             format: "int64"
@@ -12369,6 +12907,8 @@ definitions:
             type: "integer"
             format: "int64"
             description: "Time since epoch at which this object was last altered."
+          ingestionTemporalPriority:
+            $ref: '#/definitions/IngestionTemporalPriorityProperties'
 
   IngestionVersionRetetionProperties:
     type: "object"
@@ -12387,6 +12927,20 @@ definitions:
         type: "string"
         description: "ISO8601 format period (only Time variant i.e. must start 'PT') which determines for what period of time old versions of data will be kept for data tables that DO NOT require history to be maintained"
 
+  IngestionTemporalPriorityProperties:
+    type: "object"
+    properties:
+      contemporary:
+        $ref: '#/definitions/IngestionPriorityModifierProperty'
+        description: "The ingestion priority for contemporary data tasks, default value of 2 if not provided or unset"
+      latent:
+        $ref: '#/definitions/IngestionPriorityModifierProperty'
+        description: "The ingestion priority for latent data task, default value of 1 if not provided or unset"
+
+  IngestionPriorityModifierProperty:
+    type: "integer"
+    format: "int64"
+    enum: [1,2,3,4,5,6,7,8,9,10]
   # Active Alerts
   ActiveAlert:
     type: object
@@ -12432,7 +12986,7 @@ definitions:
           error - Analytics engine encountered an error at timestamp
       policyType:
         type: string
-        enum: ["micro-tca", "anomaly", "capture", "capture-automatic", "security", "capture-v2", "percentage-violations"]
+        enum: ["micro-tca", "anomaly", "capture", "capture-automatic", "security", "capture-v2", "percentage-violations", "baseline-percent"]
       metric:
         type: string
       duration:
@@ -12474,6 +13028,9 @@ definitions:
         type: string
       triggeredValue:
         description: This is actual metric value which triggers the alert
+        type: string
+      baseline:
+        description: This is the baseline value of the object metric at the time when alert is raised or cleared
         type: string
       comparator:
         # I'm not sure we need this element at all.
@@ -12698,8 +13255,8 @@ definitions:
       field:
         type: string
         enum: [
-            "objectId", "mitreTactics", "alertClusterId", "policyId", "securityJobType", "severity",
-            "startTimestamp", "endTimestamp", "raiseProcessedAt", "sourceIp", "destinationIp"
+          "objectId", "mitreTactics", "alertClusterId", "policyId", "securityJobType", "severity",
+          "startTimestamp", "endTimestamp", "raiseProcessedAt", "sourceIp", "destinationIp"
         ]
       order:
         type: string
@@ -13040,7 +13597,7 @@ definitions:
         description: Hint to the query engine to limit the metric to certain types of entity.
         type: array
         x-omitempty: true
-        example: ["micro-tca", "anomaly", "capture", "capture-automatic", "security", "capture-v2","percentage-violations"]
+        example: ["micro-tca", "anomaly", "capture", "capture-automatic", "security", "capture-v2","percentage-violations", "baseline-percent"]
         items:
           type: string
       alertState:
@@ -13163,7 +13720,7 @@ definitions:
         type: "object"
         required: ["type", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [analytics]
           id:
@@ -13181,7 +13738,7 @@ definitions:
                     default: verticalSliceQuery
                   patternMatch:
                     $ref: '#/definitions/AnalyticsPatternMatch'
-      
+
   AnalyticsPatternMatch:
     type: "object"
     description: "Defines the Pattern Match class of anaylics request"
@@ -13244,12 +13801,12 @@ definitions:
         x-omitempty: true
         type: string
 
-  
+
   AnalyticsObject:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [analytics]
       id:
@@ -13336,7 +13893,7 @@ definitions:
             type: "integer"
             format: "int64"
             description: "Time since epoch at which this object was last altered."
-      
+
   AnalyticsListResponse:
     type: "object"
     description: "Analytics response including one or more values"
@@ -13362,7 +13919,7 @@ definitions:
         type: "object"
         required: ["type", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [brandings]
           id:
@@ -13373,10 +13930,10 @@ definitions:
               color:
                 type: "string"
                 description: "The primary colour used for the Datahub UI"
-              logo: 
+              logo:
                 $ref: '#/definitions/BrandingLogo'
                 description: "The image used for the Branding logo"
-              
+
   BrandingUpdateRequest:
     type: "object"
     required: ["data"]
@@ -13385,7 +13942,7 @@ definitions:
         type: "object"
         required: ["type", "attributes", "id"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [brandings]
           id:
@@ -13400,10 +13957,10 @@ definitions:
               color:
                 type: "string"
                 description: "The primary colour used for the Datahub UI"
-              logo: 
+              logo:
                 $ref: '#/definitions/BrandingLogo'
                 description: "The image used for the Branding logo"
-  
+
   BrandingResponse:
     type: "object"
     required: ["data"]
@@ -13417,13 +13974,13 @@ definitions:
       data:
         type: "array"
         items:
-           $ref: '#/definitions/Branding'
-  
+          $ref: '#/definitions/Branding'
+
   Branding:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [brandings]
       id:
@@ -13442,7 +13999,7 @@ definitions:
           color:
             description: "The primary colour used for the Datahub UI"
             type: "string"
-          logo: 
+          logo:
             description: "The image used for the Branding logo"
             $ref: '#/definitions/BrandingLogo'
           createdTimestamp:
@@ -13457,8 +14014,8 @@ definitions:
   BrandingLogo:
     type: "object"
     description: "Describes the information used to display the branding logo image on the Datahub UI"
-    properties: 
-      file: 
+    properties:
+      file:
         type: "object"
         properties:
           content_type:
@@ -13476,7 +14033,7 @@ definitions:
         type: "object"
         required: ["type", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [locales]
           id:
@@ -13493,7 +14050,7 @@ definitions:
               timezone:
                 type: "string"
                 description: "Timezone used to coordinate timestamps for the specified region"
-              
+
   LocaleUpdateRequest:
     type: "object"
     required: ["data"]
@@ -13502,7 +14059,7 @@ definitions:
         type: "object"
         required: ["type", "attributes", "id"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [locales]
           id:
@@ -13522,7 +14079,7 @@ definitions:
               timezone:
                 type: "string"
                 description: "Timezone used to coordinate timestamps for the specified region"
-  
+
   LocaleResponse:
     type: "object"
     required: ["data"]
@@ -13536,13 +14093,13 @@ definitions:
       data:
         type: "array"
         items:
-           $ref: '#/definitions/Locale'
-  
+          $ref: '#/definitions/Locale'
+
   Locale:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [locales]
       id:
@@ -13582,13 +14139,13 @@ definitions:
     required: [objectType, metric]
     properties:
       vendor:
-        description: Vendor name associated with the monitored object 
+        description: Vendor name associated with the monitored object
         type: string
         example: accedian-twamp
       objectType:
         description: Object types to be considered as part of the filter
         type: array
-        example: 
+        example:
           - ["twamp-pe"]
           - ["twamp-sl","twamp-sf"]
         items:
@@ -13600,7 +14157,7 @@ definitions:
       direction:
         description: Set of one or more directions to be used by the filter to identify required metric records
         type: array
-        example: 
+        example:
           - ["0"]
           - ["0","1"]
         items:
@@ -13641,13 +14198,13 @@ definitions:
 
   SupportedAggregations:
     type: string
-    description: > 
+    description: >
       The type of aggregation (avg/min/max/count/sum)
       avg - Returns the averaging the metric per monitored object for the time range, within the bounding filter as specified by the bucket property.
       min - Returns the minimum value for the metric per monitored object for the time range, within the bounding filter as specified by the bucket property.
       max - Returns the maximum value for the metric per monitored object for the time range, within the bounding filter as specified by the bucket property.
       count - Returns the number of events within the specified bucket property. A single bucket is the preferred usage but multiple buckets can be used as a band pass filter. 
-      sum - Returns the summed value of all records grouped by the provided groupings  
+      sum - Returns the summed value of all records grouped by the provided groupings
     enum: [min, max, avg, count, sum]
     example:
       - min
@@ -13666,7 +14223,7 @@ definitions:
             $ref: '#/definitions/SpatialCoordinates'
           maxCoordinates:
             $ref: '#/definitions/SpatialCoordinates'
-            
+
   SpatialCoordinates:
     type: object
     required: [latitude, longitude]
@@ -13704,14 +14261,14 @@ definitions:
     type: object
     properties:
       vendor:
-        description: Vendor name associated with the monitored object 
+        description: Vendor name associated with the monitored object
         type: string
         example: accedian-twamp
       objectType:
         description: Object types to be considered as part of the filter
         type: array
         x-omitempty: true
-        example: 
+        example:
           - ["twamp-pe"]
           - ["twamp-sl","twamp-sf"]
         items:
@@ -13720,7 +14277,7 @@ definitions:
         description: Set of one or more directions to be used by the filter to identify required metric records
         type: array
         x-omitempty: true
-        example: 
+        example:
           - ["0"]
           - ["0","1"]
         items:
@@ -13729,7 +14286,7 @@ definitions:
         description: Set of one or more monitored object Ids to be used by the filter to identify required metric records
         type: array
         x-omitempty: true
-        example: 
+        example:
           - ["abc"]
           - ["abc","def"]
         items:
@@ -13773,7 +14330,7 @@ definitions:
           - [ "summary","interval" ]
         items:
           type: string
-    
+
   MetricResultSeries:
     description: Describes series data prefixed with the filter criteria that were used to generate the output
     type: object
@@ -13798,7 +14355,7 @@ definitions:
       value:
         type: number
         format: double
-      
+
   ResultEntryParameters:
     description: Describes filtering criteria used for a particular query
     type: object
@@ -13870,7 +14427,7 @@ definitions:
     items:
       type: string
     example: ["group"]
-  
+
   DimensionFilter:
     description: >
       An object that allows filtering on dimensions tracked against metric records during ingestion.
@@ -13893,7 +14450,7 @@ definitions:
       micro-tca:
         type: integer
         example: 20
-        description: "Describes the total number of active micro-tca policies"
+        description: "Describes the total number of active session policies"
       capture:
         type: integer
         example: 20
@@ -13914,10 +14471,10 @@ definitions:
   expressionCondition:
     type: object
     properties:
-      equal: 
+      equal:
         x-omitempty: true
         type: string
-      notequal: 
+      notequal:
         x-omitempty: true
         type: string
       lt:
@@ -13966,29 +14523,29 @@ definitions:
         items:
           x-omitempty: true
           $ref: '#/definitions/expressionItems'
-          
+
   JsonApiRelationship:
     type: "object"
     properties:
-      data: 
+      data:
         type: "array"
         items:
           $ref: '#/definitions/JsonApiRelationshipData'
-          
+
   JsonApiSingleRelationship:
     type: "object"
     properties:
-      data: 
+      data:
         $ref: '#/definitions/JsonApiRelationshipData'
-          
+
   JsonApiRelationshipData:
     type: "object"
     properties:
-      type: 
+      type:
         type: "string"
       id:
         type: "string"
-      
+
 
   CompositeMetric:
     description: "Composite metrics"
@@ -14023,7 +14580,7 @@ definitions:
           objectType:
             description: Object types to be considered as part of the filter
             type: array
-            example: 
+            example:
               - ["twamp-pe"]
               - ["twamp-sl","twamp-sf"]
             items:
@@ -14052,19 +14609,19 @@ definitions:
     properties:
       type:
         type: string
-        enum: [constant, metric, compositeMetric]        
+        enum: [constant, metric, compositeMetric]
         x-omitempty: true
       metricIdentifier:
-        $ref: '#/definitions/MetricIdentifierFilter'        
+        $ref: '#/definitions/MetricIdentifierFilter'
         x-omitempty: true
       constant:
-        $ref: '#/definitions/CompositeConstant'        
+        $ref: '#/definitions/CompositeConstant'
         x-omitempty: true
       compositionId:
         type: string
         x-omitempty: true
 
- 
+
   CompositeMetricOperation:
     description: CompositeMetric metrics operations.
     type: object
@@ -14085,7 +14642,7 @@ definitions:
     properties:
       value:
         type: number
-        format: double        
+        format: double
         x-omitempty: true
 
   CompositeMetricCreateRequest:
@@ -14118,7 +14675,7 @@ definitions:
               objectType:
                 description: Object types to be considered as part of the filter
                 type: array
-                example: 
+                example:
                   - ["twamp-pe"]
                   - ["twamp-sl","twamp-sf"]
                 items:
@@ -14168,7 +14725,7 @@ definitions:
               objectType:
                 description: Object types to be considered as part of the filter
                 type: array
-                example: 
+                example:
                   - ["twamp-pe"]
                   - ["twamp-sl","twamp-sf"]
                 items:
@@ -14210,7 +14767,7 @@ definitions:
         type: "object"
         required: ["type", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [connectorConfigs]
           id:
@@ -14221,7 +14778,7 @@ definitions:
             properties:
               name:
                 type: "string"
-              url: 
+              url:
                 type: "string"
               port:
                 type: "integer"
@@ -14293,7 +14850,7 @@ definitions:
         type: "object"
         required: ["type", "attributes", "id"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [connectorConfigs]
           id:
@@ -14307,7 +14864,7 @@ definitions:
                 description: "Value used to ensure updates to this object are handled in order."
               name:
                 type: "string"
-              url: 
+              url:
                 type: "string"
               port:
                 type: "integer"
@@ -14342,13 +14899,13 @@ definitions:
               openMetricsScraperConfig:
                 $ref: '#/definitions/OpenMetricsScraperConfig'
               agentProxyConfig:
-                $ref: '#/definitions/AgentProxyConfig'   
+                $ref: '#/definitions/AgentProxyConfig'
               dataLoggingConfig:
-                $ref: '#/definitions/DataLoggingConfig'   
+                $ref: '#/definitions/DataLoggingConfig'
               traceConfig:
                 $ref: '#/definitions/TraceConfig'
               persistenceService:
-                $ref: '#/definitions/PersistenceService'          
+                $ref: '#/definitions/PersistenceService'
               SNMPConfig:
                 $ref: '#/definitions/SNMPConfig'
               SNMPTrapSenderConfig:
@@ -14362,7 +14919,7 @@ definitions:
                 $ref: '#/definitions/ObjectTypeSqlOperations'
               filewatcherConfig:
                 $ref: '#/definitions/FilewatcherConfig'
-              
+
   ConnectorConfigResponse:
     type: "object"
     required: ["data"]
@@ -14376,13 +14933,13 @@ definitions:
       data:
         type: "array"
         items:
-           $ref: '#/definitions/ConnectorConfig'
-  
+          $ref: '#/definitions/ConnectorConfig'
+
   ConnectorConfig:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [connectorConfigs]
       id:
@@ -14406,7 +14963,7 @@ definitions:
             type: "string"
           name:
             type: "string"
-          url: 
+          url:
             type: "string"
           port:
             type: "integer"
@@ -14461,11 +15018,11 @@ definitions:
           agentProxyConfig:
             $ref: '#/definitions/AgentProxyConfig'
           dataLoggingConfig:
-            $ref: '#/definitions/DataLoggingConfig'  
+            $ref: '#/definitions/DataLoggingConfig'
           traceConfig:
             $ref: '#/definitions/TraceConfig'
           persistenceService:
-            $ref: '#/definitions/PersistenceService'          
+            $ref: '#/definitions/PersistenceService'
           sessionFilterProfileID:
             type: "string"
             description: "If set, RR will fetch and use the session filter profile for the given ID."
@@ -14509,7 +15066,7 @@ definitions:
         description: |
           Intruct roadrunner to dump a table view in the logs of the data extracted from the SNMP walk. WARNING - On system with lots of
           SNMP targets, this can quite drastically reduce peformance
-      version: 
+      version:
         type: string
         description: The SNMP Version protocol to use (either v2c or v3)
         default: v3
@@ -14538,7 +15095,7 @@ definitions:
         default: "bulkwalk"
         description: |
           Allows the choice of using snmp walk vs snmp bulk walk
-      timeout: 
+      timeout:
         type: string
         description: The fetch timeout duration (in go time.Duration string format)
         default : "10s"
@@ -14564,7 +15121,7 @@ definitions:
       testRawFilePaths:
         description: |
           For SNMP testing, Roadrunner can fetch a test file from that location and serve it instead of 
-          having to connect to real devices. 
+          having to connect to real devices.
         type: array
         items:
           type: string
@@ -14593,11 +15150,11 @@ definitions:
         type: string
       alertMetaDataKey5:
         type: string
-        
+
   NATSConfig:
     type: object
     properties:
-      host: 
+      host:
         type: string
 
   MQTTConfig:
@@ -14688,7 +15245,7 @@ definitions:
         type: boolean
         description: |
           Feature flag to enable connector to publish open metrics in native format.
-  
+
   OpenMetricsScraperConfig:
     type: object
     required: ["prometheusConfig"]
@@ -14718,10 +15275,10 @@ definitions:
         description: |
           Enables logging of raw metrics input to the file system, for debugging purposes.
       rawLogFile:
-        type: string 
+        type: string
         description: |
           Name of the log file to write raw input metrics to.
-      logProcessed: 
+      logProcessed:
         type: boolean
         description: |
           Enables logging of processed metrics to the file system, for debugging purposes.
@@ -14736,7 +15293,7 @@ definitions:
           reached the file is renamed to <filename>.rolled and a new active log file is created.
           Subsequent rolleover events will overwrite an existing <filename>.rolled files (ie: we 
           maintain only one historical log file).  Setting this value to -1 disables log rollover.
-  
+
   TraceConfig:
     type: object
     properties:
@@ -14802,7 +15359,7 @@ definitions:
         type: array
         items:
           type: string
-          
+
   AgentProxyConfig:
     type: object
     properties:
@@ -14885,7 +15442,7 @@ definitions:
         type: string
       matches:
         type: string
-        
+
   RecordMapping:
     type: object
     required: ["headerName", "rawSourceName"]
@@ -14950,7 +15507,7 @@ definitions:
         type: string
         default: "-"
         description: Which chain of characters to use to join this value's to the object Id. Only applicable when "includeInObjectId" is true
-  
+
 
   Transformation:
     type: "object"
@@ -14971,7 +15528,7 @@ definitions:
         type: "object"
         required: ["type", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [connectorConfigs]
           id:
@@ -14982,7 +15539,7 @@ definitions:
             properties:
               name:
                 type: "string"
-              url: 
+              url:
                 type: "string"
               port:
                 type: "integer"
@@ -15047,7 +15604,7 @@ definitions:
         type: "object"
         required: ["type", "attributes", "id"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [connectorConfigs]
           id:
@@ -15061,7 +15618,7 @@ definitions:
                 description: "Value used to ensure updates to this object are handled in order."
               name:
                 type: "string"
-              url: 
+              url:
                 type: "string"
               port:
                 type: "integer"
@@ -15093,11 +15650,11 @@ definitions:
               openMetricsScraperConfig:
                 $ref: '#/definitions/OpenMetricsScraperConfig'
               agentProxyConfig:
-                $ref: '#/definitions/AgentProxyConfig'   
+                $ref: '#/definitions/AgentProxyConfig'
               dataLoggingConfig:
-                $ref: '#/definitions/DataLoggingConfig'  
+                $ref: '#/definitions/DataLoggingConfig'
               traceConfig:
-                $ref: '#/definitions/TraceConfig'           
+                $ref: '#/definitions/TraceConfig'
               SNMPConfig:
                 $ref: '#/definitions/SNMPConfig'
               SNMPTrapSenderConfig:
@@ -15479,7 +16036,7 @@ definitions:
           logins:
             type: array
             items:
-              $ref: '#/definitions/NetworkAssetLogin'                
+              $ref: '#/definitions/NetworkAssetLogin'
           meta:
             type: object
             description: Attributes added to a Network Asset that help identify the Network Asset as well as provide filtering/grouping properties
@@ -15516,7 +16073,7 @@ definitions:
         type: "object"
         required: ["type", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [dashboards]
           id:
@@ -15530,7 +16087,7 @@ definitions:
               name:
                 type: "string"
                 description: "User provided identifier for a Dashboard"
-              category: 
+              category:
                 type: "string"
                 description: "Name of the visual 'group' where this Dashboard will be displayed when looking at the list of all Dashboards in Datahub"
               metaExclude:
@@ -15549,7 +16106,7 @@ definitions:
               sharedWithAll:
                 type: "string"
                 enum: [none, viewers, editors, managers]
-              
+
   DashboardUpdateRequest:
     type: "object"
     required: ["data"]
@@ -15559,7 +16116,7 @@ definitions:
         type: "object"
         required: ["type", "attributes", "id"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [dashboards]
           id:
@@ -15576,7 +16133,7 @@ definitions:
               name:
                 type: "string"
                 description: "User provided identifier for a Dashboard"
-              category: 
+              category:
                 type: "string"
                 description: "Name of the visual 'group' where this Dashboard will be displayed when looking at the list of all Dashboards in Datahub"
               metaExclude:
@@ -15595,7 +16152,7 @@ definitions:
               sharedWithAll:
                 type: "string"
                 enum: [none, viewers, editors, managers]
-  
+
   DashboardResponse:
     type: "object"
     required: ["data"]
@@ -15611,14 +16168,14 @@ definitions:
       data:
         type: "array"
         items:
-           $ref: '#/definitions/Dashboard'
-  
+          $ref: '#/definitions/Dashboard'
+
   Dashboard:
     type: "object"
     required: ["type", "id", "attributes"]
     description: "Represents a Dashboard used to display metric information on the Datahub UI"
     properties:
-      type: 
+      type:
         type: "string"
         enum: [dashboards]
       id:
@@ -15641,7 +16198,7 @@ definitions:
           name:
             type: "string"
             description: "User provided identifier for a Dashboard"
-          category: 
+          category:
             type: "string"
             description: "Name of the visual 'group' where this Dashboard will be displayed when looking at the list of all Dashboards in Datahub"
           metaExclude:
@@ -15675,16 +16232,16 @@ definitions:
       type: "object"
       required: ["position"]
       properties:
-        position: 
+        position:
           type: "integer"
           description: "The placement order of this card on the Dashboard"
         dimensions:
           type: "object"
           description: "The amount of columns and rows this card will occupy"
           properties:
-            columns: 
+            columns:
               type: "integer"
-            rows: 
+            rows:
               type: "integer"
 
   MetadataFilter:
@@ -15695,7 +16252,7 @@ definitions:
         type: "string"
       values:
         type: "array"
-        items: 
+        items:
           type: "string"
 
   DashboardRelationships:
@@ -15723,7 +16280,7 @@ definitions:
   RequestPermissions:
     type: "array"
     items:
-      type: "string"    
+      type: "string"
 
   CardCreateRequest:
     type: "object"
@@ -15734,7 +16291,7 @@ definitions:
         type: "object"
         required: ["type", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [cards]
           id:
@@ -15745,9 +16302,9 @@ definitions:
             properties:
               name:
                 type: "string"
-              description: 
+              description:
                 type: "string"
-              state: 
+              state:
                 type: "string"
                 enum: [active, pending]
               visualization:
@@ -15763,7 +16320,7 @@ definitions:
                 type: "array"
                 items:
                   $ref: '#/definitions/CardMetric'
-              
+
   CardUpdateRequest:
     type: "object"
     description: "Object used to update a Card in Datahub"
@@ -15773,7 +16330,7 @@ definitions:
         type: "object"
         required: ["type", "attributes", "id"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [cards]
           id:
@@ -15787,9 +16344,9 @@ definitions:
                 description: "Value used to ensure updates to this object are handled in order."
               name:
                 type: "string"
-              description: 
+              description:
                 type: "string"
-              state: 
+              state:
                 type: "string"
                 enum: [active, pending]
               visualization:
@@ -15805,7 +16362,7 @@ definitions:
                 type: "array"
                 items:
                   $ref: '#/definitions/CardMetric'
-  
+
   CardResponse:
     type: "object"
     description: "A single object Card response from Datahub"
@@ -15821,14 +16378,14 @@ definitions:
       data:
         type: "array"
         items:
-           $ref: '#/definitions/Card'
-  
+          $ref: '#/definitions/Card'
+
   Card:
     type: "object"
     description: "Models a single Card used by Dashboards in the Datahub UI"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [cards]
       id:
@@ -15849,10 +16406,10 @@ definitions:
           name:
             type: "string"
             description: "User provided identifier for a Card"
-          description: 
+          description:
             type: "string"
             description: "User provided description for a Card"
-          state: 
+          state:
             type: "string"
             enum: [active, pending]
           visualization:
@@ -15862,9 +16419,9 @@ definitions:
             $ref: '#/definitions/MetaExclude'
             description: "List of metadata keys to exclude from the search results"
           metadataFilters:
-              type: "array"
-              items:
-                $ref: '#/definitions/MetadataFilter'
+            type: "array"
+            items:
+              $ref: '#/definitions/MetadataFilter'
           metrics:
             type: "array"
             description: "A list of the data which will be displayed in the Card visualization"
@@ -15910,7 +16467,7 @@ definitions:
       availability:
         type: "object"
         properties:
-          count: 
+          count:
             type: "integer"
           type:
             type: "array"
@@ -15919,11 +16476,11 @@ definitions:
       defaultDimensions:
         type: "object"
         properties:
-          columns: 
+          columns:
             type: "integer"
-          rows: 
+          rows:
             type: "integer"
-  
+
   CardMetric:
     type: "object"
     properties:
@@ -16008,7 +16565,7 @@ definitions:
         type: "object"
         required: ["type", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [dataCleaningProfiles]
             default: "dataCleaningProfiles"
@@ -16020,7 +16577,7 @@ definitions:
             properties:
               rules:
                 type: "array"
-                items: 
+                items:
                   $ref: '#/definitions/DataCleaningRule'
                 description: "List of all the rules to evaluate for Data Cleaning"
 
@@ -16033,7 +16590,7 @@ definitions:
         type: "object"
         required: ["type", "id", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [dataCleaningProfiles]
             default: "dataCleaningProfiles"
@@ -16048,7 +16605,7 @@ definitions:
                 description: "Value used to ensure updates to this object are handled in order."
               rules:
                 type: "array"
-                items: 
+                items:
                   $ref: '#/definitions/DataCleaningRule'
                 description: "List of all the rules to evaluate for Data Cleaning"
 
@@ -16086,7 +16643,7 @@ definitions:
         type: "string"
         enum: [min,max,avg]
         description: "The method of aggregation by which the selected metric will be aggregateds. [min=minimum, max=maximum, avg=average]"
-      duration: 
+      duration:
         type: "string"
         description: "ISO-8601 interval over which this codition will be evaluated."
 
@@ -16097,7 +16654,7 @@ definitions:
     properties:
       data:
         $ref: '#/definitions/DataCleaningProfile'
-  
+
   DataCleaningProfileListResponse:
     type: "object"
     description: "Response for one ore more Data Cleaning Profiles from Datahub"
@@ -16112,7 +16669,7 @@ definitions:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [dataCleaningProfiles]
         default: "dataCleaningProfiles"
@@ -16127,7 +16684,7 @@ definitions:
             description: "Value used to ensure updates to this object are handled in order."
           rules:
             type: "array"
-            items: 
+            items:
               $ref: '#/definitions/DataCleaningRule'
             description: "List of all the rules to evaluate for Data Cleaning"
           createdTimestamp:
@@ -16138,31 +16695,31 @@ definitions:
             type: "integer"
             format: "int64"
             description: "Time since epoch at which this object was last altered."
-            
+
   DataCleaningHistoryResponse:
     type: "object"
     required: ["data"]
     properties:
       data:
         $ref: '#/definitions/DataCleaningHistory'
-  
+
   DataCleaningHistory:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [dataCleaningHistory]
         default: "dataCleaningHistory"
       id:
         type: "string"
-      attributes:  
+      attributes:
         type: "object"
         required: ["events"]
         properties:
           transitions:
             type: "array"
-            items: 
+            items:
               $ref: '#/definitions/DataCleaningTransition'
             description: "List of data cleaning events"
 
@@ -16643,6 +17200,24 @@ definitions:
       enabled:
         description: "Announces whether it is necessary to work out the Smart Incident Management."
         type: boolean
+  IngestionError:
+    type: object
+    properties:
+      errors:
+        type: array
+        items:
+          type: object
+          required: ["status", "code", "detail"]
+          properties:
+            status:
+              type: string
+            code:
+              type: string
+            detail:
+              type: string
+            path:
+              type: string
+
   IngestionProfileCreateRequest:
     type: "object"
     description: "Object used to create an Ingestion Profile in Datahub"
@@ -16652,7 +17227,7 @@ definitions:
         type: "object"
         required: ["type", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [ingestionProfiles]
           id:
@@ -16670,7 +17245,7 @@ definitions:
                   $ref: '#/definitions/IngestionProfileMetricListItem'
               flags:
                 $ref: '#/definitions/IngestionProfileFlags'
-                    
+
   IngestionProfileUpdateRequest:
     type: "object"
     description: "Object used to update an Ingestion Profile in Datahub"
@@ -16680,7 +17255,7 @@ definitions:
         type: "object"
         required: ["type", "id", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [ingestionProfiles]
           id:
@@ -16702,8 +17277,8 @@ definitions:
                   $ref: '#/definitions/IngestionProfileMetricListItem'
               flags:
                 $ref: '#/definitions/IngestionProfileFlags'
-            
-             
+
+
   IngestionProfileListResponse:
     type: "object"
     description: "Ingestion Profile response including one or more values"
@@ -16717,16 +17292,20 @@ definitions:
   IngestionProfileResponse:
     type: "object"
     description: "A single object Ingestion Profile response from Datahub"
-    required: ["data"]
+    required: ["data", "violations"]
     properties:
       data:
         $ref: '#/definitions/IngestionProfile'
+      violations:
+        type: "array"
+        items:
+          $ref: '#/definitions/ViolationV3'
 
   IngestionProfile:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [ingestionProfiles]
       id:
@@ -16814,7 +17393,7 @@ definitions:
     x-omitempty: false
     additionalProperties:
       $ref: '#/definitions/IngestionProfileEnabledFlags'
-  
+
   IngestionProfileEnabledFlags:
     type: "object"
     description: "ingestion profile state flags"
@@ -16838,7 +17417,7 @@ definitions:
         type: "object"
         required: ["type", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [metadataConfigs]
           id:
@@ -16853,14 +17432,14 @@ definitions:
               endPoint:
                 description: "The last point of a Logical Map"
                 type: "string"
-              midPoints: 
+              midPoints:
                 description: "The points between the startPoint and endPoint of a logical map"
                 type: "array"
                 items:
                   type: "string"
               geo:
                 $ref: '#/definitions/MetadataConfigGeo'
-                    
+
   MetadataConfigUpdateRequest:
     type: "object"
     description: "Object used to update a Metadata Configuration in Datahub"
@@ -16870,7 +17449,7 @@ definitions:
         type: "object"
         required: ["type", "id", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [metadataConfigs]
           id:
@@ -16888,15 +17467,15 @@ definitions:
               endPoint:
                 description: "The last point of a Logical Map"
                 type: "string"
-              midPoints: 
+              midPoints:
                 description: "The points between the startPoint and endPoint of a logical map"
                 type: "array"
                 items:
                   type: "string"
               geo:
                 $ref: '#/definitions/MetadataConfigGeo'
-            
-             
+
+
   MetadataConfigListResponse:
     type: "object"
     description: "Metadata Configuration response including one or more values"
@@ -16919,7 +17498,7 @@ definitions:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [metadataConfigs]
       id:
@@ -16945,7 +17524,7 @@ definitions:
           endPoint:
             description: "The last point of a Logical Map"
             type: "string"
-          midPoints: 
+          midPoints:
             description: "The points between the startPoint and endPoint of a logical map"
             type: "array"
             items:
@@ -16961,7 +17540,7 @@ definitions:
             format: "int64"
             description: "Time since epoch at which this object was last altered."
 
-  MetadataConfigGeo: 
+  MetadataConfigGeo:
     description: "The geographical location information for nodes on the logical map"
     type: "object"
     properties:
@@ -16993,12 +17572,12 @@ definitions:
         description: "The calculated average of the Metric obtained via (sum/count)"
         type: "number"
         format: "double"
-  
+
   MetricBaseline:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [metricBaselines]
       id:
@@ -17029,7 +17608,7 @@ definitions:
             type: "array"
             items:
               $ref: '#/definitions/MetricBaselineData'
-      
+
   MetricBaselineResponse:
     type: "object"
     description: "A Metric Baseline response from Datahub"
@@ -17052,7 +17631,7 @@ definitions:
     type: "object"
     required: ["type", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [metricBaselineData]
       id:
@@ -17073,12 +17652,12 @@ definitions:
         type: "array"
         items:
           $ref: '#/definitions/DuplicateMonitoredObjectReport'
-  
+
   DuplicateMonitoredObjectReport:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [duplicateMonitoredObjectReport]
       id:
@@ -17099,7 +17678,7 @@ definitions:
             description: "A map of Monitored Object Name to a list of Monitored Object Ids of Monitored Objects that all share the same name"
             additionalProperties:
               type: "array"
-              items: 
+              items:
                 type: "string"
           createdTimestamp:
             type: "integer"
@@ -17118,7 +17697,7 @@ definitions:
         type: "object"
         required: ["type", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [monitoredObjectTagMappings]
           id:
@@ -17130,12 +17709,12 @@ definitions:
               tag:
                 type: "string"
                 description: "User provided identifier for a MonitoredObjectTagMapping"
-              monitoredObjectIdList: 
+              monitoredObjectIdList:
                 type: "array"
                 description: "List of Monitored Object IDs that are grouped by the Tag"
                 items:
                   type: "string"
-              
+
   MonitoredObjectTagMappingUpdateRequest:
     type: "object"
     required: ["data"]
@@ -17145,7 +17724,7 @@ definitions:
         type: "object"
         required: ["type", "attributes", "id"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [monitoredObjectTagMappings]
           id:
@@ -17160,12 +17739,12 @@ definitions:
               tag:
                 type: "string"
                 description: "User provided identifier for a MonitoredObjectTagMapping"
-              monitoredObjectIdList: 
+              monitoredObjectIdList:
                 type: "array"
                 description: "List of Monitored Object IDs that are grouped by the Tag"
                 items:
                   type: "string"
-  
+
   MonitoredObjectTagMappingResponse:
     type: "object"
     required: ["data"]
@@ -17181,14 +17760,14 @@ definitions:
       data:
         type: "array"
         items:
-           $ref: '#/definitions/MonitoredObjectTagMapping'
-  
+          $ref: '#/definitions/MonitoredObjectTagMapping'
+
   MonitoredObjectTagMapping:
     type: "object"
     required: ["type", "id", "attributes"]
     description: "Represents a MonitoredObjectTagMapping used to group a list of Monitored Object Ids to an ad-hoc value"
     properties:
-      type: 
+      type:
         type: "string"
         enum: [monitoredObjectTagMappings]
       id:
@@ -17209,7 +17788,7 @@ definitions:
           tag:
             type: "string"
             description: "User provided identifier for a MonitoredObjectTagMapping"
-          monitoredObjectIdList: 
+          monitoredObjectIdList:
             type: "array"
             description: "List of Monitored Object IDs that are grouped by the Tag"
             items:
@@ -17228,7 +17807,7 @@ definitions:
     properties:
       data:
         $ref: '#/definitions/MonitoredObjectCreate'
-                    
+
   MonitoredObjectUpdateRequest:
     type: "object"
     required: ["data"]
@@ -17267,7 +17846,7 @@ definitions:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [monitoredObjects]
       id:
@@ -17288,24 +17867,24 @@ definitions:
           reportingMonitoredObjectId:
             type: "string"
             description: "Unique identifier the object is reported with. This may change, while the objectId can never change"
-          actuatorName: 
+          actuatorName:
             type: "string"
             description: "Name of the origin of the Monitored Object"
-          actuatorType: 
+          actuatorType:
             type: "string"
             description: "Type of the origin of the Monitored Object"
             enum: [unknown, accedian-nid, accedian-vnid]
-          reflectorName: 
+          reflectorName:
             type: "string"
             description: "Name of the target of the Monitored Object"
-          reflectorType: 
+          reflectorType:
             type: "string"
             description: "Type of the target of the Monitored Object"
             enum: [unknown, accedian-nid, accedian-vnid]
-          objectName: 
+          objectName:
             type: "string"
             description: "Common name of the Monitored Object"
-          objectType: 
+          objectType:
             type: "string"
             description: |
               Type of the Monitored Object. For instance, possible values are [unknown, flowmeter, twamp-pe, twamp-sf, twamp-sl, cisco-interface, cisco-node-summary, pvx, paa, 
@@ -17378,7 +17957,7 @@ definitions:
           type: "object"
           required: ["type", "id", "attributes"]
           properties:
-            type: 
+            type:
               type: "string"
               enum: [bulkOperationResponses]
             id:
@@ -17412,7 +17991,7 @@ definitions:
     type: "object"
     required: ["type", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [monitoredObjects]
       id:
@@ -17424,24 +18003,24 @@ definitions:
           objectId:
             type: "string"
             description: "Unique identifier of the Monitored Object in Datahub"
-          actuatorName: 
+          actuatorName:
             type: "string"
             description: "Name of the origin of the Monitored Object"
-          actuatorType: 
+          actuatorType:
             type: "string"
             description: "Type of the origin of the Monitored Object"
             enum: [unknown, accedian-nid, accedian-vnid]
-          reflectorName: 
+          reflectorName:
             type: "string"
             description: "Name of the target of the Monitored Object"
-          reflectorType: 
+          reflectorType:
             type: "string"
             description: "Type of the target of the Monitored Object"
             enum: [unknown, accedian-nid, accedian-vnid]
-          objectName: 
+          objectName:
             type: "string"
             description: "Name of the Monitored Object"
-          objectType: 
+          objectType:
             type: "string"
             description: |
               Type of the Monitored Object. For instance, possible values are [unknown, flowmeter, twamp-pe, twamp-sf, twamp-sl, cisco-interface, cisco-node-summary, pvx, paa, 
@@ -17465,7 +18044,7 @@ definitions:
             items:
               type: "string"
 
-  BulkMonitoredObjectMetaCreateRequest: 
+  BulkMonitoredObjectMetaCreateRequest:
     type: "object"
     required: ["data"]
     description: "Object used to update the meta information for one or more Monitored Objects in Datahub"
@@ -17474,7 +18053,7 @@ definitions:
         type: "object"
         required: ["type", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [monitoredObjectsMeta]
           attributes:
@@ -17507,7 +18086,7 @@ definitions:
                       type: "array"
                       items:
                         type: "string"
-  
+
   BulkMonitoredObjectPatchRequest:
     type: "object"
     description: "Patch the names for Monitored Objects in Datahub"
@@ -17578,96 +18157,96 @@ definitions:
         type: "boolean"
 
   MonitoredObjectFilteredCountResponse:
-      type: "object"
-      required: ["data"]
-      properties:
-        data:
-          $ref: '#/definitions/MonitoredObjectFilteredCount'
+    type: "object"
+    required: ["data"]
+    properties:
+      data:
+        $ref: '#/definitions/MonitoredObjectFilteredCount'
   MonitoredObjectFilteredCount:
-      type: "object"
-      required: ["type", "attributes"]
-      properties:
-        id:
-          type: "string"
-        type: 
-          type: "string"
-          enum: ["filteredMonitoredObjectCount"]
-          default: "filteredMonitoredObjectCount"
-        attributes:
-          type: "object"
-          required: ["totalCount"]
-          properties:
-            totalCount:
+    type: "object"
+    required: ["type", "attributes"]
+    properties:
+      id:
+        type: "string"
+      type:
+        type: "string"
+        enum: ["filteredMonitoredObjectCount"]
+        default: "filteredMonitoredObjectCount"
+      attributes:
+        type: "object"
+        required: ["totalCount"]
+        properties:
+          totalCount:
+            type: "integer"
+          groupedCounts:
+            type: "object"
+            additionalProperties:
               type: "integer"
-            groupedCounts:
+
+  MonitoredObjectFilteredListResponse:
+    type: "object"
+    required: ["data"]
+    properties:
+      links:
+        type: "object"
+        additionalProperties:
+          type: "string"
+      data:
+        $ref: '#/definitions/MonitoredObjectFilteredList'
+  MonitoredObjectFilteredList:
+    type: "object"
+    required: ["type", "attributes"]
+    properties:
+      id:
+        type: "string"
+      type:
+        type: "string"
+        enum: ["filteredResourceIdentifierList"]
+        default: "filteredResourceIdentifierList"
+      attributes:
+        type: "object"
+        properties:
+          resourceIdentifiers:
+            type: "array"
+            items:
+              type: "string"
+
+  MonitoredObjectMetadataDetailsListResponse:
+    type: "object"
+    required: ["data"]
+    properties:
+      data:
+        $ref: '#/definitions/MonitoredObjectMetadataDetailsList'
+  MonitoredObjectMetadataDetailsList:
+    type: "object"
+    required: ["type", "attributes"]
+    properties:
+      id:
+        type: "string"
+      type:
+        type: "string"
+        enum: ["monitoredObjectMetadataDetails"]
+        default: "monitoredObjectMetadataDetails"
+      attributes:
+        type: "object"
+        required: ["datatype", "tenantId", "countPerValueMap"]
+        properties:
+          datatype:
+            type: "string"
+            description: "Name used to identify this type of record in Datahub"
+          tenantId:
+            type: "string"
+            description: "Unique identifier of the Tenant in Datahub"
+          countPerValueMap:
+            description: "Contains a map of metadata category names to the values and their corresponding count of Monitored Objects that use the Metadata value"
+            type: "object"
+            additionalProperties:
+              description: "Contains a map of metadata values and their corresponding count of Monitored Objects that use the Metadata value"
               type: "object"
               additionalProperties:
                 type: "integer"
-
-  MonitoredObjectFilteredListResponse:
-      type: "object"
-      required: ["data"]
-      properties:
-        links:
-          type: "object"
-          additionalProperties:
-            type: "string"
-        data:
-          $ref: '#/definitions/MonitoredObjectFilteredList'
-  MonitoredObjectFilteredList:
-      type: "object"
-      required: ["type", "attributes"]
-      properties:
-        id:
-          type: "string"
-        type: 
-          type: "string"
-          enum: ["filteredResourceIdentifierList"]
-          default: "filteredResourceIdentifierList"
-        attributes:
-          type: "object"
-          properties:
-            resourceIdentifiers:
-              type: "array"
-              items:
-                type: "string"
-
-  MonitoredObjectMetadataDetailsListResponse:
-      type: "object"
-      required: ["data"]
-      properties:
-        data:
-          $ref: '#/definitions/MonitoredObjectMetadataDetailsList'
-  MonitoredObjectMetadataDetailsList:
-      type: "object"
-      required: ["type", "attributes"]
-      properties:
-        id:
-          type: "string"
-        type: 
-          type: "string"
-          enum: ["monitoredObjectMetadataDetails"]
-          default: "monitoredObjectMetadataDetails"
-        attributes:
-          type: "object"
-          required: ["datatype", "tenantId", "countPerValueMap"]
-          properties:
-            datatype:
-              type: "string"
-              description: "Name used to identify this type of record in Datahub"
-            tenantId:
-              type: "string"
-              description: "Unique identifier of the Tenant in Datahub"
-            countPerValueMap:
-              description: "Contains a map of metadata category names to the values and their corresponding count of Monitored Objects that use the Metadata value"
-              type: "object"
-              additionalProperties:
-                description: "Contains a map of metadata values and their corresponding count of Monitored Objects that use the Metadata value"
-                type: "object"
-                additionalProperties:
-                  type: "integer"
-                  format: "int64"
-                  description: "Time since epoch at which this object was last altered."
+                format: "int64"
+                description: "Time since epoch at which this object was last altered."
 
   MonitoredObjectGeoClusterResponse:
     type: "object"
@@ -17681,7 +18260,7 @@ definitions:
     properties:
       id:
         type: "string"
-      type: 
+      type:
         type: "string"
         enum: ["monitoredObjectGeoClusters"]
         default: "monitoredObjectGeoClusters"
@@ -17717,7 +18296,7 @@ definitions:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [monitoredObjects]
       id:
@@ -17726,23 +18305,23 @@ definitions:
         type: "object"
         required: ["objectId"]
         properties:
-          actuatorName: 
+          actuatorName:
             type: "string"
             default: "unknown"
             description: "Name of the origin of the Monitored Object"
-          actuatorType: 
+          actuatorType:
             type: "string"
             description: "Type of the origin of the Monitored Object"
             enum: [unknown, accedian-nid, accedian-vnid]
-          reflectorName: 
+          reflectorName:
             type: "string"
             default: "unknown"
             description: "Name of the target of the Monitored Object"
-          reflectorType: 
+          reflectorType:
             type: "string"
             description: "Type of the target of the Monitored Object"
             enum: [unknown, accedian-nid, accedian-vnid]
-          objectType: 
+          objectType:
             type: "string"
             description: |
               Type of the Monitored Object. For instance, possible values are [unknown, flowmeter, twamp-pe, twamp-sf, twamp-sl, cisco-interface, cisco-node-summary, pvx, paa, 
@@ -17771,7 +18350,7 @@ definitions:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [monitoredObjects]
       id:
@@ -17783,26 +18362,26 @@ definitions:
           objectId:
             type: "string"
             description: "Unique identifier of the Monitored Object in Datahub"
-          actuatorName: 
+          actuatorName:
             type: "string"
             default: "unknown"
             description: "Name of the origin of the Monitored Object"
-          actuatorType: 
+          actuatorType:
             type: "string"
             description: "Type of the origin of the Monitored Object"
             enum: [unknown, accedian-nid, accedian-vnid]
-          reflectorName: 
+          reflectorName:
             type: "string"
             default: "unknown"
             description: "Name of the target of the Monitored Object"
-          reflectorType: 
+          reflectorType:
             type: "string"
             description: "Type of the target of the Monitored Object"
             enum: [unknown, accedian-nid, accedian-vnid]
           objectName:
             type: "string"
             description: "Name of the Monitored Object"
-          objectType: 
+          objectType:
             type: "string"
             description: |
               Type of the Monitored Object. For instance, possible values are [unknown, flowmeter, twamp-pe, twamp-sf, twamp-sl, cisco-interface, cisco-node-summary, pvx, paa, 
@@ -17866,7 +18445,7 @@ definitions:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [monitoredObjectSummaries]
       id:
@@ -17880,13 +18459,13 @@ definitions:
           objectId:
             type: "string"
             description: "Unique identifier of the Monitored Object in Datahub"
-          objectName: 
+          objectName:
             type: "string"
             description: "Common name of the Monitored Object"
           meta:
             type: "object"
             description: "Attributes added to a Monitored Object that help identify the Monitored Object as well as provide filtering/grouping properties"
-            additionalProperties: 
+            additionalProperties:
               type: "string"
           dynamicMetadata:
             type: "object"
@@ -17946,7 +18525,7 @@ definitions:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [metadataCategoryMapping]
       id:
@@ -17964,11 +18543,11 @@ definitions:
           tenantId:
             type: "string"
             description: "Unique identifier of the Tenant in Datahub"
-          mappingType: 
+          mappingType:
             type: "string"
             description: "Type of the origin of the Monitored Object"
             enum: [unknown, activeMetrics, networkAssets]
-          metadataCategoryMap: 
+          metadataCategoryMap:
             type: "object"
             description: "Name of the target of the Monitored Object"
             additionalProperties:
@@ -18012,7 +18591,7 @@ definitions:
         properties:
           id:
             type: "string"
-          type: 
+          type:
             type: "string"
             enum: ["metadataCategoryMappings"]
           attributes:
@@ -18020,17 +18599,17 @@ definitions:
             properties:
               add:
                 type: "array"
-                items: 
+                items:
                   type: "string"
                 description: "List of Metadata Category Names to be added to the Metadata Category Mapping"
               archive:
                 type: "array"
-                items: 
+                items:
                   type: "string"
                 description: "List of Metadata Category Names that should no longer be tracked against the Monitored Objects"
               rename:
                 type: "array"
-                items: 
+                items:
                   $ref: '#/definitions/MetadataRenameData'
                 description: "List of Metadata Category Names to be renamed in the Metadata Category Mapping"
 
@@ -18039,13 +18618,13 @@ definitions:
     required: ["existingName", "newName"]
     description: "Object providing Metadata Category Mapping alias name change information"
     properties:
-      existingName: 
+      existingName:
         type: "string"
         description: "The current alias name of a Metadata Category Mapping to be changed"
-      newName: 
+      newName:
         type: "string"
         description: "The desired alias name of a Metadata Category Mapping to be changed"
-  
+
   MonitoredObjectLocation:
     type: "object"
     description: "Defines the geographical location of the Monitored Object"
@@ -18059,7 +18638,7 @@ definitions:
         type: "number"
         format: "float"
         description: "Geographic longitude"
-  
+
   MonitoredObjectReportingListRequest:
     type: "object"
     description: "Contains the parameters related to fetching a list of reporting Monitored Object IDs for a given timeframe"
@@ -18318,9 +18897,9 @@ definitions:
         description: Hint to the query engine to limit the metric to certain types of entity.
         type: array
         x-omitempty: true
-        example: ["session","anomaly"]
+        example: ["capture","micro-tca","security"]
         items:
-          enum: [capture, capture-automatic, micro-tca, anomaly, security, percentage-violations]
+          enum: [capture, capture-automatic, micro-tca, anomaly, security, percentage-violations, baseline-percent]
           type: string
       alertState:
         description: Set of one or more alert state to be used by the filter
@@ -18437,7 +19016,7 @@ definitions:
         x-omitempty: true
         items:
           type: string
-      
+
 
 
   ## RESPONSE DEFINITIONS
@@ -18563,13 +19142,14 @@ definitions:
     properties:
       policyType:
         type: string
-        enum: ["micro-tca", "anomaly", "capture", "security", "capture-v2", "percentage-violations"]
+        enum: ["micro-tca", "anomaly", "capture", "security", "capture-v2", "percentage-violations", "baseline-percent"]
         description: |
-          micro-tca - Alerts per monitored object.
+          micro-tca - Session alerts per monitored object.
           anomaly   - Alerts detected by the Anomaly detector.
           capture   - Alerts for Capture
           capture-v2 - Alerts for Capture with a v2 schema.
-          percentage-violations - Alerts when the period of violations is over certain percentage of the period.
+          percentage-violations - Session alerts when the period of violations is over certain percentage of the period.
+          baseline-percent - Session alerts when compared with ratio of baseline value
         default: "micro-tca"
       aggregationGranularity:
         description: "Capture aggregation's granularity. The alert condition's duration must be same or larger than this value."
@@ -18713,10 +19293,10 @@ definitions:
         description: "Message is associated with an existing policy"
       objectId:
         type: string
-        description: "Object ID that is in violation if the policy is configured for micro-TCA"
+        description: "Object ID that is in violation for session alerts"
       objectName:
         type: string
-        description: "Object Name that is in violation if the policy is configured for micro-TCA"
+        description: "Object Name that is in violation for session alerts"
       source:
         type: string
         description: "Originator of the message, eg: the stream processors"
@@ -18739,7 +19319,7 @@ definitions:
         maxLength: 255
       policyType:
         type: string
-        enum: ["micro-tca", "anomaly", "capture", "capture-automatic", "security", "capture-v2", "percentage-violations"]
+        enum: ["micro-tca", "anomaly", "capture", "capture-automatic", "security", "capture-v2", "percentage-violations", "baseline-percent"]
       objectType:
         type: string
         description: "The type of object this alert is for"
@@ -18793,6 +19373,9 @@ definitions:
         type: string
       triggeredValue:
         description: This is actual metric value which triggers the alert
+        type: string
+      baseline:
+        description: This is the baseline value of the object metric at the time when alert is raised or cleared
         type: string
       comparator:
         # I'm not sure we need this element at all.
@@ -19249,7 +19832,7 @@ definitions:
           by an operator.
           Trigger condition  - This is the policies that causes an alarm to start
           Recovery condition - This is the policies that automatically causes an alarm to stop
-        required: [ "conditions", "name", "description", "configuration" ]
+        required: [ "conditions", "name", "configuration" ]
         properties:
           enabled:
             type: boolean
@@ -19298,6 +19881,7 @@ definitions:
             type: string
             description: "Brief description of what the Alert Policy will do"
             maxLength: 512
+            x-omitempty: false
           tags:
             description: "Miscellaneous data the user wants to tag this alert with"
             type: array
@@ -19387,7 +19971,7 @@ definitions:
       data:
         type: "array"
         items:
-           $ref: '#/definitions/SessionFilterProfile'
+          $ref: '#/definitions/SessionFilterProfile'
 
   SessionFilterProfileResponse:
     type: "object"
@@ -19477,7 +20061,7 @@ definitions:
           filterItems:
             type: "array"
             items:
-                $ref: '#/definitions/FilterItem'
+              $ref: '#/definitions/FilterItem'
             description: "A list containing the attribute and value the filter will work on."
 
   SessionFilterListResponse:
@@ -19488,7 +20072,7 @@ definitions:
       data:
         type: "array"
         items:
-           $ref: '#/definitions/SessionFilter'
+          $ref: '#/definitions/SessionFilter'
 
   SessionFilterResponse:
     type: "object"
@@ -19760,7 +20344,7 @@ definitions:
         type: "object"
         required: ["type", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [thresholdProfiles]
           id:
@@ -19777,7 +20361,7 @@ definitions:
               thresholdList:
                 $ref: '#/definitions/ThresholdList'
                 description: "A collection of objects that describe Thresholds which when crossed will trigger events in Datahub"
-                    
+
   ThresholdProfileUpdateRequest:
     type: "object"
     required: ["data"]
@@ -19787,7 +20371,7 @@ definitions:
         type: "object"
         required: ["type", "id", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [thresholdProfiles]
           id:
@@ -19807,7 +20391,7 @@ definitions:
               thresholdList:
                 $ref: '#/definitions/ThresholdList'
                 description: "A collection of objects that describe Thresholds which when crossed will trigger events in Datahub"
-  
+
   ThresholdProfileListResponse:
     type: "object"
     description: "Threshold Profile response including one or more values"
@@ -19830,7 +20414,7 @@ definitions:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [thresholdProfiles]
       id:
@@ -19948,7 +20532,7 @@ definitions:
         type: "object"
         required: ["type", "attributes"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [alertExports]
           id:
@@ -19960,7 +20544,7 @@ definitions:
               alertexporttype:
                 type: "string"
                 description: "The type of export integration. e.g. webhook"
-              alertexportname: 
+              alertexportname:
                 type: "string"
                 description: "The name of the export integration. e.g. Workato"
               alertexportenabled:
@@ -19974,7 +20558,7 @@ definitions:
                 description: "The list of alert policies specifically targeted for export"
                 items:
                   type: string
-              
+
   AlertExportUpdateRequest:
     type: "object"
     required: ["data"]
@@ -19983,7 +20567,7 @@ definitions:
         type: "object"
         required: ["type", "attributes", "id"]
         properties:
-          type: 
+          type:
             type: "string"
             enum: [alertExports]
           id:
@@ -20000,7 +20584,7 @@ definitions:
               alertexporttype:
                 type: "string"
                 description: "The type of export integration. e.g. webhook"
-              alertexportname: 
+              alertexportname:
                 type: "string"
                 description: "The name of the export integration. e.g. Workato"
               alertexportenabled:
@@ -20014,7 +20598,7 @@ definitions:
                 description: "The list of alert policies specifically targeted for export"
                 items:
                   type: string
-  
+
   AlertExportResponse:
     type: "object"
     required: ["data"]
@@ -20028,13 +20612,13 @@ definitions:
       data:
         type: "array"
         items:
-           $ref: '#/definitions/AlertExport'
-  
+          $ref: '#/definitions/AlertExport'
+
   AlertExport:
     type: "object"
     required: ["type", "id", "attributes"]
     properties:
-      type: 
+      type:
         type: "string"
         enum: [alertExports]
       id:
@@ -20053,7 +20637,7 @@ definitions:
           alertexporttype:
             type: "string"
             description: "The type of export integration. e.g. webhook"
-          alertexportname: 
+          alertexportname:
             type: "string"
             description: "The name of the export integration. e.g. Workato"
           alertexportenabled:
@@ -20520,7 +21104,7 @@ definitions:
         properties:
           id:
             type: string
-          type: 
+          type:
             type: string
             enum: [groupByMetrics]
           attributes:
@@ -20539,7 +21123,7 @@ definitions:
         properties:
           id:
             type: string
-          type: 
+          type:
             type: string
             enum: [groupByMetrics]
           attributes:
@@ -20618,7 +21202,7 @@ definitions:
         properties:
           id:
             type: string
-          type: 
+          type:
             type: string
             enum: [aggregates]
           attributes:
@@ -20637,7 +21221,7 @@ definitions:
         properties:
           id:
             type: string
-          type: 
+          type:
             type: string
             enum: [aggregates]
           attributes:
@@ -20829,7 +21413,7 @@ definitions:
     properties:
       data:
         $ref: '#/definitions/IngestionDictionaryV3'
-                    
+
   IngestionDictionaryV3UpdateRequest:
     type: "object"
     description: "Object used to update an Ingestion Dictionary in Datahub"
@@ -20837,8 +21421,8 @@ definitions:
     properties:
       data:
         $ref: '#/definitions/IngestionDictionaryV3'
-            
-             
+
+
   IngestionDictionaryV3ListResponse:
     type: "object"
     description: "Ingestion Dictionary response including one or more values"
@@ -20852,10 +21436,14 @@ definitions:
   IngestionDictionaryV3Response:
     type: "object"
     description: "A single object Ingestion Dictionary response from Datahub"
-    required: ["data"]
+    required: ["data", "violations"]
     properties:
       data:
         $ref: '#/definitions/IngestionDictionaryV3'
+      violations:
+        type: "array"
+        items:
+          $ref: '#/definitions/ViolationV3'
 
   IngestionDictionaryV3:
     type: object
@@ -20973,7 +21561,124 @@ definitions:
       next:
         type: string
         description: URL to fetch results after those contained in the current response
-  
+  mappingTemplate:
+    type: object
+    required:
+      - family
+      - category
+      - name
+      - template
+    properties:
+      family:
+        type: string
+        minLength: 1
+      category:
+        type: string
+        minLength: 1
+      name:
+        type: string
+        minLength: 1
+      template:
+        type: string
+        minLength: 2
+        description: This string contains encapsulated json object, for more information check transformationschema/templateModels.gen.go
+
+  mappingTemplateEntity:
+    type: object
+    properties:
+      family:
+        type: string
+      category:
+        type: string
+      name:
+        type: string
+      version:
+        type: string
+      template:
+        type: string
+        description: This string contains encapsulated json object, for more information check transformationschema/templateModels.gen.go
+
+      previousVersions:
+        type: array
+        items:
+          $ref: '#/definitions/mappingTemplateVersion'
+
+  mappingTemplateVersion:
+    type: object
+    properties:
+      family:
+        type: string
+      category:
+        type: string
+      name:
+        type: string
+      version:
+        type: string
+      template:
+        type: string
+        description: This string contains encapsulated json object, for more information check transformationschema/templateModels.gen.go
+
+
+  mappingTemplatesResponse:
+    type: object
+    description: "JSON API Response for Mapping Templates"
+    required: [ "data" ]
+    properties:
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/mappingTemplateEntity'
+
+  mappingTemplateForUpdate:
+    type: object
+    required:
+      - template
+    properties:
+      template:
+        type: string
+        minLength: 2
+        description: This string contains encapsulated json object, for more information check transformationschema/templateModels.gen.go
+
+  MDTAgentConfigurationParameters:
+    description: MDT Agent configuration parameters
+    type: object
+    required: ["MDTCollectorParameters","DataGateway"]
+    properties:
+      MDTCollectorParameters:
+        $ref: '#/definitions/MDTCollectorParameters'
+      DataGateway:
+        $ref: '#/definitions/DataGateway'
+
+  DataGateway:
+    description: Data gateway (roadrunner) access parameters
+    type: object
+    required: ["AgentID","DataBrokerPort","DataBrokerServer"]
+    properties:
+      AgentID:
+        type: string
+      DataBrokerUseSSL:
+        type: boolean
+      DataBrokerPort:
+        type: integer
+        format: int32
+      DataBrokerServer:
+        type: string
+
+  MDTCollectorParameters:
+    description: MDT Agent configuration parameters
+    type: object
+    required: ["Transport","Encoding","ServiceAddress"]
+    properties:
+      Transport:
+        type: string
+        enum: [tcp, grpc]
+      Encoding:
+        type: string
+        enum: [json, gpb,self-describing-gpb]
+      ServiceAddress:
+        type: string
+
+
   # RECONCILIATION DATASOURCE DEFINITIONS
   ## REQUEST DEFINITIONS
   DatasourceReconciliationTasks:
@@ -20985,7 +21690,7 @@ definitions:
         properties:
           id:
             type: string
-          type: 
+          type:
             type: string
             enum: [datasourceReconciliationTasks]
           attributes:
@@ -20998,9 +21703,9 @@ definitions:
       interval:
         type: string
       storage:
-        type: string
-        enum: [hdfs, s3]
-        default: hdfs
+        $ref: '#/definitions/StorageType'
+      priorityLevel:
+        $ref: '#/definitions/AdminTaskPriorityLevel'
 
   DatasourceReindexTasks:
     description: JSON API compliant wrapper for the datasource reindex tasks request
@@ -21011,7 +21716,7 @@ definitions:
         properties:
           id:
             type: string
-          type: 
+          type:
             type: string
             enum: [datasourceReindexTasks]
           attributes:
@@ -21036,6 +21741,18 @@ definitions:
         type: string
         enum: [DAY, MONTH]
         description: "Target granularity at which the files holding the data in the datasource will be compacted"
+      priorityLevel:
+        $ref: '#/definitions/AdminTaskPriorityLevel'
+
+  AdminTaskPriorityLevel:
+    type: string
+    enum: [ direct, elevated, none ]
+    description: "Priority of ingestion task. direct will submit the task straight to druid regardless of resourcing, elevated will queue with priority, none will queue without any prioritization"
+
+  StorageType:
+    type: string
+    enum: [ hdfs, s3 ]
+    default: hdfs
   # GroupBy DEFINITIONS
   ## REQUEST DEFINITIONS
   MetricsByDatasourceGroupByRequest:
@@ -21048,7 +21765,7 @@ definitions:
         properties:
           id:
             type: string
-          type: 
+          type:
             type: string
             enum: [groupByMetrics]
           attributes:
@@ -21067,7 +21784,7 @@ definitions:
         properties:
           id:
             type: string
-          type: 
+          type:
             type: string
             enum: [groupByMetrics]
           attributes:
@@ -21116,7 +21833,7 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/MetricsByDatasourceGroupedResultEntryParameters'
-        
+
   MetricsByDatasourceGroupedResultEntryParameters:
     description: Describes filtering criteria used for a particular query that uses a grouping
     type: object
@@ -21171,7 +21888,7 @@ definitions:
         properties:
           id:
             type: string
-          type: 
+          type:
             type: string
             enum: [groupByMetrics]
           attributes:
@@ -21190,7 +21907,7 @@ definitions:
         properties:
           id:
             type: string
-          type: 
+          type:
             type: string
             enum: [groupByMetrics]
           attributes:
@@ -21277,7 +21994,7 @@ definitions:
         example: 10
         minimum: 1
         maximum: 10000
-        
+
   GroupedResultEntryParameters:
     description: Describes filtering criteria used for a particular query that uses a grouping
     type: object
@@ -21313,7 +22030,7 @@ definitions:
         properties:
           id:
             type: string
-          type: 
+          type:
             type: string
             enum: [aggregates]
           attributes:
@@ -21332,7 +22049,7 @@ definitions:
         properties:
           id:
             type: string
-          type: 
+          type:
             type: string
             enum: [aggregates]
           attributes:
@@ -21421,7 +22138,7 @@ definitions:
           by an operator.
           Trigger condition  - This is the policies that causes an alarm to start
           Recovery condition - This is the policies that automatically causes an alarm to stop
-        required: [ "conditions", "name", "description", "configuration" ]
+        required: [ "conditions", "name", "configuration" ]
         properties:
           status:
             $ref: '#/definitions/alertPolicyStatus'
@@ -21472,6 +22189,7 @@ definitions:
             type: string
             description: "Brief description of what the Alert Policy will do"
             maxLength: 512
+            x-omitempty: false
           tags:
             description: "Miscellaneous data the user wants to tag this alert with"
             type: array
@@ -21520,7 +22238,7 @@ definitions:
           by an operator.
           Trigger condition  - This is the policies that causes an alarm to start
           Recovery condition - This is the policies that automatically causes an alarm to stop
-        required: [ "conditions", "name", "description", "configuration" ]
+        required: [ "conditions", "name", "configuration" ]
         properties:
           enabled:
             type: boolean
@@ -21694,7 +22412,7 @@ definitions:
     properties:
       data:
         $ref: '#/definitions/TcpThroughputTestReport'
-  
+
   TcpThroughputPaginationStanza:
     type: object
     properties:
@@ -21732,7 +22450,7 @@ definitions:
     properties:
       id:
         type: string
-      type: 
+      type:
         type: string
         enum: [tcpThroughputReport]
       attributes:
@@ -21805,7 +22523,7 @@ definitions:
     properties:
       id:
         type: string
-      type: 
+      type:
         type: string
         enum: [tcpThroughputReport]
       attributes:
@@ -21837,7 +22555,7 @@ definitions:
     properties:
       id:
         type: string
-      type: 
+      type:
         type: string
         enum: [tcpThroughputReport]
       attributes:
@@ -21872,7 +22590,7 @@ definitions:
     properties:
       id:
         type: string
-      type: 
+      type:
         type: string
         enum: [tcpThroughputReport]
       attributes:
@@ -21902,3 +22620,13 @@ definitions:
           test-interval-metrics:
             x-omitempty: true
             $ref: '#/definitions/TcpThroughputInterval'
+
+
+  ViolationV3:
+    type: object
+    required: ["message", "errorCode", "path"]
+    properties:
+      message: {type: string}
+      errorCode: {type: string}
+      path: {type: string}
+      validationParams: {type: string}
