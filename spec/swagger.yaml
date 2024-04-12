@@ -2225,7 +2225,7 @@ paths:
         - ExportService
   /v1/solution-version-manifest:
     get:
-      summary: Retrieves the Skylight Analytics release and solution versions as well as the manifest of all services. If the local manifest has been manually modified, the isDirty flag is set to indicate that the currently running version differs from the original version
+      summary: Retrieves the Skyligth Analytics release and solution versions as well as the manifest of all services. If the local manifest has been manually modified, the isDirty flag is set to indicate that the currently running version differs from the original version
       operationId: GetSolutionManifest
       produces:
         - application/json
@@ -11467,11 +11467,13 @@ definitions:
   ExportReportsConfigurationModel:
     description: "Model for the export configuration"
     type: object
+    required: ["data"]
     properties:
       meta:
         $ref: "#/definitions/ExportConfigurationMeta"
       data:
         type: object
+        required: ["attributes"]
         properties:
           id:
             type: string
