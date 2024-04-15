@@ -2225,7 +2225,7 @@ paths:
         - ExportService
   /v1/solution-version-manifest:
     get:
-      summary: Retrieves the Skyligth Analytics release and solution versions as well as the manifest of all services. If the local manifest has been manually modified, the isDirty flag is set to indicate that the currently running version differs from the original version
+      summary: Retrieves the Skylight Analytics release and solution versions as well as the manifest of all services. If the local manifest has been manually modified, the isDirty flag is set to indicate that the currently running version differs from the original version
       operationId: GetSolutionManifest
       produces:
         - application/json
@@ -9172,7 +9172,7 @@ paths:
       tags:
         - TenantProvisioningServiceV3
     delete:
-      summary: Delete a Tenant Staged Ingestion Dictionary specified by the provided Ingestion Dictionary Id.
+      summary: Delete a Tenant Ingestion Dictionary specified by the provided Ingestion Dictionary Id.
       operationId: DeleteIngestionDictionaryV3
       produces:
         - application/vnd.api+json
