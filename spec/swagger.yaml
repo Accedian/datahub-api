@@ -2,7 +2,7 @@ swagger: '2.0'
 host: api.analytics.accedian.io
 info:
   title: Skylight Analytics API documentation
-  version: 2023.11.0
+  version: 2024.05.0
   contact:
     email: the.team@accedian.com 
   description: |
