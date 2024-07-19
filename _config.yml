@@ -1,0 +1,47 @@
+remote_theme: allejo/jekyll-docs-theme
+
+name: Skylight Analytics API Portal
+
+project:
+  version: 3.0.0
+  download_url: https://api.analytics.accedian.io/swagger.json
+  download_text: Download
+
+
+ui:
+  mode: 'light' # 'auto', 'dark', 'light'
+  brand:
+    dark: "#00ceff"
+    light: "#a20000"
+  border_color:
+    dark: "#5f5f5f"
+    light: "#dee2e6"
+  header:
+    trianglify: true
+    dark:
+      color1: "#062a48"
+      color2: "#304e67"
+    light:
+      color1: "#080331"
+      color2: "#673051"
+  masthead:
+    color:
+      dark: "#fff"
+      light: "#fff"
+    align:
+      homepage: 'center'
+      page: 'left'
+
+# Build settings
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - jekyll-docs-theme.gemspec
+  - LICENSE.md
+  - README.md
+  - screenshot.png
+  - swagger-ui/README.md
+  - spec/code_samples/README.md
+  - spec/README.md
+  - README.md

@@ -1,0 +1,11 @@
+{
+  "generator-openapi-repo": {
+    "importExistingSpec": true,
+    "importedSpec": "/Users/jdelamarre/sb/datahub-swagger-spec/swagger.json",
+    "name": "DataHub",
+    "repo": "Accedian/datahub-api",
+    "splitSpec": false,
+    "samples": true,
+    "installSwaggerUI": true
+  }
+}
